@@ -1,0 +1,174 @@
+{
+ "iltonggi": {
+  "status": "Sắp ra mắt",
+  "platform": "iPhone trước",
+  "pricing": "Không quảng cáo, không theo dõi",
+  "tagline": "Một trò chơi chiến thuật chinh phục lãnh thổ cổ điển, ngắn và nhanh, lấy bối cảnh thời Tam Quốc của Hàn Quốc.",
+  "pros": [
+   {
+    "h": "Một ván vừa một lúc nghỉ.",
+    "p": "Một ván mất 5 đến 10 phút, đóng ứng dụng là trò chơi tự động được lưu, và không có gì giục bạn đăng nhập mỗi ngày."
+   },
+   {
+    "h": "Bản đồ bạn chỉ biết đến đâu nhìn thấy đến đó.",
+    "p": "Vùng đất bạn chưa đặt chân đến vẫn chìm trong sương mù cho đến khi bạn cử gián điệp. Bạn có thể vào trận và trực tiếp chỉ huy, hoặc để chế độ tự động lo."
+   },
+   {
+    "h": "Một ứng dụng yên tĩnh và minh bạch.",
+    "p": "Ứng dụng không thu thập thông tin cá nhân, không có quảng cáo hay theo dõi, và các tính năng chính hoạt động ngoại tuyến. Trang của trò chơi có 11 ngôn ngữ."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Nếu bạn muốn lối chơi nhanh, thời gian thực.",
+    "p": "Iltonggi là trò chơi theo lượt, nên trọng tâm nằm ở việc chọn nơi tấn công, không phải ở tốc độ phản xạ."
+   },
+   {
+    "h": "Nếu bạn muốn chơi trên Android ngay bây giờ.",
+    "p": "Phiên bản iPhone ra trước, các nền tảng khác sẽ được thông báo sau. Tam Quốc là bối cảnh, không phải bài học lịch sử: điều khoản của trò chơi ghi rằng nội dung có thể khác với sự thật lịch sử."
+   }
+  ],
+  "journal_label": "Blog",
+  "compare": {
+   "oneline": "Giành đất thời Tam Quốc",
+   "style": "Chiến thuật theo lượt",
+   "length": "5 đến 10 phút",
+   "difficulty": "Chọn vương quốc và độ khó",
+   "players": "Một mình, đấu với AI",
+   "platform": "iPhone trước",
+   "offline": "Tính năng chính hoạt động ngoại tuyến (chỉ thời tiết là trực tuyến tùy chọn)",
+   "pricing": "Không quảng cáo, không theo dõi",
+   "languages": "11 ngôn ngữ",
+   "status": "Sắp ra mắt. Đang có các bản dựng TestFlight"
+  }
+ },
+ "inkisle": {
+  "status": "Đang phát triển",
+  "platform": "iOS trước, Android song song",
+  "pricing": "Mọi ván đều miễn phí · không quảng cáo · vật phẩm hỗ trợ tùy chọn",
+  "tagline": "Một trò chơi chiến thuật chiếm đảo nhẹ nhàng cho điện thoại: gửi hạm đội giữa các đảo và nhuộm biển bằng màu của bạn.",
+  "pros": [
+   {
+    "h": "Vài phút, một tay.",
+    "p": "Một ván mất 3 đến 5 phút, và ở chế độ dọc bạn chỉ cần kéo bằng ngón cái. Không cần tài khoản, không cần mạng."
+   },
+   {
+    "h": "Luật chơi gói gọn trong một trang.",
+    "p": "Đảo sinh ra quân, và lực lượng lớn hơn khi đến nơi sẽ chiếm được đảo. Vì vậy một ván đã thắng không bị kéo dài, nó kết thúc ngay khi bạn rõ ràng dẫn trước."
+   },
+   {
+    "h": "Vẫn dễ đọc ngay cả khi bạn khó phân biệt màu.",
+    "p": "Mỗi bên có màu và hình lá cờ riêng. Vượt qua một ván thì ván tiếp theo mở ra, và mỗi vùng biển thêm một luật."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Nếu bạn muốn có cốt truyện và nhân vật.",
+    "p": "Inkisle cố ý không có cốt truyện. Niềm vui nằm ở việc chiếm đảo và muốn mở vùng biển tiếp theo."
+   },
+   {
+    "h": "Nếu bạn muốn lối chơi theo lượt chậm rãi, hoặc thi đấu trực tuyến ngay bây giờ.",
+    "p": "Một ván diễn ra theo thời gian thực, còn chơi trực tuyến sẽ được quyết định sau, dựa trên phản hồi của người chơi."
+   }
+  ],
+  "journal_label": "Nhật ký",
+  "compare": {
+   "oneline": "Chiếm đảo và nhuộm mực",
+   "style": "Chiến thuật thời gian thực",
+   "length": "3 đến 5 phút",
+   "difficulty": "Mỗi vùng biển mới thêm một luật",
+   "players": "Một mình và ngoại tuyến. Chơi trực tuyến sẽ được quyết định sau",
+   "platform": "iOS trước, Android song song",
+   "offline": "Ngoại tuyến, không cần tài khoản",
+   "pricing": "Mọi ván đều miễn phí · không quảng cáo · vật phẩm hỗ trợ tùy chọn",
+   "languages": "12 ngôn ngữ",
+   "status": "Đang phát triển. Đang có các bản dựng TestFlight"
+  }
+ },
+ "sunmeld": {
+  "status": "Đang phát triển",
+  "platform": "iOS và Android",
+  "pricing": "Chơi thử miễn phí, mua một lần mở khóa tất cả, không quảng cáo",
+  "tagline": "Một trận đấu ghép đá với đối thủ AI trong một chiếc bồn chung. Thả một viên đá, ghép những viên giống nhau thành cấp tiếp theo và ghi điểm. Để bồn tràn là bạn thua.",
+  "pros": [
+   {
+    "h": "Luật chơi trong bốn dòng.",
+    "p": "Lần lượt thả đá, các viên cùng cấp sẽ ghép lại, ai ghép thì người đó ghi điểm, và nếu bồn tràn, người đặt viên đá cuối cùng sẽ thua."
+   },
+   {
+    "h": "Hình bạn xếp sẽ thành khoảng trống của đối thủ.",
+    "p": "Hai bên dùng chung một bồn, nên có cái thú tính toán xem mình để lại gì."
+   },
+   {
+    "h": "Mỗi đối thủ có thói quen riêng.",
+    "p": "Cùng một chiếc bồn nhưng mỗi lần lại diễn ra khác nhau. Chơi thử miễn phí, mua một lần mở khóa tất cả, và không có quảng cáo."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Nếu bạn muốn lập kỷ lục của riêng mình hoặc chơi với bạn bè.",
+    "p": "Mỗi trận là một cuộc đấu với đối thủ AI, nên cảm giác khác với một trò giải đố mà bạn chạy theo điểm cao, hay với việc chơi cùng người thật."
+   },
+   {
+    "h": "Nếu bạn mong một thể loại trò chơi hoàn toàn mới.",
+    "p": "Thả và ghép là kiểu trò chơi quen thuộc. Điều khác ở đây là chiếc bồn chung và AI mà bạn đối đầu."
+   }
+  ],
+  "journal_label": "Nhật ký",
+  "compare": {
+   "oneline": "Đấu ghép đá vũ trụ",
+   "style": "Đấu theo lượt luân phiên",
+   "length": "—",
+   "difficulty": "Mỗi đối thủ có thói quen riêng",
+   "players": "1 đối 1 với AI",
+   "platform": "iOS và Android, đang phát triển",
+   "offline": "—",
+   "pricing": "Chơi thử miễn phí, mua một lần mở khóa tất cả, không quảng cáo",
+   "languages": "Tiếng Anh, tiếng Hàn",
+   "status": "Đang phát triển"
+  }
+ },
+ "claimball": {
+  "status": "Sắp ra mắt",
+  "platform": "iOS và Android",
+  "pricing": "Chơi thử miễn phí. Mua một lần mở khóa tất cả. Không quảng cáo, không gói đăng ký.",
+  "tagline": "Một trận đấu nhẹ nhàng với đối thủ AI trên lưới ô vở. Ô mà quả bóng của bạn nảy vào sẽ thành đất của bạn. Đỡ hụt là bạn mất đất.",
+  "pros": [
+   {
+    "h": "Khoảng 90 giây một trận.",
+    "p": "Vừa cả những khoảng trống ngắn, và những giây cuối là màn quyết đấu. (Đây là đề xuất trước khi ra mắt, nên có thể thay đổi.)"
+   },
+   {
+    "h": "Bàn chơi nhìn qua là hiểu.",
+    "p": "Trên lưới ô vở 6 x 10, ô của bạn và của đối thủ được phân biệt bằng màu. Một cú đập bằng giữa vợt chiếm được 3 ô cùng lúc."
+   },
+   {
+    "h": "Các đối thủ nâng dần trình độ.",
+    "p": "Khi ra mắt sẽ có 6 đối thủ AI trong 2 giải đấu (đề xuất trước khi ra mắt, nên có thể thay đổi), và dự kiến có thêm qua các bản cập nhật. Chơi thử miễn phí. Mua một lần mở khóa tất cả. Không quảng cáo, không gói đăng ký."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Nếu trò chơi bận rộn đôi tay khiến bạn mệt.",
+    "p": "Bạn đỡ bóng theo thời gian thực, nên nó khác với một trò chơi bạn có thể thong thả suy nghĩ."
+   },
+   {
+    "h": "Nếu bạn muốn chơi trực tuyến với người thật.",
+    "p": "Mỗi trận đều là bạn đấu với một đối thủ AI."
+   }
+  ],
+  "journal_label": "Nhật ký",
+  "compare": {
+   "oneline": "Giành đất trên trang vở",
+   "style": "Đấu bóng thời gian thực",
+   "length": "Khoảng 90 giây (đề xuất trước khi ra mắt, có thể thay đổi)",
+   "difficulty": "6 đối thủ AI trong 2 giải đấu khi ra mắt (đề xuất trước khi ra mắt, có thể thay đổi), thêm qua các bản cập nhật",
+   "players": "1 đối 1 với AI",
+   "platform": "iOS và Android, sắp ra mắt",
+   "offline": "—",
+   "pricing": "Chơi thử miễn phí. Mua một lần mở khóa tất cả. Không quảng cáo, không gói đăng ký.",
+   "languages": "Tiếng Anh, tiếng Hàn",
+   "status": "Sắp ra mắt, chưa định ngày phát hành"
+  }
+ }
+}

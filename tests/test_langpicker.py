@@ -23,21 +23,21 @@ def pages():
 
 
 class Picker(unittest.TestCase):
-    def test_both_languages_have_pages(self):
+    def test_every_language_has_pages(self):
         self.assertEqual({l for l, _, _ in pages()}, set(bs.LANGS))
 
     def test_picker_shows_the_pages_own_language(self):
         for lang, f, h in pages():
             name = bs.LANGS[lang][0]
             self.assertEqual(re.search(r'<html lang="([\w-]+)"', h).group(1), lang, f)
-            menu = re.search(r'<span class="langsw".*?</span>', h, re.S).group(0)
+            menu = re.search(r'<details class="langsw">.*?</details>', h, re.S).group(0)
             cur = re.findall(r'<a href="[^"]*" hreflang="(\w+)"[^>]*aria-current', menu)
             self.assertEqual(cur, [lang], f)
             self.assertEqual(len(re.findall(r'<a ', menu)), len(bs.LANGS), f)
 
     def test_picker_links_stay_on_the_same_page(self):
         for lang, f, h in pages():
-            menu = re.search(r'<span class="langsw".*?</span>', h, re.S).group(0)
+            menu = re.search(r'<details class="langsw">.*?</details>', h, re.S).group(0)
             for href, l in re.findall(r'<a href="([^"]*)" hreflang="(\w+)"', menu):
                 self.assertEqual(href.startswith("/" + l + "/") or (l == "en" and not href.startswith(tuple("/" + x + "/" for x in LANG_DIRS))), True, (f, href))
 

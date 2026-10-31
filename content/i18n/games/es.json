@@ -1,0 +1,174 @@
+{
+ "iltonggi": {
+  "status": "Próximamente",
+  "platform": "Primero en iPhone",
+  "pricing": "Sin anuncios, sin seguimiento",
+  "tagline": "Un juego de estrategia clásico de conquista de territorios, corto y rápido, ambientado en la era de los Tres Reinos de Corea.",
+  "pros": [
+   {
+    "h": "Una partida que cabe en un descanso.",
+    "p": "Una partida dura de 5 a 10 minutos, al cerrar la app tu partida se guarda sola y nada te insiste en iniciar sesión cada día."
+   },
+   {
+    "h": "Un mapa que solo conoces hasta donde alcanzas a ver.",
+    "p": "La tierra que no has visitado permanece en la niebla hasta que envías un espía. Puedes entrar en una batalla con mando directo o dejarla en automático."
+   },
+   {
+    "h": "Una app tranquila y abierta.",
+    "p": "No recoge información personal, no tiene anuncios ni seguimiento, y sus funciones principales funcionan sin conexión. El sitio del juego está disponible en 11 idiomas."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si quieres juego rápido y en tiempo real.",
+    "p": "Iltonggi es por turnos, así que el peso está en elegir dónde atacar, no en la velocidad de reacción."
+   },
+   {
+    "h": "Si quieres jugar en Android ahora mismo.",
+    "p": "Primero llega la versión de iPhone y otras plataformas se anunciarán más adelante. Los Tres Reinos son un escenario, no una lección de historia: los términos del juego dicen que puede diferir de los hechos históricos."
+   }
+  ],
+  "journal_label": "Blog",
+  "compare": {
+   "oneline": "Conquista de tierras de los Tres Reinos",
+   "style": "Estrategia por turnos",
+   "length": "De 5 a 10 minutos",
+   "difficulty": "Elige tu reino y la dificultad",
+   "players": "En solitario, contra la IA",
+   "platform": "Primero en iPhone",
+   "offline": "Las funciones principales funcionan sin conexión (solo el clima es opcionalmente en línea)",
+   "pricing": "Sin anuncios, sin seguimiento",
+   "languages": "11 idiomas",
+   "status": "Próximamente. Compilaciones de TestFlight en curso"
+  }
+ },
+ "inkisle": {
+  "status": "En desarrollo",
+  "platform": "Primero iOS, Android a la par",
+  "pricing": "Todas las partidas gratis · sin anuncios · objetos de ayuda opcionales",
+  "tagline": "Un juego de estrategia ligero de conquista de islas para el móvil: envía flotas entre islas y tiñe el mar de tu color.",
+  "pros": [
+   {
+    "h": "Unos minutos, con una mano.",
+    "p": "Una partida dura de 3 a 5 minutos y, en vertical, solo arrastras con el pulgar. Sin cuenta y sin necesidad de red."
+   },
+   {
+    "h": "Las reglas caben en una página.",
+    "p": "Las islas producen tropas, y una fuerza mayor que llega toma la isla. Así que una partida ganada no se alarga, termina en cuanto vas claramente por delante."
+   },
+   {
+    "h": "Se lee bien incluso si no distingues los colores.",
+    "p": "Cada bando tiene su propio color y la forma de su bandera. Supera una partida y se abre la siguiente, y cada mar añade una regla."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si quieres una historia y personajes.",
+    "p": "Inkisle no tiene historia a propósito. La diversión está en tomar islas y querer abrir el siguiente mar."
+   },
+   {
+    "h": "Si quieres juego lento por turnos, o competir en línea ahora mismo.",
+    "p": "Una partida transcurre en tiempo real, y el juego en línea se decidirá más adelante, según cómo respondan los jugadores."
+   }
+  ],
+  "journal_label": "Diario",
+  "compare": {
+   "oneline": "Conquista de islas y tinta",
+   "style": "Estrategia en tiempo real",
+   "length": "De 3 a 5 minutos",
+   "difficulty": "Cada mar nuevo añade una regla",
+   "players": "En solitario y sin conexión. El juego en línea se decidirá más adelante",
+   "platform": "Primero iOS, Android a la par",
+   "offline": "Sin conexión, sin cuenta",
+   "pricing": "Todas las partidas gratis · sin anuncios · objetos de ayuda opcionales",
+   "languages": "12 idiomas",
+   "status": "En desarrollo. Compilaciones de TestFlight en curso"
+  }
+ },
+ "sunmeld": {
+  "status": "En desarrollo",
+  "platform": "iOS y Android",
+  "pricing": "Gratis para probar, una compra desbloquea todo, sin anuncios",
+  "tagline": "Un duelo de fusión contra un oponente de IA en una misma cuba. Suelta una piedra, fusiona las piedras iguales en la siguiente etapa y puntúa. Si la cuba se desborda, pierdes.",
+  "pros": [
+   {
+    "h": "Cuatro líneas de reglas.",
+    "p": "Se turnan para soltar piedras, las etapas iguales se fusionan, quien fusiona puntúa, y si la cuba se desborda pierde quien colocó la última piedra."
+   },
+   {
+    "h": "La forma que apilas se convierte en el espacio de tu oponente.",
+    "p": "Comparten una sola cuba, así que hay cierto gusto en calcular qué dejas atrás."
+   },
+   {
+    "h": "Cada oponente tiene sus propias costumbres.",
+    "p": "La misma cuba se desarrolla distinto cada vez. Es gratis para probar, una compra desbloquea todo y no hay anuncios."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si quieres crear tus propios récords o jugar contra amigos.",
+    "p": "Cada partida es un duelo contra un oponente de IA, así que se siente distinto a un puzle en el que persigues una puntuación alta, o a jugar contra personas."
+   },
+   {
+    "h": "Si esperas un tipo de juego totalmente nuevo.",
+    "p": "Soltar y fusionar es un tipo de juego conocido. Lo diferente aquí es la única cuba que compartes y la IA con la que te enfrentas."
+   }
+  ],
+  "journal_label": "Diario",
+  "compare": {
+   "oneline": "Duelo de fusión de piedras en el espacio",
+   "style": "Duelo por turnos alternos",
+   "length": "—",
+   "difficulty": "Cada oponente tiene sus propias costumbres",
+   "players": "1 contra 1 frente a la IA",
+   "platform": "iOS y Android, en desarrollo",
+   "offline": "—",
+   "pricing": "Gratis para probar, una compra desbloquea todo, sin anuncios",
+   "languages": "Inglés, coreano",
+   "status": "En desarrollo"
+  }
+ },
+ "claimball": {
+  "status": "Próximamente",
+  "platform": "iOS y Android",
+  "pricing": "Gratis para probar. Una compra desbloquea todo. Sin anuncios, sin suscripción.",
+  "tagline": "Un duelo casual contra un rival de IA sobre una cuadrícula de cuaderno. La casilla donde rebota tu pelota se convierte en tu territorio. Si fallas, pierdes territorio.",
+  "pros": [
+   {
+    "h": "Unos 90 segundos por partida.",
+    "p": "Cabe incluso en un hueco corto, y los últimos segundos son un duelo decisivo. (Es una propuesta previa al lanzamiento, así que puede cambiar.)"
+   },
+   {
+    "h": "Un tablero que se lee de un vistazo.",
+    "p": "En una cuadrícula de cuaderno de 6 por 10, tus casillas y las de tu rival se separan por color. Un remate con el centro de tu pala reclama 3 casillas a la vez."
+   },
+   {
+    "h": "Tus rivales suben el nivel.",
+    "p": "Al lanzamiento habrá 6 rivales de IA en 2 ligas (una propuesta previa al lanzamiento, así que puede cambiar), y se planean más en las actualizaciones. Gratis para probar. Una compra desbloquea todo. Sin anuncios, sin suscripción."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si los juegos de manos ocupadas te resultan una carga.",
+    "p": "Devuelves la pelota en tiempo real, así que es distinto de un juego que puedes pensar con calma."
+   },
+   {
+    "h": "Si quieres jugar contra personas en línea.",
+    "p": "Cada partida es tú contra un rival de IA."
+   }
+  ],
+  "journal_label": "Diario",
+  "compare": {
+   "oneline": "Reclamar territorio en un cuaderno",
+   "style": "Duelo de pelota en tiempo real",
+   "length": "Unos 90 segundos (propuesta previa al lanzamiento, puede cambiar)",
+   "difficulty": "6 rivales de IA en 2 ligas al lanzamiento (propuesta previa al lanzamiento, puede cambiar), más en las actualizaciones",
+   "players": "1 contra 1 frente a la IA",
+   "platform": "iOS y Android, próximamente",
+   "offline": "—",
+   "pricing": "Gratis para probar. Una compra desbloquea todo. Sin anuncios, sin suscripción.",
+   "languages": "Inglés, coreano",
+   "status": "Próximamente, fecha de lanzamiento sin fijar"
+  }
+ }
+}

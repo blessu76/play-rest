@@ -35,7 +35,7 @@ RSS: https://play.ipe.rest/journal/feed.xml
 
 ## Languages
 
-The site is available in 2 languages: English, 한국어. Korean lives under /ko/ (English at the root).
+The site is available in 11 languages: English (en), Korean (ko), Japanese (ja), Chinese (Simplified) (zh), Spanish (es), Portuguese (Brazil) (pt), Indonesian (id), Russian (ru), Vietnamese (vi), French (fr), German (de). English is at the root; every other language lives under /<code>/ (for example /ko/, /ja/). English and Korean are written by ipe(); Japanese, Chinese (Simplified), Spanish, Portuguese (Brazil), Indonesian, Russian, Vietnamese, French, German are AI translations of the English original, marked as such on every page. The journal is written in English and Korean only.
 
 ## Contact and operator
 

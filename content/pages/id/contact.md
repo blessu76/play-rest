@@ -1,0 +1,34 @@
+---
+title: Kontak
+description: Cara menghubungi ipe() tentang game di play.ipe.rest. Email kontak dan beberapa jawaban.
+updated: 2026-10-31
+---
+Jika Anda punya pertanyaan atau saran, atau menemukan sesuatu yang keliru di situs ini, silakan kirimi kami email.
+
+**Kontak:** [{{EMAIL}}](mailto:{{EMAIL}})
+
+Kami berusaha membalas dalam beberapa hari kerja.
+
+## Untuk masalah pada game tertentu
+
+Setiap game punya situs resmi dan dukungannya sendiri. Silakan mulai dari sana, lewat kartu game tersebut di [halaman beranda](/id/#games).
+
+## Detail yang membantu untuk disertakan
+
+- Halaman yang sedang Anda buka, atau game yang Anda maksud
+- Perangkat dan browser Anda
+- Apa yang terjadi, beserta tangkapan layar jika ada
+
+## Pertanyaan yang sering diajukan
+
+### Apakah sudah ada game yang bisa dimainkan?
+
+Belum. Belum ada satu pun dari keempat game ini yang dirilis, dan belum ada yang punya halaman toko. Status setiap game ada di kartunya di [halaman beranda](/id/#games).
+
+### Apakah Anda mengumpulkan informasi pribadi?
+
+Tidak. Lihat [Kebijakan Privasi](/id/privacy/) untuk detailnya.
+
+### Di mana ketentuan penggunaannya?
+
+Portal ini tidak punya ketentuan sendiri. Ketentuan penggunaan ada di situs game yang memilikinya (Inkisle belum punya), yang ditautkan di bagian bawah halaman.

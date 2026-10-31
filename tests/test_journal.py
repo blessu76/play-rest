@@ -155,14 +155,14 @@ class WithPosts(Reader):
 
     def test_sitemap_with_hreflang_and_lastmod(self):
         sm = self.read("sitemap.xml")
-        self.assertEqual(sm.count("<url>"), 8 + 2 + 2 * 4)
+        self.assertEqual(sm.count("<url>"), 4 * len(bs.LANGS) + 2 + 2 * 4)
         self.assertIn("<loc>https://play.ipe.rest/journal/</loc><lastmod>2026-11-02</lastmod>", sm)
         self.assertIn("<loc>https://play.ipe.rest/ko/journal/why-rounds-end/</loc><lastmod>2026-10-31</lastmod>", sm)
         self.assertIn('hreflang="ko" href="https://play.ipe.rest/ko/journal/why-rounds-end/"', sm)
         self.assertIn("<loc>https://play.ipe.rest/</loc><lastmod>2026-11-02</lastmod>", sm)  # home shows the cards
         errs, urls = cs.check(self.root, NOW)
         self.assertEqual(errs, [])
-        self.assertEqual(len(urls), 8 + 2 + 2 * 4)
+        self.assertEqual(len(urls), 4 * len(bs.LANGS) + 2 + 2 * 4)
 
     def test_sitemap_check_catches_a_missing_post(self):
         (self.root / "journal/why-rounds-end/index.html").rename(self.root / "journal/why-rounds-end/x.html")
@@ -239,7 +239,7 @@ class EmptyJournal(Reader):
         self.assertNotIn("/journal/", self.read("sitemap.xml"))
         self.assertNotIn("## Journal", self.read("llms.txt"))
         errs, urls = cs.check(self.root, NOW)
-        self.assertEqual((errs, len(urls)), ([], 8))
+        self.assertEqual((errs, len(urls)), ([], 4 * len(bs.LANGS)))
 
     def test_nav_still_links_the_journal(self):
         self.assertIn('<a href="/journal/">Journal</a>', self.read("index.html"))
@@ -252,7 +252,7 @@ class EmptyJournal(Reader):
             build(root)
             h = (root / "index.html").read_text(encoding="utf-8")
             self.assertEqual(h.count('class="journal-card"'), n)
-            self.assertEqual((root / "sitemap.xml").read_text().count("<url>"), 8 + 2 + 2 * n)
+            self.assertEqual((root / "sitemap.xml").read_text().count("<url>"), 4 * len(bs.LANGS) + 2 + 2 * n)
 
 
 class Validation(unittest.TestCase):

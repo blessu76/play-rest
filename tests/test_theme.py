@@ -48,7 +48,8 @@ class Theme(unittest.TestCase):
             h = p.read_text(encoding="utf-8")
             grp = re.search(r'<div class="themesw" role="group" aria-label="([^"]+)">(.*?)</div>', h, re.S)
             self.assertIsNotNone(grp, p)
-            self.assertEqual(grp.group(1), "테마" if 'lang="ko"' in h[:300] else "Theme", p)
+            lang = re.search(r'<html lang="([\w-]+)"', h).group(1)
+            self.assertEqual(grp.group(1), bs.load_i18n(REPO)[0][lang]["theme_label"], p)
             btns = re.findall(r'<button type="button" data-theme-set="(\w+)" aria-pressed="false" aria-label="([^"]+)" title="\2">(<svg.*?</svg>)</button>', grp.group(2), re.S)
             self.assertEqual([b[0] for b in btns], list(THEMES), p)
             for _, label, svg in btns:

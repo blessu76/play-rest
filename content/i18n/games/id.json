@@ -1,0 +1,174 @@
+{
+ "iltonggi": {
+  "status": "Segera hadir",
+  "platform": "iPhone lebih dulu",
+  "pricing": "Tanpa iklan, tanpa pelacakan",
+  "tagline": "Game strategi penaklukan wilayah klasik yang singkat dan cepat, berlatar era Tiga Kerajaan Korea.",
+  "pros": [
+   {
+    "h": "Satu ronde yang pas untuk jeda.",
+    "p": "Satu ronde memakan 5 sampai 10 menit, menutup aplikasi menyimpan permainan Anda secara otomatis, dan tidak ada yang mendesak Anda untuk masuk setiap hari."
+   },
+   {
+    "h": "Peta yang hanya Anda kenal sejauh yang bisa Anda lihat.",
+    "p": "Wilayah yang belum Anda datangi tetap tertutup kabut sampai Anda mengirim mata-mata. Anda bisa terjun ke pertempuran dengan komando langsung, atau menyerahkannya ke mode otomatis."
+   },
+   {
+    "h": "Aplikasi yang tenang dan terbuka.",
+    "p": "Aplikasi ini tidak mengumpulkan informasi pribadi, tidak punya iklan atau pelacakan, dan fitur utamanya berjalan offline. Situs game ini tersedia dalam 11 bahasa."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Jika Anda ingin permainan cepat dan real-time.",
+    "p": "Iltonggi berbasis giliran, jadi bobotnya ada pada memilih di mana menyerang, bukan pada kecepatan reaksi."
+   },
+   {
+    "h": "Jika Anda ingin bermain di Android sekarang juga.",
+    "p": "Versi iPhone hadir lebih dulu dan platform lain akan diumumkan kemudian. Tiga Kerajaan adalah latar, bukan pelajaran sejarah: ketentuan game ini menyebutkan bahwa isinya bisa berbeda dari fakta sejarah."
+   }
+  ],
+  "journal_label": "Blog",
+  "compare": {
+   "oneline": "Rebut wilayah di era Tiga Kerajaan",
+   "style": "Strategi berbasis giliran",
+   "length": "5 sampai 10 menit",
+   "difficulty": "Pilih kerajaan dan tingkat kesulitan",
+   "players": "Solo, melawan AI",
+   "platform": "iPhone lebih dulu",
+   "offline": "Fitur utama berjalan offline (hanya cuaca yang opsional online)",
+   "pricing": "Tanpa iklan, tanpa pelacakan",
+   "languages": "11 bahasa",
+   "status": "Segera hadir. Build TestFlight sedang berjalan"
+  }
+ },
+ "inkisle": {
+  "status": "Dalam pengembangan",
+  "platform": "iOS lebih dulu, Android bersamaan",
+  "pricing": "Semua ronde gratis · tanpa iklan · item bantuan opsional",
+  "tagline": "Game strategi penaklukan pulau yang ringan untuk ponsel Anda: kirim armada antarpulau dan warnai laut dengan warna Anda.",
+  "pros": [
+   {
+    "h": "Beberapa menit, satu tangan.",
+    "p": "Satu ronde memakan 3 sampai 5 menit, dan dalam posisi tegak Anda cukup menyeret dengan ibu jari. Tidak perlu akun dan tidak perlu jaringan."
+   },
+   {
+    "h": "Aturannya muat dalam satu halaman.",
+    "p": "Pulau menghasilkan pasukan, dan pasukan lebih besar yang tiba akan merebut pulau. Jadi ronde yang sudah dimenangkan tidak berlarut-larut, ronde itu berakhir begitu Anda jelas unggul."
+   },
+   {
+    "h": "Tetap terbaca meski Anda sulit membedakan warna.",
+    "p": "Setiap pihak punya warna dan bentuk bendera sendiri. Selesaikan satu ronde dan ronde berikutnya terbuka, dan setiap laut menambahkan satu aturan."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Jika Anda menginginkan cerita dan karakter.",
+    "p": "Inkisle sengaja tidak punya cerita. Keseruannya ada pada merebut pulau dan ingin membuka laut berikutnya."
+   },
+   {
+    "h": "Jika Anda ingin permainan berbasis giliran yang lambat, atau bertanding online sekarang juga.",
+    "p": "Satu ronde mengalir secara real-time, dan permainan online akan diputuskan kemudian, berdasarkan tanggapan pemain."
+   }
+  ],
+  "journal_label": "Jurnal",
+  "compare": {
+   "oneline": "Penaklukan pulau dan tinta",
+   "style": "Strategi real-time",
+   "length": "3 sampai 5 menit",
+   "difficulty": "Setiap laut baru menambahkan satu aturan",
+   "players": "Solo dan offline. Permainan online akan diputuskan kemudian",
+   "platform": "iOS lebih dulu, Android bersamaan",
+   "offline": "Offline, tanpa akun",
+   "pricing": "Semua ronde gratis · tanpa iklan · item bantuan opsional",
+   "languages": "12 bahasa",
+   "status": "Dalam pengembangan. Build TestFlight sedang berjalan"
+  }
+ },
+ "sunmeld": {
+  "status": "Dalam pengembangan",
+  "platform": "iOS dan Android",
+  "pricing": "Gratis untuk dicoba, sekali beli membuka semuanya, tanpa iklan",
+  "tagline": "Duel penggabungan melawan lawan AI dalam satu wadah bersama. Jatuhkan batu, gabungkan batu yang sama menjadi tahap berikutnya, dan cetak skor. Jika wadahnya meluap, Anda kalah.",
+  "pros": [
+   {
+    "h": "Aturan empat baris.",
+    "p": "Bergiliran menjatuhkan batu, tahap yang sama bergabung, siapa yang menggabungkan mendapat skor, dan jika wadah meluap, pemain yang menaruh batu terakhir kalah."
+   },
+   {
+    "h": "Bentuk yang Anda tumpuk menjadi ruang bagi lawan Anda.",
+    "p": "Anda berbagi satu wadah, jadi ada keasyikan memperhitungkan apa yang Anda tinggalkan."
+   },
+   {
+    "h": "Setiap lawan punya kebiasaannya sendiri.",
+    "p": "Wadah yang sama berjalan berbeda setiap kali. Gratis untuk dicoba, sekali beli membuka semuanya, dan tidak ada iklan."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Jika Anda ingin membangun rekor sendiri atau bermain melawan teman.",
+    "p": "Setiap pertandingan adalah duel melawan lawan AI, jadi rasanya berbeda dari puzzle tempat Anda mengejar skor tertinggi, atau dari bermain melawan orang."
+   },
+   {
+    "h": "Jika Anda mengharapkan jenis game yang benar-benar baru.",
+    "p": "Menjatuhkan dan menggabungkan adalah jenis game yang sudah akrab. Yang berbeda di sini adalah satu wadah yang Anda bagi dan AI yang Anda lawan."
+   }
+  ],
+  "journal_label": "Jurnal",
+  "compare": {
+   "oneline": "Duel penggabungan batu antariksa",
+   "style": "Duel dengan giliran bergantian",
+   "length": "—",
+   "difficulty": "Setiap lawan punya kebiasaannya sendiri",
+   "players": "1 lawan 1 melawan AI",
+   "platform": "iOS dan Android, dalam pengembangan",
+   "offline": "—",
+   "pricing": "Gratis untuk dicoba, sekali beli membuka semuanya, tanpa iklan",
+   "languages": "Inggris, Korea",
+   "status": "Dalam pengembangan"
+  }
+ },
+ "claimball": {
+  "status": "Segera hadir",
+  "platform": "iOS dan Android",
+  "pricing": "Gratis untuk dicoba. Sekali beli membuka semuanya. Tanpa iklan, tanpa langganan.",
+  "tagline": "Duel kasual melawan rival AI di atas kisi buku catatan. Petak tempat bola Anda memantul menjadi wilayah Anda. Meleset, dan Anda kehilangan wilayah.",
+  "pros": [
+   {
+    "h": "Sekitar 90 detik per pertandingan.",
+    "p": "Pas bahkan untuk jeda singkat, dan detik-detik terakhirnya adalah penentuan. (Usulan sebelum peluncuran, jadi bisa berubah.)"
+   },
+   {
+    "h": "Papan yang terbaca sekilas.",
+    "p": "Di kisi buku catatan 6 kali 10, petak Anda dan petak rival dibedakan dengan warna. Smash dengan bagian tengah pemukul Anda merebut 3 petak sekaligus."
+   },
+   {
+    "h": "Rival Anda menaikkan level.",
+    "p": "Saat peluncuran ada 6 rival AI di 2 liga (usulan sebelum peluncuran, jadi bisa berubah), dan lebih banyak lagi direncanakan lewat pembaruan. Gratis untuk dicoba. Sekali beli membuka semuanya. Tanpa iklan, tanpa langganan."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Jika game yang menyibukkan tangan terasa membebani.",
+    "p": "Anda mengembalikan bola secara real-time, jadi ini berbeda dari game yang bisa Anda pikirkan dengan santai."
+   },
+   {
+    "h": "Jika Anda ingin bermain melawan orang secara online.",
+    "p": "Setiap pertandingan adalah Anda melawan rival AI."
+   }
+  ],
+  "journal_label": "Jurnal",
+  "compare": {
+   "oneline": "Merebut wilayah di buku catatan",
+   "style": "Duel bola real-time",
+   "length": "Sekitar 90 detik (usulan sebelum peluncuran, bisa berubah)",
+   "difficulty": "6 rival AI di 2 liga saat peluncuran (usulan sebelum peluncuran, bisa berubah), lebih banyak lewat pembaruan",
+   "players": "1 lawan 1 melawan AI",
+   "platform": "iOS dan Android, segera hadir",
+   "offline": "—",
+   "pricing": "Gratis untuk dicoba. Sekali beli membuka semuanya. Tanpa iklan, tanpa langganan.",
+   "languages": "Inggris, Korea",
+   "status": "Segera hadir, tanggal rilis belum ditentukan"
+  }
+ }
+}

@@ -1,7 +1,7 @@
 import shutil
 import unittest
 
-from helpers import NOW, build, make_site
+from helpers import NOW, bs, build, make_site
 
 import check_sitemap as cs  # noqa: E402
 
@@ -16,7 +16,7 @@ class Sitemap(unittest.TestCase):
         errs, urls = cs.check(self.root, NOW)
         self.assertEqual(errs, [])
         self.assertIn("https://play.ipe.rest/", urls)
-        self.assertEqual(len(urls), 8)
+        self.assertEqual(len(urls), 4 * len(bs.LANGS))
 
     def test_missing_file_detected(self):
         (self.root / "about/index.html").unlink()

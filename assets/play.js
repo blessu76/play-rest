@@ -4,6 +4,13 @@
     var a=e.target.closest&&e.target.closest('.langsw a[hreflang],.foot-langs a[hreflang],.langs a[hreflang]');
     if(a){try{localStorage.setItem('play-lang',a.getAttribute('hreflang'))}catch(x){}}
   });
+  /* the language menu (<details>) closes on a click outside it and on Escape (focus goes back to its summary) */
+  var sw=document.querySelector&&document.querySelector('details.langsw');
+  if(!sw)return;
+  document.addEventListener('click',function(e){if(sw.open&&!sw.contains(e.target))sw.open=false});
+  document.addEventListener('keydown',function(e){
+    if(sw.open&&(e.key==='Escape'||e.key==='Esc')){sw.open=false;var s=sw.querySelector('summary');if(s)s.focus()}
+  });
 })();
 (function(){
   /* theme switch: the head script already set data-theme before first paint; this syncs the buttons and handles clicks */

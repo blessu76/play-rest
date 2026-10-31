@@ -94,7 +94,16 @@
    ],
    "terms": {
     "en": "https://iltonggi.ipe.rest/en/terms/",
-    "ko": "https://iltonggi.ipe.rest/ko/terms/"
+    "ko": "https://iltonggi.ipe.rest/ko/terms/",
+    "ja": "https://iltonggi.ipe.rest/ja/terms/",
+    "zh": "https://iltonggi.ipe.rest/zh/terms/",
+    "es": "https://iltonggi.ipe.rest/es/terms/",
+    "pt": "https://iltonggi.ipe.rest/pt/terms/",
+    "id": "https://iltonggi.ipe.rest/id/terms/",
+    "ru": "https://iltonggi.ipe.rest/ru/terms/",
+    "vi": "https://iltonggi.ipe.rest/vi/terms/",
+    "fr": "https://iltonggi.ipe.rest/fr/terms/",
+    "de": "https://iltonggi.ipe.rest/de/terms/"
    },
    "journal": {
     "label": {
@@ -103,7 +112,16 @@
     },
     "url": {
      "en": "https://iltonggi.ipe.rest/blog/",
-     "ko": "https://iltonggi.ipe.rest/ko/blog/"
+     "ko": "https://iltonggi.ipe.rest/ko/blog/",
+     "ja": "https://iltonggi.ipe.rest/ja/blog/",
+     "zh": "https://iltonggi.ipe.rest/zh/blog/",
+     "es": "https://iltonggi.ipe.rest/es/blog/",
+     "pt": "https://iltonggi.ipe.rest/pt/blog/",
+     "id": "https://iltonggi.ipe.rest/id/blog/",
+     "ru": "https://iltonggi.ipe.rest/ru/blog/",
+     "vi": "https://iltonggi.ipe.rest/vi/blog/",
+     "fr": "https://iltonggi.ipe.rest/fr/blog/",
+     "de": "https://iltonggi.ipe.rest/de/blog/"
     },
     "feed": {
      "en": "https://iltonggi.ipe.rest/blog/feed.xml",
@@ -254,7 +272,15 @@
     },
     "url": {
      "en": "https://inkisle.ipe.rest/journal/",
-     "ko": "https://inkisle.ipe.rest/ko/journal/"
+     "ko": "https://inkisle.ipe.rest/ko/journal/",
+     "ja": "https://inkisle.ipe.rest/ja/journal/",
+     "zh": "https://inkisle.ipe.rest/zh/journal/",
+     "es": "https://inkisle.ipe.rest/es/journal/",
+     "pt": "https://inkisle.ipe.rest/pt/journal/",
+     "id": "https://inkisle.ipe.rest/id/journal/",
+     "ru": "https://inkisle.ipe.rest/ru/journal/",
+     "fr": "https://inkisle.ipe.rest/fr/journal/",
+     "de": "https://inkisle.ipe.rest/de/journal/"
     },
     "feed": {
      "en": "https://inkisle.ipe.rest/journal/feed.xml",

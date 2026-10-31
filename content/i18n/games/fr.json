@@ -1,0 +1,174 @@
+{
+ "iltonggi": {
+  "status": "Bientôt disponible",
+  "platform": "D’abord sur iPhone",
+  "pricing": "Sans publicité, sans pistage",
+  "tagline": "Un jeu de stratégie classique de conquête de territoires, court et rapide, qui se déroule à l’époque des Trois Royaumes de Corée.",
+  "pros": [
+   {
+    "h": "Une partie qui tient dans une pause.",
+    "p": "Une partie dure de 5 à 10 minutes, fermer l’application sauvegarde votre partie automatiquement, et rien ne vous presse de vous connecter chaque jour."
+   },
+   {
+    "h": "Une carte que vous ne connaissez que jusqu’où porte votre regard.",
+    "p": "Les terres où vous n’êtes pas allé restent dans le brouillard tant que vous n’y envoyez pas d’espion. Vous pouvez entrer dans une bataille et la commander directement, ou la laisser en automatique."
+   },
+   {
+    "h": "Une application calme et transparente.",
+    "p": "Elle ne collecte aucune information personnelle, n’a ni publicité ni pistage, et ses fonctions principales marchent hors ligne. Le site du jeu est disponible en 11 langues."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si vous voulez du jeu rapide, en temps réel.",
+    "p": "Iltonggi se joue au tour par tour : tout repose sur le choix de l’endroit où frapper, pas sur la vitesse de réaction."
+   },
+   {
+    "h": "Si vous voulez jouer sur Android dès maintenant.",
+    "p": "La version iPhone arrive en premier et les autres plateformes seront annoncées plus tard. Les Trois Royaumes sont un décor, pas une leçon d’histoire : les conditions du jeu précisent qu’il peut s’écarter des faits historiques."
+   }
+  ],
+  "journal_label": "Blog",
+  "compare": {
+   "oneline": "Conquête de terres aux Trois Royaumes",
+   "style": "Stratégie au tour par tour",
+   "length": "5 à 10 minutes",
+   "difficulty": "Choix du royaume et de la difficulté",
+   "players": "Solo, contre l’IA",
+   "platform": "D’abord sur iPhone",
+   "offline": "Fonctions principales hors ligne (seule la météo est en ligne, en option)",
+   "pricing": "Sans publicité, sans pistage",
+   "languages": "11 langues",
+   "status": "Bientôt disponible. Versions TestFlight en cours"
+  }
+ },
+ "inkisle": {
+  "status": "En développement",
+  "platform": "D’abord iOS, Android en parallèle",
+  "pricing": "Toutes les parties gratuites · sans publicité · objets d’aide facultatifs",
+  "tagline": "Un jeu de stratégie léger de conquête d’îles pour votre téléphone : envoyez des flottes d’île en île et teintez la mer de votre couleur.",
+  "pros": [
+   {
+    "h": "Quelques minutes, d’une main.",
+    "p": "Une partie dure de 3 à 5 minutes, et en mode portrait il suffit de glisser le pouce. Ni compte ni réseau nécessaires."
+   },
+   {
+    "h": "Les règles tiennent sur une page.",
+    "p": "Les îles produisent des troupes, et une force plus nombreuse qui arrive prend l’île. Une partie gagnée ne traîne donc pas : elle se termine dès que vous êtes nettement en tête."
+   },
+   {
+    "h": "Lisible même si vous distinguez mal les couleurs.",
+    "p": "Chaque camp a sa couleur et sa forme de drapeau. Terminez une partie et la suivante s’ouvre, et chaque mer ajoute une règle."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si vous voulez une histoire et des personnages.",
+    "p": "Inkisle n’a volontairement pas d’histoire. Le plaisir est de prendre des îles et d’avoir envie d’ouvrir la mer suivante."
+   },
+   {
+    "h": "Si vous voulez un jeu lent au tour par tour, ou affronter d’autres joueurs en ligne dès maintenant.",
+    "p": "Une partie se déroule en temps réel, et le jeu en ligne sera décidé plus tard, selon les retours des joueurs."
+   }
+  ],
+  "journal_label": "Journal",
+  "compare": {
+   "oneline": "Conquête d’îles à l’encre",
+   "style": "Stratégie en temps réel",
+   "length": "3 à 5 minutes",
+   "difficulty": "Chaque nouvelle mer ajoute une règle",
+   "players": "Solo et hors ligne. Le jeu en ligne sera décidé plus tard",
+   "platform": "D’abord iOS, Android en parallèle",
+   "offline": "Hors ligne, sans compte",
+   "pricing": "Toutes les parties gratuites · sans publicité · objets d’aide facultatifs",
+   "languages": "12 langues",
+   "status": "En développement. Versions TestFlight en cours"
+  }
+ },
+ "sunmeld": {
+  "status": "En développement",
+  "platform": "iOS et Android",
+  "pricing": "Essai gratuit, un seul achat débloque tout, sans publicité",
+  "tagline": "Un duel de fusion contre un adversaire IA dans un seul bac partagé. Lâchez une pierre, fusionnez les pierres identiques en l’étape suivante et marquez des points. Si le bac déborde, vous perdez.",
+  "pros": [
+   {
+    "h": "Quatre lignes de règles.",
+    "p": "On lâche des pierres à tour de rôle, les étapes identiques fusionnent, celui qui fusionne marque, et si le bac déborde, le joueur qui a posé la dernière pierre perd."
+   },
+   {
+    "h": "La forme que vous empilez devient l’espace de votre adversaire.",
+    "p": "Vous partagez un seul bac : il y a donc un vrai plaisir à calculer ce que vous laissez derrière vous."
+   },
+   {
+    "h": "Chaque adversaire a ses habitudes.",
+    "p": "Le même bac se joue différemment à chaque fois. L’essai est gratuit, un seul achat débloque tout, et il n’y a pas de publicité."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si vous voulez battre vos propres records ou jouer contre des amis.",
+    "p": "Chaque match est un duel contre un adversaire IA : la sensation est différente d’un puzzle où l’on court après le meilleur score, ou d’une partie contre des personnes."
+   },
+   {
+    "h": "Si vous attendez un genre de jeu entièrement nouveau.",
+    "p": "Lâcher et fusionner est un genre de jeu familier. Ce qui change ici, c’est le bac unique que vous partagez et l’IA que vous affrontez."
+   }
+  ],
+  "journal_label": "Journal",
+  "compare": {
+   "oneline": "Duel de fusion de pierres spatiales",
+   "style": "Duel en tours alternés",
+   "length": "—",
+   "difficulty": "Chaque adversaire a ses habitudes",
+   "players": "1 contre 1 face à l’IA",
+   "platform": "iOS et Android, en développement",
+   "offline": "—",
+   "pricing": "Essai gratuit, un seul achat débloque tout, sans publicité",
+   "languages": "Anglais, coréen",
+   "status": "En développement"
+  }
+ },
+ "claimball": {
+  "status": "Bientôt disponible",
+  "platform": "iOS et Android",
+  "pricing": "Essai gratuit. Un seul achat débloque tout. Sans publicité, sans abonnement.",
+  "tagline": "Un duel décontracté contre un rival IA sur une grille de cahier. La case où rebondit votre balle devient votre terre. Ratez-la, et vous perdez du terrain.",
+  "pros": [
+   {
+    "h": "Environ 90 secondes par match.",
+    "p": "Cela tient même dans un court moment libre, et les dernières secondes sont un face-à-face. (Proposition avant la sortie, donc susceptible de changer.)"
+   },
+   {
+    "h": "Un plateau qui se lit d’un coup d’œil.",
+    "p": "Sur une grille de cahier de 6 sur 10, vos cases et celles de votre rival se distinguent par la couleur. Un smash avec le centre de votre raquette prend 3 cases d’un coup."
+   },
+   {
+    "h": "Vos rivaux font monter le niveau.",
+    "p": "À la sortie, 6 rivaux IA répartis en 2 ligues (proposition avant la sortie, donc susceptible de changer), et d’autres sont prévus dans des mises à jour. Essai gratuit. Un seul achat débloque tout. Sans publicité, sans abonnement."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si les jeux où les mains s’activent vous pèsent.",
+    "p": "Vous renvoyez la balle en temps réel : c’est différent d’un jeu auquel on réfléchit tranquillement."
+   },
+   {
+    "h": "Si vous voulez jouer contre des personnes en ligne.",
+    "p": "Chaque match vous oppose à un rival IA."
+   }
+  ],
+  "journal_label": "Journal",
+  "compare": {
+   "oneline": "Conquérir du terrain sur un cahier",
+   "style": "Duel de balle en temps réel",
+   "length": "Environ 90 secondes (proposition avant la sortie, peut changer)",
+   "difficulty": "6 rivaux IA en 2 ligues à la sortie (proposition avant la sortie, peut changer), d’autres dans des mises à jour",
+   "players": "1 contre 1 face à l’IA",
+   "platform": "iOS et Android, bientôt disponible",
+   "offline": "—",
+   "pricing": "Essai gratuit. Un seul achat débloque tout. Sans publicité, sans abonnement.",
+   "languages": "Anglais, coréen",
+   "status": "Bientôt disponible, date de sortie non fixée"
+  }
+ }
+}

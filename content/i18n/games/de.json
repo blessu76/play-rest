@@ -1,0 +1,174 @@
+{
+ "iltonggi": {
+  "status": "Demnächst",
+  "platform": "Zuerst für iPhone",
+  "pricing": "Keine Werbung, kein Tracking",
+  "tagline": "Ein kurzes, schnelles, klassisches Strategiespiel um Gebietseroberung, angesiedelt in der Zeit der Drei Reiche Koreas.",
+  "pros": [
+   {
+    "h": "Eine Runde, die in eine Pause passt.",
+    "p": "Eine Runde dauert 5 bis 10 Minuten, beim Schließen der App wird Ihr Spiel automatisch gespeichert, und nichts drängt Sie, sich jeden Tag einzuloggen."
+   },
+   {
+    "h": "Eine Karte, die Sie nur so weit kennen, wie Sie sehen.",
+    "p": "Land, das Sie noch nicht betreten haben, bleibt im Nebel, bis Sie einen Spion schicken. Sie können eine Schlacht direkt befehligen oder sie der Automatik überlassen."
+   },
+   {
+    "h": "Eine ruhige, offene App.",
+    "p": "Sie sammelt keine personenbezogenen Daten, hat weder Werbung noch Tracking, und die Kernfunktionen laufen offline. Die Website des Spiels gibt es in 11 Sprachen."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Wenn Sie schnelles Echtzeitspiel wollen.",
+    "p": "Iltonggi ist rundenbasiert, das Gewicht liegt also auf der Wahl, wo Sie zuschlagen, nicht auf der Reaktionsgeschwindigkeit."
+   },
+   {
+    "h": "Wenn Sie sofort auf Android spielen möchten.",
+    "p": "Die iPhone-Version kommt zuerst, andere Plattformen werden später angekündigt. Die Drei Reiche sind ein Schauplatz, keine Geschichtsstunde: Laut den Bedingungen des Spiels kann es von historischen Tatsachen abweichen."
+   }
+  ],
+  "journal_label": "Blog",
+  "compare": {
+   "oneline": "Landnahme zur Zeit der Drei Reiche",
+   "style": "Rundenbasierte Strategie",
+   "length": "5 bis 10 Minuten",
+   "difficulty": "Reich und Schwierigkeit wählbar",
+   "players": "Solo, gegen die KI",
+   "platform": "Zuerst für iPhone",
+   "offline": "Kernfunktionen offline (nur das Wetter optional online)",
+   "pricing": "Keine Werbung, kein Tracking",
+   "languages": "11 Sprachen",
+   "status": "Demnächst. TestFlight-Builds laufen"
+  }
+ },
+ "inkisle": {
+  "status": "In Entwicklung",
+  "platform": "Zuerst iOS, Android parallel",
+  "pricing": "Jede Runde kostenlos · keine Werbung · optionale Hilfsgegenstände",
+  "tagline": "Ein leichtes Strategiespiel um Inseleroberung für Ihr Handy: Schicken Sie Flotten zwischen Inseln hin und her und färben Sie das Meer in Ihrer Farbe.",
+  "pros": [
+   {
+    "h": "Ein paar Minuten, eine Hand.",
+    "p": "Eine Runde dauert 3 bis 5 Minuten, und im Hochformat ziehen Sie einfach mit dem Daumen. Kein Konto und kein Netz nötig."
+   },
+   {
+    "h": "Die Regeln passen auf eine Seite.",
+    "p": "Inseln bringen Truppen hervor, und eine größere ankommende Streitmacht erobert die Insel. Eine gewonnene Runde zieht sich darum nicht hin, sie endet, sobald Sie klar vorne liegen."
+   },
+   {
+    "h": "Lesbar, auch wenn Sie Farben schlecht unterscheiden.",
+    "p": "Jede Seite hat ihre eigene Farbe und Flaggenform. Schaffen Sie eine Runde, öffnet sich die nächste, und jedes Meer bringt eine neue Regel."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Wenn Sie Geschichte und Figuren wollen.",
+    "p": "Inkisle hat bewusst keine Geschichte. Der Reiz liegt darin, Inseln einzunehmen und das nächste Meer öffnen zu wollen."
+   },
+   {
+    "h": "Wenn Sie langsames rundenbasiertes Spiel wollen oder sofort online gegeneinander antreten möchten.",
+    "p": "Eine Runde läuft in Echtzeit, und über Onlinespiel wird später entschieden, je nachdem, wie die Spieler reagieren."
+   }
+  ],
+  "journal_label": "Journal",
+  "compare": {
+   "oneline": "Eroberung mit Inseln und Tinte",
+   "style": "Echtzeitstrategie",
+   "length": "3 bis 5 Minuten",
+   "difficulty": "Jedes neue Meer bringt eine Regel dazu",
+   "players": "Solo und offline. Über Onlinespiel wird später entschieden",
+   "platform": "Zuerst iOS, Android parallel",
+   "offline": "Offline, ohne Konto",
+   "pricing": "Jede Runde kostenlos · keine Werbung · optionale Hilfsgegenstände",
+   "languages": "12 Sprachen",
+   "status": "In Entwicklung. TestFlight-Builds laufen"
+  }
+ },
+ "sunmeld": {
+  "status": "In Entwicklung",
+  "platform": "iOS und Android",
+  "pricing": "Kostenlos ausprobieren, ein einziger Kauf schaltet alles frei, keine Werbung",
+  "tagline": "Ein Verschmelzungsduell gegen einen KI-Gegner in einer gemeinsamen Wanne. Lassen Sie einen Stein fallen, verschmelzen Sie gleiche Steine zur nächsten Stufe und punkten Sie. Läuft die Wanne über, verlieren Sie.",
+  "pros": [
+   {
+    "h": "Vier Zeilen Regeln.",
+    "p": "Abwechselnd Steine fallen lassen, gleiche Stufen verschmelzen, wer verschmilzt, punktet, und läuft die Wanne über, verliert, wer den letzten Stein gesetzt hat."
+   },
+   {
+    "h": "Was Sie stapeln, wird zum Raum Ihres Gegners.",
+    "p": "Sie teilen sich eine Wanne, deshalb hat es seinen Reiz, zu überlegen, was Sie zurücklassen."
+   },
+   {
+    "h": "Jeder Gegner hat seine eigenen Gewohnheiten.",
+    "p": "Dieselbe Wanne verläuft jedes Mal anders. Sie können es kostenlos ausprobieren, ein einziger Kauf schaltet alles frei, und es gibt keine Werbung."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Wenn Sie eigene Rekorde aufstellen oder gegen Freunde spielen möchten.",
+    "p": "Jedes Match ist ein Duell gegen einen KI-Gegner, es fühlt sich also anders an als ein Puzzle, bei dem man einem Highscore nachjagt, oder als das Spiel gegen Menschen."
+   },
+   {
+    "h": "Wenn Sie eine völlig neue Art von Spiel erwarten.",
+    "p": "Fallenlassen und Verschmelzen ist eine bekannte Spielart. Anders ist hier die eine Wanne, die Sie teilen, und die KI, gegen die Sie antreten."
+   }
+  ],
+  "journal_label": "Journal",
+  "compare": {
+   "oneline": "Duell um Weltraumsteine",
+   "style": "Duell mit abwechselnden Zügen",
+   "length": "—",
+   "difficulty": "Jeder Gegner hat eigene Gewohnheiten",
+   "players": "1 gegen 1 gegen die KI",
+   "platform": "iOS und Android, in Entwicklung",
+   "offline": "—",
+   "pricing": "Kostenlos ausprobieren, ein einziger Kauf schaltet alles frei, keine Werbung",
+   "languages": "Englisch, Koreanisch",
+   "status": "In Entwicklung"
+  }
+ },
+ "claimball": {
+  "status": "Demnächst",
+  "platform": "iOS und Android",
+  "pricing": "Kostenlos ausprobieren. Ein einziger Kauf schaltet alles frei. Keine Werbung, kein Abo.",
+  "tagline": "Ein lockeres Duell gegen einen KI-Rivalen auf einem Karoheft-Raster. Das Feld, auf dem Ihr Ball aufspringt, wird Ihr Land. Verfehlen Sie ihn, verlieren Sie Land.",
+  "pros": [
+   {
+    "h": "Etwa 90 Sekunden pro Match.",
+    "p": "Das passt selbst in eine kurze Lücke, und die letzten Sekunden sind ein Showdown. (Ein Vorschlag vor dem Start, kann sich also ändern.)"
+   },
+   {
+    "h": "Ein Spielfeld, das man auf einen Blick liest.",
+    "p": "Auf einem Karoraster von 6 mal 10 sind Ihre Felder und die Ihres Rivalen farblich getrennt. Ein Schmetterball mit der Mitte Ihres Schlägers holt 3 Felder auf einmal."
+   },
+   {
+    "h": "Ihre Rivalen heben das Niveau.",
+    "p": "Zum Start gibt es 6 KI-Rivalen in 2 Ligen (ein Vorschlag vor dem Start, kann sich also ändern), weitere sind in Updates geplant. Kostenlos ausprobieren. Ein einziger Kauf schaltet alles frei. Keine Werbung, kein Abo."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Wenn Ihnen Spiele mit flinken Händen zu viel sind.",
+    "p": "Sie spielen den Ball in Echtzeit zurück, das ist also etwas anderes als ein Spiel, das man in Ruhe durchdenken kann."
+   },
+   {
+    "h": "Wenn Sie online gegen Menschen spielen möchten.",
+    "p": "In jedem Match treten Sie gegen einen KI-Rivalen an."
+   }
+  ],
+  "journal_label": "Journal",
+  "compare": {
+   "oneline": "Land erobern im Karoheft",
+   "style": "Ballduell in Echtzeit",
+   "length": "Etwa 90 Sekunden (Vorschlag vor dem Start, kann sich ändern)",
+   "difficulty": "6 KI-Rivalen in 2 Ligen zum Start (Vorschlag vor dem Start, kann sich ändern), weitere per Update",
+   "players": "1 gegen 1 gegen die KI",
+   "platform": "iOS und Android, demnächst",
+   "offline": "—",
+   "pricing": "Kostenlos ausprobieren. Ein einziger Kauf schaltet alles frei. Keine Werbung, kein Abo.",
+   "languages": "Englisch, Koreanisch",
+   "status": "Demnächst, Erscheinungstermin noch offen"
+  }
+ }
+}

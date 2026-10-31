@@ -41,9 +41,31 @@ img{max-width:100%;height:auto}
 .nav>a{min-height:44px;min-width:44px;padding:0 4px;display:flex;align-items:center;justify-content:center;color:var(--ink);text-decoration:none}
 .nav>a:hover{color:var(--cobalt)}
 .nav>a[aria-current="page"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px;text-decoration-color:var(--cobalt)}
-.langsw{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:16px;font-family:var(--mono)}
-.langsw a{min-height:44px;min-width:44px;display:flex;align-items:center;justify-content:center;color:var(--ink);text-decoration:none;padding:0 10px}
+/* language switch: a <details> menu (11 languages do not fit a row at 320px); the list drops under the whole bar, right-aligned to the gutter */
+.bar{position:relative}
+.langsw{font-size:16px}
+.langsw>summary{list-style:none;box-sizing:border-box;min-height:44px;min-width:44px;padding:0 10px;display:flex;align-items:center;gap:6px;
+  border:1px solid var(--line);border-radius:10px;color:var(--ink);font-family:var(--mono);cursor:pointer;user-select:none}
+.langsw>summary::-webkit-details-marker{display:none}
+.langsw>summary::marker{content:""}
+.langsw>summary:hover{color:var(--cobalt)}
+.langsw[open]>summary{border-color:var(--cobalt)}
+.langsw svg{display:block;flex:none}
+.langsw__list{position:absolute;z-index:20;top:100%;right:var(--gutter);box-sizing:border-box;width:min(360px,calc(100% - 2 * var(--gutter)));
+  margin:0;padding:6px;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;
+  background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,.18);font-family:var(--font)}
+.langsw a{min-height:44px;display:flex;align-items:center;padding:4px 12px;box-sizing:border-box;border-radius:8px;color:var(--ink);text-decoration:none;line-height:1.3}
+.langsw a:hover{color:var(--cobalt)}
+/* each language name in its own script's font (a Japanese page would otherwise draw Русский with Japanese full-width Cyrillic) */
+.langsw__list a{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.langsw__list a[lang="ko"]{font-family:Inter,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif}
+.langsw__list a[lang="ja"]{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",Meiryo,"Noto Sans CJK JP","Noto Sans JP",system-ui,sans-serif}
+.langsw__list a[lang="zh"]{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Noto Sans SC",system-ui,sans-serif}
 .langsw a[aria-current="true"]{background:var(--ink);color:var(--bg)}
+/* AI translation notice (decision 0087): every page in a machine-translated language says so and links to the English original */
+.mtnote{background:var(--tint);border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+.mtnote p{margin:0;padding:10px 0}
+.mtnote a{color:var(--cobalt);text-underline-offset:3px}
 
 /* hero */
 .hero{padding:72px 0 56px}
@@ -95,7 +117,7 @@ img{max-width:100%;height:auto}
 .cols li strong{color:var(--ink);font-weight:600}
 .links{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:0 20px}
 .textlink{display:inline-flex;align-items:center;min-height:44px;min-width:44px;font-size:16px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:0 20px;border-radius:10px;background:var(--cobalt);color:var(--oncobalt);text-decoration:none;font-weight:600;font-size:16px;border:1px solid var(--cobalt)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;max-width:100%;box-sizing:border-box;text-align:center;padding:0 20px;border-radius:10px;background:var(--cobalt);color:var(--oncobalt);text-decoration:none;font-weight:600;font-size:16px;border:1px solid var(--cobalt)}
 .btn:hover{text-decoration:underline}
 .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
 .btn.ghost:hover{border-color:var(--cobalt);color:var(--cobalt);text-decoration:none}
@@ -151,6 +173,12 @@ img{max-width:100%;height:auto}
 .journal-card__link:hover h3{text-decoration:underline;text-underline-offset:3px}
 .jhead{padding-bottom:8px}
 :lang(ko) :is(.journal-card,.jitem,.jhead,.post){word-break:keep-all}
+/* ja / zh: system CJK fonts only (no web font), strict kinsoku line breaking */
+html:lang(ja){--font:Inter,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",Meiryo,"Noto Sans CJK JP","Noto Sans JP",system-ui,sans-serif}
+html:lang(zh){--font:Inter,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Noto Sans SC",system-ui,sans-serif}
+:lang(ja),:lang(zh){line-break:strict;word-break:normal}
+/* long German / Russian words: hyphenate in narrow places (buttons, badges, table cells, card labels, card titles; not the big headings) instead of overflowing */
+:is(:lang(de),:lang(ru)) :is(h3,h4,.btn,.badge,.cmp th,.cmp td,.cmp-card dt,.cmp-card dd,.nav>a,.choose span){hyphens:auto;-webkit-hyphens:auto}
 .jlist{list-style:none;margin:0;padding:0;max-width:720px}
 .jitem{padding:20px 0;border-top:1px solid var(--line)}
 .jitem:last-child{border-bottom:1px solid var(--line)}
@@ -191,7 +219,7 @@ img{max-width:100%;height:auto}
 .themesw button:hover{color:var(--cobalt)}
 .themesw button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 .themesw button:focus-visible{outline:3px solid var(--cobalt);outline-offset:-3px}
-.langsw a:focus-visible{outline-offset:-3px} /* the group clips overflow, so the ring sits inside */
+.langsw a:focus-visible{outline-offset:-3px} /* the ring sits inside the cell so neighbouring cells do not cover it */
 /* a focused *selected* cell: the ring is drawn on the filled background, so it takes the page colour (>= 9:1 in all three themes), not cobalt */
 .themesw button[aria-pressed="true"]:focus-visible,.langsw a[aria-current="true"]:focus-visible{outline-color:var(--bg)}
 .themesw svg{display:block}

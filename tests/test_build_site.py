@@ -41,7 +41,7 @@ class Built(unittest.TestCase):
                 self.assertTrue((self.root / (lang_dir + p) / "index.html").is_file(), lang_dir + p)
         for gone in ("terms", "releases", "support", "feed.xml"):
             self.assertFalse((self.root / gone).exists(), gone)
-        self.assertEqual(self.ctx.langs, ["en", "ko"])
+        self.assertEqual(self.ctx.langs, list(bs.LANGS))  # all 11 languages of decision 0087 are built
 
     def test_repo_basics(self):
         self.assertEqual((REPO / "CNAME").read_text().strip(), "play.ipe.rest")
@@ -195,12 +195,12 @@ class Built(unittest.TestCase):
         l = self.read("llms.txt")
         for gid, u in GAMES.items():
             self.assertIn(u, l)
-        self.assertEqual(self.read("sitemap.xml").count("<url>"), 8)
+        self.assertEqual(self.read("sitemap.xml").count("<url>"), 4 * len(bs.LANGS))  # home + about + privacy + contact
 
     def test_i18n_keys_match(self):
-        for l in ("en", "ko"):
+        for l in bs.LANGS:  # ko has no AI-translation strings; en carries them as the source of the nine translations
             data = json.loads((REPO / "content" / "i18n" / (l + ".json")).read_text(encoding="utf-8"))
-            self.assertEqual(sorted(data), sorted(bs.KEYS), l)
+            self.assertEqual(sorted(data), sorted(tuple(bs.KEYS) + (() if l == "ko" else bs.MT_KEYS)), l)
 
     def test_markdown_and_front_matter(self):
         meta, body = bs.parse_front("---\ntitle: T\ndescription: \"D\"\n---\n## H\n\nA **b** [l](https://x.y) `c`\n\n- one\n- two\n")
