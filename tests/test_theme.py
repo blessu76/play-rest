@@ -77,6 +77,42 @@ class Theme(unittest.TestCase):
         self.assertNotIn(".game .btn{color:#0c1118}", self.css)
         self.assertIsNone(re.search(r'@media \(prefers-color-scheme:dark\)\{:root\{', self.css))
 
+    def _bg_of(self, selector_re):
+        m = re.search(selector_re + r"\{[^}]*?--bg:(#[0-9a-fA-F]{6})", self.css)
+        self.assertIsNotNone(m, selector_re)
+        return m.group(1).lower()
+
+    def test_css_bg_matches_js_and_head_script_colours(self):
+        """--bg in play.css == theme-color in the head script, in play.js and in the build's metas, for each theme."""
+        css_bg = {"light": self._bg_of(r"\n:root"), "dark": self._bg_of(r':root\[data-theme="dark"\]'), "noir": self._bg_of(r':root\[data-theme="noir"\]')}
+        self.assertEqual(css_bg, COLORS)
+        js_map = dict(re.findall(r"(light|dark|noir):'(#[0-9a-fA-F]{6})'", re.search(r"C=\{(.*?)\}", self.js).group(1)))
+        self.assertEqual(js_map, COLORS)
+        head_map = dict(re.findall(r"(light|dark|noir):'(#[0-9a-fA-F]{6})'", re.search(r"var t,C=\{(.*?)\}", bs.THEME_HEAD_SCRIPT).group(1)))
+        self.assertEqual(head_map, COLORS)
+        # the no-JS media metas (light / dark) are the same colours too
+        h = (Path(self.root) / "index.html").read_text(encoding="utf-8")
+        self.assertIn('content="%s" media="(prefers-color-scheme: light)"' % COLORS["light"], h)
+        self.assertIn('content="%s" media="(prefers-color-scheme: dark)"' % COLORS["dark"], h)
+
+    def test_forced_colors_and_reduced_motion_rules_exist(self):
+        self.assertIn("@media (forced-colors:active)", self.css)
+        fc = self.css[self.css.index("@media (forced-colors:active)"):]
+        self.assertRegex(fc, r'aria-pressed="true"\][^{]*\{background:Highlight;color:HighlightText')
+        self.assertRegex(fc, r"focus-visible[^{]*\{outline:3px solid CanvasText")
+        # focus rules come after the selected rules inside the block so the ring is not lost
+        self.assertLess(fc.index("background:Highlight"), fc.index("outline:3px solid CanvasText"))
+        self.assertIn("@media (prefers-reduced-motion:reduce){html.theme-anim,html.theme-anim *{transition:none !important}}", self.css)
+        self.assertIn("rm.matches", self.js)  # the click handler also skips the animation class
+
+    def test_selected_focus_ring_and_noir_details(self):
+        self.assertIn(':root:not([data-theme]) .themesw{display:none}', self.css)  # JS off: the switch is hidden
+        self.assertRegex(self.css, r'\.themesw button\[aria-pressed="true"\]:focus-visible,\.langsw a\[aria-current="true"\]:focus-visible\{outline-color:var\(--bg\)\}')
+        self.assertIn('[data-theme="noir"] :is(.themesw button[aria-pressed="true"],.langsw a[aria-current="true"]){background:var(--cobalt);color:var(--bg)}', self.css)
+        self.assertIn("color-mix(in srgb,var(--ac) 3%,var(--tint))", self.css)
+        self.assertNotIn("var(--ac) 5%,var(--tint)", self.css)
+        self.assertIn("color:color-mix(in srgb,var(--a2) 78%,var(--ink))", self.css)
+
     def test_switch_css_is_44px(self):
         self.assertRegex(self.css, r"\.themesw button\{[^}]*width:44px;height:44px")
 

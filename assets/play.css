@@ -191,8 +191,18 @@ img{max-width:100%;height:auto}
 .themesw button:hover{color:var(--cobalt)}
 .themesw button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 .themesw button:focus-visible{outline:3px solid var(--cobalt);outline-offset:-3px}
+.langsw a:focus-visible{outline-offset:-3px} /* the group clips overflow, so the ring sits inside */
+/* a focused *selected* cell: the ring is drawn on the filled background, so it takes the page colour (>= 9:1 in all three themes), not cobalt */
+.themesw button[aria-pressed="true"]:focus-visible,.langsw a[aria-current="true"]:focus-visible{outline-color:var(--bg)}
 .themesw svg{display:block}
-@media (forced-colors:active){.themesw button[aria-pressed="true"]{outline:2px solid Highlight;outline-offset:-2px}}
+/* no JS = no data-theme: the buttons would do nothing, so hide them (the device setting decides the theme) */
+:root:not([data-theme]) .themesw{display:none}
+/* forced colors: selected = filled Highlight, focus = ring; written after the focus rules above so both show */
+@media (forced-colors:active){
+  .themesw button[aria-pressed="true"],.langsw a[aria-current="true"]{background:Highlight;color:HighlightText}
+  .themesw button:focus-visible,.langsw a:focus-visible{outline:3px solid CanvasText;outline-offset:-3px}
+  .themesw button[aria-pressed="true"]:focus-visible,.langsw a[aria-current="true"]:focus-visible{outline-color:HighlightText}
+}
 html.theme-anim,html.theme-anim *{transition:background-color .2s,color .2s,border-color .2s !important}
 @media (prefers-reduced-motion:reduce){html.theme-anim,html.theme-anim *{transition:none !important}}
 
@@ -201,7 +211,7 @@ html.theme-anim,html.theme-anim *{transition:background-color .2s,color .2s,bord
 :root[data-theme="noir"] .game{
   border:1px solid transparent;
   background:
-    linear-gradient(color-mix(in srgb,var(--ac) 5%,var(--tint)),color-mix(in srgb,var(--ac) 5%,var(--tint))) padding-box,
+    linear-gradient(color-mix(in srgb,var(--ac) 3%,var(--tint)),color-mix(in srgb,var(--ac) 3%,var(--tint))) padding-box,
     linear-gradient(135deg,rgba(185,162,242,.55),rgba(185,162,242,.10) 35%,rgba(124,84,200,.10) 65%,rgba(185,162,242,.35)) border-box}
 :root[data-theme="noir"] .journal-card{
   border:1px solid transparent;
@@ -211,6 +221,10 @@ html.theme-anim,html.theme-anim *{transition:background-color .2s,color .2s,bord
 :root[data-theme="noir"] .journal-card:hover,:root[data-theme="noir"] .journal-card:focus-within{border-color:transparent;box-shadow:0 0 0 1px var(--cobalt)} }
 /* violet vignette from the top-left corner of the page (on body, not .hero, so there is no hard edge under the header) */
 :root[data-theme="noir"] body{background-image:radial-gradient(ellipse 900px 560px at 12% 0,rgba(124,84,200,.18),transparent 70%);background-repeat:no-repeat}
+/* noir: accent-coloured text inside cards is 22% toward --ink (calmer on near-black; 8.7:1 or better); icons, buttons and borders keep --ac */
+:root[data-theme="noir"] :is(.game .badge,.cols h4,.cmp-card h3,.cmp thead th){color:color-mix(in srgb,var(--a2) 78%,var(--ink))}
+/* noir: the selected cell is the lavender (9.0:1 with --bg) instead of the near-white ink */
+@media (forced-colors:none){:root[data-theme="noir"] :is(.themesw button[aria-pressed="true"],.langsw a[aria-current="true"]){background:var(--cobalt);color:var(--bg)}} /* not in forced colors: Highlight rules above must win there */
 :root[data-theme="noir"] ::selection{background:#4a3480;color:#fff}
 :root[data-theme="noir"]{scrollbar-color:#3a2f52 var(--bg)}
 @media (max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}

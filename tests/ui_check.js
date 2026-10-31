@@ -1,7 +1,9 @@
 // UI gate: no horizontal overflow at 375 / 320 / 768 / 1280 px, no console errors, text >= 16px (.badge/.updated >= 14px),
 // touch targets >= 44x44 on the home and journal pages at 375px, screenshots, in all three themes (light, dark, noir).
 // Theme checks: data-theme + aria-pressed match the saved choice, the 3 switch buttons are 44x44, the page background is the theme's --bg,
-// a click switches theme and persists it, and the device setting is followed when nothing is saved (also with JS off).
+// a click switches theme and persists it, and the device setting is followed when nothing is saved (also with JS off, where the switch is hidden).
+// Focus: the keyboard focus ring of the selected and an unselected cell of the theme switch and the language switch is >= 3:1 against its own background
+// (all 3 themes); in forced-colors mode the selected cell and the focus ring are both visible and differ.
 //   NODE_PATH=<dir containing playwright> node tests/ui_check.js [outDir]
 // PLAY_ROOT=<dir> serves another repo-shaped folder (e.g. python3 tests/demo_site.py DIR: the site with test-only journal posts).
 // Serves the repo root on a random local port (static, like GitHub Pages: /dir/ -> /dir/index.html).
@@ -135,9 +137,46 @@ const SHOT = new Set(['/', '/about/', '/privacy/', '/contact/', '/ko/', '/ko/abo
       const np = await nj.newPage();
       await np.goto(origin + '/', { waitUntil: 'load' });
       const bg = await np.evaluate(() => getComputedStyle(document.body).backgroundColor);
+      const shown = await np.evaluate(() => getComputedStyle(document.querySelector('.themesw')).display);
       await nj.close();
       const wantBg = THEMES[want][1]; // JS off: no data-theme, the device setting alone decides
       if (bg !== wantBg) bad.push(`JS off, device ${dev}: body background ${bg}, expected ${wantBg}`);
+      if (shown !== 'none') bad.push(`JS off, device ${dev}: theme switch should be hidden, display is ${shown}`);
+      k++;
+    }
+    // focus ring contrast on the switches, per theme (keyboard focus), and forced-colors
+    const lum = c => { const [r, g, bl] = c.match(/[\d.]+/g).slice(0, 3).map(v => { v /= 255; return v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); }); return 0.2126 * r + 0.7152 * g + 0.0722 * bl; };
+    const ratio = (a, c) => { const x = lum(a), y = lum(c); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); };
+    const focusInfo = async (page, sel) => { await page.keyboard.press('Tab'); await page.focus(sel);
+      return page.evaluate(sel => { const e = document.querySelector(sel), c = getComputedStyle(e); return { fg: c.color, bg: c.backgroundColor, oc: c.outlineColor, ow: c.outlineWidth, os: c.outlineStyle, sel: e.matches(':focus-visible') }; }, sel); };
+    for (const theme of Object.keys(THEMES)) {
+      const ctx = await b.newContext({ viewport: { width: 1280, height: 800 }, colorScheme: THEMES[theme][0] });
+      await ctx.addInitScript(t => { try { localStorage.setItem('play-theme', t); } catch (e) {} }, theme);
+      const page = await ctx.newPage();
+      await page.goto(origin + '/', { waitUntil: 'load' });
+      const other = theme === 'light' ? 'dark' : 'light';
+      for (const [name, sel] of [[`selected theme cell`, `.themesw [data-theme-set=${theme}]`], [`unselected theme cell`, `.themesw [data-theme-set=${other}]`],
+                                  [`selected language cell`, '.langsw a[aria-current=true]'], [`unselected language cell`, '.langsw a:not([aria-current=true])']]) {
+        const f = await focusInfo(page, sel);
+        const cell = /selected/.test(name) && !/unselected/.test(name);
+        // the ring sits on the cell's own background when that is filled (selected), otherwise on the page background
+        const under = cell ? f.bg : THEMES[theme][1];
+        if (f.os === 'none' || f.ow === '0px') bad.push(`${theme}: ${name} has no focus ring`);
+        else if (ratio(f.oc, under) < 3) bad.push(`${theme}: ${name} focus ring ${f.oc} on ${under} is ${ratio(f.oc, under).toFixed(2)}:1 (< 3)`);
+        k++;
+      }
+      await ctx.close();
+    }
+    {
+      const ctx = await b.newContext({ viewport: { width: 1280, height: 800 }, colorScheme: 'light', forcedColors: 'active' });
+      await ctx.addInitScript(() => { try { localStorage.setItem('play-theme', 'noir'); } catch (e) {} });
+      const page = await ctx.newPage();
+      await page.goto(origin + '/', { waitUntil: 'load' });
+      const sel = await page.evaluate(() => ({ s: getComputedStyle(document.querySelector('.themesw [aria-pressed=true]')).backgroundColor, u: getComputedStyle(document.querySelector('.themesw [aria-pressed=false]')).backgroundColor }));
+      if (sel.s === sel.u) bad.push(`forced-colors: selected theme cell looks like an unselected one (${sel.s})`);
+      const f = await focusInfo(page, '.themesw [aria-pressed=true]');
+      if (f.ow !== '3px' || f.oc === f.bg) bad.push(`forced-colors: focus ring on the selected cell ${f.ow} ${f.oc} on ${f.bg}`);
+      await ctx.close();
       k++;
     }
     n += k;
