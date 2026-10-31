@@ -1,0 +1,617 @@
+{
+ "games": [
+  {
+   "id": "iltonggi",
+   "name": {
+    "en": "Iltonggi",
+    "ko": "일통기"
+   },
+   "sub": {
+    "en": "一統記",
+    "ko": "Iltonggi · 一統記"
+   },
+   "url": "https://iltonggi.ipe.rest",
+   "icon": "iltonggi.png",
+   "accent": [
+    "#b3201a",
+    "#e58a85"
+   ],
+   "platforms": [
+    "iOS"
+   ],
+   "genre": [
+    "Strategy"
+   ],
+   "status": {
+    "en": "Coming soon",
+    "ko": "곧 출시"
+   },
+   "platform": {
+    "en": "iPhone first",
+    "ko": "iPhone 먼저"
+   },
+   "pricing": {
+    "en": "No ads, no tracking",
+    "ko": "광고·추적 없음"
+   },
+   "tagline": {
+    "en": "A short, fast, classic territory-conquest strategy game set in Korea's Three Kingdoms era.",
+    "ko": "한국 삼국시대를 배경으로 한 짧고 빠른 고전 땅따먹기 전략 게임."
+   },
+   "pros": [
+    {
+     "h": {
+      "en": "One round that fits a break.",
+      "ko": "쉬는 시간에 맞춘 한 판."
+     },
+     "p": {
+      "en": "A round takes 5 to 10 minutes, closing the app saves your game automatically, and nothing nags you to log in every day.",
+      "ko": "5~10분이면 끝나고, 닫으면 자동으로 저장됩니다. 매일 접속하라고 재촉하지도 않습니다."
+     }
+    },
+    {
+     "h": {
+      "en": "A map you only know as far as you can see.",
+      "ko": "보이는 만큼만 아는 지도."
+     },
+     "p": {
+      "en": "Land you have not visited stays in the fog until you send a spy. You can step into a battle with direct command, or leave it to auto.",
+      "ko": "아직 가 보지 않은 땅은 안개에 가려 있고, 첩자를 보내야 엿볼 수 있습니다. 직접 지휘로 전투에 개입할 수도 있고 자동에 맡길 수도 있습니다."
+     }
+    },
+    {
+     "h": {
+      "en": "A quiet, open app.",
+      "ko": "조용하고 열린 앱."
+     },
+     "p": {
+      "en": "It collects no personal information, has no ads or tracking, and its core features work offline. The game's site is available in 11 languages.",
+      "ko": "개인정보를 수집하지 않고 광고·추적이 없으며 핵심 기능은 오프라인으로 동작합니다. 게임 사이트는 11개 언어로 볼 수 있습니다."
+     }
+    }
+   ],
+   "cons": [
+    {
+     "h": {
+      "en": "If you want fast, real-time play.",
+      "ko": "실시간으로 손을 빠르게 쓰는 게임을 찾는 분."
+     },
+     "p": {
+      "en": "Iltonggi is turn-based, so the weight is on choosing where to strike, not on reaction speed.",
+      "ko": "일통기는 턴제라서 반응 속도보다 어디를 칠지 고르는 쪽에 무게가 있습니다."
+     }
+    },
+    {
+     "h": {
+      "en": "If you want to play on Android right now.",
+      "ko": "지금 Android 로 하고 싶은 분."
+     },
+     "p": {
+      "en": "The iPhone version comes first and other platforms will be announced later. The Three Kingdoms is a setting, not a history lesson: the game's terms say it may differ from historical fact.",
+      "ko": "iPhone 버전을 먼저 내놓고, 다른 플랫폼은 나중에 안내합니다. 삼국시대는 소재일 뿐이라 역사 고증을 기대하시는 분께도 맞지 않을 수 있습니다(앱 약관에 「역사적 사실과 다를 수 있습니다」)."
+     }
+    }
+   ],
+   "terms": {
+    "en": "https://iltonggi.ipe.rest/en/terms/",
+    "ko": "https://iltonggi.ipe.rest/ko/terms/"
+   },
+   "journal": {
+    "label": {
+     "en": "Blog",
+     "ko": "블로그"
+    },
+    "url": {
+     "en": "https://iltonggi.ipe.rest/blog/",
+     "ko": "https://iltonggi.ipe.rest/ko/blog/"
+    },
+    "feed": {
+     "en": "https://iltonggi.ipe.rest/blog/feed.xml",
+     "ko": "https://iltonggi.ipe.rest/blog/feed.xml"
+    }
+   },
+   "compare": {
+    "oneline": {
+     "en": "Three Kingdoms land grab",
+     "ko": "삼국시대 땅따먹기"
+    },
+    "style": {
+     "en": "Turn-based strategy",
+     "ko": "턴제 전략"
+    },
+    "length": {
+     "en": "5 to 10 minutes",
+     "ko": "5~10분"
+    },
+    "difficulty": {
+     "en": "Choose your kingdom and difficulty",
+     "ko": "나라와 난이도를 고름"
+    },
+    "players": {
+     "en": "Solo, against the AI",
+     "ko": "혼자 (AI 상대)"
+    },
+    "platform": {
+     "en": "iPhone first",
+     "ko": "iPhone 먼저"
+    },
+    "offline": {
+     "en": "Core features work offline (only the weather is optionally online)",
+     "ko": "핵심 기능은 오프라인 (날씨만 선택적으로 인터넷)"
+    },
+    "pricing": {
+     "en": "No ads, no tracking",
+     "ko": "광고·추적 없음"
+    },
+    "languages": {
+     "en": "11",
+     "ko": "11개"
+    },
+    "status": {
+     "en": "Coming soon. TestFlight builds in progress",
+     "ko": "곧 출시. TestFlight 빌드 진행 중"
+    }
+   }
+  },
+  {
+   "id": "inkisle",
+   "name": {
+    "en": "Inkisle",
+    "ko": "잉크아일"
+   },
+   "sub": {
+    "en": "InkIsle",
+    "ko": "Inkisle · InkIsle"
+   },
+   "url": "https://inkisle.ipe.rest",
+   "icon": "inkisle.png",
+   "accent": [
+    "#17756f",
+    "#5cc6bc"
+   ],
+   "platforms": [
+    "iOS",
+    "Android"
+   ],
+   "genre": [
+    "Strategy"
+   ],
+   "status": {
+    "en": "In development",
+    "ko": "개발 중"
+   },
+   "platform": {
+    "en": "iOS first, Android alongside",
+    "ko": "iOS 먼저, Android 병행"
+   },
+   "pricing": {
+    "en": "Every round free · no ads · optional help items",
+    "ko": "모든 판 무료 · 광고 없음 · 선택형 도움 아이템"
+   },
+   "tagline": {
+    "en": "A light island-conquest strategy game for your phone: send fleets between islands and tint the sea your color.",
+    "ko": "섬 사이로 함대를 보내 바다를 내 색으로 물들이는, 폰으로 가볍게 즐기는 섬 땅따먹기 전략 게임."
+   },
+   "pros": [
+    {
+     "h": {
+      "en": "A few minutes, one hand.",
+      "ko": "한 손으로 몇 분."
+     },
+     "p": {
+      "en": "A round takes 3 to 5 minutes, and in portrait you just drag with your thumb. No account and no network needed.",
+      "ko": "한 판이 3~5분이고, 세로 화면에서 엄지로 끌어다 놓기만 하면 됩니다. 계정도 네트워크도 필요 없습니다."
+     }
+    },
+    {
+     "h": {
+      "en": "The rules fit on one page.",
+      "ko": "규칙이 한 장에 들어갑니다."
+     },
+     "p": {
+      "en": "Islands make troops, and a larger force arriving takes the island. So a won round does not drag on, it ends once you are clearly ahead.",
+      "ko": "섬이 병력을 만들고, 더 많은 병력이 도착하면 차지합니다. 이긴 판이 질질 끌리지 않도록 확실히 이기면 끝내 줍니다(승기 판정)."
+     }
+    },
+    {
+     "h": {
+      "en": "Readable even if you cannot tell the colors apart.",
+      "ko": "색을 못 알아봐도 읽힙니다."
+     },
+     "p": {
+      "en": "Each side has its own color and flag shape. Clear a round and the next one opens, and every sea adds one rule.",
+      "ko": "진영마다 색과 깃발 모양이 달라 색으로만 구분하지 않습니다. 한 판을 깰 때마다 다음 판이 열리고 바다마다 규칙이 하나씩 늘어납니다."
+     }
+    }
+   ],
+   "cons": [
+    {
+     "h": {
+      "en": "If you want a story and characters.",
+      "ko": "이야기와 인물이 있는 게임을 원하는 분."
+     },
+     "p": {
+      "en": "Inkisle has no story on purpose. The fun is in taking islands and wanting to open the next sea.",
+      "ko": "잉크아일은 일부러 스토리를 두지 않고, 섬을 차지하는 재미와 다음 바다를 열고 싶은 마음으로 끌고 갑니다."
+     }
+    },
+    {
+     "h": {
+      "en": "If you want slow turn-based play, or to compete online right now.",
+      "ko": "천천히 생각하는 턴제를 원하거나, 지금 온라인으로 겨루고 싶은 분."
+     },
+     "p": {
+      "en": "A round flows in real time, and online play will be decided later, based on how players respond.",
+      "ko": "한 판은 실시간으로 흘러가고, 온라인 대전은 플레이어 반응을 보고 나중에 정합니다."
+     }
+    }
+   ],
+   "terms": null,
+   "journal": {
+    "label": {
+     "en": "Journal",
+     "ko": "저널"
+    },
+    "url": {
+     "en": "https://inkisle.ipe.rest/journal/",
+     "ko": "https://inkisle.ipe.rest/ko/journal/"
+    },
+    "feed": {
+     "en": "https://inkisle.ipe.rest/journal/feed.xml",
+     "ko": "https://inkisle.ipe.rest/ko/journal/feed.xml"
+    }
+   },
+   "compare": {
+    "oneline": {
+     "en": "Island and ink conquest",
+     "ko": "섬·잉크 점령"
+    },
+    "style": {
+     "en": "Real-time strategy",
+     "ko": "실시간 전략"
+    },
+    "length": {
+     "en": "3 to 5 minutes",
+     "ko": "3~5분"
+    },
+    "difficulty": {
+     "en": "Each new sea adds one rule",
+     "ko": "바다를 열 때마다 규칙이 하나씩 늘어남"
+    },
+    "players": {
+     "en": "Solo and offline. Online play will be decided later",
+     "ko": "혼자, 오프라인. 온라인 대전은 나중에 정함"
+    },
+    "platform": {
+     "en": "iOS first, Android alongside",
+     "ko": "iOS 먼저, Android 병행 개발"
+    },
+    "offline": {
+     "en": "Offline, no account",
+     "ko": "오프라인, 계정 없음"
+    },
+    "pricing": {
+     "en": "Every round free · no ads · optional help items",
+     "ko": "모든 판 무료 · 광고 없음 · 선택형 도움 아이템"
+    },
+    "languages": {
+     "en": "12",
+     "ko": "12개"
+    },
+    "status": {
+     "en": "In development. TestFlight builds in progress",
+     "ko": "개발 중. TestFlight 빌드 진행 중"
+    }
+   }
+  },
+  {
+   "id": "sunmeld",
+   "name": {
+    "en": "Sunmeld",
+    "ko": "Sunmeld"
+   },
+   "sub": {
+    "en": "Space Merge Duel",
+    "ko": "썬멜드 · Space Merge Duel"
+   },
+   "url": "https://sunmeld.ipe.rest",
+   "icon": "sunmeld.png",
+   "accent": [
+    "#2b5fd9",
+    "#8fb0f5"
+   ],
+   "platforms": [
+    "iOS",
+    "Android"
+   ],
+   "genre": [
+    "Puzzle",
+    "Casual"
+   ],
+   "status": {
+    "en": "In development",
+    "ko": "개발 중"
+   },
+   "platform": {
+    "en": "iOS and Android",
+    "ko": "iOS · Android"
+   },
+   "pricing": {
+    "en": "Free to try, one purchase unlocks everything, no ads",
+    "ko": "무료 체험, 한 번 구매로 모두 열기, 광고 없음"
+   },
+   "tagline": {
+    "en": "A merge duel against an AI opponent in one shared tub. Drop a stone, merge matching stones into the next stage, and score. Overflow the tub and you lose.",
+    "ko": "하나뿐인 통을 AI 상대와 나눠 쓰는 합치기 대결. 우주 돌을 합쳐 점수를 얻고, 통이 넘치면 집니다."
+   },
+   "pros": [
+    {
+     "h": {
+      "en": "Four lines of rules.",
+      "ko": "규칙이 네 줄입니다."
+     },
+     "p": {
+      "en": "Take turns dropping stones, matching stages merge, whoever merges scores, and if the tub overflows the player who placed the last stone loses.",
+      "ko": "번갈아 놓고, 같은 단계끼리 닿으면 합쳐지고, 합친 쪽이 득점하고, 넘치면 마지막에 놓은 쪽이 집니다."
+     }
+    },
+    {
+     "h": {
+      "en": "The shape you stack becomes your opponent's space.",
+      "ko": "내가 쌓은 모양이 상대의 자리가 됩니다."
+     },
+     "p": {
+      "en": "You share one tub, so there is a taste of working out what you leave behind.",
+      "ko": "통을 둘이 같이 쓰기 때문에 「내가 남기는 자리」를 계산하는 맛이 있습니다."
+     }
+    },
+    {
+     "h": {
+      "en": "Every opponent has its own habits.",
+      "ko": "상대마다 버릇이 달라 같은 통도 매번 다르게 풀립니다."
+     },
+     "p": {
+      "en": "The same tub plays out differently each time. It is free to try, one purchase unlocks everything, and there are no ads.",
+      "ko": "무료로 체험해 볼 수 있고, 한 번 구매로 모든 기능을 열며 광고는 없습니다."
+     }
+    }
+   ],
+   "cons": [
+    {
+     "h": {
+      "en": "If you want to build your own records or play against friends.",
+      "ko": "혼자 기록을 쌓거나 친구와 겨루고 싶은 분."
+     },
+     "p": {
+      "en": "Every match is a duel against an AI opponent, so it feels different from a puzzle where you chase a high score, or from playing people.",
+      "ko": "모든 경기가 AI 상대와의 대결이라서, 점수판을 올리는 퍼즐이나 사람과의 대전과는 결이 다릅니다."
+     }
+    },
+    {
+     "h": {
+      "en": "If you expect a brand-new kind of game.",
+      "ko": "완전히 새로운 장르를 기대하는 분."
+     },
+     "p": {
+      "en": "Dropping and merging is a familiar kind of game. What is different here is the one tub you share and the AI you duel.",
+      "ko": "떨어뜨리고 합치는 장르 자체는 널리 알려져 있습니다. 다른 점은 둘이 함께 쓰는 하나의 통과 AI 와의 대결입니다."
+     }
+    }
+   ],
+   "terms": {
+    "en": "https://sunmeld.ipe.rest/terms/",
+    "ko": "https://sunmeld.ipe.rest/ko/terms/"
+   },
+   "journal": {
+    "label": {
+     "en": "Journal",
+     "ko": "저널"
+    },
+    "url": {
+     "en": "https://sunmeld.ipe.rest/journal/",
+     "ko": "https://sunmeld.ipe.rest/ko/journal/"
+    },
+    "feed": {
+     "en": "https://sunmeld.ipe.rest/journal/feed.xml",
+     "ko": "https://sunmeld.ipe.rest/ko/journal/feed.xml"
+    }
+   },
+   "compare": {
+    "oneline": {
+     "en": "Space-stone merge duel",
+     "ko": "우주 돌 합치기 대결"
+    },
+    "style": {
+     "en": "Duel in alternating turns",
+     "ko": "턴을 번갈아 놓는 대결"
+    },
+    "length": {
+     "en": "—",
+     "ko": "—"
+    },
+    "difficulty": {
+     "en": "Each opponent has its own habits",
+     "ko": "상대마다 버릇이 다름"
+    },
+    "players": {
+     "en": "1 on 1 against the AI",
+     "ko": "1:1, AI 상대"
+    },
+    "platform": {
+     "en": "iOS and Android, in development",
+     "ko": "iOS · Android 개발 중"
+    },
+    "offline": {
+     "en": "—",
+     "ko": "—"
+    },
+    "pricing": {
+     "en": "Free to try, one purchase unlocks everything, no ads",
+     "ko": "무료 체험, 한 번 구매로 모두 열기, 광고 없음"
+    },
+    "languages": {
+     "en": "English, Korean",
+     "ko": "영어·한국어"
+    },
+    "status": {
+     "en": "In development",
+     "ko": "개발 중"
+    }
+   }
+  },
+  {
+   "id": "claimball",
+   "name": {
+    "en": "Claimball",
+    "ko": "Claimball"
+   },
+   "sub": {
+    "en": "Claimball",
+    "ko": "클레임볼 · Claimball"
+   },
+   "url": "https://claimball.ipe.rest",
+   "icon": "claimball.png",
+   "accent": [
+    "#9a5a00",
+    "#ffb44d"
+   ],
+   "platforms": [
+    "iOS",
+    "Android"
+   ],
+   "genre": [
+    "Casual"
+   ],
+   "status": {
+    "en": "Coming soon",
+    "ko": "출시 예정"
+   },
+   "platform": {
+    "en": "iOS and Android",
+    "ko": "iOS · Android"
+   },
+   "pricing": {
+    "en": "No ads. Pricing will be announced closer to launch",
+    "ko": "광고 없음. 가격은 출시 전에 공지"
+   },
+   "tagline": {
+    "en": "A casual duel against an AI rival on a notebook grid. The tile where your ball bounces becomes your land. Miss, and you lose land.",
+    "ko": "공책 격자 위에서 AI 라이벌과 겨루는 캐주얼 대결 게임. 공이 튕긴 칸은 친 사람의 땅이 되고, 놓치면 땅을 잃습니다."
+   },
+   "pros": [
+    {
+     "h": {
+      "en": "About 90 seconds a match.",
+      "ko": "한 판이 약 90초입니다."
+     },
+     "p": {
+      "en": "It fits even a short gap, and the last seconds are a showdown.",
+      "ko": "짧은 틈에도 끝까지 갑니다. 마지막 몇 초는 승부처입니다."
+     }
+    },
+    {
+     "h": {
+      "en": "A board you read at a glance.",
+      "ko": "판이 한눈에 읽힙니다."
+     },
+     "p": {
+      "en": "On a 6 by 10 notebook grid, your tiles and your rival's are split by color. A smash with the center of your paddle claims 3 tiles at once.",
+      "ko": "6 x 10 공책 격자 위에서 내 칸과 상대 칸이 색으로 갈립니다. 패들 한가운데로 맞히는 스매시는 한 번에 3칸을 차지합니다."
+     }
+    },
+    {
+     "h": {
+      "en": "Your rivals raise the level.",
+      "ko": "상대가 단계를 올려 줍니다."
+     },
+     "p": {
+      "en": "At launch there are 6 AI rivals across 2 leagues, with more planned in updates. There are no ads, and pricing will be announced closer to launch.",
+      "ko": "출시 때 AI 라이벌 6명이 2개 리그에 나뉘어 있고, 업데이트로 늘어납니다. 광고는 없고, 가격은 출시 전에 공지합니다."
+     }
+    }
+   ],
+   "cons": [
+    {
+     "h": {
+      "en": "If busy-handed games are a burden.",
+      "ko": "손이 바쁜 게임이 부담스러운 분."
+     },
+     "p": {
+      "en": "You return the ball in real time, so it differs from a game you can think through at leisure.",
+      "ko": "공을 받아치는 실시간 조작이라서 여유롭게 생각하며 두는 게임과는 다릅니다."
+     }
+    },
+    {
+     "h": {
+      "en": "If you want to play people online.",
+      "ko": "사람과 온라인으로 겨루고 싶은 분."
+     },
+     "p": {
+      "en": "Every match is you against an AI rival.",
+      "ko": "모든 경기가 AI 라이벌과의 대결입니다."
+     }
+    }
+   ],
+   "terms": {
+    "en": "https://claimball.ipe.rest/terms/",
+    "ko": "https://claimball.ipe.rest/ko/terms/"
+   },
+   "journal": {
+    "label": {
+     "en": "Journal",
+     "ko": "저널"
+    },
+    "url": {
+     "en": "https://claimball.ipe.rest/journal/",
+     "ko": "https://claimball.ipe.rest/ko/journal/"
+    },
+    "feed": {
+     "en": "https://claimball.ipe.rest/journal/feed.xml",
+     "ko": "https://claimball.ipe.rest/ko/journal/feed.xml"
+    }
+   },
+   "compare": {
+    "oneline": {
+     "en": "Claiming land on a notebook",
+     "ko": "공책 위 땅 차지"
+    },
+    "style": {
+     "en": "Real-time ball duel",
+     "ko": "실시간 받아치기 대결"
+    },
+    "length": {
+     "en": "About 90 seconds",
+     "ko": "약 90초"
+    },
+    "difficulty": {
+     "en": "6 AI rivals in 2 leagues at launch, more in updates",
+     "ko": "출시 때 AI 라이벌 6명, 리그 2개 (업데이트로 늘어남)"
+    },
+    "players": {
+     "en": "1 on 1 against the AI",
+     "ko": "1:1, AI 상대"
+    },
+    "platform": {
+     "en": "iOS and Android, coming soon",
+     "ko": "iOS · Android 출시 예정"
+    },
+    "offline": {
+     "en": "—",
+     "ko": "—"
+    },
+    "pricing": {
+     "en": "No ads. Pricing will be announced closer to launch",
+     "ko": "광고 없음. 가격은 출시 전에 공지"
+    },
+    "languages": {
+     "en": "English, Korean",
+     "ko": "영어·한국어"
+    },
+    "status": {
+     "en": "Coming soon, release date not set",
+     "ko": "출시 예정, 출시일 미정"
+    }
+   }
+  }
+ ]
+}
