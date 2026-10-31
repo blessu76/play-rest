@@ -1,4 +1,5 @@
 """build_site: structure, policy rules (no store links / prices / ratings / emoji / banned words), SEO output."""
+import html
 import json
 import re
 import shutil
@@ -9,6 +10,10 @@ from helpers import REPO, bs, build, jsonld, make_site
 PAGES = ["", "about/", "privacy/", "contact/"]
 GAMES = {"iltonggi": "https://iltonggi.ipe.rest", "inkisle": "https://inkisle.ipe.rest",
          "sunmeld": "https://sunmeld.ipe.rest", "claimball": "https://claimball.ipe.rest"}
+
+
+CLAIMBALL_PRICE_EN = "Free to try. One purchase unlocks everything. No ads, no subscription."
+CLAIMBALL_PRICE_KO = "무료로 해 보고, 한 번 결제하면 전부 열려요. 광고도 구독도 없어요."
 
 
 class Built(unittest.TestCase):
@@ -93,10 +98,68 @@ class Built(unittest.TestCase):
         g = {x["id"]: x for x in self.ctx.games}["claimball"]
         blob = json.dumps(g, ensure_ascii=False)
         self.assertNotIn("Paid", blob)
-        self.assertIn("Pricing will be announced closer to launch", g["pricing"]["en"])
+        self.assertEqual(g["pricing"]["en"], CLAIMBALL_PRICE_EN)
+        self.assertEqual(g["pricing"]["ko"], CLAIMBALL_PRICE_KO)
         self.assertIn("90", g["compare"]["length"]["en"])
         inkisle = {x["id"]: x for x in self.ctx.games}["inkisle"]
         self.assertIn("광고 없음", inkisle["pricing"]["ko"])
+
+    def test_claimball_pricing_is_the_free_to_try_one_purchase_wording_everywhere(self):
+        pages = [(d + "index.html", CLAIMBALL_PRICE_EN if d == "" else CLAIMBALL_PRICE_KO) for d in ("", "ko/")]
+        for f, want in pages:
+            h = html.unescape(self.read(f))
+            self.assertIn(want, h, f)
+            self.assertGreaterEqual(h.count(want), 3, f)  # card line, third pro, compare table/card
+        llms = self.read("llms.txt")
+        self.assertIn("Pricing: " + CLAIMBALL_PRICE_EN, llms)
+        for _, h in self.all_html():
+            self.assertNotIn("Pricing will be announced", h)
+            self.assertNotIn("가격은 출시 전에 공지", h)
+        self.assertNotIn("Pricing will be announced", llms)
+        # the 90 seconds / 6 rivals / 2 leagues figures keep their "may change" caveat
+        en = html.unescape(self.read("index.html"))
+        self.assertGreaterEqual(en.count("pre-launch proposal"), 3)
+        self.assertGreaterEqual(html.unescape(self.read("ko/index.html")).count("출시 전 제안값"), 3)
+
+    def test_compare_lead_does_not_claim_only_stated_facts(self):
+        for lang in ("en", "ko"):
+            lead = json.loads((REPO / "content" / "i18n" / (lang + ".json")).read_text(encoding="utf-8"))["compare_lead"]
+            self.assertNotIn("already state", lead)
+            self.assertNotIn("이미 적힌", lead)
+        self.assertIn("current plans", self.read("index.html"))
+        self.assertIn("현재 계획", self.read("ko/index.html"))
+
+    def test_css_reading_text_is_at_least_16px(self):
+        css = (REPO / "assets" / "play.css").read_text(encoding="utf-8")
+        css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+        sizes = {}  # selector -> font-size px (plain px declarations only; base rules, not media overrides)
+        for sel, body in re.findall(r"(?m)^([^@{}\n][^{}]*)\{([^{}]*)\}", css):
+            m = re.search(r"(?:^|;)font-size:(\d+(?:\.\d+)?)px", body)
+            if m:
+                for one in sel.split(","):
+                    sizes[one.strip()] = float(m.group(1))
+        short_labels = {".badge", ".updated"}  # may be 14px
+        for sel, px in sizes.items():
+            if sel in short_labels:
+                self.assertGreaterEqual(px, 14, sel)
+            else:
+                self.assertGreaterEqual(px, 16, sel)
+        for sel in (".cols ol", ".cmp", ".cmp-card dl div", ".btn", ".textlink", ".nav", ".price", ".note", ".meta", ".small",
+                    ".foot-h", ".foot-langs", ".foot-brand p", ".cols h4", ".site-footer li a", ".sub", ".crumbs"):
+            self.assertIn(sel, sizes, sel)
+        for sel in (".badge", ".updated"):
+            self.assertLessEqual(sizes[sel], 16)
+        self.assertNotRegex(css, r"font-size:\.\d+em")
+
+    def test_og_source_is_not_deployed(self):
+        self.assertFalse((REPO / "assets" / "og-source.html").exists())
+        self.assertTrue((REPO / "scripts" / "og-source.html").exists())
+
+    def test_no_leftovers_from_the_template_in_scripts(self):
+        for f in ("assets/langpick.js", "assets/play.js"):
+            t = (REPO / f).read_text(encoding="utf-8")
+            self.assertNotIn("cb-lang", t)
+            self.assertNotIn("Sunmeld", t)
 
     def test_no_prices_ratings_emoji_banned_words_anywhere(self):
         texts = [h for _, h in self.all_html()] + [self.read("llms.txt")]

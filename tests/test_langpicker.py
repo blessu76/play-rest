@@ -1,5 +1,5 @@
 """Language picker: on every built page of every language the picker shows that page's own language
-(aria-current, <html lang>), and a saved choice ("cb-lang") sends "/" to that language."""
+(aria-current, <html lang>), and a saved choice ("play-lang") sends "/" to that language."""
 import json
 import re
 import shutil
@@ -64,7 +64,7 @@ for(const l of %s){
   const {listener}=run(%s,'/%s/',['en-US']);
   listener({target:{closest:()=>a}});
   const r=run(%s,'/',['en-US']);
-  out.push([l,store['cb-lang'],r.to]);
+  out.push([l,store['play-lang'],r.to]);
 }
 console.log(JSON.stringify(out));
 """ % (json.dumps(list(bs.LANGS)), json.dumps(js), "x", json.dumps(pick))

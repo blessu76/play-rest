@@ -26,7 +26,7 @@ import sys
 from pathlib import Path
 
 SITE = "https://play.ipe.rest"
-ASSET_V = "20261031b"  # keep in sync: bump when assets/play.css or play.js change
+ASSET_V = "20261031c"  # keep in sync: bump when assets/play.css or play.js change
 SITE_UPDATED = "2026-10-31"  # "Last updated" of home / 404 and sitemap lastmod: bump by hand when their text changes
 OPERATOR = "Davy Kim (ipe Studio)"
 EMAIL = "ipe.haven@gmail.com"

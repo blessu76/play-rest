@@ -491,8 +491,8 @@
     "ko": "iOS · Android"
    },
    "pricing": {
-    "en": "No ads. Pricing will be announced closer to launch",
-    "ko": "광고 없음. 가격은 출시 전에 공지"
+    "en": "Free to try. One purchase unlocks everything. No ads, no subscription.",
+    "ko": "무료로 해 보고, 한 번 결제하면 전부 열려요. 광고도 구독도 없어요."
    },
    "tagline": {
     "en": "A casual duel against an AI rival on a notebook grid. The tile where your ball bounces becomes your land. Miss, and you lose land.",
@@ -505,8 +505,8 @@
       "ko": "한 판이 약 90초입니다."
      },
      "p": {
-      "en": "It fits even a short gap, and the last seconds are a showdown.",
-      "ko": "짧은 틈에도 끝까지 갑니다. 마지막 몇 초는 승부처입니다."
+      "en": "It fits even a short gap, and the last seconds are a showdown. (A pre-launch proposal, so it may change.)",
+      "ko": "짧은 틈에도 끝까지 갑니다. 마지막 몇 초는 승부처입니다. (출시 전 제안값이라 바뀔 수 있어요.)"
      }
     },
     {
@@ -525,8 +525,8 @@
       "ko": "상대가 단계를 올려 줍니다."
      },
      "p": {
-      "en": "At launch there are 6 AI rivals across 2 leagues, with more planned in updates. There are no ads, and pricing will be announced closer to launch.",
-      "ko": "출시 때 AI 라이벌 6명이 2개 리그에 나뉘어 있고, 업데이트로 늘어납니다. 광고는 없고, 가격은 출시 전에 공지합니다."
+      "en": "At launch there are 6 AI rivals across 2 leagues (a pre-launch proposal, so it may change), with more planned in updates. Free to try. One purchase unlocks everything. No ads, no subscription.",
+      "ko": "출시 때 AI 라이벌 6명이 2개 리그에 나뉘어 있고(출시 전 제안값이라 바뀔 수 있어요), 업데이트로 늘어납니다. 무료로 해 보고, 한 번 결제하면 전부 열려요. 광고도 구독도 없어요."
      }
     }
    ],
@@ -580,12 +580,12 @@
      "ko": "실시간 받아치기 대결"
     },
     "length": {
-     "en": "About 90 seconds",
-     "ko": "약 90초"
+     "en": "About 90 seconds (pre-launch proposal, may change)",
+     "ko": "약 90초 (출시 전 제안값, 바뀔 수 있음)"
     },
     "difficulty": {
-     "en": "6 AI rivals in 2 leagues at launch, more in updates",
-     "ko": "출시 때 AI 라이벌 6명, 리그 2개 (업데이트로 늘어남)"
+     "en": "6 AI rivals in 2 leagues at launch (pre-launch proposal, may change), more in updates",
+     "ko": "출시 때 AI 라이벌 6명, 리그 2개 (출시 전 제안값, 바뀔 수 있음. 업데이트로 늘어남)"
     },
     "players": {
      "en": "1 on 1 against the AI",
@@ -600,8 +600,8 @@
      "ko": "—"
     },
     "pricing": {
-     "en": "No ads. Pricing will be announced closer to launch",
-     "ko": "광고 없음. 가격은 출시 전에 공지"
+     "en": "Free to try. One purchase unlocks everything. No ads, no subscription.",
+     "ko": "무료로 해 보고, 한 번 결제하면 전부 열려요. 광고도 구독도 없어요."
     },
     "languages": {
      "en": "English, Korean",

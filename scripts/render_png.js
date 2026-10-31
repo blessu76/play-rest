@@ -7,7 +7,7 @@ const A = path.join(__dirname, '..', 'assets');
 (async () => {
   const b = await chromium.launch();
   let p = await b.newPage({ viewport: { width: 1200, height: 630 } });
-  await p.goto('file://' + path.join(A, 'og-source.html'), { waitUntil: 'load' });
+  await p.goto('file://' + path.join(__dirname, 'og-source.html'), { waitUntil: 'load' });
   await p.evaluate(() => document.fonts.ready);
   await p.screenshot({ path: path.join(A, 'og-image.png') });
   await p.close();

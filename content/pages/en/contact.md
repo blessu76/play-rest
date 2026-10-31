@@ -31,4 +31,4 @@ No. See the [Privacy Policy](/privacy/) for details.
 
 ### Where are the terms of use?
 
-This portal has no terms of its own. Each game's terms are on its own site, linked in the footer.
+This portal has no terms of its own. Terms of use are on the game sites that have them (Inkisle has none yet), linked in the footer.
