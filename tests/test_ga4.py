@@ -7,6 +7,20 @@ from helpers import build, bs, make_site
 
 LANGS = ["en", "ko", "ja", "zh", "es", "pt", "id", "ru", "vi", "fr", "de"]
 GA_ID = "G-XG4BH800J0"
+# home-card sentence p3_p as on origin/main before the GA4 commit (it said "no tracking" without limiting it to the games)
+OLD_P3_P = {
+    'en': 'No streak nagging, no ads, no accounts, no tracking.',
+    'ko': '매일 접속하라고 재촉하지 않고, 광고로 끊지 않고, 계정과 추적으로 붙잡지 않습니다.',
+    'ja': '連続ログインの催促も、広告も、アカウントも、トラッキングもありません。',
+    'zh': '没有连续登录的催促，没有广告，没有账号，没有追踪。',
+    'es': 'Sin insistencia con rachas, sin anuncios, sin cuentas, sin seguimiento.',
+    'pt': 'Sem insistência por sequências, sem anúncios, sem contas, sem rastreamento.',
+    'id': 'Tanpa desakan main setiap hari, tanpa iklan, tanpa akun, tanpa pelacakan.',
+    'ru': 'Никаких напоминаний о сериях, никакой рекламы, аккаунтов и слежки.',
+    'vi': 'Không thúc giục giữ chuỗi ngày chơi, không quảng cáo, không tài khoản, không theo dõi.',
+    'fr': 'Pas de relances pour garder une série, pas de publicité, pas de compte, pas de pistage.',
+    'de': 'Kein Drängen wegen Serien, keine Werbung, keine Konten, kein Tracking.',
+}
 
 
 class Ga4(unittest.TestCase):
@@ -89,9 +103,29 @@ class Ga4(unittest.TestCase):
         for lang in LANGS:
             card = self.ctx.i18n[lang]["p3_p"]
             with self.subTest(lang):
-                self.assertNotEqual(card, {"en": "No streak nagging, no ads, no accounts, no tracking."}.get(lang))
+                self.assertNotEqual(card, OLD_P3_P[lang])  # the claim was rewritten in every language
+                self.assertGreater(len(card), 10)
+                self.assertIn(card, self.page(lang, ""))
         self.assertTrue(self.ctx.i18n["en"]["p3_p"].endswith("inside the games."))
+        self.assertIn("게임 안에서는", self.ctx.i18n["ko"]["p3_p"])
 
+    def test_footer_game_links_are_tracked_like_the_cards(self):
+        ids = sorted(g["id"] for g in self.ctx.games)
+        for lang in LANGS:
+            foot = re.search(r"<footer.*</footer>", self.page(lang, ""), re.S).group(0)
+            found = re.findall(r'<li><a href="https://[^"]+" rel="noopener" data-game="([a-z]+)" data-placement="footer">', foot)
+            with self.subTest(lang):
+                self.assertEqual(sorted(found), ids)
+        self.assertIn("a.getAttribute('data-placement')||'card'", self.page("en", ""))
+        self.assertEqual(self.page("en", "").count('data-placement="card"'), len(ids))
+
+    def test_snippet_skips_local_previews(self):
+        text = self.page("en", "")
+        guard = "var H=location.hostname;if(!H||H==='localhost'||H==='127.0.0.1')return;"
+        self.assertEqual(text.count(guard), 1)
+        # the guard comes before the gtag loader and before any event listener
+        self.assertLess(text.index(guard), text.index("googletagmanager.com/gtag/js"))
+        self.assertLess(text.index(guard), text.index("addEventListener('click',track)"))
 
 if __name__ == "__main__":
     unittest.main()

@@ -232,8 +232,13 @@ class DateGate(Reader):
         for slug, title in (("turn-based-in-a-break", "Turn-based games that fit in a break"), ("killing-time-honestly", "Killing time, honestly")):
             self.assertNotIn(slug, blob)
             self.assertNotIn(title, blob)
-        for future in ("2026-11-02", "turn-based-in-a-break", "killing-time-honestly"):
-            self.assertNotIn(future, self.read("sitemap.xml"))  # not even as a lastmod (the site's own pages are dated 11-01, the 11-01/11-02 posts' dates must not show)
+        sm = self.read("sitemap.xml")
+        for future in ("turn-based-in-a-break", "killing-time-honestly"):
+            self.assertNotIn(future, sm)
+        # not even as a lastmod: every journal URL is dated on or before the build day (independent of SITE_UPDATED)
+        lastmods = re.findall(r"<loc>https://play\.ipe\.rest/(?:[a-z]{2}/)?journal/[^<]*</loc><lastmod>([^<]+)</lastmod>", sm)
+        self.assertTrue(lastmods)
+        self.assertEqual([d for d in lastmods if d > "2026-10-31"], [])
         self.assertIn("<loc>https://play.ipe.rest/journal/why-rounds-end/</loc>", self.read("sitemap.xml"))
         self.assertIn("why-rounds-end", self.read("journal/feed.xml"))
         self.assertEqual(self.read("journal/feed.xml").count("<item>"), 2)

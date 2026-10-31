@@ -56,14 +56,16 @@ EFFECTIVE = "2026-11-01"
 GA_MEASUREMENT_ID = "G-XG4BH800J0"
 GA_SNIPPET = (
     "<script>(function(){var GA_ID='%s';"
+    # local preview (localhost / 127.0.0.1 / file:// = empty hostname): no gtag load, no events
+    "var H=location.hostname;if(!H||H==='localhost'||H==='127.0.0.1')return;"
     "var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(s);"
     "window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments)};"
     "window.gtag('js',new Date());window.gtag('config',GA_ID);"
-    # game-card 'official site' buttons point to *.ipe.rest, which the outbound handler skips -> own event (game id + link address only)
+    # game-card buttons and footer game links point to *.ipe.rest, which the outbound handler skips -> own event (game id + link address + card|footer)
     "function track(e){if(e.type==='auxclick'&&e.button!==1)return;"
     "var a=e.target.closest&&e.target.closest('a[href^=\"http\"]');if(!a)return;"
     "var g=a.getAttribute('data-game');"
-    "if(g){window.gtag('event','select_game',{game:g,link_url:a.href,transport_type:'beacon'});return}"
+    "if(g){window.gtag('event','select_game',{game:g,placement:a.getAttribute('data-placement')||'card',link_url:a.href,transport_type:'beacon'});return}"
     "var h=a.hostname;if(h==='ipe.rest'||/\\.ipe\\.rest$/.test(h))return;"
     "window.gtag('event','outbound_click',{link_url:a.href,link_domain:h,transport_type:'beacon'})}"
     "document.addEventListener('click',track);document.addEventListener('auxclick',track)})();</script>") % GA_MEASUREMENT_ID
@@ -645,7 +647,8 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
               '<span class="brand-sub">games</span></a><nav class="nav" aria-label="main">%s</nav>'
               '<div class="tools">%s<div class="themesw" role="group" aria-label="%s">%s</div></div></div></header>') % (
         esc(path_home(lang)), nav_html, langsw, esc(t("theme_label")), theme_btns)
-    game_links = "".join('<li><a href="%s" rel="noopener">%s</a></li>' % (esc(g["url"]), esc(g["name"][lang])) for g in ctx.games)
+    game_links = "".join('<li><a href="%s" rel="noopener" data-game="%s" data-placement="footer">%s</a></li>' % (
+        esc(g["url"]), esc(g["id"]), esc(g["name"][lang])) for g in ctx.games)
     terms_links = "".join('<li><a href="%s" rel="noopener"%s>%s</a></li>' % (esc(h), a, esc(g["name"][lang] + m))
                           for g in ctx.games if g.get("terms") for h, a, m in [loc_link(ctx, g["terms"], lang)])
     site_links = ('<li><a href="https://ipe.rest/" rel="noopener">ipe.rest</a></li><li><a href="%s">%s</a></li><li><a href="%s"%s>%s</a></li>'
@@ -708,7 +711,7 @@ def game_card(ctx, lang, g):
     pros = "".join("<li><strong>%s</strong> %s</li>" % (esc(x["h"][lang]), esc(x["p"][lang])) for x in g["pros"])
     cons = "".join("<li><strong>%s</strong> %s</li>" % (esc(x["h"][lang]), esc(x["p"][lang])) for x in g["cons"])
     j = g["journal"]
-    links = ['<a class="btn" href="%s" rel="noopener" data-game="%s">%s: %s <span aria-hidden="true">→</span></a>' % (
+    links = ['<a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card">%s: %s <span aria-hidden="true">→</span></a>' % (
         esc(g["url"]), esc(g["id"]), esc(t("g_visit")), esc(g["name"][lang]))]
     h, a, m = loc_link(ctx, j["url"], lang)
     links.append('<a class="textlink" href="%s" rel="noopener"%s>%s</a>' % (esc(h), a, esc("%s: %s%s" % (j["label"][lang], t("g_blog"), m))))
