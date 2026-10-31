@@ -46,7 +46,7 @@ from pathlib import Path
 
 SITE = "https://play.ipe.rest"
 KST = dt.timezone(dt.timedelta(hours=9))
-ASSET_V = "20261031h"  # keep in sync: bump when assets/play.css or play.js change
+ASSET_V = "20261031i"  # keep in sync: bump when assets/play.css or play.js change
 SITE_UPDATED = "2026-10-31"  # "Last updated" of home / 404 and sitemap lastmod: bump by hand when their text changes
 OPERATOR = "Davy Kim (ipe Studio)"
 EMAIL = "ipe.haven@gmail.com"
@@ -626,8 +626,8 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
     theme_btns = "".join('<button type="button" data-theme-set="%s" aria-pressed="false" aria-label="%s" title="%s">%s</button>' % (
         k, esc(t("theme_" + k)), esc(t("theme_" + k)), svg) for k, svg in THEME_ICONS)
     header = ('<header class="site-header"><div class="wrap bar"><a class="brand" href="%s" aria-label="ipe() Games"><span class="logo">ipe()</span>'
-              '<span class="brand-sub">games</span></a><nav class="nav" aria-label="main">%s%s'
-              '<div class="themesw" role="group" aria-label="%s">%s</div></nav></div></header>') % (
+              '<span class="brand-sub">games</span></a><nav class="nav" aria-label="main">%s</nav>'
+              '<div class="tools">%s<div class="themesw" role="group" aria-label="%s">%s</div></div></div></header>') % (
         esc(path_home(lang)), nav_html, langsw, esc(t("theme_label")), theme_btns)
     game_links = "".join('<li><a href="%s" rel="noopener">%s</a></li>' % (esc(g["url"]), esc(g["name"][lang])) for g in ctx.games)
     terms_links = "".join('<li><a href="%s" rel="noopener"%s>%s</a></li>' % (esc(h), a, esc(g["name"][lang] + m))

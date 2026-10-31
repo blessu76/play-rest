@@ -37,19 +37,23 @@ img{max-width:100%;height:auto}
 .brand{display:flex;align-items:baseline;gap:8px;min-height:44px;align-items:center;text-decoration:none;color:var(--ink)}
 .logo{font-family:var(--mono);font-weight:600;font-size:20px;letter-spacing:-.02em}
 .brand-sub{font-family:var(--mono);font-size:16px;color:var(--muted)}
-.nav{display:flex;flex-wrap:wrap;align-items:center;gap:0 12px;font-size:16px}
+/* header: brand | nav (links only) | one "settings" pill at the right end: language (globe + code) and theme (3 icons) share a single border.
+   <= 820px the pill moves up beside the brand and the links get their own full-width row, so nothing wraps or overflows at 320px. */
+.nav{display:flex;flex-wrap:wrap;align-items:center;gap:0 12px;margin-left:auto;font-size:16px}
+.tools{display:flex;align-items:stretch;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
 .nav>a{min-height:44px;min-width:44px;padding:0 4px;display:flex;align-items:center;justify-content:center;color:var(--ink);text-decoration:none}
 .nav>a:hover{color:var(--cobalt)}
 .nav>a[aria-current="page"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px;text-decoration-color:var(--cobalt)}
 /* language switch: a <details> menu (11 languages do not fit a row at 320px); the list drops under the whole bar, right-aligned to the gutter */
 .bar{position:relative}
 .langsw{font-size:16px}
-.langsw>summary{list-style:none;box-sizing:border-box;min-height:44px;min-width:44px;padding:0 10px;display:flex;align-items:center;gap:6px;
-  border:1px solid var(--line);border-radius:10px;color:var(--ink);font-family:var(--mono);cursor:pointer;user-select:none}
+.langsw>summary{list-style:none;box-sizing:border-box;min-height:44px;min-width:44px;padding:0 12px;display:flex;align-items:center;gap:6px;
+  border:0;border-radius:9px 0 0 9px;color:var(--ink);font-family:var(--mono);cursor:pointer;user-select:none}
+.langsw>summary:focus-visible{outline-offset:-3px}
 .langsw>summary::-webkit-details-marker{display:none}
 .langsw>summary::marker{content:""}
 .langsw>summary:hover{color:var(--cobalt)}
-.langsw[open]>summary{border-color:var(--cobalt)}
+.langsw[open]>summary{background:var(--tint);color:var(--cobalt)}
 .langsw svg{display:block;flex:none}
 .langsw__list{position:absolute;z-index:20;top:100%;right:var(--gutter);box-sizing:border-box;width:min(360px,calc(100% - 2 * var(--gutter)));
   margin:0;padding:6px;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;
@@ -214,7 +218,7 @@ html:lang(zh){--font:Inter,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","N
 @media (prefers-color-scheme:dark){:root:not([data-theme]) :is(.game,.cmp-card,.made li){--ac:var(--a2)}:root:not([data-theme]) .cmp thead th{border-bottom-color:var(--a2);color:var(--a2)}}
 
 /* theme switch (light / dark / noir) */
-.themesw{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.themesw{display:flex;border-left:1px solid var(--line);border-radius:0 9px 9px 0;overflow:hidden}
 .themesw button{all:unset;box-sizing:border-box;width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:var(--ink);cursor:pointer}
 .themesw button:hover{color:var(--cobalt)}
 .themesw button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
@@ -255,6 +259,14 @@ html.theme-anim,html.theme-anim *{transition:background-color .2s,color .2s,bord
 @media (forced-colors:none){:root[data-theme="noir"] :is(.themesw button[aria-pressed="true"],.langsw a[aria-current="true"]){background:var(--cobalt);color:var(--bg)}} /* not in forced colors: Highlight rules above must win there */
 :root[data-theme="noir"] ::selection{background:#4a3480;color:#fff}
 :root[data-theme="noir"]{scrollbar-color:#3a2f52 var(--bg)}
+@media (max-width:820px){
+  .bar{gap:0 12px}
+  .brand{order:1;margin-right:auto}
+  .tools{order:2}
+  .nav{order:3;flex:1 0 100%;margin-left:0;justify-content:space-between;gap:0 4px}
+  .nav>a{flex:1 1 auto;padding:0 8px}
+}
+@media (max-width:359px){.brand-sub{display:none}.nav{gap:0}.nav>a{padding:0 2px}}
 @media (max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){.cmp-wide{display:none}.cmp-cards{display:block}.hero{padding:48px 0 40px}.sec{padding:48px 0}}
 @media (max-width:520px){
