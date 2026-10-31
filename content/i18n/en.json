@@ -2,6 +2,7 @@
  "nav_home": "Home",
  "nav_games": "Games",
  "nav_about": "About",
+ "nav_journal": "Journal",
  "nav_contact": "Contact",
  "nav_privacy": "Privacy",
  "skip": "Skip to content",
@@ -74,5 +75,13 @@
  "footer_site": "Studio",
  "footer_about": "About",
  "nf_h": "Page not found",
- "nf_p": "That page does not exist. Try the home page."
+ "nf_p": "That page does not exist. Try the home page.",
+ "journal_h": "Journal",
+ "journal_lead": "Notes on turn-based games, killing-time games and how ipe() thinks about making games.",
+ "journal_all": "All posts",
+ "journal_empty": "No posts yet. The first ones are on their way.",
+ "journal_desc": "The ipe() Games journal: notes on turn-based games, killing-time games and the philosophy behind our short-round games.",
+ "journal_rss": "RSS feed",
+ "journal_back": "Back to the journal",
+ "journal_feed_title": "ipe() Games Journal"
 }

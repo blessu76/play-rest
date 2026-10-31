@@ -6,11 +6,16 @@ Sources
   content/games.json                the four games: facts, card copy, compare cells, links (text keyed by language)
   content/pages/<lang>/<page>.md    about / privacy / contact (front matter title + description + updated,
                                     Markdown body, placeholders {{OPERATOR}} {{EMAIL}} {{EFFECTIVE}})
+  content/journal/<slug>.<lang>.md  journal posts (en + ko pair per slug; front matter title, description, published
+                                    [KST, YYYY-MM-DDTHH:MM+09:00], optional updated / excerpt; Markdown body)
+  content/shared/ipe-localtime.js   company-wide module (byte-for-byte copy of ipe-rest/shared), inlined into pages with
+                                    <time data-ipe-time>: stored in KST, shown in the reader's time zone
 
 Output (generated, never edit by hand)
   en lives at the root, ko under /ko/:
   /  /about/  /privacy/  /contact/  /ko/ ...same...  /404.html  /sitemap.xml  /robots.txt  /llms.txt
-  There is no portal journal and no portal terms page: games link to their own sites for both.
+  /journal/  /journal/<slug>/  /journal/feed.xml  and  /ko/journal/ ... (list, posts, RSS; the home page shows the newest 3)
+  There is no portal terms page: games link to their own sites.
 
 Usage
   python3 scripts/build_site.py                 # build into the repo root
@@ -18,6 +23,7 @@ Usage
   python3 scripts/build_site.py --root DIR      # another repo-shaped folder (tests)
 """
 import argparse
+import datetime as dt
 import html
 import json
 import re
@@ -26,7 +32,8 @@ import sys
 from pathlib import Path
 
 SITE = "https://play.ipe.rest"
-ASSET_V = "20261031c"  # keep in sync: bump when assets/play.css or play.js change
+KST = dt.timezone(dt.timedelta(hours=9))
+ASSET_V = "20261031d"  # keep in sync: bump when assets/play.css or play.js change
 SITE_UPDATED = "2026-10-31"  # "Last updated" of home / 404 and sitemap lastmod: bump by hand when their text changes
 OPERATOR = "Davy Kim (ipe Studio)"
 EMAIL = "ipe.haven@gmail.com"
@@ -41,12 +48,18 @@ TITLE_MAX, DESC_MAX = 60, 160
 LANGS = {"en": ("English", "en_US", "ltr", "EN"), "ko": ("한국어", "ko_KR", "ltr", "KO")}
 MAIN_LANGS = ("en", "ko")
 PAGE_SLUGS = ("about", "privacy", "contact")
+JOURNAL_DIR = "journal"
+RESERVED_SLUGS = {"feed"}  # /journal/feed.xml is the RSS file, no post may take that URL segment
+SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+PUBLISHED_RE = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}\+09:00$")  # published time is always recorded in KST
+HOME_CARDS = 3
+EXCERPT_MAX = 200
 GAME_IDS = ("iltonggi", "inkisle", "sunmeld", "claimball")
 # which games keep which principle (docs ch.2). Sunmeld has no public round length, so it is not listed under principle 1.
 PRINCIPLE_GAMES = {1: ("iltonggi", "inkisle", "claimball"), 2: GAME_IDS, 3: GAME_IDS, 4: GAME_IDS, 5: GAME_IDS}
 COMPARE_ROWS = "oneline style length difficulty players platform offline pricing languages status".split()
 KEYS = (
-    "nav_home nav_games nav_about nav_contact nav_privacy skip lang_label updated_label crumb_home "
+    "nav_home nav_games nav_about nav_journal nav_contact nav_privacy skip lang_label updated_label crumb_home "
     "home_title home_desc hero_code hero_h1 hero_sub hero_strip_aria "
     "phil_h phil_rest phil_kept p1_h p1_p p2_h p2_p p3_h p3_p p4_h p4_p p5_h p5_p "
     "games_h games_lead g_likes g_nots g_visit g_terms g_blog g_status "
@@ -54,7 +67,8 @@ KEYS = (
     "row_platform row_offline row_pricing row_languages row_status "
     "choose_h choose_lead choose_1 choose_2 choose_3 choose_4 choose_go "
     "made_h made_lead made_now made_feed made_read ipe_h ipe_p ipe_studio ipe_music ipe_contact "
-    "footer_line footer_code footer_tm footer_games footer_terms footer_site footer_about nf_h nf_p"
+    "footer_line footer_code footer_tm footer_games footer_terms footer_site footer_about nf_h nf_p "
+    "journal_h journal_lead journal_all journal_empty journal_desc journal_rss journal_back journal_feed_title"
 ).split()
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # never in public text: local paths, internal tools, secrets
@@ -97,6 +111,18 @@ def path_page(lang, slug):
     return "%s/%s/" % (lp(lang), slug)
 
 
+def path_journal(lang):
+    return "%s/%s/" % (lp(lang), JOURNAL_DIR)
+
+
+def path_post(lang, slug):
+    return "%s/%s/%s/" % (lp(lang), JOURNAL_DIR, slug)
+
+
+def path_feed(lang):
+    return path_journal(lang) + "feed.xml"
+
+
 def url(path):
     return SITE + path
 
@@ -137,7 +163,7 @@ def inline(s):
 
 
 def markdown(text):
-    """Small Markdown subset: paragraphs, ## to #### headings, lists, hr, inline code/links/bold/italic."""
+    """Small Markdown subset: paragraphs, ## to #### headings, lists, blockquotes, hr, inline code/links/bold/italic."""
     lines = text.split("\n")
     out, i, n = [], 0, len(lines)
     para = []
@@ -156,6 +182,12 @@ def markdown(text):
         if m:
             flush(); lvl = len(m.group(1))
             out.append("<h%d>%s</h%d>" % (lvl, inline(m.group(2)), lvl)); i += 1; continue
+        if s.startswith(">"):
+            flush(); quote = []
+            while i < n and lines[i].strip().startswith(">"):
+                quote.append(re.sub(r"^>\s?", "", lines[i].strip())); i += 1
+            out.append("<blockquote>%s</blockquote>" % markdown("\n".join(quote)))
+            continue
         if re.match(r"^-{3,}$", s):
             flush(); out.append("<hr>"); i += 1; continue
         if re.match(r"^[-*]\s+", s) or re.match(r"^\d+\.\s+", s):
@@ -224,6 +256,73 @@ def load_pages(root):
     return pages, errs
 
 
+def parse_published(value):
+    """'2026-11-01T09:30+09:00' -> aware datetime in KST, or None when it is not a real KST time"""
+    if not PUBLISHED_RE.match(value or ""):
+        return None
+    try:
+        return dt.datetime.strptime(value[:16], "%Y-%m-%dT%H:%M").replace(tzinfo=KST)
+    except ValueError:
+        return None
+
+
+def load_journal(root):
+    """content/journal/<slug>.<lang>.md -> (posts newest first, errors).
+    post = {slug, published, updated, langs: {lang: {title, description, excerpt, body}}}; every post has both languages."""
+    jdir = Path(root) / "content" / JOURNAL_DIR
+    errs, found = [], {}
+    for f in sorted(jdir.glob("*.md")) if jdir.is_dir() else []:
+        stem, _, lang = f.stem.rpartition(".")
+        tag = "journal/" + f.name
+        if not stem or lang not in LANGS:
+            errs.append("%s: file name must be <slug>.<%s>.md" % (tag, "|".join(LANGS))); continue
+        if not SLUG_RE.match(stem) or stem in RESERVED_SLUGS:
+            errs.append("%s: slug %r must be lowercase letters, digits and single hyphens (and not %s)" % (tag, stem, "/".join(sorted(RESERVED_SLUGS)))); continue
+        try:
+            meta, body = parse_front(f.read_text(encoding="utf-8"))
+        except ValueError as ex:
+            errs.append("%s: %s" % (tag, ex)); continue
+        if not meta.get("published") and meta.get("published_at"):
+            meta["published"] = meta["published_at"]  # alias used by the manuscript drafts
+        n0 = len(errs)
+        for k in ("title", "description", "published"):
+            if not meta.get(k):
+                errs.append("%s: missing %s" % (tag, k))
+        pub = parse_published(meta.get("published"))
+        if meta.get("published") and not pub:
+            errs.append("%s: published must be a KST time like 2026-11-01T09:30+09:00" % tag)
+        upd = meta.get("updated") or (meta["published"][:10] if meta.get("published") else "")
+        if upd and not (DATE_RE.match(upd) and (not pub or upd >= meta["published"][:10])):
+            errs.append("%s: updated must look like 2026-11-01 and not be before published" % tag)
+        if len(meta.get("description", "")) > DESC_MAX:
+            errs.append("%s: description longer than %d characters" % (tag, DESC_MAX))
+        if len(meta.get("excerpt", "")) > EXCERPT_MAX:
+            errs.append("%s: excerpt longer than %d characters" % (tag, EXCERPT_MAX))
+        if len(meta.get("title", "")) > TITLE_MAX:
+            errs.append("%s: title longer than %d characters" % (tag, TITLE_MAX))
+        if meta.get("lang") and meta["lang"] != lang:
+            errs.append("%s: front matter lang %r does not match the file name" % (tag, meta["lang"]))
+        if not body.strip():
+            errs.append("%s: empty body" % tag)
+        if re.search(r"(?m)^#\s", body):
+            errs.append("%s: body must not contain a '# ' heading (the title is the h1); use ## and below" % tag)
+        errs += text_problems(tag, meta.get("title", "") + " " + meta.get("description", "") + " " + meta.get("excerpt", "") + " " + body)
+        if len(errs) == n0:
+            found.setdefault(stem, {})[lang] = {"title": meta["title"], "description": meta["description"],
+                                                "excerpt": meta.get("excerpt") or meta["description"], "body": body,
+                                                "published": meta["published"], "updated": upd}
+    posts = []
+    for slug, langs in found.items():
+        missing = [l for l in MAIN_LANGS if l not in langs]
+        if missing:
+            errs.append("journal/%s: missing the %s version (every post needs en and ko)" % (slug, "/".join(missing))); continue
+        if len({v["published"] for v in langs.values()}) != 1:
+            errs.append("journal/%s: en and ko must have the same published time" % slug); continue
+        posts.append({"slug": slug, "published": langs["en"]["published"], "updated": max(v["updated"] for v in langs.values()), "langs": langs})
+    posts.sort(key=lambda p: (parse_published(p["published"]), p["slug"]), reverse=True)
+    return posts, errs
+
+
 def _bilingual(v, tag, errs):
     if not isinstance(v, dict) or any(not str(v.get(l, "")).strip() for l in MAIN_LANGS):
         errs.append("%s: needs a non-empty text for each of %s" % (tag, "/".join(MAIN_LANGS)))
@@ -287,9 +386,20 @@ def langpick_script(root, langs):
     return "<script>%s</script>" % re.sub(r"\s*\n\s*", "", src.replace("/*SUPPORTED*/[]", json.dumps(list(langs)))).strip()
 
 
+def localtime_script(root):
+    """shared/ipe-localtime.js inlined byte for byte (no whitespace added around it): <time data-ipe-time> is stored in KST
+    and shown in the reader's time zone. Inline on purpose (no external load); the test pins its SHA-256."""
+    return "<script>" + (Path(root) / "content" / "shared" / "ipe-localtime.js").read_bytes().decode("utf-8") + "</script>"
+
+
+def time_tag(published):
+    """<time> of a post time: ISO with +09:00 for machines, '2026-11-01 09:30 KST' as the static text (no JS / crawlers)"""
+    return '<time datetime="%s" data-ipe-time dir="ltr">%s %s KST</time>' % (esc(published), esc(published[:10]), esc(published[11:16]))
+
+
 class Ctx:
-    def __init__(self, root, i18n, pages, games, langs):
-        self.root, self.i18n, self.pages, self.games, self.langs = root, i18n, pages, games, langs
+    def __init__(self, root, i18n, pages, games, langs, posts=()):
+        self.root, self.i18n, self.pages, self.games, self.langs, self.posts = root, i18n, pages, games, langs, list(posts)
 
     def t(self, lang, key):
         return self.i18n[lang][key]
@@ -324,6 +434,7 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
              '<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">',
              '<link rel="apple-touch-icon" href="/assets/icon-180.png">',
              '<link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>',
+             '<link rel="alternate" type="application/rss+xml" title="%s" href="%s">' % (esc(t("journal_feed_title")), esc(path_feed(lang))),
              '<link rel="stylesheet" href="/assets/play.css?v=%s">' % ASSET_V]
     if path == "/":
         head.append(langpick_script(ctx.root, ctx.langs))
@@ -332,15 +443,17 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
     switch = "".join('<a href="%s" hreflang="%s" lang="%s"%s aria-label="%s">%s</a>' % (
         esc(alt.get(l) or path_home(l)), l, l, ' aria-current="true"' if l == lang else "", esc(LANGS[l][0]), esc(LANGS[l][3])) for l in ctx.langs)
     navlinks = [(path_home(lang) + "#games", t("nav_games"), "games"), (path_page(lang, "about"), t("nav_about"), "about"),
-                (path_page(lang, "contact"), t("nav_contact"), "contact")]
+                (path_journal(lang), t("nav_journal"), "journal"), (path_page(lang, "contact"), t("nav_contact"), "contact")]
     nav_html = "".join('<a href="%s"%s>%s</a>' % (esc(h), ' aria-current="page"' if nav == k else "", esc(label)) for h, label, k in navlinks)
     header = ('<header class="site-header"><div class="wrap bar"><a class="brand" href="%s" aria-label="ipe() Games"><span class="logo">ipe()</span>'
               '<span class="brand-sub">games</span></a><nav class="nav" aria-label="main">%s<span class="langsw" role="group" aria-label="%s">%s</span></nav></div></header>') % (
         esc(path_home(lang)), nav_html, esc(t("lang_label")), switch)
     game_links = "".join('<li><a href="%s" rel="noopener">%s</a></li>' % (esc(g["url"]), esc(g["name"][lang])) for g in ctx.games)
     terms_links = "".join('<li><a href="%s" rel="noopener">%s</a></li>' % (esc(g["terms"][lang]), esc(g["name"][lang])) for g in ctx.games if g.get("terms"))
-    site_links = ('<li><a href="https://ipe.rest/" rel="noopener">ipe.rest</a></li><li><a href="%s">%s</a></li><li><a href="%s">%s</a></li><li><a href="%s">%s</a></li>') % (
-        esc(path_page(lang, "about")), esc(t("footer_about")), esc(path_page(lang, "contact")), esc(t("nav_contact")),
+    site_links = ('<li><a href="https://ipe.rest/" rel="noopener">ipe.rest</a></li><li><a href="%s">%s</a></li><li><a href="%s">%s</a></li>'
+                  '<li><a href="%s">%s</a></li><li><a href="%s">%s</a></li>') % (
+        esc(path_page(lang, "about")), esc(t("footer_about")), esc(path_journal(lang)), esc(t("nav_journal")),
+        esc(path_page(lang, "contact")), esc(t("nav_contact")),
         esc(path_page(lang, "privacy")), esc(t("nav_privacy")))
     foot_langs = ('<p class="foot-langs" aria-label="%s">%s</p>' % (esc(t("lang_label")), " ".join(
         '<a href="%s" hreflang="%s" lang="%s"%s>%s</a>' % (esc(alt.get(l) or path_home(l)), l, l, ' aria-current="true"' if l == lang else "", esc(LANGS[l][0]))
@@ -354,8 +467,9 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
     last = '<p class="updated mono">%s: <time datetime="%s">%s</time></p>' % (esc(t("updated_label")), esc(updated), esc(updated))
     return ('<!doctype html>\n<!-- %s -->\n<html lang="%s" dir="%s"><head>%s</head><body>'
             '<a class="skip" href="#main">%s</a>%s<main id="main">%s<div class="wrap">%s</div></main>%s'
-            '<script src="/assets/play.js?v=%s" defer></script></body></html>\n') % (
-        GEN_MARK, lang, direction, "\n".join(head), esc(t("skip")), header, body, last, footer, ASSET_V)
+            '<script src="/assets/play.js?v=%s" defer></script>%s</body></html>\n') % (
+        GEN_MARK, lang, direction, "\n".join(head), esc(t("skip")), header, body, last, footer, ASSET_V,
+        localtime_script(ctx.root) if "data-ipe-time" in body else "")
 
 
 def breadcrumb_html(items):
@@ -452,14 +566,101 @@ def build_home(ctx, lang):
         for g in ctx.games)
     made = ('<section class="sec" id="made"><div class="wrap"><h2><span class="sn mono">05</span>%s</h2><p class="lead">%s</p><ul class="made">%s</ul></div></section>') % (
         esc(t("made_h")), esc(t("made_lead")), made_items)
-    studio = ('<section class="sec tint" id="studio"><div class="wrap"><h2><span class="sn mono">06</span>%s</h2><p class="lead">%s</p>'
+    journal = journal_section(ctx, lang, num(6)) if ctx.posts else ""
+    studio = ('<section class="sec%s" id="studio"><div class="wrap"><h2><span class="sn mono">%s</span>%s</h2><p class="lead">%s</p>'
               '<p class="links"><a class="textlink" href="https://ipe.rest/" rel="noopener">%s</a> <a class="textlink" href="https://idle.ipe.rest/" rel="noopener">%s</a> '
               '<a class="textlink" href="%s">%s</a></p></div></section>') % (
-        esc(t("ipe_h")), esc(t("ipe_p")), esc(t("ipe_studio")), esc(t("ipe_music")), esc(path_page(lang, "contact")), esc(t("ipe_contact")))
+        "" if ctx.posts else " tint", num(7 if ctx.posts else 6), esc(t("ipe_h")), esc(t("ipe_p")), esc(t("ipe_studio")), esc(t("ipe_music")), esc(path_page(lang, "contact")), esc(t("ipe_contact")))
     graph = [ORG, website_ld(lang)] + [game_ld(g, lang) for g in ctx.games]
     alt = {l: path_home(l) for l in ctx.langs}
-    return path_home(lang), render(ctx, lang, path=path_home(lang), title=t("home_title"), desc=t("home_desc"), body=hero + phil + games + cmp_ + choose + made + studio,
-                                   graph=graph, alt=alt, updated=SITE_UPDATED, nav="")
+    return path_home(lang), render(ctx, lang, path=path_home(lang), title=t("home_title"), desc=t("home_desc"), body=hero + phil + games + cmp_ + choose + made + journal + studio,
+                                   graph=graph, alt=alt, updated=max([SITE_UPDATED] + [p["updated"] for p in ctx.posts]), nav="")
+
+
+def post_card(lang, p):
+    v = p["langs"][lang]
+    return ('<article class="journal-card"><a class="journal-card__link" href="%s">%s<h3>%s</h3><p>%s</p></a></article>') % (
+        esc(path_post(lang, p["slug"])), time_tag(p["published"]), esc(v["title"]), esc(v["excerpt"]))
+
+
+def journal_section(ctx, lang, number):
+    """home: the newest HOME_CARDS posts, generated from the same sources as the list (no JS)"""
+    t = lambda k: ctx.t(lang, k)  # noqa: E731
+    cards = "".join(post_card(lang, p) for p in ctx.posts[:HOME_CARDS])
+    return ('<section class="sec tint" id="journal"><div class="wrap"><div class="journal__head"><h2><span class="sn mono">%s</span>%s</h2>'
+            '<a class="textlink journal__all" href="%s">%s <span aria-hidden="true">→</span></a></div><p class="lead">%s</p>'
+            '<div class="journal__grid">%s</div></div></section>') % (
+        number, esc(t("journal_h")), esc(path_journal(lang)), esc(t("journal_all")), esc(t("journal_lead")), cards)
+
+
+def journal_title(ctx, lang, title):
+    full = "%s — play.ipe.rest" % title
+    return full if len(full) <= TITLE_MAX else title
+
+
+def build_journal_list(ctx, lang):
+    t = lambda k: ctx.t(lang, k)  # noqa: E731
+    pth = path_journal(lang)
+    crumbs = [(path_home(lang), t("crumb_home")), (None, t("journal_h"))]
+    if ctx.posts:
+        items = "".join('<li class="jitem">%s<h2><a href="%s">%s</a></h2><p>%s</p></li>' % (
+            time_tag(p["published"]), esc(path_post(lang, p["slug"])), esc(p["langs"][lang]["title"]), esc(p["langs"][lang]["excerpt"])) for p in ctx.posts)
+        main = '<ol class="jlist">%s</ol>' % items
+    else:
+        main = '<p class="jempty">%s</p>' % esc(t("journal_empty"))
+    body = ('<div class="wrap">%s<section class="prose jhead"><h1>%s</h1><p class="lead">%s</p></section>%s'
+            '<p class="jfoot"><a class="textlink" href="%s">%s</a></p></div>') % (
+        breadcrumb_html(crumbs), esc(t("journal_h")), esc(t("journal_lead")), main, esc(path_feed(lang)), esc(t("journal_rss")))
+    page_ld = {"@type": "CollectionPage", "@id": url(pth) + "#page", "url": url(pth), "name": t("journal_h"), "description": t("journal_desc"),
+               "inLanguage": lang, "isPartOf": {"@id": SITE + "/#website"}}
+    if ctx.posts:
+        page_ld["mainEntity"] = {"@type": "ItemList", "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "url": url(path_post(lang, p["slug"]))} for i, p in enumerate(ctx.posts)]}
+    updated = max([p["updated"] for p in ctx.posts] or [SITE_UPDATED])
+    return pth, render(ctx, lang, path=pth, title="%s — play.ipe.rest" % t("journal_h"), desc=t("journal_desc"), body=body,
+                       graph=[ORG, website_ld(lang), page_ld, breadcrumb_ld(crumbs)], alt={l: path_journal(l) for l in ctx.langs},
+                       updated=updated, noindex=not ctx.posts, nav="journal")
+
+
+def build_post(ctx, lang, p):
+    t = lambda k: ctx.t(lang, k)  # noqa: E731
+    v = p["langs"][lang]
+    pth = path_post(lang, p["slug"])
+    crumbs = [(path_home(lang), t("crumb_home")), (path_journal(lang), t("journal_h")), (None, v["title"])]
+    body = ('<div class="wrap">%s<article class="prose post"><h1>%s</h1><p class="post-meta">%s</p>%s'
+            '<p class="jfoot"><a class="textlink" href="%s"><span aria-hidden="true">←</span>&nbsp;%s</a></p></article></div>') % (
+        breadcrumb_html(crumbs), esc(v["title"]), time_tag(p["published"]), markdown(ctx.sub(v["body"])), esc(path_journal(lang)), esc(t("journal_back")))
+    ld = {"@type": "BlogPosting", "@id": url(pth) + "#article", "url": url(pth), "mainEntityOfPage": {"@type": "WebPage", "@id": url(pth)},
+          "headline": v["title"], "description": v["description"], "inLanguage": lang, "datePublished": p["published"],
+          "dateModified": p["published"] if v["updated"] == p["published"][:10] else v["updated"], "image": SITE + OG_IMAGE,
+          "isAccessibleForFree": True, "author": {"@id": ORG_ID}, "publisher": {"@id": ORG_ID}, "isPartOf": {"@id": SITE + "/#website"}}
+    return pth, render(ctx, lang, path=pth, title=journal_title(ctx, lang, v["title"]), desc=v["description"], body=body,
+                       graph=[ORG, website_ld(lang), ld, breadcrumb_ld(crumbs)], alt={l: path_post(l, p["slug"]) for l in ctx.langs},
+                       updated=v["updated"], og_type="article", nav="journal")
+
+
+def rfc822(published):
+    d = parse_published(published)
+    return "%s, %02d %s %d %02d:%02d:00 +0900" % ("Mon Tue Wed Thu Fri Sat Sun".split()[d.weekday()], d.day,
+                                                  "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()[d.month - 1], d.year, d.hour, d.minute)
+
+
+def build_feed(ctx, lang):
+    """RSS 2.0 of the journal in one language; lastBuildDate = newest post (deterministic, not the build time)"""
+    t = lambda k: ctx.t(lang, k)  # noqa: E731
+    rows = ['<?xml version="1.0" encoding="UTF-8"?>', "<!-- %s -->" % GEN_MARK,
+            '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>',
+            "<title>%s</title>" % esc(t("journal_feed_title")), "<link>%s</link>" % esc(url(path_journal(lang))),
+            '<atom:link href="%s" rel="self" type="application/rss+xml"/>' % esc(url(path_feed(lang))),
+            "<description>%s</description>" % esc(t("journal_desc")), "<language>%s</language>" % lang]
+    if ctx.posts:
+        rows.append("<lastBuildDate>%s</lastBuildDate>" % rfc822(ctx.posts[0]["published"]))
+    for p in ctx.posts:
+        link = esc(url(path_post(lang, p["slug"])))
+        rows.append("<item><title>%s</title><link>%s</link><guid isPermaLink=\"true\">%s</guid><pubDate>%s</pubDate><description>%s</description></item>" % (
+            esc(p["langs"][lang]["title"]), link, link, rfc822(p["published"]), esc(p["langs"][lang]["excerpt"])))
+    rows.append("</channel></rss>")
+    return "\n".join(rows) + "\n"
 
 
 def build_page(ctx, lang, slug):
@@ -492,11 +693,17 @@ def sitemap_entries(ctx):
     """[(path, lastmod, {lang: path})]"""
     ents = []
     for l in ctx.langs:
-        ents.append((path_home(l), SITE_UPDATED, {x: path_home(x) for x in ctx.langs}))
+        ents.append((path_home(l), max([SITE_UPDATED] + [p["updated"] for p in ctx.posts]), {x: path_home(x) for x in ctx.langs}))
     for slug in PAGE_SLUGS:
         for l in ctx.langs:
             if (l, slug) in ctx.pages:
                 ents.append((path_page(l, slug), ctx.pages[(l, slug)][0]["updated"], {x: path_page(x, slug) for x in ctx.langs if (x, slug) in ctx.pages}))
+    if ctx.posts:  # an empty journal list is noindex and stays out of the sitemap
+        for l in ctx.langs:
+            ents.append((path_journal(l), max(p["updated"] for p in ctx.posts), {x: path_journal(x) for x in ctx.langs}))
+        for p in ctx.posts:
+            for l in ctx.langs:
+                ents.append((path_post(l, p["slug"]), p["langs"][l]["updated"], {x: path_post(x, p["slug"]) for x in ctx.langs}))
     return ents
 
 
@@ -527,7 +734,8 @@ def build_llms(ctx):
     rows = ["# ipe() Games", "", "> %s" % en["home_desc"], "",
             "play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects four games in one place and links to each game's own "
             "official site. None of the four games has been released: no store page or release date exists for any of them. This portal has no accounts, "
-            "ads or tracking, no journal and no terms of its own (each game's site has its own terms).", "",
+            "ads or tracking and no terms of its own (each game's site has its own terms). It has a journal with notes on turn-based games, "
+            "killing-time games and how ipe() makes games.", "",
             "## The games", ""]
     for g in ctx.games:
         rows.append("- [%s](%s): %s Status: %s. Platform: %s. Pricing: %s." % (
@@ -535,9 +743,13 @@ def build_llms(ctx):
     rows += ["", "## How ipe makes games", ""]
     for n in range(1, 6):
         rows.append("- %s: %s" % (en["p%d_h" % n], en["p%d_p" % n]))
+    if ctx.posts:
+        rows += ["", "## Journal", "", "RSS: %s%s" % (SITE, path_feed("en")), ""]
+        rows += ["- [%s](%s%s): %s" % (p["langs"]["en"]["title"], SITE, path_post("en", p["slug"]), p["langs"]["en"]["description"]) for p in ctx.posts]
     rows += ["", "## Pages", "", "- [Home](%s/): %s" % (SITE, en["hero_h1"]),
              "- [About](%s%s): what this portal is and who makes the games" % (SITE, path_page("en", "about")),
              "- [Contact](%s%s): email and questions" % (SITE, path_page("en", "contact")),
+             "- [Journal](%s%s): %s" % (SITE, path_journal("en"), en["journal_lead"]),
              "- [Privacy Policy](%s%s)" % (SITE, path_page("en", "privacy")), "",
              "## Languages", "", "The site is available in %d languages: %s. Korean lives under /ko/ (English at the root)." % (
                  len(ctx.langs), ", ".join(LANGS[l][0] for l in ctx.langs)), "",
@@ -551,11 +763,12 @@ def make_ctx(root):
     i18n, errs = load_i18n(root)
     pages, e2 = load_pages(root)
     games, e3 = load_games(root)
-    errs += e2 + e3
+    posts, e4 = load_journal(root)
+    errs += e2 + e3 + e4
     langs = [l for l in LANGS if l in i18n and all((l, s) in pages for s in PAGE_SLUGS)]
     if "en" not in langs or "ko" not in langs:
         errs.append("en and ko must both be complete (i18n + %s)" % " + ".join(PAGE_SLUGS))
-    return Ctx(root, i18n, pages, games, langs), errs
+    return Ctx(root, i18n, pages, games, langs, posts), errs
 
 
 def build_all(ctx):
@@ -569,6 +782,10 @@ def build_all(ctx):
         put(*build_home(ctx, l))
         for slug in PAGE_SLUGS:
             put(*build_page(ctx, l, slug))
+        put(*build_journal_list(ctx, l))
+        files[path_feed(l).lstrip("/")] = build_feed(ctx, l)
+        for p in ctx.posts:
+            put(*build_post(ctx, l, p))
     files["404.html"] = build_404(ctx)
     files["sitemap.xml"] = build_sitemap(ctx)
     files["robots.txt"] = build_robots()
@@ -578,7 +795,7 @@ def build_all(ctx):
 
 def clean(root):
     root = Path(root)
-    for name in list(PAGE_SLUGS) + [l for l in LANGS if l != "en"]:
+    for name in list(PAGE_SLUGS) + [JOURNAL_DIR] + [l for l in LANGS if l != "en"]:
         d = root / name
         if d.is_dir():
             shutil.rmtree(d)
@@ -600,14 +817,14 @@ def main(argv=None):
         return 1
     files = build_all(ctx)
     if a.check:
-        print("build_site: sources OK — %d language(s), %d game(s), %d file(s) would be written" % (len(ctx.langs), len(ctx.games), len(files)))
+        print("build_site: sources OK — %d language(s), %d game(s), %d file(s) would be written, %d journal post(s)" % (len(ctx.langs), len(ctx.games), len(files), len(ctx.posts)))
         return 0
     clean(root)
     for rel, text in files.items():
         f = root / rel
         f.parent.mkdir(parents=True, exist_ok=True)
         f.write_text(text, encoding="utf-8")
-    print("build_site: wrote %d file(s) — %d language(s), %d game(s)" % (len(files), len(ctx.langs), len(ctx.games)))
+    print("build_site: wrote %d file(s) — %d language(s), %d game(s), %d journal post(s)" % (len(files), len(ctx.langs), len(ctx.games), len(ctx.posts)))
     return 0
 
 

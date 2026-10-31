@@ -39,7 +39,7 @@ class Built(unittest.TestCase):
         for lang_dir in ("", "ko/"):
             for p in PAGES:
                 self.assertTrue((self.root / (lang_dir + p) / "index.html").is_file(), lang_dir + p)
-        for gone in ("terms", "journal", "releases", "support", "feed.xml"):
+        for gone in ("terms", "releases", "support", "feed.xml"):
             self.assertFalse((self.root / gone).exists(), gone)
         self.assertEqual(self.ctx.langs, ["en", "ko"])
 

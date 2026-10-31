@@ -10,6 +10,7 @@ Offline checks
   3. home / about / privacy / contact exist for every language that has a home page.
   4. hreflang: lists itself + x-default, every target is itself in the sitemap, references are reciprocal.
   5. no <lastmod> is in the future.
+  6. every journal post page on disk (and the journal list, unless it is the noindex empty one) is in the sitemap.
 """
 import argparse
 import datetime as dt
@@ -49,6 +50,15 @@ def check(root, now=None):
         for path in [bs.path_page(l, x) for x in bs.PAGE_SLUGS]:
             if bs.url(path) not in urls:
                 errs.append("missing from sitemap: %s" % bs.url(path))
+    for l in homes:
+        base = root / bs.path_journal(l).strip("/")
+        pages = [f.parent for f in sorted(base.glob("*/index.html"))]
+        if (base / "index.html").is_file() and "noindex" not in (base / "index.html").read_text(encoding="utf-8"):
+            pages.append(base)
+        for d in pages:
+            loc = bs.url("/" + d.relative_to(root).as_posix() + "/")
+            if loc not in urls:
+                errs.append("missing from sitemap: %s" % loc)
     for loc, links in urls.items():
         if not links:
             continue

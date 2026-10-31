@@ -1,10 +1,11 @@
 // UI gate: no horizontal overflow at 375 / 320 / 768 / 1280 px, no console errors, text >= 16px (.badge/.updated >= 14px),
-// touch targets >= 44x44 on the home pages at 375px, screenshots.
+// touch targets >= 44x44 on the home and journal pages at 375px, screenshots, light and dark.
 //   NODE_PATH=<dir containing playwright> node tests/ui_check.js [outDir]
+// PLAY_ROOT=<dir> serves another repo-shaped folder (e.g. python3 tests/demo_site.py DIR: the site with test-only journal posts).
 // Serves the repo root on a random local port (static, like GitHub Pages: /dir/ -> /dir/index.html).
 const http = require('http'), fs = require('fs'), path = require('path');
 const { chromium } = require('playwright');
-const ROOT = path.join(__dirname, '..');
+const ROOT = process.env.PLAY_ROOT ? path.resolve(process.env.PLAY_ROOT) : path.join(__dirname, '..');
 const OUT = process.argv[2] || path.join(require('os').tmpdir(), 'play-ui');
 const WIDTHS = [[375, 812], [320, 568], [768, 1024], [1280, 800]];
 const TYPES = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.xml': 'application/xml', '.txt': 'text/plain' };
@@ -17,13 +18,26 @@ const server = http.createServer((req, res) => {
   res.writeHead(200, { 'content-type': TYPES[path.extname(f)] || 'application/octet-stream' });
   fs.createReadStream(f).pipe(res);
 });
+const SCHEMES = ['light', 'dark'];
+// journal list for both languages + the first post found on disk (en and ko)
+function journalPages() {
+  const out = ['/journal/', '/ko/journal/'];
+  for (const pre of ['', '/ko']) {
+    const dir = path.join(ROOT, pre, 'journal');
+    if (!fs.existsSync(dir)) continue;
+    const post = fs.readdirSync(dir).filter(n => fs.existsSync(path.join(dir, n, 'index.html'))).sort()[0];
+    if (post) out.push(`${pre}/journal/${post}/`);
+  }
+  return out;
+}
 function pagesToCheck() {
   const base = ['/', '/about/', '/privacy/', '/contact/'];
-  const out = [...base, '/404.html'];
+  const out = [...base, '/404.html', ...journalPages()];
   for (const b of base) out.push(b === '/' ? '/ko/' : '/ko' + b);
   return out;
 }
-const SHOT = new Set(['/', '/about/', '/privacy/', '/contact/', '/ko/', '/ko/about/']);
+const isTouchPage = p => p === '/' || p === '/ko/' || p.includes('/journal/');
+const SHOT = new Set(['/', '/about/', '/privacy/', '/contact/', '/ko/', '/ko/about/', ...journalPages()]);
 (async () => {
   fs.mkdirSync(OUT, { recursive: true });
   await new Promise(r => server.listen(0, '127.0.0.1', r));
@@ -31,8 +45,8 @@ const SHOT = new Set(['/', '/about/', '/privacy/', '/contact/', '/ko/', '/ko/abo
   const b = await chromium.launch();
   const bad = [];
   let n = 0;
-  for (const [w, h] of WIDTHS) {
-    const ctx = await b.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: 1 });
+  for (const scheme of SCHEMES) for (const [w, h] of WIDTHS) {
+    const ctx = await b.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: 1, colorScheme: scheme });
     for (const pth of pagesToCheck()) {
       const page = await ctx.newPage();
       const errs = [];
@@ -40,7 +54,7 @@ const SHOT = new Set(['/', '/about/', '/privacy/', '/contact/', '/ko/', '/ko/abo
       page.on('pageerror', e => errs.push(String(e)));
       page.on('requestfailed', r => { errs.push('request failed: ' + r.url()); });
       const resp = await page.goto(origin + pth, { waitUntil: 'load' });
-      if (resp.status() !== 200) bad.push(`${w}px ${pth}: HTTP ${resp.status()}`);
+      if (resp.status() !== 200) bad.push(`${scheme} ${w}px ${pth}: HTTP ${resp.status()}`);
       const m = await page.evaluate(() => ({ sw: document.documentElement.scrollWidth, iw: window.innerWidth,
         wide: [...document.querySelectorAll('body *')].filter(e => e.getBoundingClientRect().right > window.innerWidth + 1 && !e.closest('.cmp-wide') && getComputedStyle(e).position !== 'fixed')
           .slice(0, 3).map(e => e.tagName + '.' + e.className) }));
@@ -60,21 +74,22 @@ const SHOT = new Set(['/', '/about/', '/privacy/', '/contact/', '/ko/', '/ko/abo
         }
         return out.slice(0, 5);
       });
-      for (const e of small) bad.push(`${w}px ${pth}: text smaller than the 16px floor: ${e}`);
-      // touch targets >= 44x44 on the home pages at phone width
-      if (w === 375 && (pth === '/' || pth === '/ko/')) {
+      for (const e of small) bad.push(`${scheme} ${w}px ${pth}: text smaller than the 16px floor: ${e}`);
+      // touch targets >= 44x44 on the home and journal pages at phone width
+      if (w === 375 && isTouchPage(pth)) {
         const tiny = await page.evaluate(() => [...document.querySelectorAll('a[href], button')].map(e => {
           const r = e.getBoundingClientRect(), c = getComputedStyle(e);
           if (c.display === 'none' || c.visibility === 'hidden' || r.width <= 1 || r.height <= 1 || r.right <= 0) return null;
+          if (e.closest('.prose p, .prose li, .prose blockquote')) return null; // links inside running text (WCAG 2.5.8 inline exception)
           return (r.width < 43.9 || r.height < 43.9) ? `${e.tagName}.${e.className} ${Math.round(r.width)}x${Math.round(r.height)} "${(e.textContent || '').trim().slice(0, 20)}"` : null;
         }).filter(Boolean));
-        for (const e of tiny) bad.push(`${w}px ${pth}: touch target under 44x44: ${e}`);
+        for (const e of tiny) bad.push(`${scheme} ${w}px ${pth}: touch target under 44x44: ${e}`);
       }
-      if (clipped.length) bad.push(`${w}px ${pth}: clipped content (${clipped.join(', ')})`);
-      if (m.sw > m.iw) bad.push(`${w}px ${pth}: horizontal overflow scrollWidth ${m.sw} > ${m.iw} (${m.wide.join(', ')})`);
-      for (const e of errs) bad.push(`${w}px ${pth}: console: ${e}`);
+      if (clipped.length) bad.push(`${scheme} ${w}px ${pth}: clipped content (${clipped.join(', ')})`);
+      if (m.sw > m.iw) bad.push(`${scheme} ${w}px ${pth}: horizontal overflow scrollWidth ${m.sw} > ${m.iw} (${m.wide.join(', ')})`);
+      for (const e of errs) bad.push(`${scheme} ${w}px ${pth}: console: ${e}`);
       n++;
-      if (SHOT.has(pth)) await page.screenshot({ path: path.join(OUT, `${w}-${pth.replace(/\//g, '_') || '_'}.png`), fullPage: true });
+      if (SHOT.has(pth)) await page.screenshot({ path: path.join(OUT, `${scheme}-${w}-${pth.replace(/\//g, '_') || '_'}.png`), fullPage: true });
       await page.close();
     }
     await ctx.close();
@@ -82,5 +97,5 @@ const SHOT = new Set(['/', '/about/', '/privacy/', '/contact/', '/ko/', '/ko/abo
   await b.close(); server.close();
   console.log(`ui_check: ${n} page views, screenshots in ${OUT}`);
   if (bad.length) { console.error('ui_check FAILED:\n  ' + bad.join('\n  ')); process.exit(1); }
-  console.log('ui_check: OK — no horizontal overflow or clipped content at 375/320/768/1280, no console errors');
+  console.log('ui_check: OK — no horizontal overflow or clipped content at 375/320/768/1280 (light + dark), no console errors');
 })();
