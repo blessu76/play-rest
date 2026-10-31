@@ -6,4 +6,6 @@
 <atom:link href="https://play.ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
 <description>The ipe() Games journal: notes on turn-based games, killing-time games and the philosophy behind our short-round games.</description>
 <language>en</language>
+<lastBuildDate>Sat, 31 Oct 2026 12:07:00 +0900</lastBuildDate>
+<item><title>How ipe makes games</title><link>https://play.ipe.rest/journal/2026-10-31-how-ipe-makes-games/</link><guid isPermaLink="true">https://play.ipe.rest/journal/2026-10-31-how-ipe-makes-games/</guid><pubDate>Sat, 31 Oct 2026 12:07:00 +0900</pubDate><description>The five principles behind ipe() games, and where each of our four games keeps them. The first post in this journal.</description></item>
 </channel></rss>

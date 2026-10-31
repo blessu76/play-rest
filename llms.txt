@@ -19,6 +19,12 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 - Say what's true, including what isn't: If it's not released, we say so. If we haven't checked, we say that too.
 - The AI plays fair: Comebacks come from the rules, not from a secretly weakened opponent.
 
+## Journal
+
+RSS: https://play.ipe.rest/journal/feed.xml
+
+- [How ipe makes games](https://play.ipe.rest/journal/2026-10-31-how-ipe-makes-games/): Five game design principles: short rounds, few rules, a quiet app, saying what is true, and fair opponents. How ipe's four games follow them.
+
 ## Pages
 
 - [Home](https://play.ipe.rest/): When the round ends, that's enough for today.

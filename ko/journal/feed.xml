@@ -6,4 +6,6 @@
 <atom:link href="https://play.ipe.rest/ko/journal/feed.xml" rel="self" type="application/rss+xml"/>
 <description>ipe() Games 저널: 턴제 게임과 킬링타임 게임, 짧은 한 판을 지키는 게임 철학에 대한 기록입니다.</description>
 <language>ko</language>
+<lastBuildDate>Sat, 31 Oct 2026 12:07:00 +0900</lastBuildDate>
+<item><title>ipe가 게임을 만드는 방식</title><link>https://play.ipe.rest/ko/journal/2026-10-31-how-ipe-makes-games/</link><guid isPermaLink="true">https://play.ipe.rest/ko/journal/2026-10-31-how-ipe-makes-games/</guid><pubDate>Sat, 31 Oct 2026 12:07:00 +0900</pubDate><description>ipe() 게임의 바탕이 되는 다섯 가지 원칙, 그리고 네 게임이 각각 어디에서 그 원칙을 지키는지. 이 저널의 첫 글입니다.</description></item>
 </channel></rss>
