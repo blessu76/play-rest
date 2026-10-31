@@ -33,7 +33,7 @@ from pathlib import Path
 
 SITE = "https://play.ipe.rest"
 KST = dt.timezone(dt.timedelta(hours=9))
-ASSET_V = "20261031e"  # keep in sync: bump when assets/play.css or play.js change
+ASSET_V = "20261031f"  # keep in sync: bump when assets/play.css or play.js change
 SITE_UPDATED = "2026-10-31"  # "Last updated" of home / 404 and sitemap lastmod: bump by hand when their text changes
 OPERATOR = "Davy Kim (ipe Studio)"
 EMAIL = "ipe.haven@gmail.com"
@@ -58,8 +58,19 @@ GAME_IDS = ("iltonggi", "inkisle", "sunmeld", "claimball")
 # which games keep which principle (docs ch.2). Sunmeld has no public round length, so it is not listed under principle 1.
 PRINCIPLE_GAMES = {1: ("iltonggi", "inkisle", "claimball"), 2: GAME_IDS, 3: GAME_IDS, 4: GAME_IDS, 5: GAME_IDS}
 COMPARE_ROWS = "oneline style length difficulty players platform offline pricing languages status".split()
+# first-paint theme: runs before the stylesheet so data-theme (and the address-bar colour) is right on the first frame
+THEME_HEAD_SCRIPT = ("<script>(function(){var t,C={light:'#fbfcfe',dark:'#0c1118',noir:'#0a0810'};try{t=localStorage.getItem('play-theme')}catch(e){}"
+                     "if(({light:1,dark:1,noir:1})[t]!==1)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';"
+                     "document.documentElement.setAttribute('data-theme',t);var m=document.querySelectorAll('meta[name=theme-color]');"
+                     "for(var i=0;i<m.length;i++)m[i].content=C[t]})()</script>")
+_ICO = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"%s aria-hidden="true" focusable="false">%s</svg>'
+THEME_ICONS = (
+    ("light", _ICO % ("", '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>')),
+    ("dark", _ICO % ("", '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>')),
+    ("noir", _ICO % (' stroke-linejoin="round"', '<path d="M6 4h12l4 6-10 11L2 10z"/><path d="M2 10h20M9 4l3 6 3-6M12 10v11"/>')),
+)
 KEYS = (
-    "nav_home nav_games nav_about nav_journal nav_contact nav_privacy skip lang_label updated_label crumb_home "
+    "nav_home nav_games nav_about nav_journal nav_contact nav_privacy skip lang_label theme_label theme_light theme_dark theme_noir updated_label crumb_home "
     "home_title home_desc hero_code hero_h1 hero_sub hero_strip_aria "
     "phil_h phil_rest phil_kept p1_h p1_p p2_h p2_p p3_h p3_p p4_h p4_p p5_h p5_p "
     "games_h games_lead g_likes g_nots g_visit g_terms g_blog g_status "
@@ -466,6 +477,7 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
              '<meta name="theme-color" content="#fbfcfe" media="(prefers-color-scheme: light)">',
              '<meta name="theme-color" content="#0c1118" media="(prefers-color-scheme: dark)">',
              '<meta name="color-scheme" content="light dark">',
+             THEME_HEAD_SCRIPT,
              '<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">',
              '<link rel="apple-touch-icon" href="/assets/icon-180.png">',
              '<link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>',
@@ -480,9 +492,12 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
     navlinks = [(path_home(lang) + "#games", t("nav_games"), "games"), (path_page(lang, "about"), t("nav_about"), "about"),
                 (path_journal(lang), t("nav_journal"), "journal"), (path_page(lang, "contact"), t("nav_contact"), "contact")]
     nav_html = "".join('<a href="%s"%s>%s</a>' % (esc(h), ' aria-current="page"' if nav == k else "", esc(label)) for h, label, k in navlinks)
+    theme_btns = "".join('<button type="button" data-theme-set="%s" aria-pressed="false" aria-label="%s" title="%s">%s</button>' % (
+        k, esc(t("theme_" + k)), esc(t("theme_" + k)), svg) for k, svg in THEME_ICONS)
     header = ('<header class="site-header"><div class="wrap bar"><a class="brand" href="%s" aria-label="ipe() Games"><span class="logo">ipe()</span>'
-              '<span class="brand-sub">games</span></a><nav class="nav" aria-label="main">%s<span class="langsw" role="group" aria-label="%s">%s</span></nav></div></header>') % (
-        esc(path_home(lang)), nav_html, esc(t("lang_label")), switch)
+              '<span class="brand-sub">games</span></a><nav class="nav" aria-label="main">%s<span class="langsw" role="group" aria-label="%s">%s</span>'
+              '<div class="themesw" role="group" aria-label="%s">%s</div></nav></div></header>') % (
+        esc(path_home(lang)), nav_html, esc(t("lang_label")), switch, esc(t("theme_label")), theme_btns)
     game_links = "".join('<li><a href="%s" rel="noopener">%s</a></li>' % (esc(g["url"]), esc(g["name"][lang])) for g in ctx.games)
     terms_links = "".join('<li><a href="%s" rel="noopener">%s</a></li>' % (esc(g["terms"][lang]), esc(g["name"][lang])) for g in ctx.games if g.get("terms"))
     site_links = ('<li><a href="https://ipe.rest/" rel="noopener">ipe.rest</a></li><li><a href="%s">%s</a></li><li><a href="%s">%s</a></li>'

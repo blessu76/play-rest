@@ -1,5 +1,5 @@
 /* play.ipe.rest — "Quiet Systems" (ipe.rest decision 0141): quiet, wide margins, one cobalt accent.
-   Each game card is lightly tinted with its own color (--a light theme / --a2 dark theme, set inline per card). */
+   Each game card is lightly tinted with its own color (--a light theme / --a2 dark and noir themes, set inline per card). */
 @font-face{font-family:Inter;font-weight:400;font-style:normal;font-display:swap;src:url(/assets/fonts/inter-400.woff2) format("woff2")}
 @font-face{font-family:"JetBrains Mono";font-weight:400;font-style:normal;font-display:swap;src:url(/assets/fonts/jbmono-400.woff2) format("woff2")}
 @font-face{font-family:"JetBrains Mono";font-weight:600;font-style:normal;font-display:swap;src:url(/assets/fonts/jbmono-600.woff2) format("woff2")}
@@ -8,8 +8,13 @@
   --font:Inter,system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif;
   --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   --wrap:1080px;--gutter:24px;--radius:14px;
+  color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root{--bg:#0c1118;--ink:#e8edf8;--muted:#9aa6c4;--line:#26314d;--cobalt:#8fb0ff;--oncobalt:#0c1118;--tint:#111926}}
+:root[data-theme="dark"]{--bg:#0c1118;--ink:#e8edf8;--muted:#9aa6c4;--line:#26314d;--cobalt:#8fb0ff;--oncobalt:#0c1118;--tint:#111926;color-scheme:dark}
+:root[data-theme="noir"]{--bg:#0a0810;--ink:#ece8f4;--muted:#a69eb9;--line:#2b2339;--cobalt:#b9a2f2;--oncobalt:#0a0810;--tint:#100c19;color-scheme:dark}
+/* no data-theme (JS off): follow the device setting */
+@media (prefers-color-scheme:dark){:root:not([data-theme]){--bg:#0c1118;--ink:#e8edf8;--muted:#9aa6c4;--line:#26314d;--cobalt:#8fb0ff;--oncobalt:#0c1118;--tint:#111926;color-scheme:dark}}
+html{background:var(--bg)}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.65;overflow-wrap:anywhere}
@@ -175,7 +180,39 @@ img{max-width:100%;height:auto}
 .foot-langs a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 4px;color:var(--muted)}
 .foot-langs a[aria-current="true"]{color:var(--ink);text-decoration:none}
 
-@media (prefers-color-scheme:dark){.game,.cmp-card,.made li{--ac:var(--a2)}.cmp thead th{border-bottom-color:var(--a2);color:var(--a2)}.game .btn{color:#0c1118}}
+/* game accents: dark themes (dark, noir) use --a2 */
+:root:is([data-theme="dark"],[data-theme="noir"]) :is(.game,.cmp-card,.made li){--ac:var(--a2)}
+:root:is([data-theme="dark"],[data-theme="noir"]) .cmp thead th{border-bottom-color:var(--a2);color:var(--a2)}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) :is(.game,.cmp-card,.made li){--ac:var(--a2)}:root:not([data-theme]) .cmp thead th{border-bottom-color:var(--a2);color:var(--a2)}}
+
+/* theme switch (light / dark / noir) */
+.themesw{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.themesw button{all:unset;box-sizing:border-box;width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:var(--ink);cursor:pointer}
+.themesw button:hover{color:var(--cobalt)}
+.themesw button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.themesw button:focus-visible{outline:3px solid var(--cobalt);outline-offset:-3px}
+.themesw svg{display:block}
+@media (forced-colors:active){.themesw button[aria-pressed="true"]{outline:2px solid Highlight;outline-offset:-2px}}
+html.theme-anim,html.theme-anim *{transition:background-color .2s,color .2s,border-color .2s !important}
+@media (prefers-reduced-motion:reduce){html.theme-anim,html.theme-anim *{transition:none !important}}
+
+/* noir: near-black with a faint violet; static details only (no glow, no animation) */
+@supports (background:color-mix(in srgb,red 5%,white)){
+:root[data-theme="noir"] .game{
+  border:1px solid transparent;
+  background:
+    linear-gradient(color-mix(in srgb,var(--ac) 5%,var(--tint)),color-mix(in srgb,var(--ac) 5%,var(--tint))) padding-box,
+    linear-gradient(135deg,rgba(185,162,242,.55),rgba(185,162,242,.10) 35%,rgba(124,84,200,.10) 65%,rgba(185,162,242,.35)) border-box}
+:root[data-theme="noir"] .journal-card{
+  border:1px solid transparent;
+  background:
+    linear-gradient(var(--tint),var(--tint)) padding-box,
+    linear-gradient(135deg,rgba(185,162,242,.45),rgba(185,162,242,.08) 40%,rgba(124,84,200,.08) 70%,rgba(185,162,242,.28)) border-box}
+:root[data-theme="noir"] .journal-card:hover,:root[data-theme="noir"] .journal-card:focus-within{border-color:transparent;box-shadow:0 0 0 1px var(--cobalt)} }
+/* violet vignette from the top-left corner of the page (on body, not .hero, so there is no hard edge under the header) */
+:root[data-theme="noir"] body{background-image:radial-gradient(ellipse 900px 560px at 12% 0,rgba(124,84,200,.18),transparent 70%);background-repeat:no-repeat}
+:root[data-theme="noir"] ::selection{background:#4a3480;color:#fff}
+:root[data-theme="noir"]{scrollbar-color:#3a2f52 var(--bg)}
 @media (max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){.cmp-wide{display:none}.cmp-cards{display:block}.hero{padding:48px 0 40px}.sec{padding:48px 0}}
 @media (max-width:520px){

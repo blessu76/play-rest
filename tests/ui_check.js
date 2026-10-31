@@ -1,5 +1,7 @@
 // UI gate: no horizontal overflow at 375 / 320 / 768 / 1280 px, no console errors, text >= 16px (.badge/.updated >= 14px),
-// touch targets >= 44x44 on the home and journal pages at 375px, screenshots, light and dark.
+// touch targets >= 44x44 on the home and journal pages at 375px, screenshots, in all three themes (light, dark, noir).
+// Theme checks: data-theme + aria-pressed match the saved choice, the 3 switch buttons are 44x44, the page background is the theme's --bg,
+// a click switches theme and persists it, and the device setting is followed when nothing is saved (also with JS off).
 //   NODE_PATH=<dir containing playwright> node tests/ui_check.js [outDir]
 // PLAY_ROOT=<dir> serves another repo-shaped folder (e.g. python3 tests/demo_site.py DIR: the site with test-only journal posts).
 // Serves the repo root on a random local port (static, like GitHub Pages: /dir/ -> /dir/index.html).
@@ -18,7 +20,9 @@ const server = http.createServer((req, res) => {
   res.writeHead(200, { 'content-type': TYPES[path.extname(f)] || 'application/octet-stream' });
   fs.createReadStream(f).pipe(res);
 });
-const SCHEMES = ['light', 'dark'];
+// theme -> [device colour scheme, page background]. noir is checked with a *light* device to prove a saved choice beats the device setting.
+const THEMES = { light: ['light', 'rgb(251, 252, 254)'], dark: ['dark', 'rgb(12, 17, 24)'], noir: ['light', 'rgb(10, 8, 16)'] };
+const NEXT = { light: 'noir', dark: 'light', noir: 'dark' };
 // journal list for both languages + the first post found on disk (en and ko)
 function journalPages() {
   const out = ['/journal/', '/ko/journal/'];
@@ -45,8 +49,9 @@ const SHOT = new Set(['/', '/about/', '/privacy/', '/contact/', '/ko/', '/ko/abo
   const b = await chromium.launch();
   const bad = [];
   let n = 0;
-  for (const scheme of SCHEMES) for (const [w, h] of WIDTHS) {
-    const ctx = await b.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: 1, colorScheme: scheme });
+  for (const scheme of Object.keys(THEMES)) for (const [w, h] of WIDTHS) {
+    const ctx = await b.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: 1, colorScheme: THEMES[scheme][0] });
+    await ctx.addInitScript(t => { try { localStorage.setItem('play-theme', t); } catch (e) {} }, scheme);
     for (const pth of pagesToCheck()) {
       const page = await ctx.newPage();
       const errs = [];
@@ -59,6 +64,16 @@ const SHOT = new Set(['/', '/about/', '/privacy/', '/contact/', '/ko/', '/ko/abo
         wide: [...document.querySelectorAll('body *')].filter(e => e.getBoundingClientRect().right > window.innerWidth + 1 && !e.closest('.cmp-wide') && getComputedStyle(e).position !== 'fixed')
           .slice(0, 3).map(e => e.tagName + '.' + e.className) }));
       const clipped = await page.evaluate(() => [...document.querySelectorAll('body *')].filter(e => { const c = getComputedStyle(e); return (c.overflowX !== 'visible' && !e.closest('.cmp-wide') && e.tagName !== 'PRE' && e.scrollWidth > e.clientWidth + 1) || (c.textOverflow === 'ellipsis'); }).slice(0, 3).map(e => e.tagName + '.' + e.className));
+      // theme: applied before first paint, buttons reflect it, switch is 44x44, page background is the theme's --bg
+      const th = await page.evaluate(() => ({ attr: document.documentElement.getAttribute('data-theme'), bg: getComputedStyle(document.body).backgroundColor,
+        meta: [...document.querySelectorAll('meta[name=theme-color]')].map(m => m.content),
+        pressed: [...document.querySelectorAll('.themesw button')].map(x => x.getAttribute('data-theme-set') + ':' + x.getAttribute('aria-pressed')),
+        sizes: [...document.querySelectorAll('.themesw button')].map(x => { const r = x.getBoundingClientRect(); return Math.round(r.width) + 'x' + Math.round(r.height); }) }));
+      if (th.attr !== scheme) bad.push(`${scheme} ${w}px ${pth}: data-theme is ${th.attr}`);
+      if (th.bg !== THEMES[scheme][1]) bad.push(`${scheme} ${w}px ${pth}: body background ${th.bg}, expected ${THEMES[scheme][1]}`);
+      if (th.pressed.join() !== ['light', 'dark', 'noir'].map(x => x + ':' + (x === scheme)).join()) bad.push(`${scheme} ${w}px ${pth}: aria-pressed ${th.pressed.join()}`);
+      if (th.sizes.some(x => x !== '44x44')) bad.push(`${scheme} ${w}px ${pth}: theme buttons ${th.sizes.join()}`);
+      if (new Set(th.meta).size !== 1 || th.meta.length !== 2) bad.push(`${scheme} ${w}px ${pth}: theme-color metas ${th.meta.join()}`);
       // readable text >= 16px (short labels .badge / .updated >= 14px)
       const small = await page.evaluate(() => {
         const out = [], seen = new Set(), w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
@@ -94,8 +109,41 @@ const SHOT = new Set(['/', '/about/', '/privacy/', '/contact/', '/ko/', '/ko/abo
     }
     await ctx.close();
   }
+  // behaviour: click switches + persists + survives reload and a language switch; no saved choice follows the device (also with JS off)
+  {
+    let k = 0;
+    for (const [dev, want] of [['dark', 'dark'], ['light', 'light']]) {
+      const ctx = await b.newContext({ viewport: { width: 375, height: 812 }, colorScheme: dev });
+      const page = await ctx.newPage();
+      await page.goto(origin + '/', { waitUntil: 'load' });
+      const a = await page.evaluate(() => document.documentElement.getAttribute('data-theme'));
+      if (a !== want) bad.push(`no saved theme, device ${dev}: data-theme ${a}, expected ${want}`);
+      for (const t of ['noir', 'dark', 'light', 'noir']) {
+        await page.click(`.themesw [data-theme-set=${t}]`);
+        const r = await page.evaluate(() => ({ a: document.documentElement.getAttribute('data-theme'), s: localStorage.getItem('play-theme'),
+          p: [...document.querySelectorAll('.themesw button[aria-pressed=true]')].map(x => x.getAttribute('data-theme-set')), m: document.querySelector('meta[name=theme-color]').content }));
+        if (r.a !== t || r.s !== t || r.p.join() !== t) bad.push(`click ${t}: ${JSON.stringify(r)}`);
+        k++;
+      }
+      await page.reload({ waitUntil: 'load' });
+      if (await page.evaluate(() => document.documentElement.getAttribute('data-theme')) !== 'noir') bad.push('reload lost the chosen theme');
+      await page.click('.langsw a[hreflang=ko]');
+      await page.waitForLoadState('load');
+      if (await page.evaluate(() => document.documentElement.getAttribute('data-theme')) !== 'noir') bad.push('language switch lost the chosen theme');
+      await ctx.close();
+      const nj = await b.newContext({ viewport: { width: 375, height: 812 }, colorScheme: dev, javaScriptEnabled: false });
+      const np = await nj.newPage();
+      await np.goto(origin + '/', { waitUntil: 'load' });
+      const bg = await np.evaluate(() => getComputedStyle(document.body).backgroundColor);
+      await nj.close();
+      const wantBg = THEMES[want][1]; // JS off: no data-theme, the device setting alone decides
+      if (bg !== wantBg) bad.push(`JS off, device ${dev}: body background ${bg}, expected ${wantBg}`);
+      k++;
+    }
+    n += k;
+  }
   await b.close(); server.close();
   console.log(`ui_check: ${n} page views, screenshots in ${OUT}`);
   if (bad.length) { console.error('ui_check FAILED:\n  ' + bad.join('\n  ')); process.exit(1); }
-  console.log('ui_check: OK — no horizontal overflow or clipped content at 375/320/768/1280 (light + dark), no console errors');
+  console.log('ui_check: OK — no horizontal overflow or clipped content at 375/320/768/1280 (light + dark + noir), theme switch works, no console errors');
 })();

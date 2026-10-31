@@ -53,7 +53,7 @@ function run(src,pathname,navLangs){
   const ctx={localStorage:{getItem:k=>store[k]===undefined?null:store[k],setItem:(k,v)=>{store[k]=String(v)}},
     navigator:{languages:navLangs,language:navLangs[0]},
     location:{pathname,search:'',hash:'',replace:u=>{to=u}},
-    document:{querySelector:()=>null,addEventListener:(t,f)=>{if(t==='click'&&!listener)listener=f}},window:{}};
+    document:{querySelector:()=>null,querySelectorAll:()=>[],documentElement:{getAttribute:()=>null,setAttribute(){},classList:{add(){},remove(){}}},addEventListener:(t,f)=>{if(t==='click'&&!listener)listener=f}},window:{}};
   new Function('localStorage','navigator','location','document','window',src)(ctx.localStorage,ctx.navigator,ctx.location,ctx.document,ctx.window);
   return {listener,to};
 }
