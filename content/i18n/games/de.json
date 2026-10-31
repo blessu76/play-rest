@@ -45,7 +45,7 @@
  "inkisle": {
   "status": "In Entwicklung",
   "platform": "Zuerst iOS, Android parallel",
-  "pricing": "Jede Runde kostenlos · keine Werbung · optionale Hilfsgegenstände",
+  "pricing": "Geplant: jede Runde kostenlos · keine Werbung · optionale Hilfsgegenstände",
   "tagline": "Ein leichtes Strategiespiel um Inseleroberung für Ihr Handy: Schicken Sie Flotten zwischen Inseln hin und her und färben Sie das Meer in Ihrer Farbe.",
   "pros": [
    {
@@ -80,7 +80,7 @@
    "players": "Solo und offline. Über Onlinespiel wird später entschieden",
    "platform": "Zuerst iOS, Android parallel",
    "offline": "Offline, ohne Konto",
-   "pricing": "Jede Runde kostenlos · keine Werbung · optionale Hilfsgegenstände",
+   "pricing": "Geplant: jede Runde kostenlos · keine Werbung · optionale Hilfsgegenstände",
    "languages": "12 Sprachen",
    "status": "In Entwicklung. TestFlight-Builds laufen"
   }

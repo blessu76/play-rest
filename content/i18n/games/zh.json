@@ -45,7 +45,7 @@
  "inkisle": {
   "status": "开发中",
   "platform": "先登陆 iOS，Android 同步推出",
-  "pricing": "每一局都免费 · 无广告 · 可选的辅助道具",
+  "pricing": "计划：每一局都免费 · 无广告 · 可选的辅助道具",
   "tagline": "一款轻松的手机岛屿征服策略游戏：派舰队往返于岛屿之间，把海面染成你的颜色。",
   "pros": [
    {
@@ -80,7 +80,7 @@
    "players": "单人且离线。在线游玩将在之后决定",
    "platform": "先登陆 iOS，Android 同步推出",
    "offline": "离线，无需账号",
-   "pricing": "每一局都免费 · 无广告 · 可选的辅助道具",
+   "pricing": "计划：每一局都免费 · 无广告 · 可选的辅助道具",
    "languages": "12 种语言",
    "status": "开发中。TestFlight 测试版进行中"
   }

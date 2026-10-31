@@ -7,7 +7,7 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 ## The games
 
 - [Iltonggi](https://iltonggi.ipe.rest): A short, fast, classic territory-conquest strategy game set in Korea's Three Kingdoms era. Status: Coming soon. Platform: iPhone first. Pricing: No ads, no tracking.
-- [Inkisle](https://inkisle.ipe.rest): A light island-conquest strategy game for your phone: send fleets between islands and tint the sea your color. Status: In development. Platform: iOS first, Android alongside. Pricing: Every round free · no ads · optional help items.
+- [Inkisle](https://inkisle.ipe.rest): A light island-conquest strategy game for your phone: send fleets between islands and tint the sea your color. Status: In development. Platform: iOS first, Android alongside. Pricing: Planned: every round free · no ads · optional help items.
 - [Sunmeld](https://sunmeld.ipe.rest): A merge duel against an AI opponent in one shared tub. Drop a stone, merge matching stones into the next stage, and score. Overflow the tub and you lose. Status: In development. Platform: iOS and Android. Pricing: Free to try, one purchase unlocks everything, no ads.
 - [Claimball](https://claimball.ipe.rest): A casual duel against an AI rival on a notebook grid. The tile where your ball bounces becomes your land. Miss, and you lose land. Status: Coming soon. Platform: iOS and Android. Pricing: Free to try. One purchase unlocks everything. No ads, no subscription..
 

@@ -45,7 +45,7 @@
  "inkisle": {
   "status": "En développement",
   "platform": "D’abord iOS, Android en parallèle",
-  "pricing": "Toutes les parties gratuites · sans publicité · objets d’aide facultatifs",
+  "pricing": "Prévu : toutes les parties gratuites · sans publicité · objets d’aide facultatifs",
   "tagline": "Un jeu de stratégie léger de conquête d’îles pour votre téléphone : envoyez des flottes d’île en île et teintez la mer de votre couleur.",
   "pros": [
    {
@@ -80,7 +80,7 @@
    "players": "Solo et hors ligne. Le jeu en ligne sera décidé plus tard",
    "platform": "D’abord iOS, Android en parallèle",
    "offline": "Hors ligne, sans compte",
-   "pricing": "Toutes les parties gratuites · sans publicité · objets d’aide facultatifs",
+   "pricing": "Prévu : toutes les parties gratuites · sans publicité · objets d’aide facultatifs",
    "languages": "12 langues",
    "status": "En développement. Versions TestFlight en cours"
   }

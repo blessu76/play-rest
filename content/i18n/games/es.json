@@ -45,7 +45,7 @@
  "inkisle": {
   "status": "En desarrollo",
   "platform": "Primero iOS, Android a la par",
-  "pricing": "Todas las partidas gratis · sin anuncios · objetos de ayuda opcionales",
+  "pricing": "Planeado: todas las partidas gratis · sin anuncios · objetos de ayuda opcionales",
   "tagline": "Un juego de estrategia ligero de conquista de islas para el móvil: envía flotas entre islas y tiñe el mar de tu color.",
   "pros": [
    {
@@ -80,7 +80,7 @@
    "players": "En solitario y sin conexión. El juego en línea se decidirá más adelante",
    "platform": "Primero iOS, Android a la par",
    "offline": "Sin conexión, sin cuenta",
-   "pricing": "Todas las partidas gratis · sin anuncios · objetos de ayuda opcionales",
+   "pricing": "Planeado: todas las partidas gratis · sin anuncios · objetos de ayuda opcionales",
    "languages": "12 idiomas",
    "status": "En desarrollo. Compilaciones de TestFlight en curso"
   }

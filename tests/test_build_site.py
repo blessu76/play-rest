@@ -121,6 +121,22 @@ class Built(unittest.TestCase):
         self.assertGreaterEqual(en.count("pre-launch proposal"), 3)
         self.assertGreaterEqual(html.unescape(self.read("ko/index.html")).count("출시 전 제안값"), 3)
 
+    def test_inkisle_pricing_is_marked_as_a_plan_in_all_11_languages_and_nothing_else_changed(self):
+        # inkisle.ipe.rest says "Not announced yet ... the current plan": the card and compare cell say it is planned, in every language
+        games = {x["id"]: x for x in self.ctx.games}
+        lead = {"en": "Planned: ", "ko": "출시 전 계획: ", "de": "Geplant: ", "es": "Planeado: ", "fr": "Prévu : ", "id": "Rencana: ",
+                "ja": "予定：", "pt": "Planejado: ", "ru": "В планах: ", "vi": "Dự kiến: ", "zh": "计划："}
+        self.assertEqual(len(lead), 11)
+        for lang, word in lead.items():
+            for text in (games["inkisle"]["pricing"][lang], games["inkisle"]["compare"]["pricing"][lang]):
+                self.assertTrue(text.startswith(word), (lang, text))
+        self.assertEqual(games["inkisle"]["pricing"]["en"], "Planned: every round free · no ads · optional help items")
+        self.assertEqual(games["inkisle"]["pricing"]["ko"], "출시 전 계획: 모든 판 무료 · 광고 없음 · 선택형 도움 아이템")
+        for gid in ("iltonggi", "sunmeld", "claimball"):  # the other cards are not touched
+            for lang, word in lead.items():
+                self.assertFalse(games[gid]["pricing"][lang].startswith(word), (gid, lang))
+                self.assertFalse(games[gid]["compare"]["pricing"][lang].startswith(word), (gid, lang))
+
     def test_compare_lead_does_not_claim_only_stated_facts(self):
         for lang in ("en", "ko"):
             lead = json.loads((REPO / "content" / "i18n" / (lang + ".json")).read_text(encoding="utf-8"))["compare_lead"]
