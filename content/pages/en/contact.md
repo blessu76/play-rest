@@ -27,7 +27,7 @@ Not yet. None of the four games is released, and none has a store page. The stat
 
 ### Do you collect personal information?
 
-No. See the [Privacy Policy](/privacy/) for details.
+We do not ask for your name or email, and the site has no accounts. We collect basic visit statistics through Google Analytics. See the [Privacy Policy](/privacy/) for details and how to opt out.
 
 ### Where are the terms of use?
 

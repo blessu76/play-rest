@@ -2,7 +2,7 @@
 
 > Four small games from ipe(): Iltonggi, Inkisle, Sunmeld and Claimball. Short rounds, few rules, no ads. None is released yet.
 
-play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects four games in one place and links to each game's own official site. None of the four games has been released: no store page or release date exists for any of them. This portal has no accounts, ads or tracking and no terms of its own (each game's site has its own terms). It has a journal with notes on turn-based games, killing-time games and how ipe() makes games.
+play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects four games in one place and links to each game's own official site. None of the four games has been released: no store page or release date exists for any of them. This portal has no accounts or ads, collects only basic visit statistics through Google Analytics, and has no terms of its own (each game's site has its own terms). It has a journal with notes on turn-based games, killing-time games and how ipe() makes games.
 
 ## The games
 
@@ -15,7 +15,7 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 
 - Short rounds that fit a break: A round should end in minutes, and closing the app should never cost you.
 - Few rules, deep reading: If the rules don't fit on one page, the game is asking too much.
-- A quiet app: No streak nagging, no ads, no accounts, no tracking.
+- A quiet app: No streak nagging, no ads, no accounts, and no tracking inside the games.
 - Say what's true, including what isn't: If it's not released, we say so. If we haven't checked, we say that too.
 - The AI plays fair: Comebacks come from the rules, not from a secretly weakened opponent.
 

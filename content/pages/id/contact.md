@@ -27,7 +27,7 @@ Belum. Belum ada satu pun dari keempat game ini yang dirilis, dan belum ada yang
 
 ### Apakah Anda mengumpulkan informasi pribadi?
 
-Tidak. Lihat [Kebijakan Privasi](/id/privacy/) untuk detailnya.
+Kami tidak meminta nama atau email Anda, dan situs ini tidak punya akun. Kami mengumpulkan statistik kunjungan dasar melalui Google Analytics. Lihat [Kebijakan Privasi](/id/privacy/) untuk detail dan cara menolaknya.
 
 ### Di mana ketentuan penggunaannya?
 

@@ -27,7 +27,7 @@ Ainda não. Nenhum dos quatro jogos foi lançado e nenhum tem página em loja. A
 
 ### Vocês coletam informações pessoais?
 
-Não. Veja a [Política de Privacidade](/pt/privacy/) para mais detalhes.
+Não pedimos seu nome nem seu e-mail, e o site não tem contas. Coletamos estatísticas básicas de visitas por meio do Google Analytics. Veja a [Política de Privacidade](/pt/privacy/) para mais detalhes e para saber como desativar.
 
 ### Onde estão os termos de uso?
 

@@ -27,7 +27,7 @@ Pas encore. Aucun des quatre jeux n’est sorti, et aucun n’a de page en bouti
 
 ### Collectez-vous des informations personnelles ?
 
-Non. Consultez la [Politique de confidentialité](/fr/privacy/) pour plus de détails.
+Nous ne demandons ni votre nom ni votre e-mail, et le site n’a pas de comptes. Nous collectons des statistiques de visite de base via Google Analytics. Consultez la [Politique de confidentialité](/fr/privacy/) pour plus de détails et pour savoir comment vous y opposer.
 
 ### Où sont les conditions d’utilisation ?
 

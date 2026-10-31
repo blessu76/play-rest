@@ -202,7 +202,8 @@ class Built(unittest.TestCase):
         for a in ("play.css", "play.js", "favicon.svg", "icon-180.png", "icon-512.png", "og-image.png", "fonts/inter-400.woff2"):
             self.assertTrue((REPO / "assets" / a).is_file(), a)
         self.assertNotIn("fonts.googleapis", h)
-        self.assertNotIn("googletagmanager", h)
+        self.assertEqual(h.count("googletagmanager.com/gtag/js"), 1)  # GA4 only (test_ga4.py); no other tag or tracker
+        self.assertNotIn("doubleclick", h)
 
     def test_robots_llms_sitemap(self):
         r = self.read("robots.txt")

@@ -27,7 +27,7 @@ Noch nicht. Keines der vier Spiele ist erschienen, und keines hat eine Store-Sei
 
 ### Erheben Sie personenbezogene Daten?
 
-Nein. Einzelheiten finden Sie in der [Datenschutzerklärung](/de/privacy/).
+Wir fragen weder nach Ihrem Namen noch nach Ihrer E-Mail-Adresse, und die Website hat keine Konten. Wir erheben grundlegende Besuchsstatistiken über Google Analytics. Einzelheiten und Hinweise zum Widerspruch finden Sie in der [Datenschutzerklärung](/de/privacy/).
 
 ### Wo finde ich die Nutzungsbedingungen?
 

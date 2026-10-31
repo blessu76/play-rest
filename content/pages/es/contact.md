@@ -27,7 +27,7 @@ Todavía no. Ninguno de los cuatro juegos ha salido y ninguno tiene página en u
 
 ### ¿Recogen información personal?
 
-No. Consulta la [Política de privacidad](/es/privacy/) para más detalles.
+No pedimos tu nombre ni tu correo electrónico, y el sitio no tiene cuentas. Recogemos estadísticas básicas de visitas mediante Google Analytics. Consulta la [Política de privacidad](/es/privacy/) para más detalles y para saber cómo desactivarlo.
 
 ### ¿Dónde están los términos de uso?
 

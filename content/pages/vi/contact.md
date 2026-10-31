@@ -27,7 +27,7 @@ Chưa. Chưa trò nào trong bốn trò chơi được phát hành, và chưa tr
 
 ### Các bạn có thu thập thông tin cá nhân không?
 
-Không. Xem [Chính sách quyền riêng tư](/vi/privacy/) để biết chi tiết.
+Chúng tôi không yêu cầu tên hay email của bạn, và trang không có tài khoản. Chúng tôi thu thập thống kê truy cập cơ bản qua Google Analytics. Xem [Chính sách quyền riêng tư](/vi/privacy/) để biết chi tiết và cách từ chối.
 
 ### Điều khoản sử dụng ở đâu?
 

@@ -191,7 +191,8 @@ class WithPosts(Reader):
             h = self.read(f)
             self.assertLessEqual(len(re.search(r"<title>(.*?)</title>", h).group(1)), bs.TITLE_MAX, f)
             self.assertEqual(bs.text_problems("x", re.sub(r"<script[^>]*>.*?</script>", "", h, flags=re.S)), [])
-            self.assertNotIn("googletagmanager", h)
+            self.assertEqual(h.count("googletagmanager.com/gtag/js"), 1)  # GA4 only (test_ga4.py)
+            self.assertNotIn("doubleclick", h)
 
     def test_build_is_deterministic(self):
         a = bs.build_all(self.ctx)
@@ -231,7 +232,8 @@ class DateGate(Reader):
         for slug, title in (("turn-based-in-a-break", "Turn-based games that fit in a break"), ("killing-time-honestly", "Killing time, honestly")):
             self.assertNotIn(slug, blob)
             self.assertNotIn(title, blob)
-        self.assertNotIn("2026-11-0", self.read("sitemap.xml"))  # not even as a lastmod
+        for future in ("2026-11-02", "turn-based-in-a-break", "killing-time-honestly"):
+            self.assertNotIn(future, self.read("sitemap.xml"))  # not even as a lastmod (the site's own pages are dated 11-01, the 11-01/11-02 posts' dates must not show)
         self.assertIn("<loc>https://play.ipe.rest/journal/why-rounds-end/</loc>", self.read("sitemap.xml"))
         self.assertIn("why-rounds-end", self.read("journal/feed.xml"))
         self.assertEqual(self.read("journal/feed.xml").count("<item>"), 2)
