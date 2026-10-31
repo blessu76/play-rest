@@ -32,9 +32,9 @@ In a short round, being behind carries a special pressure: there is little time 
 
 If the answer is "no", gamble. If the answer is "yes, and I was not really behind", think again.
 
-## Games that reward the bold
+## Designs that sit close to risk
 
-Some designs reward boldness directly. In [Inkisle](https://inkisle.ipe.rest), sending fleets across a sea in real time means you decide quickly. In [Claimball](https://claimball.ipe.rest), hitting the ball with the middle of your paddle is a smash that claims three tiles, which a more careful return does not.
+A few details in our games touch on this. In [Inkisle](https://inkisle.ipe.rest), fleets cross a sea in real time. In [Claimball](https://claimball.ipe.rest), hitting the ball with the middle of your paddle is a smash that claims three tiles.
 
 We offer this as a way of looking, not as advice tested against anyone. Neither game is released. Inkisle is in development and Claimball is marked "coming soon".
 

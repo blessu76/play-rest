@@ -3,7 +3,7 @@ slug: 2026-11-16-when-a-game-is-solved
 lang: en
 title: "When a game is solved"
 alt_title: "게임이 '풀렸다'는 것"
-description: "Tic-tac-toe is solved, and so is checkers. What that means, why a solved game stops being fun, and what keeps a short game alive anyway."
+description: "Tic-tac-toe is solved, and so is checkers. What that means, why a solved game can lose its spark, and what keeps a short game alive anyway."
 excerpt: "A look at solved games, from tic-tac-toe to checkers, and why a short game needs more than a correct answer."
 published_at: 2026-11-16T12:26+09:00
 category: games
@@ -20,7 +20,7 @@ That feeling has a name. Tic-tac-toe is a solved game.
 
 A game is solved when the result of perfect play is known. In tic-tac-toe, perfect play from both sides ends in a draw. That is easy to check by hand, which is why children work it out sooner or later.
 
-Bigger games can be solved too, but it takes a great deal more effort. Checkers was solved by a research team led by Jonathan Schaeffer, who reported the result in 2007: with perfect play from both sides, checkers is a draw. It took years of computer work. Chess, by comparison, has not been solved.
+Bigger games can be solved too, but it takes a great deal more effort. Checkers (the 8x8 English version, also called draughts) was solved by a research team led by Jonathan Schaeffer, who reported the result in 2007: with perfect play from both sides, checkers is a draw. It took years of computer work. Chess, by comparison, has not been solved.
 
 Solving a game does not mean people can play it perfectly. It means that someone, or something, knows what perfect play would produce.
 

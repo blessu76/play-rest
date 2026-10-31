@@ -16,7 +16,7 @@ A deck of cards and a flat surface are enough for a whole game. That is the quie
 
 ## Two names, one idea
 
-The same kind of game has gone by different names. In English it is usually called patience. In Scandinavian languages the older word was cabale. The earliest references that scholars point to come from German and Scandinavian sources in the second half of the eighteenth century. Beyond that, the history gets vague quickly, and we would rather say so than repeat a tidy origin story we cannot check.
+The same kind of game has gone by different names. In British English it is called patience and in American English solitaire. Scandinavian sources also use the name cabale. The earliest references that scholars point to come from German and Scandinavian sources in the second half of the eighteenth century. Beyond that, the history gets vague quickly, and we would rather say so than repeat a tidy origin story we cannot check.
 
 What the names do tell us is something about the player. Patience is the virtue the game asks for, and solitaire is the condition it is played in. Both words describe the player and neither describes the cards.
 

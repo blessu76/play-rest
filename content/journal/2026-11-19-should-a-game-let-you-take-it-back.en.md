@@ -36,9 +36,9 @@ None of these is perfect. A confirmation tap on every move turns a quick game in
 
 ## Where we stand
 
-We should be careful here, because the sites of our four games do not describe an undo button, and we do not want to invent one. What we can say is how we think about it. In [Sunmeld](https://sunmeld.ipe.rest), whoever overflows the tub loses, and that makes the last stone a real decision. A game with an ending that sharp gains from moves that count, and we would want any softening of it to be a considered choice, not a default.
+We should be careful here, because the game information on this portal says nothing about an undo button, and we do not want to invent one. What we can say is how we think about it. In [Sunmeld](https://sunmeld.ipe.rest), whoever overflows the tub loses, and that makes the last stone a real decision. A game with an ending that sharp gains from moves that count, and we would want any softening of it to be a considered choice, not a default.
 
-For the same reason, a slip should not decide a match. That tension is real and we have not resolved it in writing. Our games are not released, and how they treat a mistaken tap is one of the things only play-testing will settle.
+For the same reason, a slip should not decide a match. That tension is real and we have not resolved it in writing. Our games are not released, and how they treat a mistaken tap is not something we can speak to yet.
 
 If you like a duel where a move has weight, Sunmeld is the card to look at on [play.ipe.rest](https://play.ipe.rest). It is in development and has no release date.
 

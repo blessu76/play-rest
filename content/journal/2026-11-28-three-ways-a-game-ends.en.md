@@ -28,7 +28,7 @@ When the game ends because one side has nothing left, the middle is about surviv
 
 This kind is sharp. A single collapse can end everything, and a lead can disappear quickly. It suits a break where you want tension, though it can feel harsh if the round was long.
 
-The conquest shape of [Iltonggi](https://iltonggi.ipe.rest) and [Inkisle](https://inkisle.ipe.rest) has some of this edge: when an island or a town changes hands, you can see what is at stake. Again, this is a feeling, not a rule we are quoting.
+The territory-grabbing shape of [Iltonggi](https://iltonggi.ipe.rest) has some of this edge: when a town changes hands, you can see what is at stake. Again, this is a feeling, not a rule we are quoting.
 
 ## Ending by the last move
 
