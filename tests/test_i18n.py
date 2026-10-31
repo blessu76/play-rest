@@ -199,7 +199,9 @@ class AllLanguages(unittest.TestCase):
             for s in SLUGS:
                 h = self.read(pre(l) + s + "index.html")
                 nav = re.search(r'<nav class="nav".*?</nav>', h, re.S).group(0)
-                self.assertIn('<a href="/journal/" hreflang="en">%s</a>' % html.escape(self.i18n[l]["nav_journal"]), nav, (l, s))
+                m = self.i18n[l]["en_mark"]  # the nav says it too, like every other link that falls back to English
+                label = self.i18n[l]["nav_journal"] + (m if m.startswith("（") else " " + m)
+                self.assertIn('<a href="/journal/" hreflang="en">%s</a>' % html.escape(label), nav, (l, s))
                 foot = re.search(r"<footer.*</footer>", h, re.S).group(0)
                 self.assertIn('<li><a href="/journal/" hreflang="en">%s</a></li>' % html.escape(self.i18n[l]["journal_en"]), foot, (l, s))
                 self.assertIn('<link rel="alternate" type="application/rss+xml" title="ipe() Games Journal" href="/journal/feed.xml">', h)

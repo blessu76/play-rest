@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    # 12:05 KST every day (UTC+9, no DST): the daily build opens the journal posts dated today. GitHub may start it a few minutes late.
+    - cron: "5 3 * * *"
   workflow_dispatch:
 
 permissions:
@@ -15,17 +18,55 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Daily publish (schedule / manual run on main): rebuild as of today in KST; if the generated HTML changed (a journal post became
+  # due) commit it to main as github-actions[bot]. A push made with GITHUB_TOKEN does not start another workflow run, so the check and
+  # deploy jobs below (same run) publish that commit. Only this job can write to the repo; nothing runs on a plain push.
+  daily:
+    if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.commit.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Build as of today (KST)
+        run: python3 scripts/build_site.py --now "$(TZ=Asia/Seoul date +%F)"
+      - name: Commit and push if the build changed
+        id: commit
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            day="$(TZ=Asia/Seoul date +%F)"
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "build: journal as of $day (daily publish)"
+            git push origin HEAD:main
+          else
+            echo "nothing due today: the committed build is already current"
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
   check:
+    needs: daily
+    # run after `daily` when it ran, and on its own for a push; never when `daily` failed
+    if: ${{ !cancelled() && (needs.daily.result == 'success' || needs.daily.result == 'skipped') }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.daily.outputs.sha || github.sha }}
       - name: Green gate (sources, tests, up-to-date build, sitemap)
         run: bash scripts/check.sh
 
   deploy:
-    needs: check
+    needs: [daily, check]
+    # `daily` is skipped on a plain push, and a skipped need would skip this job too: ask for the check result instead
+    if: ${{ !cancelled() && needs.check.result == 'success' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -33,6 +74,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.daily.outputs.sha || github.sha }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

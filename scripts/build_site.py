@@ -30,11 +30,15 @@ Usage
   python3 scripts/build_site.py                 # build into the repo root
   python3 scripts/build_site.py --check         # validate sources only, write nothing
   python3 scripts/build_site.py --root DIR      # another repo-shaped folder (tests)
+  python3 scripts/build_site.py --now 2026-11-01   # as of that KST date ($PLAY_NOW does the same); default: today in KST
+  Date gate: a journal post whose published date is after the build date is validated but written nowhere (no page, list, home card,
+  RSS item, sitemap entry or llms.txt line). The daily workflow rebuilds at 12:05 KST, so a post goes live on its publish date.
 """
 import argparse
 import datetime as dt
 import html
 import json
+import os
 import re
 import shutil
 import sys
@@ -335,6 +339,21 @@ def parse_published(value):
         return None
 
 
+def resolve_today(now=None):
+    """the build's reference date (a KST calendar date): `now` (date / 'YYYY-MM-DD' / datetime) > $PLAY_NOW > the current KST date"""
+    now = now or os.environ.get("PLAY_NOW") or dt.datetime.now(KST)
+    if isinstance(now, str):
+        if not valid_date(now):
+            raise ValueError("--now / PLAY_NOW must be a real date like 2026-11-01, got %r" % now)
+        return dt.date.fromisoformat(now)
+    return now.astimezone(KST).date() if isinstance(now, dt.datetime) else now
+
+
+def released(post, today):
+    """a post is public from its KST publish date on (the whole day: the daily build runs once, at noon KST)"""
+    return post["published"][:10] <= today.isoformat()
+
+
 def load_journal(root):
     """content/journal/<slug>.<lang>.md -> (posts newest first, errors).
     post = {slug, published, updated, langs: {lang: {title, description, excerpt, body}}}; every post has both journal languages.
@@ -600,8 +619,9 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
     langsw = ('<details class="langsw"><summary aria-label="%s: %s">%s<span class="langsw__cur" aria-hidden="true">%s</span></summary>'
               '<ul class="langsw__list" aria-label="%s">%s</ul></details>') % (
         esc(t("lang_label")), esc(name), GLOBE_ICON, esc(short), esc(t("lang_label")), switch)
+    jhref, jnav_attr, jnav_mark = loc_link(ctx, {jl: path_journal(jl)}, lang)  # a language without its own journal says "(in English)" here too
     navlinks = [(path_home(lang) + "#games", t("nav_games"), "games", ""), (path_page(lang, "about"), t("nav_about"), "about", ""),
-                (path_journal(jl), t("nav_journal"), "journal", jattr), (path_page(lang, "contact"), t("nav_contact"), "contact", "")]
+                (jhref, t("nav_journal") + jnav_mark, "journal", jnav_attr), (path_page(lang, "contact"), t("nav_contact"), "contact", "")]
     nav_html = "".join('<a href="%s"%s%s>%s</a>' % (esc(h), a, ' aria-current="page"' if nav == k else "", esc(label)) for h, label, k, a in navlinks)
     theme_btns = "".join('<button type="button" data-theme-set="%s" aria-pressed="false" aria-label="%s" title="%s">%s</button>' % (
         k, esc(t("theme_" + k)), esc(t("theme_" + k)), svg) for k, svg in THEME_ICONS)
@@ -945,13 +965,16 @@ def build_llms(ctx):
 
 
 # ---------------------------------------------------------------- orchestration
-def make_ctx(root):
+def make_ctx(root, now=None):
     root = Path(root)
     i18n, errs = load_i18n(root)
     pages, e2 = load_pages(root)
     games, e3 = load_games(root)
     game_langs, e5 = load_game_text(root, games) if not e3 else ([], [])
     posts, e4 = load_journal(root)
+    today = resolve_today(now)
+    total = len(posts)
+    posts = [p for p in posts if released(p, today)]  # the date gate: a post dated after `today` (KST) is on no page, feed or sitemap
     errs += e2 + e3 + e5 + e4
 
     def has(l):
@@ -964,7 +987,9 @@ def make_ctx(root):
         started = l in i18n or any((l, s) in pages for s in PAGE_SLUGS) or (Path(root) / ("content/i18n/games/%s.json" % l)).is_file()
         if started and not all(h.values()):
             errs.append("%s: translation is incomplete — missing %s" % (l, ", ".join(k for k, v in h.items() if not v)))
-    return Ctx(root, i18n, pages, games, langs, posts), errs
+    ctx = Ctx(root, i18n, pages, games, langs, posts)
+    ctx.today, ctx.scheduled = today, total - len(posts)
+    return ctx, errs
 
 
 def build_all(ctx):
@@ -1006,22 +1031,28 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--root", default=str(Path(__file__).resolve().parent.parent))
     ap.add_argument("--check", action="store_true", help="validate sources only")
+    ap.add_argument("--now", metavar="YYYY-MM-DD", help="build as of this KST date: posts dated later stay out of every page, feed and sitemap "
+                    "(default: $PLAY_NOW, else today in KST)")
     a = ap.parse_args(argv)
     root = Path(a.root).resolve()
-    ctx, errs = make_ctx(root)
+    try:
+        ctx, errs = make_ctx(root, a.now)
+    except ValueError as ex:
+        print("build_site: %s" % ex, file=sys.stderr)
+        return 2
     if errs:
         print("build_site: %d problem(s)\n  %s" % (len(errs), "\n  ".join(errs)), file=sys.stderr)
         return 1
     files = build_all(ctx)
     if a.check:
-        print("build_site: sources OK — %d language(s), %d game(s), %d file(s) would be written, %d journal post(s)" % (len(ctx.langs), len(ctx.games), len(files), len(ctx.posts)))
+        print("build_site: sources OK — %d language(s), %d game(s), %d file(s) would be written, %d journal post(s) live, %d scheduled (as of %s)" % (len(ctx.langs), len(ctx.games), len(files), len(ctx.posts), ctx.scheduled, ctx.today))
         return 0
     clean(root)
     for rel, text in files.items():
         f = root / rel
         f.parent.mkdir(parents=True, exist_ok=True)
         f.write_text(text, encoding="utf-8")
-    print("build_site: wrote %d file(s) — %d language(s), %d game(s), %d journal post(s)" % (len(files), len(ctx.langs), len(ctx.games), len(ctx.posts)))
+    print("build_site: wrote %d file(s) — %d language(s), %d game(s), %d journal post(s) live, %d scheduled (as of %s)" % (len(files), len(ctx.langs), len(ctx.games), len(ctx.posts), ctx.scheduled, ctx.today))
     return 0
 
 

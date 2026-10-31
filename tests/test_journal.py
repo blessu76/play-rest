@@ -200,6 +200,101 @@ class WithPosts(Reader):
         self.assertEqual(a, bs.build_all(ctx2))
 
 
+class DateGate(Reader):
+    """a post dated after the build date (KST) is on no page, list, card, feed, sitemap or llms.txt; a post dated the build day is"""
+
+    def setUp(self):
+        self.root = make_site_with_posts(("one-more-old-post", "why-rounds-end", "turn-based-in-a-break", "killing-time-honestly"))
+        self.addCleanup(shutil.rmtree, self.root, True)
+
+    def build(self, now):
+        ctx, errs = bs.make_ctx(self.root, now)
+        self.assertEqual(errs, [])
+        bs.clean(self.root)
+        for rel, text in bs.build_all(ctx).items():
+            f = self.root / rel
+            f.parent.mkdir(parents=True, exist_ok=True)
+            f.write_text(text, encoding="utf-8")
+        return ctx
+
+    def everywhere(self):
+        return "\n".join(f.read_text(encoding="utf-8") for f in sorted(self.root.rglob("*")) if f.is_file() and "content" not in f.parts and "assets" not in f.parts)
+
+    def test_future_posts_are_left_out_of_everything(self):
+        ctx = self.build("2026-10-31")  # fixtures: 10-30 and 10-31 are out, 11-01 and 11-02 are still in the future
+        self.assertEqual([p["slug"] for p in ctx.posts], ["why-rounds-end", "one-more-old-post"])
+        self.assertEqual(ctx.scheduled, 2)
+        for slug in ("turn-based-in-a-break", "killing-time-honestly"):
+            for pre in ("", "ko/"):
+                self.assertFalse((self.root / pre / "journal" / slug).exists(), (slug, pre))
+        blob = self.everywhere()
+        for slug, title in (("turn-based-in-a-break", "Turn-based games that fit in a break"), ("killing-time-honestly", "Killing time, honestly")):
+            self.assertNotIn(slug, blob)
+            self.assertNotIn(title, blob)
+        self.assertNotIn("2026-11-0", self.read("sitemap.xml"))  # not even as a lastmod
+        self.assertIn("<loc>https://play.ipe.rest/journal/why-rounds-end/</loc>", self.read("sitemap.xml"))
+        self.assertIn("why-rounds-end", self.read("journal/feed.xml"))
+        self.assertEqual(self.read("journal/feed.xml").count("<item>"), 2)
+
+    def test_a_post_dated_today_is_included_even_late_in_the_day(self):
+        # why-rounds-end is published 2026-10-31T23:40+09:00: it is live for a build on 10-31 (any hour), not for 10-30
+        self.assertEqual([p["slug"] for p in self.build("2026-10-31").posts][0], "why-rounds-end")
+        ctx = self.build("2026-10-30")
+        self.assertEqual([p["slug"] for p in ctx.posts], ["one-more-old-post"])
+        self.assertFalse((self.root / "journal" / "why-rounds-end").exists())
+        self.assertNotIn("why-rounds-end", self.everywhere())
+
+    def test_the_day_after_brings_the_next_post(self):
+        ctx = self.build("2026-11-01")
+        self.assertEqual(ctx.posts[0]["slug"], "turn-based-in-a-break")
+        self.assertTrue((self.root / "journal/turn-based-in-a-break/index.html").is_file())
+        self.assertIn("/journal/turn-based-in-a-break/", self.read("sitemap.xml"))
+        self.assertNotIn("killing-time-honestly", self.everywhere())
+        self.assertEqual(self.build("2026-11-02").scheduled, 0)
+
+    def test_a_site_whose_posts_are_all_in_the_future_is_the_empty_site(self):
+        ctx = self.build("2026-10-01")
+        self.assertEqual((ctx.posts, ctx.scheduled), ([], 4))
+        self.assertIn("noindex", self.read("journal/index.html"))
+        self.assertNotIn('id="journal"', self.read("index.html"))
+        self.assertNotIn("/journal/", self.read("sitemap.xml"))
+        self.assertEqual(cs.check(self.root, NOW)[0], [])
+
+    def test_future_posts_are_still_validated(self):
+        add_post(self.root, "killing-time-honestly", description=None)  # a broken draft must fail today, not on the day it goes live
+        _, errs = bs.make_ctx(self.root, "2026-10-31")
+        self.assertTrue(any("missing description" in e for e in errs), errs)
+
+    def test_the_reference_date_comes_from_the_argument_then_the_environment_then_the_clock(self):
+        import datetime as dt
+        import os
+        self.assertEqual(bs.resolve_today("2026-11-01"), dt.date(2026, 11, 1))
+        self.assertEqual(bs.resolve_today(dt.date(2026, 11, 2)), dt.date(2026, 11, 2))
+        # an aware instant is turned into its KST date: 2026-10-31 16:00 UTC is already 11-01 in Seoul
+        self.assertEqual(bs.resolve_today(dt.datetime(2026, 10, 31, 16, 0, tzinfo=dt.timezone.utc)), dt.date(2026, 11, 1))
+        self.assertEqual(bs.resolve_today(), dt.date(2026, 11, 3))  # helpers pins $PLAY_NOW
+        old = os.environ.pop("PLAY_NOW")
+        try:
+            self.assertEqual(bs.resolve_today(), dt.datetime.now(bs.KST).date())
+        finally:
+            os.environ["PLAY_NOW"] = old
+        for bad in ("2026-13-01", "tomorrow", "2026-11-1"):
+            with self.assertRaises(ValueError):
+                bs.resolve_today(bad)
+
+    def test_the_command_line_takes_now(self):
+        import contextlib
+        import io
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out):
+            rc = bs.main(["--root", str(self.root), "--now", "2026-11-01"])
+        self.assertEqual(rc, 0)
+        self.assertIn("3 journal post(s) live, 1 scheduled (as of 2026-11-01)", out.getvalue())
+        self.assertTrue((self.root / "journal/turn-based-in-a-break/index.html").is_file())
+        self.assertFalse((self.root / "journal/killing-time-honestly").exists())
+        self.assertEqual(bs.main(["--root", str(self.root), "--now", "2026-02-30"]), 2)
+
+
 class EmptyJournal(Reader):
     """no posts at all: the list says so, the feed is valid, the home page and sitemap carry no journal parts"""
 

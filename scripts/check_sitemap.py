@@ -27,7 +27,7 @@ NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9", "x": "http://www.w3.or
 
 def check(root, now=None):
     root = Path(root)
-    now = now or dt.datetime.now(dt.timezone(dt.timedelta(hours=9)))
+    now = now or dt.datetime.combine(bs.resolve_today(), dt.time(), dt.timezone(dt.timedelta(hours=9)))  # same reference date as the build
     errs = []
     try:
         tree = ET.parse(root / "sitemap.xml")

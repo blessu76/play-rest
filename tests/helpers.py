@@ -1,6 +1,7 @@
 """Shared fixtures: a repo-shaped temp copy of the sources (content + assets) to build into."""
 import datetime as dt
 import json
+import os
 import re
 import shutil
 import sys
@@ -12,6 +13,8 @@ sys.path.insert(0, str(REPO / "scripts"))
 import build_site as bs  # noqa: E402
 
 NOW = dt.datetime(2026, 11, 3, 20, 0, tzinfo=dt.timezone(dt.timedelta(hours=9)))
+# the builder's date gate reads $PLAY_NOW: pin it so the fixtures (dated 10-30 .. 11-02) are always released, whatever day the tests run
+os.environ["PLAY_NOW"] = NOW.date().isoformat()
 
 
 def make_site():
