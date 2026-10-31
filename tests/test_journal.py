@@ -345,6 +345,158 @@ class Validation(unittest.TestCase):
     def test_blockquote_markdown(self):
         self.assertEqual(bs.markdown("> one\n> two\n\nafter"), "<blockquote><p>one two</p></blockquote>\n<p>after</p>")
 
+    def test_calendar_dates_are_validated(self):
+        for bad in ("2026-13-45", "2026-02-30", "2026-00-10", "2026-1-5", "26-11-01"):
+            add_post(self.root, "why-rounds-end", updated=bad)
+            self.assertIn("updated must look like", self.errors(), bad)
+        for bad in ("2026-02-30T09:30+09:00", "2026-11-01T25:00+09:00", "2026-11-01T09:61+09:00", "2026-13-45T09:30+09:00"):
+            add_post(self.root, "why-rounds-end", published=bad, updated=None)
+            self.assertIn("published must be a KST time", self.errors(), bad)
+        self.assertTrue(bs.valid_date("2028-02-29"))
+        self.assertFalse(bs.valid_date("2027-02-29"))
+        self.assertIsNone(bs.parse_published("2026-02-30T09:30+09:00"))
+        self.assertEqual(bs.parse_published("2026-11-01T09:30+09:00").isoformat(), "2026-11-01T09:30:00+09:00")
+
+    def test_page_updated_must_be_a_real_date(self):
+        f = self.root / "content" / "pages" / "en" / "about.md"
+        text = f.read_text(encoding="utf-8")
+        f.write_text(re.sub(r"(?m)^updated:.*$", "updated: 2026-13-45", text, count=1), encoding="utf-8")
+        self.assertIn("updated must look like", self.errors())
+
+
+class MarkdownSubset(unittest.TestCase):
+    def test_blockquote_markdown(self):
+        self.assertEqual(bs.markdown("> one\n> two\n\nafter"), "<blockquote><p>one two</p></blockquote>\n<p>after</p>")
+
+    def test_code_fence_renders_a_pre_code_block_with_escaped_text(self):
+        out = bs.markdown("Before\n\n```\n// play();\n\n  rest(); <b>&</b>\n```\n\nAfter")
+        self.assertEqual(out, "<p>Before</p>\n<pre><code>// play();\n\n  rest(); &lt;b&gt;&amp;&lt;/b&gt;</code></pre>\n<p>After</p>")
+        self.assertEqual(bs.markdown("```js\nlet a = `x`; **no** [l](/a/)\n```"), "<pre><code>let a = `x`; **no** [l](/a/)</code></pre>")
+        self.assertEqual(bs.markdown("````\n```\nnested\n```\n````"), "<pre><code>```\nnested\n```</code></pre>")
+        self.assertEqual(bs.markdown("```\n## not a heading\n- not a list"), "<pre><code>## not a heading\n- not a list</code></pre>")  # unclosed: runs to the end
+
+    def test_code_fence_signature_block_at_the_end_of_a_post(self):
+        out = bs.markdown("Last line.\n\n```\n// play(); rest();\n```")
+        self.assertTrue(out.endswith("<pre><code>// play(); rest();</code></pre>"), out)
+        self.assertNotIn("``", out)
+
+    def test_ordered_list_split_by_a_blank_line_keeps_counting(self):
+        out = bs.markdown("1. one\n2. two\n\n3. three\n4. four")
+        self.assertEqual(out, "<ol><li>one</li><li>two</li></ol>\n<ol start=\"3\"><li>three</li><li>four</li></ol>")
+
+    def test_link_href_allowlist(self):
+        for ok in ("https://e.com/a?b=1", "http://e.com", "/about/", "#top", "mailto:hi@e.com", "HTTPS://E.COM"):
+            self.assertIn('<a href="%s"' % ok, bs.markdown("[x](%s)" % ok), ok)
+        self.assertIn('rel="noopener"', bs.markdown("[x](https://e.com)"))
+        self.assertNotIn("rel=", bs.markdown("[x](/about/)"))
+        for bad in ("javascript:alert(1)", "JavaScript:alert(1)", " javascript:alert(1)", "data:text/html,<b>", "vbscript:x", "//evil.com/x",
+                    "/\\evil.com", "file:///etc/passwd", "ftp://e.com", "relative/path", "java\tscript:alert(1)", "https://", "javascript&#58;alert(1)"):
+            out = bs.markdown("[click](%s)" % bad)
+            self.assertNotIn("<a ", out, bad)
+            self.assertNotIn("href", out, bad)
+        self.assertEqual(bs.markdown("[click](javascript:alert(1))"), "<p>click</p>")
+
+    def test_link_url_with_parentheses_is_kept_whole(self):
+        self.assertEqual(bs.markdown("[Go](https://en.wikipedia.org/wiki/Go_(game)) now"),
+                         '<p><a href="https://en.wikipedia.org/wiki/Go_(game)" rel="noopener">Go</a> now</p>')
+        self.assertEqual(bs.markdown("(see [a](/a/))"), '<p>(see <a href="/a/">a</a>)</p>')
+
+    def test_link_cannot_break_out_of_the_attribute_or_forge_code_markers(self):
+        out = bs.markdown('[x](/a"onmouseover="alert(1))')
+        self.assertNotIn('"onmouseover', out)
+        self.assertIn("&quot;onmouseover", out)
+        out = bs.markdown("[x](/a`b`) and \x000\x00 `c`")
+        self.assertEqual(out, "<p>[x](/a<code>b</code>) and 0 <code>c</code></p>")  # no link, no forged code marker, no NUL left
+
+
+class Escaping(Reader):
+    """a post whose title, excerpt, body and links are full of <, ", & and script text must come out inert everywhere"""
+    TITLE = 'A <script>alert(1)</script> "quoted" & <b>bold</b> title'
+    DESC = "Tags <img src=x onerror=alert(1)> and \"quotes\" & ampersands"
+    BODY = ("## Heading <script>alert(2)</script>\n\nRaw <script>alert(3)</script> & \"q\" and [bad](javascript:alert(4)) and "
+            "[quote](/a\"onmouseover=\"alert(5)) and [fine](https://e.com/?a=1&b=2) and `<script>alert(6)</script>`.\n\n"
+            "> <script>alert(7)</script>\n\n- <script>alert(8)</script>\n\n```\n<script>alert(9)</script> & \"x\"\n```\n")
+
+    @classmethod
+    def setUpClass(cls):
+        cls.root = make_site()
+        d = cls.root / "content" / "journal"
+        d.mkdir(parents=True, exist_ok=True)
+        for lang in ("en", "ko"):
+            (d / ("hostile-post.%s.md" % lang)).write_text(
+                "---\ntitle: %s\ndescription: %s\nexcerpt: %s\npublished: 2026-11-01T09:30+09:00\n---\n%s" % (cls.TITLE, cls.DESC, cls.DESC, cls.BODY), encoding="utf-8")
+        cls.ctx = build(cls.root)
+
+    @classmethod
+    def tearDownClass(cls):
+        shutil.rmtree(cls.root, True)
+
+    def pages(self):
+        return ["index.html", "ko/index.html", "journal/index.html", "ko/journal/index.html", "journal/hostile-post/index.html",
+                "ko/journal/hostile-post/index.html", "journal/feed.xml", "ko/journal/feed.xml", "sitemap.xml", "llms.txt"]
+
+    def test_no_live_script_or_handler_from_the_post_in_any_output(self):
+        for f in self.pages():
+            if f == "llms.txt":
+                continue  # plain text, not HTML
+            # JSON-LD is data (JSON string, "</" escaped) and is checked on its own below
+            t = re.sub(r'<script type="application/ld\+json">.*?</script>', "", self.read(f), flags=re.S)
+            self.assertNotRegex(t, r"<script>alert", f)
+            self.assertNotRegex(t, r"(?i)<img src=x", f)
+            self.assertNotRegex(t, r"(?i)<b>bold", f)
+            self.assertNotIn("javascript:", t.lower(), f)
+            self.assertNotIn('"onmouseover', t, f)
+            # every <script> in the page is one of ours (ld+json, the inline localtime/langpick modules), never from the post
+            for m in re.finditer(r"<script([^>]*)>(.*?)</script>", t, re.S):
+                self.assertNotIn("alert(", m.group(2), f)
+
+    def test_post_page_escapes_title_excerpt_and_body(self):
+        h = self.read("journal/hostile-post/index.html")
+        self.assertIn("<h1>A &lt;script&gt;alert(1)&lt;/script&gt; &quot;quoted&quot; &amp; &lt;b&gt;bold&lt;/b&gt; title</h1>", h)
+        self.assertIn("<h2>Heading &lt;script&gt;alert(2)&lt;/script&gt;</h2>", h)
+        self.assertIn("Raw &lt;script&gt;alert(3)&lt;/script&gt; &amp; &quot;q&quot;", h)
+        self.assertIn("<code>&lt;script&gt;alert(6)&lt;/script&gt;</code>", h)
+        self.assertIn("<blockquote><p>&lt;script&gt;alert(7)&lt;/script&gt;</p></blockquote>", h)
+        self.assertIn("<li>&lt;script&gt;alert(8)&lt;/script&gt;</li>", h)
+        self.assertIn("<pre><code>&lt;script&gt;alert(9)&lt;/script&gt; &amp; &quot;x&quot;</code></pre>", h)
+        self.assertIn('<p>Raw', h)
+        self.assertIn("and bad and <a", h)  # the javascript: link keeps its text only
+        self.assertNotIn('href="javascript', h.lower())
+        self.assertIn('<a href="https://e.com/?a=1&amp;b=2" rel="noopener">fine</a>', h)
+        # meta tags: the attribute values are escaped, so the quotes cannot close them
+        for m in re.finditer(r'<meta [^>]*content="([^"]*)"', h):
+            self.assertNotIn("<", m.group(1))
+        self.assertIn("&lt;img src=x onerror=alert(1)&gt;", h)
+
+    def test_list_and_home_card_escape_title_and_excerpt(self):
+        for f in ("journal/index.html", "ko/journal/index.html", "index.html", "ko/index.html"):
+            h = self.read(f)
+            self.assertIn("A &lt;script&gt;alert(1)&lt;/script&gt; &quot;quoted&quot; &amp; &lt;b&gt;bold&lt;/b&gt; title", h, f)
+            self.assertIn("Tags &lt;img src=x onerror=alert(1)&gt; and &quot;quotes&quot; &amp; ampersands", h, f)
+
+    def test_json_ld_stays_valid_json_and_cannot_close_its_script(self):
+        for f in ("journal/hostile-post/index.html", "ko/journal/hostile-post/index.html", "journal/index.html"):
+            h = self.read(f)
+            blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', h, re.S)
+            self.assertTrue(blocks, f)
+            for b in blocks:
+                self.assertNotIn("</", b, f)
+                json.loads(b)
+        post = [n for n in jsonld(self.read("journal/hostile-post/index.html"))[0]["@graph"] if n["@type"] == "BlogPosting"][0]
+        self.assertEqual(post["headline"], self.TITLE)
+
+    def test_feeds_are_well_formed_xml_and_carry_the_text_literally(self):
+        for f in ("journal/feed.xml", "ko/journal/feed.xml"):
+            root = ET.fromstring(self.read(f).encode("utf-8"))  # raises on malformed XML
+            titles = [e.text for e in root.iter("title")]
+            self.assertIn(self.TITLE, titles, f)
+            descs = [e.text for e in root.iter("description")]
+            self.assertIn(self.DESC, descs, f)
+
+    def test_sitemap_and_llms_are_not_polluted(self):
+        ET.fromstring(self.read("sitemap.xml").encode("utf-8"))
+        self.assertIn("/journal/hostile-post/", self.read("llms.txt"))
+
 
 class Repo(unittest.TestCase):
     def test_no_fixture_posts_are_committed(self):

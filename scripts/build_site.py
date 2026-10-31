@@ -33,7 +33,7 @@ from pathlib import Path
 
 SITE = "https://play.ipe.rest"
 KST = dt.timezone(dt.timedelta(hours=9))
-ASSET_V = "20261031d"  # keep in sync: bump when assets/play.css or play.js change
+ASSET_V = "20261031e"  # keep in sync: bump when assets/play.css or play.js change
 SITE_UPDATED = "2026-10-31"  # "Last updated" of home / 404 and sitemap lastmod: bump by hand when their text changes
 OPERATOR = "Davy Kim (ipe Studio)"
 EMAIL = "ipe.haven@gmail.com"
@@ -71,6 +71,9 @@ KEYS = (
     "journal_h journal_lead journal_all journal_empty journal_desc journal_rss journal_back journal_feed_title"
 ).split()
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+# link targets that may become an href: http(s), a site path (not protocol-relative), a fragment, mailto
+HREF_OK = re.compile(r"^(?:https?://[^\s/]|/(?![/\\])|#|mailto:[^\s])", re.I)
+FENCE = re.compile(r"^(`{3,})[ \t]*[\w+-]*[ \t]*$")
 # never in public text: local paths, internal tools, secrets
 FORBIDDEN = ("/Users/", "ipe-harness", "ipe-room", "claude.ai/", "AuthKey_", "api_key", "sk-ant", "SLACK_BOT_TOKEN", ".env")
 # brand / policy rules for every public text: no trademarked game names (the sunmeld list plus the other well-known
@@ -84,6 +87,17 @@ PRICE = re.compile(r"[$€₩]\s?\d|\d\s?(?:USD|KRW|원)\b|\d+\+? (?:downloads|r
 
 def esc(s):
     return html.escape(str(s), quote=True)
+
+
+def valid_date(value):
+    """'2026-11-01' -> True only for a real calendar date (2026-13-45 and 2026-02-30 are not)"""
+    if not DATE_RE.match(value or ""):
+        return False
+    try:
+        dt.date.fromisoformat(value)
+    except ValueError:
+        return False
+    return True
 
 
 def text_problems(where, text):
@@ -146,8 +160,18 @@ def parse_front(text):
     return meta, m.group(2).strip("\n")
 
 
+def link(m):
+    """[text](url) -> <a> only for an allowed href (see HREF_OK); anything else (javascript:, data:, ...) keeps just the text.
+    Runs on already-escaped text, so quotes and ampersands in the url are entities and cannot leave the attribute."""
+    text, href = m.group(1), m.group(2)
+    if not HREF_OK.match(href):
+        return text
+    return '<a href="%s"%s>%s</a>' % (href, ' rel="noopener"' if href.lower().startswith("http") else "", text)
+
+
 def inline(s):
     codes = []
+    s = s.replace("\x00", "")  # \x00 marks stashed code spans below; source text must not forge it
 
     def stash(m):
         codes.append("<code>%s</code>" % esc(m.group(1)))
@@ -155,15 +179,16 @@ def inline(s):
 
     s = re.sub(r"`([^`]+)`", stash, s)
     s = esc(s)
-    s = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)",
-               lambda m: '<a href="%s"%s>%s</a>' % (m.group(2), ' rel="noopener"' if m.group(2).startswith("http") else "", m.group(1)), s)
+    # the url may hold one level of balanced parentheses, e.g. https://en.wikipedia.org/wiki/Go_(game)
+    s = re.sub(r"\[([^\]]+)\]\(((?:[^()\s\x00]|\([^()\s\x00]*\))+)\)", link, s)
     s = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", s)
     s = re.sub(r"(?<![*\w])\*([^*\n]+)\*(?![*\w])", r"<em>\1</em>", s)
     return re.sub(r"\x00(\d+)\x00", lambda m: codes[int(m.group(1))], s)
 
 
 def markdown(text):
-    """Small Markdown subset: paragraphs, ## to #### headings, lists, blockquotes, hr, inline code/links/bold/italic."""
+    """Small Markdown subset: paragraphs, ## to #### headings, lists, blockquotes, hr, ``` code fences, inline code/links/bold/italic.
+    Not supported (write around them): nested lists, images, tables, raw HTML (it is shown as text)."""
     lines = text.split("\n")
     out, i, n = [], 0, len(lines)
     para = []
@@ -178,6 +203,14 @@ def markdown(text):
         s = ln.strip()
         if not s:
             flush(); i += 1; continue
+        fm = FENCE.match(s)
+        if fm:  # fenced code: everything up to the closing fence is literal text
+            flush(); code = []; i += 1
+            while i < n and not re.match(r"^`{%d,}[ \t]*$" % len(fm.group(1)), lines[i].strip()):
+                code.append(lines[i].rstrip("\r")); i += 1
+            i += 1  # the closing fence (an unclosed fence runs to the end of the text)
+            out.append("<pre><code>%s</code></pre>" % esc("\n".join(code)))
+            continue
         m = re.match(r"^(#{2,4})\s+(.*)$", s)
         if m:
             flush(); lvl = len(m.group(1))
@@ -192,10 +225,12 @@ def markdown(text):
             flush(); out.append("<hr>"); i += 1; continue
         if re.match(r"^[-*]\s+", s) or re.match(r"^\d+\.\s+", s):
             flush(); ordered = bool(re.match(r"^\d+\.", s)); items = []
+            start = int(re.match(r"\d+", s).group(0)) if ordered else 1
             while i < n and re.match(r"^(?:[-*]|\d+\.)\s+", lines[i].strip()):
                 items.append(re.sub(r"^(?:[-*]|\d+\.)\s+", "", lines[i].strip())); i += 1
             tag = "ol" if ordered else "ul"
-            out.append("<%s>%s</%s>" % (tag, "".join("<li>%s</li>" % inline(x) for x in items), tag))
+            attr = ' start="%d"' % start if ordered and start != 1 else ""  # a list split by a blank line keeps counting
+            out.append("<%s%s>%s</%s>" % (tag, attr, "".join("<li>%s</li>" % inline(x) for x in items), tag))
             continue
         para.append(ln); i += 1
     flush()
@@ -245,7 +280,7 @@ def load_pages(root):
             for k in ("title", "description", "updated"):
                 if not meta.get(k):
                     errs.append("%s/%s: missing %s" % (lang, f.name, k))
-            if meta.get("updated") and not DATE_RE.match(meta["updated"]):
+            if meta.get("updated") and not valid_date(meta["updated"]):
                 errs.append("%s/%s: updated must look like 2026-10-31" % (lang, f.name))
             if len(meta.get("description", "")) > DESC_MAX:
                 errs.append("%s/%s: description longer than %d characters" % (lang, f.name, DESC_MAX))
@@ -261,7 +296,7 @@ def parse_published(value):
     if not PUBLISHED_RE.match(value or ""):
         return None
     try:
-        return dt.datetime.strptime(value[:16], "%Y-%m-%dT%H:%M").replace(tzinfo=KST)
+        return dt.datetime.fromisoformat(value).astimezone(KST)  # a real calendar date and clock time, at +09:00
     except ValueError:
         return None
 
@@ -292,7 +327,7 @@ def load_journal(root):
         if meta.get("published") and not pub:
             errs.append("%s: published must be a KST time like 2026-11-01T09:30+09:00" % tag)
         upd = meta.get("updated") or (meta["published"][:10] if meta.get("published") else "")
-        if upd and not (DATE_RE.match(upd) and (not pub or upd >= meta["published"][:10])):
+        if upd and not (valid_date(upd) and (not pub or upd >= meta["published"][:10])):
             errs.append("%s: updated must look like 2026-11-01 and not be before published" % tag)
         if len(meta.get("description", "")) > DESC_MAX:
             errs.append("%s: description longer than %d characters" % (tag, DESC_MAX))
@@ -304,7 +339,7 @@ def load_journal(root):
             errs.append("%s: front matter lang %r does not match the file name" % (tag, meta["lang"]))
         if not body.strip():
             errs.append("%s: empty body" % tag)
-        if re.search(r"(?m)^#\s", body):
+        if re.search(r"(?m)^#\s", re.sub(r"(?ms)^`{3,}.*?(?:^`{3,}[ \t]*$|\Z)", "", body)):  # '# ' inside a code fence is fine
             errs.append("%s: body must not contain a '# ' heading (the title is the h1); use ## and below" % tag)
         errs += text_problems(tag, meta.get("title", "") + " " + meta.get("description", "") + " " + meta.get("excerpt", "") + " " + body)
         if len(errs) == n0:
