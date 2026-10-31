@@ -88,7 +88,8 @@
  "journal_rss": "Canal RSS",
  "journal_back": "Volver al diario",
  "journal_feed_title": "Diario de ipe() Games",
- "ai_note": "Esta página fue traducida por IA a partir del original en inglés y aún no ha sido revisada por un hablante nativo.",
+ "ai_note": "Esta página fue traducida por IA a partir del original en inglés y aún no ha sido revisada por un hablante nativo. En caso de discrepancia, prevalece el original en inglés.",
  "ai_original": "Leer el original (en inglés)",
- "journal_en": "Diario (en inglés)"
+ "journal_en": "Diario (en inglés)",
+ "en_mark": "(en inglés)"
 }

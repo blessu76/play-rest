@@ -88,7 +88,8 @@
  "journal_rss": "RSS-Feed",
  "journal_back": "Zurück zum Journal",
  "journal_feed_title": "ipe() Games Journal",
- "ai_note": "Diese Seite wurde von einer KI aus dem englischen Original übersetzt und noch nicht von Muttersprachlern geprüft.",
+ "ai_note": "Diese Seite wurde von einer KI aus dem englischen Original übersetzt und noch nicht von Muttersprachlern geprüft. Bei Abweichungen gilt das englische Original.",
  "ai_original": "Original lesen (Englisch)",
- "journal_en": "Journal (auf Englisch)"
+ "journal_en": "Journal (auf Englisch)",
+ "en_mark": "(auf Englisch)"
 }

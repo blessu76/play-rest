@@ -102,7 +102,7 @@ KEYS = (
     "footer_line footer_code footer_tm footer_games footer_terms footer_site footer_about nf_h nf_p "
     "journal_h journal_lead journal_all journal_empty journal_desc journal_rss journal_back journal_feed_title"
 ).split()
-MT_KEYS = ("ai_note", "ai_original", "journal_en")  # required in the AI-translated languages; en.json holds the English source
+MT_KEYS = ("ai_note", "ai_original", "journal_en", "en_mark")  # required in the AI-translated languages; en.json holds the English source
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # link targets that may become an href: http(s), a site path (not protocol-relative), a fragment, mailto
 HREF_OK = re.compile(r"^(?:https?://[^\s/]|/(?![/\\])|#|mailto:[^\s])", re.I)
@@ -502,9 +502,16 @@ def load_game_text(root, games):
     return done, errs
 
 
-def loc(links, lang):
-    """a game link in this language, else the English one (the game sites do not all have every language)"""
-    return links.get(lang) or links[SOURCE_LANG]
+EN_LINK = ' hreflang="%s" lang="%s"' % (SOURCE_LANG, SOURCE_LANG)  # an <a> whose target is the English page of a game site / the journal
+
+
+def loc_link(ctx, links, lang):
+    """(href, attrs, mark) of a game link: the language's own page, else the English one -- which is then said openly: hreflang/lang="en"
+    and, in the AI-translated languages, the same "(in English)" mark the portal's own journal link carries (en_mark)"""
+    if links.get(lang):
+        return links[lang], "", ""
+    mark = ctx.t(lang, "en_mark") if lang in MT_LANGS else ""
+    return links[SOURCE_LANG], EN_LINK, (mark if mark.startswith("（") else " " + mark) if mark else ""
 
 
 # ---------------------------------------------------------------- html pieces
@@ -556,7 +563,7 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
     t = lambda k: ctx.t(lang, k)  # noqa: E731
     name, og_loc, direction, short = LANGS[lang]
     jl = ctx.journal_lang(lang)  # en for a language without a journal of its own
-    jattr = ' hreflang="%s"' % jl if jl != lang else ""
+    jattr = ' hreflang="%s" lang="%s"' % (jl, jl) if jl != lang else ""
     canonical = url(path)
     head = ['<meta charset="utf-8">', '<meta name="viewport" content="width=device-width,initial-scale=1">',
             "<title>%s</title>" % esc(title), '<meta name="description" content="%s">' % esc(desc)]
@@ -603,7 +610,8 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
               '<div class="themesw" role="group" aria-label="%s">%s</div></nav></div></header>') % (
         esc(path_home(lang)), nav_html, langsw, esc(t("theme_label")), theme_btns)
     game_links = "".join('<li><a href="%s" rel="noopener">%s</a></li>' % (esc(g["url"]), esc(g["name"][lang])) for g in ctx.games)
-    terms_links = "".join('<li><a href="%s" rel="noopener">%s</a></li>' % (esc(loc(g["terms"], lang)), esc(g["name"][lang])) for g in ctx.games if g.get("terms"))
+    terms_links = "".join('<li><a href="%s" rel="noopener"%s>%s</a></li>' % (esc(h), a, esc(g["name"][lang] + m))
+                          for g in ctx.games if g.get("terms") for h, a, m in [loc_link(ctx, g["terms"], lang)])
     site_links = ('<li><a href="https://ipe.rest/" rel="noopener">ipe.rest</a></li><li><a href="%s">%s</a></li><li><a href="%s"%s>%s</a></li>'
                   '<li><a href="%s">%s</a></li><li><a href="%s">%s</a></li>') % (
         esc(path_page(lang, "about")), esc(t("footer_about")), esc(path_journal(jl)), jattr, esc(t("nav_journal") if jl == lang else t("journal_en")),
@@ -666,9 +674,11 @@ def game_card(ctx, lang, g):
     j = g["journal"]
     links = ['<a class="btn" href="%s" rel="noopener">%s: %s <span aria-hidden="true">→</span></a>' % (
         esc(g["url"]), esc(t("g_visit")), esc(g["name"][lang]))]
-    links.append('<a class="textlink" href="%s" rel="noopener">%s: %s</a>' % (esc(loc(j["url"], lang)), esc(j["label"][lang]), esc(t("g_blog"))))
+    h, a, m = loc_link(ctx, j["url"], lang)
+    links.append('<a class="textlink" href="%s" rel="noopener"%s>%s</a>' % (esc(h), a, esc("%s: %s%s" % (j["label"][lang], t("g_blog"), m))))
     if g.get("terms"):
-        links.append('<a class="textlink" href="%s" rel="noopener">%s</a>' % (esc(loc(g["terms"], lang)), esc(t("g_terms"))))
+        h, a, m = loc_link(ctx, g["terms"], lang)
+        links.append('<a class="textlink" href="%s" rel="noopener"%s>%s</a>' % (esc(h), a, esc(t("g_terms") + m)))
     sub = g["sub"][lang] if g["sub"][lang] != g["name"][lang] else ""
     return ('<article class="game" id="%s" style="--a:%s;--a2:%s"><header class="game-head"><img class="game-icon" src="/assets/games/%s" width="64" height="64" alt="">'
             '<div><h3>%s</h3>%s<p class="meta"><span class="badge">%s</span> <span class="plat">%s</span></p></div></header>'
@@ -717,12 +727,15 @@ def build_home(ctx, lang):
         esc(t("choose_%d" % (i + 1))), g["id"], esc(g["name"][lang])) for i, g in enumerate(ctx.games))
     choose = ('<section class="sec tint" id="choose"><div class="wrap"><h2><span class="sn mono">04</span>%s</h2><p class="lead">%s</p><ul class="choose">%s</ul></div></section>') % (
         esc(t("choose_h")), esc(t("choose_lead")), choose_items)
-    made_items = "".join(
-        '<li style="--a:%s;--a2:%s"><div><h3>%s</h3><p class="meta"><span class="badge">%s</span></p></div><p class="links"><a class="textlink" href="%s" rel="noopener">%s</a> '
-        '<a class="textlink" href="%s" rel="noopener">%s</a></p></li>' % (
-            g["accent"][0], g["accent"][1], esc(g["name"][lang]), esc(t("made_now")), esc(loc(g["journal"]["url"], lang)),
-            esc(g["journal"]["label"][lang] + ": " + t("made_read")), esc(loc(g["journal"]["feed"], lang)), esc(t("made_feed")))
-        for g in ctx.games)
+    made_items = ""
+    for g in ctx.games:
+        jh, ja_, jm = loc_link(ctx, g["journal"]["url"], lang)
+        fh, fa, fm = loc_link(ctx, g["journal"]["feed"], lang)
+        made_items += (
+            '<li style="--a:%s;--a2:%s"><div><h3>%s</h3><p class="meta"><span class="badge">%s</span></p></div><p class="links">'
+            '<a class="textlink" href="%s" rel="noopener"%s>%s</a> <a class="textlink" href="%s" rel="noopener"%s>%s</a></p></li>') % (
+            g["accent"][0], g["accent"][1], esc(g["name"][lang]), esc(t("made_now")), esc(jh), ja_,
+            esc(g["journal"]["label"][lang] + ": " + t("made_read") + jm), esc(fh), fa, esc(t("made_feed") + fm))
     made = ('<section class="sec" id="made"><div class="wrap"><h2><span class="sn mono">05</span>%s</h2><p class="lead">%s</p><ul class="made">%s</ul></div></section>') % (
         esc(t("made_h")), esc(t("made_lead")), made_items)
     # recent posts only where the journal is written in this language (en/ko): an English card list inside a page that says

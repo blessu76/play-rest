@@ -88,7 +88,8 @@
  "journal_rss": "RSS 订阅",
  "journal_back": "返回日志",
  "journal_feed_title": "ipe() Games 日志",
- "ai_note": "本页由 AI 根据英文原文翻译，尚未经过母语者校对。",
+ "ai_note": "本页由 AI 根据英文原文翻译，尚未经过母语者校对。如有歧义或不一致，以英文原文为准。",
  "ai_original": "阅读原文（英语）",
- "journal_en": "日志（英文）"
+ "journal_en": "日志（英文）",
+ "en_mark": "（英文）"
 }

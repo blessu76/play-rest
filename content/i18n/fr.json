@@ -88,7 +88,8 @@
  "journal_rss": "Flux RSS",
  "journal_back": "Retour au journal",
  "journal_feed_title": "Journal d’ipe() Games",
- "ai_note": "Cette page a été traduite par IA à partir de l’original en anglais et n’a pas encore été vérifiée par un locuteur natif.",
+ "ai_note": "Cette page a été traduite par IA à partir de l’original en anglais et n’a pas encore été vérifiée par un locuteur natif. En cas de divergence, l’original en anglais fait foi.",
  "ai_original": "Lire l’original (en anglais)",
- "journal_en": "Journal (en anglais)"
+ "journal_en": "Journal (en anglais)",
+ "en_mark": "(en anglais)"
 }

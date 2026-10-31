@@ -88,7 +88,8 @@
  "journal_rss": "Nguồn cấp RSS",
  "journal_back": "Quay lại nhật ký",
  "journal_feed_title": "Nhật ký ipe() Games",
- "ai_note": "Trang này được AI dịch từ bản gốc tiếng Anh và chưa được người bản ngữ kiểm tra.",
+ "ai_note": "Trang này được AI dịch từ bản gốc tiếng Anh và chưa được người bản ngữ kiểm tra. Nếu có điểm khác biệt, bản gốc tiếng Anh sẽ được ưu tiên áp dụng.",
  "ai_original": "Đọc bản gốc (tiếng Anh)",
- "journal_en": "Nhật ký (bằng tiếng Anh)"
+ "journal_en": "Nhật ký (bằng tiếng Anh)",
+ "en_mark": "(bằng tiếng Anh)"
 }
