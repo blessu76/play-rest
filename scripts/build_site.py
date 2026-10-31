@@ -502,11 +502,11 @@ def load_game_text(root, games):
     return done, errs
 
 
-EN_LINK = ' hreflang="%s" lang="%s"' % (SOURCE_LANG, SOURCE_LANG)  # an <a> whose target is the English page of a game site / the journal
+EN_LINK = ' hreflang="%s"' % SOURCE_LANG  # an <a> whose target is the English page of a game site / the journal
 
 
 def loc_link(ctx, links, lang):
-    """(href, attrs, mark) of a game link: the language's own page, else the English one -- which is then said openly: hreflang/lang="en"
+    """(href, attrs, mark) of a game link: the language's own page, else the English one -- which is then said openly: hreflang="en"
     and, in the AI-translated languages, the same "(in English)" mark the portal's own journal link carries (en_mark)"""
     if links.get(lang):
         return links[lang], "", ""
@@ -563,7 +563,7 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
     t = lambda k: ctx.t(lang, k)  # noqa: E731
     name, og_loc, direction, short = LANGS[lang]
     jl = ctx.journal_lang(lang)  # en for a language without a journal of its own
-    jattr = ' hreflang="%s" lang="%s"' % (jl, jl) if jl != lang else ""
+    jattr = ' hreflang="%s"' % jl if jl != lang else ""
     canonical = url(path)
     head = ['<meta charset="utf-8">', '<meta name="viewport" content="width=device-width,initial-scale=1">',
             "<title>%s</title>" % esc(title), '<meta name="description" content="%s">' % esc(desc)]

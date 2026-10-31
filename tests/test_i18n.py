@@ -144,14 +144,14 @@ class AllLanguages(unittest.TestCase):
         self.assertIn('href="https://sunmeld.ipe.rest/terms/"', ja)
 
     def test_links_that_fall_back_to_english_say_so(self):
-        """every link to an English-only page in an AI-translated page: hreflang="en" lang="en" + the language's own "(in English)" mark"""
+        """every link to an English-only page in an AI-translated page: hreflang="en" + the language's own "(in English)" mark"""
         def mark(l, text):
             m = self.i18n[l]["en_mark"]
             return text + (m if m.startswith("（") else " " + m)
         for l in bs.MT_LANGS:
             h = self.read(l + "/index.html")
             e = html.escape
-            en = ' hreflang="en" lang="en"'
+            en = ' hreflang="en"'
             games = {g["id"]: g for g in self.ctx.games}
             # sunmeld / claimball: journal, terms, feed are en/ko only
             for g, name in (("sunmeld", "Sunmeld"), ("claimball", "Claimball")):
@@ -168,12 +168,16 @@ class AllLanguages(unittest.TestCase):
             for a in re.findall(r'<a [^>]*href="https://(?:iltonggi|inkisle|sunmeld|claimball)\.ipe\.rest/(?!%s/)[^"]*(?:blog|journal|terms)[^"]*"[^>]*>' % l, h):
                 self.assertIn(en, a, (l, a))
         vi = self.read("vi/index.html")
-        self.assertIn('<a class="textlink" href="https://inkisle.ipe.rest/journal/" rel="noopener" hreflang="en" lang="en">', vi)  # inkisle has no vi journal
+        self.assertIn('<a class="textlink" href="https://inkisle.ipe.rest/journal/" rel="noopener" hreflang="en">', vi)  # inkisle has no vi journal
         ja = self.read("ja/index.html")
         self.assertIn('<a class="textlink" href="https://inkisle.ipe.rest/ja/journal/" rel="noopener">', ja)  # it has ja: untouched
         for l in bs.MAIN_LANGS:  # en / ko have every link in their own language: no mark, no lang attribute on a game link
             h = self.read(pre(l) + "index.html")
             self.assertNotIn('rel="noopener" hreflang', h, l)
+        for l in bs.LANGS:  # lang="en" only on the word "English" of the language switchers: a localized phrase tagged "en" would be read with an English voice
+            h = self.read(pre(l) + "index.html").split("<body", 1)[1]
+            self.assertEqual(set(re.findall(r'<a [^>]*\blang="en"[^>]*>([^<]*)</a>', h)), {"English"}, l)
+            self.assertEqual(len(re.findall(r'\blang="en"', h)), len(re.findall(r'<a [^>]*\blang="en"[^>]*>English</a>', h)), l)
 
     PREVAILS = {  # the line added to every AI translation notice: if the translation differs, the English original prevails
         "ja": "英語の原文が優先されます", "zh": "以英文原文为准", "es": "prevalece el original en inglés", "pt": "prevalece o original em inglês",
@@ -195,9 +199,9 @@ class AllLanguages(unittest.TestCase):
             for s in SLUGS:
                 h = self.read(pre(l) + s + "index.html")
                 nav = re.search(r'<nav class="nav".*?</nav>', h, re.S).group(0)
-                self.assertIn('<a href="/journal/" hreflang="en" lang="en">%s</a>' % html.escape(self.i18n[l]["nav_journal"]), nav, (l, s))
+                self.assertIn('<a href="/journal/" hreflang="en">%s</a>' % html.escape(self.i18n[l]["nav_journal"]), nav, (l, s))
                 foot = re.search(r"<footer.*</footer>", h, re.S).group(0)
-                self.assertIn('<li><a href="/journal/" hreflang="en" lang="en">%s</a></li>' % html.escape(self.i18n[l]["journal_en"]), foot, (l, s))
+                self.assertIn('<li><a href="/journal/" hreflang="en">%s</a></li>' % html.escape(self.i18n[l]["journal_en"]), foot, (l, s))
                 self.assertIn('<link rel="alternate" type="application/rss+xml" title="ipe() Games Journal" href="/journal/feed.xml">', h)
                 self.assertNotIn("journal-card", h, (l, s))  # no English cards inside a page in another language
                 self.assertNotIn('id="journal"', h)
