@@ -23,6 +23,7 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 
 RSS: https://play.ipe.rest/journal/feed.xml
 
+- [A good time-killer does not kill time](https://play.ipe.rest/journal/2026-11-02-a-good-time-killer-does-not-kill-time/): What makes a good casual game for spare minutes: it starts at once, you can leave any time, it ends cleanly, and nothing rushes or interrupts you.
 - [Why turn-based games fit a break](https://play.ipe.rest/journal/2026-11-01-why-turn-based-games-fit-a-break/): A break has an edge you did not choose. Turn-based games fit that shape: stopping costs nothing, there is time to think, and a round can end cleanly.
 - [How ipe makes games](https://play.ipe.rest/journal/2026-10-31-how-ipe-makes-games/): Five game design principles: short rounds, few rules, a quiet app, saying what is true, and fair opponents. How ipe's four games follow them.
 

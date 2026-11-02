@@ -6,7 +6,8 @@
 <atom:link href="https://play.ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
 <description>The ipe() Games journal: notes on turn-based games, killing-time games and the philosophy behind our short-round games.</description>
 <language>en</language>
-<lastBuildDate>Sun, 01 Nov 2026 12:23:00 +0900</lastBuildDate>
+<lastBuildDate>Mon, 02 Nov 2026 12:41:00 +0900</lastBuildDate>
+<item><title>A good time-killer does not kill time</title><link>https://play.ipe.rest/journal/2026-11-02-a-good-time-killer-does-not-kill-time/</link><guid isPermaLink="true">https://play.ipe.rest/journal/2026-11-02-a-good-time-killer-does-not-kill-time/</guid><pubDate>Mon, 02 Nov 2026 12:41:00 +0900</pubDate><description>Four conditions for a game that lets you rest instead of just passing the time, and how ipe() games try to meet them.</description></item>
 <item><title>Why turn-based games fit a break</title><link>https://play.ipe.rest/journal/2026-11-01-why-turn-based-games-fit-a-break/</link><guid isPermaLink="true">https://play.ipe.rest/journal/2026-11-01-why-turn-based-games-fit-a-break/</guid><pubDate>Sun, 01 Nov 2026 12:23:00 +0900</pubDate><description>Why a game where the world waits for your move suits a few spare minutes, and where ipe() games fit.</description></item>
 <item><title>How ipe makes games</title><link>https://play.ipe.rest/journal/2026-10-31-how-ipe-makes-games/</link><guid isPermaLink="true">https://play.ipe.rest/journal/2026-10-31-how-ipe-makes-games/</guid><pubDate>Sat, 31 Oct 2026 12:07:00 +0900</pubDate><description>The five principles behind ipe() games, and where each of our four games keeps them. The first post in this journal.</description></item>
 </channel></rss>

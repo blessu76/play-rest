@@ -6,7 +6,8 @@
 <atom:link href="https://play.ipe.rest/ko/journal/feed.xml" rel="self" type="application/rss+xml"/>
 <description>ipe() Games 저널: 턴제 게임과 킬링타임 게임, 짧은 한 판을 지키는 게임 철학에 대한 기록입니다.</description>
 <language>ko</language>
-<lastBuildDate>Sun, 01 Nov 2026 12:23:00 +0900</lastBuildDate>
+<lastBuildDate>Mon, 02 Nov 2026 12:41:00 +0900</lastBuildDate>
+<item><title>좋은 킬링타임 게임은 시간을 죽이지 않습니다</title><link>https://play.ipe.rest/ko/journal/2026-11-02-a-good-time-killer-does-not-kill-time/</link><guid isPermaLink="true">https://play.ipe.rest/ko/journal/2026-11-02-a-good-time-killer-does-not-kill-time/</guid><pubDate>Mon, 02 Nov 2026 12:41:00 +0900</pubDate><description>시간을 때우는 것이 아니라 쉬게 해 주는 게임의 네 가지 조건, 그리고 ipe() 게임이 그 조건을 어떻게 지키려 하는지.</description></item>
 <item><title>턴제 게임이 쉬는 시간에 어울리는 이유</title><link>https://play.ipe.rest/ko/journal/2026-11-01-why-turn-based-games-fit-a-break/</link><guid isPermaLink="true">https://play.ipe.rest/ko/journal/2026-11-01-why-turn-based-games-fit-a-break/</guid><pubDate>Sun, 01 Nov 2026 12:23:00 +0900</pubDate><description>내 차례를 기다려 주는 게임이 짧은 틈에 맞는 이유, 그리고 ipe() 게임이 어디에 놓이는지.</description></item>
 <item><title>ipe가 게임을 만드는 방식</title><link>https://play.ipe.rest/ko/journal/2026-10-31-how-ipe-makes-games/</link><guid isPermaLink="true">https://play.ipe.rest/ko/journal/2026-10-31-how-ipe-makes-games/</guid><pubDate>Sat, 31 Oct 2026 12:07:00 +0900</pubDate><description>ipe() 게임의 바탕이 되는 다섯 가지 원칙, 그리고 네 게임이 각각 어디에서 그 원칙을 지키는지. 이 저널의 첫 글입니다.</description></item>
 </channel></rss>
