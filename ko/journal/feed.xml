@@ -6,7 +6,8 @@
 <atom:link href="https://play.ipe.rest/ko/journal/feed.xml" rel="self" type="application/rss+xml"/>
 <description>ipe() Games 저널: 턴제 게임과 킬링타임 게임, 짧은 한 판을 지키는 게임 철학에 대한 기록입니다.</description>
 <language>ko</language>
-<lastBuildDate>Tue, 03 Nov 2026 12:14:00 +0900</lastBuildDate>
+<lastBuildDate>Wed, 04 Nov 2026 12:36:00 +0900</lastBuildDate>
+<item><title>첫 판은 환영 인사입니다</title><link>https://play.ipe.rest/ko/journal/2026-11-04-the-first-round-is-a-welcome/</link><guid isPermaLink="true">https://play.ipe.rest/ko/journal/2026-11-04-the-first-round-is-a-welcome/</guid><pubDate>Wed, 04 Nov 2026 12:36:00 +0900</pubDate><description>전략 게임의 첫 판이 나머지 판보다 작아야 하는 이유, 그리고 일통기가 첫 판을 꾸미는 방식.</description></item>
 <item><title>지도에서 보이지 않는 곳</title><link>https://play.ipe.rest/ko/journal/2026-11-03-the-part-of-the-map-you-cannot-see/</link><guid isPermaLink="true">https://play.ipe.rest/ko/journal/2026-11-03-the-part-of-the-map-you-cannot-see/</guid><pubDate>Tue, 03 Nov 2026 12:14:00 +0900</pubDate><description>안개가 턴제 게임에 더하는 것, 잘못될 수 있는 지점, 그리고 일통기가 안개를 쓰는 방식.</description></item>
 <item><title>좋은 킬링타임 게임은 시간을 죽이지 않습니다</title><link>https://play.ipe.rest/ko/journal/2026-11-02-a-good-time-killer-does-not-kill-time/</link><guid isPermaLink="true">https://play.ipe.rest/ko/journal/2026-11-02-a-good-time-killer-does-not-kill-time/</guid><pubDate>Mon, 02 Nov 2026 12:41:00 +0900</pubDate><description>시간을 때우는 것이 아니라 쉬게 해 주는 게임의 네 가지 조건, 그리고 ipe() 게임이 그 조건을 어떻게 지키려 하는지.</description></item>
 <item><title>턴제 게임이 쉬는 시간에 어울리는 이유</title><link>https://play.ipe.rest/ko/journal/2026-11-01-why-turn-based-games-fit-a-break/</link><guid isPermaLink="true">https://play.ipe.rest/ko/journal/2026-11-01-why-turn-based-games-fit-a-break/</guid><pubDate>Sun, 01 Nov 2026 12:23:00 +0900</pubDate><description>내 차례를 기다려 주는 게임이 짧은 틈에 맞는 이유, 그리고 ipe() 게임이 어디에 놓이는지.</description></item>
