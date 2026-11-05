@@ -4,7 +4,7 @@
 Sources
   content/i18n/<lang>.json          UI strings and home copy (same keys in every language, see KEYS; AI-translated languages
                                     also MT_KEYS: the AI-translation notice, the link to the English original, "Journal (in English)")
-  content/games.json                the four games: facts, links and the en/ko card copy (text keyed by language; a link with no
+  content/games.json                the five games: facts, links and the en/ko card copy (text keyed by language; a link with no
                                     entry for a language falls back to the English one)
   content/i18n/games/<lang>.json    the card copy of the AI-translated languages (see GAME_TEXT); game names stay as in English
   content/pages/<lang>/<page>.md    about / privacy / contact (front matter title + description + updated,
@@ -96,9 +96,9 @@ SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 PUBLISHED_RE = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}\+09:00$")  # published time is always recorded in KST
 HOME_CARDS = 3
 EXCERPT_MAX = 200
-GAME_IDS = ("iltonggi", "inkisle", "sunmeld", "claimball")
+GAME_IDS = ("iltonggi", "inkisle", "sunmeld", "claimball", "patchland")
 # which games keep which principle (docs ch.2). Sunmeld has no public round length, so it is not listed under principle 1.
-PRINCIPLE_GAMES = {1: ("iltonggi", "inkisle", "claimball"), 2: GAME_IDS, 3: GAME_IDS, 4: GAME_IDS, 5: GAME_IDS}
+PRINCIPLE_GAMES = {1: ("iltonggi", "inkisle", "claimball", "patchland"), 2: GAME_IDS, 3: ("iltonggi", "inkisle", "sunmeld", "claimball"), 4: GAME_IDS, 5: ("iltonggi", "inkisle", "sunmeld", "claimball")}
 COMPARE_ROWS = "oneline style length difficulty players platform offline pricing languages status".split()
 # first-paint theme: runs before the stylesheet so data-theme (and the address-bar colour) is right on the first frame
 THEME_HEAD_SCRIPT = ("<script>(function(){var t,C={light:'#fbfcfe',dark:'#0c1118',noir:'#0a0810'};try{t=localStorage.getItem('play-theme')}catch(e){}"
@@ -119,7 +119,7 @@ KEYS = (
     "games_h games_lead g_likes g_nots g_visit g_terms g_blog g_status "
     "compare_h compare_lead compare_note compare_game row_oneline row_style row_length row_difficulty row_players "
     "row_platform row_offline row_pricing row_languages row_status "
-    "choose_h choose_lead choose_1 choose_2 choose_3 choose_4 choose_go "
+    "choose_h choose_lead choose_1 choose_2 choose_3 choose_4 choose_5 choose_go "
     "made_h made_lead made_now made_feed made_read ipe_h ipe_p ipe_studio ipe_music ipe_contact "
     "footer_line footer_code footer_tm footer_games footer_terms footer_site footer_about nf_h nf_p "
     "journal_h journal_lead journal_all journal_empty journal_desc journal_rss journal_back journal_feed_title"
@@ -471,9 +471,10 @@ def load_games(root):
                 _bilingual(it.get("p"), "%s %s[%d].p" % (tag, key, i), errs)
         if g.get("terms") is not None:
             _bilingual(g["terms"], "%s terms" % tag, errs)
-        j = g.get("journal") or {}
-        for k in ("label", "url", "feed"):
-            _bilingual(j.get(k), "%s journal.%s" % (tag, k), errs)
+        j = g.get("journal") or {}  # optional: a game with no journal yet (journal null) gets no journal link and no "making of" row
+        if g.get("journal") is not None:
+            for k in ("label", "url", "feed"):
+                _bilingual(j.get(k), "%s journal.%s" % (tag, k), errs)
         c = g.get("compare") or {}
         for row in COMPARE_ROWS:
             _bilingual(c.get(row), "%s compare.%s" % (tag, row), errs)
@@ -520,7 +521,7 @@ def load_game_text(root, games):
                 if not isinstance(src, list) or len(src) != len(g.get(key) or []):
                     errs.append("%s: %s needs %d items" % (where, key, len(g.get(key) or []))); continue
                 items[key] = [(text((it or {}).get("h"), "%s[%d].h" % (key, i)), text((it or {}).get("p"), "%s[%d].p" % (key, i))) for i, it in enumerate(src)]
-            label = text(d.get("journal_label"), "journal_label")
+            label = text(d.get("journal_label"), "journal_label") if g.get("journal") else ""
             cmp_ = d.get("compare") if isinstance(d.get("compare"), dict) else {}
             cells = {r: text(cmp_.get(r), "compare." + r) for r in COMPARE_ROWS}
             if len(errs) > n0:
@@ -530,7 +531,8 @@ def load_game_text(root, games):
             for key, pairs in items.items():
                 for it, (h, p_) in zip(g[key], pairs):
                     it["h"][lang], it["p"][lang] = h, p_
-            g["journal"]["label"][lang] = label
+            if g.get("journal"):
+                g["journal"]["label"][lang] = label
             for r, v in cells.items():
                 g["compare"][r][lang] = v
             g["name"][lang], g["sub"][lang] = g["name"][SOURCE_LANG], g["sub"][SOURCE_LANG]
@@ -710,11 +712,12 @@ def game_card(ctx, lang, g):
     t = lambda k: ctx.t(lang, k)  # noqa: E731
     pros = "".join("<li><strong>%s</strong> %s</li>" % (esc(x["h"][lang]), esc(x["p"][lang])) for x in g["pros"])
     cons = "".join("<li><strong>%s</strong> %s</li>" % (esc(x["h"][lang]), esc(x["p"][lang])) for x in g["cons"])
-    j = g["journal"]
+    j = g.get("journal")
     links = ['<a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card">%s: %s <span aria-hidden="true">→</span></a>' % (
         esc(g["url"]), esc(g["id"]), esc(t("g_visit")), esc(g["name"][lang]))]
-    h, a, m = loc_link(ctx, j["url"], lang)
-    links.append('<a class="textlink" href="%s" rel="noopener"%s>%s</a>' % (esc(h), a, esc("%s: %s%s" % (j["label"][lang], t("g_blog"), m))))
+    if j:
+        h, a, m = loc_link(ctx, j["url"], lang)
+        links.append('<a class="textlink" href="%s" rel="noopener"%s>%s</a>' % (esc(h), a, esc("%s: %s%s" % (j["label"][lang], t("g_blog"), m))))
     if g.get("terms"):
         h, a, m = loc_link(ctx, g["terms"], lang)
         links.append('<a class="textlink" href="%s" rel="noopener"%s>%s</a>' % (esc(h), a, esc(t("g_terms") + m)))
@@ -767,7 +770,7 @@ def build_home(ctx, lang):
     choose = ('<section class="sec tint" id="choose"><div class="wrap"><h2><span class="sn mono">04</span>%s</h2><p class="lead">%s</p><ul class="choose">%s</ul></div></section>') % (
         esc(t("choose_h")), esc(t("choose_lead")), choose_items)
     made_items = ""
-    for g in ctx.games:
+    for g in [x for x in ctx.games if x.get("journal")]:
         jh, ja_, jm = loc_link(ctx, g["journal"]["url"], lang)
         fh, fa, fm = loc_link(ctx, g["journal"]["feed"], lang)
         made_items += (
@@ -954,8 +957,8 @@ def build_robots():
 def build_llms(ctx):
     en = ctx.i18n["en"]
     rows = ["# ipe() Games", "", "> %s" % en["home_desc"], "",
-            "play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects four games in one place and links to each game's own "
-            "official site. None of the four games has been released: no store page or release date exists for any of them. This portal has no accounts "
+            "play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects five games in one place and links to each game's own "
+            "official site. None of the five games has been released: no store page or release date exists for any of them. This portal has no accounts "
             "or ads, collects only basic visit statistics through Google Analytics, and has no terms of its own (each game's site has its own terms). It has a journal with notes on turn-based games, "
             "killing-time games and how ipe() makes games.", "",
             "## The games", ""]

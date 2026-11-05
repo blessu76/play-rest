@@ -9,7 +9,8 @@ from helpers import REPO, bs, build, jsonld, make_site
 
 PAGES = ["", "about/", "privacy/", "contact/"]
 GAMES = {"iltonggi": "https://iltonggi.ipe.rest", "inkisle": "https://inkisle.ipe.rest",
-         "sunmeld": "https://sunmeld.ipe.rest", "claimball": "https://claimball.ipe.rest"}
+         "sunmeld": "https://sunmeld.ipe.rest", "claimball": "https://claimball.ipe.rest",
+         "patchland": "https://patchland.ipe.rest"}
 
 
 CLAIMBALL_PRICE_EN = "Free to try. One purchase unlocks everything. No ads, no subscription."
@@ -78,13 +79,25 @@ class Built(unittest.TestCase):
         self.assertIn("<h1>When the round ends, that&#x27;s enough for today.</h1>", self.read("index.html"))
         self.assertIn("<h1>한 판이 끝나면, 오늘은 여기까지</h1>", self.read("ko/index.html"))
 
-    def test_four_games_link_to_their_own_sites_and_no_stores(self):
+    def test_five_games_link_to_their_own_sites_and_no_stores(self):
         for lang_dir in ("", "ko/"):
             h = self.read(lang_dir + "index.html")
             for gid, u in GAMES.items():
                 self.assertIn('href="%s"' % u, h, (lang_dir, gid))
             for store in ("apps.apple.com", "play.google.com", "itunes.apple.com", "testflight.apple.com"):
                 self.assertNotIn(store, h.lower())
+
+    def test_patchland_has_no_terms_and_no_journal_yet(self):
+        g = {x["id"]: x for x in self.ctx.games}["patchland"]
+        self.assertIsNone(g["terms"])
+        self.assertIsNone(g["journal"])
+        for l in bs.LANGS:
+            h = self.read(("" if l == "en" else l + "/") + "index.html")
+            card = h.split('id="patchland"')[1].split("</article>")[0]
+            self.assertIn('href="https://patchland.ipe.rest"', card, l)
+            self.assertNotIn("patchland.ipe.rest/", card.replace('href="https://patchland.ipe.rest"', ""), l)  # no terms, no journal link
+            self.assertNotIn("patchland.ipe.rest/", h.split('id="made"')[1].split("</section>")[0], l)  # no making-of row
+            self.assertIn('<h3>Patchland</h3>', h, l)
 
     def test_terms_links_only_for_games_that_have_terms(self):
         h = self.read("index.html")

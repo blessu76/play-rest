@@ -1,8 +1,8 @@
 # ipe() Games
 
-> Four small games from ipe(): Iltonggi, Inkisle, Sunmeld and Claimball. Short rounds, few rules, no ads. None is released yet.
+> Five small games from ipe(): Iltonggi, Inkisle, Sunmeld, Claimball and Patchland. Short rounds, few rules, no ads. None is released yet.
 
-play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects four games in one place and links to each game's own official site. None of the four games has been released: no store page or release date exists for any of them. This portal has no accounts or ads, collects only basic visit statistics through Google Analytics, and has no terms of its own (each game's site has its own terms). It has a journal with notes on turn-based games, killing-time games and how ipe() makes games.
+play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects five games in one place and links to each game's own official site. None of the five games has been released: no store page or release date exists for any of them. This portal has no accounts or ads, collects only basic visit statistics through Google Analytics, and has no terms of its own (each game's site has its own terms). It has a journal with notes on turn-based games, killing-time games and how ipe() makes games.
 
 ## The games
 
@@ -10,6 +10,7 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 - [Inkisle](https://inkisle.ipe.rest): A light island-conquest strategy game for your phone: send fleets between islands and tint the sea your color. Status: In development. Platform: iOS first, Android alongside. Pricing: Planned: every round free · no ads · optional help items.
 - [Sunmeld](https://sunmeld.ipe.rest): A merge duel against an AI opponent in one shared tub. Drop a stone, merge matching stones into the next stage, and score. Overflow the tub and you lose. Status: In development. Platform: iOS and Android. Pricing: Free to try, one purchase unlocks everything, no ads.
 - [Claimball](https://claimball.ipe.rest): A casual duel against an AI rival on a notebook grid. The tile where your ball bounces becomes your land. Miss, and you lose land. Status: Coming soon. Platform: iOS and Android. Pricing: Free to try. One purchase unlocks everything. No ads, no subscription..
+- [Patchland](https://patchland.ipe.rest): A quick, offline territory game played with paper patches. Win land from six quirky AI lords, one region at a time, in three ways: Trace, Place and Spread. Status: In development. Platform: iOS and Android. Pricing: No ads, no subscription.
 
 ## How ipe makes games
 
@@ -23,6 +24,7 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 
 RSS: https://play.ipe.rest/journal/feed.xml
 
+- [One tub for two players](https://play.ipe.rest/journal/2026-11-05-one-tub-for-two/): When two players share one board, every move also changes the other side's options. A short look at why that makes a small duel interesting, through Sunmeld.
 - [The first round is a welcome](https://play.ipe.rest/journal/2026-11-04-the-first-round-is-a-welcome/): A first round that is short and gentle lets a new player learn the rules without pressure. How Iltonggi plans its opening, and why we think it matters.
 - [The part of the map you cannot see](https://play.ipe.rest/journal/2026-11-03-the-part-of-the-map-you-cannot-see/): Some turn-based games show the whole board, others hide part of it. Why a little fog can suit a short round, and what it asks of the player.
 - [A good time-killer does not kill time](https://play.ipe.rest/journal/2026-11-02-a-good-time-killer-does-not-kill-time/): What makes a good casual game for spare minutes: it starts at once, you can leave any time, it ends cleanly, and nothing rushes or interrupts you.

@@ -170,5 +170,47 @@
    "languages": "Inglês, coreano",
    "status": "Em breve, data de lançamento não definida"
   }
+ },
+ "patchland": {
+  "status": "Em desenvolvimento",
+  "platform": "iOS e Android",
+  "pricing": "Sem anúncios, sem assinatura",
+  "tagline": "Um jogo de território rápido e offline, jogado com retalhos de papel. Conquiste terras de seis senhores de IA peculiares, uma região por vez, de três maneiras: Traçar, Colocar e Espalhar.",
+  "pros": [
+   {
+    "h": "Três maneiras de conquistar terra.",
+    "p": "Trace uma linha e volte para ficar com o que cercou. Coloque pedras em um tabuleiro hexagonal. Ou escolha uma cor e deixe-a se espalhar. Cada modo joga de um jeito."
+   },
+   {
+    "h": "Um mapa que cresce com você.",
+    "p": "Um mapa de papel com 24 regiões e um senhor em cada uma. Senhores chefes jogam melhor de três, e suas terras vão juntando peças aos poucos enquanto você está fora."
+   },
+   {
+    "h": "Um motivo para voltar todo dia.",
+    "p": "A Terra de Hoje é um tabuleiro igual para todos, com uma sequência para manter. Você pode juntar de graça as 24 cartas de senhores do Álbum de Senhores."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Se você quer jogar contra pessoas online.",
+    "p": "As partidas são contra senhores de IA, e o jogo funciona offline."
+   },
+   {
+    "h": "Se você quer uma história longa.",
+    "p": "As partidas são curtas e leves, feitas para momentos rápidos."
+   }
+  ],
+  "compare": {
+   "oneline": "Conquistar terra com retalhos de papel",
+   "style": "Três modos: Traçar, Colocar, Espalhar",
+   "length": "—",
+   "difficulty": "Fácil, Normal ou Difícil no treino; senhores chefes no mapa",
+   "players": "1 contra 1 contra a IA",
+   "platform": "iOS e Android, em desenvolvimento",
+   "offline": "Funciona offline",
+   "pricing": "Sem anúncios, sem assinatura",
+   "languages": "Inglês, coreano",
+   "status": "Em desenvolvimento"
+  }
  }
 }

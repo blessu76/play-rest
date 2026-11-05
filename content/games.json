@@ -638,6 +638,145 @@
      "ko": "출시 예정, 출시일 미정"
     }
    }
+  },
+  {
+   "id": "patchland",
+   "name": {
+    "en": "Patchland",
+    "ko": "Patchland"
+   },
+   "sub": {
+    "en": "Claim It All",
+    "ko": "패치랜드 · Claim It All"
+   },
+   "url": "https://patchland.ipe.rest",
+   "icon": "patchland.png",
+   "accent": [
+    "#a8432f",
+    "#e58a73"
+   ],
+   "platforms": [
+    "iOS",
+    "Android"
+   ],
+   "genre": [
+    "Strategy",
+    "Puzzle"
+   ],
+   "status": {
+    "en": "In development",
+    "ko": "개발 중"
+   },
+   "platform": {
+    "en": "iOS and Android",
+    "ko": "iOS · Android"
+   },
+   "pricing": {
+    "en": "No ads, no subscription",
+    "ko": "광고도 구독도 없어요"
+   },
+   "tagline": {
+    "en": "A quick, offline territory game played with paper patches. Win land from six quirky AI lords, one region at a time, in three ways: Trace, Place and Spread.",
+    "ko": "색종이로 땅을 넓히는 짧고 가벼운 오프라인 땅따먹기. 여섯 이웃 영주 AI에게서 지역을 하나씩 가져옵니다. 땅을 얻는 방법은 긋기·놓기·번지기, 세 가지입니다."
+   },
+   "pros": [
+    {
+     "h": {
+      "en": "Three ways to take land.",
+      "ko": "땅을 얻는 방법이 세 가지입니다."
+     },
+     "p": {
+      "en": "Trace a line and come home to claim what you circle. Place stones on a hex board. Or pick a color and let it spread. Each mode plays differently.",
+      "ko": "선을 긋고 돌아와 둘러싼 땅을 차지하거나, 육각 판에 돌을 놓거나, 색을 골라 번지게 합니다. 방식마다 플레이가 다릅니다."
+     }
+    },
+    {
+     "h": {
+      "en": "A map that grows with you.",
+      "ko": "키울수록 재미있는 지도입니다."
+     },
+     "p": {
+      "en": "A 24-region paper map with a lord on every region. Boss lords play first to two wins, and your lands slowly gather pieces while you are away.",
+      "ko": "영주가 지키는 24지역 색종이 지도입니다. 보스 영주는 먼저 두 판을 이기는 쪽이 승리하고, 자리를 비운 동안에도 내 땅이 조각을 조금씩 모아 둡니다."
+     }
+    },
+    {
+     "h": {
+      "en": "A reason to come back each day.",
+      "ko": "매일 열어볼 이유가 있습니다."
+     },
+     "p": {
+      "en": "Today's Land is one board, the same for everyone, with a streak to keep. Collect all 24 lord cards in the Lord Album for free.",
+      "ko": "오늘의 땅은 모두에게 같은 판 하나이고, 이어 가는 연속 일수가 있습니다. 영주 앨범의 카드 24장은 무료로 전부 모을 수 있어요."
+     }
+    }
+   ],
+   "cons": [
+    {
+     "h": {
+      "en": "If you want to play people online.",
+      "ko": "사람과 온라인으로 겨루고 싶은 분."
+     },
+     "p": {
+      "en": "Matches are against AI lords, and the game works offline.",
+      "ko": "대결 상대는 AI 영주이고, 오프라인에서 플레이하는 게임입니다."
+     }
+    },
+    {
+     "h": {
+      "en": "If you want a long story.",
+      "ko": "긴 이야기를 원하는 분."
+     },
+     "p": {
+      "en": "The matches are short and light, built for quick sessions.",
+      "ko": "한 판이 짧고 가볍게 즐기도록 만들었습니다."
+     }
+    }
+   ],
+   "terms": null,
+   "journal": null,
+   "compare": {
+    "oneline": {
+     "en": "Claiming land with paper patches",
+     "ko": "색종이로 땅따먹기"
+    },
+    "style": {
+     "en": "Three modes: Trace, Place, Spread",
+     "ko": "세 가지 방식: 긋기·놓기·번지기"
+    },
+    "length": {
+     "en": "—",
+     "ko": "—"
+    },
+    "difficulty": {
+     "en": "Easy, Normal or Hard in practice; boss lords on the map",
+     "ko": "연습에서 쉬움·보통·어려움, 지도에는 보스 영주"
+    },
+    "players": {
+     "en": "1 on 1 against the AI",
+     "ko": "1:1, AI 상대"
+    },
+    "platform": {
+     "en": "iOS and Android, in development",
+     "ko": "iOS · Android 개발 중"
+    },
+    "offline": {
+     "en": "Works offline",
+     "ko": "오프라인 플레이"
+    },
+    "pricing": {
+     "en": "No ads, no subscription",
+     "ko": "광고도 구독도 없어요"
+    },
+    "languages": {
+     "en": "English, Korean",
+     "ko": "영어·한국어"
+    },
+    "status": {
+     "en": "In development",
+     "ko": "개발 중"
+    }
+   }
   }
  ]
 }

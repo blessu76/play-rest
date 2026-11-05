@@ -170,5 +170,47 @@
    "languages": "Inggris, Korea",
    "status": "Segera hadir, tanggal rilis belum ditentukan"
   }
+ },
+ "patchland": {
+  "status": "Dalam pengembangan",
+  "platform": "iOS dan Android",
+  "pricing": "Tanpa iklan, tanpa langganan",
+  "tagline": "Game wilayah yang singkat dan ringan, dimainkan offline dengan kepingan kertas. Rebut tanah dari enam penguasa AI yang unik, satu wilayah demi satu wilayah, dengan tiga cara: Menggaris, Menaruh, dan Menyebar.",
+  "pros": [
+   {
+    "h": "Tiga cara merebut tanah.",
+    "p": "Tarik garis lalu kembali untuk mengklaim area yang Anda kelilingi. Taruh batu di papan segi enam. Atau pilih satu warna dan biarkan menyebar. Setiap mode terasa berbeda."
+   },
+   {
+    "h": "Peta yang tumbuh bersama Anda.",
+    "p": "Peta kertas dengan 24 wilayah dan satu penguasa di tiap wilayah. Penguasa bos bermain hingga menang dua kali, dan tanah Anda perlahan mengumpulkan kepingan saat Anda pergi."
+   },
+   {
+    "h": "Alasan untuk kembali setiap hari.",
+    "p": "Tanah Hari Ini adalah satu papan yang sama untuk semua orang, dengan rentetan hari yang bisa dijaga. Kumpulkan ke-24 kartu penguasa di Album Penguasa secara gratis."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Jika Anda ingin bermain melawan orang secara online.",
+    "p": "Pertandingan melawan penguasa AI, dan game ini bisa dimainkan offline."
+   },
+   {
+    "h": "Jika Anda ingin cerita yang panjang.",
+    "p": "Pertandingannya singkat dan ringan, dibuat untuk sesi cepat."
+   }
+  ],
+  "compare": {
+   "oneline": "Merebut tanah dengan kepingan kertas",
+   "style": "Tiga mode: Menggaris, Menaruh, Menyebar",
+   "length": "—",
+   "difficulty": "Mudah, Normal, atau Sulit saat latihan; penguasa bos di peta",
+   "players": "1 lawan 1 melawan AI",
+   "platform": "iOS dan Android, dalam pengembangan",
+   "offline": "Bisa dimainkan offline",
+   "pricing": "Tanpa iklan, tanpa langganan",
+   "languages": "Inggris, Korea",
+   "status": "Dalam pengembangan"
+  }
  }
 }

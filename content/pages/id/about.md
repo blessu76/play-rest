@@ -1,19 +1,19 @@
 ---
 title: Tentang ipe() Games
-description: play.ipe.rest mengumpulkan game buatan ipe(): Iltonggi, Inkisle, Sunmeld, dan Claimball. Apa portal ini, bagaimana gamenya dibuat, dan siapa di baliknya.
+description: play.ipe.rest mengumpulkan game buatan ipe(): Iltonggi, Inkisle, Sunmeld, Claimball, dan Patchland. Apa portal ini, cara game dibuat, dan siapa pembuatnya.
 updated: 2026-10-31
 ---
-play.ipe.rest adalah rumah bagi game buatan **ipe()** (ipe Studio). Portal ini mengumpulkan empat game di satu tempat: Iltonggi, Inkisle, Sunmeld, dan Claimball. Setiap game punya situs resminya sendiri, yang ditautkan dari kartunya di [halaman beranda](/id/#games).
+play.ipe.rest adalah rumah bagi game buatan **ipe()** (ipe Studio). Portal ini mengumpulkan lima game di satu tempat: Iltonggi, Inkisle, Sunmeld, Claimball, dan Patchland. Setiap game punya situs resminya sendiri, yang ditautkan dari kartunya di [halaman beranda](/id/#games).
 
 ## Untuk apa portal ini
 
-Belum ada satu pun dari keempat game ini yang dirilis, dan belum ada yang punya halaman toko. Situs ini sengaja mengatakannya. Situs ini menunjukkan game apa masing-masing, apa yang kemungkinan akan Anda sukai darinya, dan untuk siapa game itu tidak cocok, agar Anda bisa memutuskan apakah game itu layak mengisi waktu istirahat Anda.
+Belum ada satu pun dari kelima game ini yang dirilis, dan belum ada yang punya halaman toko. Situs ini sengaja mengatakannya. Situs ini menunjukkan game apa masing-masing, apa yang kemungkinan akan Anda sukai darinya, dan untuk siapa game itu tidak cocok, agar Anda bisa memutuskan apakah game itu layak mengisi waktu istirahat Anda.
 
 ## Bagaimana game-game ini dibuat
 
 ipe adalah singkatan dari idle process: keadaan yang dicapai prosesor saat tidak ada lagi yang harus dikerjakan. Game-game ini mengikuti lima prinsip, yang tercantum di [halaman beranda](/id/#philosophy): ronde singkat yang pas untuk jeda, sedikit aturan dan membaca secara mendalam, aplikasi yang tenang, mengatakan yang benar (termasuk yang belum), dan AI yang bermain jujur.
 
-Setiap game punya catatan proses pembuatan yang terbuka untuk umum, sehingga Anda bisa mengikuti bagaimana game itu dibangun dan apa yang belum selesai.
+Sebagian besar game punya catatan proses pembuatan yang terbuka untuk umum, sehingga Anda bisa mengikuti bagaimana game-game itu dibangun dan apa yang belum selesai.
 
 ## Siapa pembuatnya
 

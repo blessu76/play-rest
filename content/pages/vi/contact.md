@@ -23,7 +23,7 @@ Mỗi trò chơi có trang chính thức và bộ phận hỗ trợ riêng. Hãy
 
 ### Đã có trò nào chơi được chưa?
 
-Chưa. Chưa trò nào trong bốn trò chơi được phát hành, và chưa trò nào có trang trên cửa hàng. Trạng thái của từng trò chơi có trên thẻ của nó ở [trang chủ](/vi/#games).
+Chưa. Chưa trò nào trong năm trò chơi được phát hành, và chưa trò nào có trang trên cửa hàng. Trạng thái của từng trò chơi có trên thẻ của nó ở [trang chủ](/vi/#games).
 
 ### Các bạn có thu thập thông tin cá nhân không?
 

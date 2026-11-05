@@ -1,19 +1,19 @@
 ---
 title: Sobre a ipe() Games
-description: O play.ipe.rest reúne os jogos da ipe(): Iltonggi, Inkisle, Sunmeld e Claimball. O que é este portal, como os jogos são feitos e quem está por trás.
+description: O play.ipe.rest reúne os jogos da ipe(): Iltonggi, Inkisle, Sunmeld, Claimball e Patchland. O que é este portal, como os jogos são feitos e quem está por trás.
 updated: 2026-10-31
 ---
-O play.ipe.rest é a casa dos jogos feitos pela **ipe()** (ipe Studio). Ele reúne quatro jogos em um só lugar: Iltonggi, Inkisle, Sunmeld e Claimball. Cada jogo tem seu próprio site oficial, ligado a partir do cartão dele na [página inicial](/pt/#games).
+O play.ipe.rest é a casa dos jogos feitos pela **ipe()** (ipe Studio). Ele reúne cinco jogos em um só lugar: Iltonggi, Inkisle, Sunmeld, Claimball e Patchland. Cada jogo tem seu próprio site oficial, ligado a partir do cartão dele na [página inicial](/pt/#games).
 
 ## Para que serve este portal
 
-Nenhum dos quatro jogos foi lançado ainda e nenhum tem página em loja. Este site diz isso de propósito. Ele mostra o que cada jogo é, do que você provavelmente vai gostar e para quem ele não serve, para você decidir se vale a pena gastar sua pausa com ele.
+Nenhum dos cinco jogos foi lançado ainda e nenhum tem página em loja. Este site diz isso de propósito. Ele mostra o que cada jogo é, do que você provavelmente vai gostar e para quem ele não serve, para você decidir se vale a pena gastar sua pausa com ele.
 
 ## Como os jogos são feitos
 
 ipe é a abreviação de idle process: o estado em que um processador se acomoda quando não resta mais nada a fazer. Os jogos seguem cinco princípios, listados na [página inicial](/pt/#philosophy): partidas curtas que cabem em uma pausa, poucas regras e leitura profunda, um app tranquilo, dizer o que é verdade (inclusive o que não é) e uma IA que joga limpo.
 
-Cada jogo mantém um diário público de bastidores, para você acompanhar como ele é construído e o que ainda não está pronto.
+A maioria dos jogos mantém um diário público de bastidores, para você acompanhar como eles são construídos e o que ainda não está pronto.
 
 ## Quem faz
 

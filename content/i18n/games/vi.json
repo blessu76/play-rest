@@ -170,5 +170,47 @@
    "languages": "Tiếng Anh, tiếng Hàn",
    "status": "Sắp ra mắt, chưa định ngày phát hành"
   }
+ },
+ "patchland": {
+  "status": "Đang phát triển",
+  "platform": "iOS và Android",
+  "pricing": "Không quảng cáo, không đăng ký tháng",
+  "tagline": "Một trò chơi chiếm đất nhanh, nhẹ, chơi ngoại tuyến bằng những mảnh giấy màu. Giành đất từ sáu lãnh chúa AI độc đáo, từng vùng một, theo ba cách: Vạch, Đặt và Lan.",
+  "pros": [
+   {
+    "h": "Ba cách để chiếm đất.",
+    "p": "Vạch một đường rồi quay về để lấy phần đất bạn vừa bao quanh. Đặt quân trên bàn lục giác. Hoặc chọn một màu và để nó lan ra. Mỗi chế độ chơi một kiểu."
+   },
+   {
+    "h": "Một tấm bản đồ lớn dần cùng bạn.",
+    "p": "Bản đồ giấy gồm 24 vùng, mỗi vùng có một lãnh chúa. Lãnh chúa trùm đấu đến khi một bên thắng hai ván, và đất của bạn cứ từ từ gom mảnh khi bạn vắng mặt."
+   },
+   {
+    "h": "Một lý do để quay lại mỗi ngày.",
+    "p": "Đất Hôm Nay là một bàn chơi giống nhau cho mọi người, kèm chuỗi ngày để giữ. Bạn có thể sưu tầm miễn phí cả 24 thẻ lãnh chúa trong Album Lãnh Chúa."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Nếu bạn muốn chơi trực tuyến với người thật.",
+    "p": "Các trận đấu là với lãnh chúa AI, và trò chơi chơi được khi không có mạng."
+   },
+   {
+    "h": "Nếu bạn muốn một câu chuyện dài.",
+    "p": "Mỗi ván ngắn và nhẹ nhàng, dành cho những lúc chơi nhanh."
+   }
+  ],
+  "compare": {
+   "oneline": "Chiếm đất bằng những mảnh giấy màu",
+   "style": "Ba chế độ: Vạch, Đặt, Lan",
+   "length": "—",
+   "difficulty": "Chế độ luyện tập có Dễ, Thường, Khó; trên bản đồ có lãnh chúa trùm",
+   "players": "1 đối 1 với AI",
+   "platform": "iOS và Android, đang phát triển",
+   "offline": "Chơi được khi không có mạng",
+   "pricing": "Không quảng cáo, không đăng ký tháng",
+   "languages": "Tiếng Anh, tiếng Hàn",
+   "status": "Đang phát triển"
+  }
  }
 }

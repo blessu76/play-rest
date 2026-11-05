@@ -1,6 +1,6 @@
 # play-rest
 
-play.ipe.rest — ipe() 게임 4종(일통기·잉크아일·선멜드·클레임볼)을 한곳에 모은 정적 포털. GitHub Pages(`CNAME`), 11개 언어(결정 0087): 영어(루트) + 한국어(`/ko/`)는 원문, ja·zh·es·pt·id·ru·vi·fr·de(`/<code>/`)는 영어 원문의 AI 번역(페이지마다 「AI 번역」 표시 + 원문 링크). 번역 원본은 `content/i18n/<lang>.json`·`content/i18n/games/<lang>.json`(카드 문구, 게임 이름은 영어 그대로)·`content/pages/<lang>/`. 언어는 통째로만 생성된다(일부만 있으면 빌드 오류). 저널은 en·ko 만 — 다른 언어는 메뉴·푸터가 영어 저널로 가고 메인의 최근 글 섹션이 없다(`/<code>/journal/` 없음).
+play.ipe.rest — ipe() 게임 5종(일통기·잉크아일·선멜드·클레임볼·패치랜드)을 한곳에 모은 정적 포털. GitHub Pages(`CNAME`), 11개 언어(결정 0087): 영어(루트) + 한국어(`/ko/`)는 원문, ja·zh·es·pt·id·ru·vi·fr·de(`/<code>/`)는 영어 원문의 AI 번역(페이지마다 「AI 번역」 표시 + 원문 링크). 번역 원본은 `content/i18n/<lang>.json`·`content/i18n/games/<lang>.json`(카드 문구, 게임 이름은 영어 그대로)·`content/pages/<lang>/`. 언어는 통째로만 생성된다(일부만 있으면 빌드 오류). 저널은 en·ko 만 — 다른 언어는 메뉴·푸터가 영어 저널로 가고 메인의 최근 글 섹션이 없다(`/<code>/journal/` 없음).
 
 - 생성 파일(`index.html`, `ko/`·`ja/` 등 언어 폴더, `about/`, `privacy/`, `contact/`, `404.html`, `sitemap.xml`, `robots.txt`, `llms.txt`, `journal/`)은 손으로 고치지 않는다. 원본은 `content/`(`i18n/*.json`, `games.json`, `pages/<lang>/*.md`), 생성기는 `scripts/build_site.py`.
 - 사이트 문구의 정본은 `_ipe/site/play/GAMEHUB_DOCS.md`. [미검증]·[Davy]·[미정] 항목, 가격·출시일·평점·라이벌 이름·이모지·장르 대표작 이름은 싣지 않는다.

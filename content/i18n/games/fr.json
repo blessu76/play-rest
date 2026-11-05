@@ -170,5 +170,47 @@
    "languages": "Anglais, coréen",
    "status": "Bientôt disponible, date de sortie non fixée"
   }
+ },
+ "patchland": {
+  "status": "En développement",
+  "platform": "iOS et Android",
+  "pricing": "Sans publicité, sans abonnement",
+  "tagline": "Un jeu de territoire rapide et hors ligne, joué avec des morceaux de papier. Gagnez des terres sur six seigneurs IA aux manies bien à eux, région après région, de trois façons : Tracer, Poser et Étendre.",
+  "pros": [
+   {
+    "h": "Trois façons de prendre des terres.",
+    "p": "Tracez une ligne et revenez pour garder ce que vous avez entouré. Posez des pierres sur un plateau hexagonal. Ou choisissez une couleur et laissez-la s’étendre. Chaque mode se joue différemment."
+   },
+   {
+    "h": "Une carte qui grandit avec vous.",
+    "p": "Une carte en papier de 24 régions, avec un seigneur dans chacune. Les seigneurs boss se jouent en deux manches gagnantes, et vos terres amassent peu à peu des pièces pendant votre absence."
+   },
+   {
+    "h": "Une raison de revenir chaque jour.",
+    "p": "La Terre du jour est un plateau identique pour tout le monde, avec une série à entretenir. Vous pouvez collectionner gratuitement les 24 cartes de seigneurs de l’Album des seigneurs."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si vous voulez jouer contre des personnes en ligne.",
+    "p": "Les matchs se jouent contre des seigneurs IA, et le jeu fonctionne hors ligne."
+   },
+   {
+    "h": "Si vous voulez une longue histoire.",
+    "p": "Les parties sont courtes et légères, pensées pour des moments brefs."
+   }
+  ],
+  "compare": {
+   "oneline": "Prendre des terres avec des morceaux de papier",
+   "style": "Trois modes : Tracer, Poser, Étendre",
+   "length": "—",
+   "difficulty": "Facile, Normal ou Difficile à l’entraînement ; seigneurs boss sur la carte",
+   "players": "1 contre 1 face à l’IA",
+   "platform": "iOS et Android, en développement",
+   "offline": "Fonctionne hors ligne",
+   "pricing": "Sans publicité, sans abonnement",
+   "languages": "Anglais, coréen",
+   "status": "En développement"
+  }
  }
 }

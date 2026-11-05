@@ -170,5 +170,47 @@
    "languages": "Inglés, coreano",
    "status": "Próximamente, fecha de lanzamiento sin fijar"
   }
+ },
+ "patchland": {
+  "status": "En desarrollo",
+  "platform": "iOS y Android",
+  "pricing": "Sin anuncios, sin suscripción",
+  "tagline": "Un juego de territorio rápido y sin conexión, jugado con parches de papel. Gana tierras a seis curiosos señores de IA, región por región, de tres maneras: Trazar, Colocar y Extender.",
+  "pros": [
+   {
+    "h": "Tres maneras de conquistar tierra.",
+    "p": "Traza una línea y vuelve para quedarte con lo que rodeas. Coloca piedras en un tablero hexagonal. O elige un color y deja que se extienda. Cada modo se juega distinto."
+   },
+   {
+    "h": "Un mapa que crece contigo.",
+    "p": "Un mapa de papel con 24 regiones y un señor en cada una. Los señores jefe juegan al mejor de tres, y tus tierras van juntando piezas poco a poco mientras no estás."
+   },
+   {
+    "h": "Un motivo para volver cada día.",
+    "p": "La Tierra de Hoy es un tablero igual para todos, con una racha que mantener. Puedes reunir gratis las 24 cartas de señores del Álbum de Señores."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si quieres jugar contra personas en línea.",
+    "p": "Las partidas son contra señores de IA, y el juego funciona sin conexión."
+   },
+   {
+    "h": "Si quieres una historia larga.",
+    "p": "Las partidas son cortas y ligeras, pensadas para ratos breves."
+   }
+  ],
+  "compare": {
+   "oneline": "Conquistar tierra con parches de papel",
+   "style": "Tres modos: Trazar, Colocar, Extender",
+   "length": "—",
+   "difficulty": "Fácil, Normal o Difícil en práctica; señores jefe en el mapa",
+   "players": "1 contra 1 frente a la IA",
+   "platform": "iOS y Android, en desarrollo",
+   "offline": "Funciona sin conexión",
+   "pricing": "Sin anuncios, sin suscripción",
+   "languages": "Inglés, coreano",
+   "status": "En desarrollo"
+  }
  }
 }

@@ -23,7 +23,7 @@ Each game has its own official site and its own support. Please start there, fro
 
 ### Can I play any of the games yet?
 
-Not yet. None of the four games is released, and none has a store page. The status of each game is on its card on the [home page](/#games).
+Not yet. None of the five games is released, and none has a store page. The status of each game is on its card on the [home page](/#games).
 
 ### Do you collect personal information?
 

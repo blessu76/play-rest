@@ -130,7 +130,7 @@ class AllLanguages(unittest.TestCase):
     def test_game_names_stay_in_latin_letters(self):
         for l in ("en",) + bs.MT_LANGS:  # the translations keep the English names (ko has its own Korean names, written by ipe())
             h = self.read(pre(l) + "index.html")
-            for name in ("Iltonggi", "Inkisle", "Sunmeld", "Claimball"):
+            for name in ("Iltonggi", "Inkisle", "Sunmeld", "Claimball", "Patchland"):
                 self.assertIn("<h3>%s</h3>" % name, h, (l, name))
         ja = self.read("ja/index.html")
         self.assertNotIn(self.read("index.html").split('<p class="tagline">')[1].split("<")[0], ja)  # the tagline is translated
@@ -165,7 +165,7 @@ class AllLanguages(unittest.TestCase):
             self.assertEqual(len(re.findall(r'<a class="textlink" href="https://\w+\.ipe\.rest/[\w/]*feed\.xml" rel="noopener"%s>%s</a>' % (
                 en, re.escape(e(mark(l, self.i18n[l]["made_feed"])))), h)), 4, l)
             # no link to a game site in the English fallback without the attributes
-            for a in re.findall(r'<a [^>]*href="https://(?:iltonggi|inkisle|sunmeld|claimball)\.ipe\.rest/(?!%s/)[^"]*(?:blog|journal|terms)[^"]*"[^>]*>' % l, h):
+            for a in re.findall(r'<a [^>]*href="https://(?:iltonggi|inkisle|sunmeld|claimball|patchland)\.ipe\.rest/(?!%s/)[^"]*(?:blog|journal|terms)[^"]*"[^>]*>' % l, h):
                 self.assertIn(en, a, (l, a))
         vi = self.read("vi/index.html")
         self.assertIn('<a class="textlink" href="https://inkisle.ipe.rest/journal/" rel="noopener" hreflang="en">', vi)  # inkisle has no vi journal

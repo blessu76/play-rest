@@ -23,7 +23,7 @@ Cada jogo tem seu próprio site oficial e seu próprio suporte. Comece por lá, 
 
 ### Já posso jogar algum dos jogos?
 
-Ainda não. Nenhum dos quatro jogos foi lançado e nenhum tem página em loja. A situação de cada jogo está no cartão dele na [página inicial](/pt/#games).
+Ainda não. Nenhum dos cinco jogos foi lançado e nenhum tem página em loja. A situação de cada jogo está no cartão dele na [página inicial](/pt/#games).
 
 ### Vocês coletam informações pessoais?
 
