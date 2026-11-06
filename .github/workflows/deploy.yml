@@ -32,6 +32,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
+      - name: Install the private ipe_web_kit (pinned by vendor/ipe_web_kit.lock)
+        uses: ./.github/actions/ipe-web-kit
+        with:
+          ssh-key: ${{ secrets.IPE_WEB_KIT_DEPLOY_KEY }}
       - name: Build as of today (KST)
         run: python3 scripts/build_site.py --now "$(TZ=Asia/Seoul date +%F)"
       - name: Commit and push if the build changed
@@ -60,6 +64,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ needs.daily.outputs.sha || github.sha }}
+      - name: Install the private ipe_web_kit (pinned by vendor/ipe_web_kit.lock)
+        uses: ./.github/actions/ipe-web-kit
+        with:
+          ssh-key: ${{ secrets.IPE_WEB_KIT_DEPLOY_KEY }}
       - name: Green gate (sources, tests, up-to-date build, sitemap)
         run: bash scripts/check.sh
 
@@ -81,10 +89,10 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Assemble site (repo root minus sources)
-        # content/ (sources), scripts/, tests/, docs/ and ops/ are build-time only — never public raw URLs.
+        # content/ (sources), vendor/ (kit pin, never committed source), scripts/, tests/, docs/ and ops/ are build-time only — never public raw URLs.
         run: |
           mkdir -p "$RUNNER_TEMP/site"
-          rsync -a --exclude='.git' --exclude='.github' --exclude='content' --exclude='scripts' --exclude='tests' --exclude='docs' --exclude='ops' --exclude='*.md' ./ "$RUNNER_TEMP/site/"
+          rsync -a --exclude='.git' --exclude='.github' --exclude='content' --exclude='vendor' --exclude='scripts' --exclude='tests' --exclude='docs' --exclude='ops' --exclude='*.md' ./ "$RUNNER_TEMP/site/"
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v3

@@ -11,8 +11,8 @@ Sources
                                     Markdown body, placeholders {{OPERATOR}} {{EMAIL}} {{EFFECTIVE}})
   content/journal/<slug>.<lang>.md  journal posts (en + ko pair per slug; front matter title, description, published
                                     [KST, YYYY-MM-DDTHH:MM+09:00], optional updated / excerpt; Markdown body)
-  content/shared/ipe-localtime.js   company-wide module (byte-for-byte copy of ipe-rest/shared), inlined into pages with
-                                    <time data-ipe-time>: stored in KST, shown in the reader's time zone
+  vendor/ipe_web_kit/               ipe-web-kit (pinned tag copy; esc, hreflang links, JSON-LD script, ipe-localtime inlined into
+                                    pages with <time data-ipe-time>: stored in KST, shown in the reader's time zone)
 
 Output (generated, never edit by hand)
   en lives at the root, every other language under /<lang>/ (decision 0087: en ko ja zh es pt id ru vi fr de):
@@ -36,13 +36,19 @@ Usage
 """
 import argparse
 import datetime as dt
-import html
 import json
 import os
 import re
 import shutil
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "vendor"))  # ipe_web_kit (private kit, installed from vendor/ipe_web_kit.lock by scripts/kit_lock.py)
+try:
+    from ipe_web_kit import localtime as kit_localtime  # noqa: E402
+    from ipe_web_kit import seo as kit_seo  # noqa: E402
+except ImportError:
+    sys.exit("ipe_web_kit is not installed (private, not in this repo). Run: python3 scripts/kit_lock.py sync --kit <local ipe_web_kit clone>")
 
 SITE = "https://play.ipe.rest"
 KST = dt.timezone(dt.timedelta(hours=9))
@@ -140,8 +146,7 @@ BOTS = ("GPTBot", "ChatGPT-User", "OAI-SearchBot", "ClaudeBot", "Claude-Web", "a
 PRICE = re.compile(r"[$€₩]\s?\d|\d\s?(?:USD|KRW|원)\b|\d+\+? (?:downloads|reviews|ratings)|(?:다운로드|리뷰|평점)\s?\d", re.I)
 
 
-def esc(s):
-    return html.escape(str(s), quote=True)
+esc = kit_seo.esc
 
 
 def valid_date(value):
@@ -561,10 +566,10 @@ def langpick_script(root, langs):
     return "<script>%s</script>" % re.sub(r"\s*\n\s*", "", src.replace("/*SUPPORTED*/[]", json.dumps(list(langs)))).strip()
 
 
-def localtime_script(root):
-    """shared/ipe-localtime.js inlined byte for byte (no whitespace added around it): <time data-ipe-time> is stored in KST
-    and shown in the reader's time zone. Inline on purpose (no external load); the test pins its SHA-256."""
-    return "<script>" + (Path(root) / "content" / "shared" / "ipe-localtime.js").read_bytes().decode("utf-8") + "</script>"
+def localtime_script():
+    """ipe-localtime (kit copy, byte for byte, sha256-pinned by the kit) inlined: <time data-ipe-time> is stored in KST
+    and shown in the reader's time zone. Inline on purpose (no external load)."""
+    return kit_localtime.script_tag()
 
 
 def time_tag(published):
@@ -609,9 +614,7 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
     head.append('<meta name="robots" content="%s">' % ("noindex,follow" if noindex else "index,follow,max-image-preview:large"))
     head.append('<link rel="canonical" href="%s">' % esc(canonical))
     if hreflang and len(alt) > 1:
-        for l, pth in alt.items():
-            head.append('<link rel="alternate" hreflang="%s" href="%s">' % (l, esc(url(pth))))
-        head.append('<link rel="alternate" hreflang="x-default" href="%s">' % esc(url(alt.get("en", next(iter(alt.values()))))))
+        head.append(kit_seo.alternate_links({l: url(pth) for l, pth in alt.items()}, url(alt.get("en", next(iter(alt.values()))))))
     head += ['<meta property="og:type" content="%s">' % og_type, '<meta property="og:site_name" content="ipe() Games">',
              '<meta property="og:title" content="%s">' % esc(title), '<meta property="og:description" content="%s">' % esc(desc),
              '<meta property="og:url" content="%s">' % esc(canonical), '<meta property="og:locale" content="%s">' % og_loc,
@@ -630,8 +633,7 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
              '<link rel="stylesheet" href="/assets/play.css?v=%s">' % ASSET_V]
     if path == "/":
         head.append(langpick_script(ctx.root, ctx.langs))
-    head.append('<script type="application/ld+json">%s</script>' % json.dumps({"@context": "https://schema.org", "@graph": graph},
-                                                                            ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
+    head.append(kit_seo.jsonld_script({"@context": "https://schema.org", "@graph": graph}))
     # language switcher: a <details> menu (works without JS); each item is this page in that language, or that language's
     # home when this page has no version there (a journal page in ja -> /ja/), never a page that does not exist
     switch = "".join('<li><a href="%s" hreflang="%s" lang="%s"%s>%s</a></li>' % (
@@ -677,7 +679,7 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
             '<a class="skip" href="#main">%s</a>%s<main id="main">%s%s<div class="wrap">%s</div></main>%s'
             '<script src="/assets/play.js?v=%s" defer></script>%s%s</body></html>\n') % (
         GEN_MARK, lang, direction, "\n".join(head), esc(t("skip")), header, mt, body, last, footer, ASSET_V,
-        localtime_script(ctx.root) if "data-ipe-time" in body else "", GA_SNIPPET)
+        localtime_script() if "data-ipe-time" in body else "", GA_SNIPPET)
 
 
 def breadcrumb_html(items):

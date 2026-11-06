@@ -3,6 +3,7 @@
 #   scripts/check.sh              # sources + tests + build (into a temp copy) + sitemap check
 set -euo pipefail
 cd "$(dirname "$0")/.."
+echo "== 0/4 kit"; python3 scripts/kit_lock.py check
 echo "== 1/4 sources"; python3 scripts/build_site.py --check
 echo "== 2/4 unit tests"; python3 -m unittest discover -s tests -q
 echo "== 3/4 build is up to date"

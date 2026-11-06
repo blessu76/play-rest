@@ -11,8 +11,7 @@ from helpers import JOURNAL_FIXTURES, NOW, REPO, add_post, bs, build, jsonld, ma
 
 import check_sitemap as cs  # noqa: E402
 
-JS = REPO / "content" / "shared" / "ipe-localtime.js"
-SHA = REPO / "content" / "shared" / "ipe-localtime.sha256"
+JS = REPO / "vendor" / "ipe_web_kit" / "assets" / "ipe-localtime.js"
 # newest first: killing-time-honestly (11-02), turn-based-in-a-break (11-01), why-rounds-end (10-31), one-more-old-post (10-30)
 ORDER = ["killing-time-honestly", "turn-based-in-a-break", "why-rounds-end", "one-more-old-post"]
 TIME_RE = r'<time datetime="(\d{4}-\d\d-\d\dT\d\d:\d\d\+09:00)" data-ipe-time dir="ltr">(\d{4}-\d\d-\d\d \d\d:\d\d) KST</time>'
@@ -83,7 +82,7 @@ class WithPosts(Reader):
 
     def test_localtime_module_is_inlined_byte_for_byte_and_pinned(self):
         canon = JS.read_bytes()
-        self.assertEqual(hashlib.sha256(canon).hexdigest(), SHA.read_text().split()[0])
+        self.assertEqual(hashlib.sha256(canon).hexdigest(), "57326449ddf5050eabadd1394d69eb2b0f61c88f084ec83ee4aff6fcad0f74b8")  # v2
         self.assertTrue(canon.decode("utf-8").startswith("/* ipe-localtime v2 "))
         want = hashlib.sha256(canon).hexdigest()
         for f in ("index.html", "ko/index.html", "journal/index.html", "journal/why-rounds-end/index.html", "ko/journal/why-rounds-end/index.html"):
@@ -609,6 +608,7 @@ class Repo(unittest.TestCase):
     def test_sources_are_not_deployed(self):
         wf = (REPO / ".github" / "workflows" / "deploy.yml").read_text(encoding="utf-8")
         self.assertIn("--exclude='content'", wf)
+        self.assertIn("--exclude='vendor'", wf)
         self.assertFalse((REPO / "assets" / "ipe-localtime.js").exists())
 
     def test_journal_css_reading_text_floor(self):
