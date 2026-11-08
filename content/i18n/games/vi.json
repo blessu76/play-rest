@@ -212,5 +212,89 @@
    "languages": "Tiếng Anh, tiếng Hàn",
    "status": "Đang phát triển"
   }
+ },
+ "tilttower": {
+  "status": "Sắp ra mắt",
+  "platform": "iOS và Android",
+  "pricing": "Miễn phí, chỉ có quảng cáo phần thưởng tùy chọn.",
+  "tagline": "Trò vật lý một lần chạm. Cẩu xe lắc lư thả khối, và bạn xây ngọn tháp càng lắc lư hơn với mỗi khối.",
+  "pros": [
+   {
+    "h": "Một lần chạm là toàn bộ trò chơi.",
+    "p": "Cẩu xe lắc lư tự động; bạn chạm để thả khối."
+   },
+   {
+    "h": "Một ván khoảng một phút.",
+    "p": "Ngắn vừa đủ cho một lần giải lao, từng ván một."
+   },
+   {
+    "h": "Chơi miễn phí.",
+    "p": "Không cần mua gì; quảng cáo duy nhất là quảng cáo phần thưởng tùy chọn."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Nếu bạn muốn tháp vững và chính xác.",
+    "p": "Cả cẩu xe lẫn tháp đều lắc lư, nên mỗi khối rơi vào chỗ mà vật lý định."
+   },
+   {
+    "h": "Nếu bạn muốn đối đầu với người khác.",
+    "p": "Đây là trò chơi một mình."
+   }
+  ],
+  "compare": {
+   "oneline": "Xây tháp lắc lư",
+   "style": "Xếp chồng vật lý, một lần chạm",
+   "length": "Khoảng một phút",
+   "difficulty": "—",
+   "players": "Một mình",
+   "platform": "iOS và Android, sắp ra mắt",
+   "offline": "—",
+   "pricing": "Miễn phí, quảng cáo phần thưởng tùy chọn",
+   "languages": "11 ngôn ngữ",
+   "status": "Sắp ra mắt, chưa định ngày phát hành"
+  }
+ },
+ "mossgarden": {
+  "status": "Sắp ra mắt",
+  "platform": "iOS và Android",
+  "pricing": "Miễn phí, chỉ có quảng cáo phần thưởng tùy chọn.",
+  "tagline": "Khu vườn rảnh rỗi trên điện thoại. Trồng tám loại cây, nuôi lớn và thu giọt sương mà chúng để lại.",
+  "pros": [
+   {
+    "h": "Tám loại cây để chăm sóc.",
+    "p": "Trồng và nuôi tám loại cây, và thu giọt sương mà mỗi loại để lại."
+   },
+   {
+    "h": "Khu vườn đổi thay theo ngày và mùa.",
+    "p": "Nền theo giờ trong ngày và mùa trong năm."
+   },
+   {
+    "h": "Khu vườn khiến bạn quay lại.",
+    "p": "Cuốn tập san điền dần theo từng loài cây, và cài đặt lại prestige bắt đầu khu vườn từ đầu."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Nếu bạn muốn chơi liên tục bằng tay.",
+    "p": "Đây là khu vườn rảnh rỗi: cây tự lớn, và bạn quay lại thu giọt sương."
+   },
+   {
+    "h": "Nếu bạn muốn danh sách cây lớn.",
+    "p": "Khu vườn có tám loại cây."
+   }
+  ],
+  "compare": {
+   "oneline": "Khu vườn thu giọt sương",
+   "style": "Vườn rảnh rỗi",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Một mình",
+   "platform": "iOS và Android, sắp ra mắt",
+   "offline": "—",
+   "pricing": "Miễn phí, quảng cáo phần thưởng tùy chọn",
+   "languages": "11 ngôn ngữ",
+   "status": "Sắp ra mắt, chưa định ngày phát hành"
+  }
  }
 }

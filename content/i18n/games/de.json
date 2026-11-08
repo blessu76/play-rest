@@ -212,5 +212,89 @@
    "languages": "Englisch, Koreanisch",
    "status": "In Entwicklung"
   }
+ },
+ "tilttower": {
+  "status": "Demnächst",
+  "platform": "iOS und Android",
+  "pricing": "Kostenlos, mit optionaler Belohnungswerbung.",
+  "tagline": "Ein Physikspiel mit einem einzigen Tippen. Ein schwankender Kran lässt Blöcke fallen, und Sie stapeln einen Turm, der mit jedem Block weiter ins Wanken gerät.",
+  "pros": [
+   {
+    "h": "Tippen ist das ganze Spiel.",
+    "p": "Der Kran schwingt von allein; Sie tippen, um den Block fallen zu lassen."
+   },
+   {
+    "h": "Etwa eine Minute pro Runde.",
+    "p": "Kurz genug für eine Pause, eine Runde nach der anderen."
+   },
+   {
+    "h": "Kostenlos spielen.",
+    "p": "Kein Kauf nötig; die einzige Werbung ist optionale Belohnungswerbung."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Wenn Sie einen standfesten, präzisen Turm wollen.",
+    "p": "Kran und Turm schwanken beide, deshalb landet jeder Block, wo die Physik ihn hingibt."
+   },
+   {
+    "h": "Wenn Sie gegen andere Menschen spielen wollen.",
+    "p": "Es ist ein Einzelspieler-Spiel."
+   }
+  ],
+  "compare": {
+   "oneline": "Einen schwankenden Turm stapeln",
+   "style": "Physik-Stacking, ein Tippen",
+   "length": "Etwa eine Minute",
+   "difficulty": "—",
+   "players": "Einzelspieler",
+   "platform": "iOS und Android, demnächst",
+   "offline": "—",
+   "pricing": "Kostenlos, mit optionaler Belohnungswerbung",
+   "languages": "11 Sprachen",
+   "status": "Demnächst, Erscheinungsdatum noch offen"
+  }
+ },
+ "mossgarden": {
+  "status": "Demnächst",
+  "platform": "iOS und Android",
+  "pricing": "Kostenlos, mit optionaler Belohnungswerbung.",
+  "tagline": "Ein Idle-Garten auf dem Handy. Pflanzen Sie acht Arten, lassen Sie sie wachsen und sammeln Sie den Tau, den sie hinterlassen.",
+  "pros": [
+   {
+    "h": "Acht Pflanzen, um die man sich kümmert.",
+    "p": "Pflanzen und züchten Sie acht Arten und sammeln Sie den Tau, den jede von ihnen hinterlässt."
+   },
+   {
+    "h": "Ein Garten, der mit Tag und Jahreszeit wechselt.",
+    "p": "Der Hintergrund folgt der Tageszeit und der Jahreszeit."
+   },
+   {
+    "h": "Ein Garten, zu dem man zurückkehrt.",
+    "p": "Ein Bestimmungsbuch füllt sich Pflanze für Pflanze, und ein Prestige-Reset lässt Sie den Garten von vorn beginnen."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Wenn Sie ständig mit den Händen spielen wollen.",
+    "p": "Es ist ein Idle-Garten: Die Pflanzen wachsen von allein, und Sie kehren zurück, um den Tau zu sammeln."
+   },
+   {
+    "h": "Wenn Sie eine große Pflanzenliste wollen.",
+    "p": "Der Garten hat acht Arten von Pflanzen."
+   }
+  ],
+  "compare": {
+   "oneline": "Ein Garten, der Tau sammelt",
+   "style": "Idle-Garten",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Einzelspieler",
+   "platform": "iOS und Android, demnächst",
+   "offline": "—",
+   "pricing": "Kostenlos, mit optionaler Belohnungswerbung",
+   "languages": "11 Sprachen",
+   "status": "Demnächst, Erscheinungsdatum noch offen"
+  }
  }
 }

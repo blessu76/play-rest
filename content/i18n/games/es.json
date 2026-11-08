@@ -212,5 +212,89 @@
    "languages": "Inglés, coreano",
    "status": "En desarrollo"
   }
+ },
+ "tilttower": {
+  "status": "Próximamente",
+  "platform": "iOS y Android",
+  "pricing": "Gratis, con anuncios recompensados opcionales.",
+  "tagline": "Un juego físico de un solo toque. Una grúa que se mece suelta bloques, y apilas una torre que se inclina un poco más con cada uno.",
+  "pros": [
+   {
+    "h": "Un toque es todo el juego.",
+    "p": "La grúa se mece sola; tocas para soltar el bloque."
+   },
+   {
+    "h": "Una ronda dura un minuto.",
+    "p": "Justo para una pausa: una ronda a la vez."
+   },
+   {
+    "h": "Gratis para jugar.",
+    "p": "No hay que comprar nada; los únicos anuncios son recompensados y opcionales."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si quieres una torre firme y precisa.",
+    "p": "La grúa y la torre se mecen, así que cada bloque cae donde lo ponga la física."
+   },
+   {
+    "h": "Si quieres jugar contra otras personas.",
+    "p": "Es un juego para un jugador."
+   }
+  ],
+  "compare": {
+   "oneline": "Apilar una torre que se mece",
+   "style": "Apilado físico, un toque",
+   "length": "Un minuto",
+   "difficulty": "—",
+   "players": "Un jugador",
+   "platform": "iOS y Android, próximamente",
+   "offline": "—",
+   "pricing": "Gratis, con anuncios recompensados opcionales",
+   "languages": "11 idiomas",
+   "status": "Próximamente, fecha de lanzamiento sin fijar"
+  }
+ },
+ "mossgarden": {
+  "status": "Próximamente",
+  "platform": "iOS y Android",
+  "pricing": "Gratis, con anuncios recompensados opcionales.",
+  "tagline": "Un jardín pasivo para tu teléfono. Planta ocho tipos de plantas, críalas y recolecta el rocío que dejan.",
+  "pros": [
+   {
+    "h": "Ocho plantas para cuidar.",
+    "p": "Planta y cría ocho tipos de plantas, y recolecta el rocío que cada una deja."
+   },
+   {
+    "h": "Un jardín que cambia con el día y la estación.",
+    "p": "El fondo sigue la hora del día y la estación."
+   },
+   {
+    "h": "Un jardín al que vuelves.",
+    "p": "Un índice se llena planta a planta, y un reinicio de prestigio te deja empezar el jardín de nuevo."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si quieres estar siempre ocupado con el juego.",
+    "p": "Es un jardín pasivo: las plantas crecen solas, y vuelves a recoger el rocío."
+   },
+   {
+    "h": "Si quieres una lista de plantas grande.",
+    "p": "El jardín tiene ocho tipos de plantas."
+   }
+  ],
+  "compare": {
+   "oneline": "Un jardín que recoge rocío",
+   "style": "Jardín pasivo",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Un jugador",
+   "platform": "iOS y Android, próximamente",
+   "offline": "—",
+   "pricing": "Gratis, con anuncios recompensados opcionales",
+   "languages": "11 idiomas",
+   "status": "Próximamente, fecha de lanzamiento sin fijar"
+  }
  }
 }

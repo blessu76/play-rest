@@ -212,5 +212,89 @@
    "languages": "Inggris, Korea",
    "status": "Dalam pengembangan"
   }
+ },
+ "tilttower": {
+  "status": "Segera hadir",
+  "platform": "iOS dan Android",
+  "pricing": "Gratis, dengan iklan berhadiah opsional.",
+  "tagline": "Permainan fisika sekali sentuh. Crane yang bergoyang menjatuhkan balok, dan Anda menumpuk menara yang makin bergoyang dengan setiap balok.",
+  "pros": [
+   {
+    "h": "Satu ketukan adalah seluruh permainan.",
+    "p": "Crane bergoyang sendiri; Anda ketuk untuk menjatuhkan balok."
+   },
+   {
+    "h": "Sekitar satu menit per ronde.",
+    "p": "Cukup singkat untuk jeda, satu ronde satu kali."
+   },
+   {
+    "h": "Gratis dimainkan.",
+    "p": "Tidak perlu membeli apa pun; satu-satunya iklan adalah iklan berhadiah opsional."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Jika Anda ingin menara yang kokoh dan presisi.",
+    "p": "Crane dan menara sama-sama bergoyang, jadi setiap balok jatuh di posisi yang ditentukan fisika."
+   },
+   {
+    "h": "Jika Anda ingin bermain melawan orang lain.",
+    "p": "Ini adalah permainan solo."
+   }
+  ],
+  "compare": {
+   "oneline": "Menumpuk menara yang bergoyang",
+   "style": "Menumpuk fisika, satu ketukan",
+   "length": "Sekitar satu menit",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS dan Android, segera hadir",
+   "offline": "—",
+   "pricing": "Gratis, dengan iklan berhadiah opsional",
+   "languages": "11 bahasa",
+   "status": "Segera hadir, tanggal rilis belum ditentukan"
+  }
+ },
+ "mossgarden": {
+  "status": "Segera hadir",
+  "platform": "iOS dan Android",
+  "pricing": "Gratis, dengan iklan berhadiah opsional.",
+  "tagline": "Taman idle di ponsel Anda. Tanam delapan jenis tumbuhan, biarkan tumbuh, dan kumpulkan embun yang ditinggalkan.",
+  "pros": [
+   {
+    "h": "Delapan tumbuhan untuk dirawat.",
+    "p": "Tanam dan besarkan delapan jenis tumbuhan, dan kumpulkan embun yang ditinggalkan masing-masing."
+   },
+   {
+    "h": "Taman yang berubah mengikuti hari dan musim.",
+    "p": "Latar belakang mengikuti waktu dalam sehari dan musim."
+   },
+   {
+    "h": "Taman yang membuatmu kembali.",
+    "p": "Buku panduan terisi satu per satu, dan reset prestige memulai taman lagi dari awal."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Jika Anda ingin terus-menerus bermain aktif.",
+    "p": "Ini taman idle: tumbuhan tumbuh sendiri, dan Anda kembali untuk mengumpulkan embun."
+   },
+   {
+    "h": "Jika Anda ingin daftar tumbuhan yang besar.",
+    "p": "Taman ini punya delapan jenis tumbuhan."
+   }
+  ],
+  "compare": {
+   "oneline": "Taman yang mengumpulkan embun",
+   "style": "Taman idle",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS dan Android, segera hadir",
+   "offline": "—",
+   "pricing": "Gratis, dengan iklan berhadiah opsional",
+   "languages": "11 bahasa",
+   "status": "Segera hadir, tanggal rilis belum ditentukan"
+  }
  }
 }

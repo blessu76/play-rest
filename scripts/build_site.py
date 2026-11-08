@@ -5,7 +5,8 @@ Sources
   content/i18n/<lang>.json          UI strings and home copy (same keys in every language, see KEYS; AI-translated languages
                                     also MT_KEYS: the AI-translation notice, the link to the English original, "Journal (in English)")
   content/games.json                the five games: facts, links and the en/ko card copy (text keyed by language; a link with no
-                                    entry for a language falls back to the English one)
+                                    entry for a language falls back to the English one), plus "upcoming": not-yet-out games with a
+                                    card but no site yet (no url or icon, the "Coming soon" status)
   content/i18n/games/<lang>.json    the card copy of the AI-translated languages (see GAME_TEXT); game names stay as in English
   content/pages/<lang>/<page>.md    about / privacy / contact (front matter title + description + updated,
                                     Markdown body, placeholders {{OPERATOR}} {{EMAIL}} {{EFFECTIVE}})
@@ -494,25 +495,50 @@ def load_games(root):
 
 
 def load_upcoming(root):
-    """content/games.json "upcoming": [{id, name: {en, ko}}] -> cards for not-yet-announced games (name + pre-release tag, no link, no site yet)."""
+    """content/games.json "upcoming": not-yet-out games that get a card but have no site yet: the en/ko card copy with the same
+    card fields as the games array minus the link fields (no url, icon, accent, platforms, genre, terms or journal), the
+    "Coming soon" status, and the nine AI languages from content/i18n/games/<lang>.json (see load_game_text). No links, by design."""
     try:
         raw = json.loads((Path(root) / "content" / "games.json").read_text(encoding="utf-8")).get("upcoming", [])
     except (OSError, ValueError, AttributeError):
         return [], []
     errs = []
+    seen = set(GAME_IDS)
     for u in raw:
+        tag = "games.json upcoming %s" % u.get("id")
         if not SLUG_RE.match(str(u.get("id", ""))):
             errs.append("games.json upcoming: bad id %r" % u.get("id"))
-        _bilingual(u.get("name"), "games.json upcoming %s name" % u.get("id"), errs)
+        if u.get("id") in seen:
+            errs.append("%s: id must not collide with a game or another upcoming entry" % tag)
+        seen.add(u.get("id"))
+        _bilingual(u.get("name"), tag + " name", errs)
+        if u.get("sub") is not None:
+            _bilingual(u["sub"], tag + " sub", errs)
+        for k in ("status", "platform", "pricing", "tagline"):
+            _bilingual(u.get(k), "%s %s" % (tag, k), errs)
+        for key, want in (("pros", 3), ("cons", 2)):
+            items = u.get(key)
+            if not isinstance(items, list) or len(items) != want:
+                errs.append("%s: %s needs %d items" % (tag, key, want)); continue
+            for i, it in enumerate(items):
+                _bilingual(it.get("h"), "%s %s[%d].h" % (tag, key, i), errs)
+                _bilingual(it.get("p"), "%s %s[%d].p" % (tag, key, i), errs)
+        c = u.get("compare") or {}
+        for row in COMPARE_ROWS:
+            _bilingual(c.get(row), "%s compare.%s" % (tag, row), errs)
+        if u.get("url"):
+            errs.append("%s: no site yet, no store yet — the url field must stay empty" % tag)
     return raw, errs
 
 
-def load_game_text(root, games):
-    """content/i18n/games/<lang>.json -> merges the translated card copy into games (g[field][lang]); -> (languages complete, errors).
+def load_game_text(root, games, upcoming=()):
+    """content/i18n/games/<lang>.json -> merges the translated card copy into the games and the upcoming cards (g[field][lang]);
+    -> (languages complete, errors).
     Shape: {"<game id>": {status, platform, pricing, tagline, pros: [{h, p}] x3, cons: [{h, p}] x2, journal_label, compare: {row: text}}}.
     Names stay as in English (no translated game names)."""
     done, errs = [], []
     by_id = {g.get("id"): g for g in games}
+    by_id.update({u.get("id"): u for u in upcoming})
     for lang in MT_LANGS:
         f = Path(root) / "content" / "i18n" / "games" / (lang + ".json")
         if not f.is_file():
@@ -524,7 +550,7 @@ def load_game_text(root, games):
             errs.append("%s: %s" % (tag, ex)); continue
         n0 = len(errs)
         if sorted(data) != sorted(by_id):
-            errs.append("%s: needs exactly the games %s" % (tag, ", ".join(GAME_IDS))); continue
+            errs.append("%s: needs exactly the games %s" % (tag, ", ".join(sorted(by_id)))); continue
         for gid, d in data.items():
             g, where = by_id[gid], "%s %s" % (tag, gid)
 
@@ -554,7 +580,9 @@ def load_game_text(root, games):
                 g["journal"]["label"][lang] = label
             for r, v in cells.items():
                 g["compare"][r][lang] = v
-            g["name"][lang], g["sub"][lang] = g["name"][SOURCE_LANG], g["sub"][SOURCE_LANG]
+            g["name"][lang] = g["name"][SOURCE_LANG]  # names stay as in English; upcoming cards have no sub
+            if "sub" in g:
+                g["sub"][lang] = g["sub"][SOURCE_LANG]
         if len(errs) == n0:
             done.append(lang)
     return done, errs
@@ -751,9 +779,20 @@ def game_card(ctx, lang, g):
 
 
 def upcoming_card(ctx, lang, u):
-    # a game with no site yet: name and the pre-release tag only, deliberately no link
-    return ('<article class="game upcoming" id="%s"><header class="game-head"><div><h3>%s</h3><p class="meta"><span class="badge">%s</span></p></div></header></article>') % (
-        esc(u["id"]), esc(u["name"].get(lang) or u["name"]["en"]), esc(ctx.t(lang, "g_prerelease")))
+    # a game with no site yet: the full card copy, but no icon, no accent and deliberately no link;
+    # the "Coming soon" status badge is the pre-release display (same rule as the game cards)
+    t = lambda k: ctx.t(lang, k)  # noqa: E731
+    pros = "".join("<li><strong>%s</strong> %s</li>" % (esc(x["h"][lang]), esc(x["p"][lang])) for x in u["pros"])
+    cons = "".join("<li><strong>%s</strong> %s</li>" % (esc(x["h"][lang]), esc(x["p"][lang])) for x in u["cons"])
+    return ('<article class="game upcoming" id="%s"><header class="game-head"><div><h3>%s</h3>'
+            '<p class="meta"><span class="badge">%s</span> %s<span class="plat">%s</span></p></div></header>'
+            '<p class="tagline">%s</p><p class="price mono">%s</p>'
+            '<div class="cols"><div><h4>%s</h4><ol>%s</ol></div><div><h4>%s</h4><ol>%s</ol></div></div></article>') % (
+        esc(u["id"]), esc(u["name"].get(lang) or u["name"]["en"]),
+        esc(u["status"][lang]),
+        "" if u["status"]["en"] == "Coming soon" else '<span class="badge pre">%s</span> ' % esc(t("g_prerelease")),
+        esc(u["platform"][lang]),
+        esc(u["tagline"][lang]), esc(u["pricing"][lang]), esc(t("g_likes")), pros, esc(t("g_nots")), cons)
 
 
 def compare_html(ctx, lang):
@@ -1016,8 +1055,8 @@ def make_ctx(root, now=None):
     i18n, errs = load_i18n(root)
     pages, e2 = load_pages(root)
     games, e3 = load_games(root)
-    game_langs, e5 = load_game_text(root, games) if not e3 else ([], [])
     upcoming, e6 = load_upcoming(root)
+    game_langs, e5 = load_game_text(root, games, upcoming) if not e3 else ([], [])
     posts, e4 = load_journal(root)
     today = resolve_today(now)
     total = len(posts)

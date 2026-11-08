@@ -150,6 +150,41 @@ class Built(unittest.TestCase):
                 self.assertFalse(games[gid]["pricing"][lang].startswith(word), (gid, lang))
                 self.assertFalse(games[gid]["compare"]["pricing"][lang].startswith(word), (gid, lang))
 
+    def test_upcoming_cards_have_full_card_copy_in_all_11_languages(self):
+        up = {x["id"]: x for x in self.ctx.upcoming}
+        self.assertEqual(sorted(up), ["mossgarden", "tilttower"])
+        for gid, u in up.items():
+            self.assertNotIn("url", u)  # no site yet, no store yet
+            self.assertEqual(u["status"]["en"], "Coming soon")
+            self.assertEqual(u["status"]["ko"], "출시 예정")
+            for lang in bs.LANGS:
+                for field in ("status", "platform", "pricing", "tagline"):
+                    self.assertTrue(u[field][lang].strip(), (gid, lang, field))
+                for key, want in (("pros", 3), ("cons", 2)):
+                    self.assertEqual(len(u[key]), want, (gid, key))
+                    for i, it in enumerate(u[key]):
+                        for k in ("h", "p"):
+                            self.assertTrue(it[k][lang].strip(), (gid, lang, key, i, k))
+                for row in bs.COMPARE_ROWS:
+                    self.assertTrue(u["compare"][row][lang].strip(), (gid, lang, row))
+
+    def test_upcoming_cards_render_on_the_home_page_with_the_coming_soon_badge_and_no_links(self):
+        names = {"": ("Tilt Tower", "Moss Garden"), "ko/": ("기우뚱탑", "이끼정원")}
+        badge = {"": "Coming soon", "ko/": "출시 예정"}
+        for lang_dir in ("", "ko/"):
+            h = self.read(lang_dir + "index.html")
+            for gid, name in zip(("tilttower", "mossgarden"), names[lang_dir]):
+                before, _, card = h.partition('id="%s"' % gid)
+                self.assertIn('<article class="game upcoming"', before, (lang_dir, gid))
+                card = card.split("</article>")[0]
+                self.assertIn("<h3>%s</h3>" % name, card, (lang_dir, gid))
+                self.assertIn(badge[lang_dir], card, (lang_dir, gid))  # the "Coming soon" display
+                self.assertIn('class="tagline"', card, (lang_dir, gid))
+                self.assertIn('class="price', card, (lang_dir, gid))
+                self.assertNotIn("<a", card, (lang_dir, gid))  # deliberately no link
+        self.assertNotIn("Tilt Tower", self.read("llms.txt"))  # llms.txt lists the games with their own sites only
+        self.assertNotIn("Moss Garden", self.read("llms.txt"))
+
     def test_compare_lead_does_not_claim_only_stated_facts(self):
         for lang in ("en", "ko"):
             lead = json.loads((REPO / "content" / "i18n" / (lang + ".json")).read_text(encoding="utf-8"))["compare_lead"]

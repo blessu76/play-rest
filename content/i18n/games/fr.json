@@ -212,5 +212,89 @@
    "languages": "Anglais, coréen",
    "status": "En développement"
   }
+ },
+ "tilttower": {
+  "status": "Bientôt disponible",
+  "platform": "iOS et Android",
+  "pricing": "Gratuit, avec des publicités récompensées en option.",
+  "tagline": "Un jeu de physique en un seul geste. Une grue qui se balance laisse tomber des blocs, et vous empilez une tour qui penche un peu plus à chaque bloc.",
+  "pros": [
+   {
+    "h": "Un geste est tout le jeu.",
+    "p": "La grue se balance toute seule ; vous touchez pour lâcher le bloc."
+   },
+   {
+    "h": "Environ une minute par partie.",
+    "p": "Court comme une pause, une partie à la fois."
+   },
+   {
+    "h": "Jouer gratuitement.",
+    "p": "Aucun achat requis ; les seules publicités sont récompensées et en option."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si vous voulez une tour stable et précise.",
+    "p": "La grue et la tour se balancent, donc chaque bloc tombe là où la physique le place."
+   },
+   {
+    "h": "Si vous voulez jouer contre d'autres personnes.",
+    "p": "C'est un jeu solo."
+   }
+  ],
+  "compare": {
+   "oneline": "Empiler une tour qui se balance",
+   "style": "Empilage physique, un geste",
+   "length": "Environ une minute",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS et Android, bientôt disponible",
+   "offline": "—",
+   "pricing": "Gratuit, avec publicités récompensées en option",
+   "languages": "11 langues",
+   "status": "Bientôt disponible, date de sortie non fixée"
+  }
+ },
+ "mossgarden": {
+  "status": "Bientôt disponible",
+  "platform": "iOS et Android",
+  "pricing": "Gratuit, avec des publicités récompensées en option.",
+  "tagline": "Un jardin en mode idle sur votre téléphone. Plantez huit types de plantes, faites-les pousser et ramassez la rosée qu'elles laissent.",
+  "pros": [
+   {
+    "h": "Huit plantes à entretenir.",
+    "p": "Plantez et faites pousser huit types de plantes, et ramassez la rosée que chacune laisse."
+   },
+   {
+    "h": "Un jardin qui change avec la journée et la saison.",
+    "p": "L'arrière-plan suit le moment de la journée et la saison."
+   },
+   {
+    "h": "Un jardin où l'on revient.",
+    "p": "Un guide se remplit plante après plante, et une réinitialisation de prestige permet de recommencer le jardin."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si vous voulez manipuler en permanence.",
+    "p": "C'est un jardin en idle : les plantes poussent toutes seules, et vous revenez ramasser la rosée."
+   },
+   {
+    "h": "Si vous voulez une grande liste de plantes.",
+    "p": "Le jardin compte huit types de plantes."
+   }
+  ],
+  "compare": {
+   "oneline": "Un jardin qui récolte la rosée",
+   "style": "Jardin en idle",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS et Android, bientôt disponible",
+   "offline": "—",
+   "pricing": "Gratuit, avec publicités récompensées en option",
+   "languages": "11 langues",
+   "status": "Bientôt disponible, date de sortie non fixée"
+  }
  }
 }

@@ -212,5 +212,89 @@
    "languages": "Inglês, coreano",
    "status": "Em desenvolvimento"
   }
+ },
+ "tilttower": {
+  "status": "Em breve",
+  "platform": "iOS e Android",
+  "pricing": "Gratuito, com anúncios recompensados opcionais.",
+  "tagline": "Um jogo de física de um toque. Uma grua balançando solta blocos, e você empilha uma torre que balança um pouco mais a cada bloco.",
+  "pros": [
+   {
+    "h": "Um toque é o jogo inteiro.",
+    "p": "A grua balança sozinha; você toca para soltar o bloco."
+   },
+   {
+    "h": "Cerca de um minuto por rodada.",
+    "p": "Curto o suficiente para uma pausa, uma rodada de cada vez."
+   },
+   {
+    "h": "Gratuito para jogar.",
+    "p": "Nada para comprar; os únicos anúncios são recompensados e opcionais."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Se você quer uma torre firme e precisa.",
+    "p": "A grua e a torre balançam, então cada bloco cai onde a física mandar."
+   },
+   {
+    "h": "Se você quer jogar contra outras pessoas.",
+    "p": "É um jogo solo."
+   }
+  ],
+  "compare": {
+   "oneline": "Empilhar uma torre que balança",
+   "style": "Empilhamento físico, um toque",
+   "length": "Cerca de um minuto",
+   "difficulty": "—",
+   "players": "Um jogador",
+   "platform": "iOS e Android, em breve",
+   "offline": "—",
+   "pricing": "Gratuito, com anúncios recompensados opcionais",
+   "languages": "11 idiomas",
+   "status": "Em breve, data de lançamento não definida"
+  }
+ },
+ "mossgarden": {
+  "status": "Em breve",
+  "platform": "iOS e Android",
+  "pricing": "Gratuito, com anúncios recompensados opcionais.",
+  "tagline": "Um jardim idle no seu telefone. Plante oito tipos de plantas, crie e colha o orvalho que deixam.",
+  "pros": [
+   {
+    "h": "Oito plantas para cuidar.",
+    "p": "Plante e crie oito tipos de plantas, e colha o orvalho que cada uma deixa."
+   },
+   {
+    "h": "Um jardim que muda com o dia e a estação.",
+    "p": "O fundo segue o horário do dia e a estação."
+   },
+   {
+    "h": "Um jardim para o qual você volta.",
+    "p": "Um guia se enche planta a planta, e um reset de prestígio deixa você recomeçar o jardim."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Se você quer estar sempre tocando o jogo.",
+    "p": "É um jardim idle: as plantas crescem sozinhas, e você volta para colher o orvalho."
+   },
+   {
+    "h": "Se você quer uma grande lista de plantas.",
+    "p": "O jardim tem oito tipos de plantas."
+   }
+  ],
+  "compare": {
+   "oneline": "Um jardim que colhe orvalho",
+   "style": "Jardim idle",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Um jogador",
+   "platform": "iOS e Android, em breve",
+   "offline": "—",
+   "pricing": "Gratuito, com anúncios recompensados opcionais",
+   "languages": "11 idiomas",
+   "status": "Em breve, data de lançamento não definida"
+  }
  }
 }
