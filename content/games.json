@@ -778,5 +778,21 @@
     }
    }
   }
+ ],
+ "upcoming": [
+  {
+   "id": "tilttower",
+   "name": {
+    "en": "Tilt Tower",
+    "ko": "기우뚱탑"
+   }
+  },
+  {
+   "id": "mossgarden",
+   "name": {
+    "en": "Moss Garden",
+    "ko": "이끼정원"
+   }
+  }
  ]
 }

@@ -112,6 +112,8 @@ img{max-width:100%;height:auto}
 .sub{margin:2px 0 0;color:var(--muted);font-size:16px}
 .meta{margin:6px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:16px;color:var(--muted)}
 .badge{display:inline-block;padding:1px 10px;border:1px solid var(--ac);border-radius:12px;color:var(--ac);font-size:14px;font-weight:600}
+.badge.pre{border-style:dashed}
+.game.upcoming{border-style:dashed;background:var(--bg);--ac:var(--muted)}
 .tagline{margin:0;font-size:18px}
 .price{margin:0;font-size:16px;color:var(--muted)}
 .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:20px}

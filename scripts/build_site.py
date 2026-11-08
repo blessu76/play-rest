@@ -52,7 +52,7 @@ except ImportError:
 
 SITE = "https://play.ipe.rest"
 KST = dt.timezone(dt.timedelta(hours=9))
-ASSET_V = "20261031i"  # keep in sync: bump when assets/play.css or play.js change
+ASSET_V = "20261108a"  # keep in sync: bump when assets/play.css or play.js change
 SITE_UPDATED = "2026-11-01"  # "Last updated" of home / 404 and sitemap lastmod: bump by hand when their text changes
 OPERATOR = "Davy Kim (ipe Studio)"
 EMAIL = "ipe.haven@gmail.com"
@@ -122,7 +122,7 @@ KEYS = (
     "nav_home nav_games nav_about nav_journal nav_contact nav_privacy skip lang_label theme_label theme_light theme_dark theme_noir updated_label crumb_home "
     "home_title home_desc hero_code hero_h1 hero_sub hero_strip_aria "
     "phil_h phil_rest phil_kept p1_h p1_p p2_h p2_p p3_h p3_p p4_h p4_p p5_h p5_p "
-    "games_h games_lead g_likes g_nots g_visit g_terms g_blog g_status "
+    "games_h games_lead g_likes g_nots g_visit g_terms g_blog g_status g_prerelease "
     "compare_h compare_lead compare_note compare_game row_oneline row_style row_length row_difficulty row_players "
     "row_platform row_offline row_pricing row_languages row_status "
     "choose_h choose_lead choose_1 choose_2 choose_3 choose_4 choose_5 choose_go "
@@ -493,6 +493,20 @@ def load_games(root):
     return raw, errs
 
 
+def load_upcoming(root):
+    """content/games.json "upcoming": [{id, name: {en, ko}}] -> cards for not-yet-announced games (name + pre-release tag, no link, no site yet)."""
+    try:
+        raw = json.loads((Path(root) / "content" / "games.json").read_text(encoding="utf-8")).get("upcoming", [])
+    except (OSError, ValueError, AttributeError):
+        return [], []
+    errs = []
+    for u in raw:
+        if not SLUG_RE.match(str(u.get("id", ""))):
+            errs.append("games.json upcoming: bad id %r" % u.get("id"))
+        _bilingual(u.get("name"), "games.json upcoming %s name" % u.get("id"), errs)
+    return raw, errs
+
+
 def load_game_text(root, games):
     """content/i18n/games/<lang>.json -> merges the translated card copy into games (g[field][lang]); -> (languages complete, errors).
     Shape: {"<game id>": {status, platform, pricing, tagline, pros: [{h, p}] x3, cons: [{h, p}] x2, journal_label, compare: {row: text}}}.
@@ -580,6 +594,7 @@ def time_tag(published):
 class Ctx:
     def __init__(self, root, i18n, pages, games, langs, posts=()):
         self.root, self.i18n, self.pages, self.games, self.langs, self.posts = root, i18n, pages, games, langs, list(posts)
+        self.upcoming = []
         self.journal_langs = [l for l in langs if l in JOURNAL_LANGS]
 
     def t(self, lang, key):
@@ -725,13 +740,20 @@ def game_card(ctx, lang, g):
         links.append('<a class="textlink" href="%s" rel="noopener"%s>%s</a>' % (esc(h), a, esc(t("g_terms") + m)))
     sub = g["sub"][lang] if g["sub"][lang] != g["name"][lang] else ""
     return ('<article class="game" id="%s" style="--a:%s;--a2:%s"><header class="game-head"><img class="game-icon" src="/assets/games/%s" width="64" height="64" alt="">'
-            '<div><h3>%s</h3>%s<p class="meta"><span class="badge">%s</span> <span class="plat">%s</span></p></div></header>'
+            '<div><h3>%s</h3>%s<p class="meta"><span class="badge">%s</span> %s<span class="plat">%s</span></p></div></header>'
             '<p class="tagline">%s</p><p class="price mono">%s</p>'
             '<div class="cols"><div><h4>%s</h4><ol>%s</ol></div><div><h4>%s</h4><ol>%s</ol></div></div>'
             '<p class="links">%s</p></article>') % (
         g["id"], g["accent"][0], g["accent"][1], esc(g["icon"]), esc(g["name"][lang]),
-        ('<p class="sub">%s</p>' % esc(sub)) if sub else "", esc(g["status"][lang]), esc(g["platform"][lang]),
+        ('<p class="sub">%s</p>' % esc(sub)) if sub else "", esc(g["status"][lang]),
+        "" if g["status"]["en"] == "Coming soon" else '<span class="badge pre">%s</span> ' % esc(t("g_prerelease")), esc(g["platform"][lang]),
         esc(g["tagline"][lang]), esc(g["pricing"][lang]), esc(t("g_likes")), pros, esc(t("g_nots")), cons, " ".join(links))
+
+
+def upcoming_card(ctx, lang, u):
+    # a game with no site yet: name and the pre-release tag only, deliberately no link
+    return ('<article class="game upcoming" id="%s"><header class="game-head"><div><h3>%s</h3><p class="meta"><span class="badge">%s</span></p></div></header></article>') % (
+        esc(u["id"]), esc(u["name"].get(lang) or u["name"]["en"]), esc(ctx.t(lang, "g_prerelease")))
 
 
 def compare_html(ctx, lang):
@@ -764,7 +786,7 @@ def build_home(ctx, lang):
     phil = ('<section class="sec" id="philosophy"><div class="wrap"><h2><span class="sn mono">01</span>%s</h2><p class="rest">%s</p>'
             '<ol class="principles">%s</ol></div></section>') % (esc(t("phil_h")), esc(t("phil_rest")), principles)
     games = ('<section class="sec tint" id="games"><div class="wrap"><h2><span class="sn mono">02</span>%s</h2><p class="lead">%s</p><div class="game-list">%s</div></div></section>') % (
-        esc(t("games_h")), esc(t("games_lead")), "".join(game_card(ctx, lang, g) for g in ctx.games))
+        esc(t("games_h")), esc(t("games_lead")), "".join(game_card(ctx, lang, g) for g in ctx.games) + "".join(upcoming_card(ctx, lang, u) for u in ctx.upcoming))
     cmp_ = ('<section class="sec" id="compare"><div class="wrap"><h2><span class="sn mono">03</span>%s</h2><p class="lead">%s</p>%s<p class="note">%s</p></div></section>') % (
         esc(t("compare_h")), esc(t("compare_lead")), compare_html(ctx, lang), esc(t("compare_note")))
     choose_items = "".join('<li><span>%s</span><a class="btn ghost" href="#%s">%s <span aria-hidden="true">→</span></a></li>' % (
@@ -995,11 +1017,12 @@ def make_ctx(root, now=None):
     pages, e2 = load_pages(root)
     games, e3 = load_games(root)
     game_langs, e5 = load_game_text(root, games) if not e3 else ([], [])
+    upcoming, e6 = load_upcoming(root)
     posts, e4 = load_journal(root)
     today = resolve_today(now)
     total = len(posts)
     posts = [p for p in posts if released(p, today)]  # the date gate: a post dated after `today` (KST) is on no page, feed or sitemap
-    errs += e2 + e3 + e5 + e4
+    errs += e2 + e3 + e5 + e4 + e6
 
     def has(l):
         return {"i18n": l in i18n, "pages": all((l, s) in pages for s in PAGE_SLUGS), "games": l in MAIN_LANGS or l in game_langs}
@@ -1012,6 +1035,7 @@ def make_ctx(root, now=None):
         if started and not all(h.values()):
             errs.append("%s: translation is incomplete — missing %s" % (l, ", ".join(k for k, v in h.items() if not v)))
     ctx = Ctx(root, i18n, pages, games, langs, posts)
+    ctx.upcoming = upcoming
     ctx.today, ctx.scheduled = today, total - len(posts)
     return ctx, errs
 
