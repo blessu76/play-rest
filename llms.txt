@@ -24,6 +24,7 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 
 RSS: https://play.ipe.rest/journal/feed.xml
 
+- [Pick a game by how much attention you have](https://play.ipe.rest/journal/2026-11-09-pick-a-game-by-how-much-attention-you-have/): Genre matters less than the minutes and the attention you actually have. A plain way to choose a short game, with all four ipe() games as examples.
 - [A board you can read at a glance](https://play.ipe.rest/journal/2026-11-08-a-board-you-can-read-at-a-glance/): In a short game, the board has to explain itself in a second. Why color, shape and a plain grid matter, and how Claimball and Inkisle try to do it.
 - [A game for one hand](https://play.ipe.rest/journal/2026-11-07-a-game-for-one-hand/): Many spare minutes come with a hand already full. Why portrait, one-thumb play shapes a game's design, and how Inkisle approaches it.
 - [An opponent to practice against](https://play.ipe.rest/journal/2026-11-06-an-opponent-to-practice-against/): Playing a computer opponent is not a lesser way to play. What a good AI rival gives a short game: no waiting, no audience, and a ladder to climb.

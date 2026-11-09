@@ -6,7 +6,8 @@
 <atom:link href="https://play.ipe.rest/ko/journal/feed.xml" rel="self" type="application/rss+xml"/>
 <description>ipe() Games 저널: 턴제 게임과 킬링타임 게임, 짧은 한 판을 지키는 게임 철학에 대한 기록입니다.</description>
 <language>ko</language>
-<lastBuildDate>Sun, 08 Nov 2026 12:45:00 +0900</lastBuildDate>
+<lastBuildDate>Mon, 09 Nov 2026 12:18:00 +0900</lastBuildDate>
+<item><title>남은 주의력으로 게임 고르기</title><link>https://play.ipe.rest/ko/journal/2026-11-09-pick-a-game-by-how-much-attention-you-have/</link><guid isPermaLink="true">https://play.ipe.rest/ko/journal/2026-11-09-pick-a-game-by-how-much-attention-you-have/</guid><pubDate>Mon, 09 Nov 2026 12:18:00 +0900</pubDate><description>쉬는 시간의 네 가지 상황과, 각각에 맞게 만들고 있는 네 게임. 아직 나온 게임은 없으니 의도를 안내하는 글입니다.</description></item>
 <item><title>한눈에 읽히는 판</title><link>https://play.ipe.rest/ko/journal/2026-11-08-a-board-you-can-read-at-a-glance/</link><guid isPermaLink="true">https://play.ipe.rest/ko/journal/2026-11-08-a-board-you-can-read-at-a-glance/</guid><pubDate>Sun, 08 Nov 2026 12:45:00 +0900</pubDate><description>무엇이 누구 것인지 힘들이지 않고 읽히게 하는 작은 설계들. 빠른 게임이 읽히는 방법.</description></item>
 <item><title>한 손으로 하는 게임</title><link>https://play.ipe.rest/ko/journal/2026-11-07-a-game-for-one-hand/</link><guid isPermaLink="true">https://play.ipe.rest/ko/journal/2026-11-07-a-game-for-one-hand/</guid><pubDate>Sat, 07 Nov 2026 12:27:00 +0900</pubDate><description>한 손에 가방이나 손잡이, 컵이 들려 있는 순간을 위한 설계, 그리고 잉크아일이 그것을 어떻게 다루는지.</description></item>
 <item><title>연습 상대가 되어 주는 상대</title><link>https://play.ipe.rest/ko/journal/2026-11-06-an-opponent-to-practice-against/</link><guid isPermaLink="true">https://play.ipe.rest/ko/journal/2026-11-06-an-opponent-to-practice-against/</guid><pubDate>Fri, 06 Nov 2026 12:52:00 +0900</pubDate><description>쉬는 시간용 게임에서 AI 상대에게 바라는 것, 그리고 Claimball 의 라이벌이 어떻게 만들어지려 하는지.</description></item>
