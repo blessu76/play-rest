@@ -152,7 +152,7 @@ class Built(unittest.TestCase):
 
     def test_upcoming_cards_have_full_card_copy_in_all_11_languages(self):
         up = {x["id"]: x for x in self.ctx.upcoming}
-        self.assertEqual(sorted(up), ["mossgarden", "tilttower"])
+        self.assertEqual(sorted(up), ["mossgarden", "tottertop"])
         for gid, u in up.items():
             self.assertNotIn("url", u)  # no site yet, no store yet
             self.assertEqual(u["status"]["en"], "Coming soon")
@@ -169,11 +169,11 @@ class Built(unittest.TestCase):
                     self.assertTrue(u["compare"][row][lang].strip(), (gid, lang, row))
 
     def test_upcoming_cards_render_on_the_home_page_with_the_coming_soon_badge_and_no_links(self):
-        names = {"": ("Tilt Tower", "Moss Garden"), "ko/": ("기우뚱탑", "이끼정원")}
+        names = {"": ("Tottertop", "Moss Garden"), "ko/": ("기우뚱탑", "이끼정원")}
         badge = {"": "Coming soon", "ko/": "출시 예정"}
         for lang_dir in ("", "ko/"):
             h = self.read(lang_dir + "index.html")
-            for gid, name in zip(("tilttower", "mossgarden"), names[lang_dir]):
+            for gid, name in zip(("tottertop", "mossgarden"), names[lang_dir]):
                 before, _, card = h.partition('id="%s"' % gid)
                 self.assertIn('<article class="game upcoming"', before, (lang_dir, gid))
                 card = card.split("</article>")[0]
@@ -182,7 +182,7 @@ class Built(unittest.TestCase):
                 self.assertIn('class="tagline"', card, (lang_dir, gid))
                 self.assertIn('class="price', card, (lang_dir, gid))
                 self.assertNotIn("<a", card, (lang_dir, gid))  # deliberately no link
-        self.assertNotIn("Tilt Tower", self.read("llms.txt"))  # llms.txt lists the games with their own sites only
+        self.assertNotIn("Tottertop", self.read("llms.txt"))  # llms.txt lists the games with their own sites only
         self.assertNotIn("Moss Garden", self.read("llms.txt"))
 
     def test_compare_lead_does_not_claim_only_stated_facts(self):
