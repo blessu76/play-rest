@@ -55,11 +55,14 @@ class Ga4(unittest.TestCase):
             self.assertNotIn(GA_ID, (self.root / rel).read_text(encoding="utf-8"))
 
     def test_game_visit_buttons_carry_the_game_id(self):
+        # a game card and an upcoming card whose site is live both render the visit button (same data-game hook)
+        want = sorted(g["id"] for g in self.ctx.games) + sorted(
+            u["id"] for u in self.ctx.upcoming if u.get("site", {}).get("live"))
         for lang in LANGS:
             home = self.page(lang, "")
             ids = re.findall(r'<a class="btn" href="https://[^"]+" rel="noopener" data-game="([a-z]+)"', home)
             with self.subTest(lang):
-                self.assertEqual(sorted(ids), sorted(g["id"] for g in self.ctx.games))
+                self.assertEqual(sorted(ids), want)
         self.assertIn("'select_game'", self.page("en", ""))
 
     def test_privacy_matches_the_tracking(self):
@@ -111,13 +114,14 @@ class Ga4(unittest.TestCase):
 
     def test_footer_game_links_are_tracked_like_the_cards(self):
         ids = sorted(g["id"] for g in self.ctx.games)
+        live_upcoming = [u["id"] for u in self.ctx.upcoming if u.get("site", {}).get("live")]  # card buttons too
         for lang in LANGS:
             foot = re.search(r"<footer.*</footer>", self.page(lang, ""), re.S).group(0)
             found = re.findall(r'<li><a href="https://[^"]+" rel="noopener" data-game="([a-z]+)" data-placement="footer">', foot)
             with self.subTest(lang):
-                self.assertEqual(sorted(found), ids)
+                self.assertEqual(sorted(found), ids)  # the footer lists the five games only, not the upcoming ones
         self.assertIn("a.getAttribute('data-placement')||'card'", self.page("en", ""))
-        self.assertEqual(self.page("en", "").count('data-placement="card"'), len(ids))
+        self.assertEqual(self.page("en", "").count('data-placement="card"'), len(ids) + len(live_upcoming))
 
     def test_snippet_skips_local_previews(self):
         text = self.page("en", "")

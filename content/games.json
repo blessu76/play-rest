@@ -786,6 +786,10 @@
     "en": "Tottertop",
     "ko": "기우뚱탑"
    },
+   "site": {
+    "url": "https://tottertop.ipe.rest",
+    "live": true
+   },
    "status": {
     "en": "Coming soon",
     "ko": "출시 예정"
@@ -904,6 +908,10 @@
    "name": {
     "en": "Moss Garden",
     "ko": "이끼정원"
+   },
+   "site": {
+    "url": "https://mossgarden.ipe.rest",
+    "live": false
    },
    "status": {
     "en": "Coming soon",

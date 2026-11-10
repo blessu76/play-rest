@@ -154,7 +154,11 @@ class Built(unittest.TestCase):
         up = {x["id"]: x for x in self.ctx.upcoming}
         self.assertEqual(sorted(up), ["mossgarden", "tottertop"])
         for gid, u in up.items():
-            self.assertNotIn("url", u)  # no site yet, no store yet
+            self.assertNotIn("url", u)  # no bare url field (no store); the site, once it exists, is site {url, live}
+            self.assertEqual(set(u["site"]), {"url", "live"})
+            self.assertEqual(u["site"]["url"], {"tottertop": "https://tottertop.ipe.rest",
+                                                "mossgarden": "https://mossgarden.ipe.rest"}[gid])
+            self.assertEqual(u["site"]["live"], gid == "tottertop")  # tottertop.ipe.rest is up; mossgarden.ipe.rest is not yet
             self.assertEqual(u["status"]["en"], "Coming soon")
             self.assertEqual(u["status"]["ko"], "출시 예정")
             for lang in bs.LANGS:
@@ -168,9 +172,10 @@ class Built(unittest.TestCase):
                 for row in bs.COMPARE_ROWS:
                     self.assertTrue(u["compare"][row][lang].strip(), (gid, lang, row))
 
-    def test_upcoming_cards_render_on_the_home_page_with_the_coming_soon_badge_and_no_links(self):
+    def test_upcoming_cards_render_with_the_coming_soon_badge_and_site_link_only_when_live(self):
         names = {"": ("Tottertop", "Moss Garden"), "ko/": ("기우뚱탑", "이끼정원")}
         badge = {"": "Coming soon", "ko/": "출시 예정"}
+        visit = {"": "Official site", "ko/": "공식 사이트"}
         for lang_dir in ("", "ko/"):
             h = self.read(lang_dir + "index.html")
             for gid, name in zip(("tottertop", "mossgarden"), names[lang_dir]):
@@ -178,12 +183,36 @@ class Built(unittest.TestCase):
                 self.assertIn('<article class="game upcoming"', before, (lang_dir, gid))
                 card = card.split("</article>")[0]
                 self.assertIn("<h3>%s</h3>" % name, card, (lang_dir, gid))
-                self.assertIn(badge[lang_dir], card, (lang_dir, gid))  # the "Coming soon" display
+                self.assertIn(badge[lang_dir], card, (lang_dir, gid))  # the "Coming soon" display is kept
                 self.assertIn('class="tagline"', card, (lang_dir, gid))
                 self.assertIn('class="price', card, (lang_dir, gid))
-                self.assertNotIn("<a", card, (lang_dir, gid))  # deliberately no link
+                if gid == "tottertop":  # tottertop.ipe.rest is up: the site link, same button as the game cards' visit link
+                    self.assertIn('<a class="btn" href="https://tottertop.ipe.rest" rel="noopener" data-game="tottertop" '
+                                  'data-placement="card">%s: %s' % (visit[lang_dir], name), card, (lang_dir, gid))
+                else:  # mossgarden.ipe.rest is not up yet: the url is in the data, but no link on the card
+                    self.assertNotIn("<a", card, (lang_dir, gid))
+                    self.assertNotIn("mossgarden.ipe.rest", card, (lang_dir, gid))
         self.assertNotIn("Tottertop", self.read("llms.txt"))  # llms.txt lists the games with their own sites only
         self.assertNotIn("Moss Garden", self.read("llms.txt"))
+
+    def test_upcoming_site_link_turns_on_with_one_flag(self):
+        # mossgarden.ipe.rest is not up yet; when it goes live, site.live in games.json is the only change needed
+        root = make_site()
+        self.addCleanup(shutil.rmtree, root, True)
+        f = root / "content" / "games.json"
+        d = json.loads(f.read_text(encoding="utf-8"))
+        for u in d["upcoming"]:
+            if u["id"] == "mossgarden":
+                u["site"]["live"] = True
+        f.write_text(json.dumps(d, ensure_ascii=False), encoding="utf-8")
+        build(root)
+        h = (root / "index.html").read_text(encoding="utf-8")
+        card = h.partition('id="mossgarden"')[2].split("</article>")[0]
+        self.assertIn('<a class="btn" href="https://mossgarden.ipe.rest" rel="noopener" data-game="mossgarden" '
+                      'data-placement="card">Official site: Moss Garden', card)
+        self.assertIn("Coming soon", card)  # still the pre-release display, no store link
+        self.assertNotIn("apps.apple.com", h)
+        self.assertNotIn("play.google.com", h)
 
     def test_compare_lead_does_not_claim_only_stated_facts(self):
         for lang in ("en", "ko"):
@@ -298,6 +327,30 @@ class Validation(unittest.TestCase):
         f.write_text(json.dumps(d), encoding="utf-8")
         _, errs = bs.make_ctx(root)
         self.assertTrue(any("url must be" in e for e in errs), errs)
+
+    def test_upcoming_site_url_must_stay_on_ipe_rest(self):
+        root = make_site()
+        self.addCleanup(shutil.rmtree, root, True)
+        f = root / "content" / "games.json"
+        d = json.loads(f.read_text(encoding="utf-8"))
+        for u in d["upcoming"]:
+            if u["id"] == "tottertop":
+                u["site"]["url"] = "https://apps.apple.com/app/tottertop"  # no store links
+        f.write_text(json.dumps(d, ensure_ascii=False), encoding="utf-8")
+        _, errs = bs.make_ctx(root)
+        self.assertTrue(any("site url must be" in e for e in errs), errs)
+
+    def test_upcoming_site_needs_a_url_and_the_live_flag(self):
+        root = make_site()
+        self.addCleanup(shutil.rmtree, root, True)
+        f = root / "content" / "games.json"
+        d = json.loads(f.read_text(encoding="utf-8"))
+        for u in d["upcoming"]:
+            if u["id"] == "mossgarden":
+                u["site"] = {"url": "https://mossgarden.ipe.rest"}  # no live flag
+        f.write_text(json.dumps(d, ensure_ascii=False), encoding="utf-8")
+        _, errs = bs.make_ctx(root)
+        self.assertTrue(any("site must be" in e for e in errs), errs)
 
 
 if __name__ == "__main__":

@@ -6,7 +6,9 @@ Sources
                                     also MT_KEYS: the AI-translation notice, the link to the English original, "Journal (in English)")
   content/games.json                the five games: facts, links and the en/ko card copy (text keyed by language; a link with no
                                     entry for a language falls back to the English one), plus "upcoming": not-yet-out games with a
-                                    card but no site yet (no url or icon, the "Coming soon" status)
+                                    card (no icon, the "Coming soon" status); the optional site {"url", "live"} is the game's own
+                                    site -- the card shows the link only while live is true, so a site that is not up yet keeps its
+                                    url in the data and goes live when one flag flips
   content/i18n/games/<lang>.json    the card copy of the AI-translated languages (see GAME_TEXT); game names stay as in English
   content/pages/<lang>/<page>.md    about / privacy / contact (front matter title + description + updated,
                                     Markdown body, placeholders {{OPERATOR}} {{EMAIL}} {{EFFECTIVE}})
@@ -495,9 +497,10 @@ def load_games(root):
 
 
 def load_upcoming(root):
-    """content/games.json "upcoming": not-yet-out games that get a card but have no site yet: the en/ko card copy with the same
-    card fields as the games array minus the link fields (no url, icon, accent, platforms, genre, terms or journal), the
-    "Coming soon" status, and the nine AI languages from content/i18n/games/<lang>.json (see load_game_text). No links, by design."""
+    """content/games.json "upcoming": not-yet-out games that get a card: the en/ko card copy with the same card fields as the
+    games array minus the link fields (no icon, accent, platforms, genre, terms or journal), the "Coming soon" status, and the
+    nine AI languages from content/i18n/games/<lang>.json (see load_game_text). The optional site {"url", "live"} is the game's
+    own site (an ipe.rest subdomain, never a store); the card renders the link only while live is true."""
     try:
         raw = json.loads((Path(root) / "content" / "games.json").read_text(encoding="utf-8")).get("upcoming", [])
     except (OSError, ValueError, AttributeError):
@@ -526,8 +529,14 @@ def load_upcoming(root):
         c = u.get("compare") or {}
         for row in COMPARE_ROWS:
             _bilingual(c.get(row), "%s compare.%s" % (tag, row), errs)
-        if u.get("url"):
-            errs.append("%s: no site yet, no store yet — the url field must stay empty" % tag)
+        if "url" in u:
+            errs.append("%s: no bare url field — the site goes in site {\"url\", \"live\"}" % tag)
+        s = u.get("site")
+        if s is not None:
+            if not isinstance(s, dict) or not isinstance(s.get("url"), str) or not isinstance(s.get("live"), bool):
+                errs.append("%s: site must be an object with url (string) and live (boolean)" % tag)
+            elif not re.match(r"^https://[a-z0-9-]+\.ipe\.rest(?:/|\Z)", s["url"]):
+                errs.append("%s: site url must be https://<name>.ipe.rest — no store links, no links off ipe.rest" % tag)
     return raw, errs
 
 
@@ -779,20 +788,26 @@ def game_card(ctx, lang, g):
 
 
 def upcoming_card(ctx, lang, u):
-    # a game with no site yet: the full card copy, but no icon, no accent and deliberately no link;
-    # the "Coming soon" status badge is the pre-release display (same rule as the game cards)
+    # a game not out yet: the full card copy, but no icon, no accent; the "Coming soon" status badge is the pre-release
+    # display (same rule as the game cards). The site link is rendered only while site.live is true -- the url is always in
+    # the data, so a site that is not up yet needs no change besides flipping the flag when it goes live
     t = lambda k: ctx.t(lang, k)  # noqa: E731
     pros = "".join("<li><strong>%s</strong> %s</li>" % (esc(x["h"][lang]), esc(x["p"][lang])) for x in u["pros"])
     cons = "".join("<li><strong>%s</strong> %s</li>" % (esc(x["h"][lang]), esc(x["p"][lang])) for x in u["cons"])
+    links = ""
+    s = u.get("site")
+    if s and s.get("live"):
+        links = ('<p class="links"><a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card">%s: %s <span aria-hidden="true">→</span></a></p>' % (
+            esc(s["url"]), esc(u["id"]), esc(t("g_visit")), esc(u["name"].get(lang) or u["name"]["en"])))
     return ('<article class="game upcoming" id="%s"><header class="game-head"><div><h3>%s</h3>'
             '<p class="meta"><span class="badge">%s</span> %s<span class="plat">%s</span></p></div></header>'
             '<p class="tagline">%s</p><p class="price mono">%s</p>'
-            '<div class="cols"><div><h4>%s</h4><ol>%s</ol></div><div><h4>%s</h4><ol>%s</ol></div></div></article>') % (
+            '<div class="cols"><div><h4>%s</h4><ol>%s</ol></div><div><h4>%s</h4><ol>%s</ol></div></div>%s</article>') % (
         esc(u["id"]), esc(u["name"].get(lang) or u["name"]["en"]),
         esc(u["status"][lang]),
         "" if u["status"]["en"] == "Coming soon" else '<span class="badge pre">%s</span> ' % esc(t("g_prerelease")),
         esc(u["platform"][lang]),
-        esc(u["tagline"][lang]), esc(u["pricing"][lang]), esc(t("g_likes")), pros, esc(t("g_nots")), cons)
+        esc(u["tagline"][lang]), esc(u["pricing"][lang]), esc(t("g_likes")), pros, esc(t("g_nots")), cons, links)
 
 
 def compare_html(ctx, lang):
