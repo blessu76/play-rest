@@ -5,10 +5,10 @@ Sources
   content/i18n/<lang>.json          UI strings and home copy (same keys in every language, see KEYS; AI-translated languages
                                     also MT_KEYS: the AI-translation notice, the link to the English original, "Journal (in English)")
   content/games.json                the five games: facts, links and the en/ko card copy (text keyed by language; a link with no
-                                    entry for a language falls back to the English one), plus "upcoming": not-yet-out games with a
-                                    card (no icon, the "Coming soon" status); the optional site {"url", "live"} is the game's own
-                                    site -- the card shows the link only while live is true, so a site that is not up yet keeps its
-                                    url in the data and goes live when one flag flips
+                                    entry for a language falls back to the English one), plus "upcoming": not-yet-out games with the
+                                    same card as the games (icon, accent, the "Coming soon" status); the optional site {"url", "live"}
+                                    is the game's own site -- the card shows the link only while live is true, so a site that is not
+                                    up yet keeps its url in the data and goes live when one flag flips
   content/i18n/games/<lang>.json    the card copy of the AI-translated languages (see GAME_TEXT); game names stay as in English
   content/pages/<lang>/<page>.md    about / privacy / contact (front matter title + description + updated,
                                     Markdown body, placeholders {{OPERATOR}} {{EMAIL}} {{EFFECTIVE}})
@@ -106,8 +106,16 @@ PUBLISHED_RE = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}\+09:00$")  # publishe
 HOME_CARDS = 3
 EXCERPT_MAX = 200
 GAME_IDS = ("iltonggi", "inkisle", "sunmeld", "claimball", "patchland")
+UPCOMING_IDS = ("tottertop", "mossgarden")
 # which games keep which principle (docs ch.2). Sunmeld has no public round length, so it is not listed under principle 1.
-PRINCIPLE_GAMES = {1: ("iltonggi", "inkisle", "claimball", "patchland"), 2: GAME_IDS, 3: ("iltonggi", "inkisle", "sunmeld", "claimball"), 4: GAME_IDS, 5: ("iltonggi", "inkisle", "sunmeld", "claimball")}
+# Tottertop (a round is about a minute) and Moss Garden (a short drop-in tending) both keep principle 1; both keep principle 2
+# (Tottertop: "one tap is the whole game"; Moss Garden: the whole loop is one sentence) and principle 4 (both cards say
+# "coming soon, release date TBD"). Neither keeps 3 (both have optional rewarded ads) or 5 (no AI rival).
+PRINCIPLE_GAMES = {1: ("iltonggi", "inkisle", "claimball", "patchland") + UPCOMING_IDS,
+                   2: GAME_IDS + UPCOMING_IDS,
+                   3: ("iltonggi", "inkisle", "sunmeld", "claimball"),
+                   4: GAME_IDS + UPCOMING_IDS,
+                   5: ("iltonggi", "inkisle", "sunmeld", "claimball")}
 COMPARE_ROWS = "oneline style length difficulty players platform offline pricing languages status".split()
 # first-paint theme: runs before the stylesheet so data-theme (and the address-bar colour) is right on the first frame
 THEME_HEAD_SCRIPT = ("<script>(function(){var t,C={light:'#fbfcfe',dark:'#0c1118',noir:'#0a0810'};try{t=localStorage.getItem('play-theme')}catch(e){}"
@@ -497,10 +505,11 @@ def load_games(root):
 
 
 def load_upcoming(root):
-    """content/games.json "upcoming": not-yet-out games that get a card: the en/ko card copy with the same card fields as the
-    games array minus the link fields (no icon, accent, platforms, genre, terms or journal), the "Coming soon" status, and the
-    nine AI languages from content/i18n/games/<lang>.json (see load_game_text). The optional site {"url", "live"} is the game's
-    own site (an ipe.rest subdomain, never a store); the card renders the link only while live is true."""
+    """content/games.json "upcoming": not-yet-out games that get the same card as the games (icon, accent, the "Coming soon"
+    status): the en/ko card copy with the same card fields as the games array minus the link fields (no platforms, genre, terms
+    or journal), and the nine AI languages from content/i18n/games/<lang>.json (see load_game_text). The optional site
+    {"url", "live"} is the game's own site (an ipe.rest subdomain, never a store); the card renders the link only while live
+    is true."""
     try:
         raw = json.loads((Path(root) / "content" / "games.json").read_text(encoding="utf-8")).get("upcoming", [])
     except (OSError, ValueError, AttributeError):
@@ -515,6 +524,10 @@ def load_upcoming(root):
             errs.append("%s: id must not collide with a game or another upcoming entry" % tag)
         seen.add(u.get("id"))
         _bilingual(u.get("name"), tag + " name", errs)
+        if not (Path(root) / "assets" / "games" / str(u.get("icon", "-"))).is_file():
+            errs.append("%s: icon file missing" % tag)
+        if not (isinstance(u.get("accent"), list) and len(u["accent"]) == 2 and all(re.match(r"^#[0-9a-fA-F]{6}$", c) for c in u["accent"])):
+            errs.append("%s: accent must be two #rrggbb colors" % tag)
         if u.get("sub") is not None:
             _bilingual(u["sub"], tag + " sub", errs)
         for k in ("status", "platform", "pricing", "tagline"):
@@ -537,6 +550,10 @@ def load_upcoming(root):
                 errs.append("%s: site must be an object with url (string) and live (boolean)" % tag)
             elif not re.match(r"^https://[a-z0-9-]+\.ipe\.rest(?:/|\Z)", s["url"]):
                 errs.append("%s: site url must be https://<name>.ipe.rest — no store links, no links off ipe.rest" % tag)
+    for n in range(1, 6):
+        for i in PRINCIPLE_GAMES[n]:
+            if i not in seen:
+                errs.append("games.json upcoming: principle %d lists unknown game id %r" % (n, i))
     return raw, errs
 
 
@@ -788,22 +805,24 @@ def game_card(ctx, lang, g):
 
 
 def upcoming_card(ctx, lang, u):
-    # a game not out yet: the full card copy, but no icon, no accent; the "Coming soon" status badge is the pre-release
-    # display (same rule as the game cards). The site link is rendered only while site.live is true -- the url is always in
-    # the data, so a site that is not up yet needs no change besides flipping the flag when it goes live
+    # a game not out yet: the same card markup and classes as the game cards (icon, accent, badge); the differences stay in
+    # the data (no sub, no journal or terms links), and the site button renders only while site.live is true -- the url is
+    # always in the data, so a site that is not up yet needs no change besides flipping the flag when it goes live
     t = lambda k: ctx.t(lang, k)  # noqa: E731
+    name = u["name"].get(lang) or u["name"]["en"]
     pros = "".join("<li><strong>%s</strong> %s</li>" % (esc(x["h"][lang]), esc(x["p"][lang])) for x in u["pros"])
     cons = "".join("<li><strong>%s</strong> %s</li>" % (esc(x["h"][lang]), esc(x["p"][lang])) for x in u["cons"])
     links = ""
     s = u.get("site")
     if s and s.get("live"):
         links = ('<p class="links"><a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card">%s: %s <span aria-hidden="true">→</span></a></p>' % (
-            esc(s["url"]), esc(u["id"]), esc(t("g_visit")), esc(u["name"].get(lang) or u["name"]["en"])))
-    return ('<article class="game upcoming" id="%s"><header class="game-head"><div><h3>%s</h3>'
+            esc(s["url"]), esc(u["id"]), esc(t("g_visit")), esc(name)))
+    return ('<article class="game" id="%s" style="--a:%s;--a2:%s"><header class="game-head"><img class="game-icon" src="/assets/games/%s" width="64" height="64" alt="">'
+            '<div><h3>%s</h3>'
             '<p class="meta"><span class="badge">%s</span> %s<span class="plat">%s</span></p></div></header>'
             '<p class="tagline">%s</p><p class="price mono">%s</p>'
             '<div class="cols"><div><h4>%s</h4><ol>%s</ol></div><div><h4>%s</h4><ol>%s</ol></div></div>%s</article>') % (
-        esc(u["id"]), esc(u["name"].get(lang) or u["name"]["en"]),
+        esc(u["id"]), u["accent"][0], u["accent"][1], esc(u["icon"]), esc(name),
         esc(u["status"][lang]),
         "" if u["status"]["en"] == "Coming soon" else '<span class="badge pre">%s</span> ' % esc(t("g_prerelease")),
         esc(u["platform"][lang]),
@@ -827,9 +846,10 @@ def compare_html(ctx, lang):
 
 def build_home(ctx, lang):
     t = lambda k: ctx.t(lang, k)  # noqa: E731
-    by_id = {g["id"]: g for g in ctx.games}
+    cards = list(ctx.games) + list(ctx.upcoming)  # the hero strip and the principle chips cover the upcoming cards too
+    by_id = {g["id"]: g for g in cards}
     strip = "".join('<li><a href="#%s"><img src="/assets/games/%s" width="64" height="64" alt="%s"></a></li>' % (
-        g["id"], esc(g["icon"]), esc(g["name"][lang])) for g in ctx.games)
+        g["id"], esc(g["icon"]), esc(g["name"].get(lang) or g["name"]["en"])) for g in cards)
     hero = ('<section class="hero"><div class="wrap"><p class="code mono">%s</p><h1>%s</h1><p class="hero-sub">%s</p>'
             '<ul class="strip" aria-label="%s">%s</ul></div></section>') % (esc(t("hero_code")), esc(t("hero_h1")), esc(t("hero_sub")), esc(t("hero_strip_aria")), strip)
     principles = ""

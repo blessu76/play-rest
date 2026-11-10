@@ -786,6 +786,11 @@
     "en": "Tottertop",
     "ko": "기우뚱탑"
    },
+   "icon": "tottertop.png",
+   "accent": [
+    "#a55b2b",
+    "#e8b489"
+   ],
    "site": {
     "url": "https://tottertop.ipe.rest",
     "live": true
@@ -909,6 +914,11 @@
     "en": "Moss Garden",
     "ko": "이끼정원"
    },
+   "icon": "mossgarden.png",
+   "accent": [
+    "#4f7c3a",
+    "#a9c98a"
+   ],
    "site": {
     "url": "https://mossgarden.ipe.rest",
     "live": false
