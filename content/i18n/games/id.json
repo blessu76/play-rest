@@ -296,5 +296,89 @@
    "languages": "11 bahasa",
    "status": "Segera hadir, tanggal rilis belum ditentukan"
   }
+ },
+ "duskblocks": {
+  "status": "Segera hadir",
+  "platform": "iOS TestFlight sudah ada, Android menyusul",
+  "pricing": "—",
+  "tagline": "Permainan balok santai yang singkat untuk jam-jam senja. Mudah dimulai, cepat selesai.",
+  "pros": [
+   {
+    "h": "Sudah ada di iOS TestFlight.",
+    "p": "Versi iOS sudah ada di TestFlight, dan situs serta halaman toko menyusul saat sudah siap."
+   },
+   {
+    "h": "Ronde pendek, seperti yang lainnya.",
+    "p": "Ia mengikuti aturan yang sama dengan permainan lain di sini: satu ronde muat di dalam waktu istirahat."
+   },
+   {
+    "h": "Sebuah kartu yang jujur.",
+    "p": "Tanpa akun, dan kartu ini menulis apa adanya tentang kemajuan rilis."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Jika Anda ingin bermain di Android sekarang juga.",
+    "p": "Versi iOS TestFlight datang lebih dulu, dan versi Android masih dalam proses."
+   },
+   {
+    "h": "Jika Anda ingin daftar fitur yang sudah jadi.",
+    "p": "Masih dalam pengujian, jadi fitur bisa berubah sebelum rilis."
+   }
+  ],
+  "compare": {
+   "oneline": "Permainan balok santai",
+   "style": "Santai, ronde pendek",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS TestFlight sudah ada, Android dalam proses",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Segera hadir. Versi TestFlight dalam proses"
+  }
+ },
+ "bottledmarbles": {
+  "status": "Segera hadir",
+  "platform": "iOS TestFlight sudah ada, Android menyusul",
+  "pricing": "—",
+  "tagline": "Permainan kelereng yang tenang dan santai. Kumpulkan kelereng dan selesaikan satu ronde dalam waktu istirahat.",
+  "pros": [
+   {
+    "h": "Sudah ada di iOS TestFlight.",
+    "p": "Versi iOS sudah ada di TestFlight, dan situs permainannya sudah tayang sementara sisanya sedang diselesaikan."
+   },
+   {
+    "h": "Ronde pendek, seperti yang lainnya.",
+    "p": "Ia mengikuti aturan yang sama dengan permainan lain di sini: satu ronde muat di dalam waktu istirahat."
+   },
+   {
+    "h": "Sebuah kartu yang jujur.",
+    "p": "Tanpa akun, dan kartu ini menulis apa adanya tentang kemajuan rilis."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Jika Anda ingin bermain di Android sekarang juga.",
+    "p": "Versi iOS TestFlight datang lebih dulu, dan versi Android masih dalam proses."
+   },
+   {
+    "h": "Jika Anda ingin daftar fitur yang sudah jadi.",
+    "p": "Masih dalam pengujian, jadi fitur bisa berubah sebelum rilis."
+   }
+  ],
+  "compare": {
+   "oneline": "Permainan kelereng santai",
+   "style": "Santai, ronde pendek",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS TestFlight sudah ada, Android dalam proses",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Segera hadir. Versi TestFlight dalam proses"
+  }
  }
 }

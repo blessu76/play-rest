@@ -296,5 +296,89 @@
    "languages": "11 ngôn ngữ",
    "status": "Sắp ra mắt, chưa định ngày phát hành"
   }
+ },
+ "duskblocks": {
+  "status": "Sắp ra mắt",
+  "platform": "iOS TestFlight đã có, Android sau",
+  "pricing": "—",
+  "tagline": "Trò chơi khối nhẹ nhàng, ngắn gọn cho những giờ hoàng hôn. Dễ bắt đầu, nhanh kết thúc.",
+  "pros": [
+   {
+    "h": "Đã có trên iOS TestFlight.",
+    "p": "Bản iOS đã có trên TestFlight, còn trang web và trang cửa hàng sẽ theo sau khi sẵn sàng."
+   },
+   {
+    "h": "Vòng ngắn, giống như các trò khác.",
+    "p": "Nó theo cùng một luật với các trò chơi khác ở đây: một vòng vừa vặn trong giờ giải lao."
+   },
+   {
+    "h": "Một tấm thẻ trung thực.",
+    "p": "Không cần tài khoản, và tấm thẻ nói đúng thực trạng của đợt phát hành."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Nếu bạn muốn chơi trên Android ngay bây giờ.",
+    "p": "Bản iOS TestFlight ra trước, và phiên bản Android vẫn đang được hoàn thiện."
+   },
+   {
+    "h": "Nếu bạn muốn một danh sách tính năng đã hoàn tất.",
+    "p": "Nó vẫn đang trong giai đoạn thử nghiệm, nên các tính năng có thể thay đổi trước khi phát hành."
+   }
+  ],
+  "compare": {
+   "oneline": "Trò chơi khối nhẹ nhàng",
+   "style": "Nhẹ nhàng, vòng ngắn",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Một mình",
+   "platform": "iOS TestFlight đã có, Android đang hoàn thiện",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Sắp ra mắt. Bản TestFlight đang hoàn thiện"
+  }
+ },
+ "bottledmarbles": {
+  "status": "Sắp ra mắt",
+  "platform": "iOS TestFlight đã có, Android sau",
+  "pricing": "—",
+  "tagline": "Trò chơi bi nhẹ nhàng, an yên. Thu thập bi và hoàn thành một vòng trong giờ giải lao.",
+  "pros": [
+   {
+    "h": "Đã có trên iOS TestFlight.",
+    "p": "Bản iOS đã có trên TestFlight, trang web của trò đã lên mạng trong khi phần còn lại đang được hoàn thiện."
+   },
+   {
+    "h": "Vòng ngắn, giống như các trò khác.",
+    "p": "Nó theo cùng một luật với các trò chơi khác ở đây: một vòng vừa vặn trong giờ giải lao."
+   },
+   {
+    "h": "Một tấm thẻ trung thực.",
+    "p": "Không cần tài khoản, và tấm thẻ nói đúng thực trạng của đợt phát hành."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Nếu bạn muốn chơi trên Android ngay bây giờ.",
+    "p": "Bản iOS TestFlight ra trước, và phiên bản Android vẫn đang được hoàn thiện."
+   },
+   {
+    "h": "Nếu bạn muốn một danh sách tính năng đã hoàn tất.",
+    "p": "Nó vẫn đang trong giai đoạn thử nghiệm, nên các tính năng có thể thay đổi trước khi phát hành."
+   }
+  ],
+  "compare": {
+   "oneline": "Trò chơi bi nhẹ nhàng",
+   "style": "Nhẹ nhàng, vòng ngắn",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Một mình",
+   "platform": "iOS TestFlight đã có, Android đang hoàn thiện",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Sắp ra mắt. Bản TestFlight đang hoàn thiện"
+  }
  }
 }
