@@ -296,5 +296,89 @@
    "languages": "11 Sprachen",
    "status": "Demnächst, Erscheinungsdatum noch offen"
   }
+ },
+ "duskblocks": {
+  "status": "Demnächst",
+  "platform": "iOS TestFlight jetzt, Android später",
+  "pricing": "—",
+  "tagline": "Ein kurzes, entspanntes Blockspiel für die Abenddämmerung. Einfach loslegen, schnell zu Ende.",
+  "pros": [
+   {
+    "h": "Jetzt auf iOS TestFlight.",
+    "p": "Der iOS-Build ist auf TestFlight, und die Seiten für Website und Store folgen, wenn sie fertig sind."
+   },
+   {
+    "h": "Kurze Runden, wie bei den anderen.",
+    "p": "Es folgt der gleichen Regel wie die anderen Spiele hier: Eine Runde passt in eine Pause."
+   },
+   {
+    "h": "Eine ehrliche Karte.",
+    "p": "Kein Konto, und die Karte sagt, wo der Release wirklich steht."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Wenn Sie jetzt auf Android spielen wollen.",
+    "p": "Der iOS-TestFlight-Build kommt zuerst, und die Android-Version ist noch in Arbeit."
+   },
+   {
+    "h": "Wenn Sie eine fertige Funktionsliste wollen.",
+    "p": "Es wird noch getestet, daher können sich Funktionen vor dem Release ändern."
+   }
+  ],
+  "compare": {
+   "oneline": "Ein entspanntes Blockspiel",
+   "style": "Entspannt, kurze Runden",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Einzelspieler",
+   "platform": "iOS TestFlight jetzt, Android in Arbeit",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Demnächst. TestFlight-Build in Arbeit"
+  }
+ },
+ "bottledmarbles": {
+  "status": "Demnächst",
+  "platform": "iOS TestFlight jetzt, Android später",
+  "pricing": "—",
+  "tagline": "Ein ruhiges, entspanntes Murmelspiel. Sammeln Sie die Murmeln und beenden Sie eine Runde in Ihrer Pause.",
+  "pros": [
+   {
+    "h": "Jetzt auf iOS TestFlight.",
+    "p": "Der iOS-Build ist auf TestFlight, und die Website des Spiels ist online, während der Rest fertiggestellt wird."
+   },
+   {
+    "h": "Kurze Runden, wie bei den anderen.",
+    "p": "Es folgt der gleichen Regel wie die anderen Spiele hier: Eine Runde passt in eine Pause."
+   },
+   {
+    "h": "Eine ehrliche Karte.",
+    "p": "Kein Konto, und die Karte sagt, wo der Release wirklich steht."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Wenn Sie jetzt auf Android spielen wollen.",
+    "p": "Der iOS-TestFlight-Build kommt zuerst, und die Android-Version ist noch in Arbeit."
+   },
+   {
+    "h": "Wenn Sie eine fertige Funktionsliste wollen.",
+    "p": "Es wird noch getestet, daher können sich Funktionen vor dem Release ändern."
+   }
+  ],
+  "compare": {
+   "oneline": "Ein entspanntes Murmelspiel",
+   "style": "Entspannt, kurze Runden",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Einzelspieler",
+   "platform": "iOS TestFlight jetzt, Android in Arbeit",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Demnächst. TestFlight-Build in Arbeit"
+  }
  }
 }

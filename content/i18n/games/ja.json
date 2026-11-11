@@ -296,5 +296,89 @@
    "languages": "11言語",
    "status": "近日公開、公開日は未定"
   }
+ },
+ "duskblocks": {
+  "status": "近日公開",
+  "platform": "iOS TestFlight配信中、Androidは後日",
+  "pricing": "—",
+  "tagline": "夕暮れの時間にちょうどいい、短くて気軽なブロックゲームです。すぐ始められて、すぐ終わります。",
+  "pros": [
+   {
+    "h": "iOS TestFlightで配信中。",
+    "p": "iOS版はTestFlightで配信中です。サイトとストアページは準備が整い次第公開されます。"
+   },
+   {
+    "h": "他のゲームと同じ、短い1ラウンド。",
+    "p": "他のゲームと同じルールを続けています。1ラウンドが休憩時間に収まります。"
+   },
+   {
+    "h": "正直なカード。",
+    "p": "アカウントは不要で、カードにはリリースの現状をそのまま書いています。"
+   }
+  ],
+  "cons": [
+   {
+    "h": "今すぐAndroidで遊びたい方。",
+    "p": "iOS TestFlight版が先で、Android版は準備中です。"
+   },
+   {
+    "h": "完成した機能一覧が見たい方。",
+    "p": "まだテスト中なので、公開までに機能がかわることがあります。"
+   }
+  ],
+  "compare": {
+   "oneline": "気軽なブロックゲーム",
+   "style": "カジュアル、短い1ラウンド",
+   "length": "—",
+   "difficulty": "—",
+   "players": "1人",
+   "platform": "iOS TestFlight配信中、Android準備中",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "近日公開。TestFlightビルド進行中"
+  }
+ },
+ "bottledmarbles": {
+  "status": "近日公開",
+  "platform": "iOS TestFlight配信中、Androidは後日",
+  "pricing": "—",
+  "tagline": "落ち着いた、気軽なビー玉ゲームです。ビー玉を集めて、休憩の間に1ラウンドを終えます。",
+  "pros": [
+   {
+    "h": "iOS TestFlightで配信中。",
+    "p": "iOS版はTestFlightで配信中です。サイトは公開済みで、残りは仕上げ中です。"
+   },
+   {
+    "h": "他のゲームと同じ、短い1ラウンド。",
+    "p": "他のゲームと同じルールを続けています。1ラウンドが休憩時間に収まります。"
+   },
+   {
+    "h": "正直なカード。",
+    "p": "アカウントは不要で、カードにはリリースの現状をそのまま書いています。"
+   }
+  ],
+  "cons": [
+   {
+    "h": "今すぐAndroidで遊びたい方。",
+    "p": "iOS TestFlight版が先で、Android版は準備中です。"
+   },
+   {
+    "h": "完成した機能一覧が見たい方。",
+    "p": "まだテスト中なので、公開までに機能がかわることがあります。"
+   }
+  ],
+  "compare": {
+   "oneline": "気軽なビー玉ゲーム",
+   "style": "カジュアル、短い1ラウンド",
+   "length": "—",
+   "difficulty": "—",
+   "players": "1人",
+   "platform": "iOS TestFlight配信中、Android準備中",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "近日公開。TestFlightビルド進行中"
+  }
  }
 }

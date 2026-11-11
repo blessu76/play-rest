@@ -296,5 +296,89 @@
    "languages": "11 种语言",
    "status": "即将推出，发布日期未定"
   }
+ },
+ "duskblocks": {
+  "status": "即将推出",
+  "platform": "iOS TestFlight 已上线，Android 稍后",
+  "pricing": "—",
+  "tagline": "适合黄昏时段的短小休闲方块游戏。上手容易，结束得快。",
+  "pros": [
+   {
+    "h": "已在 iOS TestFlight 上线。",
+    "p": "iOS 版已在 TestFlight 上线，网站和应用商店页面准备就绪后跟进。"
+   },
+   {
+    "h": "短短的回合，和其他游戏一样。",
+    "p": "它和这里的其他游戏遵循同样的规则：一个回合装得进一次休息。"
+   },
+   {
+    "h": "一张诚实的卡片。",
+    "p": "无需账号，卡片如实说明发布的进展。"
+   }
+  ],
+  "cons": [
+   {
+    "h": "如果现在就想在 Android 上玩。",
+    "p": "iOS TestFlight 版先行，Android 版仍在制作中。"
+   },
+   {
+    "h": "如果想要一份完成的功能清单。",
+    "p": "它还在测试中，功能在发布前可能会有变化。"
+   }
+  ],
+  "compare": {
+   "oneline": "休闲的方块游戏",
+   "style": "休闲，短回合",
+   "length": "—",
+   "difficulty": "—",
+   "players": "单人",
+   "platform": "iOS TestFlight 已上线，Android 制作中",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "即将推出。TestFlight 版本制作中"
+  }
+ },
+ "bottledmarbles": {
+  "status": "即将推出",
+  "platform": "iOS TestFlight 已上线，Android 稍后",
+  "pricing": "—",
+  "tagline": "安静、休闲的弹珠游戏。收集弹珠，在一次休息内完成一个回合。",
+  "pros": [
+   {
+    "h": "已在 iOS TestFlight 上线。",
+    "p": "iOS 版已在 TestFlight 上线，游戏网站已开放，其余部分仍在收尾。"
+   },
+   {
+    "h": "短短的回合，和其他游戏一样。",
+    "p": "它和这里的其他游戏遵循同样的规则：一个回合装得进一次休息。"
+   },
+   {
+    "h": "一张诚实的卡片。",
+    "p": "无需账号，卡片如实说明发布的进展。"
+   }
+  ],
+  "cons": [
+   {
+    "h": "如果现在就想在 Android 上玩。",
+    "p": "iOS TestFlight 版先行，Android 版仍在制作中。"
+   },
+   {
+    "h": "如果想要一份完成的功能清单。",
+    "p": "它还在测试中，功能在发布前可能会有变化。"
+   }
+  ],
+  "compare": {
+   "oneline": "休闲的弹珠游戏",
+   "style": "休闲，短回合",
+   "length": "—",
+   "difficulty": "—",
+   "players": "单人",
+   "platform": "iOS TestFlight 已上线，Android 制作中",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "即将推出。TestFlight 版本制作中"
+  }
  }
 }
