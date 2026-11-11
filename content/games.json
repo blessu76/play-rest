@@ -10,7 +10,10 @@
     "en": "一統記",
     "ko": "Iltonggi · 一統記"
    },
-   "url": "https://iltonggi.ipe.rest",
+   "site": {
+    "url": "https://iltonggi.ipe.rest",
+    "live": true
+   },
    "icon": "iltonggi.png",
    "accent": [
     "#b3201a",
@@ -181,7 +184,10 @@
     "en": "InkIsle",
     "ko": "Inkisle · InkIsle"
    },
-   "url": "https://inkisle.ipe.rest",
+   "site": {
+    "url": "https://inkisle.ipe.rest",
+    "live": true
+   },
    "icon": "inkisle.png",
    "accent": [
     "#17756f",
@@ -340,7 +346,10 @@
     "en": "Space Merge Duel",
     "ko": "썬멜드 · Space Merge Duel"
    },
-   "url": "https://sunmeld.ipe.rest",
+   "site": {
+    "url": "https://sunmeld.ipe.rest",
+    "live": true
+   },
    "icon": "sunmeld.png",
    "accent": [
     "#2b5fd9",
@@ -495,7 +504,10 @@
     "en": "Claimball",
     "ko": "클레임볼 · Claimball"
    },
-   "url": "https://claimball.ipe.rest",
+   "site": {
+    "url": "https://claimball.ipe.rest",
+    "live": true
+   },
    "icon": "claimball.png",
    "accent": [
     "#9a5a00",
@@ -649,7 +661,10 @@
     "en": "Claim It All",
     "ko": "패치랜드 · Claim It All"
    },
-   "url": "https://patchland.ipe.rest",
+   "site": {
+    "url": "https://patchland.ipe.rest",
+    "live": true
+   },
    "icon": "patchland.png",
    "accent": [
     "#a8432f",
@@ -777,24 +792,33 @@
      "ko": "개발 중"
     }
    }
-  }
- ],
- "upcoming": [
+  },
   {
    "id": "tottertop",
    "name": {
     "en": "Tottertop",
     "ko": "기우뚱탑"
    },
+   "sub": {
+    "en": "Tottertop",
+    "ko": "기우뚱탑 · Tottertop"
+   },
+   "site": {
+    "url": "https://tottertop.ipe.rest",
+    "live": true
+   },
    "icon": "tottertop.png",
    "accent": [
     "#a55b2b",
     "#e8b489"
    ],
-   "site": {
-    "url": "https://tottertop.ipe.rest",
-    "live": true
-   },
+   "platforms": [
+    "iOS",
+    "Android"
+   ],
+   "genre": [
+    "Casual"
+   ],
    "status": {
     "en": "Coming soon",
     "ko": "출시 예정"
@@ -906,7 +930,9 @@
      "en": "Coming soon, release date TBD",
      "ko": "출시 예정, 출시일 미정"
     }
-   }
+   },
+   "terms": null,
+   "journal": null
   },
   {
    "id": "mossgarden",
@@ -914,15 +940,26 @@
     "en": "Moss Garden",
     "ko": "이끼정원"
    },
+   "sub": {
+    "en": "Moss Garden",
+    "ko": "이끼정원 · Moss Garden"
+   },
+   "site": {
+    "url": "https://mossgarden.ipe.rest",
+    "live": false
+   },
    "icon": "mossgarden.png",
    "accent": [
     "#4f7c3a",
     "#a9c98a"
    ],
-   "site": {
-    "url": "https://mossgarden.ipe.rest",
-    "live": false
-   },
+   "platforms": [
+    "iOS",
+    "Android"
+   ],
+   "genre": [
+    "Casual"
+   ],
    "status": {
     "en": "Coming soon",
     "ko": "출시 예정"
@@ -1033,6 +1070,290 @@
     "status": {
      "en": "Coming soon, release date TBD",
      "ko": "출시 예정, 출시일 미정"
+    }
+   },
+   "terms": null,
+   "journal": null
+  },
+  {
+   "id": "duskblocks",
+   "name": {
+    "en": "Dusk Blocks",
+    "ko": "블록핏"
+   },
+   "sub": {
+    "en": "Dusk Blocks",
+    "ko": "블록핏 · Dusk Blocks"
+   },
+   "site": {
+    "url": "https://duskblocks.ipe.rest",
+    "live": false
+   },
+   "icon": "duskblocks.png",
+   "accent": [
+    "#4b3d7a",
+    "#9d8fd6"
+   ],
+   "platforms": [
+    "iOS",
+    "Android"
+   ],
+   "genre": [
+    "Puzzle"
+   ],
+   "status": {
+    "en": "Coming soon",
+    "ko": "출시 예정"
+   },
+   "platform": {
+    "en": "iOS TestFlight now, Android later",
+    "ko": "iOS TestFlight 먼저, Android는 그 다음"
+   },
+   "pricing": {
+    "en": "—",
+    "ko": "—"
+   },
+   "tagline": {
+    "en": "Drop 3 pieces on an 8x8 board and clear lines. A calm, one-handed block puzzle at dusk.",
+    "ko": "8x8 판에 조각 3개를 내려 행을 지웁니다. 저녁 시간의 차분한 한 손 블록 퍼즐입니다."
+   },
+   "pros": [
+    {
+     "h": {
+      "en": "Three pieces, one board.",
+      "ko": "조각 3개, 판 하나입니다."
+     },
+     "p": {
+      "en": "You drop three pieces on an 8x8 board and clear the lines they complete. That is the whole loop, and it stays readable from the first round.",
+      "ko": "8x8 판에 조각 3개를 내려 완성한 행을 지웁니다. 루프는 그것뿐이라 첫 판부터 판이 읽힙니다."
+     }
+    },
+    {
+     "h": {
+      "en": "Built for one hand.",
+      "ko": "한 손으로 만든 게임입니다."
+     },
+     "p": {
+      "en": "The game is set at dusk and built for one hand: a calm pace, and a round that fits inside a break.",
+      "ko": "배경은 어스른 시간이고 조작은 한 손입니다. 속도는 잔잔하고, 한 판은 쉬는 시간에 들어갈 만큼 짧습니다."
+     }
+    },
+    {
+     "h": {
+      "en": "No account.",
+      "ko": "계정은 없습니다."
+     },
+     "p": {
+      "en": "There is no account to make, and the card says exactly where the release stands: the iOS build is on TestFlight, the store pages come after.",
+      "ko": "계정은 필요 없고, 출시 상태도 있는 그대로 적어 둡니다: iOS 빌드가 TestFlight에 있고, 스토어 페이지는 그 다음입니다."
+     }
+    }
+   ],
+   "cons": [
+    {
+     "h": {
+      "en": "If you want to play on Android right now.",
+      "ko": "지금 Android로 하고 싶은 분."
+     },
+     "p": {
+      "en": "The iOS TestFlight build comes first, and the Android version is still in progress.",
+      "ko": "iOS TestFlight 빌드가 먼저이고, Android 버전은 아직 진행 중입니다."
+     }
+    },
+    {
+     "h": {
+      "en": "If you want a finished feature list.",
+      "ko": "완성된 기능 목록을 원하시는 분."
+     },
+     "p": {
+      "en": "It is still in testing, so features may change before release.",
+      "ko": "아직 테스트 중이라 출시 전 기능이 바뀔 수 있습니다."
+     }
+    }
+   ],
+   "terms": null,
+   "journal": null,
+   "compare": {
+    "oneline": {
+     "en": "Clearing lines on an 8x8 board",
+     "ko": "8x8 판에서 행 지우기"
+    },
+    "style": {
+     "en": "Block puzzle, three pieces",
+     "ko": "블록 퍼즐, 조각 3개"
+    },
+    "length": {
+     "en": "—",
+     "ko": "—"
+    },
+    "difficulty": {
+     "en": "—",
+     "ko": "—"
+    },
+    "players": {
+     "en": "Solo",
+     "ko": "혼자"
+    },
+    "platform": {
+     "en": "iOS TestFlight now, Android in progress",
+     "ko": "iOS TestFlight 먼저, Android 진행 중"
+    },
+    "offline": {
+     "en": "—",
+     "ko": "—"
+    },
+    "pricing": {
+     "en": "—",
+     "ko": "—"
+    },
+    "languages": {
+     "en": "—",
+     "ko": "—"
+    },
+    "status": {
+     "en": "Coming soon. TestFlight build in progress",
+     "ko": "출시 예정. TestFlight 빌드 진행 중"
+    }
+   }
+  },
+  {
+   "id": "bottledmarbles",
+   "name": {
+    "en": "Bottled Marbles",
+    "ko": "구슬병"
+   },
+   "sub": {
+    "en": "Bottled Marbles",
+    "ko": "구슬병 · Bottled Marbles"
+   },
+   "site": {
+    "url": "https://bottledmarbles.ipe.rest",
+    "live": true
+   },
+   "icon": "bottledmarbles.png",
+   "accent": [
+    "#1f6e8c",
+    "#6cc3d5"
+   ],
+   "platforms": [
+    "iOS",
+    "Android"
+   ],
+   "genre": [
+    "Puzzle"
+   ],
+   "status": {
+    "en": "Coming soon",
+    "ko": "출시 예정"
+   },
+   "platform": {
+    "en": "iOS TestFlight now, Android later",
+    "ko": "iOS TestFlight 먼저, Android는 그 다음"
+   },
+   "pricing": {
+    "en": "—",
+    "ko": "—"
+   },
+   "tagline": {
+    "en": "Sort colorful marbles into glass bottles. A calm, clear sorting puzzle.",
+    "ko": "구슬을 색에 맞춰 유리병에 정리합니다. 차분하고 또렷한 정리 퍼즐입니다."
+   },
+   "pros": [
+    {
+     "h": {
+      "en": "Sorting is the whole game.",
+      "ko": "정리하는 것, 그것이 전부입니다."
+     },
+     "p": {
+      "en": "The goal is plain to see: sort the colorful marbles into the right glass bottles. The game keeps it that way.",
+      "ko": "목표가 눈에 보입니다: 구슬을 색에 맞춰 유리병에 정리하는 것. 게임도 그 단순함을 그대로 둡니다."
+     }
+    },
+    {
+     "h": {
+      "en": "Calm and clear.",
+      "ko": "차분하고 또렷합니다."
+     },
+     "p": {
+      "en": "It is a sorting puzzle that stays calm and clear, meant to be played a few minutes at a time.",
+      "ko": "차분하고 또렷함을 유지하는 정리 퍼즐입니다. 한 번에 몇 분씩 즐기도록 만들었습니다."
+     }
+    },
+    {
+     "h": {
+      "en": "No account.",
+      "ko": "계정은 없습니다."
+     },
+     "p": {
+      "en": "There is no account to make, and the card says exactly where the release stands: the iOS build is on TestFlight, the game's site is live.",
+      "ko": "계정은 필요 없고, 출시 상태도 있는 그대로 적어 둡니다: iOS 빌드가 TestFlight에 있고, 게임 사이트는 열려 있습니다."
+     }
+    }
+   ],
+   "cons": [
+    {
+     "h": {
+      "en": "If you want to play on Android right now.",
+      "ko": "지금 Android로 하고 싶은 분."
+     },
+     "p": {
+      "en": "The iOS TestFlight build comes first, and the Android version is still in progress.",
+      "ko": "iOS TestFlight 빌드가 먼저이고, Android 버전은 아직 진행 중입니다."
+     }
+    },
+    {
+     "h": {
+      "en": "If you want a finished feature list.",
+      "ko": "완성된 기능 목록을 원하시는 분."
+     },
+     "p": {
+      "en": "It is still in testing, so features may change before release.",
+      "ko": "아직 테스트 중이라 출시 전 기능이 바뀔 수 있습니다."
+     }
+    }
+   ],
+   "terms": null,
+   "journal": null,
+   "compare": {
+    "oneline": {
+     "en": "Sorting marbles into glass bottles",
+     "ko": "구슬을 유리병에 정리하기"
+    },
+    "style": {
+     "en": "Sorting puzzle",
+     "ko": "정리 퍼즐"
+    },
+    "length": {
+     "en": "—",
+     "ko": "—"
+    },
+    "difficulty": {
+     "en": "—",
+     "ko": "—"
+    },
+    "players": {
+     "en": "Solo",
+     "ko": "혼자"
+    },
+    "platform": {
+     "en": "iOS TestFlight now, Android in progress",
+     "ko": "iOS TestFlight 먼저, Android 진행 중"
+    },
+    "offline": {
+     "en": "—",
+     "ko": "—"
+    },
+    "pricing": {
+     "en": "—",
+     "ko": "—"
+    },
+    "languages": {
+     "en": "—",
+     "ko": "—"
+    },
+    "status": {
+     "en": "Coming soon. TestFlight build in progress",
+     "ko": "출시 예정. TestFlight 빌드 진행 중"
     }
    }
   }

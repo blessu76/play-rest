@@ -4,11 +4,11 @@
 Sources
   content/i18n/<lang>.json          UI strings and home copy (same keys in every language, see KEYS; AI-translated languages
                                     also MT_KEYS: the AI-translation notice, the link to the English original, "Journal (in English)")
-  content/games.json                the five games: facts, links and the en/ko card copy (text keyed by language; a link with no
-                                    entry for a language falls back to the English one), plus "upcoming": not-yet-out games with the
-                                    same card as the games (icon, accent, the "Coming soon" status); the optional site {"url", "live"}
-                                    is the game's own site -- the card shows the link only while live is true, so a site that is not
-                                    up yet keeps its url in the data and goes live when one flag flips
+  content/games.json                the games (nine as of 2026-11-11): facts, links and the en/ko card copy (text keyed by
+                                    language; a link with no entry for a language falls back to the English one). Every game has
+                                    site {"url", "live"}: the game's own site (an ipe.rest subdomain, never a store) -- the card
+                                    shows the link only while live is true, so a site that is not up yet keeps its url in the data
+                                    and goes live when one flag flips
   content/i18n/games/<lang>.json    the card copy of the AI-translated languages (see GAME_TEXT); game names stay as in English
   content/pages/<lang>/<page>.md    about / privacy / contact (front matter title + description + updated,
                                     Markdown body, placeholders {{OPERATOR}} {{EMAIL}} {{EFFECTIVE}})
@@ -56,7 +56,7 @@ except ImportError:
 SITE = "https://play.ipe.rest"
 KST = dt.timezone(dt.timedelta(hours=9))
 ASSET_V = "20261108a"  # keep in sync: bump when assets/play.css or play.js change
-SITE_UPDATED = "2026-11-01"  # "Last updated" of home / 404 and sitemap lastmod: bump by hand when their text changes
+SITE_UPDATED = "2026-11-11"  # "Last updated" of home / 404 and sitemap lastmod: bump by hand when their text changes
 OPERATOR = "Davy Kim (ipe Studio)"
 EMAIL = "ipe.haven@gmail.com"
 EFFECTIVE = "2026-11-01"
@@ -105,16 +105,15 @@ SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 PUBLISHED_RE = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}\+09:00$")  # published time is always recorded in KST
 HOME_CARDS = 3
 EXCERPT_MAX = 200
-GAME_IDS = ("iltonggi", "inkisle", "sunmeld", "claimball", "patchland")
-UPCOMING_IDS = ("tottertop", "mossgarden")
+GAME_IDS = ("iltonggi", "inkisle", "sunmeld", "claimball", "patchland", "tottertop", "mossgarden", "duskblocks", "bottledmarbles")
 # which games keep which principle (docs ch.2). Sunmeld has no public round length, so it is not listed under principle 1.
-# Tottertop (a round is about a minute) and Moss Garden (a short drop-in tending) both keep principle 1; both keep principle 2
-# (Tottertop: "one tap is the whole game"; Moss Garden: the whole loop is one sentence) and principle 4 (both cards say
-# "coming soon, release date TBD"). Neither keeps 3 (both have optional rewarded ads) or 5 (no AI rival).
-PRINCIPLE_GAMES = {1: ("iltonggi", "inkisle", "claimball", "patchland") + UPCOMING_IDS,
-                   2: GAME_IDS + UPCOMING_IDS,
+# Tottertop (a round is about a minute) and Moss Garden (a short drop-in tending) keep principle 1; the two TestFlight games
+# (Dusk Blocks, Bottled Marbles) are not listed under 1/2/3 yet (unverified). Principle 4 (say what's true, including what
+# isn't) is kept by all nine: none is released, and every card says so.
+PRINCIPLE_GAMES = {1: ("iltonggi", "inkisle", "claimball", "patchland", "tottertop", "mossgarden"),
+                   2: ("iltonggi", "inkisle", "sunmeld", "claimball", "patchland", "tottertop", "mossgarden"),
                    3: ("iltonggi", "inkisle", "sunmeld", "claimball"),
-                   4: GAME_IDS + UPCOMING_IDS,
+                   4: GAME_IDS,
                    5: ("iltonggi", "inkisle", "sunmeld", "claimball")}
 COMPARE_ROWS = "oneline style length difficulty players platform offline pricing languages status".split()
 # first-paint theme: runs before the stylesheet so data-theme (and the address-bar colour) is right on the first frame
@@ -472,8 +471,12 @@ def load_games(root):
         tag = "games.json %s" % g.get("id")
         for k in ("name", "sub", "status", "platform", "pricing", "tagline"):
             _bilingual(g.get(k), "%s %s" % (tag, k), errs)
-        if not str(g.get("url", "")).startswith("https://%s.ipe.rest" % g.get("id")):
-            errs.append("%s: url must be https://%s.ipe.rest..." % (tag, g.get("id")))
+        s = g.get("site")
+        site_url = s.get("url") if isinstance(s, dict) else None
+        if not isinstance(s, dict) or not isinstance(site_url, str) or not isinstance(s.get("live"), bool):
+            errs.append("%s: site must be an object with url (string) and live (boolean)" % tag)
+        elif not re.match(r"^https://%s\.ipe\.rest(?:/|\Z)" % re.escape(str(g.get("id", ""))), site_url):
+            errs.append("%s: site url must be https://%s.ipe.rest (the game's own site, never a store)" % (tag, g.get("id")))
         if not (Path(root) / "assets" / "games" / str(g.get("icon", "-"))).is_file():
             errs.append("%s: icon file missing" % tag)
         if not (isinstance(g.get("accent"), list) and len(g["accent"]) == 2 and all(re.match(r"^#[0-9a-fA-F]{6}$", c) for c in g["accent"])):
@@ -496,7 +499,7 @@ def load_games(root):
             _bilingual(c.get(row), "%s compare.%s" % (tag, row), errs)
         if not g.get("platforms") or not g.get("genre"):
             errs.append("%s: platforms and genre are needed for JSON-LD" % tag)
-        urls = [g.get("url", "")] + [x for k in ("terms",) if g.get(k) for x in g[k].values()] + \
+        urls = [site_url if isinstance(site_url, str) else ""] + [x for k in ("terms",) if g.get(k) for x in g[k].values()] + \
                [x for k in ("url", "feed") for x in (j.get(k) or {}).values()]
         for u in urls:
             if not str(u).startswith("https://%s.ipe.rest" % g.get("id")):
@@ -504,67 +507,13 @@ def load_games(root):
     return raw, errs
 
 
-def load_upcoming(root):
-    """content/games.json "upcoming": not-yet-out games that get the same card as the games (icon, accent, the "Coming soon"
-    status): the en/ko card copy with the same card fields as the games array minus the link fields (no platforms, genre, terms
-    or journal), and the nine AI languages from content/i18n/games/<lang>.json (see load_game_text). The optional site
-    {"url", "live"} is the game's own site (an ipe.rest subdomain, never a store); the card renders the link only while live
-    is true."""
-    try:
-        raw = json.loads((Path(root) / "content" / "games.json").read_text(encoding="utf-8")).get("upcoming", [])
-    except (OSError, ValueError, AttributeError):
-        return [], []
-    errs = []
-    seen = set(GAME_IDS)
-    for u in raw:
-        tag = "games.json upcoming %s" % u.get("id")
-        if not SLUG_RE.match(str(u.get("id", ""))):
-            errs.append("games.json upcoming: bad id %r" % u.get("id"))
-        if u.get("id") in seen:
-            errs.append("%s: id must not collide with a game or another upcoming entry" % tag)
-        seen.add(u.get("id"))
-        _bilingual(u.get("name"), tag + " name", errs)
-        if not (Path(root) / "assets" / "games" / str(u.get("icon", "-"))).is_file():
-            errs.append("%s: icon file missing" % tag)
-        if not (isinstance(u.get("accent"), list) and len(u["accent"]) == 2 and all(re.match(r"^#[0-9a-fA-F]{6}$", c) for c in u["accent"])):
-            errs.append("%s: accent must be two #rrggbb colors" % tag)
-        if u.get("sub") is not None:
-            _bilingual(u["sub"], tag + " sub", errs)
-        for k in ("status", "platform", "pricing", "tagline"):
-            _bilingual(u.get(k), "%s %s" % (tag, k), errs)
-        for key, want in (("pros", 3), ("cons", 2)):
-            items = u.get(key)
-            if not isinstance(items, list) or len(items) != want:
-                errs.append("%s: %s needs %d items" % (tag, key, want)); continue
-            for i, it in enumerate(items):
-                _bilingual(it.get("h"), "%s %s[%d].h" % (tag, key, i), errs)
-                _bilingual(it.get("p"), "%s %s[%d].p" % (tag, key, i), errs)
-        c = u.get("compare") or {}
-        for row in COMPARE_ROWS:
-            _bilingual(c.get(row), "%s compare.%s" % (tag, row), errs)
-        if "url" in u:
-            errs.append("%s: no bare url field — the site goes in site {\"url\", \"live\"}" % tag)
-        s = u.get("site")
-        if s is not None:
-            if not isinstance(s, dict) or not isinstance(s.get("url"), str) or not isinstance(s.get("live"), bool):
-                errs.append("%s: site must be an object with url (string) and live (boolean)" % tag)
-            elif not re.match(r"^https://[a-z0-9-]+\.ipe\.rest(?:/|\Z)", s["url"]):
-                errs.append("%s: site url must be https://<name>.ipe.rest — no store links, no links off ipe.rest" % tag)
-    for n in range(1, 6):
-        for i in PRINCIPLE_GAMES[n]:
-            if i not in seen:
-                errs.append("games.json upcoming: principle %d lists unknown game id %r" % (n, i))
-    return raw, errs
-
-
-def load_game_text(root, games, upcoming=()):
-    """content/i18n/games/<lang>.json -> merges the translated card copy into the games and the upcoming cards (g[field][lang]);
+def load_game_text(root, games):
+    """content/i18n/games/<lang>.json -> merges the translated card copy into the games (g[field][lang]);
     -> (languages complete, errors).
     Shape: {"<game id>": {status, platform, pricing, tagline, pros: [{h, p}] x3, cons: [{h, p}] x2, journal_label, compare: {row: text}}}.
     Names stay as in English (no translated game names)."""
     done, errs = [], []
     by_id = {g.get("id"): g for g in games}
-    by_id.update({u.get("id"): u for u in upcoming})
     for lang in MT_LANGS:
         f = Path(root) / "content" / "i18n" / "games" / (lang + ".json")
         if not f.is_file():
@@ -606,7 +555,7 @@ def load_game_text(root, games, upcoming=()):
                 g["journal"]["label"][lang] = label
             for r, v in cells.items():
                 g["compare"][r][lang] = v
-            g["name"][lang] = g["name"][SOURCE_LANG]  # names stay as in English; upcoming cards have no sub
+            g["name"][lang] = g["name"][SOURCE_LANG]  # names stay as in English
             if "sub" in g:
                 g["sub"][lang] = g["sub"][SOURCE_LANG]
         if len(errs) == n0:
@@ -648,7 +597,6 @@ def time_tag(published):
 class Ctx:
     def __init__(self, root, i18n, pages, games, langs, posts=()):
         self.root, self.i18n, self.pages, self.games, self.langs, self.posts = root, i18n, pages, games, langs, list(posts)
-        self.upcoming = []
         self.journal_langs = [l for l in langs if l in JOURNAL_LANGS]
 
     def t(self, lang, key):
@@ -721,7 +669,7 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
               '<div class="tools">%s<div class="themesw" role="group" aria-label="%s">%s</div></div></div></header>') % (
         esc(path_home(lang)), nav_html, langsw, esc(t("theme_label")), theme_btns)
     game_links = "".join('<li><a href="%s" rel="noopener" data-game="%s" data-placement="footer">%s</a></li>' % (
-        esc(g["url"]), esc(g["id"]), esc(g["name"][lang])) for g in ctx.games)
+        esc(g["site"]["url"]), esc(g["id"]), esc(g["name"][lang])) for g in ctx.games if g["site"]["live"])  # a site not up yet is not linked
     terms_links = "".join('<li><a href="%s" rel="noopener"%s>%s</a></li>' % (esc(h), a, esc(g["name"][lang] + m))
                           for g in ctx.games if g.get("terms") for h, a, m in [loc_link(ctx, g["terms"], lang)])
     site_links = ('<li><a href="https://ipe.rest/" rel="noopener">ipe.rest</a></li><li><a href="%s">%s</a></li><li><a href="%s"%s>%s</a></li>'
@@ -768,7 +716,7 @@ def website_ld(lang):
 
 def game_ld(g, lang):
     # confirmed facts only: no offers, no ratings, no release date (none of the games is out)
-    return {"@type": "VideoGame", "@id": SITE + "/#" + g["id"], "name": g["name"]["en"], "url": g["url"],
+    return {"@type": "VideoGame", "@id": SITE + "/#" + g["id"], "name": g["name"]["en"], "url": g["site"]["url"],
             "description": g["tagline"][lang], "inLanguage": lang, "genre": g["genre"],
             "applicationCategory": "GameApplication", "gamePlatform": g["platforms"],
             "image": SITE + "/assets/games/" + g["icon"], "creator": {"@id": ORG_ID}, "publisher": {"@id": ORG_ID}}
@@ -784,8 +732,12 @@ def game_card(ctx, lang, g):
     pros = "".join("<li><strong>%s</strong> %s</li>" % (esc(x["h"][lang]), esc(x["p"][lang])) for x in g["pros"])
     cons = "".join("<li><strong>%s</strong> %s</li>" % (esc(x["h"][lang]), esc(x["p"][lang])) for x in g["cons"])
     j = g.get("journal")
-    links = ['<a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card">%s: %s <span aria-hidden="true">→</span></a>' % (
-        esc(g["url"]), esc(g["id"]), esc(t("g_visit")), esc(g["name"][lang]))]
+    # the visit button renders only while site.live is true: the url is always in the data, so a site that is not up yet
+    # needs no change besides flipping the flag when it goes live
+    links = []
+    if g["site"]["live"]:
+        links.append('<a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card">%s: %s <span aria-hidden="true">→</span></a>' % (
+            esc(g["site"]["url"]), esc(g["id"]), esc(t("g_visit")), esc(g["name"][lang])))
     if j:
         h, a, m = loc_link(ctx, j["url"], lang)
         links.append('<a class="textlink" href="%s" rel="noopener"%s>%s</a>' % (esc(h), a, esc("%s: %s%s" % (j["label"][lang], t("g_blog"), m))))
@@ -796,37 +748,12 @@ def game_card(ctx, lang, g):
     return ('<article class="game" id="%s" style="--a:%s;--a2:%s"><header class="game-head"><img class="game-icon" src="/assets/games/%s" width="64" height="64" alt="">'
             '<div><h3>%s</h3>%s<p class="meta"><span class="badge">%s</span> %s<span class="plat">%s</span></p></div></header>'
             '<p class="tagline">%s</p><p class="price mono">%s</p>'
-            '<div class="cols"><div><h4>%s</h4><ol>%s</ol></div><div><h4>%s</h4><ol>%s</ol></div></div>'
-            '<p class="links">%s</p></article>') % (
+            '<div class="cols"><div><h4>%s</h4><ol>%s</ol></div><div><h4>%s</h4><ol>%s</ol></div></div>%s</article>') % (
         g["id"], g["accent"][0], g["accent"][1], esc(g["icon"]), esc(g["name"][lang]),
         ('<p class="sub">%s</p>' % esc(sub)) if sub else "", esc(g["status"][lang]),
         "" if g["status"]["en"] == "Coming soon" else '<span class="badge pre">%s</span> ' % esc(t("g_prerelease")), esc(g["platform"][lang]),
-        esc(g["tagline"][lang]), esc(g["pricing"][lang]), esc(t("g_likes")), pros, esc(t("g_nots")), cons, " ".join(links))
-
-
-def upcoming_card(ctx, lang, u):
-    # a game not out yet: the same card markup and classes as the game cards (icon, accent, badge); the differences stay in
-    # the data (no sub, no journal or terms links), and the site button renders only while site.live is true -- the url is
-    # always in the data, so a site that is not up yet needs no change besides flipping the flag when it goes live
-    t = lambda k: ctx.t(lang, k)  # noqa: E731
-    name = u["name"].get(lang) or u["name"]["en"]
-    pros = "".join("<li><strong>%s</strong> %s</li>" % (esc(x["h"][lang]), esc(x["p"][lang])) for x in u["pros"])
-    cons = "".join("<li><strong>%s</strong> %s</li>" % (esc(x["h"][lang]), esc(x["p"][lang])) for x in u["cons"])
-    links = ""
-    s = u.get("site")
-    if s and s.get("live"):
-        links = ('<p class="links"><a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card">%s: %s <span aria-hidden="true">→</span></a></p>' % (
-            esc(s["url"]), esc(u["id"]), esc(t("g_visit")), esc(name)))
-    return ('<article class="game" id="%s" style="--a:%s;--a2:%s"><header class="game-head"><img class="game-icon" src="/assets/games/%s" width="64" height="64" alt="">'
-            '<div><h3>%s</h3>'
-            '<p class="meta"><span class="badge">%s</span> %s<span class="plat">%s</span></p></div></header>'
-            '<p class="tagline">%s</p><p class="price mono">%s</p>'
-            '<div class="cols"><div><h4>%s</h4><ol>%s</ol></div><div><h4>%s</h4><ol>%s</ol></div></div>%s</article>') % (
-        esc(u["id"]), u["accent"][0], u["accent"][1], esc(u["icon"]), esc(name),
-        esc(u["status"][lang]),
-        "" if u["status"]["en"] == "Coming soon" else '<span class="badge pre">%s</span> ' % esc(t("g_prerelease")),
-        esc(u["platform"][lang]),
-        esc(u["tagline"][lang]), esc(u["pricing"][lang]), esc(t("g_likes")), pros, esc(t("g_nots")), cons, links)
+        esc(g["tagline"][lang]), esc(g["pricing"][lang]), esc(t("g_likes")), pros, esc(t("g_nots")), cons,
+        ('<p class="links">%s</p>' % " ".join(links)) if links else "")
 
 
 def compare_html(ctx, lang):
@@ -846,7 +773,7 @@ def compare_html(ctx, lang):
 
 def build_home(ctx, lang):
     t = lambda k: ctx.t(lang, k)  # noqa: E731
-    cards = list(ctx.games) + list(ctx.upcoming)  # the hero strip and the principle chips cover the upcoming cards too
+    cards = list(ctx.games)
     by_id = {g["id"]: g for g in cards}
     strip = "".join('<li><a href="#%s"><img src="/assets/games/%s" width="64" height="64" alt="%s"></a></li>' % (
         g["id"], esc(g["icon"]), esc(g["name"].get(lang) or g["name"]["en"])) for g in cards)
@@ -860,11 +787,12 @@ def build_home(ctx, lang):
     phil = ('<section class="sec" id="philosophy"><div class="wrap"><h2><span class="sn mono">01</span>%s</h2><p class="rest">%s</p>'
             '<ol class="principles">%s</ol></div></section>') % (esc(t("phil_h")), esc(t("phil_rest")), principles)
     games = ('<section class="sec tint" id="games"><div class="wrap"><h2><span class="sn mono">02</span>%s</h2><p class="lead">%s</p><div class="game-list">%s</div></div></section>') % (
-        esc(t("games_h")), esc(t("games_lead")), "".join(game_card(ctx, lang, g) for g in ctx.games) + "".join(upcoming_card(ctx, lang, u) for u in ctx.upcoming))
+        esc(t("games_h")), esc(t("games_lead")), "".join(game_card(ctx, lang, g) for g in ctx.games))
     cmp_ = ('<section class="sec" id="compare"><div class="wrap"><h2><span class="sn mono">03</span>%s</h2><p class="lead">%s</p>%s<p class="note">%s</p></div></section>') % (
         esc(t("compare_h")), esc(t("compare_lead")), compare_html(ctx, lang), esc(t("compare_note")))
+    # one line per game while choose_1..5 exist; the newest games get their own lines when the i18n keys follow
     choose_items = "".join('<li><span>%s</span><a class="btn ghost" href="#%s">%s <span aria-hidden="true">→</span></a></li>' % (
-        esc(t("choose_%d" % (i + 1))), g["id"], esc(g["name"][lang])) for i, g in enumerate(ctx.games))
+        esc(t("choose_%d" % (i + 1))), g["id"], esc(g["name"][lang])) for i, g in enumerate(ctx.games[:5]))
     choose = ('<section class="sec tint" id="choose"><div class="wrap"><h2><span class="sn mono">04</span>%s</h2><p class="lead">%s</p><ul class="choose">%s</ul></div></section>') % (
         esc(t("choose_h")), esc(t("choose_lead")), choose_items)
     made_items = ""
@@ -1054,15 +982,21 @@ def build_robots():
 
 def build_llms(ctx):
     en = ctx.i18n["en"]
+    ngames = len(ctx.games)
     rows = ["# ipe() Games", "", "> %s" % en["home_desc"], "",
-            "play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects five games in one place and links to each game's own "
-            "official site. None of the five games has been released: no store page or release date exists for any of them. This portal has no accounts "
+            "play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects %d games in one place and links to each game's own "
+            "official site. None of the %d games has been released: no store page or release date exists for any of them. This portal has no accounts "
             "or ads, collects only basic visit statistics through Google Analytics, and has no terms of its own (each game's site has its own terms). It has a journal with notes on turn-based games, "
-            "killing-time games and how ipe() makes games.", "",
+            "killing-time games and how ipe() makes games." % (ngames, ngames), "",
             "## The games", ""]
     for g in ctx.games:
-        rows.append("- [%s](%s): %s Status: %s. Platform: %s. Pricing: %s." % (
-            g["name"]["en"], g["url"], g["tagline"]["en"], g["status"]["en"], g["platform"]["en"], g["pricing"]["en"]))
+        # a site that is not up yet (site.live false) is listed without a link until the flag flips
+        if g["site"]["live"]:
+            rows.append("- [%s](%s): %s Status: %s. Platform: %s. Pricing: %s." % (
+                g["name"]["en"], g["site"]["url"], g["tagline"]["en"], g["status"]["en"], g["platform"]["en"], g["pricing"]["en"]))
+        else:
+            rows.append("- %s: %s Status: %s. Platform: %s. Pricing: %s. (Site not up yet.)" % (
+                g["name"]["en"], g["tagline"]["en"], g["status"]["en"], g["platform"]["en"], g["pricing"]["en"]))
     rows += ["", "## How ipe makes games", ""]
     for n in range(1, 6):
         rows.append("- %s: %s" % (en["p%d_h" % n], en["p%d_p" % n]))
@@ -1090,13 +1024,12 @@ def make_ctx(root, now=None):
     i18n, errs = load_i18n(root)
     pages, e2 = load_pages(root)
     games, e3 = load_games(root)
-    upcoming, e6 = load_upcoming(root)
-    game_langs, e5 = load_game_text(root, games, upcoming) if not e3 else ([], [])
+    game_langs, e5 = load_game_text(root, games) if not e3 else ([], [])
     posts, e4 = load_journal(root)
     today = resolve_today(now)
     total = len(posts)
     posts = [p for p in posts if released(p, today)]  # the date gate: a post dated after `today` (KST) is on no page, feed or sitemap
-    errs += e2 + e3 + e5 + e4 + e6
+    errs += e2 + e3 + e5 + e4
 
     def has(l):
         return {"i18n": l in i18n, "pages": all((l, s) in pages for s in PAGE_SLUGS), "games": l in MAIN_LANGS or l in game_langs}
@@ -1109,7 +1042,6 @@ def make_ctx(root, now=None):
         if started and not all(h.values()):
             errs.append("%s: translation is incomplete — missing %s" % (l, ", ".join(k for k, v in h.items() if not v)))
     ctx = Ctx(root, i18n, pages, games, langs, posts)
-    ctx.upcoming = upcoming
     ctx.today, ctx.scheduled = today, total - len(posts)
     return ctx, errs
 
