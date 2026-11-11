@@ -186,6 +186,18 @@ class Built(unittest.TestCase):
                 for row in bs.COMPARE_ROWS:
                     self.assertTrue(g["compare"][row][lang].strip(), (gid, lang, row))
 
+    def test_live_cards_never_say_coming_soon_or_in_development(self):
+        for g in self.ctx.games:
+            if not g["site"]["live"]:
+                continue
+            for lang in bs.LANGS:
+                lang_dir = "" if lang == "en" else lang + "/"
+                card = html.unescape(self.read(lang_dir + "index.html")).partition('id="%s"' % g["id"])[2].split("</article>")[0]
+                self.assertNotIn("coming soon", card.lower(), (lang_dir, g["id"]))
+                self.assertNotIn("in development", card.lower(), (lang_dir, g["id"]))
+                self.assertNotIn('class="badge pre"', card, (lang_dir, g["id"]))
+                self.assertIn('<span class="badge">%s</span>' % self.ctx.t(lang, "g_live"), card, (lang_dir, g["id"]))
+
     def test_each_language_lists_all_nine_games_and_only_live_sites_get_a_visit_link(self):
         for lang in bs.LANGS:
             lang_dir = "" if lang == "en" else lang + "/"

@@ -132,7 +132,7 @@ KEYS = (
     "nav_home nav_games nav_about nav_journal nav_contact nav_privacy skip lang_label theme_label theme_light theme_dark theme_noir updated_label crumb_home "
     "home_title home_desc hero_code hero_h1 hero_sub hero_strip_aria "
     "phil_h phil_rest phil_kept p1_h p1_p p2_h p2_p p3_h p3_p p4_h p4_p p5_h p5_p "
-    "games_h games_lead g_likes g_nots g_visit g_terms g_blog g_status g_prerelease "
+    "games_h games_lead g_likes g_nots g_visit g_terms g_blog g_status g_prerelease g_live "
     "compare_h compare_lead compare_note compare_game row_oneline row_style row_length row_difficulty row_players "
     "row_platform row_offline row_pricing row_languages row_status "
     "choose_h choose_lead choose_1 choose_2 choose_3 choose_4 choose_5 choose_6 choose_7 choose_8 choose_9 choose_go "
@@ -745,13 +745,16 @@ def game_card(ctx, lang, g):
         h, a, m = loc_link(ctx, g["terms"], lang)
         links.append('<a class="textlink" href="%s" rel="noopener"%s>%s</a>' % (esc(h), a, esc(t("g_terms") + m)))
     sub = g["sub"][lang] if g["sub"][lang] != g["name"][lang] else ""
+    live = g["site"]["live"]
+    status = t("g_live") if live else g["status"][lang]
+    pre = "" if live or g["status"]["en"] == "Coming soon" else '<span class="badge pre">%s</span> ' % esc(t("g_prerelease"))
     return ('<article class="game" id="%s" style="--a:%s;--a2:%s"><header class="game-head"><img class="game-icon" src="/assets/games/%s" width="64" height="64" alt="">'
             '<div><h3>%s</h3>%s<p class="meta"><span class="badge">%s</span> %s<span class="plat">%s</span></p></div></header>'
             '<p class="tagline">%s</p><p class="price mono">%s</p>'
             '<div class="cols"><div><h4>%s</h4><ol>%s</ol></div><div><h4>%s</h4><ol>%s</ol></div></div>%s</article>') % (
         g["id"], g["accent"][0], g["accent"][1], esc(g["icon"]), esc(g["name"][lang]),
-        ('<p class="sub">%s</p>' % esc(sub)) if sub else "", esc(g["status"][lang]),
-        "" if g["status"]["en"] == "Coming soon" else '<span class="badge pre">%s</span> ' % esc(t("g_prerelease")), esc(g["platform"][lang]),
+        ('<p class="sub">%s</p>' % esc(sub)) if sub else "", esc(status),
+        pre, esc(g["platform"][lang]),
         esc(g["tagline"][lang]), esc(g["pricing"][lang]), esc(t("g_likes")), pros, esc(t("g_nots")), cons,
         ('<p class="links">%s</p>' % " ".join(links)) if links else "")
 
@@ -992,7 +995,7 @@ def build_llms(ctx):
         # a site that is not up yet (site.live false) is listed without a link until the flag flips
         if g["site"]["live"]:
             rows.append("- [%s](%s): %s Status: %s. Platform: %s. Pricing: %s." % (
-                g["name"]["en"], g["site"]["url"], g["tagline"]["en"], g["status"]["en"], g["platform"]["en"], g["pricing"]["en"]))
+                g["name"]["en"], g["site"]["url"], g["tagline"]["en"], ctx.t("en", "g_live"), g["platform"]["en"], g["pricing"]["en"]))
         else:
             rows.append("- %s: %s Status: %s. Platform: %s. Pricing: %s. (Site not up yet.)" % (
                 g["name"]["en"], g["tagline"]["en"], g["status"]["en"], g["platform"]["en"], g["pricing"]["en"]))
