@@ -993,7 +993,7 @@ def build_llms(ctx):
     ngames = len(ctx.games)
     rows = ["# ipe() Games", "", "> %s" % ctx.t("en", "home_desc"), "",
             "play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects %d games in one place and links to each game's own "
-            "official site. All %d games have their own introduction site, and most are at the iOS TestFlight stage. None has had a full release yet: no store page or release date is set for any of them. This portal has no accounts "
+            "official site. All %d games are coming soon: each has its own introduction site, and most are at the iOS TestFlight stage. None has had a full release yet: no store page or release date is set for any of them. This portal has no accounts "
             "or ads, collects only basic visit statistics through Google Analytics, and has no terms of its own (each game's site has its own terms). It has a journal with notes on turn-based games, "
             "killing-time games and how ipe() makes games." % (ngames, ngames), "",
             "## The games", ""]

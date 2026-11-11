@@ -186,14 +186,13 @@ class Built(unittest.TestCase):
                 for row in bs.COMPARE_ROWS:
                     self.assertTrue(g["compare"][row][lang].strip(), (gid, lang, row))
 
-    def test_live_cards_never_say_coming_soon_or_in_development(self):
+    def test_live_cards_never_say_in_development(self):
         for g in self.ctx.games:
             if not g["site"]["live"]:
                 continue
             for lang in bs.LANGS:
                 lang_dir = "" if lang == "en" else lang + "/"
                 card = html.unescape(self.read(lang_dir + "index.html")).partition('id="%s"' % g["id"])[2].split("</article>")[0]
-                self.assertNotIn("coming soon", card.lower(), (lang_dir, g["id"]))
                 self.assertNotIn("in development", card.lower(), (lang_dir, g["id"]))
                 self.assertNotIn('class="badge pre"', card, (lang_dir, g["id"]))
                 self.assertIn('<span class="badge">%s</span>' % self.ctx.t(lang, "g_live"), card, (lang_dir, g["id"]))
@@ -213,7 +212,6 @@ class Built(unittest.TestCase):
                 card_status = cards[g["name"][lang]].partition("<dt>%s</dt><dd>" % self.ctx.t(lang, "row_status"))[2].split("</dd>")[0]
                 for text in (cells[i], card_status):
                     self.assertIn(live_word, text, (lang_dir, g["id"]))
-                    self.assertNotIn("coming soon", text.lower(), (lang_dir, g["id"]))
                     self.assertNotIn("in development", text.lower(), (lang_dir, g["id"]))
                     self.assertNotIn(g["compare"]["status"][lang], text, (lang_dir, g["id"]))
 
@@ -335,13 +333,16 @@ class Built(unittest.TestCase):
                    "リリース", "配信", "遊べ", "上线", "发布", "游玩", "erhältlich", "erschienen", "spielbar", "disponible", "disponível",
                    "jouable", "jugar", "lançado", "jogados", "rilis", "dimainkan", "вышла", "играть", "phát hành", "chơi được", "chơi ngay", "có thể chơi")
 
-    def test_site_live_badge_makes_no_launch_or_play_claim_in_any_language(self):
+    LIVE_BADGE = {"en": "Coming soon", "ko": "출시 예정", "ja": "近日公開", "zh": "即将推出", "es": "Próximamente", "pt": "Em breve",
+                  "fr": "Prochainement", "de": "Demnächst", "ru": "Скоро выйдет", "id": "Segera hadir", "vi": "Sắp ra mắt"}
+
+    def test_live_badge_says_coming_soon_without_launch_or_play_claim_in_any_language(self):
         for lang in bs.LANGS:
-            label = self.ctx.t(lang, "g_live").lower()
+            label = self.ctx.t(lang, "g_live")
+            self.assertEqual(label, self.LIVE_BADGE[lang], lang)
+            checked = label.replace("출시 예정", "").lower()  # 「출시 예정」 is the one allowed use of 출시
             for word in self.CLAIM_WORDS:
-                self.assertNotIn(word.lower(), label, (lang, label))
-        self.assertEqual(self.ctx.t("en", "g_live"), "Site live")
-        self.assertEqual(self.ctx.t("ko", "g_live"), "사이트 공개")
+                self.assertNotIn(word.lower(), checked, (lang, label))
 
     def test_llms_txt_says_only_site_live_not_launched_or_playable(self):
         llms = self.read("llms.txt")
@@ -350,10 +351,11 @@ class Built(unittest.TestCase):
                      "none of the"):
             self.assertNotIn(word, head, word)
         self.assertIn("testflight", head)
+        self.assertIn("all %d games are coming soon" % len(LIVE), head)
         status_lines = [line for line in llms.split("\n") if "Status:" in line]
         self.assertEqual(len(status_lines), len(LIVE))
         for line in status_lines:
-            self.assertIn("Status: Site live.", line)
+            self.assertIn("Status: Coming soon.", line)
 
     def test_home_and_lead_copy_makes_no_play_claim(self):
         for lang in bs.LANGS:
