@@ -14,11 +14,11 @@
  "updated_label": "Zuletzt aktualisiert",
  "crumb_home": "Start",
  "home_title": "ipe() Games: kurze Runden, die in eine Pause passen",
- "home_desc": "Fünf kleine Spiele von ipe(): Iltonggi, Inkisle, Sunmeld, Claimball und Patchland. Kurze Runden, wenige Regeln, keine Werbung. Noch ist keines erschienen.",
+ "home_desc": "{n} kleine Spiele von ipe(). Kurze Runden, wenige Regeln, keine Werbung. Noch ist keines erschienen.",
  "hero_code": "// play(); rest();",
  "hero_h1": "Wenn die Runde endet, ist es genug für heute.",
  "hero_sub": "Eine Runde ist kurz genug, um in Ihre Pause zu passen.",
- "hero_strip_aria": "Die fünf Spiele",
+ "hero_strip_aria": "Die {n} Spiele",
  "phil_h": "Wie ipe Spiele macht",
  "phil_rest": "ipe ist die Abkürzung für idle process: der Zustand, in den ein Prozessor schließlich übergeht, wenn nichts mehr zu tun ist. Daher kommt das rest in ipe.rest. Unsere Spiele sollen keine stillen Spiele sein. Strategie und Duelle bringen Sie weiterhin zum Nachdenken. Was sie mit Ruhe verbindet: Ein Spiel soll Ihre Pause nicht vereinnahmen, sondern sich in ihr niederlassen. Das Ende einer Runde ist klar, die Regeln verlangen keine lange Erklärung, nichts drängt Sie zum Einloggen oder unterbricht Sie mit Werbung, und wir sagen, was wir versprochen haben und was wir noch nicht wissen.",
  "phil_kept": "Eingehalten von",
@@ -32,7 +32,7 @@
  "p4_p": "Wenn es nicht erschienen ist, sagen wir das. Wenn wir etwas nicht geprüft haben, sagen wir auch das.",
  "p5_h": "Die KI spielt fair",
  "p5_p": "Aufholjagden entstehen durch die Regeln, nicht durch einen heimlich geschwächten Gegner.",
- "games_h": "Fünf Spiele",
+ "games_h": "{n} Spiele",
  "games_lead": "Keines davon ist bisher erschienen, und keines hat eine Store-Seite. Jede Karte zeigt, was das Spiel ist, was Ihnen gefallen wird und für wen es nichts ist.",
  "g_likes": "Was Ihnen gefallen wird",
  "g_nots": "Nichts für Sie, wenn",
@@ -93,5 +93,9 @@
  "ai_note": "Diese Seite wurde von einer KI aus dem englischen Original übersetzt und noch nicht von Muttersprachlern geprüft. Bei Abweichungen gilt das englische Original.",
  "ai_original": "Original lesen (Englisch)",
  "journal_en": "Journal (auf Englisch)",
- "en_mark": "(auf Englisch)"
+ "en_mark": "(auf Englisch)",
+ "choose_6": "Ein Tipp nach dem anderen, ein wackelnder Turm",
+ "choose_7": "Ein Garten, der beim Warten wächst",
+ "choose_8": "Ein ruhiges Blockpuzzle für eine Hand, in der Dämmerung",
+ "choose_9": "Ein ruhiges Sortierrätsel mit Murmeln"
 }

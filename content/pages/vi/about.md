@@ -1,13 +1,13 @@
 ---
 title: Giới thiệu ipe() Games
-description: play.ipe.rest tập hợp các trò chơi của ipe(): Iltonggi, Inkisle, Sunmeld, Claimball và Patchland. Cổng này là gì, trò chơi được làm thế nào và ai đứng sau.
+description: play.ipe.rest tập hợp các trò chơi của ipe(). Cổng này là gì, trò chơi được làm thế nào và ai đứng sau.
 updated: 2026-10-31
 ---
-play.ipe.rest là ngôi nhà của các trò chơi do **ipe()** (ipe Studio) làm ra. Nơi đây gom năm trò chơi về một chỗ: Iltonggi, Inkisle, Sunmeld, Claimball và Patchland. Mỗi trò chơi có trang chính thức riêng, được liên kết từ thẻ của nó trên [trang chủ](/vi/#games).
+play.ipe.rest là ngôi nhà của các trò chơi do **ipe()** (ipe Studio) làm ra. Nơi đây gom các trò chơi về một chỗ: Iltonggi, Inkisle, Sunmeld, Claimball, Patchland, Tilt Tower, Moss Garden, Dusk Blocks và Bottled Marbles. Mỗi trò chơi có trang chính thức riêng, được liên kết từ thẻ của nó trên [trang chủ](/vi/#games).
 
 ## Cổng này để làm gì
 
-Chưa trò nào trong năm trò chơi được phát hành, và chưa trò nào có trang trên cửa hàng. Trang này cố ý nói rõ điều đó. Trang cho biết mỗi trò chơi là gì, bạn có thể sẽ thích điều gì ở nó, và nó không dành cho ai, để bạn tự quyết định nó có đáng với giờ nghỉ của mình hay không.
+Chưa trò nào trong các trò chơi được phát hành, và chưa trò nào có trang trên cửa hàng. Trang này cố ý nói rõ điều đó. Trang cho biết mỗi trò chơi là gì, bạn có thể sẽ thích điều gì ở nó, và nó không dành cho ai, để bạn tự quyết định nó có đáng với giờ nghỉ của mình hay không.
 
 ## Trò chơi được làm như thế nào
 

@@ -14,11 +14,11 @@
  "updated_label": "Last updated",
  "crumb_home": "Home",
  "home_title": "ipe() Games: short rounds that fit a break",
- "home_desc": "Five small games from ipe(): Iltonggi, Inkisle, Sunmeld, Claimball and Patchland. Short rounds, few rules, no ads. None is released yet.",
+ "home_desc": "{n} small games from ipe(). Short rounds, few rules, no ads. None is released yet.",
  "hero_code": "// play(); rest();",
  "hero_h1": "When the round ends, that's enough for today.",
  "hero_sub": "A round is short enough to finish within your break.",
- "hero_strip_aria": "The five games",
+ "hero_strip_aria": "All {n} games",
  "phil_h": "How ipe makes games",
  "phil_rest": "ipe is short for idle process: the state a processor finally settles into when there is nothing left to do. The rest in ipe.rest comes from there. Our games are not meant to be quiet games. Strategy and duels still make you think. What connects them to rest is that a game should not take over your break, it should sit down inside it. The end of a round is clear, the rules do not ask for a long explanation, nothing nags you to log in or cuts in with an ad, and we say what we have promised and what we do not know yet.",
  "phil_kept": "Kept by",
@@ -32,7 +32,7 @@
  "p4_p": "If it's not released, we say so. If we haven't checked, we say that too.",
  "p5_h": "The AI plays fair",
  "p5_p": "Comebacks come from the rules, not from a secretly weakened opponent.",
- "games_h": "Five games",
+ "games_h": "{n} games",
  "games_lead": "None of them is released yet, and none has a store page. Each card shows what the game is, what you will like, and who it is not for.",
  "g_likes": "What you will like",
  "g_nots": "Not for you if",
@@ -93,5 +93,9 @@
  "ai_note": "This page was translated by AI from the English original and has not been checked by a native speaker yet. If the translation differs from the English original, the English original prevails.",
  "ai_original": "Read the original (English)",
  "journal_en": "Journal (in English)",
- "en_mark": "(in English)"
+ "en_mark": "(in English)",
+ "choose_6": "One tap at a time, a tower to stack",
+ "choose_7": "An idle garden that grows while you wait",
+ "choose_8": "A calm one-handed block puzzle at dusk",
+ "choose_9": "A calm sorting puzzle, one marble at a time"
 }

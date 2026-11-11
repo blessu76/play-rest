@@ -23,7 +23,7 @@ Jedes Spiel hat seine eigene offizielle Website und seinen eigenen Support. Bitt
 
 ### Kann ich schon eines der Spiele spielen?
 
-Noch nicht. Keines der fünf Spiele ist erschienen, und keines hat eine Store-Seite. Den Status jedes Spiels finden Sie auf seiner Karte auf der [Startseite](/de/#games).
+Noch nicht. Keines der Spiele ist erschienen, und keines hat eine Store-Seite. Den Status jedes Spiels finden Sie auf seiner Karte auf der [Startseite](/de/#games).
 
 ### Erheben Sie personenbezogene Daten?
 

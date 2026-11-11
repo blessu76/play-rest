@@ -14,11 +14,11 @@
  "updated_label": "Última atualização",
  "crumb_home": "Início",
  "home_title": "ipe() Games: partidas curtas para uma pausa",
- "home_desc": "Cinco jogos pequenos da ipe(): Iltonggi, Inkisle, Sunmeld, Claimball e Patchland. Partidas curtas, poucas regras, sem anúncios. Nenhum foi lançado ainda.",
+ "home_desc": "{n} jogos pequenos da ipe(). Partidas curtas, poucas regras, sem anúncios. Nenhum foi lançado ainda.",
  "hero_code": "// play(); rest();",
  "hero_h1": "Quando a partida termina, já basta por hoje.",
  "hero_sub": "Uma partida é curta o bastante para terminar dentro da sua pausa.",
- "hero_strip_aria": "Os cinco jogos",
+ "hero_strip_aria": "Os {n} jogos",
  "phil_h": "Como a ipe faz jogos",
  "phil_rest": "ipe é a abreviação de idle process (processo ocioso): o estado em que um processador finalmente se acomoda quando não resta mais nada a fazer. É daí que vem o rest de ipe.rest. Nossos jogos não pretendem ser jogos silenciosos. Estratégia e duelos ainda fazem você pensar. O que os liga ao descanso é que um jogo não deve tomar conta da sua pausa, e sim sentar-se dentro dela. O fim de uma partida é claro, as regras não pedem uma explicação longa, nada insiste para você fazer login nem interrompe com um anúncio, e dizemos o que prometemos e o que ainda não sabemos.",
  "phil_kept": "Cumprido por",
@@ -32,7 +32,7 @@
  "p4_p": "Se não foi lançado, dizemos. Se não verificamos, dizemos isso também.",
  "p5_h": "A IA joga limpo",
  "p5_p": "As viradas vêm das regras, não de um oponente enfraquecido em segredo.",
- "games_h": "Cinco jogos",
+ "games_h": "{n} jogos",
  "games_lead": "Nenhum deles foi lançado ainda e nenhum tem página em loja. Cada cartão mostra o que o jogo é, o que você vai gostar e para quem ele não serve.",
  "g_likes": "O que você vai gostar",
  "g_nots": "Não é para você se",
@@ -93,5 +93,9 @@
  "ai_note": "Esta página foi traduzida por IA a partir do original em inglês e ainda não foi revisada por um falante nativo. Em caso de divergência, prevalece o original em inglês.",
  "ai_original": "Ler o original (em inglês)",
  "journal_en": "Diário (em inglês)",
- "en_mark": "(em inglês)"
+ "en_mark": "(em inglês)",
+ "choose_6": "Um toque de cada vez, uma torre que balança",
+ "choose_7": "Um jardim que cresce enquanto você espera",
+ "choose_8": "Um quebra-cabeça de blocos calmo, com uma mão, ao entardecer",
+ "choose_9": "Um quebra-cabeça de ordenar bolinhas, calmo e claro"
 }

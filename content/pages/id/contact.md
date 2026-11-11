@@ -23,7 +23,7 @@ Setiap game punya situs resmi dan dukungannya sendiri. Silakan mulai dari sana, 
 
 ### Apakah sudah ada game yang bisa dimainkan?
 
-Belum. Belum ada satu pun dari kelima game ini yang dirilis, dan belum ada yang punya halaman toko. Status setiap game ada di kartunya di [halaman beranda](/id/#games).
+Belum. Belum ada satu pun dari game ini yang dirilis, dan belum ada yang punya halaman toko. Status setiap game ada di kartunya di [halaman beranda](/id/#games).
 
 ### Apakah Anda mengumpulkan informasi pribadi?
 

@@ -1,13 +1,13 @@
 ---
 title: 关于 ipe() Games
-description: play.ipe.rest 汇集了 ipe() 制作的游戏：Iltonggi、Inkisle、Sunmeld、Claimball 和 Patchland。介绍这个门户是什么、游戏如何制作，以及幕后是谁。
+description: play.ipe.rest 汇集了 ipe() 制作的游戏。介绍这个门户是什么、游戏如何制作，以及幕后是谁。
 updated: 2026-10-31
 ---
-play.ipe.rest 是 **ipe()**（ipe Studio）所制作游戏的家。它把五款游戏集中在一处：Iltonggi、Inkisle、Sunmeld、Claimball 和 Patchland。每款游戏都有自己的官方网站，可从[首页](/zh/#games)上它的卡片进入。
+play.ipe.rest 是 **ipe()**（ipe Studio）所制作游戏的家。它把游戏集中在一处：Iltonggi、Inkisle、Sunmeld、Claimball、Patchland、Tilt Tower、Moss Garden、Dusk Blocks 和 Bottled Marbles。每款游戏都有自己的官方网站，可从[首页](/zh/#games)上它的卡片进入。
 
 ## 这个门户的用途
 
-这五款游戏都尚未发布，也没有商店页面。本站特意如实说明这一点。它会展示每款游戏是什么、你大概会喜欢什么，以及哪些人不适合，好让你判断它值不值得占用你的休息时间。
+这些游戏都尚未发布，也没有商店页面。本站特意如实说明这一点。它会展示每款游戏是什么、你大概会喜欢什么，以及哪些人不适合，好让你判断它值不值得占用你的休息时间。
 
 ## 游戏如何制作
 

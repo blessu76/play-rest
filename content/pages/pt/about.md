@@ -1,13 +1,13 @@
 ---
 title: Sobre a ipe() Games
-description: O play.ipe.rest reúne os jogos da ipe(): Iltonggi, Inkisle, Sunmeld, Claimball e Patchland. O que é este portal, como os jogos são feitos e quem está por trás.
+description: O play.ipe.rest reúne os jogos da ipe(). O que é este portal, como os jogos são feitos e quem está por trás.
 updated: 2026-10-31
 ---
-O play.ipe.rest é a casa dos jogos feitos pela **ipe()** (ipe Studio). Ele reúne cinco jogos em um só lugar: Iltonggi, Inkisle, Sunmeld, Claimball e Patchland. Cada jogo tem seu próprio site oficial, ligado a partir do cartão dele na [página inicial](/pt/#games).
+O play.ipe.rest é a casa dos jogos feitos pela **ipe()** (ipe Studio). Ele reúne os jogos em um só lugar: Iltonggi, Inkisle, Sunmeld, Claimball, Patchland, Tilt Tower, Moss Garden, Dusk Blocks e Bottled Marbles. Cada jogo tem seu próprio site oficial, ligado a partir do cartão dele na [página inicial](/pt/#games).
 
 ## Para que serve este portal
 
-Nenhum dos cinco jogos foi lançado ainda e nenhum tem página em loja. Este site diz isso de propósito. Ele mostra o que cada jogo é, do que você provavelmente vai gostar e para quem ele não serve, para você decidir se vale a pena gastar sua pausa com ele.
+Nenhum dos jogos foi lançado ainda e nenhum tem página em loja. Este site diz isso de propósito. Ele mostra o que cada jogo é, do que você provavelmente vai gostar e para quem ele não serve, para você decidir se vale a pena gastar sua pausa com ele.
 
 ## Como os jogos são feitos
 

@@ -23,7 +23,7 @@ Chaque jeu a son propre site officiel et sa propre assistance. Commencez par là
 
 ### Peut-on déjà jouer à l’un des jeux ?
 
-Pas encore. Aucun des cinq jeux n’est sorti, et aucun n’a de page en boutique. Le statut de chaque jeu figure sur sa fiche sur la [page d’accueil](/fr/#games).
+Pas encore. Aucun des jeux n’est sorti, et aucun n’a de page en boutique. Le statut de chaque jeu figure sur sa fiche sur la [page d’accueil](/fr/#games).
 
 ### Collectez-vous des informations personnelles ?
 

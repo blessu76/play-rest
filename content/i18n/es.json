@@ -14,11 +14,11 @@
  "updated_label": "Última actualización",
  "crumb_home": "Inicio",
  "home_title": "ipe() Games: partidas cortas para un descanso",
- "home_desc": "Cinco juegos pequeños de ipe(): Iltonggi, Inkisle, Sunmeld, Claimball y Patchland. Partidas cortas, pocas reglas, sin anuncios. Ninguno ha salido aún.",
+ "home_desc": "{n} juegos pequeños de ipe(). Partidas cortas, pocas reglas, sin anuncios. Ninguno ha salido aún.",
  "hero_code": "// play(); rest();",
  "hero_h1": "Cuando termina la partida, ya es suficiente por hoy.",
  "hero_sub": "Una partida es tan corta que cabe en tu descanso.",
- "hero_strip_aria": "Los cinco juegos",
+ "hero_strip_aria": "Los {n} juegos",
  "phil_h": "Cómo hace juegos ipe",
  "phil_rest": "ipe es la abreviatura de idle process (proceso inactivo): el estado en el que un procesador acaba por asentarse cuando ya no le queda nada por hacer. De ahí viene el rest de ipe.rest. Nuestros juegos no pretenden ser juegos tranquilos. La estrategia y los duelos siguen haciéndote pensar. Lo que los une con el descanso es que un juego no debería adueñarse de tu descanso, sino sentarse dentro de él. El final de una partida es claro, las reglas no piden una explicación larga, nada te insiste en que inicies sesión ni te interrumpe con un anuncio, y decimos lo que hemos prometido y lo que aún no sabemos.",
  "phil_kept": "Lo cumple",
@@ -32,7 +32,7 @@
  "p4_p": "Si no ha salido, lo decimos. Si no lo hemos comprobado, también lo decimos.",
  "p5_h": "La IA juega limpio",
  "p5_p": "Las remontadas vienen de las reglas, no de un rival debilitado en secreto.",
- "games_h": "Cinco juegos",
+ "games_h": "{n} juegos",
  "games_lead": "Ninguno ha salido todavía y ninguno tiene página en una tienda. Cada tarjeta muestra qué es el juego, qué te gustará y para quién no es.",
  "g_likes": "Lo que te gustará",
  "g_nots": "No es para ti si",
@@ -93,5 +93,9 @@
  "ai_note": "Esta página fue traducida por IA a partir del original en inglés y aún no ha sido revisada por un hablante nativo. En caso de discrepancia, prevalece el original en inglés.",
  "ai_original": "Leer el original (en inglés)",
  "journal_en": "Diario (en inglés)",
- "en_mark": "(en inglés)"
+ "en_mark": "(en inglés)",
+ "choose_6": "Un toque para apilar una torre que se balancea",
+ "choose_7": "Un jardín que crece mientras esperas",
+ "choose_8": "Un puzle de bloques tranquilo, de una mano, al atardecer",
+ "choose_9": "Un puzle de clasificar canicas, tranquilo"
 }

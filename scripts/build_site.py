@@ -135,7 +135,7 @@ KEYS = (
     "games_h games_lead g_likes g_nots g_visit g_terms g_blog g_status g_prerelease "
     "compare_h compare_lead compare_note compare_game row_oneline row_style row_length row_difficulty row_players "
     "row_platform row_offline row_pricing row_languages row_status "
-    "choose_h choose_lead choose_1 choose_2 choose_3 choose_4 choose_5 choose_go "
+    "choose_h choose_lead choose_1 choose_2 choose_3 choose_4 choose_5 choose_6 choose_7 choose_8 choose_9 choose_go "
     "made_h made_lead made_now made_feed made_read ipe_h ipe_p ipe_studio ipe_music ipe_contact "
     "footer_line footer_code footer_tm footer_games footer_terms footer_site footer_about nf_h nf_p "
     "journal_h journal_lead journal_all journal_empty journal_desc journal_rss journal_back journal_feed_title"
@@ -600,7 +600,7 @@ class Ctx:
         self.journal_langs = [l for l in langs if l in JOURNAL_LANGS]
 
     def t(self, lang, key):
-        return self.i18n[lang][key]
+        return self.i18n[lang][key].replace("{n}", str(len(self.games)))
 
     def posts_in(self, lang):
         """posts that have a version in this language (newest first); [] for a language with no journal"""
@@ -790,9 +790,8 @@ def build_home(ctx, lang):
         esc(t("games_h")), esc(t("games_lead")), "".join(game_card(ctx, lang, g) for g in ctx.games))
     cmp_ = ('<section class="sec" id="compare"><div class="wrap"><h2><span class="sn mono">03</span>%s</h2><p class="lead">%s</p>%s<p class="note">%s</p></div></section>') % (
         esc(t("compare_h")), esc(t("compare_lead")), compare_html(ctx, lang), esc(t("compare_note")))
-    # one line per game while choose_1..5 exist; the newest games get their own lines when the i18n keys follow
     choose_items = "".join('<li><span>%s</span><a class="btn ghost" href="#%s">%s <span aria-hidden="true">→</span></a></li>' % (
-        esc(t("choose_%d" % (i + 1))), g["id"], esc(g["name"][lang])) for i, g in enumerate(ctx.games[:5]))
+        esc(t("choose_%d" % (i + 1))), g["id"], esc(g["name"][lang])) for i, g in enumerate(ctx.games))
     choose = ('<section class="sec tint" id="choose"><div class="wrap"><h2><span class="sn mono">04</span>%s</h2><p class="lead">%s</p><ul class="choose">%s</ul></div></section>') % (
         esc(t("choose_h")), esc(t("choose_lead")), choose_items)
     made_items = ""
@@ -983,7 +982,7 @@ def build_robots():
 def build_llms(ctx):
     en = ctx.i18n["en"]
     ngames = len(ctx.games)
-    rows = ["# ipe() Games", "", "> %s" % en["home_desc"], "",
+    rows = ["# ipe() Games", "", "> %s" % ctx.t("en", "home_desc"), "",
             "play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects %d games in one place and links to each game's own "
             "official site. None of the %d games has been released: no store page or release date exists for any of them. This portal has no accounts "
             "or ads, collects only basic visit statistics through Google Analytics, and has no terms of its own (each game's site has its own terms). It has a journal with notes on turn-based games, "

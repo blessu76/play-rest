@@ -1,13 +1,13 @@
 ---
 title: ipe() Gamesについて
-description: play.ipe.restは、ipe()が作るゲーム、Iltonggi、Inkisle、Sunmeld、Claimball、Patchlandを集めています。このポータルの役割、ゲームの作り方、作っている人について。
+description: play.ipe.restは、ipe()が作るゲームを集めています。このポータルの役割、ゲームの作り方、作っている人について。
 updated: 2026-10-31
 ---
-play.ipe.restは、**ipe()**（ipe Studio）が作るゲームのホームです。Iltonggi、Inkisle、Sunmeld、Claimball、Patchlandの5つのゲームを1か所に集めています。それぞれに公式サイトがあり、[ホーム](/ja/#games)のカードからリンクしています。
+play.ipe.restは、**ipe()**（ipe Studio）が作るゲームのホームです。Iltonggi、Inkisle、Sunmeld、Claimball、Patchland、Tilt Tower、Moss Garden、Dusk Blocks、Bottled Marblesのゲームを1か所に集めています。それぞれに公式サイトがあり、[ホーム](/ja/#games)のカードからリンクしています。
 
 ## このポータルの役割
 
-5つのゲームは、どれもまだ公開されておらず、ストアページもありません。このサイトは、あえてそう伝えています。各ゲームがどんなものか、どこを気に入りそうか、どんな方には向かないかを示すので、休憩の時間を使う価値があるかどうか、ご自身で判断できます。
+ゲームは、どれもまだ公開されておらず、ストアページもありません。このサイトは、あえてそう伝えています。各ゲームがどんなものか、どこを気に入りそうか、どんな方には向かないかを示すので、休憩の時間を使う価値があるかどうか、ご自身で判断できます。
 
 ## ゲームの作り方
 

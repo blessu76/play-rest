@@ -23,7 +23,7 @@ Cada juego tiene su propio sitio oficial y su propio soporte. Empieza por ahí, 
 
 ### ¿Puedo jugar ya a alguno de los juegos?
 
-Todavía no. Ninguno de los cinco juegos ha salido y ninguno tiene página en una tienda. El estado de cada juego está en su tarjeta en la [página de inicio](/es/#games).
+Todavía no. Ninguno de los juegos ha salido y ninguno tiene página en una tienda. El estado de cada juego está en su tarjeta en la [página de inicio](/es/#games).
 
 ### ¿Recogen información personal?
 

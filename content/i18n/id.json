@@ -14,11 +14,11 @@
  "updated_label": "Terakhir diperbarui",
  "crumb_home": "Beranda",
  "home_title": "ipe() Games: ronde singkat yang pas untuk jeda",
- "home_desc": "Lima game kecil dari ipe(): Iltonggi, Inkisle, Sunmeld, Claimball, dan Patchland. Ronde singkat, sedikit aturan, tanpa iklan. Belum ada yang dirilis.",
+ "home_desc": "{n} game kecil dari ipe(). Ronde singkat, sedikit aturan, tanpa iklan. Belum ada yang dirilis.",
  "hero_code": "// play(); rest();",
  "hero_h1": "Saat ronde berakhir, itu sudah cukup untuk hari ini.",
  "hero_sub": "Satu ronde cukup singkat untuk selesai dalam waktu istirahat Anda.",
- "hero_strip_aria": "Kelima game",
+ "hero_strip_aria": "Semua {n} game",
  "phil_h": "Cara ipe membuat game",
  "phil_rest": "ipe adalah singkatan dari idle process: keadaan yang akhirnya dicapai prosesor saat tidak ada lagi yang harus dikerjakan. Kata rest dalam ipe.rest berasal dari situ. Game kami tidak dimaksudkan sebagai game yang tenang. Strategi dan duel tetap membuat Anda berpikir. Yang menghubungkannya dengan istirahat adalah bahwa game tidak boleh mengambil alih waktu istirahat Anda, melainkan duduk di dalamnya. Akhir sebuah ronde jelas, aturannya tidak menuntut penjelasan panjang, tidak ada yang mendesak Anda untuk masuk atau menyela dengan iklan, dan kami mengatakan apa yang sudah kami janjikan dan apa yang belum kami ketahui.",
  "phil_kept": "Dijaga oleh",
@@ -32,7 +32,7 @@
  "p4_p": "Jika belum dirilis, kami katakan begitu. Jika belum kami periksa, itu pun kami katakan.",
  "p5_h": "AI bermain jujur",
  "p5_p": "Membalikkan keadaan datang dari aturan, bukan dari lawan yang diam-diam dilemahkan.",
- "games_h": "Lima game",
+ "games_h": "{n} game",
  "games_lead": "Belum ada yang dirilis, dan belum ada yang punya halaman toko. Setiap kartu menunjukkan game apa itu, apa yang akan Anda sukai, dan untuk siapa game itu tidak cocok.",
  "g_likes": "Yang akan Anda sukai",
  "g_nots": "Tidak cocok jika",
@@ -93,5 +93,9 @@
  "ai_note": "Halaman ini diterjemahkan oleh AI dari versi asli bahasa Inggris dan belum diperiksa oleh penutur asli. Jika ada perbedaan makna, versi asli bahasa Inggris yang berlaku.",
  "ai_original": "Baca versi asli (bahasa Inggris)",
  "journal_en": "Jurnal (dalam bahasa Inggris)",
- "en_mark": "(dalam bahasa Inggris)"
+ "en_mark": "(dalam bahasa Inggris)",
+ "choose_6": "Satu ketukan, menumpuk menara yang bergoyang",
+ "choose_7": "Taman tenang yang tumbuh saat kamu menunggu",
+ "choose_8": "Puzel balok yang tenang, satu tangan, saat senja",
+ "choose_9": "Puzel memilah kelereng yang tenang dan jernih"
 }

@@ -14,11 +14,11 @@
  "updated_label": "Dernière mise à jour",
  "crumb_home": "Accueil",
  "home_title": "ipe() Games : des parties courtes pour une pause",
- "home_desc": "Cinq petits jeux d’ipe() : Iltonggi, Inkisle, Sunmeld, Claimball et Patchland. Parties courtes, peu de règles, sans publicité. Aucun n’est encore sorti.",
+ "home_desc": "{n} petits jeux d’ipe(). Parties courtes, peu de règles, sans publicité. Aucun n’est encore sorti.",
  "hero_code": "// play(); rest();",
  "hero_h1": "Quand la partie se termine, c’est assez pour aujourd’hui.",
  "hero_sub": "Une partie est assez courte pour tenir dans votre pause.",
- "hero_strip_aria": "Les cinq jeux",
+ "hero_strip_aria": "Les {n} jeux",
  "phil_h": "Comment ipe fait ses jeux",
  "phil_rest": "ipe est l’abréviation de idle process : l’état dans lequel un processeur finit par se poser quand il n’a plus rien à faire. Le rest de ipe.rest vient de là. Nos jeux ne cherchent pas à être des jeux calmes. La stratégie et les duels font toujours réfléchir. Ce qui les relie au repos, c’est qu’un jeu ne doit pas envahir votre pause, il doit venir s’y asseoir. La fin d’une partie est claire, les règles ne demandent pas de longues explications, rien ne vous presse de vous connecter ni ne vous interrompt avec une publicité, et nous disons ce que nous avons promis et ce que nous ne savons pas encore.",
  "phil_kept": "Respecté par",
@@ -32,7 +32,7 @@
  "p4_p": "Si ce n’est pas sorti, nous le disons. Si nous n’avons pas vérifié, nous le disons aussi.",
  "p5_h": "L’IA joue franc-jeu",
  "p5_p": "Les retournements viennent des règles, pas d’un adversaire affaibli en secret.",
- "games_h": "Cinq jeux",
+ "games_h": "{n} jeux",
  "games_lead": "Aucun n’est encore sorti, et aucun n’a de page en boutique. Chaque fiche montre ce qu’est le jeu, ce qui vous plaira et à qui il ne convient pas.",
  "g_likes": "Ce qui vous plaira",
  "g_nots": "Pas pour vous si",
@@ -93,5 +93,9 @@
  "ai_note": "Cette page a été traduite par IA à partir de l’original en anglais et n’a pas encore été vérifiée par un locuteur natif. En cas de divergence, l’original en anglais fait foi.",
  "ai_original": "Lire l’original (en anglais)",
  "journal_en": "Journal (en anglais)",
- "en_mark": "(en anglais)"
+ "en_mark": "(en anglais)",
+ "choose_6": "Une touche pour empiler une tour qui oscille",
+ "choose_7": "Un jardin qui pousse pendant que vous attendez",
+ "choose_8": "Un puzzle de blocs calme, d’une main, au crépuscule",
+ "choose_9": "Un puzzle de tri de billes, calme et clair"
 }
