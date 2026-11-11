@@ -158,7 +158,8 @@ class WithPosts(Reader):
         self.assertIn("<loc>https://play.ipe.rest/journal/</loc><lastmod>2026-11-02</lastmod>", sm)
         self.assertIn("<loc>https://play.ipe.rest/ko/journal/why-rounds-end/</loc><lastmod>2026-10-31</lastmod>", sm)
         self.assertIn('hreflang="ko" href="https://play.ipe.rest/ko/journal/why-rounds-end/"', sm)
-        self.assertIn("<loc>https://play.ipe.rest/</loc><lastmod>2026-11-11</lastmod>", sm)  # home shows the cards
+        home_lastmod = max([bs.SITE_UPDATED] + [v[1] for v in JOURNAL_FIXTURES.values()])
+        self.assertIn("<loc>https://play.ipe.rest/</loc><lastmod>%s</lastmod>" % home_lastmod, sm)  # home shows the cards
         errs, urls = cs.check(self.root, NOW)
         self.assertEqual(errs, [])
         self.assertEqual(len(urls), 4 * len(bs.LANGS) + 2 + 2 * 4)

@@ -15,6 +15,20 @@ GAMES = {"iltonggi": "https://iltonggi.ipe.rest", "inkisle": "https://inkisle.ip
          "bottledmarbles": "https://bottledmarbles.ipe.rest"}
 NOT_LIVE = ()
 LIVE = [gid for gid in GAMES if gid not in NOT_LIVE]
+NOT_RELEASED_PHRASES = {
+    "*": ("None is released", "None of them is released", "none is released"),
+    "en": ("not released yet",),
+    "ja": ("まだどれも公開されて", "公開されておらず"),
+    "ko": ("아직 출시된 게임은 없", "출시 전", "출시되지 않", "출시 안 됨"),
+    "de": ("Noch ist keines erschienen", "bisher erschienen"),
+    "es": ("Ninguno ha salido", "Aún no ha salido", "ha salido todavía"),
+    "fr": ("Aucun n’est encore sorti", "Aucun des jeux n’est sorti", "Pas encore."),
+    "id": ("Belum ada yang dirilis", "Belum dirilis", "Belum ada satu pun dari game ini yang dirilis"),
+    "pt": ("Nenhum foi lançado ainda", "Ainda não lançado", "Nenhum dos jogos foi lançado"),
+    "ru": ("Ни одна пока не вышла", "Ни одна из пяти игр", "Пока не вышла"),
+    "vi": ("Chưa trò nào được phát hành", "Chưa phát hành", "Chưa trò nào trong các trò chơi được phát hành"),
+    "zh": ("目前都尚未发布", "都尚未发布", "尚未发布"),
+}
 
 
 CLAIMBALL_PRICE_EN = "Free to try. One purchase unlocks everything. No ads, no subscription."
@@ -272,6 +286,18 @@ class Built(unittest.TestCase):
                 self.assertNotIn(g["site"]["url"], l)
                 self.assertIn(g["name"]["en"], l)
         self.assertEqual(self.read("sitemap.xml").count("<url>"), 4 * len(bs.LANGS))  # home + about + privacy + contact
+
+    def test_no_not_released_wording_once_a_game_is_live(self):
+        if not any(g["site"]["live"] for g in json.loads((REPO / "content" / "games.json").read_text(encoding="utf-8"))["games"]):
+            self.skipTest("no live game")
+        for lang in bs.LANGS:
+            data = json.loads((REPO / "content" / "i18n" / (lang + ".json")).read_text(encoding="utf-8"))
+            texts = [data[k] for k in ("home_desc", "games_lead", "made_now") if k in data]
+            for name in ("about", "contact"):
+                texts.append((REPO / "content" / "pages" / lang / (name + ".md")).read_text(encoding="utf-8"))
+            for text in texts:
+                for phrase in NOT_RELEASED_PHRASES.get(lang, ()) + NOT_RELEASED_PHRASES["*"]:
+                    self.assertNotIn(phrase, text, (lang, phrase))
 
     def test_i18n_keys_match(self):
         for l in bs.LANGS:  # ko has no AI-translation strings; en carries them as the source of the nine translations

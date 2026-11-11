@@ -13,7 +13,7 @@ sys.path.insert(0, str(REPO / "scripts"))
 import build_site as bs  # noqa: E402
 
 NOW = dt.datetime(2026, 11, 12, 20, 0, tzinfo=dt.timezone(dt.timedelta(hours=9)))
-# the builder's date gate reads $PLAY_NOW: pin it so the fixtures (dated 10-30 .. 11-02) are always released, whatever day the tests run
+# the builder's date gate reads $PLAY_NOW: pin it to NOW so the fixtures (published 10-30 .. 11-02) are released whatever day the tests run
 os.environ["PLAY_NOW"] = NOW.date().isoformat()
 
 
