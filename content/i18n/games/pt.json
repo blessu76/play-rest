@@ -296,5 +296,89 @@
    "languages": "11 idiomas",
    "status": "Em breve, data de lançamento não definida"
   }
+ },
+ "duskblocks": {
+  "status": "Em breve",
+  "platform": "iOS TestFlight agora, Android depois",
+  "pricing": "—",
+  "tagline": "Um jogo de blocos curto e casual para as horas do entardecer. Fácil de começar, rápido de terminar.",
+  "pros": [
+   {
+    "h": "No iOS TestFlight agora.",
+    "p": "A versão para iOS está no TestFlight, e o site e as páginas da loja seguem quando estiverem prontos."
+   },
+   {
+    "h": "Rodadas curtas, como as outras.",
+    "p": "Segue a mesma regra dos outros jogos daqui: uma rodada cabe dentro de um intervalo."
+   },
+   {
+    "h": "Um cartão honesto.",
+    "p": "Sem conta, e o cartão diz o que é verdade sobre o estado do lançamento."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Se você quer jogar no Android agora.",
+    "p": "A versão de iOS TestFlight vem primeiro, e a versão para Android ainda está em andamento."
+   },
+   {
+    "h": "Se você quer uma lista de recursos pronta.",
+    "p": "Ainda está em testes, então os recursos podem mudar antes do lançamento."
+   }
+  ],
+  "compare": {
+   "oneline": "Um jogo de blocos casual",
+   "style": "Casual, rodadas curtas",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Um jogador",
+   "platform": "iOS TestFlight agora, Android em andamento",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Em breve. Versão TestFlight em andamento"
+  }
+ },
+ "bottledmarbles": {
+  "status": "Em breve",
+  "platform": "iOS TestFlight agora, Android depois",
+  "pricing": "—",
+  "tagline": "Um jogo de bolas de gude calmo e casual. Reúna as bolas de gude e termine uma rodada dentro do seu intervalo.",
+  "pros": [
+   {
+    "h": "No iOS TestFlight agora.",
+    "p": "A versão para iOS está no TestFlight, e o site do jogo já está no ar enquanto o resto é finalizado."
+   },
+   {
+    "h": "Rodadas curtas, como as outras.",
+    "p": "Segue a mesma regra dos outros jogos daqui: uma rodada cabe dentro de um intervalo."
+   },
+   {
+    "h": "Um cartão honesto.",
+    "p": "Sem conta, e o cartão diz o que é verdade sobre o estado do lançamento."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Se você quer jogar no Android agora.",
+    "p": "A versão de iOS TestFlight vem primeiro, e a versão para Android ainda está em andamento."
+   },
+   {
+    "h": "Se você quer uma lista de recursos pronta.",
+    "p": "Ainda está em testes, então os recursos podem mudar antes do lançamento."
+   }
+  ],
+  "compare": {
+   "oneline": "Um jogo de bolas de gude casual",
+   "style": "Casual, rodadas curtas",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Um jogador",
+   "platform": "iOS TestFlight agora, Android em andamento",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Em breve. Versão TestFlight em andamento"
+  }
  }
 }

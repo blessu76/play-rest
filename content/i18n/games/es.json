@@ -296,5 +296,89 @@
    "languages": "11 idiomas",
    "status": "Próximamente, fecha de lanzamiento sin fijar"
   }
+ },
+ "duskblocks": {
+  "status": "Próximamente",
+  "platform": "iOS TestFlight ahora, Android más tarde",
+  "pricing": "—",
+  "tagline": "Un juego de bloques corto y casual para las horas del crepúsculo. Fácil de empezar, rápido de terminar.",
+  "pros": [
+   {
+    "h": "Ahora en iOS TestFlight.",
+    "p": "La versión para iOS está en TestFlight, y el sitio y las páginas de la tienda llegan cuando estén listas."
+   },
+   {
+    "h": "Rondas cortas, como las demás.",
+    "p": "Sigue la misma regla que los demás juegos de aquí: una ronda cabe dentro de un descanso."
+   },
+   {
+    "h": "Una tarjeta honesta.",
+    "p": "Sin cuenta, y la tarjeta dice lo que es cierto sobre el estado del lanzamiento."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si quieres jugar en Android ahora mismo.",
+    "p": "La versión de iOS TestFlight llega primero, y la versión para Android sigue en camino."
+   },
+   {
+    "h": "Si quieres una lista de funciones terminada.",
+    "p": "Aún está en pruebas, así que las funciones pueden cambiar antes del lanzamiento."
+   }
+  ],
+  "compare": {
+   "oneline": "Un juego de bloques casual",
+   "style": "Casual, rondas cortas",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Un jugador",
+   "platform": "iOS TestFlight ahora, Android en desarrollo",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Próximamente. Versión TestFlight en desarrollo"
+  }
+ },
+ "bottledmarbles": {
+  "status": "Próximamente",
+  "platform": "iOS TestFlight ahora, Android más tarde",
+  "pricing": "—",
+  "tagline": "Un juego de canicas tranquilo y casual. Recoge las canicas y termina una ronda dentro de tu descanso.",
+  "pros": [
+   {
+    "h": "Ahora en iOS TestFlight.",
+    "p": "La versión para iOS está en TestFlight, y el sitio del juego ya está en línea mientras se terminan las demás cosas."
+   },
+   {
+    "h": "Rondas cortas, como las demás.",
+    "p": "Sigue la misma regla que los demás juegos de aquí: una ronda cabe dentro de un descanso."
+   },
+   {
+    "h": "Una tarjeta honesta.",
+    "p": "Sin cuenta, y la tarjeta dice lo que es cierto sobre el estado del lanzamiento."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si quieres jugar en Android ahora mismo.",
+    "p": "La versión de iOS TestFlight llega primero, y la versión para Android sigue en camino."
+   },
+   {
+    "h": "Si quieres una lista de funciones terminada.",
+    "p": "Aún está en pruebas, así que las funciones pueden cambiar antes del lanzamiento."
+   }
+  ],
+  "compare": {
+   "oneline": "Un juego de canicas casual",
+   "style": "Casual, rondas cortas",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Un jugador",
+   "platform": "iOS TestFlight ahora, Android en desarrollo",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Próximamente. Versión TestFlight en desarrollo"
+  }
  }
 }

@@ -296,5 +296,89 @@
    "languages": "11 langues",
    "status": "Bientôt disponible, date de sortie non fixée"
   }
+ },
+ "duskblocks": {
+  "status": "Bientôt disponible",
+  "platform": "iOS TestFlight maintenant, Android plus tard",
+  "pricing": "—",
+  "tagline": "Un jeu de blocs court et décontracté pour les heures du crépuscule. Facile à prendre en main, rapide à finir.",
+  "pros": [
+   {
+    "h": "Sur iOS TestFlight maintenant.",
+    "p": "La version iOS est sur TestFlight, et le site ainsi que les pages boutique suivront quand ils seront prêts."
+   },
+   {
+    "h": "Des rondes courtes, comme les autres.",
+    "p": "Il suit la même règle que les autres jeux d'ici : une ronde tient dans une pause."
+   },
+   {
+    "h": "Une carte honnête.",
+    "p": "Pas de compte, et la carte dit ce qui est vrai sur l'état de la sortie."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si vous voulez jouer sur Android tout de suite.",
+    "p": "La version iOS TestFlight arrive en premier, et la version Android est toujours en cours."
+   },
+   {
+    "h": "Si vous voulez une liste de fonctionnalités terminée.",
+    "p": "C'est encore en test, donc les fonctionnalités peuvent changer avant la sortie."
+   }
+  ],
+  "compare": {
+   "oneline": "Un jeu de blocs décontracté",
+   "style": "Décontracté, rondes courtes",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS TestFlight maintenant, Android en cours",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Bientôt disponible. Version TestFlight en cours"
+  }
+ },
+ "bottledmarbles": {
+  "status": "Bientôt disponible",
+  "platform": "iOS TestFlight maintenant, Android plus tard",
+  "pricing": "—",
+  "tagline": "Un jeu de billes calme et décontracté. Ramassez les billes et terminez une ronde dans votre pause.",
+  "pros": [
+   {
+    "h": "Sur iOS TestFlight maintenant.",
+    "p": "La version iOS est sur TestFlight, et le site du jeu est en ligne pendant que le reste est finalisé."
+   },
+   {
+    "h": "Des rondes courtes, comme les autres.",
+    "p": "Il suit la même règle que les autres jeux d'ici : une ronde tient dans une pause."
+   },
+   {
+    "h": "Une carte honnête.",
+    "p": "Pas de compte, et la carte dit ce qui est vrai sur l'état de la sortie."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si vous voulez jouer sur Android tout de suite.",
+    "p": "La version iOS TestFlight arrive en premier, et la version Android est toujours en cours."
+   },
+   {
+    "h": "Si vous voulez une liste de fonctionnalités terminée.",
+    "p": "C'est encore en test, donc les fonctionnalités peuvent changer avant la sortie."
+   }
+  ],
+  "compare": {
+   "oneline": "Un jeu de billes décontracté",
+   "style": "Décontracté, rondes courtes",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS TestFlight maintenant, Android en cours",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Bientôt disponible. Version TestFlight en cours"
+  }
  }
 }
