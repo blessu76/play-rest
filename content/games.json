@@ -946,7 +946,7 @@
    },
    "site": {
     "url": "https://mossgarden.ipe.rest",
-    "live": false
+    "live": true
    },
    "icon": "mossgarden.png",
    "accent": [
@@ -1087,7 +1087,7 @@
    },
    "site": {
     "url": "https://duskblocks.ipe.rest",
-    "live": false
+    "live": true
    },
    "icon": "duskblocks.png",
    "accent": [

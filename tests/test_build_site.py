@@ -13,7 +13,7 @@ GAMES = {"iltonggi": "https://iltonggi.ipe.rest", "inkisle": "https://inkisle.ip
          "patchland": "https://patchland.ipe.rest", "tottertop": "https://tottertop.ipe.rest",
          "mossgarden": "https://mossgarden.ipe.rest", "duskblocks": "https://duskblocks.ipe.rest",
          "bottledmarbles": "https://bottledmarbles.ipe.rest"}
-NOT_LIVE = ("mossgarden", "duskblocks")  # site.live false: listed on the cards with no visit link until the flag flips
+NOT_LIVE = ()
 LIVE = [gid for gid in GAMES if gid not in NOT_LIVE]
 
 
@@ -190,25 +190,6 @@ class Built(unittest.TestCase):
                     self.assertNotIn('class="btn"', card, (lang_dir, gid))
                     self.assertNotIn(GAMES[gid], card, (lang_dir, gid))
         self.assertEqual(h.count('data-placement="card"'), len(LIVE))
-
-    def test_site_link_turns_on_with_one_flag(self):
-        # mossgarden.ipe.rest is not up yet; when it goes live, site.live in games.json is the only change needed
-        root = make_site()
-        self.addCleanup(shutil.rmtree, root, True)
-        f = root / "content" / "games.json"
-        d = json.loads(f.read_text(encoding="utf-8"))
-        for g in d["games"]:
-            if g["id"] == "mossgarden":
-                g["site"]["live"] = True
-        f.write_text(json.dumps(d, ensure_ascii=False), encoding="utf-8")
-        build(root)
-        h = (root / "index.html").read_text(encoding="utf-8")
-        card = h.partition('id="mossgarden"')[2].split("</article>")[0]
-        self.assertIn('<a class="btn" href="https://mossgarden.ipe.rest" rel="noopener" data-game="mossgarden" '
-                      'data-placement="card">', card)
-        self.assertIn('<a href="https://mossgarden.ipe.rest" rel="noopener" data-game="mossgarden" data-placement="footer">', h)
-        self.assertNotIn("apps.apple.com", h)
-        self.assertNotIn("play.google.com", h)
 
     def test_compare_lead_does_not_claim_only_stated_facts(self):
         for lang in ("en", "ko"):

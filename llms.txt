@@ -12,8 +12,8 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 - [Claimball](https://claimball.ipe.rest): A casual duel against an AI rival on a notebook grid. The tile where your ball bounces becomes your land. Miss, and you lose land. Status: Coming soon. Platform: iOS and Android. Pricing: Free to try. One purchase unlocks everything. No ads, no subscription..
 - [Patchland](https://patchland.ipe.rest): A quick, offline territory game played with paper patches. Win land from six quirky AI lords, one region at a time, in three ways: Trace, Place and Spread. Status: In development. Platform: iOS and Android. Pricing: No ads, no subscription.
 - [Tottertop](https://tottertop.ipe.rest): A one-tap physics game. A swaying crane drops blocks, and you stack a tower that sways a little more with every block. Status: Coming soon. Platform: iOS and Android. Pricing: Free, with optional rewarded ads..
-- Moss Garden: An idle garden for your phone. Plant eight kinds of plants, grow them, and gather the dew they leave behind. Status: Coming soon. Platform: iOS and Android. Pricing: Free, with optional rewarded ads.. (Site not up yet.)
-- Dusk Blocks: Drop 3 pieces on an 8x8 board and clear lines. A calm, one-handed block puzzle at dusk. Status: Coming soon. Platform: iOS TestFlight now, Android later. Pricing: —. (Site not up yet.)
+- [Moss Garden](https://mossgarden.ipe.rest): An idle garden for your phone. Plant eight kinds of plants, grow them, and gather the dew they leave behind. Status: Coming soon. Platform: iOS and Android. Pricing: Free, with optional rewarded ads..
+- [Dusk Blocks](https://duskblocks.ipe.rest): Drop 3 pieces on an 8x8 board and clear lines. A calm, one-handed block puzzle at dusk. Status: Coming soon. Platform: iOS TestFlight now, Android later. Pricing: —.
 - [Bottled Marbles](https://bottledmarbles.ipe.rest): Sort colorful marbles into glass bottles. A calm, clear sorting puzzle. Status: Coming soon. Platform: iOS TestFlight now, Android later. Pricing: —.
 
 ## How ipe makes games
