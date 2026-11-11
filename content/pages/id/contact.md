@@ -21,9 +21,9 @@ Setiap game punya situs resmi dan dukungannya sendiri. Silakan mulai dari sana, 
 
 ## Pertanyaan yang sering diajukan
 
-### Apakah sudah ada game yang bisa dimainkan?
+### Bisakah saya memainkan game-game ini?
 
-Belum. Belum ada satu pun dari game ini yang dirilis, dan belum ada yang punya halaman toko. Status setiap game ada di kartunya di [halaman beranda](/id/#games).
+Bisa. Setiap game dimainkan di situs resminya sendiri, dan belum ada yang punya halaman toko. Mulai dari kartu game di [halaman beranda](/id/#games).
 
 ### Apakah Anda mengumpulkan informasi pribadi?
 

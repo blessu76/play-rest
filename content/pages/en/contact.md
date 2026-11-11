@@ -21,9 +21,9 @@ Each game has its own official site and its own support. Please start there, fro
 
 ## Frequently asked questions
 
-### Can I play any of the games yet?
+### Can I play the games?
 
-Not yet. None of the games is released, and none has a store page. The status of each game is on its card on the [home page](/#games).
+Yes. Each game is played on its own official site, and none has a store page. Start from the game's card on the [home page](/#games).
 
 ### Do you collect personal information?
 

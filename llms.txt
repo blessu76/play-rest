@@ -1,6 +1,6 @@
 # ipe() Games
 
-> 9 small games from ipe(). Short rounds, few rules, no ads. None is released yet.
+> 9 small games from ipe(). Short rounds, few rules, no ads. All 9 are open to play now.
 
 play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects 9 games in one place and links to each game's own official site. None of the 9 games has been released: no store page or release date exists for any of them. This portal has no accounts or ads, collects only basic visit statistics through Google Analytics, and has no terms of its own (each game's site has its own terms). It has a journal with notes on turn-based games, killing-time games and how ipe() makes games.
 

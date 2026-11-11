@@ -21,9 +21,9 @@ Cada jogo tem seu próprio site oficial e seu próprio suporte. Comece por lá, 
 
 ## Perguntas frequentes
 
-### Já posso jogar algum dos jogos?
+### Posso jogar os jogos?
 
-Ainda não. Nenhum dos jogos foi lançado e nenhum tem página em loja. A situação de cada jogo está no cartão dele na [página inicial](/pt/#games).
+Sim. Cada jogo é jogado no site oficial próprio, e nenhum tem página em loja. Comece pelo cartão do jogo na [página inicial](/pt/#games).
 
 ### Vocês coletam informações pessoais?
 

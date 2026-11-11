@@ -21,9 +21,9 @@ Jedes Spiel hat seine eigene offizielle Website und seinen eigenen Support. Bitt
 
 ## Häufige Fragen
 
-### Kann ich schon eines der Spiele spielen?
+### Kann ich die Spiele spielen?
 
-Noch nicht. Keines der Spiele ist erschienen, und keines hat eine Store-Seite. Den Status jedes Spiels finden Sie auf seiner Karte auf der [Startseite](/de/#games).
+Ja. Jedes Spiel wird auf seiner eigenen offiziellen Website gespielt, und keines hat eine Store-Seite. Den Weg dorthin finden Sie auf der Karte des Spiels auf der [Startseite](/de/#games).
 
 ### Erheben Sie personenbezogene Daten?
 

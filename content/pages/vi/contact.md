@@ -21,9 +21,9 @@ Mỗi trò chơi có trang chính thức và bộ phận hỗ trợ riêng. Hãy
 
 ## Câu hỏi thường gặp
 
-### Đã có trò nào chơi được chưa?
+### Có thể chơi các trò chơi không?
 
-Chưa. Chưa trò nào trong các trò chơi được phát hành, và chưa trò nào có trang trên cửa hàng. Trạng thái của từng trò chơi có trên thẻ của nó ở [trang chủ](/vi/#games).
+Có. Mỗi trò chơi chơi trên trang chính thức của nó, và chưa trò nào có trang trên cửa hàng. Bắt đầu từ thẻ của trò chơi trên [trang chủ](/vi/#games).
 
 ### Các bạn có thu thập thông tin cá nhân không?
 
