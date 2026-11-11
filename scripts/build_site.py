@@ -993,7 +993,7 @@ def build_llms(ctx):
     ngames = len(ctx.games)
     rows = ["# ipe() Games", "", "> %s" % ctx.t("en", "home_desc"), "",
             "play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects %d games in one place and links to each game's own "
-            "official site. None of the %d games has been released: no store page or release date exists for any of them. This portal has no accounts "
+            "official site. All %d games have their own introduction site, and most are at the iOS TestFlight stage. None has had a full release yet: no store page or release date is set for any of them. This portal has no accounts "
             "or ads, collects only basic visit statistics through Google Analytics, and has no terms of its own (each game's site has its own terms). It has a journal with notes on turn-based games, "
             "killing-time games and how ipe() makes games." % (ngames, ngames), "",
             "## The games", ""]
@@ -1001,10 +1001,10 @@ def build_llms(ctx):
         # a site that is not up yet (site.live false) is listed without a link until the flag flips
         if g["site"]["live"]:
             rows.append("- [%s](%s): %s Status: %s. Platform: %s. Pricing: %s." % (
-                g["name"]["en"], g["site"]["url"], g["tagline"]["en"], ctx.t("en", "g_live"), g["platform"]["en"], g["pricing"]["en"]))
+                g["name"]["en"], g["site"]["url"], g["tagline"]["en"], ctx.t("en", "g_live"), g["platform"]["en"], g["pricing"]["en"].rstrip(".")))
         else:
             rows.append("- %s: %s Status: %s. Platform: %s. Pricing: %s. (Site not up yet.)" % (
-                g["name"]["en"], g["tagline"]["en"], g["status"]["en"], g["platform"]["en"], g["pricing"]["en"]))
+                g["name"]["en"], g["tagline"]["en"], g["status"]["en"], g["platform"]["en"], g["pricing"]["en"].rstrip(".")))
     rows += ["", "## How ipe makes games", ""]
     for n in range(1, 6):
         rows.append("- %s: %s" % (en["p%d_h" % n], en["p%d_p" % n]))

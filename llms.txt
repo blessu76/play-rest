@@ -1,20 +1,20 @@
 # ipe() Games
 
-> 9 small games from ipe(). Short rounds, few rules, no ads. All 9 are open to play now.
+> 9 small games from ipe(). Short rounds, few rules, no ads. All 9 have their own site now.
 
-play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects 9 games in one place and links to each game's own official site. None of the 9 games has been released: no store page or release date exists for any of them. This portal has no accounts or ads, collects only basic visit statistics through Google Analytics, and has no terms of its own (each game's site has its own terms). It has a journal with notes on turn-based games, killing-time games and how ipe() makes games.
+play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects 9 games in one place and links to each game's own official site. All 9 games have their own introduction site, and most are at the iOS TestFlight stage. None has had a full release yet: no store page or release date is set for any of them. This portal has no accounts or ads, collects only basic visit statistics through Google Analytics, and has no terms of its own (each game's site has its own terms). It has a journal with notes on turn-based games, killing-time games and how ipe() makes games.
 
 ## The games
 
-- [Iltonggi](https://iltonggi.ipe.rest): A short, fast, classic territory-conquest strategy game set in Korea's Three Kingdoms era. Status: Out now. Platform: iPhone first. Pricing: No ads, no tracking.
-- [Inkisle](https://inkisle.ipe.rest): A light island-conquest strategy game for your phone: send fleets between islands and tint the sea your color. Status: Out now. Platform: iOS first, Android alongside. Pricing: Planned: every round free · no ads · optional help items.
-- [Sunmeld](https://sunmeld.ipe.rest): A merge duel against an AI opponent in one shared tub. Drop a stone, merge matching stones into the next stage, and score. Overflow the tub and you lose. Status: Out now. Platform: iOS and Android. Pricing: Free to try, one purchase unlocks everything, no ads.
-- [Claimball](https://claimball.ipe.rest): A casual duel against an AI rival on a notebook grid. The tile where your ball bounces becomes your land. Miss, and you lose land. Status: Out now. Platform: iOS and Android. Pricing: Free to try. One purchase unlocks everything. No ads, no subscription..
-- [Patchland](https://patchland.ipe.rest): A quick, offline territory game played with paper patches. Win land from six quirky AI lords, one region at a time, in three ways: Trace, Place and Spread. Status: Out now. Platform: iOS and Android. Pricing: No ads, no subscription.
-- [Tottertop](https://tottertop.ipe.rest): A one-tap physics game. A swaying crane drops blocks, and you stack a tower that sways a little more with every block. Status: Out now. Platform: iOS and Android. Pricing: Free, with optional rewarded ads..
-- [Moss Garden](https://mossgarden.ipe.rest): An idle garden for your phone. Plant eight kinds of plants, grow them, and gather the dew they leave behind. Status: Out now. Platform: iOS and Android. Pricing: Free, with optional rewarded ads..
-- [Dusk Blocks](https://duskblocks.ipe.rest): Drop 3 pieces on an 8x8 board and clear lines. A calm, one-handed block puzzle at dusk. Status: Out now. Platform: iOS TestFlight now, Android later. Pricing: —.
-- [Bottled Marbles](https://bottledmarbles.ipe.rest): Sort colorful marbles into glass bottles. A calm, clear sorting puzzle. Status: Out now. Platform: iOS TestFlight now, Android later. Pricing: —.
+- [Iltonggi](https://iltonggi.ipe.rest): A short, fast, classic territory-conquest strategy game set in Korea's Three Kingdoms era. Status: Site live. Platform: iPhone first. Pricing: No ads, no tracking.
+- [Inkisle](https://inkisle.ipe.rest): A light island-conquest strategy game for your phone: send fleets between islands and tint the sea your color. Status: Site live. Platform: iOS first, Android alongside. Pricing: Planned: every round free · no ads · optional help items.
+- [Sunmeld](https://sunmeld.ipe.rest): A merge duel against an AI opponent in one shared tub. Drop a stone, merge matching stones into the next stage, and score. Overflow the tub and you lose. Status: Site live. Platform: iOS and Android. Pricing: Free to try, one purchase unlocks everything, no ads.
+- [Claimball](https://claimball.ipe.rest): A casual duel against an AI rival on a notebook grid. The tile where your ball bounces becomes your land. Miss, and you lose land. Status: Site live. Platform: iOS and Android. Pricing: Free to try. One purchase unlocks everything. No ads, no subscription.
+- [Patchland](https://patchland.ipe.rest): A quick, offline territory game played with paper patches. Win land from six quirky AI lords, one region at a time, in three ways: Trace, Place and Spread. Status: Site live. Platform: iOS and Android. Pricing: No ads, no subscription.
+- [Tottertop](https://tottertop.ipe.rest): A one-tap physics game. A swaying crane drops blocks, and you stack a tower that sways a little more with every block. Status: Site live. Platform: iOS and Android. Pricing: Free, with optional rewarded ads.
+- [Moss Garden](https://mossgarden.ipe.rest): An idle garden for your phone. Plant eight kinds of plants, grow them, and gather the dew they leave behind. Status: Site live. Platform: iOS and Android. Pricing: Free, with optional rewarded ads.
+- [Dusk Blocks](https://duskblocks.ipe.rest): Drop 3 pieces on an 8x8 board and clear lines. A calm, one-handed block puzzle at dusk. Status: Site live. Platform: iOS TestFlight now, Android later. Pricing: —.
+- [Bottled Marbles](https://bottledmarbles.ipe.rest): Sort colorful marbles into glass bottles. A calm, clear sorting puzzle. Status: Site live. Platform: iOS TestFlight now, Android later. Pricing: —.
 
 ## How ipe makes games
 
@@ -28,6 +28,7 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 
 RSS: https://play.ipe.rest/journal/feed.xml
 
+- [One new rule at a time](https://play.ipe.rest/journal/2026-11-12-one-new-rule-at-a-time/): Difficulty does not have to mean bigger numbers. Adding one rule at a time, as Inkisle plans to, teaches and challenges a player, and suits short rounds.
 - [Three ways to claim land](https://play.ipe.rest/journal/2026-11-11-three-ways-to-claim-land/): Taking territory is one of the oldest ideas in games. Why it suits short play, and how three of our games use it in different ways: towns, islands and tiles.
 - [Losing a short round](https://play.ipe.rest/journal/2026-11-10-losing-a-short-round/): Losing is part of any game with an opponent. Why short rounds make a loss cheaper, what makes a loss feel fair, and how our games try to keep it that way.
 - [Pick a game by how much attention you have](https://play.ipe.rest/journal/2026-11-09-pick-a-game-by-how-much-attention-you-have/): Genre matters less than the minutes and the attention you actually have. A plain way to choose a short game, with all four ipe() games as examples.

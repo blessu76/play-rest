@@ -330,6 +330,38 @@ class Built(unittest.TestCase):
                 for phrase in NOT_RELEASED_PHRASES.get(lang, ()) + NOT_RELEASED_PHRASES["*"]:
                     self.assertNotIn(phrase, text, (lang, phrase))
 
+    # words that would claim a launch or a playable/browser game; the badge and llms.txt may only say a site is open
+    CLAIM_WORDS = ("출시", "launched", "released", "out now", "play now", "playable", "플레이", "브라우저", "browser",
+                   "リリース", "配信", "遊べ", "上线", "发布", "游玩", "erhältlich", "erschienen", "spielbar", "disponible", "disponível",
+                   "jouable", "jugar", "lançado", "jogados", "rilis", "dimainkan", "вышла", "играть", "phát hành", "chơi được", "chơi ngay", "có thể chơi")
+
+    def test_site_live_badge_makes_no_launch_or_play_claim_in_any_language(self):
+        for lang in bs.LANGS:
+            label = self.ctx.t(lang, "g_live").lower()
+            for word in self.CLAIM_WORDS:
+                self.assertNotIn(word.lower(), label, (lang, label))
+        self.assertEqual(self.ctx.t("en", "g_live"), "Site live")
+        self.assertEqual(self.ctx.t("ko", "g_live"), "사이트 공개")
+
+    def test_llms_txt_says_only_site_live_not_launched_or_playable(self):
+        llms = self.read("llms.txt")
+        head = llms.partition("## How ipe makes games")[0].lower()
+        for word in ("launched", "released", "out now", "play now", "playable", "can be played", "in the browser", "browser", "..",
+                     "none of the"):
+            self.assertNotIn(word, head, word)
+        self.assertIn("testflight", head)
+        status_lines = [line for line in llms.split("\n") if "Status:" in line]
+        self.assertEqual(len(status_lines), len(LIVE))
+        for line in status_lines:
+            self.assertIn("Status: Site live.", line)
+
+    def test_home_and_lead_copy_makes_no_play_claim(self):
+        for lang in bs.LANGS:
+            data = json.loads((REPO / "content" / "i18n" / (lang + ".json")).read_text(encoding="utf-8"))
+            for key in ("home_desc", "games_lead"):
+                for word in self.CLAIM_WORDS:
+                    self.assertNotIn(word.lower(), data[key].lower(), (lang, key, word))
+
     def test_i18n_keys_match(self):
         for l in bs.LANGS:  # ko has no AI-translation strings; en carries them as the source of the nine translations
             data = json.loads((REPO / "content" / "i18n" / (l + ".json")).read_text(encoding="utf-8"))
