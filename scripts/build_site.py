@@ -759,17 +759,23 @@ def game_card(ctx, lang, g):
         ('<p class="links">%s</p>' % " ".join(links)) if links else "")
 
 
+def compare_cell(ctx, g, row, lang):
+    if row == "status" and g["site"]["live"]:
+        return ctx.t(lang, "g_live")
+    return g["compare"][row][lang]
+
+
 def compare_html(ctx, lang):
     t = lambda k: ctx.t(lang, k)  # noqa: E731
     head = "".join('<th scope="col" style="--a:%s;--a2:%s">%s</th>' % (g["accent"][0], g["accent"][1], esc(g["name"][lang])) for g in ctx.games)
     rows = ""
     for r in COMPARE_ROWS:
-        rows += '<tr><th scope="row">%s</th>%s</tr>' % (esc(t("row_" + r)), "".join("<td>%s</td>" % esc(g["compare"][r][lang]) for g in ctx.games))
+        rows += '<tr><th scope="row">%s</th>%s</tr>' % (esc(t("row_" + r)), "".join("<td>%s</td>" % esc(compare_cell(ctx, g, r, lang)) for g in ctx.games))
     table = ('<div class="cmp-wide"><table class="cmp"><caption class="sr-only">%s</caption><thead><tr><th scope="col"><span class="sr-only">%s</span></th>%s</tr></thead>'
              '<tbody>%s</tbody></table></div>') % (esc(t("compare_h")), esc(t("compare_game")), head, rows)
     cards = ""
     for g in ctx.games:
-        dl = "".join("<div><dt>%s</dt><dd>%s</dd></div>" % (esc(t("row_" + r)), esc(g["compare"][r][lang])) for r in COMPARE_ROWS)
+        dl = "".join("<div><dt>%s</dt><dd>%s</dd></div>" % (esc(t("row_" + r)), esc(compare_cell(ctx, g, r, lang))) for r in COMPARE_ROWS)
         cards += '<article class="cmp-card" style="--a:%s;--a2:%s"><h3>%s</h3><dl>%s</dl></article>' % (g["accent"][0], g["accent"][1], esc(g["name"][lang]), dl)
     return table + '<div class="cmp-cards">%s</div>' % cards
 

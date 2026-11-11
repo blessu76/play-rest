@@ -198,6 +198,25 @@ class Built(unittest.TestCase):
                 self.assertNotIn('class="badge pre"', card, (lang_dir, g["id"]))
                 self.assertIn('<span class="badge">%s</span>' % self.ctx.t(lang, "g_live"), card, (lang_dir, g["id"]))
 
+    def test_live_games_compare_status_is_live_in_table_and_cards_in_every_language(self):
+        for lang in bs.LANGS:
+            lang_dir = "" if lang == "en" else lang + "/"
+            page = html.unescape(self.read(lang_dir + "index.html"))
+            compare = page.partition('id="compare"')[2].split("</section>")[0]
+            row = compare.partition('<th scope="row">%s</th>' % self.ctx.t(lang, "row_status"))[2].split("</tr>")[0]
+            cells = [c.split("</td>")[0] for c in row.split("<td>")[1:]]
+            cards = {c.partition("<h3>")[2].split("</h3>")[0]: c for c in compare.split('<article class="cmp-card"')[1:]}
+            for i, g in enumerate(self.ctx.games):
+                if not g["site"]["live"]:
+                    continue
+                live_word = self.ctx.t(lang, "g_live")
+                card_status = cards[g["name"][lang]].partition("<dt>%s</dt><dd>" % self.ctx.t(lang, "row_status"))[2].split("</dd>")[0]
+                for text in (cells[i], card_status):
+                    self.assertIn(live_word, text, (lang_dir, g["id"]))
+                    self.assertNotIn("coming soon", text.lower(), (lang_dir, g["id"]))
+                    self.assertNotIn("in development", text.lower(), (lang_dir, g["id"]))
+                    self.assertNotIn(g["compare"]["status"][lang], text, (lang_dir, g["id"]))
+
     def test_each_language_lists_all_nine_games_and_only_live_sites_get_a_visit_link(self):
         for lang in bs.LANGS:
             lang_dir = "" if lang == "en" else lang + "/"
