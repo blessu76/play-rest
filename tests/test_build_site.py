@@ -10,7 +10,11 @@ from helpers import REPO, bs, build, jsonld, make_site
 PAGES = ["", "about/", "privacy/", "contact/"]
 GAMES = {"iltonggi": "https://iltonggi.ipe.rest", "inkisle": "https://inkisle.ipe.rest",
          "sunmeld": "https://sunmeld.ipe.rest", "claimball": "https://claimball.ipe.rest",
-         "patchland": "https://patchland.ipe.rest"}
+         "patchland": "https://patchland.ipe.rest", "tottertop": "https://tottertop.ipe.rest",
+         "mossgarden": "https://mossgarden.ipe.rest", "duskblocks": "https://duskblocks.ipe.rest",
+         "bottledmarbles": "https://bottledmarbles.ipe.rest"}
+NOT_LIVE = ("mossgarden", "duskblocks")  # site.live false: listed on the cards with no visit link until the flag flips
+LIVE = [gid for gid in GAMES if gid not in NOT_LIVE]
 
 
 CLAIMBALL_PRICE_EN = "Free to try. One purchase unlocks everything. No ads, no subscription."
@@ -79,11 +83,12 @@ class Built(unittest.TestCase):
         self.assertIn("<h1>When the round ends, that&#x27;s enough for today.</h1>", self.read("index.html"))
         self.assertIn("<h1>한 판이 끝나면, 오늘은 여기까지</h1>", self.read("ko/index.html"))
 
-    def test_five_games_link_to_their_own_sites_and_no_stores(self):
+    def test_nine_games_listed_and_live_ones_link_to_their_own_sites_and_no_stores(self):
+        self.assertEqual([g["id"] for g in self.ctx.games], list(GAMES))
         for lang_dir in ("", "ko/"):
             h = self.read(lang_dir + "index.html")
-            for gid, u in GAMES.items():
-                self.assertIn('href="%s"' % u, h, (lang_dir, gid))
+            for gid in LIVE:
+                self.assertIn('href="%s"' % GAMES[gid], h, (lang_dir, gid))
             for store in ("apps.apple.com", "play.google.com", "itunes.apple.com", "testflight.apple.com"):
                 self.assertNotIn(store, h.lower())
 
@@ -150,103 +155,58 @@ class Built(unittest.TestCase):
                 self.assertFalse(games[gid]["pricing"][lang].startswith(word), (gid, lang))
                 self.assertFalse(games[gid]["compare"]["pricing"][lang].startswith(word), (gid, lang))
 
-    def test_upcoming_cards_have_full_card_copy_in_all_11_languages(self):
-        up = {x["id"]: x for x in self.ctx.upcoming}
-        self.assertEqual(sorted(up), ["mossgarden", "tottertop"])
-        for gid, u in up.items():
-            self.assertNotIn("url", u)  # no bare url field (no store); the site, once it exists, is site {url, live}
-            self.assertEqual(u["icon"], gid + ".png")  # the game-card icon, same naming rule as the games array
-            self.assertEqual(len(u["accent"]), 2)
-            for c in u["accent"]:
-                self.assertRegex(c, r"^#[0-9a-fA-F]{6}$", gid)
-            self.assertEqual(set(u["site"]), {"url", "live"})
-            self.assertEqual(u["site"]["url"], {"tottertop": "https://tottertop.ipe.rest",
-                                                "mossgarden": "https://mossgarden.ipe.rest"}[gid])
-            self.assertEqual(u["site"]["live"], gid == "tottertop")  # tottertop.ipe.rest is up; mossgarden.ipe.rest is not yet
-            self.assertEqual(u["status"]["en"], "Coming soon")
-            self.assertEqual(u["status"]["ko"], "출시 예정")
+    def test_nine_cards_have_full_copy_in_all_11_languages(self):
+        for g in self.ctx.games:
+            gid = g["id"]
+            self.assertEqual(set(g["site"]), {"url", "live"}, gid)
+            self.assertEqual(g["site"]["url"], GAMES[gid])
+            self.assertEqual(g["site"]["live"], gid not in NOT_LIVE, gid)
             for lang in bs.LANGS:
                 for field in ("status", "platform", "pricing", "tagline"):
-                    self.assertTrue(u[field][lang].strip(), (gid, lang, field))
+                    self.assertTrue(g[field][lang].strip(), (gid, lang, field))
                 for key, want in (("pros", 3), ("cons", 2)):
-                    self.assertEqual(len(u[key]), want, (gid, key))
-                    for i, it in enumerate(u[key]):
+                    self.assertEqual(len(g[key]), want, (gid, key))
+                    for i, it in enumerate(g[key]):
                         for k in ("h", "p"):
                             self.assertTrue(it[k][lang].strip(), (gid, lang, key, i, k))
                 for row in bs.COMPARE_ROWS:
-                    self.assertTrue(u["compare"][row][lang].strip(), (gid, lang, row))
+                    self.assertTrue(g["compare"][row][lang].strip(), (gid, lang, row))
 
-    def test_upcoming_cards_render_like_the_game_cards_with_the_coming_soon_badge(self):
-        # the same card markup and classes as the games (icon, accent, badge); the site button only while site.live is true
-        names = {"": ("Tottertop", "Moss Garden"), "ko/": ("기우뚱탑", "이끼정원")}
-        badge = {"": "Coming soon", "ko/": "출시 예정"}
-        visit = {"": "Official site", "ko/": "공식 사이트"}
-        for lang_dir in ("", "ko/"):
+    def test_each_language_lists_all_nine_games_and_only_live_sites_get_a_visit_link(self):
+        for lang in bs.LANGS:
+            lang_dir = "" if lang == "en" else lang + "/"
             h = self.read(lang_dir + "index.html")
-            self.assertNotIn('class="game upcoming"', h, lang_dir)
-            for gid, name in zip(("tottertop", "mossgarden"), names[lang_dir]):
-                i = h.index('<article class="game" id="%s"' % gid)
-                card = h[i:h.index("</article>", i)]
-                self.assertIn('style="--a:#', card, (lang_dir, gid))  # the accent drives the card border and badge
-                self.assertIn('<img class="game-icon" src="/assets/games/%s.png" width="64" height="64" alt="">' % gid, card, (lang_dir, gid))
-                self.assertIn("<h3>%s</h3>" % name, card, (lang_dir, gid))
-                self.assertIn(badge[lang_dir], card, (lang_dir, gid))  # the "Coming soon" display is kept
+            for g in self.ctx.games:
+                gid = g["id"]
+                before, _, card = h.partition('id="%s"' % gid)
+                self.assertTrue(before.endswith('<article class="game" '), (lang_dir, gid))
+                card = card.split("</article>")[0]
+                self.assertIn("<h3>%s</h3>" % g["name"][lang], card, (lang_dir, gid))
                 self.assertIn('class="tagline"', card, (lang_dir, gid))
-                self.assertIn('class="price', card, (lang_dir, gid))
-                if gid == "tottertop":  # tottertop.ipe.rest is up: the site link, same button as the game cards' visit link
-                    self.assertIn('<a class="btn" href="https://tottertop.ipe.rest" rel="noopener" data-game="tottertop" '
-                                  'data-placement="card">%s: %s' % (visit[lang_dir], name), card, (lang_dir, gid))
-                else:  # mossgarden.ipe.rest is not up yet: the url is in the data, but no link on the card
-                    self.assertNotRegex(card, r"<a[ >]", (lang_dir, gid))
-                    self.assertNotIn("mossgarden.ipe.rest", card, (lang_dir, gid))
-        self.assertNotIn("Tottertop", self.read("llms.txt"))  # llms.txt lists the games with their own sites only
-        self.assertNotIn("Moss Garden", self.read("llms.txt"))
+                if g["site"]["live"]:
+                    self.assertIn('<a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card">' % (GAMES[gid], gid),
+                                  card, (lang_dir, gid))
+                else:
+                    self.assertNotIn('class="btn"', card, (lang_dir, gid))
+                    self.assertNotIn(GAMES[gid], card, (lang_dir, gid))
+        self.assertEqual(h.count('data-placement="card"'), len(LIVE))
 
-    def test_hero_strip_has_an_icon_for_every_card_including_upcoming(self):
-        names = {"": {"iltonggi": "Iltonggi", "inkisle": "Inkisle", "sunmeld": "Sunmeld", "claimball": "Claimball",
-                      "patchland": "Patchland", "tottertop": "Tottertop", "mossgarden": "Moss Garden"},
-                 "ko/": {"iltonggi": "일통기", "inkisle": "잉크아일", "sunmeld": "Sunmeld", "claimball": "Claimball",
-                         "patchland": "Patchland", "tottertop": "기우뚱탑", "mossgarden": "이끼정원"}}
-        for lang_dir in ("", "ko/"):
-            strip = self.read(lang_dir + "index.html").split('<ul class="strip"')[1].split("</ul>")[0]
-            self.assertEqual(strip.count("<li>"), 7, lang_dir)
-            for gid, name in names[lang_dir].items():
-                self.assertIn('<a href="#%s"><img src="/assets/games/%s.png" width="64" height="64" alt="%s"></a>' % (gid, gid, name),
-                              strip, (lang_dir, gid))
-
-    def test_principle_chips_keep_both_upcoming_games(self):
-        # principle 01 (Tottertop is about a minute a round, Moss Garden a short drop-in tending), 02 few rules and 04 say
-        # what's true keep both; 03 (both have optional rewarded ads) and 05 (no AI rival) do not
-        names = {"": {"tottertop": "Tottertop", "mossgarden": "Moss Garden"},
-                 "ko/": {"tottertop": "기우뚱탑", "mossgarden": "이끼정원"}}
-        chip = lambda gid, name: '<li><img src="/assets/games/%s.png" width="24" height="24" alt="">%s</li>' % (gid, name)
-        for lang_dir in ("", "ko/"):
-            parts = self.read(lang_dir + "index.html").split('<ol class="principles">')[1].split("</ol>")[0]
-            parts = parts.split('<li class="principle">')[1:]
-            self.assertEqual(len(parts), 5, lang_dir)
-            for n in (1, 2, 4):
-                for gid in ("tottertop", "mossgarden"):
-                    self.assertIn(chip(gid, names[lang_dir][gid]), parts[n - 1], (lang_dir, n, gid))
-            for n in (3, 5):
-                for gid in ("tottertop", "mossgarden"):
-                    self.assertNotIn(chip(gid, names[lang_dir][gid]), parts[n - 1], (lang_dir, n, gid))
-
-    def test_upcoming_site_link_turns_on_with_one_flag(self):
+    def test_site_link_turns_on_with_one_flag(self):
         # mossgarden.ipe.rest is not up yet; when it goes live, site.live in games.json is the only change needed
         root = make_site()
         self.addCleanup(shutil.rmtree, root, True)
         f = root / "content" / "games.json"
         d = json.loads(f.read_text(encoding="utf-8"))
-        for u in d["upcoming"]:
-            if u["id"] == "mossgarden":
-                u["site"]["live"] = True
+        for g in d["games"]:
+            if g["id"] == "mossgarden":
+                g["site"]["live"] = True
         f.write_text(json.dumps(d, ensure_ascii=False), encoding="utf-8")
         build(root)
         h = (root / "index.html").read_text(encoding="utf-8")
         card = h.partition('id="mossgarden"')[2].split("</article>")[0]
         self.assertIn('<a class="btn" href="https://mossgarden.ipe.rest" rel="noopener" data-game="mossgarden" '
-                      'data-placement="card">Official site: Moss Garden', card)
-        self.assertIn("Coming soon", card)  # still the pre-release display, no store link
+                      'data-placement="card">', card)
+        self.assertIn('<a href="https://mossgarden.ipe.rest" rel="noopener" data-game="mossgarden" data-placement="footer">', h)
         self.assertNotIn("apps.apple.com", h)
         self.assertNotIn("play.google.com", h)
 
@@ -301,6 +261,7 @@ class Built(unittest.TestCase):
         for lang_dir in ("", "ko/"):
             graph = jsonld(self.read(lang_dir + "index.html"))[0]["@graph"]
             games = [n for n in graph if n["@type"] == "VideoGame"]
+            self.assertEqual(len(games), 9)
             self.assertEqual(sorted(n["url"] for n in games), sorted(GAMES.values()))
             for n in games:
                 for bad in ("offers", "aggregateRating", "datePublished", "review"):
@@ -323,8 +284,12 @@ class Built(unittest.TestCase):
         self.assertIn("Sitemap: https://play.ipe.rest/sitemap.xml", r)
         self.assertIn("GPTBot", r)
         l = self.read("llms.txt")
-        for gid, u in GAMES.items():
-            self.assertIn(u, l)
+        for g in self.ctx.games:
+            if g["site"]["live"]:
+                self.assertIn(g["site"]["url"], l)
+            else:
+                self.assertNotIn(g["site"]["url"], l)
+                self.assertIn(g["name"]["en"], l)
         self.assertEqual(self.read("sitemap.xml").count("<url>"), 4 * len(bs.LANGS))  # home + about + privacy + contact
 
     def test_i18n_keys_match(self):
@@ -359,49 +324,34 @@ class Validation(unittest.TestCase):
         self.addCleanup(shutil.rmtree, root, True)
         f = root / "content" / "games.json"
         d = json.loads(f.read_text(encoding="utf-8"))
-        d["games"][0]["url"] = "https://example.com/"
+        d["games"][0]["site"]["url"] = "https://example.com/"
         f.write_text(json.dumps(d), encoding="utf-8")
         _, errs = bs.make_ctx(root)
         self.assertTrue(any("url must be" in e for e in errs), errs)
 
-    def test_upcoming_site_url_must_stay_on_ipe_rest(self):
+    def test_site_url_must_stay_on_ipe_rest(self):
         root = make_site()
         self.addCleanup(shutil.rmtree, root, True)
         f = root / "content" / "games.json"
         d = json.loads(f.read_text(encoding="utf-8"))
-        for u in d["upcoming"]:
-            if u["id"] == "tottertop":
-                u["site"]["url"] = "https://apps.apple.com/app/tottertop"  # no store links
+        for g in d["games"]:
+            if g["id"] == "tottertop":
+                g["site"]["url"] = "https://apps.apple.com/app/tottertop"  # no store links
         f.write_text(json.dumps(d, ensure_ascii=False), encoding="utf-8")
         _, errs = bs.make_ctx(root)
         self.assertTrue(any("site url must be" in e for e in errs), errs)
 
-    def test_upcoming_site_needs_a_url_and_the_live_flag(self):
+    def test_site_needs_a_url_and_the_live_flag(self):
         root = make_site()
         self.addCleanup(shutil.rmtree, root, True)
         f = root / "content" / "games.json"
         d = json.loads(f.read_text(encoding="utf-8"))
-        for u in d["upcoming"]:
-            if u["id"] == "mossgarden":
-                u["site"] = {"url": "https://mossgarden.ipe.rest"}  # no live flag
+        for g in d["games"]:
+            if g["id"] == "mossgarden":
+                g["site"] = {"url": "https://mossgarden.ipe.rest"}  # no live flag
         f.write_text(json.dumps(d, ensure_ascii=False), encoding="utf-8")
         _, errs = bs.make_ctx(root)
         self.assertTrue(any("site must be" in e for e in errs), errs)
-
-    def test_upcoming_needs_an_icon_file_and_an_accent(self):
-        root = make_site()
-        self.addCleanup(shutil.rmtree, root, True)
-        f = root / "content" / "games.json"
-        d = json.loads(f.read_text(encoding="utf-8"))
-        for u in d["upcoming"]:
-            if u["id"] == "mossgarden":
-                u["icon"] = "no-such-icon.png"
-                u["accent"] = ["#4f7c3a"]  # needs two colors
-        f.write_text(json.dumps(d, ensure_ascii=False), encoding="utf-8")
-        _, errs = bs.make_ctx(root)
-        self.assertTrue(any("icon file missing" in e for e in errs), errs)
-        self.assertTrue(any("accent must be" in e for e in errs), errs)
-
 
 if __name__ == "__main__":
     unittest.main()

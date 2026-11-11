@@ -158,7 +158,7 @@ class WithPosts(Reader):
         self.assertIn("<loc>https://play.ipe.rest/journal/</loc><lastmod>2026-11-02</lastmod>", sm)
         self.assertIn("<loc>https://play.ipe.rest/ko/journal/why-rounds-end/</loc><lastmod>2026-10-31</lastmod>", sm)
         self.assertIn('hreflang="ko" href="https://play.ipe.rest/ko/journal/why-rounds-end/"', sm)
-        self.assertIn("<loc>https://play.ipe.rest/</loc><lastmod>2026-11-02</lastmod>", sm)  # home shows the cards
+        self.assertIn("<loc>https://play.ipe.rest/</loc><lastmod>2026-11-11</lastmod>", sm)  # home shows the cards
         errs, urls = cs.check(self.root, NOW)
         self.assertEqual(errs, [])
         self.assertEqual(len(urls), 4 * len(bs.LANGS) + 2 + 2 * 4)
@@ -278,7 +278,7 @@ class DateGate(Reader):
         self.assertEqual(bs.resolve_today(dt.date(2026, 11, 2)), dt.date(2026, 11, 2))
         # an aware instant is turned into its KST date: 2026-10-31 16:00 UTC is already 11-01 in Seoul
         self.assertEqual(bs.resolve_today(dt.datetime(2026, 10, 31, 16, 0, tzinfo=dt.timezone.utc)), dt.date(2026, 11, 1))
-        self.assertEqual(bs.resolve_today(), dt.date(2026, 11, 3))  # helpers pins $PLAY_NOW
+        self.assertEqual(bs.resolve_today(), dt.date(2026, 11, 12))  # helpers pins $PLAY_NOW
         old = os.environ.pop("PLAY_NOW")
         try:
             self.assertEqual(bs.resolve_today(), dt.datetime.now(bs.KST).date())
