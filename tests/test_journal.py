@@ -164,6 +164,20 @@ class WithPosts(Reader):
         self.assertEqual(errs, [])
         self.assertEqual(len(urls), 4 * len(bs.LANGS) + 2 + 2 * 4)
 
+    def test_sitemap_lists_every_indexable_page_on_disk_and_nothing_else(self):
+        sm = set(re.findall(r"<loc>([^<]+)</loc>", self.read("sitemap.xml")))
+        pages = set()
+        for f in self.root.rglob("*.html"):
+            rel = f.relative_to(self.root)
+            if {"content", "assets"} & set(rel.parts) or 'name="robots" content="noindex' in f.read_text(encoding="utf-8"):
+                continue
+            self.assertEqual(rel.name, "index.html", rel)
+            d = rel.parent.as_posix()
+            pages.add(bs.url("/" if d == "." else "/%s/" % d))
+        self.assertIn(bs.url("/journal/why-rounds-end/"), pages)
+        self.assertIn(bs.url("/ko/journal/why-rounds-end/"), pages)
+        self.assertEqual(sm, pages)
+
     def test_sitemap_check_catches_a_missing_post(self):
         (self.root / "journal/why-rounds-end/index.html").rename(self.root / "journal/why-rounds-end/x.html")
         self.addCleanup((self.root / "journal/why-rounds-end/x.html").rename, self.root / "journal/why-rounds-end/index.html")
