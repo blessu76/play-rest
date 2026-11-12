@@ -320,12 +320,12 @@ class Built(unittest.TestCase):
         if not any(g["site"]["live"] for g in json.loads((REPO / "content" / "games.json").read_text(encoding="utf-8"))["games"]):
             self.skipTest("no live game")
         for lang in bs.LANGS:
-            data = json.loads((REPO / "content" / "i18n" / (lang + ".json")).read_text(encoding="utf-8"))
+            data = json.loads((REPO / "content" / "i18n" / (bs.SRC_OF.get(lang, lang) + ".json")).read_text(encoding="utf-8"))
             texts = [data[k] for k in ("home_desc", "games_lead", "made_now") if k in data]
             for name in ("about", "contact"):
-                texts.append((REPO / "content" / "pages" / lang / (name + ".md")).read_text(encoding="utf-8"))
+                texts.append((REPO / "content" / "pages" / bs.SRC_OF.get(lang, lang) / (name + ".md")).read_text(encoding="utf-8"))
             for text in texts:
-                for phrase in NOT_RELEASED_PHRASES.get(lang, ()) + NOT_RELEASED_PHRASES["*"]:
+                for phrase in NOT_RELEASED_PHRASES.get(bs.SRC_OF.get(lang, lang), ()) + NOT_RELEASED_PHRASES["*"]:
                     self.assertNotIn(phrase, text, (lang, phrase))
 
     # words that would claim a launch or a playable/browser game; the badge and llms.txt may only say a site is open
@@ -334,7 +334,8 @@ class Built(unittest.TestCase):
                    "jouable", "jugar", "lançado", "jogados", "rilis", "dimainkan", "вышла", "играть", "phát hành", "chơi được", "chơi ngay", "có thể chơi")
 
     LIVE_BADGE = {"en": "Coming soon", "ko": "출시 예정", "ja": "近日公開", "zh": "即将推出", "es": "Próximamente", "pt": "Em breve",
-                  "fr": "Prochainement", "de": "Demnächst", "ru": "Скоро выйдет", "id": "Segera hadir", "vi": "Sắp ra mắt"}
+                  "fr": "Prochainement", "de": "Demnächst", "ru": "Скоро выйдет", "id": "Segera hadir", "vi": "Sắp ra mắt",
+                  "zh-Hant": "即將推出", "pt-BR": "Em breve", "th": "เร็ว ๆ นี้", "tr": "Çok yakında"}
 
     def test_live_badge_says_coming_soon_without_launch_or_play_claim_in_any_language(self):
         for lang in bs.LANGS:
@@ -359,7 +360,7 @@ class Built(unittest.TestCase):
 
     def test_home_and_lead_copy_makes_no_play_claim(self):
         for lang in bs.LANGS:
-            data = json.loads((REPO / "content" / "i18n" / (lang + ".json")).read_text(encoding="utf-8"))
+            data = json.loads((REPO / "content" / "i18n" / (bs.SRC_OF.get(lang, lang) + ".json")).read_text(encoding="utf-8"))
             for key in ("home_desc", "games_lead"):
                 for word in self.CLAIM_WORDS:
                     self.assertNotIn(word.lower(), data[key].lower(), (lang, key, word))

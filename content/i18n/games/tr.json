@@ -1,384 +1,384 @@
 {
- "iltonggi": {
-  "status": "Yakında",
-  "platform": "Önce iPhone",
-  "pricing": "Reklam yok, takip yok",
-  "tagline": "Kore'nin Üç Krallık dönemini konu alan, kısa, hızlı, klasik bir toprak fethi strateji oyunu.",
-  "pros": [
-   {
-    "h": "Molaya sığan bir tur.",
-    "p": "Bir tur 5 ila 10 dakika sürer, uygulamayı kapatınca oyununuz otomatik kaydedilir ve hiçbir şey sizi her gün giriş yapmaya zorlamaz."
-   },
-   {
-    "h": "Yalnızca görebildiğiniz kadarını bildiğiniz bir harita.",
-    "p": "Henüz gitmediğiniz topraklar, bir casus gönderene kadar sisin içinde kalır. Savaşa doğrudan komutayla katılabilir ya da otomatiğe bırakabilirsiniz."
-   },
-   {
-    "h": "Sakin, açık bir uygulama.",
-    "p": "Kişisel bilgi toplamaz, reklam ya da takip içermez ve temel özellikleri çevrimdışı çalışır. Oyunun sitesi 11 dilde mevcuttur."
-   }
-  ],
-  "cons": [
-   {
-    "h": "Hızlı, gerçek zamanlı oyun istiyorsanız.",
-    "p": "Iltonggi sıra tabanlıdır, bu yüzden ağırlık refleks hızında değil, nereye saldıracağınızı seçmektedir."
-   },
-   {
-    "h": "Şu an Android'de oynamak istiyorsanız.",
-    "p": "Önce iPhone sürümü çıkar, diğer platformlar daha sonra duyurulacaktır. Üç Krallık bir tarih dersi değil, bir dekordur: oyunun koşulları, gerçek tarihi olaylardan farklı olabileceğini belirtir."
-   }
-  ],
-  "journal_label": "Blog",
-  "compare": {
-   "oneline": "Üç Krallık'ta toprak kapma",
-   "style": "Sıra tabanlı strateji",
-   "length": "5 ila 10 dakika",
-   "difficulty": "Krallığı ve zorluğu seçersiniz",
-   "players": "Tek başına, yapay zekaya karşı",
-   "platform": "Önce iPhone",
-   "offline": "Temel özellikler çevrimdışı çalışır (yalnızca hava durumu isteğe bağlı olarak çevrimiçidir)",
-   "pricing": "Reklam yok, takip yok",
-   "languages": "11 dil",
-   "status": "Yakında. TestFlight sürümleri mevcut"
+  "iltonggi": {
+    "status": "Yakında",
+    "platform": "Önce iPhone",
+    "pricing": "Reklam yok, takip yok",
+    "tagline": "Kore'nin Üç Krallık dönemini konu alan, kısa, hızlı, klasik bir toprak fethi strateji oyunu.",
+    "pros": [
+      {
+        "h": "Molaya sığan bir tur.",
+        "p": "Bir tur 5 ila 10 dakika sürer, uygulamayı kapatınca oyununuz otomatik kaydedilir ve hiçbir şey sizi her gün giriş yapmaya zorlamaz."
+      },
+      {
+        "h": "Yalnızca görebildiğiniz kadarını bildiğiniz bir harita.",
+        "p": "Henüz gitmediğiniz topraklar, bir casus gönderene kadar sisin içinde kalır. Savaşa doğrudan komutayla katılabilir ya da otomatiğe bırakabilirsiniz."
+      },
+      {
+        "h": "Sakin, açık bir uygulama.",
+        "p": "Kişisel bilgi toplamaz, reklam ya da takip içermez ve temel özellikleri çevrimdışı çalışır. Oyunun sitesi 11 dilde mevcuttur."
+      }
+    ],
+    "cons": [
+      {
+        "h": "Hızlı, gerçek zamanlı oyun istiyorsanız.",
+        "p": "Iltonggi sıra tabanlıdır, bu yüzden ağırlık refleks hızında değil, nereye saldıracağınızı seçmektedir."
+      },
+      {
+        "h": "Şu an Android'de oynamak istiyorsanız.",
+        "p": "Önce iPhone sürümü çıkar, diğer platformlar daha sonra duyurulacaktır. Üç Krallık bir tarih dersi değil, bir dekordur: oyunun koşulları, gerçek tarihi olaylardan farklı olabileceğini belirtir."
+      }
+    ],
+    "journal_label": "Blog",
+    "compare": {
+      "oneline": "Üç Krallık'ta toprak kapma",
+      "style": "Sıra tabanlı strateji",
+      "length": "5 ila 10 dakika",
+      "difficulty": "Krallığı ve zorluğu seçersiniz",
+      "players": "Tek başına, yapay zekaya karşı",
+      "platform": "Önce iPhone",
+      "offline": "Temel özellikler çevrimdışı çalışır (yalnızca hava durumu isteğe bağlı olarak çevrimiçidir)",
+      "pricing": "Reklam yok, takip yok",
+      "languages": "11 dil",
+      "status": "Yakında. TestFlight sürümleri mevcut"
+    }
+  },
+  "inkisle": {
+    "status": "Geliştiriliyor",
+    "platform": "Önce iOS, Android paralel",
+    "pricing": "Planlanan: tüm turlar ücretsiz · reklam yok · isteğe bağlı destek ögeleri",
+    "tagline": "Telefon için sakin bir ada fethi strateji oyunu: adalar arasında filo gönderin ve denizi kendi renginize boyayın.",
+    "pros": [
+      {
+        "h": "Birkaç dakika, tek el.",
+        "p": "Bir tur 3 ila 5 dakika sürer ve dikey modda yalnızca başparmağınızla sürüklersiniz. Hesap gerekmez, internet gerekmez."
+      },
+      {
+        "h": "Kurallar tek sayfaya sığar.",
+        "p": "Adalar asker üretir ve ulaşan daha büyük kuvvet adayı ele geçirir. Bu yüzden kazanılmış bir tur uzayıp gitmez, açıkça öne geçtiğiniz anda biter."
+      },
+      {
+        "h": "Renkleri ayırt etmekte zorlansanız bile okunaklıdır.",
+        "p": "Her tarafın kendi rengi ve bayrak şekli vardır. Bir turu geçince sonraki açılır ve her deniz bir kural ekler."
+      }
+    ],
+    "cons": [
+      {
+        "h": "Hikâye ve karakter istiyorsanız.",
+        "p": "Inkisle bilerek hikâyesizdir. Keyif, adaları ele geçirmekte ve sonraki denizi açmak istemektedir."
+      },
+      {
+        "h": "Yavaş sıra tabanlı oyun ya da şimdi çevrimiçi rekabet istiyorsanız.",
+        "p": "Bir tur gerçek zamanlı akar; çevrimiçi oyun ise oyuncu geri bildirimlerine göre sonra kararlaştırılacaktır."
+      }
+    ],
+    "journal_label": "Günlük",
+    "compare": {
+      "oneline": "Adaları ele geçir, mürekkeple boya",
+      "style": "Gerçek zamanlı strateji",
+      "length": "3 ila 5 dakika",
+      "difficulty": "Her yeni deniz bir kural ekler",
+      "players": "Tek başına ve çevrimdışı. Çevrimiçi oyun sonra kararlaştırılacak",
+      "platform": "Önce iOS, Android paralel",
+      "offline": "Çevrimdışı, hesap gerekmez",
+      "pricing": "Planlanan: tüm turlar ücretsiz · reklam yok · isteğe bağlı destek ögeleri",
+      "languages": "12 dil",
+      "status": "Geliştiriliyor. TestFlight sürümleri mevcut"
+    }
+  },
+  "sunmeld": {
+    "status": "Geliştiriliyor",
+    "platform": "iOS ve Android",
+    "pricing": "Ücretsiz deneme, tek seferlik satın alımla tümü açılır, reklam yok",
+    "tagline": "Ortak bir kazanda yapay zeka rakibe karşı taş birleştirme maçı. Bir taş bırakın, aynı taşları bir üst seviyeye birleştirin ve puan alın. Kazan taşarsa kaybedersiniz.",
+    "pros": [
+      {
+        "h": "Dört satırda kurallar.",
+        "p": "Sırayla taş bırakılır, aynı seviyedeki taşlar birleşir, birleştiren puanı alır ve kazan taşarsa son taşı koyan kaybeder."
+      },
+      {
+        "h": "Dizdiğiniz şekil, rakibin boşluğu olur.",
+        "p": "İki taraf aynı kazanı paylaşır; bu yüzden ardınızda ne bıraktığınızı hesaplamanın keyfi vardır."
+      },
+      {
+        "h": "Her rakibin kendine özgü alışkanlıkları var.",
+        "p": "Aynı kazan, ama her seferinde farklı ilerler. Ücretsiz deneme, tek seferlik satın alımla tümü açılır ve reklam yoktur."
+      }
+    ],
+    "cons": [
+      {
+        "h": "Kendi rekorunuzu kovalamak ya da arkadaşlarla oynamak istiyorsanız.",
+        "p": "Her maç yapay zeka rakibe karşı bir düellodur; bu yüzden yüksek skor peşinde koştuğunuz bir bulmacadan ya da gerçek insanlarla oynamaktan farklı hissettirir."
+      },
+      {
+        "h": "Bambaşka bir oyun türü bekliyorsanız.",
+        "p": "Bırak ve birleştir tanıdık bir oyun biçimidir. Farklı olan, ortak kazan ve karşısında oynadığınız yapay zekadır."
+      }
+    ],
+    "journal_label": "Günlük",
+    "compare": {
+      "oneline": "Kozmik taş birleştirme düellosu",
+      "style": "Sırayla oynanan düello",
+      "length": "—",
+      "difficulty": "Her rakibin kendine özgü alışkanlıkları var",
+      "players": "Yapay zekaya karşı 1'e 1",
+      "platform": "iOS ve Android, geliştiriliyor",
+      "offline": "—",
+      "pricing": "Ücretsiz deneme, tek seferlik satın alımla tümü açılır, reklam yok",
+      "languages": "İngilizce, Korece",
+      "status": "Geliştiriliyor"
+    }
+  },
+  "claimball": {
+    "status": "Yakında",
+    "platform": "iOS ve Android",
+    "pricing": "Ücretsiz deneme. Tek seferlik satın alımla tümü açılır. Reklam yok, abonelik yok.",
+    "tagline": "Kareli defter ızgarasında yapay zeka rakibe karşı sakin bir maç. Topunuzun sektiği kare sizin toprağınız olur. Topu kaçırırsanız toprağı kaybedersiniz.",
+    "pros": [
+      {
+        "h": "Maç başına yaklaşık 90 saniye.",
+        "p": "Kısa boşluklara bile sığar ve son saniyeler karar anıdır. (Bu, yayından önceki bir öneridir ve değişebilir.)"
+      },
+      {
+        "h": "Tahta bir bakışta anlaşılır.",
+        "p": "6 x 10'luk kareli defter ızgarasında sizin ve rakibin kareleri renkle ayrılır. Raketin ortasıyla düz bir vuruş aynı anda 3 kare kapar."
+      },
+      {
+        "h": "Rakipler adım adım güçlenir.",
+        "p": "Yayında 2 turnuvada 6 yapay zeka rakip olacak (yayından önceki bir öneri, değişebilir) ve güncellemelerle daha fazlası planlanıyor. Ücretsiz deneme. Tek seferlik satın alımla tümü açılır. Reklam yok, abonelik yok."
+      }
+    ],
+    "cons": [
+      {
+        "h": "Elleri meşgul eden oyunlar sizi yoruyorsa.",
+        "p": "Topu gerçek zamanlı karşılarsınız; bu yüzden üzerinde rahatça düşünebileceğiniz bir oyundan farklıdır."
+      },
+      {
+        "h": "Gerçek insanlarla çevrimiçi oynamak istiyorsanız.",
+        "p": "Her maç, sizin bir yapay zeka rakibe karşı oynadığınız bir maçtır."
+      }
+    ],
+    "journal_label": "Günlük",
+    "compare": {
+      "oneline": "Defter sayfasında toprak kapma",
+      "style": "Gerçek zamanlı top düellosu",
+      "length": "Yaklaşık 90 saniye (yayından önceki öneri, değişebilir)",
+      "difficulty": "Yayında 2 turnuvada 6 yapay zeka rakip (yayından önceki öneri, değişebilir), güncellemelerle daha fazlası",
+      "players": "Yapay zekaya karşı 1'e 1",
+      "platform": "iOS ve Android, yakında",
+      "offline": "—",
+      "pricing": "Ücretsiz deneme. Tek seferlik satın alımla tümü açılır. Reklam yok, abonelik yok.",
+      "languages": "İngilizce, Korece",
+      "status": "Yakında, çıkış tarihi belirlenmedi"
+    }
+  },
+  "patchland": {
+    "status": "Geliştiriliyor",
+    "platform": "iOS ve Android",
+    "pricing": "Reklam yok, aylık abonelik yok",
+    "tagline": "Renkli kâğıt parçalarıyla, çevrimdışı oynanan hızlı ve hafif bir toprak kapma oyunu. Altı kendine özgü yapay zeka lordundan toprağı bölge bölge, üç yolla alın: Çiz, Yerleştir ve Yay.",
+    "pros": [
+      {
+        "h": "Toprak kapmanın üç yolu.",
+        "p": "Bir çizgi çizin ve çevrelediğiniz toprağı almak için geri dönün. Altıgen tahtaya taş yerleştirin. Ya da bir renk seçin ve yayılmasına izin verin. Her mod farklı oynanır."
+      },
+      {
+        "h": "Sizinle birlikte büyüyen bir harita.",
+        "p": "Kâğıt harita 24 bölgeden oluşur ve her bölgenin bir lordu vardır. Patron lordlar bir taraf iki tur kazanana dek düello yapar ve siz yokken toprağınız yavaş yavaş parça parça toplanır."
+      },
+      {
+        "h": "Her gün geri dönmek için bir sebep.",
+        "p": "Bugünün Toprağı herkes için aynı tahtadır ve korunacak bir gün serisi içerir. Lord Albümü'nde 24 lord kartının tamamını ücretsiz toplayabilirsiniz."
+      }
+    ],
+    "cons": [
+      {
+        "h": "Gerçek insanlarla çevrimiçi oynamak istiyorsanız.",
+        "p": "Maçlar yapay zeka lordlara karşıdır ve oyun internet olmadan da oynanır."
+      },
+      {
+        "h": "Uzun bir hikâye istiyorsanız.",
+        "p": "Her tur kısa ve hafiftir, hızlı oyun anları içindir."
+      }
+    ],
+    "compare": {
+      "oneline": "Renkli kâğıt parçalarıyla toprak kapma",
+      "style": "Üç mod: Çiz, Yerleştir, Yay",
+      "length": "—",
+      "difficulty": "Antrenman modunda Kolay, Normal, Zor; haritada patron lordlar",
+      "players": "Yapay zekaya karşı 1'e 1",
+      "platform": "iOS ve Android, geliştiriliyor",
+      "offline": "İnternet olmadan oynanır",
+      "pricing": "Reklam yok, aylık abonelik yok",
+      "languages": "İngilizce, Korece",
+      "status": "Geliştiriliyor"
+    }
+  },
+  "tottertop": {
+    "status": "Yakında",
+    "platform": "iOS ve Android",
+    "pricing": "Ücretsiz, yalnızca isteğe bağlı ödüllü reklamlar.",
+    "tagline": "Tek dokunuşluk bir fizik oyunu. Sallanan vinç blokları bırakır ve siz her blokla daha da sallanan bir kule inşa edersiniz.",
+    "pros": [
+      {
+        "h": "Tek dokunuş, oyunun tamamı.",
+        "p": "Vinç kendiliğinden sallanır; bloğu bırakmak için siz dokunursunuz."
+      },
+      {
+        "h": "Bir tur yaklaşık bir dakika.",
+        "p": "Bir mola için yeterince kısa, tur tur."
+      },
+      {
+        "h": "Oynaması ücretsiz.",
+        "p": "Satın alınacak bir şey yok; tek reklam isteğe bağlı ödüllü reklamdır."
+      }
+    ],
+    "cons": [
+      {
+        "h": "Sabit ve kusursuz bir kule istiyorsanız.",
+        "p": "Hem vinç hem kule sallanır, bu yüzden her blok fiziğin karar verdiği yere düşer."
+      },
+      {
+        "h": "Başkalarına karşı oynamak istiyorsanız.",
+        "p": "Bu tek kişilik bir oyundur."
+      }
+    ],
+    "compare": {
+      "oneline": "Sallanan kule inşası",
+      "style": "Fizik tabanlı istifleme, tek dokunuş",
+      "length": "Yaklaşık bir dakika",
+      "difficulty": "—",
+      "players": "Tek başına",
+      "platform": "iOS ve Android, yakında",
+      "offline": "—",
+      "pricing": "Ücretsiz, isteğe bağlı ödüllü reklamlar",
+      "languages": "11 dil",
+      "status": "Yakında, çıkış tarihi belirlenmedi"
+    }
+  },
+  "mossgarden": {
+    "status": "Yakında",
+    "platform": "iOS ve Android",
+    "pricing": "Ücretsiz, yalnızca isteğe bağlı ödüllü reklamlar.",
+    "tagline": "Telefonda bir boşta bahçe. Sekiz bitki türü dikin, büyütün ve bıraktıkları çiy damlalarını toplayın.",
+    "pros": [
+      {
+        "h": "Bakılacak sekiz bitki türü.",
+        "p": "Sekiz bitki türünü dikin ve büyütün, her birinin bıraktığı çiy damlalarını toplayın."
+      },
+      {
+        "h": "Günle ve mevsimle değişen bir bahçe.",
+        "p": "Arka plan günün saatine ve yılın mevsimine göre değişir."
+      },
+      {
+        "h": "Sizi geri getiren bir bahçe.",
+        "p": "Bir bitki defteri her türle birlikte dolar ve prestij sıfırlaması bahçeyi baştan başlatır."
+      }
+    ],
+    "cons": [
+      {
+        "h": "Sürekli elle oynamak istiyorsanız.",
+        "p": "Bu bir boşta bahçedir: bitkiler kendiliğinden büyür ve siz çiy damlalarını toplamak için geri dönersiniz."
+      },
+      {
+        "h": "Geniş bir bitki listesi istiyorsanız.",
+        "p": "Bahçede sekiz bitki türü vardır."
+      }
+    ],
+    "compare": {
+      "oneline": "Çiy toplayan bir bahçe",
+      "style": "Boşta bahçe",
+      "length": "—",
+      "difficulty": "—",
+      "players": "Tek başına",
+      "platform": "iOS ve Android, yakında",
+      "offline": "—",
+      "pricing": "Ücretsiz, isteğe bağlı ödüllü reklamlar",
+      "languages": "11 dil",
+      "status": "Yakında, çıkış tarihi belirlenmedi"
+    }
+  },
+  "duskblocks": {
+    "status": "Yakında",
+    "platform": "iOS TestFlight mevcut, Android sonra",
+    "pricing": "—",
+    "tagline": "Alacakaranlık saatleri için sakin, kısa bir blok oyunu. Başlaması kolay, bitmesi hızlı.",
+    "pros": [
+      {
+        "h": "iOS TestFlight'ta mevcut.",
+        "p": "iOS sürümü TestFlight'ta mevcut; web sitesi ve mağaza sayfası hazır olduklarında gelecek."
+      },
+      {
+        "h": "Diğerleri gibi kısa turlar.",
+        "p": "Buradaki diğer oyunlarla aynı kuralı izler: molaya sığan bir tur."
+      },
+      {
+        "h": "Dürüst bir kart.",
+        "p": "Hesap gerekmez ve kart, yayının gerçek durumunu olduğu gibi söyler."
+      }
+    ],
+    "cons": [
+      {
+        "h": "Şu an Android'de oynamak istiyorsanız.",
+        "p": "iOS TestFlight sürümü önce gelir ve Android sürümü hâlâ tamamlanıyor."
+      },
+      {
+        "h": "Tamamlanmış bir özellik listesi istiyorsanız.",
+        "p": "Hâlâ test aşamasında, bu yüzden özellikler yayından önce değişebilir."
+      }
+    ],
+    "compare": {
+      "oneline": "Sakin bir blok oyunu",
+      "style": "Sakin, kısa turlar",
+      "length": "—",
+      "difficulty": "—",
+      "players": "Tek başına",
+      "platform": "iOS TestFlight mevcut, Android tamamlanıyor",
+      "offline": "—",
+      "pricing": "—",
+      "languages": "—",
+      "status": "Yakında. TestFlight sürümü tamamlanıyor"
+    }
+  },
+  "bottledmarbles": {
+    "status": "Yakında",
+    "platform": "iOS TestFlight mevcut, Android sonra",
+    "pricing": "—",
+    "tagline": "Sakin, dingin bir misket oyunu. Misketleri toplayın ve molanızda bir turu tamamlayın.",
+    "pros": [
+      {
+        "h": "iOS TestFlight'ta mevcut.",
+        "p": "iOS sürümü TestFlight'ta mevcut ve oyunun web sitesi yayında; geri kalanı hâlâ tamamlanıyor."
+      },
+      {
+        "h": "Diğerleri gibi kısa turlar.",
+        "p": "Buradaki diğer oyunlarla aynı kuralı izler: molaya sığan bir tur."
+      },
+      {
+        "h": "Dürüst bir kart.",
+        "p": "Hesap gerekmez ve kart, yayının gerçek durumunu olduğu gibi söyler."
+      }
+    ],
+    "cons": [
+      {
+        "h": "Şu an Android'de oynamak istiyorsanız.",
+        "p": "iOS TestFlight sürümü önce gelir ve Android sürümü hâlâ tamamlanıyor."
+      },
+      {
+        "h": "Tamamlanmış bir özellik listesi istiyorsanız.",
+        "p": "Hâlâ test aşamasında, bu yüzden özellikler yayından önce değişebilir."
+      }
+    ],
+    "compare": {
+      "oneline": "Sakin bir misket oyunu",
+      "style": "Sakin, kısa turlar",
+      "length": "—",
+      "difficulty": "—",
+      "players": "Tek başına",
+      "platform": "iOS TestFlight mevcut, Android tamamlanıyor",
+      "offline": "—",
+      "pricing": "—",
+      "languages": "—",
+      "status": "Yakında. TestFlight sürümü tamamlanıyor"
+    }
   }
- },
- "inkisle": {
-  "status": "Geliştiriliyor",
-  "platform": "Önce iOS, Android paralel",
-  "pricing": "Planlanan: tüm turlar ücretsiz · reklam yok · isteğe bağlı destek ögeleri",
-  "tagline": "Telefon için sakin bir ada fethi strateji oyunu: adalar arasında filo gönderin ve denizi kendi renginize boyayın.",
-  "pros": [
-   {
-    "h": "Birkaç dakika, tek el.",
-    "p": "Bir tur 3 ila 5 dakika sürer ve dikey modda yalnızca başparmağınızla sürüklersiniz. Hesap gerekmez, internet gerekmez."
-   },
-   {
-    "h": "Kurallar tek sayfaya sığar.",
-    "p": "Adalar asker üretir ve ulaşan daha büyük kuvvet adayı ele geçirir. Bu yüzden kazanılmış bir tur uzayıp gitmez, açıkça öne geçtiğiniz anda biter."
-   },
-   {
-    "h": "Renkleri ayırt etmekte zorlansanız bile okunaklıdır.",
-    "p": "Her tarafın kendi rengi ve bayrak şekli vardır. Bir turu geçince sonraki açılır ve her deniz bir kural ekler."
-   }
-  ],
-  "cons": [
-   {
-    "h": "Hikâye ve karakter istiyorsanız.",
-    "p": "Inkisle bilerek hikâyesizdir. Keyif, adaları ele geçirmekte ve sonraki denizi açmak istemektedir."
-   },
-   {
-    "h": "Yavaş sıra tabanlı oyun ya da şimdi çevrimiçi rekabet istiyorsanız.",
-    "p": "Bir tur gerçek zamanlı akar; çevrimiçi oyun ise oyuncu geri bildirimlerine göre sonra kararlaştırılacaktır."
-   }
-  ],
-  "journal_label": "Günlük",
-  "compare": {
-   "oneline": "Adaları ele geçir, mürekkeple boya",
-   "style": "Gerçek zamanlı strateji",
-   "length": "3 ila 5 dakika",
-   "difficulty": "Her yeni deniz bir kural ekler",
-   "players": "Tek başına ve çevrimdışı. Çevrimiçi oyun sonra kararlaştırılacak",
-   "platform": "Önce iOS, Android paralel",
-   "offline": "Çevrimdışı, hesap gerekmez",
-   "pricing": "Planlanan: tüm turlar ücretsiz · reklam yok · isteğe bağlı destek ögeleri",
-   "languages": "12 dil",
-   "status": "Geliştiriliyor. TestFlight sürümleri mevcut"
-  }
- },
- "sunmeld": {
-  "status": "Geliştiriliyor",
-  "platform": "iOS ve Android",
-  "pricing": "Ücretsiz deneme, tek seferlik satın alımla tümü açılır, reklam yok",
-  "tagline": "Ortak bir kazanda yapay zeka rakibe karşı taş birleştirme maçı. Bir taş bırakın, aynı taşları bir üst seviyeye birleştirin ve puan alın. Kazan taşarsa kaybedersiniz.",
-  "pros": [
-   {
-    "h": "Dört satırda kurallar.",
-    "p": "Sırayla taş bırakılır, aynı seviyedeki taşlar birleşir, birleştiren puanı alır ve kazan taşarsa son taşı koyan kaybeder."
-   },
-   {
-    "h": "Dizdiğiniz şekil, rakibin boşluğu olur.",
-    "p": "İki taraf aynı kazanı paylaşır; bu yüzden ardınızda ne bıraktığınızı hesaplamanın keyfi vardır."
-   },
-   {
-    "h": "Her rakibin kendine özgü alışkanlıkları var.",
-    "p": "Aynı kazan, ama her seferinde farklı ilerler. Ücretsiz deneme, tek seferlik satın alımla tümü açılır ve reklam yoktur."
-   }
-  ],
-  "cons": [
-   {
-    "h": "Kendi rekorunuzu kovalamak ya da arkadaşlarla oynamak istiyorsanız.",
-    "p": "Her maç yapay zeka rakibe karşı bir düellodur; bu yüzden yüksek skor peşinde koştuğunuz bir bulmacadan ya da gerçek insanlarla oynamaktan farklı hissettirir."
-   },
-   {
-    "h": "Bambaşka bir oyun türü bekliyorsanız.",
-    "p": "Bırak ve birleştir tanıdık bir oyun biçimidir. Farklı olan, ortak kazan ve karşısında oynadığınız yapay zekadır."
-   }
-  ],
-  "journal_label": "Günlük",
-  "compare": {
-   "oneline": "Kozmik taş birleştirme düellosu",
-   "style": "Sırayla oynanan düello",
-   "length": "—",
-   "difficulty": "Her rakibin kendine özgü alışkanlıkları var",
-   "players": "Yapay zekaya karşı 1'e 1",
-   "platform": "iOS ve Android, geliştiriliyor",
-   "offline": "—",
-   "pricing": "Ücretsiz deneme, tek seferlik satın alımla tümü açılır, reklam yok",
-   "languages": "İngilizce, Korece",
-   "status": "Geliştiriliyor"
-  }
- },
- "claimball": {
-  "status": "Yakında",
-  "platform": "iOS ve Android",
-  "pricing": "Ücretsiz deneme. Tek seferlik satın alımla tümü açılır. Reklam yok, abonelik yok.",
-  "tagline": "Kareli defter ızgarasında yapay zeka rakibe karşı sakin bir maç. Topunuzun sektiği kare sizin toprağınız olur. Topu kaçırırsanız toprağı kaybedersiniz.",
-  "pros": [
-   {
-    "h": "Maç başına yaklaşık 90 saniye.",
-    "p": "Kısa boşluklara bile sığar ve son saniyeler karar anıdır. (Bu, yayından önceki bir öneridir ve değişebilir.)"
-   },
-   {
-    "h": "Tahta bir bakışta anlaşılır.",
-    "p": "6 x 10'luk kareli defter ızgarasında sizin ve rakibin kareleri renkle ayrılır. Raketin ortasıyla düz bir vuruş aynı anda 3 kare kapar."
-   },
-   {
-    "h": "Rakipler adım adım güçlenir.",
-    "p": "Yayında 2 turnuvada 6 yapay zeka rakip olacak (yayından önceki bir öneri, değişebilir) ve güncellemelerle daha fazlası planlanıyor. Ücretsiz deneme. Tek seferlik satın alımla tümü açılır. Reklam yok, abonelik yok."
-   }
-  ],
-  "cons": [
-   {
-    "h": "Elleri meşgul eden oyunlar sizi yoruyorsa.",
-    "p": "Topu gerçek zamanlı karşılarsınız; bu yüzden üzerinde rahatça düşünebileceğiniz bir oyundan farklıdır."
-   },
-   {
-    "h": "Gerçek insanlarla çevrimiçi oynamak istiyorsanız.",
-    "p": "Her maç, sizin bir yapay zeka rakibe karşı oynadığınız bir maçtır."
-   }
-  ],
-  "journal_label": "Günlük",
-  "compare": {
-   "oneline": "Defter sayfasında toprak kapma",
-   "style": "Gerçek zamanlı top düellosu",
-   "length": "Yaklaşık 90 saniye (yayından önceki öneri, değişebilir)",
-   "difficulty": "Yayında 2 turnuvada 6 yapay zeka rakip (yayından önceki öneri, değişebilir), güncellemelerle daha fazlası",
-   "players": "Yapay zekaya karşı 1'e 1",
-   "platform": "iOS ve Android, yakında",
-   "offline": "—",
-   "pricing": "Ücretsiz deneme. Tek seferlik satın alımla tümü açılır. Reklam yok, abonelik yok.",
-   "languages": "İngilizce, Korece",
-   "status": "Yakında, çıkış tarihi belirlenmedi"
-  }
- },
- "patchland": {
-  "status": "Geliştiriliyor",
-  "platform": "iOS ve Android",
-  "pricing": "Reklam yok, aylık abonelik yok",
-  "tagline": "Renkli kâğıt parçalarıyla, çevrimdışı oynanan hızlı ve hafif bir toprak kapma oyunu. Altı kendine özgü yapay zeka lordundan toprağı bölge bölge, üç yolla alın: Çiz, Yerleştir ve Yay.",
-  "pros": [
-   {
-    "h": "Toprak kapmanın üç yolu.",
-    "p": "Bir çizgi çizin ve çevrelediğiniz toprağı almak için geri dönün. Altıgen tahtaya taş yerleştirin. Ya da bir renk seçin ve yayılmasına izin verin. Her mod farklı oynanır."
-   },
-   {
-    "h": "Sizinle birlikte büyüyen bir harita.",
-    "p": "Kâğıt harita 24 bölgeden oluşur ve her bölgenin bir lordu vardır. Patron lordlar bir taraf iki tur kazanana dek düello yapar ve siz yokken toprağınız yavaş yavaş parça parça toplanır."
-   },
-   {
-    "h": "Her gün geri dönmek için bir sebep.",
-    "p": "Bugünün Toprağı herkes için aynı tahtadır ve korunacak bir gün serisi içerir. Lord Albümü'nde 24 lord kartının tamamını ücretsiz toplayabilirsiniz."
-   }
-  ],
-  "cons": [
-   {
-    "h": "Gerçek insanlarla çevrimiçi oynamak istiyorsanız.",
-    "p": "Maçlar yapay zeka lordlara karşıdır ve oyun internet olmadan da oynanır."
-   },
-   {
-    "h": "Uzun bir hikâye istiyorsanız.",
-    "p": "Her tur kısa ve hafiftir, hızlı oyun anları içindir."
-   }
-  ],
-  "compare": {
-   "oneline": "Renkli kâğıt parçalarıyla toprak kapma",
-   "style": "Üç mod: Çiz, Yerleştir, Yay",
-   "length": "—",
-   "difficulty": "Antrenman modunda Kolay, Normal, Zor; haritada patron lordlar",
-   "players": "Yapay zekaya karşı 1'e 1",
-   "platform": "iOS ve Android, geliştiriliyor",
-   "offline": "İnternet olmadan oynanır",
-   "pricing": "Reklam yok, aylık abonelik yok",
-   "languages": "İngilizce, Korece",
-   "status": "Geliştiriliyor"
-  }
- },
- "tilttower": {
-  "status": "Yakında",
-  "platform": "iOS ve Android",
-  "pricing": "Ücretsiz, yalnızca isteğe bağlı ödüllü reklamlar.",
-  "tagline": "Tek dokunuşluk bir fizik oyunu. Sallanan vinç blokları bırakır ve siz her blokla daha da sallanan bir kule inşa edersiniz.",
-  "pros": [
-   {
-    "h": "Tek dokunuş, oyunun tamamı.",
-    "p": "Vinç kendiliğinden sallanır; bloğu bırakmak için siz dokunursunuz."
-   },
-   {
-    "h": "Bir tur yaklaşık bir dakika.",
-    "p": "Bir mola için yeterince kısa, tur tur."
-   },
-   {
-    "h": "Oynaması ücretsiz.",
-    "p": "Satın alınacak bir şey yok; tek reklam isteğe bağlı ödüllü reklamdır."
-   }
-  ],
-  "cons": [
-   {
-    "h": "Sabit ve kusursuz bir kule istiyorsanız.",
-    "p": "Hem vinç hem kule sallanır, bu yüzden her blok fiziğin karar verdiği yere düşer."
-   },
-   {
-    "h": "Başkalarına karşı oynamak istiyorsanız.",
-    "p": "Bu tek kişilik bir oyundur."
-   }
-  ],
-  "compare": {
-   "oneline": "Sallanan kule inşası",
-   "style": "Fizik tabanlı istifleme, tek dokunuş",
-   "length": "Yaklaşık bir dakika",
-   "difficulty": "—",
-   "players": "Tek başına",
-   "platform": "iOS ve Android, yakında",
-   "offline": "—",
-   "pricing": "Ücretsiz, isteğe bağlı ödüllü reklamlar",
-   "languages": "11 dil",
-   "status": "Yakında, çıkış tarihi belirlenmedi"
-  }
- },
- "mossgarden": {
-  "status": "Yakında",
-  "platform": "iOS ve Android",
-  "pricing": "Ücretsiz, yalnızca isteğe bağlı ödüllü reklamlar.",
-  "tagline": "Telefonda bir boşta bahçe. Sekiz bitki türü dikin, büyütün ve bıraktıkları çiy damlalarını toplayın.",
-  "pros": [
-   {
-    "h": "Bakılacak sekiz bitki türü.",
-    "p": "Sekiz bitki türünü dikin ve büyütün, her birinin bıraktığı çiy damlalarını toplayın."
-   },
-   {
-    "h": "Günle ve mevsimle değişen bir bahçe.",
-    "p": "Arka plan günün saatine ve yılın mevsimine göre değişir."
-   },
-   {
-    "h": "Sizi geri getiren bir bahçe.",
-    "p": "Bir bitki defteri her türle birlikte dolar ve prestij sıfırlaması bahçeyi baştan başlatır."
-   }
-  ],
-  "cons": [
-   {
-    "h": "Sürekli elle oynamak istiyorsanız.",
-    "p": "Bu bir boşta bahçedir: bitkiler kendiliğinden büyür ve siz çiy damlalarını toplamak için geri dönersiniz."
-   },
-   {
-    "h": "Geniş bir bitki listesi istiyorsanız.",
-    "p": "Bahçede sekiz bitki türü vardır."
-   }
-  ],
-  "compare": {
-   "oneline": "Çiy toplayan bir bahçe",
-   "style": "Boşta bahçe",
-   "length": "—",
-   "difficulty": "—",
-   "players": "Tek başına",
-   "platform": "iOS ve Android, yakında",
-   "offline": "—",
-   "pricing": "Ücretsiz, isteğe bağlı ödüllü reklamlar",
-   "languages": "11 dil",
-   "status": "Yakında, çıkış tarihi belirlenmedi"
-  }
- },
- "duskblocks": {
-  "status": "Yakında",
-  "platform": "iOS TestFlight mevcut, Android sonra",
-  "pricing": "—",
-  "tagline": "Alacakaranlık saatleri için sakin, kısa bir blok oyunu. Başlaması kolay, bitmesi hızlı.",
-  "pros": [
-   {
-    "h": "iOS TestFlight'ta mevcut.",
-    "p": "iOS sürümü TestFlight'ta mevcut; web sitesi ve mağaza sayfası hazır olduklarında gelecek."
-   },
-   {
-    "h": "Diğerleri gibi kısa turlar.",
-    "p": "Buradaki diğer oyunlarla aynı kuralı izler: molaya sığan bir tur."
-   },
-   {
-    "h": "Dürüst bir kart.",
-    "p": "Hesap gerekmez ve kart, yayının gerçek durumunu olduğu gibi söyler."
-   }
-  ],
-  "cons": [
-   {
-    "h": "Şu an Android'de oynamak istiyorsanız.",
-    "p": "iOS TestFlight sürümü önce gelir ve Android sürümü hâlâ tamamlanıyor."
-   },
-   {
-    "h": "Tamamlanmış bir özellik listesi istiyorsanız.",
-    "p": "Hâlâ test aşamasında, bu yüzden özellikler yayından önce değişebilir."
-   }
-  ],
-  "compare": {
-   "oneline": "Sakin bir blok oyunu",
-   "style": "Sakin, kısa turlar",
-   "length": "—",
-   "difficulty": "—",
-   "players": "Tek başına",
-   "platform": "iOS TestFlight mevcut, Android tamamlanıyor",
-   "offline": "—",
-   "pricing": "—",
-   "languages": "—",
-   "status": "Yakında. TestFlight sürümü tamamlanıyor"
-  }
- },
- "bottledmarbles": {
-  "status": "Yakında",
-  "platform": "iOS TestFlight mevcut, Android sonra",
-  "pricing": "—",
-  "tagline": "Sakin, dingin bir misket oyunu. Misketleri toplayın ve molanızda bir turu tamamlayın.",
-  "pros": [
-   {
-    "h": "iOS TestFlight'ta mevcut.",
-    "p": "iOS sürümü TestFlight'ta mevcut ve oyunun web sitesi yayında; geri kalanı hâlâ tamamlanıyor."
-   },
-   {
-    "h": "Diğerleri gibi kısa turlar.",
-    "p": "Buradaki diğer oyunlarla aynı kuralı izler: molaya sığan bir tur."
-   },
-   {
-    "h": "Dürüst bir kart.",
-    "p": "Hesap gerekmez ve kart, yayının gerçek durumunu olduğu gibi söyler."
-   }
-  ],
-  "cons": [
-   {
-    "h": "Şu an Android'de oynamak istiyorsanız.",
-    "p": "iOS TestFlight sürümü önce gelir ve Android sürümü hâlâ tamamlanıyor."
-   },
-   {
-    "h": "Tamamlanmış bir özellik listesi istiyorsanız.",
-    "p": "Hâlâ test aşamasında, bu yüzden özellikler yayından önce değişebilir."
-   }
-  ],
-  "compare": {
-   "oneline": "Sakin bir misket oyunu",
-   "style": "Sakin, kısa turlar",
-   "length": "—",
-   "difficulty": "—",
-   "players": "Tek başına",
-   "platform": "iOS TestFlight mevcut, Android tamamlanıyor",
-   "offline": "—",
-   "pricing": "—",
-   "languages": "—",
-   "status": "Yakında. TestFlight sürümü tamamlanıyor"
-  }
- }
 }
