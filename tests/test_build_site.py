@@ -153,12 +153,12 @@ class Built(unittest.TestCase):
         self.assertGreaterEqual(en.count("pre-launch proposal"), 3)
         self.assertGreaterEqual(html.unescape(self.read("ko/index.html")).count("출시 전 제안값"), 3)
 
-    def test_inkisle_pricing_is_marked_as_a_plan_in_all_11_languages_and_nothing_else_changed(self):
+    def test_inkisle_pricing_is_marked_as_a_plan_in_all_12_languages_and_nothing_else_changed(self):
         # inkisle.ipe.rest says "Not announced yet ... the current plan": the card and compare cell say it is planned, in every language
         games = {x["id"]: x for x in self.ctx.games}
         lead = {"en": "Planned: ", "ko": "출시 전 계획: ", "de": "Geplant: ", "es": "Planeado: ", "fr": "Prévu : ", "id": "Rencana: ",
-                "ja": "予定：", "pt": "Planejado: ", "ru": "В планах: ", "vi": "Dự kiến: ", "zh": "计划："}
-        self.assertEqual(len(lead), 11)
+                "ja": "予定：", "pt-BR": "Planejado: ", "vi": "Dự kiến: ", "zh-Hant": "規劃中:", "tr": "Planlanan: ", "th": "คาดว่า: "}
+        self.assertEqual(len(lead), 12)
         for lang, word in lead.items():
             for text in (games["inkisle"]["pricing"][lang], games["inkisle"]["compare"]["pricing"][lang]):
                 self.assertTrue(text.startswith(word), (lang, text))
@@ -169,7 +169,7 @@ class Built(unittest.TestCase):
                 self.assertFalse(games[gid]["pricing"][lang].startswith(word), (gid, lang))
                 self.assertFalse(games[gid]["compare"]["pricing"][lang].startswith(word), (gid, lang))
 
-    def test_nine_cards_have_full_copy_in_all_11_languages(self):
+    def test_nine_cards_have_full_copy_in_all_12_languages(self):
         for g in self.ctx.games:
             gid = g["id"]
             self.assertEqual(set(g["site"]), {"url", "live"}, gid)
@@ -236,7 +236,7 @@ class Built(unittest.TestCase):
 
     def test_compare_lead_does_not_claim_only_stated_facts(self):
         for lang in ("en", "ko"):
-            lead = json.loads((REPO / "content" / "i18n" / (lang + ".json")).read_text(encoding="utf-8"))["compare_lead"]
+            lead = json.loads((REPO / "content" / "i18n" / (bs.SRC_OF.get(lang, lang) + ".json")).read_text(encoding="utf-8"))["compare_lead"]
             self.assertNotIn("already state", lead)
             self.assertNotIn("이미 적힌", lead)
         self.assertIn("current plans", self.read("index.html"))
@@ -366,7 +366,7 @@ class Built(unittest.TestCase):
 
     def test_i18n_keys_match(self):
         for l in bs.LANGS:  # ko has no AI-translation strings; en carries them as the source of the nine translations
-            data = json.loads((REPO / "content" / "i18n" / (l + ".json")).read_text(encoding="utf-8"))
+            data = json.loads((REPO / "content" / "i18n" / (bs.SRC_OF.get(l, l) + ".json")).read_text(encoding="utf-8"))
             self.assertEqual(sorted(data), sorted(tuple(bs.KEYS) + (() if l == "ko" else bs.MT_KEYS)), l)
 
     def test_markdown_and_front_matter(self):

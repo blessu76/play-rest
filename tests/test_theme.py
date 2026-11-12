@@ -18,7 +18,7 @@ class Theme(unittest.TestCase):
     def setUpClass(cls):
         cls.root = make_site_with_posts()
         build(cls.root)
-        cls.pages = sorted(p for p in Path(cls.root).rglob("*.html") if "content" not in p.parts and "assets" not in p.parts)
+        cls.pages = sorted(p for p in Path(cls.root).rglob("*.html") if not {"content", "assets", "pt", "zh", "ru"} & set(p.parts))
         cls.css = (REPO / "assets" / "play.css").read_text(encoding="utf-8")
         cls.js = (REPO / "assets" / "play.js").read_text(encoding="utf-8")
 

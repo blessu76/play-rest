@@ -64,7 +64,7 @@ img{max-width:100%;height:auto}
 .langsw__list a{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 .langsw__list a[lang="ko"]{font-family:Inter,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif}
 .langsw__list a[lang="ja"]{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",Meiryo,"Noto Sans CJK JP","Noto Sans JP",system-ui,sans-serif}
-.langsw__list a[lang="zh"]{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Noto Sans SC",system-ui,sans-serif}
+.langsw__list a[lang="zh-Hant"]{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Noto Sans SC",system-ui,sans-serif}
 .langsw a[aria-current="true"]{background:var(--ink);color:var(--bg)}
 /* AI translation notice (decision 0087): every page in a machine-translated language says so and links to the English original */
 .mtnote{background:var(--tint);border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}

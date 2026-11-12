@@ -15,7 +15,7 @@ def pages():
     out = []
     for p in REPO.rglob("index.html"):
         rel = p.relative_to(REPO).parts
-        if rel[0] in ("tests", "scripts", "docs", "ops", "content", "assets"):
+        if rel[0] in ("tests", "scripts", "docs", "ops", "content", "assets", "pt", "zh", "ru"):
             continue
         lang = rel[0] if rel[0] in LANG_DIRS else "en"
         out.append((lang, str(p.relative_to(REPO)), p.read_text(encoding="utf-8")))
@@ -31,7 +31,7 @@ class Picker(unittest.TestCase):
             name = bs.LANGS[lang][0]
             self.assertEqual(re.search(r'<html lang="([\w-]+)"', h).group(1), lang, f)
             menu = re.search(r'<details class="langsw">.*?</details>', h, re.S).group(0)
-            cur = re.findall(r'<a href="[^"]*" hreflang="(\w+)"[^>]*aria-current', menu)
+            cur = re.findall(r'<a href="[^"]*" hreflang="([\w-]+)"[^>]*aria-current', menu)
             self.assertEqual(cur, [lang], f)
             self.assertEqual(len(re.findall(r'<a ', menu)), len(bs.LANGS), f)
 

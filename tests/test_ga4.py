@@ -5,18 +5,16 @@ import unittest
 
 from helpers import build, bs, make_site
 
-LANGS = ["en", "ko", "ja", "zh", "es", "pt", "id", "ru", "vi", "fr", "de"]
+LANGS = ["en", "ko", "ja", "zh-Hant", "es", "pt-BR", "fr", "de", "id", "th", "vi", "tr"]
 GA_ID = "G-XG4BH800J0"
 # home-card sentence p3_p as on origin/main before the GA4 commit (it said "no tracking" without limiting it to the games)
 OLD_P3_P = {
     'en': 'No streak nagging, no ads, no accounts, no tracking.',
     'ko': '매일 접속하라고 재촉하지 않고, 광고로 끊지 않고, 계정과 추적으로 붙잡지 않습니다.',
     'ja': '連続ログインの催促も、広告も、アカウントも、トラッキングもありません。',
-    'zh': '没有连续登录的催促，没有广告，没有账号，没有追踪。',
     'es': 'Sin insistencia con rachas, sin anuncios, sin cuentas, sin seguimiento.',
-    'pt': 'Sem insistência por sequências, sem anúncios, sem contas, sem rastreamento.',
+    'pt-BR': 'Sem insistência por sequências, sem anúncios, sem contas, sem rastreamento.',
     'id': 'Tanpa desakan main setiap hari, tanpa iklan, tanpa akun, tanpa pelacakan.',
-    'ru': 'Никаких напоминаний о сериях, никакой рекламы, аккаунтов и слежки.',
     'vi': 'Không thúc giục giữ chuỗi ngày chơi, không quảng cáo, không tài khoản, không theo dõi.',
     'fr': 'Pas de relances pour garder une série, pas de publicité, pas de compte, pas de pistage.',
     'de': 'Kein Drängen wegen Serien, keine Werbung, keine Konten, kein Tracking.',
@@ -29,7 +27,7 @@ class Ga4(unittest.TestCase):
         cls.root = make_site()
         cls.ctx = build(cls.root)
         cls.pages = {str(p.relative_to(cls.root)): p.read_text(encoding="utf-8")
-                     for p in cls.root.rglob("*.html")}
+                     for p in cls.root.rglob("*.html") if not {"pt", "zh", "ru"} & set(p.relative_to(cls.root).parts)}
 
     @classmethod
     def tearDownClass(cls):
@@ -78,7 +76,7 @@ class Ga4(unittest.TestCase):
 
     def test_privacy_sources_are_dated_with_effective(self):
         for lang in LANGS:
-            src = (self.root / "content/pages" / lang / "privacy.md").read_text(encoding="utf-8")
+            src = (self.root / "content/pages" / bs.SRC_OF.get(lang, lang) / "privacy.md").read_text(encoding="utf-8")
             with self.subTest(lang):
                 self.assertIn("updated: " + bs.EFFECTIVE, src)
 
@@ -104,7 +102,7 @@ class Ga4(unittest.TestCase):
         for lang in LANGS:
             card = self.ctx.i18n[lang]["p3_p"]
             with self.subTest(lang):
-                self.assertNotEqual(card, OLD_P3_P[lang])  # the claim was rewritten in every language
+                self.assertNotEqual(card, OLD_P3_P.get(lang))  # the claim was rewritten in every language
                 self.assertGreater(len(card), 10)
                 self.assertIn(card, self.page(lang, ""))
         self.assertTrue(self.ctx.i18n["en"]["p3_p"].endswith("inside the games."))

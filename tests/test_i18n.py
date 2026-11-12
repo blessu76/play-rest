@@ -1,4 +1,4 @@
-"""The 11 languages of decision 0087: every language is built whole, hreflang is symmetric, no link points at a page that
+"""The 12 languages of the ipe common set (kit languages.SUPPORTED): every language is built whole, hreflang is symmetric, no link points at a page that
 does not exist, the nine AI translations say so and link to the English original, and the journal stays en + ko only."""
 import html
 import json
@@ -21,7 +21,7 @@ def pre(lang):
 
 
 def html_files(root):
-    return sorted(p for p in Path(root).rglob("*.html") if not {"content", "assets"} & set(p.relative_to(root).parts))
+    return sorted(p for p in Path(root).rglob("*.html") if not {"content", "assets", "pt", "zh", "ru"} & set(p.relative_to(root).parts))
 
 
 def head_alternates(h):
@@ -44,11 +44,12 @@ class AllLanguages(unittest.TestCase):
     def read(self, rel):
         return (self.root / rel).read_text(encoding="utf-8")
 
-    def test_the_eleven_languages(self):
-        self.assertEqual(list(bs.LANGS), ["en", "ko", "ja", "zh", "es", "pt", "id", "ru", "vi", "fr", "de"])
-        self.assertNotIn("ar", bs.LANGS)  # Arabic is not on this portal
+    def test_the_twelve_languages(self):
+        self.assertEqual(list(bs.LANGS), ["en", "ko", "ja", "zh-Hant", "es", "pt-BR", "fr", "de", "id", "th", "vi", "tr"])
+        self.assertNotIn("zh", bs.LANGS)  # ended languages stay on disk but are not built
+        self.assertNotIn("ru", bs.LANGS)
         self.assertEqual(self.ctx.langs, list(bs.LANGS))
-        self.assertEqual(bs.MT_LANGS, ("ja", "zh", "es", "pt", "id", "ru", "vi", "fr", "de"))
+        self.assertEqual(bs.MT_LANGS, ("ja", "zh-Hant", "es", "pt-BR", "fr", "de", "id", "th", "vi", "tr"))
         for l in bs.LANGS:
             for s in SLUGS:
                 h = self.read(pre(l) + s + "index.html")
@@ -71,7 +72,7 @@ class AllLanguages(unittest.TestCase):
                 continue
             canon = re.search(r'<link rel="canonical" href="([^"]+)">', h).group(1)
             pages[canon] = (re.search(r'<html lang="([\w-]+)"', h).group(1), head_alternates(h))
-        self.assertGreaterEqual(len(pages), 4 * 11 + 2 * 5)
+        self.assertGreaterEqual(len(pages), 4 * 12 + 2 * 5)
         for canon, (lang, alts) in pages.items():
             self.assertEqual(alts.get(lang), canon, canon)  # lists itself
             self.assertIn("x-default", alts, canon)
@@ -82,7 +83,7 @@ class AllLanguages(unittest.TestCase):
                 self.assertIn(target, pages, (canon, l))  # the target exists and is indexable
                 self.assertEqual(pages[target][0], l, (canon, target))
                 self.assertEqual(pages[target][1].get(lang), canon, ("not reciprocal", canon, target))
-        for l in bs.LANGS:  # home and the three pages list all 11 languages
+        for l in bs.LANGS:  # home and the three pages list all 12 languages
             self.assertEqual(set(pages[bs.url(bs.path_home(l))][1]) - {"x-default"}, set(bs.LANGS), l)
 
     def test_no_link_to_a_missing_page(self):
@@ -101,7 +102,7 @@ class AllLanguages(unittest.TestCase):
                 menu = re.search(r'<details class="langsw"><summary aria-label="([^"]+)">.*?</summary><ul class="langsw__list"[^>]*>(.*?)</ul></details>', h, re.S)
                 self.assertIsNotNone(menu, (l, s))
                 self.assertEqual(menu.group(1), "%s: %s" % (self.i18n[l]["lang_label"], bs.LANGS[l][0]))
-                items = re.findall(r'<li><a href="([^"]+)" hreflang="(\w+)" lang="\2"( aria-current="true")?>([^<]+)</a></li>', menu.group(2))
+                items = re.findall(r'<li><a href="([^"]+)" hreflang="([\w-]+)" lang="\2"( aria-current="true")?>([^<]+)</a></li>', menu.group(2))
                 self.assertEqual([i[1] for i in items], list(bs.LANGS), (l, s))
                 self.assertEqual([i[1] for i in items if i[2]], [l])
                 self.assertEqual({i[1]: i[0] for i in items}, {x: "/" + pre(x) + s for x in bs.LANGS})  # same page in each language
@@ -165,7 +166,7 @@ class AllLanguages(unittest.TestCase):
             self.assertEqual(len(re.findall(r'<a class="textlink" href="https://\w+\.ipe\.rest/[\w/]*feed\.xml" rel="noopener"%s>%s</a>' % (
                 en, re.escape(e(mark(l, self.i18n[l]["made_feed"])))), h)), 4, l)
             # no link to a game site in the English fallback without the attributes
-            for a in re.findall(r'<a [^>]*href="https://(?:iltonggi|inkisle|sunmeld|claimball|patchland)\.ipe\.rest/(?!%s/)[^"]*(?:blog|journal|terms)[^"]*"[^>]*>' % l, h):
+            for a in re.findall(r'<a [^>]*href="https://(?:iltonggi|inkisle|sunmeld|claimball|patchland)\.ipe\.rest/(?!%s/)[^"]*(?:blog|journal|terms)[^"]*"[^>]*>' % bs.SRC_OF.get(l, l), h):
                 self.assertIn(en, a, (l, a))
         vi = self.read("vi/index.html")
         self.assertIn('<a class="textlink" href="https://inkisle.ipe.rest/journal/" rel="noopener" hreflang="en">', vi)  # inkisle has no vi journal
@@ -180,15 +181,15 @@ class AllLanguages(unittest.TestCase):
             self.assertEqual(len(re.findall(r'\blang="en"', h)), len(re.findall(r'<a [^>]*\blang="en"[^>]*>English</a>', h)), l)
 
     PREVAILS = {  # the line added to every AI translation notice: if the translation differs, the English original prevails
-        "ja": "英語の原文が優先されます", "zh": "以英文原文为准", "es": "prevalece el original en inglés", "pt": "prevalece o original em inglês",
-        "id": "versi asli bahasa Inggris yang berlaku", "ru": "приоритет имеет английский оригинал", "vi": "bản gốc tiếng Anh sẽ được ưu tiên áp dụng",
-        "fr": "l’original en anglais fait foi", "de": "gilt das englische Original"}
+        "ja": "英語の原文が優先されます", "zh-Hant": "以英文原文為準", "es": "prevalece el original en inglés", "pt-BR": "prevalece o original em inglês",
+        "id": "versi asli bahasa Inggris yang berlaku", "vi": "bản gốc tiếng Anh sẽ được ưu tiên áp dụng",
+        "fr": "l’original en anglais fait foi", "de": "gilt das englische Original", "th": "ให้ถือต้นฉบับภาษาอังกฤษเป็นหลัก", "tr": "Çeviri İngilizce asıldan farklıysa İngilizce asıl geçerlidir"}
 
     def test_ai_note_says_the_english_original_prevails(self):
         self.assertEqual(sorted(self.PREVAILS), sorted(bs.MT_LANGS))
         self.assertIn("the English original prevails", self.i18n["en"]["ai_note"])
         for l in bs.MT_LANGS:
-            self.assertTrue(self.i18n[l]["ai_note"].endswith(self.PREVAILS[l] + ("。" if l in ("ja", "zh") else ".")), l)
+            self.assertTrue(self.i18n[l]["ai_note"].endswith(self.PREVAILS[l] + ("。" if l in ("ja", "zh-Hant") else "" if l == "th" else ".")), l)
             for s in SLUGS:  # every translated page, the privacy policy included, shows the whole notice
                 self.assertIn('<p>%s <a href="/%s"' % (html.escape(self.i18n[l]["ai_note"]), s), self.read(pre(l) + s + "index.html"), (l, s))
         self.assertNotIn("ai_note", self.i18n["ko"])  # ko is written by people: no notice
@@ -218,7 +219,7 @@ class AllLanguages(unittest.TestCase):
     def test_sitemap(self):
         errs, urls = cs.check(self.root, NOW)
         self.assertEqual(errs, [])
-        self.assertEqual(len(urls), 4 * 11 + 2 + 2 * 4)
+        self.assertEqual(len(urls), 4 * 12 + 2 + 2 * 4)
         tree = ET.parse(self.root / "sitemap.xml")
         for u in tree.getroot().findall("s:url", NS):
             loc = u.findtext("s:loc", namespaces=NS)
