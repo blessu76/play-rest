@@ -56,7 +56,7 @@ except ImportError:
 
 SITE = "https://play.ipe.rest"
 KST = dt.timezone(dt.timedelta(hours=9))
-ASSET_V = "20261113b"  # keep in sync: bump when assets/play.css or play.js change
+ASSET_V = "20261114a"  # keep in sync: bump when assets/play.css or play.js change
 SITE_UPDATED = "2026-11-11"  # "Last updated" of home / 404 and sitemap lastmod: bump by hand when their text changes
 OPERATOR = "Davy Kim (ipe Studio)"
 EMAIL = "ipe.haven@gmail.com"

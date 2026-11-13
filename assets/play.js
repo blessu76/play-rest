@@ -10,6 +10,11 @@
     try{localStorage.setItem('play-lang',this.options[this.selectedIndex].getAttribute('data-lang'))}catch(x){}
     location.href=this.value;
   });
+  /* back/forward from bfcache keeps the select on the last choice: restore this page's own language option */
+  window.addEventListener('pageshow',function(e){
+    if(!e.persisted)return;
+    for(var i=0;i<ls.length;i++)for(var j=0;j<ls[i].options.length;j++)ls[i].options[j].selected=ls[i].options[j].defaultSelected;
+  });
   /* the language menu (<details>) closes on a click outside it and on Escape (focus goes back to its summary) */
   var sw=document.querySelector&&document.querySelector('details.langsw');
   if(!sw)return;
