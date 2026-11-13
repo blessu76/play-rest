@@ -172,7 +172,7 @@
   }
  },
  "patchland": {
-  "status": "開発中",
+  "status": "近日公開",
   "platform": "iOSとAndroid",
   "pricing": "広告なし、サブスクなし",
   "tagline": "色紙のパッチで陣地を広げる、短くて気軽なオフライン陣取りゲーム。個性豊かな6人のAI領主から、地域をひとつずつ奪い取ります。陣地を得る方法は、描く・置く・広げるの3つです。",
@@ -210,7 +210,7 @@
    "offline": "オフラインで遊べます",
    "pricing": "広告なし、サブスクなし",
    "languages": "英語、韓国語",
-   "status": "開発中"
+   "status": "近日公開。TestFlightビルド進行中"
   }
  },
  "tottertop": {

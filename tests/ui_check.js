@@ -39,16 +39,16 @@ function journalPages() {
   return out;
 }
 // every language directory that has a built home page (en is the root)
-const LANGS = ['ko', 'ja', 'zh', 'es', 'pt', 'id', 'ru', 'vi', 'fr', 'de'].filter(l => fs.existsSync(path.join(ROOT, l, 'index.html')));
+const LANGS = ['ko', 'ja', 'zh-Hant', 'es', 'pt-BR', 'id', 'vi', 'fr', 'de', 'th', 'tr'].filter(l => fs.existsSync(path.join(ROOT, l, 'index.html')));
 function pagesToCheck() {
   const base = ['/', '/about/', '/privacy/', '/contact/'];
   const out = [...base, '/404.html', ...journalPages()];
   for (const l of LANGS) for (const b of base) out.push('/' + l + b);
   return out;
 }
-const isHome = p => p === '/' || /^\/[a-z]{2}\/$/.test(p);
+const isHome = p => p === '/' || LANGS.some(l => p === '/' + l + '/');
 const isTouchPage = p => isHome(p) || p.includes('/journal/');
-const SHOT = new Set(['/', '/about/', '/privacy/', '/contact/', '/ko/', '/ko/about/', '/ja/', '/zh/', '/de/', '/ru/about/', '/vi/', ...journalPages()]);
+const SHOT = new Set(['/', '/about/', '/privacy/', '/contact/', '/ko/', '/ko/about/', '/ja/', '/zh-Hant/', '/de/', '/th/', '/tr/', '/pt-BR/about/', '/vi/', ...journalPages()]);
 (async () => {
   fs.mkdirSync(OUT, { recursive: true });
   await new Promise(r => server.listen(0, '127.0.0.1', r));

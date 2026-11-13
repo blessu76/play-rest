@@ -172,7 +172,7 @@
     }
   },
   "patchland": {
-    "status": "Geliştiriliyor",
+    "status": "Yakında",
     "platform": "iOS ve Android",
     "pricing": "Reklam yok, aylık abonelik yok",
     "tagline": "Renkli kâğıt parçalarıyla, çevrimdışı oynanan hızlı ve hafif bir toprak kapma oyunu. Altı kendine özgü yapay zeka lordundan toprağı bölge bölge, üç yolla alın: Çiz, Yerleştir ve Yay.",
@@ -210,7 +210,7 @@
       "offline": "İnternet olmadan oynanır",
       "pricing": "Reklam yok, aylık abonelik yok",
       "languages": "İngilizce, Korece",
-      "status": "Geliştiriliyor"
+      "status": "Yakında. TestFlight sürümleri üzerinde çalışılıyor"
     }
   },
   "tottertop": {

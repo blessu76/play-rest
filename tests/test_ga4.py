@@ -108,13 +108,13 @@ class Ga4(unittest.TestCase):
         self.assertTrue(self.ctx.i18n["en"]["p3_p"].endswith("inside the games."))
         self.assertIn("게임 안에서는", self.ctx.i18n["ko"]["p3_p"])
 
-    def test_footer_game_links_are_tracked_like_the_cards(self):
+    def test_footer_links_out_to_ipe_rest_only_and_card_buttons_are_tracked(self):
         live = sorted(g["id"] for g in self.ctx.games if g["site"]["live"])
         for lang in LANGS:
             foot = re.search(r"<footer.*</footer>", self.page(lang, ""), re.S).group(0)
-            found = re.findall(r'<li><a href="https://[^"]+" rel="noopener" data-game="([a-z]+)" data-placement="footer">', foot)
-            with self.subTest(lang):
-                self.assertEqual(sorted(found), live)  # the footer links only the games whose site is up
+            with self.subTest(lang):  # hub-0018: the only external href in the footer is ipe.rest
+                self.assertEqual(re.findall(r'href="(https?://[^"]+)"', foot), ["https://ipe.rest/"])
+                self.assertNotIn("data-game", foot)
         self.assertIn("a.getAttribute('data-placement')||'card'", self.page("en", ""))
         self.assertEqual(self.page("en", "").count('data-placement="card"'), len(live))
 

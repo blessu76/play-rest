@@ -172,7 +172,7 @@
     }
   },
   "patchland": {
-    "status": "開發中",
+    "status": "即將推出",
     "platform": "iOS 與 Android",
     "pricing": "無廣告,無月費訂閱",
     "tagline": "用彩色紙片進行的快速、輕鬆、可離線的占地遊戲。以三種方式:劃線、放置與擴散,一個區域一個區域地從六位獨特的 AI 領主手中奪取土地。",
@@ -210,7 +210,7 @@
       "offline": "沒有網路也能玩",
       "pricing": "無廣告,無月費訂閱",
       "languages": "英文、韓文",
-      "status": "開發中"
+      "status": "即將推出,TestFlight 測試版進行中"
     }
   },
   "tottertop": {

@@ -9,8 +9,8 @@ from helpers import REPO, bs, build, jsonld, make_site
 
 PAGES = ["", "about/", "privacy/", "contact/"]
 GAMES = {"iltonggi": "https://iltonggi.ipe.rest", "inkisle": "https://inkisle.ipe.rest",
-         "sunmeld": "https://sunmeld.ipe.rest", "claimball": "https://claimball.ipe.rest",
-         "patchland": "https://patchland.ipe.rest", "tottertop": "https://tottertop.ipe.rest",
+         "patchland": "https://patchland.ipe.rest", "claimball": "https://claimball.ipe.rest",
+         "sunmeld": "https://sunmeld.ipe.rest", "tottertop": "https://tottertop.ipe.rest",
          "mossgarden": "https://mossgarden.ipe.rest", "duskblocks": "https://duskblocks.ipe.rest",
          "bottledmarbles": "https://bottledmarbles.ipe.rest"}
 NOT_LIVE = ()

@@ -172,7 +172,7 @@
   }
  },
  "patchland": {
-  "status": "Đang phát triển",
+  "status": "Sắp ra mắt",
   "platform": "iOS và Android",
   "pricing": "Không quảng cáo, không đăng ký tháng",
   "tagline": "Một trò chơi chiếm đất nhanh, nhẹ, chơi ngoại tuyến bằng những mảnh giấy màu. Giành đất từ sáu lãnh chúa AI độc đáo, từng vùng một, theo ba cách: Vạch, Đặt và Lan.",
@@ -210,7 +210,7 @@
    "offline": "Chơi được khi không có mạng",
    "pricing": "Không quảng cáo, không đăng ký tháng",
    "languages": "Tiếng Anh, tiếng Hàn",
-   "status": "Đang phát triển"
+   "status": "Sắp ra mắt. Đang có các bản dựng TestFlight"
   }
  },
  "tottertop": {

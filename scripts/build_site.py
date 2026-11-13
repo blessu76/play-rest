@@ -56,7 +56,7 @@ except ImportError:
 
 SITE = "https://play.ipe.rest"
 KST = dt.timezone(dt.timedelta(hours=9))
-ASSET_V = "20261112a"  # keep in sync: bump when assets/play.css or play.js change
+ASSET_V = "20261113a"  # keep in sync: bump when assets/play.css or play.js change
 SITE_UPDATED = "2026-11-11"  # "Last updated" of home / 404 and sitemap lastmod: bump by hand when their text changes
 OPERATOR = "Davy Kim (ipe Studio)"
 EMAIL = "ipe.haven@gmail.com"
@@ -113,7 +113,11 @@ SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 PUBLISHED_RE = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}\+09:00$")  # published time is always recorded in KST
 HOME_CARDS = 3
 EXCERPT_MAX = 200
-GAME_IDS = ("iltonggi", "inkisle", "sunmeld", "claimball", "patchland", "tottertop", "mossgarden", "duskblocks", "bottledmarbles")
+# order = how soon you can touch the game (hub-0009, Davy 2026-11-13): TestFlight builds in progress first, then in development
+GAME_IDS = ("iltonggi", "inkisle", "patchland", "claimball", "sunmeld", "tottertop", "mossgarden", "duskblocks", "bottledmarbles")
+# the "which one fits" lines (choose_N in i18n) belong to a game, not to a position in the list
+CHOOSE_KEY = {"iltonggi": "choose_1", "inkisle": "choose_2", "sunmeld": "choose_3", "claimball": "choose_4", "patchland": "choose_5",
+              "tottertop": "choose_6", "mossgarden": "choose_7", "duskblocks": "choose_8", "bottledmarbles": "choose_9"}
 # which games keep which principle (docs ch.2). Sunmeld has no public round length, so it is not listed under principle 1.
 # Tottertop (a round is about a minute) and Moss Garden (a short drop-in tending) keep principle 1; the two TestFlight games
 # (Dusk Blocks, Bottled Marbles) are not listed under 1/2/3 yet (unverified). Principle 4 (say what's true, including what
@@ -145,7 +149,7 @@ KEYS = (
     "row_platform row_offline row_pricing row_languages row_status "
     "choose_h choose_lead choose_1 choose_2 choose_3 choose_4 choose_5 choose_6 choose_7 choose_8 choose_9 choose_go "
     "made_h made_lead made_now made_feed made_read ipe_h ipe_p ipe_studio ipe_music ipe_contact "
-    "footer_line footer_code footer_tm footer_games footer_terms footer_site footer_about nf_h nf_p "
+    "footer_line footer_code footer_tm footer_site footer_about nf_h nf_p "
     "journal_h journal_lead journal_all journal_empty journal_desc journal_rss journal_back journal_feed_title"
 ).split()
 MT_KEYS = ("ai_note", "ai_original", "journal_en", "en_mark")  # required in the AI-translated languages; en.json holds the English source
@@ -678,10 +682,6 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
               '<span class="brand-sub">games</span></a><nav class="nav" aria-label="main">%s</nav>'
               '<div class="tools">%s<div class="themesw" role="group" aria-label="%s">%s</div></div></div></header>') % (
         esc(path_home(lang)), nav_html, langsw, esc(t("theme_label")), theme_btns)
-    game_links = "".join('<li><a href="%s" rel="noopener" data-game="%s" data-placement="footer">%s</a></li>' % (
-        esc(g["site"]["url"]), esc(g["id"]), esc(g["name"][lang])) for g in ctx.games if g["site"]["live"])  # a site not up yet is not linked
-    terms_links = "".join('<li><a href="%s" rel="noopener"%s>%s</a></li>' % (esc(h), a, esc(g["name"][lang] + m))
-                          for g in ctx.games if g.get("terms") for h, a, m in [loc_link(ctx, g["terms"], lang)])
     site_links = ('<li><a href="https://ipe.rest/" rel="noopener">ipe.rest</a></li><li><a href="%s">%s</a></li><li><a href="%s"%s>%s</a></li>'
                   '<li><a href="%s">%s</a></li><li><a href="%s">%s</a></li>') % (
         esc(path_page(lang, "about")), esc(t("footer_about")), esc(path_journal(jl)), jattr, esc(t("nav_journal") if jl == lang else t("journal_en")),
@@ -690,12 +690,12 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
     foot_langs = ('<p class="foot-langs" aria-label="%s">%s</p>' % (esc(t("lang_label")), " ".join(
         '<a href="%s" hreflang="%s" lang="%s"%s>%s</a>' % (esc(alt.get(l) or path_home(l)), l, l, ' aria-current="true"' if l == lang else "", esc(LANGS[l][0]))
         for l in ctx.langs))) if len(ctx.langs) > 1 else ""
+    # footer (hub-0017/0018): the shape of the ipe.rest footer; the only link that leaves the portal is ipe.rest (games and their terms live on the cards)
     footer = ('<footer class="site-footer"><div class="wrap"><div class="foot-grid">'
-              '<div class="foot-brand"><span class="logo">ipe()</span><p>%s<br>© 2026 %s</p><p class="mono small">%s</p><p class="small">%s</p></div>'
-              '<div><h2 class="foot-h">%s</h2><ul>%s</ul></div><div><h2 class="foot-h">%s</h2><ul>%s</ul></div><div><h2 class="foot-h">%s</h2><ul>%s</ul></div>'
+              '<div class="foot-brand"><span class="logo">ipe()</span><p>%s<br>\u00a9 2026 %s</p><p class="mono small">%s</p><p class="small">%s</p></div>'
+              '<div><h2 class="foot-h">%s</h2><ul>%s</ul></div>'
               '</div>%s</div></footer>') % (
-        esc(t("footer_line")), esc(OPERATOR), esc(t("footer_code")), esc(t("footer_tm")), esc(t("footer_games")), game_links,
-        esc(t("footer_terms")), terms_links, esc(t("footer_site")), site_links, foot_langs)
+        esc(t("footer_line")), esc(OPERATOR), esc(t("footer_code")), esc(t("footer_tm")), esc(t("footer_site")), site_links, foot_langs)
     last = '<p class="updated mono">%s: <time datetime="%s">%s</time></p>' % (esc(t("updated_label")), esc(updated), esc(updated))
     # decision 0087: the nine non-native languages are AI translations -> a visible label + a link to the English original
     mt = ""
@@ -810,7 +810,7 @@ def build_home(ctx, lang):
     cmp_ = ('<section class="sec" id="compare"><div class="wrap"><h2><span class="sn mono">03</span>%s</h2><p class="lead">%s</p>%s<p class="note">%s</p></div></section>') % (
         esc(t("compare_h")), esc(t("compare_lead")), compare_html(ctx, lang), esc(t("compare_note")))
     choose_items = "".join('<li><span>%s</span><a class="btn ghost" href="#%s">%s <span aria-hidden="true">→</span></a></li>' % (
-        esc(t("choose_%d" % (i + 1))), g["id"], esc(g["name"][lang])) for i, g in enumerate(ctx.games))
+        esc(t(CHOOSE_KEY[g["id"]])), g["id"], esc(g["name"][lang])) for g in ctx.games)
     choose = ('<section class="sec tint" id="choose"><div class="wrap"><h2><span class="sn mono">04</span>%s</h2><p class="lead">%s</p><ul class="choose">%s</ul></div></section>') % (
         esc(t("choose_h")), esc(t("choose_lead")), choose_items)
     made_items = ""

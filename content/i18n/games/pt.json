@@ -172,7 +172,7 @@
   }
  },
  "patchland": {
-  "status": "Em desenvolvimento",
+  "status": "Em breve",
   "platform": "iOS e Android",
   "pricing": "Sem anúncios, sem assinatura",
   "tagline": "Um jogo de território rápido e offline, jogado com retalhos de papel. Conquiste terras de seis senhores de IA peculiares, uma região por vez, de três maneiras: Traçar, Colocar e Espalhar.",
@@ -210,7 +210,7 @@
    "offline": "Funciona offline",
    "pricing": "Sem anúncios, sem assinatura",
    "languages": "Inglês, coreano",
-   "status": "Em desenvolvimento"
+   "status": "Em breve. Versões do TestFlight em andamento"
   }
  },
  "tottertop": {

@@ -172,7 +172,7 @@
   }
  },
  "patchland": {
-  "status": "En desarrollo",
+  "status": "Próximamente",
   "platform": "iOS y Android",
   "pricing": "Sin anuncios, sin suscripción",
   "tagline": "Un juego de territorio rápido y sin conexión, jugado con parches de papel. Gana tierras a seis curiosos señores de IA, región por región, de tres maneras: Trazar, Colocar y Extender.",
@@ -210,7 +210,7 @@
    "offline": "Funciona sin conexión",
    "pricing": "Sin anuncios, sin suscripción",
    "languages": "Inglés, coreano",
-   "status": "En desarrollo"
+   "status": "Próximamente. Compilaciones de TestFlight en curso"
   }
  },
  "tottertop": {

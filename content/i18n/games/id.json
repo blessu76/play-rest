@@ -172,7 +172,7 @@
   }
  },
  "patchland": {
-  "status": "Dalam pengembangan",
+  "status": "Segera hadir",
   "platform": "iOS dan Android",
   "pricing": "Tanpa iklan, tanpa langganan",
   "tagline": "Game wilayah yang singkat dan ringan, dimainkan offline dengan kepingan kertas. Rebut tanah dari enam penguasa AI yang unik, satu wilayah demi satu wilayah, dengan tiga cara: Menggaris, Menaruh, dan Menyebar.",
@@ -210,7 +210,7 @@
    "offline": "Bisa dimainkan offline",
    "pricing": "Tanpa iklan, tanpa langganan",
    "languages": "Inggris, Korea",
-   "status": "Dalam pengembangan"
+   "status": "Segera hadir. Build TestFlight sedang berjalan"
   }
  },
  "tottertop": {

@@ -337,136 +337,120 @@
    }
   },
   {
-   "id": "sunmeld",
+   "id": "patchland",
    "name": {
-    "en": "Sunmeld",
-    "ko": "Sunmeld"
+    "en": "Patchland",
+    "ko": "Patchland"
    },
    "sub": {
-    "en": "Space Merge Duel",
-    "ko": "썬멜드 · Space Merge Duel"
+    "en": "Claim It All",
+    "ko": "패치랜드 · Claim It All"
    },
    "site": {
-    "url": "https://sunmeld.ipe.rest",
+    "url": "https://patchland.ipe.rest",
     "live": true
    },
-   "icon": "sunmeld.png",
+   "icon": "patchland.png",
    "accent": [
-    "#2b5fd9",
-    "#8fb0f5"
+    "#a8432f",
+    "#e58a73"
    ],
    "platforms": [
     "iOS",
     "Android"
    ],
    "genre": [
-    "Puzzle",
-    "Casual"
+    "Strategy",
+    "Puzzle"
    ],
    "status": {
-    "en": "In development",
-    "ko": "개발 중"
+    "en": "Coming soon",
+    "ko": "곧 출시"
    },
    "platform": {
     "en": "iOS and Android",
     "ko": "iOS · Android"
    },
    "pricing": {
-    "en": "Free to try, one purchase unlocks everything, no ads",
-    "ko": "무료 체험, 한 번 구매로 모두 열기, 광고 없음"
+    "en": "No ads, no subscription",
+    "ko": "광고도 구독도 없어요"
    },
    "tagline": {
-    "en": "A merge duel against an AI opponent in one shared tub. Drop a stone, merge matching stones into the next stage, and score. Overflow the tub and you lose.",
-    "ko": "하나뿐인 통을 AI 상대와 나눠 쓰는 합치기 대결. 우주 돌을 합쳐 점수를 얻고, 통이 넘치면 집니다."
+    "en": "A quick, offline territory game played with paper patches. Win land from six quirky AI lords, one region at a time, in three ways: Trace, Place and Spread.",
+    "ko": "색종이로 땅을 넓히는 짧고 가벼운 오프라인 땅따먹기. 여섯 이웃 영주 AI에게서 지역을 하나씩 가져옵니다. 땅을 얻는 방법은 긋기·놓기·번지기, 세 가지입니다."
    },
    "pros": [
     {
      "h": {
-      "en": "Four lines of rules.",
-      "ko": "규칙이 네 줄입니다."
+      "en": "Three ways to take land.",
+      "ko": "땅을 얻는 방법이 세 가지입니다."
      },
      "p": {
-      "en": "Take turns dropping stones, matching stages merge, whoever merges scores, and if the tub overflows the player who placed the last stone loses.",
-      "ko": "번갈아 놓고, 같은 단계끼리 닿으면 합쳐지고, 합친 쪽이 득점하고, 넘치면 마지막에 놓은 쪽이 집니다."
+      "en": "Trace a line and come home to claim what you circle. Place stones on a hex board. Or pick a color and let it spread. Each mode plays differently.",
+      "ko": "선을 긋고 돌아와 둘러싼 땅을 차지하거나, 육각 판에 돌을 놓거나, 색을 골라 번지게 합니다. 방식마다 플레이가 다릅니다."
      }
     },
     {
      "h": {
-      "en": "The shape you stack becomes your opponent's space.",
-      "ko": "내가 쌓은 모양이 상대의 자리가 됩니다."
+      "en": "A map that grows with you.",
+      "ko": "키울수록 재미있는 지도입니다."
      },
      "p": {
-      "en": "You share one tub, so there is a taste of working out what you leave behind.",
-      "ko": "통을 둘이 같이 쓰기 때문에 「내가 남기는 자리」를 계산하는 맛이 있습니다."
+      "en": "A 24-region paper map with a lord on every region. Boss lords play first to two wins, and your lands slowly gather pieces while you are away.",
+      "ko": "영주가 지키는 24지역 색종이 지도입니다. 보스 영주는 먼저 두 판을 이기는 쪽이 승리하고, 자리를 비운 동안에도 내 땅이 조각을 조금씩 모아 둡니다."
      }
     },
     {
      "h": {
-      "en": "Every opponent has its own habits.",
-      "ko": "상대마다 버릇이 달라 같은 통도 매번 다르게 풀립니다."
+      "en": "A reason to come back each day.",
+      "ko": "매일 열어볼 이유가 있습니다."
      },
      "p": {
-      "en": "The same tub plays out differently each time. It is free to try, one purchase unlocks everything, and there are no ads.",
-      "ko": "무료로 체험해 볼 수 있고, 한 번 구매로 모든 기능을 열며 광고는 없습니다."
+      "en": "Today's Land is one board, the same for everyone, with a streak to keep. Collect all 24 lord cards in the Lord Album for free.",
+      "ko": "오늘의 땅은 모두에게 같은 판 하나이고, 이어 가는 연속 일수가 있습니다. 영주 앨범의 카드 24장은 무료로 전부 모을 수 있어요."
      }
     }
    ],
    "cons": [
     {
      "h": {
-      "en": "If you want to build your own records or play against friends.",
-      "ko": "혼자 기록을 쌓거나 친구와 겨루고 싶은 분."
+      "en": "If you want to play people online.",
+      "ko": "사람과 온라인으로 겨루고 싶은 분."
      },
      "p": {
-      "en": "Every match is a duel against an AI opponent, so it feels different from a puzzle where you chase a high score, or from playing people.",
-      "ko": "모든 경기가 AI 상대와의 대결이라서, 점수판을 올리는 퍼즐이나 사람과의 대전과는 결이 다릅니다."
+      "en": "Matches are against AI lords, and the game works offline.",
+      "ko": "대결 상대는 AI 영주이고, 오프라인에서 플레이하는 게임입니다."
      }
     },
     {
      "h": {
-      "en": "If you expect a brand-new kind of game.",
-      "ko": "완전히 새로운 장르를 기대하는 분."
+      "en": "If you want a long story.",
+      "ko": "긴 이야기를 원하는 분."
      },
      "p": {
-      "en": "Dropping and merging is a familiar kind of game. What is different here is the one tub you share and the AI you duel.",
-      "ko": "떨어뜨리고 합치는 장르 자체는 널리 알려져 있습니다. 다른 점은 둘이 함께 쓰는 하나의 통과 AI 와의 대결입니다."
+      "en": "The matches are short and light, built for quick sessions.",
+      "ko": "한 판이 짧고 가볍게 즐기도록 만들었습니다."
      }
     }
    ],
-   "terms": {
-    "en": "https://sunmeld.ipe.rest/terms/",
-    "ko": "https://sunmeld.ipe.rest/ko/terms/"
-   },
-   "journal": {
-    "label": {
-     "en": "Journal",
-     "ko": "저널"
-    },
-    "url": {
-     "en": "https://sunmeld.ipe.rest/journal/",
-     "ko": "https://sunmeld.ipe.rest/ko/journal/"
-    },
-    "feed": {
-     "en": "https://sunmeld.ipe.rest/journal/feed.xml",
-     "ko": "https://sunmeld.ipe.rest/ko/journal/feed.xml"
-    }
-   },
+   "terms": null,
+   "journal": null,
    "compare": {
     "oneline": {
-     "en": "Space-stone merge duel",
-     "ko": "우주 돌 합치기 대결"
+     "en": "Claiming land with paper patches",
+     "ko": "색종이로 땅따먹기"
     },
     "style": {
-     "en": "Duel in alternating turns",
-     "ko": "턴을 번갈아 놓는 대결"
+     "en": "Three modes: Trace, Place, Spread",
+     "ko": "세 가지 방식: 긋기·놓기·번지기"
     },
     "length": {
      "en": "—",
      "ko": "—"
     },
     "difficulty": {
-     "en": "Each opponent has its own habits",
-     "ko": "상대마다 버릇이 다름"
+     "en": "Easy, Normal or Hard in practice; boss lords on the map",
+     "ko": "연습에서 쉬움·보통·어려움, 지도에는 보스 영주"
     },
     "players": {
      "en": "1 on 1 against the AI",
@@ -477,20 +461,20 @@
      "ko": "iOS · Android 개발 중"
     },
     "offline": {
-     "en": "—",
-     "ko": "—"
+     "en": "Works offline",
+     "ko": "오프라인 플레이"
     },
     "pricing": {
-     "en": "Free to try, one purchase unlocks everything, no ads",
-     "ko": "무료 체험, 한 번 구매로 모두 열기, 광고 없음"
+     "en": "No ads, no subscription",
+     "ko": "광고도 구독도 없어요"
     },
     "languages": {
      "en": "English, Korean",
      "ko": "영어·한국어"
     },
     "status": {
-     "en": "In development",
-     "ko": "개발 중"
+     "en": "Coming soon. TestFlight builds in progress",
+     "ko": "곧 출시. TestFlight 빌드 진행 중"
     }
    }
   },
@@ -652,31 +636,31 @@
    }
   },
   {
-   "id": "patchland",
+   "id": "sunmeld",
    "name": {
-    "en": "Patchland",
-    "ko": "Patchland"
+    "en": "Sunmeld",
+    "ko": "Sunmeld"
    },
    "sub": {
-    "en": "Claim It All",
-    "ko": "패치랜드 · Claim It All"
+    "en": "Space Merge Duel",
+    "ko": "썬멜드 · Space Merge Duel"
    },
    "site": {
-    "url": "https://patchland.ipe.rest",
+    "url": "https://sunmeld.ipe.rest",
     "live": true
    },
-   "icon": "patchland.png",
+   "icon": "sunmeld.png",
    "accent": [
-    "#a8432f",
-    "#e58a73"
+    "#2b5fd9",
+    "#8fb0f5"
    ],
    "platforms": [
     "iOS",
     "Android"
    ],
    "genre": [
-    "Strategy",
-    "Puzzle"
+    "Puzzle",
+    "Casual"
    ],
    "status": {
     "en": "In development",
@@ -687,85 +671,101 @@
     "ko": "iOS · Android"
    },
    "pricing": {
-    "en": "No ads, no subscription",
-    "ko": "광고도 구독도 없어요"
+    "en": "Free to try, one purchase unlocks everything, no ads",
+    "ko": "무료 체험, 한 번 구매로 모두 열기, 광고 없음"
    },
    "tagline": {
-    "en": "A quick, offline territory game played with paper patches. Win land from six quirky AI lords, one region at a time, in three ways: Trace, Place and Spread.",
-    "ko": "색종이로 땅을 넓히는 짧고 가벼운 오프라인 땅따먹기. 여섯 이웃 영주 AI에게서 지역을 하나씩 가져옵니다. 땅을 얻는 방법은 긋기·놓기·번지기, 세 가지입니다."
+    "en": "A merge duel against an AI opponent in one shared tub. Drop a stone, merge matching stones into the next stage, and score. Overflow the tub and you lose.",
+    "ko": "하나뿐인 통을 AI 상대와 나눠 쓰는 합치기 대결. 우주 돌을 합쳐 점수를 얻고, 통이 넘치면 집니다."
    },
    "pros": [
     {
      "h": {
-      "en": "Three ways to take land.",
-      "ko": "땅을 얻는 방법이 세 가지입니다."
+      "en": "Four lines of rules.",
+      "ko": "규칙이 네 줄입니다."
      },
      "p": {
-      "en": "Trace a line and come home to claim what you circle. Place stones on a hex board. Or pick a color and let it spread. Each mode plays differently.",
-      "ko": "선을 긋고 돌아와 둘러싼 땅을 차지하거나, 육각 판에 돌을 놓거나, 색을 골라 번지게 합니다. 방식마다 플레이가 다릅니다."
+      "en": "Take turns dropping stones, matching stages merge, whoever merges scores, and if the tub overflows the player who placed the last stone loses.",
+      "ko": "번갈아 놓고, 같은 단계끼리 닿으면 합쳐지고, 합친 쪽이 득점하고, 넘치면 마지막에 놓은 쪽이 집니다."
      }
     },
     {
      "h": {
-      "en": "A map that grows with you.",
-      "ko": "키울수록 재미있는 지도입니다."
+      "en": "The shape you stack becomes your opponent's space.",
+      "ko": "내가 쌓은 모양이 상대의 자리가 됩니다."
      },
      "p": {
-      "en": "A 24-region paper map with a lord on every region. Boss lords play first to two wins, and your lands slowly gather pieces while you are away.",
-      "ko": "영주가 지키는 24지역 색종이 지도입니다. 보스 영주는 먼저 두 판을 이기는 쪽이 승리하고, 자리를 비운 동안에도 내 땅이 조각을 조금씩 모아 둡니다."
+      "en": "You share one tub, so there is a taste of working out what you leave behind.",
+      "ko": "통을 둘이 같이 쓰기 때문에 「내가 남기는 자리」를 계산하는 맛이 있습니다."
      }
     },
     {
      "h": {
-      "en": "A reason to come back each day.",
-      "ko": "매일 열어볼 이유가 있습니다."
+      "en": "Every opponent has its own habits.",
+      "ko": "상대마다 버릇이 달라 같은 통도 매번 다르게 풀립니다."
      },
      "p": {
-      "en": "Today's Land is one board, the same for everyone, with a streak to keep. Collect all 24 lord cards in the Lord Album for free.",
-      "ko": "오늘의 땅은 모두에게 같은 판 하나이고, 이어 가는 연속 일수가 있습니다. 영주 앨범의 카드 24장은 무료로 전부 모을 수 있어요."
+      "en": "The same tub plays out differently each time. It is free to try, one purchase unlocks everything, and there are no ads.",
+      "ko": "무료로 체험해 볼 수 있고, 한 번 구매로 모든 기능을 열며 광고는 없습니다."
      }
     }
    ],
    "cons": [
     {
      "h": {
-      "en": "If you want to play people online.",
-      "ko": "사람과 온라인으로 겨루고 싶은 분."
+      "en": "If you want to build your own records or play against friends.",
+      "ko": "혼자 기록을 쌓거나 친구와 겨루고 싶은 분."
      },
      "p": {
-      "en": "Matches are against AI lords, and the game works offline.",
-      "ko": "대결 상대는 AI 영주이고, 오프라인에서 플레이하는 게임입니다."
+      "en": "Every match is a duel against an AI opponent, so it feels different from a puzzle where you chase a high score, or from playing people.",
+      "ko": "모든 경기가 AI 상대와의 대결이라서, 점수판을 올리는 퍼즐이나 사람과의 대전과는 결이 다릅니다."
      }
     },
     {
      "h": {
-      "en": "If you want a long story.",
-      "ko": "긴 이야기를 원하는 분."
+      "en": "If you expect a brand-new kind of game.",
+      "ko": "완전히 새로운 장르를 기대하는 분."
      },
      "p": {
-      "en": "The matches are short and light, built for quick sessions.",
-      "ko": "한 판이 짧고 가볍게 즐기도록 만들었습니다."
+      "en": "Dropping and merging is a familiar kind of game. What is different here is the one tub you share and the AI you duel.",
+      "ko": "떨어뜨리고 합치는 장르 자체는 널리 알려져 있습니다. 다른 점은 둘이 함께 쓰는 하나의 통과 AI 와의 대결입니다."
      }
     }
    ],
-   "terms": null,
-   "journal": null,
+   "terms": {
+    "en": "https://sunmeld.ipe.rest/terms/",
+    "ko": "https://sunmeld.ipe.rest/ko/terms/"
+   },
+   "journal": {
+    "label": {
+     "en": "Journal",
+     "ko": "저널"
+    },
+    "url": {
+     "en": "https://sunmeld.ipe.rest/journal/",
+     "ko": "https://sunmeld.ipe.rest/ko/journal/"
+    },
+    "feed": {
+     "en": "https://sunmeld.ipe.rest/journal/feed.xml",
+     "ko": "https://sunmeld.ipe.rest/ko/journal/feed.xml"
+    }
+   },
    "compare": {
     "oneline": {
-     "en": "Claiming land with paper patches",
-     "ko": "색종이로 땅따먹기"
+     "en": "Space-stone merge duel",
+     "ko": "우주 돌 합치기 대결"
     },
     "style": {
-     "en": "Three modes: Trace, Place, Spread",
-     "ko": "세 가지 방식: 긋기·놓기·번지기"
+     "en": "Duel in alternating turns",
+     "ko": "턴을 번갈아 놓는 대결"
     },
     "length": {
      "en": "—",
      "ko": "—"
     },
     "difficulty": {
-     "en": "Easy, Normal or Hard in practice; boss lords on the map",
-     "ko": "연습에서 쉬움·보통·어려움, 지도에는 보스 영주"
+     "en": "Each opponent has its own habits",
+     "ko": "상대마다 버릇이 다름"
     },
     "players": {
      "en": "1 on 1 against the AI",
@@ -776,12 +776,12 @@
      "ko": "iOS · Android 개발 중"
     },
     "offline": {
-     "en": "Works offline",
-     "ko": "오프라인 플레이"
+     "en": "—",
+     "ko": "—"
     },
     "pricing": {
-     "en": "No ads, no subscription",
-     "ko": "광고도 구독도 없어요"
+     "en": "Free to try, one purchase unlocks everything, no ads",
+     "ko": "무료 체험, 한 번 구매로 모두 열기, 광고 없음"
     },
     "languages": {
      "en": "English, Korean",

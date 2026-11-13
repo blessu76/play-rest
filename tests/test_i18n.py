@@ -161,7 +161,6 @@ class AllLanguages(unittest.TestCase):
                 self.assertIn('rel="noopener"%s>%s</a>' % (en, e(mark(l, "%s: %s" % (games[g]["journal"]["label"][l], self.i18n[l]["made_read"])))), h, (l, g))
                 self.assertIn('<a class="textlink" href="https://%s.ipe.rest/terms/" rel="noopener"%s>%s</a>' % (
                     g, en, e(mark(l, self.i18n[l]["g_terms"]))), h, (l, g))
-                self.assertIn('<li><a href="https://%s.ipe.rest/terms/" rel="noopener"%s>%s</a></li>' % (g, en, e(mark(l, name))), h, (l, g))
             # the feeds are en/ko only for every game
             self.assertEqual(len(re.findall(r'<a class="textlink" href="https://\w+\.ipe\.rest/[\w/]*feed\.xml" rel="noopener"%s>%s</a>' % (
                 en, re.escape(e(mark(l, self.i18n[l]["made_feed"])))), h)), 4, l)

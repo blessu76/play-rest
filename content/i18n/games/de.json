@@ -172,7 +172,7 @@
   }
  },
  "patchland": {
-  "status": "In Entwicklung",
+  "status": "Demnächst",
   "platform": "iOS und Android",
   "pricing": "Keine Werbung, kein Abo",
   "tagline": "Ein kurzes, leichtes Offline-Gebietsspiel mit Papierflecken. Gewinnen Sie Land von sechs eigenwilligen KI-Fürsten, Region für Region, auf drei Arten: Ziehen, Setzen und Ausbreiten.",
@@ -210,7 +210,7 @@
    "offline": "Funktioniert offline",
    "pricing": "Keine Werbung, kein Abo",
    "languages": "Englisch, Koreanisch",
-   "status": "In Entwicklung"
+   "status": "Demnächst. TestFlight-Builds laufen"
   }
  },
  "tottertop": {

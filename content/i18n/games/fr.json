@@ -172,7 +172,7 @@
   }
  },
  "patchland": {
-  "status": "En développement",
+  "status": "Bientôt disponible",
   "platform": "iOS et Android",
   "pricing": "Sans publicité, sans abonnement",
   "tagline": "Un jeu de territoire rapide et hors ligne, joué avec des morceaux de papier. Gagnez des terres sur six seigneurs IA aux manies bien à eux, région après région, de trois façons : Tracer, Poser et Étendre.",
@@ -210,7 +210,7 @@
    "offline": "Fonctionne hors ligne",
    "pricing": "Sans publicité, sans abonnement",
    "languages": "Anglais, coréen",
-   "status": "En développement"
+   "status": "Bientôt disponible. Versions TestFlight en cours"
   }
  },
  "tottertop": {

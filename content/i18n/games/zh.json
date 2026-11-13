@@ -172,7 +172,7 @@
   }
  },
  "patchland": {
-  "status": "开发中",
+  "status": "即将推出",
   "platform": "iOS 和 Android",
   "pricing": "没有广告，没有订阅",
   "tagline": "用彩纸拼块扩张领地的轻快离线占地游戏。从六位个性十足的 AI 领主手中，一个地区一个地区地夺回土地。占地方式有三种：划线、落子、蔓延。",
@@ -210,7 +210,7 @@
    "offline": "可离线游玩",
    "pricing": "没有广告，没有订阅",
    "languages": "英语、韩语",
-   "status": "开发中"
+   "status": "即将推出。TestFlight 测试版进行中"
   }
  },
  "tottertop": {
