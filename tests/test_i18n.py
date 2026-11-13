@@ -177,7 +177,7 @@ class AllLanguages(unittest.TestCase):
         for l in bs.LANGS:  # lang="en" only on the word "English" of the language switchers: a localized phrase tagged "en" would be read with an English voice
             h = self.read(pre(l) + "index.html").split("<body", 1)[1]
             self.assertEqual(set(re.findall(r'<a [^>]*\blang="en"[^>]*>([^<]*)</a>', h)), {"English"}, l)
-            self.assertEqual(len(re.findall(r'\blang="en"', h)), len(re.findall(r'<a [^>]*\blang="en"[^>]*>English</a>', h)), l)
+            self.assertEqual(len(re.findall(r'<(?!option\b)[^>]*\blang="en"', h)), len(re.findall(r'<a [^>]*\blang="en"[^>]*>English</a>', h)), l)
 
     PREVAILS = {  # the line added to every AI translation notice: if the translation differs, the English original prevails
         "ja": "英語の原文が優先されます", "zh-Hant": "以英文原文為準", "es": "prevalece el original en inglés", "pt-BR": "prevalece o original em inglês",

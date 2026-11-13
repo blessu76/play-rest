@@ -56,7 +56,7 @@ except ImportError:
 
 SITE = "https://play.ipe.rest"
 KST = dt.timezone(dt.timedelta(hours=9))
-ASSET_V = "20261113a"  # keep in sync: bump when assets/play.css or play.js change
+ASSET_V = "20261113b"  # keep in sync: bump when assets/play.css or play.js change
 SITE_UPDATED = "2026-11-11"  # "Last updated" of home / 404 and sitemap lastmod: bump by hand when their text changes
 OPERATOR = "Davy Kim (ipe Studio)"
 EMAIL = "ipe.haven@gmail.com"
@@ -687,9 +687,12 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
         esc(path_page(lang, "about")), esc(t("footer_about")), esc(path_journal(jl)), jattr, esc(t("nav_journal") if jl == lang else t("journal_en")),
         esc(path_page(lang, "contact")), esc(t("nav_contact")),
         esc(path_page(lang, "privacy")), esc(t("nav_privacy")))
-    foot_langs = ('<p class="foot-langs" aria-label="%s">%s</p>' % (esc(t("lang_label")), " ".join(
-        '<a href="%s" hreflang="%s" lang="%s"%s>%s</a>' % (esc(alt.get(l) or path_home(l)), l, l, ' aria-current="true"' if l == lang else "", esc(LANGS[l][0]))
-        for l in ctx.langs))) if len(ctx.langs) > 1 else ""
+    # footer language select (play.js goes to the chosen page); without JS the same links sit in a <noscript> list
+    foot_opts = "".join('<option value="%s" data-lang="%s" lang="%s"%s>%s</option>' % (
+        esc(alt.get(l) or path_home(l)), l, l, " selected" if l == lang else "", esc(LANGS[l][0])) for l in ctx.langs)
+    foot_langs = ('<div class="foot-langs"><label for="foot-lang">%s</label><select id="foot-lang" data-lang-select>%s</select>'
+                  '<noscript><ul class="foot-langs__links" aria-label="%s">%s</ul></noscript></div>') % (
+        esc(t("lang_label")), foot_opts, esc(t("lang_label")), switch) if len(ctx.langs) > 1 else ""
     # footer (hub-0017/0018): the shape of the ipe.rest footer; the only link that leaves the portal is ipe.rest (games and their terms live on the cards)
     footer = ('<footer class="site-footer"><div class="wrap"><div class="foot-grid">'
               '<div class="foot-brand"><span class="logo">ipe()</span><p>%s<br>\u00a9 2026 %s</p><p class="mono small">%s</p><p class="small">%s</p></div>'

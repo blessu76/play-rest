@@ -1,8 +1,14 @@
 (function(){
   /* an explicit language choice wins over the browser language the root page follows (see langpick.js) */
   document.addEventListener('click',function(e){
-    var a=e.target.closest&&e.target.closest('.langsw a[hreflang],.foot-langs a[hreflang],.langs a[hreflang]');
+    var a=e.target.closest&&e.target.closest('.langsw a[hreflang]');
     if(a){try{localStorage.setItem('play-lang',a.getAttribute('hreflang'))}catch(x){}}
+  });
+  /* the footer language select: remember the choice, then open that language's page */
+  var ls=document.querySelectorAll('select[data-lang-select]');
+  for(var i=0;i<ls.length;i++)ls[i].addEventListener('change',function(){
+    try{localStorage.setItem('play-lang',this.options[this.selectedIndex].getAttribute('data-lang'))}catch(x){}
+    location.href=this.value;
   });
   /* the language menu (<details>) closes on a click outside it and on Escape (focus goes back to its summary) */
   var sw=document.querySelector&&document.querySelector('details.langsw');

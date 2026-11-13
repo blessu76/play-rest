@@ -210,9 +210,13 @@ html:lang(zh){--font:Inter,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","N
 .site-footer ul{list-style:none;margin:0;padding:0}
 .site-footer li a{display:flex;align-items:center;min-height:44px;font-size:16px;color:var(--ink);text-decoration:none}
 .site-footer li a:hover{color:var(--cobalt);text-decoration:underline}
-.foot-langs{margin:24px 0 0;display:flex;flex-wrap:wrap;gap:0 12px;font-size:16px}
-.foot-langs a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 4px;color:var(--muted)}
-.foot-langs a[aria-current="true"]{color:var(--ink);text-decoration:none}
+.foot-langs{margin:24px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-size:16px}
+.foot-langs label{color:var(--muted)}
+.foot-langs select{min-height:44px;max-width:100%;padding:0 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+.foot-langs select:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+.foot-langs__links{width:100%;display:flex;flex-wrap:wrap;gap:0 12px;margin:0;padding:0;list-style:none}
+.foot-langs__links a{display:inline-flex;align-items:center;min-height:44px;color:var(--muted)}
+.foot-langs__links a[aria-current="true"]{color:var(--ink);text-decoration:none}
 
 /* game accents: dark themes (dark, noir) use --a2 */
 :root:is([data-theme="dark"],[data-theme="noir"]) :is(.game,.cmp-card,.made li){--ac:var(--a2)}
