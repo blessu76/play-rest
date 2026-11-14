@@ -13,7 +13,8 @@ Sources
   content/pages/<lang>/<page>.md    about / privacy / contact (front matter title + description + updated,
                                     Markdown body, placeholders {{OPERATOR}} {{EMAIL}} {{EFFECTIVE}})
   content/journal/<slug>.<lang>.md  journal posts (en + ko pair per slug; front matter title, description, published
-                                    [KST, YYYY-MM-DDTHH:MM+09:00], optional updated / excerpt; Markdown body)
+                                    [KST, YYYY-MM-DDTHH:MM+09:00], optional updated / excerpt, copy_review "iris YYYY-MM-DD"
+                                    (required from 2026-11-14 on); Markdown body)
   vendor/ipe_web_kit/               ipe-web-kit (pinned tag copy; esc, hreflang links, JSON-LD script, ipe-localtime inlined into
                                     pages with <time data-ipe-time>: stored in KST, shown in the reader's time zone)
 
@@ -112,6 +113,7 @@ JOURNAL_DIR = "journal"
 RESERVED_SLUGS = {"feed"}  # /journal/feed.xml is the RSS file, no post may take that URL segment
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 PUBLISHED_RE = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}\+09:00$")  # published time is always recorded in KST
+COPY_REVIEW_FROM = dt.datetime(2026, 11, 14, tzinfo=KST)  # journal posts from this time on publish only after copy review
 HOME_CARDS = 3
 EXCERPT_MAX = 200
 # order = how soon you can touch the game (hub-0009, Davy 2026-11-13): TestFlight builds in progress first, then in development
@@ -402,6 +404,18 @@ def released(post, today):
     return post["published"][:10] <= today.isoformat()
 
 
+def copy_review_ok(value):
+    m = re.fullmatch(r"iris (\d{4}-\d{2}-\d{2})", value or "")
+    return bool(m and valid_date(m.group(1)))
+
+
+def copy_review_gap(post):
+    """files of a post published on/after COPY_REVIEW_FROM that lack `copy_review: iris YYYY-MM-DD` (held back, not an error)"""
+    if parse_published(post["published"]) < COPY_REVIEW_FROM:
+        return []
+    return [v["file"] for v in post["langs"].values() if not copy_review_ok(v["copy_review"])]
+
+
 def load_journal(root):
     """content/journal/<slug>.<lang>.md -> (posts newest first, errors).
     post = {slug, published, updated, langs: {lang: {title, description, excerpt, body}}}; every post has both journal languages.
@@ -449,7 +463,8 @@ def load_journal(root):
         if len(errs) == n0:
             found.setdefault(stem, {})[lang] = {"title": meta["title"], "description": meta["description"],
                                                 "excerpt": meta.get("excerpt") or meta["description"], "body": body,
-                                                "published": meta["published"], "updated": upd}
+                                                "published": meta["published"], "updated": upd,
+                                                "file": f.name, "copy_review": meta.get("copy_review", "")}
     posts = []
     for slug, langs in found.items():
         missing = [l for l in MAIN_LANGS if l not in langs]
@@ -1050,7 +1065,9 @@ def make_ctx(root, now=None):
     posts, e4 = load_journal(root)
     today = resolve_today(now)
     total = len(posts)
-    posts = [p for p in posts if released(p, today)]  # the date gate: a post dated after `today` (KST) is on no page, feed or sitemap
+    dated = [p for p in posts if released(p, today)]  # the date gate: a post dated after `today` (KST) is on no page, feed or sitemap
+    gaps = {p["slug"]: copy_review_gap(p) for p in dated}
+    posts = [p for p in dated if not gaps[p["slug"]]]
     errs += e2 + e3 + e5 + e4
 
     def has(l):
@@ -1064,7 +1081,8 @@ def make_ctx(root, now=None):
         if started and not all(h.values()):
             errs.append("%s: translation is incomplete — missing %s" % (l, ", ".join(k for k, v in h.items() if not v)))
     ctx = Ctx(root, i18n, pages, games, langs, posts)
-    ctx.today, ctx.scheduled = today, total - len(posts)
+    ctx.today, ctx.scheduled = today, total - len(dated)
+    ctx.held = [f for p in dated for f in gaps[p["slug"]]]
     return ctx, errs
 
 
@@ -1129,6 +1147,8 @@ def main(argv=None):
     if errs:
         print("build_site: %d problem(s)\n  %s" % (len(errs), "\n  ".join(errs)), file=sys.stderr)
         return 1
+    for f in ctx.held:
+        print("build_site: warning: %s has no copy_review (iris YYYY-MM-DD) — not published" % f, file=sys.stderr)
     files = build_all(ctx)
     if a.check:
         print("build_site: sources OK — %d language(s), %d game(s), %d file(s) would be written, %d journal post(s) live, %d scheduled (as of %s)" % (len(ctx.langs), len(ctx.games), len(files), len(ctx.posts), ctx.scheduled, ctx.today))

@@ -302,6 +302,49 @@ class DateGate(Reader):
         self.assertEqual(bs.main(["--root", str(self.root), "--now", "2026-02-30"]), 2)
 
 
+class CopyReviewGate(Reader):
+    """a post published on/after 2026-11-14 KST goes out only with `copy_review: iris YYYY-MM-DD`; earlier posts never need it"""
+
+    def setUp(self):
+        self.root = make_site()
+        self.addCleanup(shutil.rmtree, self.root, True)
+        add_post(self.root, "turn-based-in-a-break", published="2026-11-15T09:30+09:00")
+        add_post(self.root, "killing-time-honestly", published="2026-11-16T09:30+09:00", copy_review="iris 2026-11-15")
+        add_post(self.root, "why-rounds-end", published="2026-11-13T09:30+09:00")
+        add_post(self.root, "one-more-old-post")
+
+    def test_unreviewed_post_after_the_gate_is_held_back(self):
+        ctx, errs = bs.make_ctx(self.root, "2026-11-20")
+        self.assertEqual(errs, [])
+        self.assertNotIn("turn-based-in-a-break", [p["slug"] for p in ctx.posts])
+        self.assertEqual(ctx.held, ["turn-based-in-a-break.en.md", "turn-based-in-a-break.ko.md"])
+        self.assertEqual(ctx.scheduled, 0)
+
+    def test_reviewed_post_after_the_gate_is_included(self):
+        ctx, _ = bs.make_ctx(self.root, "2026-11-20")
+        self.assertEqual([p["slug"] for p in ctx.posts], ["killing-time-honestly", "why-rounds-end", "one-more-old-post"])
+
+    def test_unreviewed_post_before_the_gate_is_included(self):
+        ctx, _ = bs.make_ctx(self.root, "2026-11-20")
+        self.assertIn("why-rounds-end", [p["slug"] for p in ctx.posts])
+        self.assertIn("one-more-old-post", [p["slug"] for p in ctx.posts])
+
+    def test_held_post_is_reported_in_the_build_log_without_failing(self):
+        import contextlib
+        import io
+        err = io.StringIO()
+        with contextlib.redirect_stderr(err), contextlib.redirect_stdout(io.StringIO()):
+            rc = bs.main(["--root", str(self.root), "--now", "2026-11-20", "--check"])
+        self.assertEqual(rc, 0)
+        self.assertIn("warning: turn-based-in-a-break.en.md has no copy_review", err.getvalue())
+        self.assertNotIn("killing-time-honestly", err.getvalue())
+
+    def test_copy_review_must_name_iris_and_a_real_date(self):
+        self.assertTrue(bs.copy_review_ok("iris 2026-11-14"))
+        for bad in ("", "iris", "Iris 2026-11-14", "iris 2026-02-30", "iris 2026-11-14 ok", "2026-11-14"):
+            self.assertFalse(bs.copy_review_ok(bad), bad)
+
+
 class EmptyJournal(Reader):
     """no posts at all: the list says so, the feed is valid, the home page and sitemap carry no journal parts"""
 
