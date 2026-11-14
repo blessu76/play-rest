@@ -22,7 +22,7 @@ Chúng tôi dùng Google Analytics 4 để biết những trang nào được đ
 
 ### Những gì được lưu trong trình duyệt của bạn
 
-Khi bạn chọn ngôn ngữ hoặc giao diện, chúng tôi lưu lựa chọn đó trong bộ nhớ cục bộ của trình duyệt (với tên `play-lang` và `play-theme`). Lựa chọn này chỉ nằm trên thiết bị của bạn và không bao giờ được gửi cho chúng tôi. Bạn có thể xóa nó trong cài đặt trình duyệt. Phông chữ được phục vụ từ chính trang.
+Khi bạn chọn ngôn ngữ hoặc giao diện, chúng tôi lưu lựa chọn đó trong bộ nhớ cục bộ của trình duyệt (với tên `ipe_lang` và `play-theme`). Lựa chọn này chỉ nằm trên thiết bị của bạn và không bao giờ được gửi cho chúng tôi. Bạn có thể xóa nó trong cài đặt trình duyệt. Phông chữ được phục vụ từ chính trang.
 
 ### Email bạn gửi cho chúng tôi
 

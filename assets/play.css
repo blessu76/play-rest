@@ -66,6 +66,11 @@ img{max-width:100%;height:auto}
 .langsw__list a[lang="ja"]{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",Meiryo,"Noto Sans CJK JP","Noto Sans JP",system-ui,sans-serif}
 .langsw__list a[lang="zh-Hant"]{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Noto Sans SC",system-ui,sans-serif}
 .langsw a[aria-current="true"]{background:var(--ink);color:var(--bg)}
+/* header language select (JS): clips a long native name at narrow widths; the full name shows in the open list */
+.langsel{min-height:44px;min-width:0;max-width:180px;box-sizing:border-box;padding:0 8px;border:0;border-radius:0;background:var(--bg);color:var(--ink);font:inherit;font-size:16px;cursor:pointer}
+.langsel[hidden]{display:none}
+.langsel:hover{color:var(--cobalt)}
+.langsel:focus-visible{outline:2px solid var(--cobalt);outline-offset:-2px}
 /* AI translation notice (decision 0087): every page in a machine-translated language says so and links to the English original */
 .mtnote{background:var(--tint);border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
 .mtnote p{margin:0;padding:10px 0}
@@ -210,13 +215,6 @@ html:lang(zh){--font:Inter,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","N
 .site-footer ul{list-style:none;margin:0;padding:0}
 .site-footer li a{display:flex;align-items:center;min-height:44px;font-size:16px;color:var(--ink);text-decoration:none}
 .site-footer li a:hover{color:var(--cobalt);text-decoration:underline}
-.foot-langs{margin:24px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-size:16px}
-.foot-langs label{color:var(--muted)}
-.foot-langs select{min-height:44px;max-width:100%;padding:0 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
-.foot-langs select:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
-.foot-langs__links{width:100%;display:flex;flex-wrap:wrap;gap:0 12px;margin:0;padding:0;list-style:none}
-.foot-langs__links a{display:inline-flex;align-items:center;min-height:44px;color:var(--muted)}
-.foot-langs__links a[aria-current="true"]{color:var(--ink);text-decoration:none}
 
 /* game accents: dark themes (dark, noir) use --a2 */
 :root:is([data-theme="dark"],[data-theme="noir"]) :is(.game,.cmp-card,.made li){--ac:var(--a2)}
@@ -272,7 +270,7 @@ html.theme-anim,html.theme-anim *{transition:background-color .2s,color .2s,bord
   .nav{order:3;flex:1 0 100%;margin-left:0;justify-content:space-between;gap:0 4px}
   .nav>a{flex:1 1 auto;padding:0 8px}
 }
-@media (max-width:359px){.brand-sub{display:none}.nav{gap:0}.nav>a{padding:0 2px}}
+@media (max-width:359px){.brand-sub{display:none}.nav{gap:0}.nav>a{padding:0 2px}.langsel{padding:0 2px}}
 @media (max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){.cmp-wide{display:none}.cmp-cards{display:block}.hero{padding:48px 0 40px}.sec{padding:48px 0}}
 @media (max-width:520px){

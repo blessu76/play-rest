@@ -22,7 +22,7 @@ Kami memakai Google Analytics 4 untuk melihat halaman mana yang dibaca. Layanan 
 
 ### Yang tersimpan di browser Anda
 
-Saat Anda memilih bahasa atau tema, kami menyimpan pilihan itu di penyimpanan lokal browser Anda (dengan nama `play-lang` dan `play-theme`). Pilihan itu tetap di perangkat Anda dan tidak pernah dikirim kepada kami. Anda dapat menghapusnya di pengaturan browser. Font disajikan dari situs itu sendiri.
+Saat Anda memilih bahasa atau tema, kami menyimpan pilihan itu di penyimpanan lokal browser Anda (dengan nama `ipe_lang` dan `play-theme`). Pilihan itu tetap di perangkat Anda dan tidak pernah dikirim kepada kami. Anda dapat menghapusnya di pengaturan browser. Font disajikan dari situs itu sendiri.
 
 ### Email yang Anda kirim kepada kami
 

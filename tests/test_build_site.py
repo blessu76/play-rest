@@ -258,7 +258,7 @@ class Built(unittest.TestCase):
             else:
                 self.assertGreaterEqual(px, 16, sel)
         for sel in (".cols ol", ".cmp", ".cmp-card dl div", ".btn", ".textlink", ".nav", ".price", ".note", ".meta", ".small",
-                    ".foot-h", ".foot-langs", ".foot-brand p", ".cols h4", ".site-footer li a", ".sub", ".crumbs"):
+                    ".foot-h", ".langsel", ".foot-brand p", ".cols h4", ".site-footer li a", ".sub", ".crumbs"):
             self.assertIn(sel, sizes, sel)
         for sel in (".badge", ".updated"):
             self.assertLessEqual(sizes[sel], 16)

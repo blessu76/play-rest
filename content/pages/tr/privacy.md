@@ -22,7 +22,7 @@ Hangi sayfaların okunduğunu görmek için Google Analytics 4 kullanırız. Say
 
 ### Tarayıcınızda saklananlar
 
-Bir dil ya da tema seçtiğinizde, bu seçimi tarayıcınızın yerel depolama alanına (`play-lang` ve `play-theme` adları altında) kaydederiz. Cihazınızda kalır ve bize asla gönderilmez. Tarayıcı ayarlarınızdan silebilirsiniz. Yazı tipleri sitenin kendisinden sunulur.
+Bir dil ya da tema seçtiğinizde, bu seçimi tarayıcınızın yerel depolama alanına (`ipe_lang` ve `play-theme` adları altında) kaydederiz. Cihazınızda kalır ve bize asla gönderilmez. Tarayıcı ayarlarınızdan silebilirsiniz. Yazı tipleri sitenin kendisinden sunulur.
 
 ### Bize gönderdiğiniz e-posta
 

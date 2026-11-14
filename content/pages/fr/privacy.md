@@ -22,7 +22,7 @@ Nous utilisons Google Analytics 4 pour savoir quelles pages sont lues. Il enregi
 
 ### Ce qui est conservé dans votre navigateur
 
-Lorsque vous choisissez une langue ou un thème, nous enregistrons ce choix dans le stockage local de votre navigateur (sous les noms `play-lang` et `play-theme`). Il reste sur votre appareil et ne nous est jamais envoyé. Vous pouvez l’effacer dans les paramètres de votre navigateur. Les polices sont servies par le site lui-même.
+Lorsque vous choisissez une langue ou un thème, nous enregistrons ce choix dans le stockage local de votre navigateur (sous les noms `ipe_lang` et `play-theme`). Il reste sur votre appareil et ne nous est jamais envoyé. Vous pouvez l’effacer dans les paramètres de votre navigateur. Les polices sont servies par le site lui-même.
 
 ### Les e-mails que vous nous envoyez
 

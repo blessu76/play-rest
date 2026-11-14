@@ -22,7 +22,7 @@ We use Google Analytics 4 to see which pages are read. It records page views, th
 
 ### Stored in your browser
 
-When you pick a language or a theme, we save that choice in your browser's local storage (under the names `play-lang` and `play-theme`). It stays on your device and is never sent to us. You can clear it in your browser settings. Fonts are served from the site itself.
+When you pick a language or a theme, we save that choice in your browser's local storage (under the names `ipe_lang` and `play-theme`). It stays on your device and is never sent to us. You can clear it in your browser settings. Fonts are served from the site itself.
 
 ### Email you send us
 

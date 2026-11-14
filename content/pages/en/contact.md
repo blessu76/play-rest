@@ -31,4 +31,4 @@ We do not ask for your name or email, and the site has no accounts. We collect b
 
 ### Where are the terms of use?
 
-This portal has no terms of its own. Terms of use are on the game sites that have them (Inkisle has none yet), linked in the footer.
+This portal has no terms of its own. The footer links to the common ipe() terms of use, and each game's terms are on its own site (Inkisle has none yet).

@@ -22,7 +22,7 @@ Wir verwenden Google Analytics 4, um zu sehen, welche Seiten gelesen werden. Es 
 
 ### In Ihrem Browser gespeichert
 
-Wenn Sie eine Sprache oder ein Farbschema wählen, speichern wir diese Auswahl im lokalen Speicher Ihres Browsers (unter den Namen `play-lang` und `play-theme`). Sie bleibt auf Ihrem Gerät und wird nie an uns gesendet. Sie können sie in den Browsereinstellungen löschen. Schriften werden von der Website selbst ausgeliefert.
+Wenn Sie eine Sprache oder ein Farbschema wählen, speichern wir diese Auswahl im lokalen Speicher Ihres Browsers (unter den Namen `ipe_lang` und `play-theme`). Sie bleibt auf Ihrem Gerät und wird nie an uns gesendet. Sie können sie in den Browsereinstellungen löschen. Schriften werden von der Website selbst ausgeliefert.
 
 ### E-Mails, die Sie uns senden
 

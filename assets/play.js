@@ -1,26 +1,17 @@
 (function(){
-  /* an explicit language choice wins over the browser language the root page follows (see langpick.js) */
-  document.addEventListener('click',function(e){
-    var a=e.target.closest&&e.target.closest('.langsw a[hreflang]');
-    if(a){try{localStorage.setItem('play-lang',a.getAttribute('hreflang'))}catch(x){}}
-  });
-  /* the footer language select: remember the choice, then open that language's page */
+  /* the header language select: remember the choice (the root page follows it, see langpick.js), then open that language's page */
   var ls=document.querySelectorAll('select[data-lang-select]');
-  for(var i=0;i<ls.length;i++)ls[i].addEventListener('change',function(){
-    try{localStorage.setItem('play-lang',this.options[this.selectedIndex].getAttribute('data-lang'))}catch(x){}
-    location.href=this.value;
-  });
+  for(var i=0;i<ls.length;i++){
+    ls[i].hidden=false;
+    ls[i].addEventListener('change',function(){
+      try{localStorage.setItem('ipe_lang',this.options[this.selectedIndex].getAttribute('data-lang'))}catch(x){}
+      location.href=this.value;
+    });
+  }
   /* back/forward from bfcache keeps the select on the last choice: restore this page's own language option */
   window.addEventListener('pageshow',function(e){
     if(!e.persisted)return;
     for(var i=0;i<ls.length;i++)for(var j=0;j<ls[i].options.length;j++)ls[i].options[j].selected=ls[i].options[j].defaultSelected;
-  });
-  /* the language menu (<details>) closes on a click outside it and on Escape (focus goes back to its summary) */
-  var sw=document.querySelector&&document.querySelector('details.langsw');
-  if(!sw)return;
-  document.addEventListener('click',function(e){if(sw.open&&!sw.contains(e.target))sw.open=false});
-  document.addEventListener('keydown',function(e){
-    if(sw.open&&(e.key==='Escape'||e.key==='Esc')){sw.open=false;var s=sw.querySelector('summary');if(s)s.focus()}
   });
 })();
 (function(){

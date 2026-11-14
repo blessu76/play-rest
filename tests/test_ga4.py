@@ -68,7 +68,7 @@ class Ga4(unittest.TestCase):
                 self.assertIn("Google Analytics", text)
                 self.assertIn("_ga", text)
                 self.assertIn("https://tools.google.com/dlpage/gaoptout", text)
-                self.assertIn("play-lang", text)
+                self.assertIn("ipe_lang", text)
                 self.assertIn("play-theme", text)
                 self.assertIn(bs.EFFECTIVE, text)
                 main = text[text.index("<main"):text.index("</main>")]
@@ -108,12 +108,12 @@ class Ga4(unittest.TestCase):
         self.assertTrue(self.ctx.i18n["en"]["p3_p"].endswith("inside the games."))
         self.assertIn("게임 안에서는", self.ctx.i18n["ko"]["p3_p"])
 
-    def test_footer_links_out_to_ipe_rest_only_and_card_buttons_are_tracked(self):
+    def test_footer_links_out_to_ipe_rest_and_terms_and_card_buttons_are_tracked(self):
         live = sorted(g["id"] for g in self.ctx.games if g["site"]["live"])
         for lang in LANGS:
             foot = re.search(r"<footer.*</footer>", self.page(lang, ""), re.S).group(0)
-            with self.subTest(lang):  # hub-0018: the only external href in the footer is ipe.rest
-                self.assertEqual(re.findall(r'href="(https?://[^"]+)"', foot), ["https://ipe.rest/"])
+            with self.subTest(lang):  # hub-0018: the external hrefs in the footer are ipe.rest and the common terms
+                self.assertEqual(re.findall(r'href="(https?://[^"]+)"', foot), ["https://ipe.rest/", "https://ipe.rest/legal/terms/"])
                 self.assertNotIn("data-game", foot)
         self.assertIn("a.getAttribute('data-placement')||'card'", self.page("en", ""))
         self.assertEqual(self.page("en", "").count('data-placement="card"'), len(live))

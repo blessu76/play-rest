@@ -22,7 +22,7 @@ Usamos o Google Analytics 4 para ver quais páginas são lidas. Ele registra vis
 
 ### O que fica guardado no seu navegador
 
-Quando você escolhe um idioma ou um tema, guardamos essa escolha no armazenamento local do seu navegador (com os nomes `play-lang` e `play-theme`). Ela fica no seu dispositivo e nunca é enviada para nós. Você pode apagá-la nas configurações do navegador. As fontes são servidas pelo próprio site.
+Quando você escolhe um idioma ou um tema, guardamos essa escolha no armazenamento local do seu navegador (com os nomes `ipe_lang` e `play-theme`). Ela fica no seu dispositivo e nunca é enviada para nós. Você pode apagá-la nas configurações do navegador. As fontes são servidas pelo próprio site.
 
 ### E-mails que você nos envia
 

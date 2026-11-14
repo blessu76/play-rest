@@ -22,7 +22,7 @@ Usamos Google Analytics 4 para ver qué páginas se leen. Registra las visitas a
 
 ### Lo que se guarda en tu navegador
 
-Cuando eliges un idioma o un tema, guardamos esa elección en el almacenamiento local de tu navegador (con los nombres `play-lang` y `play-theme`). Se queda en tu dispositivo y nunca se nos envía. Puedes borrarla en los ajustes de tu navegador. Las fuentes se sirven desde el propio sitio.
+Cuando eliges un idioma o un tema, guardamos esa elección en el almacenamiento local de tu navegador (con los nombres `ipe_lang` y `play-theme`). Se queda en tu dispositivo y nunca se nos envía. Puedes borrarla en los ajustes de tu navegador. Las fuentes se sirven desde el propio sitio.
 
 ### Correos que nos envías
 

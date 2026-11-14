@@ -27,7 +27,7 @@ Output (generated, never edit by hand)
   Journal (JOURNAL_LANGS = en + ko only): /journal/  /journal/<slug>/  /journal/feed.xml  and  /ko/journal/ ... (list, posts,
   RSS; the home page shows the newest 3). AI-translated languages get no journal pages of their own: their journal links go to
   the English journal (marked hreflang="en", "Journal (in English)"), and their home page has no journal cards.
-  There is no portal terms page: games link to their own sites.
+  The footer links to the common terms of use (TERMS_URL, ipe.rest/legal); each game links to its own site and terms.
 
 Usage
   python3 scripts/build_site.py                 # build into the repo root
@@ -56,9 +56,10 @@ except ImportError:
 
 SITE = "https://play.ipe.rest"
 KST = dt.timezone(dt.timedelta(hours=9))
-ASSET_V = "20261114a"  # keep in sync: bump when assets/play.css or play.js change
+ASSET_V = "20261114d"  # keep in sync: bump when assets/play.css or play.js change
 SITE_UPDATED = "2026-11-11"  # "Last updated" of home / 404 and sitemap lastmod: bump by hand when their text changes
 OPERATOR = "Davy Kim (ipe Studio)"
+TERMS_URL = "https://ipe.rest/legal/terms/"  # the common ipe() terms; the portal has no terms page of its own
 EMAIL = "ipe.haven@gmail.com"
 EFFECTIVE = "2026-11-01"
 # GA4 (same property as ipe.rest). Inserted once into every page by render(); the privacy policy (section 2), the contact FAQ,
@@ -149,7 +150,7 @@ KEYS = (
     "row_platform row_offline row_pricing row_languages row_status "
     "choose_h choose_lead choose_1 choose_2 choose_3 choose_4 choose_5 choose_6 choose_7 choose_8 choose_9 choose_go "
     "made_h made_lead made_now made_feed made_read ipe_h ipe_p ipe_studio ipe_music ipe_contact "
-    "footer_line footer_code footer_tm footer_site footer_about nf_h nf_p "
+    "footer_line footer_code footer_tm footer_site footer_about footer_terms nf_h nf_p "
     "journal_h journal_lead journal_all journal_empty journal_desc journal_rss journal_back journal_feed_title"
 ).split()
 MT_KEYS = ("ai_note", "ai_original", "journal_en", "en_mark")  # required in the AI-translated languages; en.json holds the English source
@@ -665,13 +666,16 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
     if path == "/":
         head.append(langpick_script(ctx.root, ctx.langs))
     head.append(kit_seo.jsonld_script({"@context": "https://schema.org", "@graph": graph}))
-    # language switcher: a <details> menu (works without JS); each item is this page in that language, or that language's
-    # home when this page has no version there (a journal page in ja -> /ja/), never a page that does not exist
+    # language select (header): each option is this page in that language, or that language's home when this page has no version
+    # there (a journal page in ja -> /ja/), never a page that does not exist. play.js un-hides it; without JS the same links sit in a <noscript> menu
     switch = "".join('<li><a href="%s" hreflang="%s" lang="%s"%s>%s</a></li>' % (
         esc(alt.get(l) or path_home(l)), l, l, ' aria-current="true"' if l == lang else "", esc(LANGS[l][0])) for l in ctx.langs)
-    langsw = ('<details class="langsw"><summary aria-label="%s: %s">%s<span class="langsw__cur" aria-hidden="true">%s</span></summary>'
-              '<ul class="langsw__list" aria-label="%s">%s</ul></details>') % (
-        esc(t("lang_label")), esc(name), GLOBE_ICON, esc(short), esc(t("lang_label")), switch)
+    opts = "".join('<option value="%s" data-lang="%s" lang="%s"%s>%s</option>' % (
+        esc(alt.get(l) or path_home(l)), l, l, " selected" if l == lang else "", esc(LANGS[l][0])) for l in ctx.langs)
+    langsw = ('<select id="lang-select" class="langsel" data-lang-select hidden aria-label="%s">%s</select>'
+              '<noscript><details class="langsw"><summary aria-label="%s: %s">%s<span class="langsw__cur" aria-hidden="true">%s</span></summary>'
+              '<ul class="langsw__list" aria-label="%s">%s</ul></details></noscript>') % (
+        esc(t("lang_label")), opts, esc(t("lang_label")), esc(name), GLOBE_ICON, esc(short), esc(t("lang_label")), switch)
     jhref, jnav_attr, jnav_mark = loc_link(ctx, {jl: path_journal(jl)}, lang)  # a language without its own journal says "(in English)" here too
     navlinks = [(path_home(lang) + "#games", t("nav_games"), "games", ""), (path_page(lang, "about"), t("nav_about"), "about", ""),
                 (jhref, t("nav_journal") + jnav_mark, "journal", jnav_attr), (path_page(lang, "contact"), t("nav_contact"), "contact", "")]
@@ -683,22 +687,16 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
               '<div class="tools">%s<div class="themesw" role="group" aria-label="%s">%s</div></div></div></header>') % (
         esc(path_home(lang)), nav_html, langsw, esc(t("theme_label")), theme_btns)
     site_links = ('<li><a href="https://ipe.rest/" rel="noopener">ipe.rest</a></li><li><a href="%s">%s</a></li><li><a href="%s"%s>%s</a></li>'
-                  '<li><a href="%s">%s</a></li><li><a href="%s">%s</a></li>') % (
+                  '<li><a href="%s">%s</a></li><li><a href="%s">%s</a></li><li><a href="%s" rel="noopener">%s</a></li>') % (
         esc(path_page(lang, "about")), esc(t("footer_about")), esc(path_journal(jl)), jattr, esc(t("nav_journal") if jl == lang else t("journal_en")),
         esc(path_page(lang, "contact")), esc(t("nav_contact")),
-        esc(path_page(lang, "privacy")), esc(t("nav_privacy")))
-    # footer language select (play.js goes to the chosen page); without JS the same links sit in a <noscript> list
-    foot_opts = "".join('<option value="%s" data-lang="%s" lang="%s"%s>%s</option>' % (
-        esc(alt.get(l) or path_home(l)), l, l, " selected" if l == lang else "", esc(LANGS[l][0])) for l in ctx.langs)
-    foot_langs = ('<div class="foot-langs"><label for="foot-lang">%s</label><select id="foot-lang" data-lang-select>%s</select>'
-                  '<noscript><ul class="foot-langs__links" aria-label="%s">%s</ul></noscript></div>') % (
-        esc(t("lang_label")), foot_opts, esc(t("lang_label")), switch) if len(ctx.langs) > 1 else ""
-    # footer (hub-0017/0018): the shape of the ipe.rest footer; the only link that leaves the portal is ipe.rest (games and their terms live on the cards)
+        esc(path_page(lang, "privacy")), esc(t("nav_privacy")), esc(TERMS_URL), esc(t("footer_terms")))
+    # footer (hub-0017/0018): the shape of the ipe.rest footer; the only links that leave the portal are ipe.rest and the common terms (games and their terms live on the cards)
     footer = ('<footer class="site-footer"><div class="wrap"><div class="foot-grid">'
               '<div class="foot-brand"><span class="logo">ipe()</span><p>%s<br>\u00a9 2026 %s</p><p class="mono small">%s</p><p class="small">%s</p></div>'
               '<div><h2 class="foot-h">%s</h2><ul>%s</ul></div>'
-              '</div>%s</div></footer>') % (
-        esc(t("footer_line")), esc(OPERATOR), esc(t("footer_code")), esc(t("footer_tm")), esc(t("footer_site")), site_links, foot_langs)
+              '</div></div></footer>') % (
+        esc(t("footer_line")), esc(OPERATOR), esc(t("footer_code")), esc(t("footer_tm")), esc(t("footer_site")), site_links)
     last = '<p class="updated mono">%s: <time datetime="%s">%s</time></p>' % (esc(t("updated_label")), esc(updated), esc(updated))
     # decision 0087: the nine non-native languages are AI translations -> a visible label + a link to the English original
     mt = ""
@@ -1007,7 +1005,7 @@ def build_llms(ctx):
     rows = ["# ipe() Games", "", "> %s" % ctx.t("en", "home_desc"), "",
             "play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects %d games in one place and links to each game's own "
             "official site. All %d games are coming soon: each has its own introduction site, and most are at the iOS TestFlight stage. None has had a full release yet: no store page or release date is set for any of them. This portal has no accounts "
-            "or ads, collects only basic visit statistics through Google Analytics, and has no terms of its own (each game's site has its own terms). It has a journal with notes on turn-based games, "
+            "or ads, collects only basic visit statistics through Google Analytics, and has no terms of its own: the footer links to the common ipe() terms, and each game's site has its own terms. It has a journal with notes on turn-based games, "
             "killing-time games and how ipe() makes games." % (ngames, ngames), "",
             "## The games", ""]
     for g in ctx.games:

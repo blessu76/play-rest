@@ -4,7 +4,7 @@
 // a click switches theme and persists it, and the device setting is followed when nothing is saved (also with JS off, where the switch is hidden).
 // Languages: home + about/privacy/contact of all 11 languages (decision 0087); the language menu (<details>) opens inside the viewport
 // at every width with 44px items, closes on Escape and on a click outside.
-// Focus: the keyboard focus ring of the selected and an unselected cell of the theme switch and the language switch is >= 3:1 against its own background
+// Focus: the keyboard focus ring of the selected and an unselected cell of the theme switch and of the language select is >= 3:1 against its own background
 // (all 3 themes); in forced-colors mode the selected cell and the focus ring are both visible and differ.
 //   NODE_PATH=<dir containing playwright> node tests/ui_check.js [outDir]
 // PLAY_ROOT=<dir> serves another repo-shaped folder (e.g. python3 tests/demo_site.py DIR: the site with test-only journal posts).
@@ -108,23 +108,23 @@ const SHOT = new Set(['/', '/about/', '/privacy/', '/contact/', '/ko/', '/ko/abo
         }).filter(Boolean));
         for (const e of tiny) bad.push(`${scheme} ${w}px ${pth}: touch target under 44x44: ${e}`);
       }
-      // language menu: opens inside the viewport, 44px items, no overflow while open (home pages: every width)
-      if (isHome(pth)) {
-        await page.click('.langsw summary');
-        const lm = await page.evaluate(() => { const l = document.querySelector('.langsw__list'), r = l.getBoundingClientRect();
-          return { open: document.querySelector('.langsw').open, l: r.left, r: r.right, iw: window.innerWidth, sw: document.documentElement.scrollWidth,
-            items: [...l.querySelectorAll('a')].map(a => { const q = a.getBoundingClientRect(); return [Math.round(q.height), q.right <= r.right + 0.5, a.scrollWidth <= a.clientWidth + 1]; }),
-            sum: (() => { const q = document.querySelector('.langsw summary').getBoundingClientRect(); return [q.width, q.height]; })() }; });
-        if (!lm.open) bad.push(`${scheme} ${w}px ${pth}: language menu did not open`);
-        if (lm.l < 0 || lm.r > lm.iw || lm.sw > lm.iw) bad.push(`${scheme} ${w}px ${pth}: language menu outside the viewport (${Math.round(lm.l)}..${Math.round(lm.r)} of ${lm.iw}, scrollWidth ${lm.sw})`);
-        if (lm.items.length !== LANGS.length + 1 || lm.items.some(([h, inside, fits]) => h < 44 || !inside || !fits)) bad.push(`${scheme} ${w}px ${pth}: language menu items ${JSON.stringify(lm.items)}`);
-        if (lm.sum[0] < 43.9 || lm.sum[1] < 43.9) bad.push(`${scheme} ${w}px ${pth}: language button ${lm.sum.join('x')}`);
-        if (SHOT.has(pth) && (w === 320 || w === 1280)) await page.screenshot({ path: path.join(OUT, `${scheme}-${w}-${pth.replace(/\//g, '_')}-langmenu.png`) });
-        await page.keyboard.press('Escape');
-        if (await page.evaluate(() => document.querySelector('.langsw').open)) bad.push(`${scheme} ${w}px ${pth}: Escape did not close the language menu`);
-        await page.click('.langsw summary');
-        await page.mouse.click(5, Math.min(h - 5, 700));
-        if (await page.evaluate(() => document.querySelector('.langsw').open)) bad.push(`${scheme} ${w}px ${pth}: a click outside did not close the language menu`);
+      // header language select: visible, inside the viewport, 44px tall, header not overflowing, current language selected (every page)
+      {
+        const ls = await page.evaluate(() => { const s = document.querySelector('#lang-select'), hd = document.querySelector('header');
+          const r = s.getBoundingClientRect(), cs = getComputedStyle(s);
+          return { shown: cs.display !== 'none' && r.width > 0, l: r.left, r: r.right, h: r.height, iw: window.innerWidth,
+            val: s.options[s.selectedIndex].getAttribute('data-lang'), cur: document.documentElement.lang, hdrOver: hd.scrollWidth > hd.clientWidth + 1, footSel: !!document.querySelector('footer select') }; });
+        if (!ls.shown) bad.push(`${scheme} ${w}px ${pth}: header language select not shown`);
+        if (ls.l < 0 || ls.r > ls.iw) bad.push(`${scheme} ${w}px ${pth}: header language select outside the viewport (${Math.round(ls.l)}..${Math.round(ls.r)} of ${ls.iw})`);
+        if (ls.h < 43.9) bad.push(`${scheme} ${w}px ${pth}: header language select ${Math.round(ls.h)}px tall`);
+        if (ls.hdrOver) bad.push(`${scheme} ${w}px ${pth}: header overflows horizontally`);
+        if (ls.footSel) bad.push(`${scheme} ${w}px ${pth}: footer has a select`);
+        if (ls.val !== ls.cur) bad.push(`${scheme} ${w}px ${pth}: select shows ${ls.val}, page is ${ls.cur}`);
+        const fit = await page.evaluate(() => { const s = document.querySelector('#lang-select'), cs = getComputedStyle(s), cv = document.createElement('canvas').getContext('2d');
+          cv.font = cs.fontSize + ' ' + cs.fontFamily;
+          return { need: Math.ceil(cv.measureText(s.options[s.selectedIndex].text).width), have: Math.floor(s.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight) - 16) }; });
+        if (fit.need > fit.have) bad.push(`${scheme} ${w}px ${pth}: language name ${fit.need}px does not fit in ${fit.have}px`);
+        if (SHOT.has(pth) && (w === 320 || w === 1280)) await page.screenshot({ path: path.join(OUT, `${scheme}-${w}-${pth.replace(/\//g, '_')}-langsel.png`), clip: { x: 0, y: 0, width: w, height: 90 } });
       }
       if (clipped.length) bad.push(`${scheme} ${w}px ${pth}: clipped content (${clipped.join(', ')})`);
       if (m.sw > m.iw) bad.push(`${scheme} ${w}px ${pth}: horizontal overflow scrollWidth ${m.sw} > ${m.iw} (${m.wide.join(', ')})`);
@@ -153,9 +153,7 @@ const SHOT = new Set(['/', '/about/', '/privacy/', '/contact/', '/ko/', '/ko/abo
       }
       await page.reload({ waitUntil: 'load' });
       if (await page.evaluate(() => document.documentElement.getAttribute('data-theme')) !== 'noir') bad.push('reload lost the chosen theme');
-      await page.click('.langsw summary');
-      await page.click('.langsw a[hreflang=ko]');
-      await page.waitForLoadState('load');
+      await Promise.all([page.waitForNavigation({ waitUntil: 'load' }), page.selectOption('#lang-select', '/ko/')]);
       if (await page.evaluate(() => document.documentElement.getAttribute('data-theme')) !== 'noir') bad.push('language switch lost the chosen theme');
       await ctx.close();
       const nj = await b.newContext({ viewport: { width: 375, height: 812 }, colorScheme: dev, javaScriptEnabled: false });
@@ -180,15 +178,11 @@ const SHOT = new Set(['/', '/about/', '/privacy/', '/contact/', '/ko/', '/ko/abo
       const page = await ctx.newPage();
       await page.goto(origin + '/', { waitUntil: 'load' });
       const other = theme === 'light' ? 'dark' : 'light';
-      { const f = await focusInfo(page, '.langsw summary');  // the closed menu button sits on the page background
-        if (f.os === 'none' || f.ow === '0px' || ratio(f.oc, THEMES[theme][1]) < 3) bad.push(`${theme}: language button focus ring ${f.os} ${f.ow} ${f.oc}`); k++; }
-      await page.evaluate(() => { document.querySelector('.langsw').open = true; });  // the cells below are inside the open menu
-      for (const [name, sel] of [[`selected theme cell`, `.themesw [data-theme-set=${theme}]`], [`unselected theme cell`, `.themesw [data-theme-set=${other}]`],
-                                  [`selected language cell`, '.langsw a[aria-current=true]'], [`unselected language cell`, '.langsw a:not([aria-current=true])']]) {
+      { const f = await focusInfo(page, '#lang-select');  // the language select sits on the page background
+        if (f.os === 'none' || f.ow === '0px' || ratio(f.oc, THEMES[theme][1]) < 3) bad.push(`${theme}: language select focus ring ${f.os} ${f.ow} ${f.oc}`); k++; }
+      for (const [name, sel] of [[`selected theme cell`, `.themesw [data-theme-set=${theme}]`], [`unselected theme cell`, `.themesw [data-theme-set=${other}]`]]) {
         const f = await focusInfo(page, sel);
-        const cell = /selected/.test(name) && !/unselected/.test(name);
-        // the ring sits on the cell's own background when that is filled (selected), otherwise on the page background
-        const under = cell ? f.bg : THEMES[theme][1];
+        const under = /unselected/.test(name) ? THEMES[theme][1] : f.bg;  // the ring sits on the cell's own background when that is filled
         if (f.os === 'none' || f.ow === '0px') bad.push(`${theme}: ${name} has no focus ring`);
         else if (ratio(f.oc, under) < 3) bad.push(`${theme}: ${name} focus ring ${f.oc} on ${under} is ${ratio(f.oc, under).toFixed(2)}:1 (< 3)`);
         k++;
