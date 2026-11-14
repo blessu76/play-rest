@@ -3,9 +3,10 @@ slug: 2026-11-14-playing-alone-on-purpose
 lang: en
 title: "Playing alone, on purpose"
 alt_title: "일부러 혼자 하는 게임"
-description: "All four ipe() games are played alone or against an AI. What that gives a short break, what it costs, and why we would rather say so plainly."
+description: "Our games are played alone or against an AI. What that gives a short break, what it costs, and why we would rather say so plainly."
 excerpt: "The trade-offs of solo play for spare minutes, and an honest note about what our games do not have: playing with friends."
 published_at: 2026-11-14T12:39+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()
@@ -40,7 +41,7 @@ We would not claim this replaces a friend. It is a smaller thing than that, and 
 
 We are not promising multiplayer. We are not ruling it out either. Inkisle's site says online play is decided later. For the others we have nothing to announce, and we will not invent a plan for the sake of a tidier ending.
 
-None of the four games is released. Iltonggi and Claimball are marked "coming soon", and Inkisle and Sunmeld are in development, with no store pages or release dates yet.
+None of the games mentioned here is released. Iltonggi and Claimball are marked "coming soon", and Inkisle and Sunmeld are in development, with no store pages or release dates yet.
 
 If a game you can start and stop alone, with nothing to wait for, sounds like the right size for a break, Inkisle is a good card to open on [play.ipe.rest](https://play.ipe.rest).
 

@@ -6,6 +6,7 @@ alt_title: "모험을 걸어야 할 때"
 description: "Playing safe wins when you are ahead and loses when you are behind. A plain guide to choosing between the careful move and the bold one in a short game."
 excerpt: "Why the right amount of risk depends on whether you are winning, and a quick way to check which side you are on."
 published_at: 2026-11-27T12:21+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()

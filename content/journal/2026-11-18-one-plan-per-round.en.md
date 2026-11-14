@@ -6,6 +6,7 @@ alt_title: "한 판에 계획 하나"
 description: "A play tip for turn-based games in a short break: choose one plan on the first turn, check it each turn, and drop it when the board says so."
 excerpt: "How to avoid the drift of a round with no direction: pick one plan, write it in a sentence, and let the board change it."
 published_at: 2026-11-18T12:07+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()

@@ -6,6 +6,7 @@ alt_title: "Three ways a game ends"
 description: "게임은 어떻게 끝나느냐에 따라 모양이 정해집니다. 점수, 전멸, 마지막 수의 패배는 각기 중반을 두는 방식을 바꾸고 서로 다른 쉬는 시간에 어울립니다."
 excerpt: "턴제 게임의 결말을 마무리 삼아 살펴보고, 각 결말이 열 수 앞에 하는 일을 어떻게 바꾸는지 봅니다."
 published_at: 2026-11-28T12:47+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()
@@ -42,9 +43,9 @@ keywords: 게임의 결말, 승리 조건, 점수 게임, 전멸, 마지막 수,
 
 이 글들을 관통하는 생각은 같습니다. 짧은 게임은 작아진 긴 게임이 아닙니다. 다른 모양이고, 그 모양에서 가장 크게 느껴지는 부분이 결말입니다.
 
-네 게임 모두 출시 전입니다. 일통기와 Claimball 은 각각 「곧 출시」, 「출시 예정」, 잉크아일과 Sunmeld 는 「개발 중」입니다.
+여기서 말한 게임은 모두 출시 전입니다. 일통기와 Claimball 은 「곧 출시」, 잉크아일과 Sunmeld 는 「개발 중」입니다.
 
-네 게임은 [play.ipe.rest](https://play.ipe.rest) 에서 볼 수 있습니다.
+이 게임들은 [play.ipe.rest](https://play.ipe.rest) 에서 볼 수 있습니다.
 
 ```
 ipe(); // and then it ends

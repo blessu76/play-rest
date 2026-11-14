@@ -6,6 +6,7 @@ alt_title: "A board scratched in the dirt"
 description: "가장 오래된 보드게임 중에는 판이 아예 필요 없는 것도 있습니다. 땅의 구멍과 씨앗 몇 알이면 됩니다. 그것이 짧은 틈에 하는 게임에 알려 주는 것."
 excerpt: "만칼라 계열 게임은 땅에 판 구멍과 조약돌로 할 수 있습니다. 가장 가벼운 게임이 오래 가는 이유, 그리고 요즘 폰 게임이 배울 점."
 published_at: 2026-11-17T12:38+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()

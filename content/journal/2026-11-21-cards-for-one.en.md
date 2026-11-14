@@ -6,6 +6,7 @@ alt_title: "혼자 하는 카드 놀이의 이름"
 description: "Patience, or solitaire, is one of the oldest ways to kill time alone. A short look at where the name comes from and why a one-player card game keeps working."
 excerpt: "A brief history of patience and solitaire, and the design reasons a deck and a table can fill spare minutes."
 published_at: 2026-11-21T12:27+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()
@@ -38,9 +39,9 @@ A solo game with a shuffled deck leans on luck. When the deal decides a lot, ski
 
 The idea we find most useful is the first one: the game should be understandable from the pieces alone. In [Inkisle](https://inkisle.ipe.rest), the rules fit on a single page and each sea adds one rule. In [Sunmeld](https://sunmeld.ipe.rest), the rules are four lines. We are not comparing our games to a centuries-old pastime. We only note that the same instinct, rules you can hold in your head, is what makes a short break work.
 
-None of the four games is released. Inkisle and Sunmeld are in development.
+None of the games mentioned here is released. Inkisle and Sunmeld are in development.
 
-You can see all four on [play.ipe.rest](https://play.ipe.rest).
+You can find them on [play.ipe.rest](https://play.ipe.rest).
 
 ```
 ipe(); // shuffle, deal, begin

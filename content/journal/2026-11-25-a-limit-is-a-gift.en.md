@@ -6,6 +6,7 @@ alt_title: "한계가 주는 것"
 description: "A fixed number of turns, a small grid, a single page of rules. Why limits make decisions sharper in short games, and how to treat them as part of the puzzle."
 excerpt: "How constraints such as turn counts and board size turn a loose game into a decision worth making."
 published_at: 2026-11-25T12:15+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()
@@ -40,7 +41,7 @@ Then plan backwards from the limit. If the game ends at turn 20, what must be tr
 
 A limit can also be harsh. A cap that is too tight leaves no room to recover from a mistake, and a board that is too small repeats itself. Good limits are chosen to be generous enough to forgive and tight enough to matter. We cannot promise ours get that balance right before players have tried them.
 
-None of the four games is released. Iltonggi and Claimball are "coming soon", and Inkisle and Sunmeld are in development.
+None of the games mentioned here is released. Iltonggi and Claimball are "coming soon", and Inkisle and Sunmeld are in development.
 
 ```
 ipe(); // the edge is part of the game

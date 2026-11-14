@@ -6,6 +6,7 @@ alt_title: "When a game is solved"
 description: "틱택토도 체커도 이미 풀린 게임입니다. 풀렸다는 것이 무슨 뜻인지, 풀린 게임이 왜 시들해질 수 있는지, 그래도 짧은 게임을 살리는 것은 무엇인지."
 excerpt: "틱택토에서 체커까지 풀린 게임을 보며, 짧은 게임에는 정답 말고 무엇이 더 필요한지 생각해 봅니다."
 published_at: 2026-11-16T12:26+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()

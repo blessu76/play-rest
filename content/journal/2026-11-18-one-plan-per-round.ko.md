@@ -6,6 +6,7 @@ alt_title: "One plan per round"
 description: "쉬는 시간에 하는 턴제 게임을 위한 플레이 요령. 첫 턴에 계획을 하나 정하고, 매 턴 점검하고, 판이 아니라고 하면 버리십시오."
 excerpt: "방향 없이 흘러가는 한 판을 피하는 법. 계획을 하나 정해 한 문장으로 말하고, 판이 바꾸게 두는 것."
 published_at: 2026-11-18T12:07+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()

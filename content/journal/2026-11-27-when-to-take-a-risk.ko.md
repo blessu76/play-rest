@@ -6,6 +6,7 @@ alt_title: "When to take a risk"
 description: "앞서고 있을 때는 안전하게 두는 것이 이기고, 뒤지고 있을 때는 집니다. 짧은 게임에서 조심스러운 수와 대담한 수 중에서 고르는 평범한 길잡이."
 excerpt: "알맞은 위험의 양이 이기고 있느냐에 달린 이유와, 내가 어느 쪽인지 빨리 점검하는 방법."
 published_at: 2026-11-27T12:21+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()
@@ -36,7 +37,7 @@ keywords: 위험 감수, 게임 전략, 뒤진 상황에서 두기, 안전한 �
 
 우리 게임에도 이 이야기와 닿는 부분이 조금 있습니다. [잉크아일](https://inkisle.ipe.rest) 에서는 함대가 실시간으로 바다를 건넙니다. [Claimball](https://claimball.ipe.rest) 에서는 패들의 가운데로 공을 치면 스매시가 되어 타일 세 칸을 차지합니다.
 
-누군가를 상대로 검증한 조언이 아니라 보는 방식으로 말씀드립니다. 두 게임 모두 출시 전입니다. 잉크아일은 「개발 중」, Claimball 은 「출시 예정」입니다.
+누군가를 상대로 검증한 조언이 아니라 보는 방식으로 말씀드립니다. 두 게임 모두 출시 전입니다. 잉크아일은 「개발 중」, Claimball 은 「곧 출시」입니다.
 
 ```
 ipe(); // ahead: narrow. behind: widen.

@@ -6,6 +6,7 @@ alt_title: "첫 수의 이점을 공평하게 나누는 법"
 description: "Moving first is usually an advantage. How komi, handicap stones and the pie rule give the second player something back, and what short games can borrow."
 excerpt: "Three old ideas for balancing a first-move advantage, and why the cleverest one needs no rule about numbers at all."
 published_at: 2026-11-23T12:36+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()

@@ -6,6 +6,7 @@ alt_title: "Making the first move fair"
 description: "먼저 두는 쪽은 대개 유리합니다. 덤, 접바둑, 파이 규칙이 뒤에 두는 사람에게 무엇을 돌려주는지, 짧은 게임은 거기서 무엇을 배울 수 있는지."
 excerpt: "첫 수의 이점을 맞추는 오래된 생각 셋과, 가장 영리한 방법에는 숫자에 관한 규칙이 전혀 필요 없는 이유."
 published_at: 2026-11-23T12:36+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()

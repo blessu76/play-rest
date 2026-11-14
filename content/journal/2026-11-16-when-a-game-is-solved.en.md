@@ -6,6 +6,7 @@ alt_title: "게임이 '풀렸다'는 것"
 description: "Tic-tac-toe is solved, and so is checkers. What that means, why a solved game can lose its spark, and what keeps a short game alive anyway."
 excerpt: "A look at solved games, from tic-tac-toe to checkers, and why a short game needs more than a correct answer."
 published_at: 2026-11-16T12:26+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()

@@ -6,6 +6,7 @@ alt_title: "Luck and skill in a short round"
 description: "짧은 게임에서는 운이 평평해질 여지가 적습니다. 한 판이 몇 분일 때 운과 실력을 어떻게 생각할지, 어느 쪽도 너무 탓하지 않는 법."
 excerpt: "몇 분의 플레이가 우연을 더 크게 들리게 하는 이유와, 한 번의 결과에 속지 않고 내 플레이를 판단하는 평범한 방법."
 published_at: 2026-11-24T12:52+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()

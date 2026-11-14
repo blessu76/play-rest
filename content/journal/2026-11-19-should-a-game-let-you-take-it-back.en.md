@@ -6,6 +6,7 @@ alt_title: "물러 주는 게임, 안 물러 주는 게임"
 description: "An undo button is kind to a clumsy thumb and bad for a weighty decision. The case for and against taking a move back in a short turn-based game."
 excerpt: "Why undo is a real design choice, what it protects you from, and what it quietly takes away."
 published_at: 2026-11-19T12:44+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()

@@ -6,6 +6,7 @@ alt_title: "A move that takes a week"
 description: "우편으로 두는 체스는 전화보다 훨씬 오래되었습니다. 수와 수 사이에 며칠이 걸리는 게임이 가르치는 인내, 준비, 시간."
 excerpt: "통신 대국은 턴제의 느린 끝을 보여 주며, 짧은 세션이 우리가 고른 시계에 얼마나 달려 있는지 알려 줍니다."
 published_at: 2026-11-22T12:08+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()

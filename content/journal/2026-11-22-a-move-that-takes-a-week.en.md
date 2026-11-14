@@ -6,6 +6,7 @@ alt_title: "한 수에 한 주가 걸리는 게임"
 description: "Playing chess by post is far older than the phone. What a game with days between moves teaches about patience, preparation and time."
 excerpt: "Correspondence games make the slow end of turn-based play visible, and show how much a short session depends on the clock you choose."
 published_at: 2026-11-22T12:08+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()

@@ -6,6 +6,7 @@ alt_title: "What a tempo is worth"
 description: "번갈아 두는 게임에서 한 수는 시간의 단위이기도 합니다. 템포가 무엇인지, 그것을 낭비하면 왜 아픈지, 짧은 게임에서 알아차리는 쉬운 방법."
 excerpt: "턴제 게임의 템포 안내. 내가 쓴 한 수는 상대가 되찾는 한 수라는 생각."
 published_at: 2026-11-20T12:19+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()

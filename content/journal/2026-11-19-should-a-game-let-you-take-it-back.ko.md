@@ -6,6 +6,7 @@ alt_title: "Should a game let you take it back?"
 description: "되돌리기 버튼은 서투른 엄지에게는 친절하고 무거운 결정에는 해롭습니다. 짧은 턴제 게임에서 수를 물러 주는 것의 찬반."
 excerpt: "되돌리기가 진짜 설계상의 선택인 이유, 그것이 막아 주는 것과 슬며시 가져가는 것."
 published_at: 2026-11-19T12:44+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()

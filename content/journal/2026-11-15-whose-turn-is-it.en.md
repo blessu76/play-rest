@@ -6,6 +6,7 @@ alt_title: "지금은 누구 차례입니까"
 description: "Every game answers one quiet question: who acts now? Taking turns, acting together and playing in real time each give a break a different feel."
 excerpt: "Three ways a game can answer 'who acts now', and what each one means for a few spare minutes."
 published_at: 2026-11-15T12:11+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()
@@ -40,9 +41,9 @@ Real time gives a game energy and a feeling of being caught up in it. It also me
 
 We do not think one answer is the right one. A break that is calm and uninterrupted suits taking turns, because you can think as long as you like. A break you spend standing up, or one that may end in a moment, may be happier with a short, lively real-time round.
 
-What we would suggest is to ask the question before choosing a game: do I want the game to wait for me, or do I want it to move? Our four games answer it in different ways on purpose, and each card on [play.ipe.rest](https://play.ipe.rest) says which way.
+What we would suggest is to ask the question before choosing a game: do I want the game to wait for me, or do I want it to move? Our games answer it in different ways on purpose, and the cards on [play.ipe.rest](https://play.ipe.rest) describe how each one plays.
 
-None of the four is released yet. Iltonggi and Claimball are marked "coming soon", and Inkisle and Sunmeld are in development, so this is a guide to how each is meant to be played, not a review.
+None of the games mentioned here is released yet. Iltonggi and Claimball are marked "coming soon", and Inkisle and Sunmeld are in development, so this is a guide to how each is meant to be played, not a review.
 
 ```
 ipe(); // who acts now?

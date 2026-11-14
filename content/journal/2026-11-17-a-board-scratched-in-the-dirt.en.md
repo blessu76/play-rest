@@ -6,6 +6,7 @@ alt_title: "땅바닥에 긋는 게임판"
 description: "Some of the oldest board games need no board at all, only holes in the ground and a few seeds. What that tells us about games for spare minutes."
 excerpt: "Mancala-style games can be played with pits in the earth and pebbles. Why the lightest games last, and what a modern phone game can learn from them."
 published_at: 2026-11-17T12:38+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()

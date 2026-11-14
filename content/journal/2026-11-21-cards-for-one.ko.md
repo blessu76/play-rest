@@ -6,6 +6,7 @@ alt_title: "Cards for one"
 description: "페이션스, 곧 솔리테어는 혼자 시간을 보내는 가장 오래된 방법의 하나입니다. 이름의 내력과 한 사람용 카드 게임이 계속 통하는 이유."
 excerpt: "페이션스와 솔리테어의 짧은 역사, 그리고 카드 한 벌과 탁자가 남는 시간을 채울 수 있는 설계상의 이유."
 published_at: 2026-11-21T12:27+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()
@@ -38,9 +39,9 @@ keywords: 페이션스, 솔리테어, 카드 게임, 게임의 역사, 혼자 �
 
 가장 쓸모 있다고 보는 생각은 첫 번째입니다. 게임은 조각들만 보고도 이해되어야 한다는 것입니다. [잉크아일](https://inkisle.ipe.rest) 은 규칙이 한 쪽에 들어가고 바다마다 규칙이 하나씩 늘어납니다. [Sunmeld](https://sunmeld.ipe.rest) 의 규칙은 네 줄입니다. 우리 게임을 수백 년 된 놀이와 견주려는 것은 아닙니다. 머릿속에 담을 수 있는 규칙이라는 같은 본능이 짧은 쉬는 시간을 가능하게 한다는 점만 짚어 둡니다.
 
-네 게임 모두 출시 전입니다. 잉크아일과 Sunmeld 는 「개발 중」입니다.
+여기서 말한 게임은 모두 출시 전입니다. 잉크아일과 Sunmeld 는 「개발 중」입니다.
 
-네 게임은 [play.ipe.rest](https://play.ipe.rest) 에서 볼 수 있습니다.
+이 게임들은 [play.ipe.rest](https://play.ipe.rest) 에서 볼 수 있습니다.
 
 ```
 ipe(); // shuffle, deal, begin

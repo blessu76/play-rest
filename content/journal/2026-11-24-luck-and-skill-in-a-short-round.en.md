@@ -6,6 +6,7 @@ alt_title: "짧은 한 판의 운과 실력"
 description: "A short game gives luck less room to even out. How to think about chance and skill when a round lasts only minutes, and how to avoid blaming either too much."
 excerpt: "Why a few minutes of play make randomness louder, and a plain way to judge your own play without being fooled by one result."
 published_at: 2026-11-24T12:52+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()

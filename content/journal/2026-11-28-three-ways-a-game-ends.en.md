@@ -6,6 +6,7 @@ alt_title: "게임이 끝나는 세 가지 방식"
 description: "A game is shaped by how it ends. Score, elimination and a last-move loss each change how you play the middle, and each suits a different kind of break."
 excerpt: "A closing look at endings in turn-based games, and how each kind changes what you do ten minutes earlier."
 published_at: 2026-11-28T12:47+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()
@@ -42,9 +43,9 @@ If you want something to relax with, look for a score. If you want to feel the e
 
 The idea behind all of these pieces is the same. A short game is not a smaller long game. It is a different shape, and the ending is the part of the shape that you feel most.
 
-None of the four games is released. Iltonggi is "coming soon", Claimball is "coming soon" as well, and Inkisle and Sunmeld are in development.
+None of the games mentioned here is released. Iltonggi and Claimball are both "coming soon", and Inkisle and Sunmeld are in development.
 
-You can find all four on [play.ipe.rest](https://play.ipe.rest).
+You can find them on [play.ipe.rest](https://play.ipe.rest).
 
 ```
 ipe(); // and then it ends

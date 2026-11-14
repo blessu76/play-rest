@@ -6,6 +6,7 @@ alt_title: "한 수의 값, 템포"
 description: "In a game of alternating turns, a move is also a unit of time. What 'tempo' means, why wasting it hurts, and a simple way to notice it in a short game."
 excerpt: "A short guide to tempo in turn-based games: the idea that every move spent is a move the other side gets back."
 published_at: 2026-11-20T12:19+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()

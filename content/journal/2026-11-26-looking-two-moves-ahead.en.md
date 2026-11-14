@@ -3,16 +3,17 @@ slug: 2026-11-26-looking-two-moves-ahead
 lang: en
 title: "Looking two moves ahead"
 alt_title: "두 수 앞을 보는 법"
-description: "You do not need to calculate deeply to play well. A simple habit of checking your move, the reply and your answer catches most mistakes in a short round."
+description: "You do not need to calculate deeply to play well. A simple habit of checking your move, the reply and your answer catches many mistakes in a short round."
 excerpt: "A plain look-ahead habit for turn-based games: three questions, no notebook, thirty seconds."
 published_at: 2026-11-26T12:33+09:00
+copy_review: iris 2026-11-14
 category: games
 original: en
 author: ipe()
 keywords: look ahead, planning moves, strategy tips, turn-based games, beginner tips, thinking in games, ipe() games
 ---
 
-Strong players are often described as seeing many moves ahead. That is true for some positions, and it is also a poor guide for the rest of us. You do not need ten moves of depth. Two is enough to catch most of the mistakes that matter in a short round.
+Strong players are often described as seeing many moves ahead. That is true for some positions, and it is also a poor guide for the rest of us. You do not need ten moves of depth. Two is enough to catch many of the mistakes that matter in a short round.
 
 ## The habit
 
@@ -20,7 +21,7 @@ Before you commit to a move, run three small questions.
 
 What do I want this move to do? Say it in a few words. If you cannot, you may be moving only because it is your turn.
 
-How might they answer? Pick the reply that would hurt most, not the one you would like. Most mistakes come from imagining the opponent's kindest answer.
+How might they answer? Pick the reply that would hurt most, not the one you would like. Many mistakes come from imagining the opponent's kindest answer.
 
 What would I do next? If your plan survives that reply and you still have a good move, go ahead. If you would be stuck, look for another move.
 
