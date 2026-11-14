@@ -68,7 +68,6 @@ img{max-width:100%;height:auto}
 .langsw a[aria-current="true"]{background:var(--ink);color:var(--bg)}
 /* header language select (JS): clips a long native name at narrow widths; the full name shows in the open list */
 .langsel{min-height:44px;min-width:0;max-width:180px;box-sizing:border-box;padding:0 8px;border:0;border-radius:0;background:var(--bg);color:var(--ink);font:inherit;font-size:16px;cursor:pointer}
-.langsel[hidden]{display:none}
 .langsel:hover{color:var(--cobalt)}
 .langsel:focus-visible{outline:2px solid var(--cobalt);outline-offset:-2px}
 /* AI translation notice (decision 0087): every page in a machine-translated language says so and links to the English original */

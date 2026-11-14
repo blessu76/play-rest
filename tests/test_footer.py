@@ -36,7 +36,7 @@ class FooterNav(unittest.TestCase):
         for lang, f, h in pages():
             head = block(h, "header")
             self.assertEqual(len(re.findall(r"<select ", head)), 1, f)
-            self.assertIn('<select id="lang-select" class="langsel" data-lang-select hidden', head, f)
+            self.assertIn('<select id="lang-select" class="langsel" autocomplete="off"', head, f)
             opts = re.findall(r'<option value="([^"]*)" data-lang="([\w-]+)"', head)
             self.assertEqual([l for _, l in opts], list(bs.LANGS), f)
             for href, l in opts:

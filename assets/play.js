@@ -1,20 +1,4 @@
 (function(){
-  /* the header language select: remember the choice (the root page follows it, see langpick.js), then open that language's page */
-  var ls=document.querySelectorAll('select[data-lang-select]');
-  for(var i=0;i<ls.length;i++){
-    ls[i].hidden=false;
-    ls[i].addEventListener('change',function(){
-      try{localStorage.setItem('ipe_lang',this.options[this.selectedIndex].getAttribute('data-lang'))}catch(x){}
-      location.href=this.value;
-    });
-  }
-  /* back/forward from bfcache keeps the select on the last choice: restore this page's own language option */
-  window.addEventListener('pageshow',function(e){
-    if(!e.persisted)return;
-    for(var i=0;i<ls.length;i++)for(var j=0;j<ls[i].options.length;j++)ls[i].options[j].selected=ls[i].options[j].defaultSelected;
-  });
-})();
-(function(){
   /* theme switch: the head script already set data-theme before first paint; this syncs the buttons and handles clicks */
   var root=document.documentElement,KEY='play-theme',T=['light','dark','noir'],
       C={light:'#fbfcfe',dark:'#0c1118',noir:'#0a0810'},

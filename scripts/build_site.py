@@ -56,7 +56,7 @@ except ImportError:
 
 SITE = "https://play.ipe.rest"
 KST = dt.timezone(dt.timedelta(hours=9))
-ASSET_V = "20261114d"  # keep in sync: bump when assets/play.css or play.js change
+ASSET_V = "20261114e"  # keep in sync: bump when assets/play.css or play.js change
 SITE_UPDATED = "2026-11-11"  # "Last updated" of home / 404 and sitemap lastmod: bump by hand when their text changes
 OPERATOR = "Davy Kim (ipe Studio)"
 TERMS_URL = "https://ipe.rest/legal/terms/"  # the common ipe() terms; the portal has no terms page of its own
@@ -591,11 +591,13 @@ def loc_link(ctx, links, lang):
 
 
 # ---------------------------------------------------------------- html pieces
-def langpick_script(root, langs):
-    """The root page's language picker (assets/langpick.js) inlined with the languages this build has."""
-    src = (Path(root) / "assets" / "langpick.js").read_text(encoding="utf-8")
+def inline_js(root, name, langs=None):
+    """assets/<name> without its leading comment, one line, for an inline <script> (no external load)"""
+    src = (Path(root) / "assets" / name).read_text(encoding="utf-8")
     src = re.sub(r"/\*.*?\*/", "", src, count=1, flags=re.S)
-    return "<script>%s</script>" % re.sub(r"\s*\n\s*", "", src.replace("/*SUPPORTED*/[]", json.dumps(list(langs)))).strip()
+    if langs is not None:
+        src = src.replace("/*SUPPORTED*/[]", json.dumps(list(langs)))
+    return re.sub(r"\s*\n\s*", "", src).strip()
 
 
 def localtime_script():
@@ -664,7 +666,7 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
              '<link rel="alternate" type="application/rss+xml" title="%s" href="%s">' % (esc(ctx.t(jl, "journal_feed_title")), esc(path_feed(jl))),
              '<link rel="stylesheet" href="/assets/play.css?v=%s">' % ASSET_V]
     if path == "/":
-        head.append(langpick_script(ctx.root, ctx.langs))
+        head.append("<script>%s</script>" % inline_js(ctx.root, "langpick.js", ctx.langs))
     head.append(kit_seo.jsonld_script({"@context": "https://schema.org", "@graph": graph}))
     # language select (header): each option is this page in that language, or that language's home when this page has no version
     # there (a journal page in ja -> /ja/), never a page that does not exist. play.js un-hides it; without JS the same links sit in a <noscript> menu
@@ -672,10 +674,11 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, updated, og_type="
         esc(alt.get(l) or path_home(l)), l, l, ' aria-current="true"' if l == lang else "", esc(LANGS[l][0])) for l in ctx.langs)
     opts = "".join('<option value="%s" data-lang="%s" lang="%s"%s>%s</option>' % (
         esc(alt.get(l) or path_home(l)), l, l, " selected" if l == lang else "", esc(LANGS[l][0])) for l in ctx.langs)
-    langsw = ('<select id="lang-select" class="langsel" data-lang-select hidden aria-label="%s">%s</select>'
-              '<noscript><details class="langsw"><summary aria-label="%s: %s">%s<span class="langsw__cur" aria-hidden="true">%s</span></summary>'
+    langsw = ('<select id="lang-select" class="langsel" autocomplete="off" aria-label="%s">%s</select>'
+              '<script>%s</script>'
+              '<noscript><style>.langsel{display:none}</style><details class="langsw"><summary aria-label="%s: %s">%s<span class="langsw__cur" aria-hidden="true">%s</span></summary>'
               '<ul class="langsw__list" aria-label="%s">%s</ul></details></noscript>') % (
-        esc(t("lang_label")), opts, esc(t("lang_label")), esc(name), GLOBE_ICON, esc(short), esc(t("lang_label")), switch)
+        esc(t("lang_label")), opts, inline_js(ctx.root, "langsel.js"), esc(t("lang_label")), esc(name), GLOBE_ICON, esc(short), esc(t("lang_label")), switch)
     jhref, jnav_attr, jnav_mark = loc_link(ctx, {jl: path_journal(jl)}, lang)  # a language without its own journal says "(in English)" here too
     navlinks = [(path_home(lang) + "#games", t("nav_games"), "games", ""), (path_page(lang, "about"), t("nav_about"), "about", ""),
                 (jhref, t("nav_journal") + jnav_mark, "journal", jnav_attr), (path_page(lang, "contact"), t("nav_contact"), "contact", "")]
