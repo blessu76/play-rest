@@ -45,7 +45,7 @@
   "inkisle": {
     "status": "Geliştiriliyor",
     "platform": "Önce iOS, Android paralel",
-    "pricing": "Planlanan: tüm turlar ücretsiz · reklam yok · isteğe bağlı destek ögeleri",
+    "pricing": "Yayın öncesi · fiyat belirlenmedi",
     "tagline": "Telefon için sakin bir ada fethi strateji oyunu: adalar arasında filo gönderin ve denizi kendi renginize boyayın.",
     "pros": [
       {
@@ -80,7 +80,7 @@
       "players": "Tek başına ve çevrimdışı. Çevrimiçi oyun sonra kararlaştırılacak",
       "platform": "Önce iOS, Android paralel",
       "offline": "Çevrimdışı, hesap gerekmez",
-      "pricing": "Planlanan: tüm turlar ücretsiz · reklam yok · isteğe bağlı destek ögeleri",
+      "pricing": "Yayın öncesi · fiyat belirlenmedi",
       "languages": "12 dil",
       "status": "Geliştiriliyor. TestFlight sürümleri mevcut"
     }
@@ -216,7 +216,7 @@
   "tottertop": {
     "status": "Yakında",
     "platform": "iOS ve Android",
-    "pricing": "Ücretsiz, yalnızca isteğe bağlı ödüllü reklamlar.",
+    "pricing": "Ücretsiz. Reklam ve uygulama içi satın alma yok.",
     "tagline": "Tek dokunuşluk bir fizik oyunu. Sallanan vinç blokları bırakır ve siz her blokla daha da sallanan bir kule inşa edersiniz.",
     "pros": [
       {
@@ -229,7 +229,7 @@
       },
       {
         "h": "Oynaması ücretsiz.",
-        "p": "Satın alınacak bir şey yok; tek reklam isteğe bağlı ödüllü reklamdır."
+        "p": "Reklam ve uygulama içi satın alma yok."
       }
     ],
     "cons": [
@@ -250,7 +250,7 @@
       "players": "Tek başına",
       "platform": "iOS ve Android, yakında",
       "offline": "—",
-      "pricing": "Ücretsiz, isteğe bağlı ödüllü reklamlar",
+      "pricing": "Ücretsiz · reklam yok · uygulama içi satın alma yok",
       "languages": "11 dil",
       "status": "Yakında, çıkış tarihi belirlenmedi"
     }
@@ -258,7 +258,7 @@
   "mossgarden": {
     "status": "Yakında",
     "platform": "iOS ve Android",
-    "pricing": "Ücretsiz, yalnızca isteğe bağlı ödüllü reklamlar.",
+    "pricing": "Uygulama içi satın alma · fiyat belirlenmedi",
     "tagline": "Telefonda bir boşta bahçe. Sekiz bitki türü dikin, büyütün ve bıraktıkları çiy damlalarını toplayın.",
     "pros": [
       {
@@ -292,7 +292,7 @@
       "players": "Tek başına",
       "platform": "iOS ve Android, yakında",
       "offline": "—",
-      "pricing": "Ücretsiz, isteğe bağlı ödüllü reklamlar",
+      "pricing": "Uygulama içi satın alma · fiyat belirlenmedi",
       "languages": "11 dil",
       "status": "Yakında, çıkış tarihi belirlenmedi"
     }

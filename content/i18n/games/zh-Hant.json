@@ -45,7 +45,7 @@
   "inkisle": {
     "status": "開發中",
     "platform": "先推出 iOS,Android 同步進行",
-    "pricing": "規劃中:所有對局免費,無廣告,可選擇性購買支持道具",
+    "pricing": "上線前・價格未定",
     "tagline": "專為手機設計的輕鬆占島策略遊戲:在島嶼之間派出艦隊,把海洋染上你的顏色。",
     "pros": [
       {
@@ -80,7 +80,7 @@
       "players": "單人且可離線。連線遊玩之後再決定",
       "platform": "先推出 iOS,Android 同步進行",
       "offline": "可離線,不需要帳號",
-      "pricing": "規劃中:所有對局免費,無廣告,可選擇性購買支持道具",
+      "pricing": "上線前・價格未定",
       "languages": "12 種語言",
       "status": "開發中。目前有 TestFlight 版本"
     }
@@ -216,7 +216,7 @@
   "tottertop": {
     "status": "即將推出",
     "platform": "iOS 與 Android",
-    "pricing": "免費,僅有可選擇觀看的獎勵廣告。",
+    "pricing": "免費。無廣告，無App內購。",
     "tagline": "單點觸控的物理遊戲。搖晃的起重機放下方塊,而你蓋出的塔每多一塊就搖晃得更厲害。",
     "pros": [
       {
@@ -229,7 +229,7 @@
       },
       {
         "h": "免費遊玩。",
-        "p": "不需要買任何東西;唯一的廣告是可選擇觀看的獎勵廣告。"
+        "p": "無廣告，也沒有App內購。"
       }
     ],
     "cons": [
@@ -250,7 +250,7 @@
       "players": "單人",
       "platform": "iOS 與 Android,即將推出",
       "offline": "—",
-      "pricing": "免費,可選擇觀看的獎勵廣告",
+      "pricing": "免費・無廣告・無App內購",
       "languages": "11 種語言",
       "status": "即將推出,尚未訂出發售日"
     }
@@ -258,7 +258,7 @@
   "mossgarden": {
     "status": "即將推出",
     "platform": "iOS 與 Android",
-    "pricing": "免費,僅有可選擇觀看的獎勵廣告。",
+    "pricing": "App內購・價格未定",
     "tagline": "手機上的放置型花園。種下八種植物,看著它們長大,並收集它們留下的露珠。",
     "pros": [
       {
@@ -292,7 +292,7 @@
       "players": "單人",
       "platform": "iOS 與 Android,即將推出",
       "offline": "—",
-      "pricing": "免費,可選擇觀看的獎勵廣告",
+      "pricing": "App內購・價格未定",
       "languages": "11 種語言",
       "status": "即將推出,尚未訂出發售日"
     }

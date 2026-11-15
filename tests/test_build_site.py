@@ -134,7 +134,7 @@ class Built(unittest.TestCase):
         self.assertEqual(g["pricing"]["ko"], CLAIMBALL_PRICE_KO)
         self.assertIn("90", g["compare"]["length"]["en"])
         inkisle = {x["id"]: x for x in self.ctx.games}["inkisle"]
-        self.assertIn("광고 없음", inkisle["pricing"]["ko"])
+        self.assertEqual(inkisle["pricing"]["ko"], "출시 전 · 가격 미정")
 
     def test_claimball_pricing_is_the_free_to_try_one_purchase_wording_everywhere(self):
         pages = [(d + "index.html", CLAIMBALL_PRICE_EN if d == "" else CLAIMBALL_PRICE_KO) for d in ("", "ko/")]
@@ -153,21 +153,18 @@ class Built(unittest.TestCase):
         self.assertGreaterEqual(en.count("pre-launch proposal"), 3)
         self.assertGreaterEqual(html.unescape(self.read("ko/index.html")).count("출시 전 제안값"), 3)
 
-    def test_inkisle_pricing_is_marked_as_a_plan_in_all_12_languages_and_nothing_else_changed(self):
-        # inkisle.ipe.rest says "Not announced yet ... the current plan": the card and compare cell say it is planned, in every language
+    def test_pricing_copy_follows_the_2026_11_15_decision(self):
         games = {x["id"]: x for x in self.ctx.games}
-        lead = {"en": "Planned: ", "ko": "출시 전 계획: ", "de": "Geplant: ", "es": "Planeado: ", "fr": "Prévu : ", "id": "Rencana: ",
-                "ja": "予定：", "pt-BR": "Planejado: ", "vi": "Dự kiến: ", "zh-Hant": "規劃中:", "tr": "Planlanan: ", "th": "คาดว่า: "}
-        self.assertEqual(len(lead), 12)
-        for lang, word in lead.items():
-            for text in (games["inkisle"]["pricing"][lang], games["inkisle"]["compare"]["pricing"][lang]):
-                self.assertTrue(text.startswith(word), (lang, text))
-        self.assertEqual(games["inkisle"]["pricing"]["en"], "Planned: every round free · no ads · optional help items")
-        self.assertEqual(games["inkisle"]["pricing"]["ko"], "출시 전 계획: 모든 판 무료 · 광고 없음 · 선택형 도움 아이템")
-        for gid in ("iltonggi", "sunmeld", "claimball"):  # the other cards are not touched
-            for lang, word in lead.items():
-                self.assertFalse(games[gid]["pricing"][lang].startswith(word), (gid, lang))
-                self.assertFalse(games[gid]["compare"]["pricing"][lang].startswith(word), (gid, lang))
+        tt = games["tottertop"]
+        for lang in ("en", "ko"):
+            self.assertIn("in-app" if lang == "en" else "인앱결제", tt["pricing"][lang] + tt["compare"]["pricing"][lang] + tt["pros"][2]["p"][lang])
+        for g in self.ctx.games:
+            for lang in ("en", "ko"):
+                blob = json.dumps(g["pricing"], ensure_ascii=False) + json.dumps(g["compare"]["pricing"], ensure_ascii=False)
+                self.assertNotIn("rewarded", blob.lower(), (g["id"], lang))
+                self.assertNotIn("보상", blob, (g["id"], lang))
+        self.assertEqual(games["mossgarden"]["pricing"]["en"], "In-app purchases; price not set.")
+        self.assertEqual(games["inkisle"]["pricing"]["en"], "Before release · pricing not set")
 
     def test_nine_cards_have_full_copy_in_all_12_languages(self):
         for g in self.ctx.games:

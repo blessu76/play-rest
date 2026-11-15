@@ -29,7 +29,7 @@ Short rounds forgive. When a tower falls you should have lost about a minute, no
 
 ## Where it stands
 
-Tottertop is planned as a free game with optional rewarded ads, as we wrote last time. It is marked "coming soon" on [play.ipe.rest](https://play.ipe.rest) and is not released. The details above are our current plan and may change. The name could still change before release.
+Tottertop is free, with no ads and no in-app purchases. It is marked "coming soon" on [play.ipe.rest](https://play.ipe.rest) and is not released. The details above are our current plan and may change. The name could still change before release.
 
 ```
 ipe(); // tap. watch. tap again.

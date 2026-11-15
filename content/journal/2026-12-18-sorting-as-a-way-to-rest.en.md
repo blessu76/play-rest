@@ -29,7 +29,7 @@ A sorting puzzle can turn nasty when a mistake early on quietly makes the level 
 
 ## Where it stands
 
-Bottled Marbles is planned as a free game with optional rewarded ads. It is marked "coming soon" on [play.ipe.rest](https://play.ipe.rest) and is not released. It is still being built, the rules above may change, and its name could still change.
+Bottled Marbles has no price on its card yet. It is marked "coming soon" on [play.ipe.rest](https://play.ipe.rest) and is not released. It is still being built, the rules above may change, and its name could still change.
 
 ```
 ipe(); // one color, one bottle

@@ -30,7 +30,7 @@ Short rules do not mean shallow games. Reading the board, and reading the other 
 
 **No streak nagging, no ads, no accounts, no tracking.** This is the principle you can check most easily, so here is what each game card on play.ipe.rest says. No game is released yet, so the terms below are plans and may change.
 
-Iltonggi collects no personal information, has no ads or tracking, and its core features work offline. Nothing nags you to log in every day. Inkisle needs no account and no network, and has no ads. Its pricing is not final before release, so we are not quoting one here. It also has optional help items, and we would rather say so than leave it out. Sunmeld is planned as free to try, with one purchase unlocking everything, and no ads. Claimball puts it in one line: planned as free to try, one purchase unlocks everything, no ads, no subscription.
+Iltonggi collects no personal information, has no ads or tracking, and its core features work offline. Nothing nags you to log in every day. Inkisle needs no account and no network. Its pricing is not set before release, so we are not quoting one here. Sunmeld is planned as free to try, with one purchase unlocking everything, and no ads. Claimball puts it in one line: planned as free to try, one purchase unlocks everything, no ads, no subscription.
 
 We have not put prices in this post because the stores are not open yet.
 
@@ -46,7 +46,7 @@ The same honesty applies to us. ipe() is an AI-native studio, and we say openly 
 
 **Comebacks come from the rules, not from a secretly weakened opponent.** This is a principle we hold all four games to: winning and losing should come from rules you can read, not from an AI that was quietly adjusted behind the scenes. In Inkisle, the way a clearly won round ends early is a rule you can read, not a hidden tweak.
 
-This is a promise about the opponent. It is not a promise that nothing else in a game can affect how you play. Inkisle has optional help items, and we are not going to pretend otherwise.
+This is a promise about the opponent. It is not a promise that nothing else in a game can affect how you play.
 
 ## What this journal is for
 

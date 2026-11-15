@@ -45,7 +45,7 @@
  "inkisle": {
   "status": "In Entwicklung",
   "platform": "Zuerst iOS, Android parallel",
-  "pricing": "Geplant: jede Runde kostenlos · keine Werbung · optionale Hilfsgegenstände",
+  "pricing": "Vor dem Release · Preis offen",
   "tagline": "Ein leichtes Strategiespiel um Inseleroberung für Ihr Handy: Schicken Sie Flotten zwischen Inseln hin und her und färben Sie das Meer in Ihrer Farbe.",
   "pros": [
    {
@@ -80,7 +80,7 @@
    "players": "Solo und offline. Über Onlinespiel wird später entschieden",
    "platform": "Zuerst iOS, Android parallel",
    "offline": "Offline, ohne Konto",
-   "pricing": "Geplant: jede Runde kostenlos · keine Werbung · optionale Hilfsgegenstände",
+   "pricing": "Vor dem Release · Preis offen",
    "languages": "12 Sprachen",
    "status": "In Entwicklung. TestFlight-Builds laufen"
   }
@@ -216,7 +216,7 @@
  "tottertop": {
   "status": "Demnächst",
   "platform": "iOS und Android",
-  "pricing": "Kostenlos, mit optionaler Belohnungswerbung.",
+  "pricing": "Kostenlos. Keine Werbung, keine In-App-Käufe.",
   "tagline": "Ein Physikspiel mit einem einzigen Tippen. Ein schwankender Kran lässt Blöcke fallen, und Sie stapeln einen Turm, der mit jedem Block weiter ins Wanken gerät.",
   "pros": [
    {
@@ -229,7 +229,7 @@
    },
    {
     "h": "Kostenlos spielen.",
-    "p": "Kein Kauf nötig; die einzige Werbung ist optionale Belohnungswerbung."
+    "p": "Keine Werbung und keine In-App-Käufe."
    }
   ],
   "cons": [
@@ -250,7 +250,7 @@
    "players": "Einzelspieler",
    "platform": "iOS und Android, demnächst",
    "offline": "—",
-   "pricing": "Kostenlos, mit optionaler Belohnungswerbung",
+   "pricing": "Kostenlos · keine Werbung · keine In-App-Käufe",
    "languages": "11 Sprachen",
    "status": "Demnächst, Erscheinungsdatum noch offen"
   }
@@ -258,7 +258,7 @@
  "mossgarden": {
   "status": "Demnächst",
   "platform": "iOS und Android",
-  "pricing": "Kostenlos, mit optionaler Belohnungswerbung.",
+  "pricing": "In-App-Käufe · Preis offen",
   "tagline": "Ein Idle-Garten auf dem Handy. Pflanzen Sie acht Arten, lassen Sie sie wachsen und sammeln Sie den Tau, den sie hinterlassen.",
   "pros": [
    {
@@ -292,7 +292,7 @@
    "players": "Einzelspieler",
    "platform": "iOS und Android, demnächst",
    "offline": "—",
-   "pricing": "Kostenlos, mit optionaler Belohnungswerbung",
+   "pricing": "In-App-Käufe · Preis offen",
    "languages": "11 Sprachen",
    "status": "Demnächst, Erscheinungsdatum noch offen"
   }

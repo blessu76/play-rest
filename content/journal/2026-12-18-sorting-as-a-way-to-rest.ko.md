@@ -29,7 +29,7 @@ keywords: Bottled Marbles, 정렬 퍼즐, 구슬 정렬 게임, 힐링 퍼즐 �
 
 ## 지금 어디쯤인가
 
-Bottled Marbles 는 무료에 선택형 보상 광고를 두는 것으로 계획되어 있습니다. [play.ipe.rest](https://play.ipe.rest) 에서 「출시 예정」으로 표시되어 있고 아직 출시되지 않았습니다. 아직 만드는 중이라 위 규칙은 바뀔 수 있고, 이름도 출시 전에 바뀔 수 있습니다.
+Bottled Marbles 는 카드에 아직 가격이 없습니다. [play.ipe.rest](https://play.ipe.rest) 에서 「출시 예정」으로 표시되어 있고 아직 출시되지 않았습니다. 아직 만드는 중이라 위 규칙은 바뀔 수 있고, 이름도 출시 전에 바뀔 수 있습니다.
 
 ```
 ipe(); // one color, one bottle

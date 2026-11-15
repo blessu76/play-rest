@@ -45,7 +45,7 @@
  "inkisle": {
   "status": "Đang phát triển",
   "platform": "iOS trước, Android song song",
-  "pricing": "Dự kiến: mọi ván đều miễn phí · không quảng cáo · vật phẩm hỗ trợ tùy chọn",
+  "pricing": "Trước khi phát hành · giá chưa định",
   "tagline": "Một trò chơi chiến thuật chiếm đảo nhẹ nhàng cho điện thoại: gửi hạm đội giữa các đảo và nhuộm biển bằng màu của bạn.",
   "pros": [
    {
@@ -80,7 +80,7 @@
    "players": "Một mình và ngoại tuyến. Chơi trực tuyến sẽ được quyết định sau",
    "platform": "iOS trước, Android song song",
    "offline": "Ngoại tuyến, không cần tài khoản",
-   "pricing": "Dự kiến: mọi ván đều miễn phí · không quảng cáo · vật phẩm hỗ trợ tùy chọn",
+   "pricing": "Trước khi phát hành · giá chưa định",
    "languages": "12 ngôn ngữ",
    "status": "Đang phát triển. Đang có các bản dựng TestFlight"
   }
@@ -216,7 +216,7 @@
  "tottertop": {
   "status": "Sắp ra mắt",
   "platform": "iOS và Android",
-  "pricing": "Miễn phí, chỉ có quảng cáo phần thưởng tùy chọn.",
+  "pricing": "Miễn phí. Không quảng cáo, không mua trong ứng dụng.",
   "tagline": "Trò vật lý một lần chạm. Cẩu xe lắc lư thả khối, và bạn xây ngọn tháp càng lắc lư hơn với mỗi khối.",
   "pros": [
    {
@@ -229,7 +229,7 @@
    },
    {
     "h": "Chơi miễn phí.",
-    "p": "Không cần mua gì; quảng cáo duy nhất là quảng cáo phần thưởng tùy chọn."
+    "p": "Không quảng cáo và không mua trong ứng dụng."
    }
   ],
   "cons": [
@@ -250,7 +250,7 @@
    "players": "Một mình",
    "platform": "iOS và Android, sắp ra mắt",
    "offline": "—",
-   "pricing": "Miễn phí, quảng cáo phần thưởng tùy chọn",
+   "pricing": "Miễn phí · không quảng cáo · không mua trong ứng dụng",
    "languages": "11 ngôn ngữ",
    "status": "Sắp ra mắt, chưa định ngày phát hành"
   }
@@ -258,7 +258,7 @@
  "mossgarden": {
   "status": "Sắp ra mắt",
   "platform": "iOS và Android",
-  "pricing": "Miễn phí, chỉ có quảng cáo phần thưởng tùy chọn.",
+  "pricing": "Mua trong ứng dụng · giá chưa định",
   "tagline": "Khu vườn rảnh rỗi trên điện thoại. Trồng tám loại cây, nuôi lớn và thu giọt sương mà chúng để lại.",
   "pros": [
    {
@@ -292,7 +292,7 @@
    "players": "Một mình",
    "platform": "iOS và Android, sắp ra mắt",
    "offline": "—",
-   "pricing": "Miễn phí, quảng cáo phần thưởng tùy chọn",
+   "pricing": "Mua trong ứng dụng · giá chưa định",
    "languages": "11 ngôn ngữ",
    "status": "Sắp ra mắt, chưa định ngày phát hành"
   }

@@ -45,7 +45,7 @@
  "inkisle": {
   "status": "Dalam pengembangan",
   "platform": "iOS lebih dulu, Android bersamaan",
-  "pricing": "Rencana: semua ronde gratis · tanpa iklan · item bantuan opsional",
+  "pricing": "Sebelum rilis · harga belum ditentukan",
   "tagline": "Game strategi penaklukan pulau yang ringan untuk ponsel Anda: kirim armada antarpulau dan warnai laut dengan warna Anda.",
   "pros": [
    {
@@ -80,7 +80,7 @@
    "players": "Solo dan offline. Permainan online akan diputuskan kemudian",
    "platform": "iOS lebih dulu, Android bersamaan",
    "offline": "Offline, tanpa akun",
-   "pricing": "Rencana: semua ronde gratis · tanpa iklan · item bantuan opsional",
+   "pricing": "Sebelum rilis · harga belum ditentukan",
    "languages": "12 bahasa",
    "status": "Dalam pengembangan. Build TestFlight sedang berjalan"
   }
@@ -216,7 +216,7 @@
  "tottertop": {
   "status": "Segera hadir",
   "platform": "iOS dan Android",
-  "pricing": "Gratis, dengan iklan berhadiah opsional.",
+  "pricing": "Gratis. Tanpa iklan dan tanpa pembelian dalam aplikasi.",
   "tagline": "Permainan fisika sekali sentuh. Crane yang bergoyang menjatuhkan balok, dan Anda menumpuk menara yang makin bergoyang dengan setiap balok.",
   "pros": [
    {
@@ -229,7 +229,7 @@
    },
    {
     "h": "Gratis dimainkan.",
-    "p": "Tidak perlu membeli apa pun; satu-satunya iklan adalah iklan berhadiah opsional."
+    "p": "Tanpa iklan dan tanpa pembelian dalam aplikasi."
    }
   ],
   "cons": [
@@ -250,7 +250,7 @@
    "players": "Solo",
    "platform": "iOS dan Android, segera hadir",
    "offline": "—",
-   "pricing": "Gratis, dengan iklan berhadiah opsional",
+   "pricing": "Gratis · tanpa iklan · tanpa pembelian dalam aplikasi",
    "languages": "11 bahasa",
    "status": "Segera hadir, tanggal rilis belum ditentukan"
   }
@@ -258,7 +258,7 @@
  "mossgarden": {
   "status": "Segera hadir",
   "platform": "iOS dan Android",
-  "pricing": "Gratis, dengan iklan berhadiah opsional.",
+  "pricing": "Pembelian dalam aplikasi · harga belum ditentukan",
   "tagline": "Taman idle di ponsel Anda. Tanam delapan jenis tumbuhan, biarkan tumbuh, dan kumpulkan embun yang ditinggalkan.",
   "pros": [
    {
@@ -292,7 +292,7 @@
    "players": "Solo",
    "platform": "iOS dan Android, segera hadir",
    "offline": "—",
-   "pricing": "Gratis, dengan iklan berhadiah opsional",
+   "pricing": "Pembelian dalam aplikasi · harga belum ditentukan",
    "languages": "11 bahasa",
    "status": "Segera hadir, tanggal rilis belum ditentukan"
   }

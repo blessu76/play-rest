@@ -29,7 +29,7 @@ Moss Garden is a garden that keeps growing while you are away.
 
 ## What they share, and what they do not
 
-All nine are meant to be started and stopped without ceremony. Beyond that, they differ, including in money. Some have no ads, some plan optional rewarded ads, and some are free to try with a single purchase. We wrote about that in more detail earlier this month, and the cards carry what is settled so far.
+All nine are meant to be started and stopped without ceremony. Beyond that, they differ, including in money. Tottertop is free with no ads and no in-app purchases. Some are free to try with a single purchase, and the rest are described on their own cards. We wrote about that in more detail earlier this month, and the cards carry what is settled so far.
 
 ## Where they stand
 

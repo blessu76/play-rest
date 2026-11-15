@@ -29,7 +29,7 @@ keywords: Dusk Blocks, 블록 퍼즐, 차분한 퍼즐 게임, 힐링 퍼즐, ip
 
 ## 지금 어디쯤인가
 
-Dusk Blocks 는 무료에 선택형 보상 광고를 두는 것으로 계획되어 있습니다. [play.ipe.rest](https://play.ipe.rest) 에서 「출시 예정」으로 표시되어 있고 아직 출시되지 않았습니다. 여기 적은 규칙은 작업 중인 설계이며 바뀔 수 있고, 이름도 출시 전에 바뀔 수 있습니다.
+Dusk Blocks 는 카드에 아직 가격이 없습니다. [play.ipe.rest](https://play.ipe.rest) 에서 「출시 예정」으로 표시되어 있고 아직 출시되지 않았습니다. 여기 적은 규칙은 작업 중인 설계이며 바뀔 수 있고, 이름도 출시 전에 바뀔 수 있습니다.
 
 ```
 ipe(); // take your time

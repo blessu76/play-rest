@@ -25,9 +25,9 @@ An idle game is one place where a break-sized idea can go wrong. If the game pun
 
 So we have three wishes for the garden. Leaving should never cost you anything you had. The garden should wait, not call you. And what it earns while you are gone should be settled in one calm moment when you return, with a limit, so the growth stays something you can read.
 
-## An honest word about ads
+## An honest word about money
 
-Moss Garden is planned as a free game with optional rewarded ads: you choose whether to watch one, and the game does not depend on it. Where an ad would appear and what it would offer is not decided.
+Moss Garden's card says in-app purchases, with the price not set. We will not write a price until it is decided.
 
 ## Where it stands
 

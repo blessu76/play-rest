@@ -40,7 +40,7 @@ In Inkisle, a won round does not drag on. It ends once you are clearly ahead. Il
 
 The last condition is about what surrounds the game. An ad that cuts in between rounds makes the break shorter and noisier. A game that keeps nudging you to hurry does the same from the inside.
 
-Here is where our four games stand today, in the words on their own sites. Iltonggi: no ads, no tracking. Inkisle: every round free, no ads, optional help items. Sunmeld: free to try, one purchase unlocks everything, no ads. Claimball: free to try, one purchase unlocks everything, no ads, no subscription.
+Here is where our four games stand today, in the words on their own sites. Iltonggi: no ads, no tracking. Inkisle: pricing not set before release. Sunmeld: free to try, one purchase unlocks everything, no ads. Claimball: free to try, one purchase unlocks everything, no ads, no subscription.
 
 None of these games has been released yet. They are promises we are working toward, not claims about something you can already download, and we would rather label them that way.
 

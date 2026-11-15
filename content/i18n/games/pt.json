@@ -45,7 +45,7 @@
  "inkisle": {
   "status": "Em desenvolvimento",
   "platform": "Primeiro iOS, Android junto",
-  "pricing": "Planejado: todas as partidas grátis · sem anúncios · itens de ajuda opcionais",
+  "pricing": "Antes do lançamento · preço não definido",
   "tagline": "Um jogo de estratégia leve de conquista de ilhas para o celular: envie frotas entre as ilhas e tinja o mar da sua cor.",
   "pros": [
    {
@@ -80,7 +80,7 @@
    "players": "Solo e offline. O jogo online será decidido depois",
    "platform": "Primeiro iOS, Android junto",
    "offline": "Offline, sem conta",
-   "pricing": "Planejado: todas as partidas grátis · sem anúncios · itens de ajuda opcionais",
+   "pricing": "Antes do lançamento · preço não definido",
    "languages": "12 idiomas",
    "status": "Em desenvolvimento. Versões do TestFlight em andamento"
   }
@@ -216,7 +216,7 @@
  "tottertop": {
   "status": "Em breve",
   "platform": "iOS e Android",
-  "pricing": "Gratuito, com anúncios recompensados opcionais.",
+  "pricing": "Grátis. Sem anúncios e sem compras no aplicativo.",
   "tagline": "Um jogo de física de um toque. Uma grua balançando solta blocos, e você empilha uma torre que balança um pouco mais a cada bloco.",
   "pros": [
    {
@@ -229,7 +229,7 @@
    },
    {
     "h": "Gratuito para jogar.",
-    "p": "Nada para comprar; os únicos anúncios são recompensados e opcionais."
+    "p": "Sem anúncios e sem compras no aplicativo."
    }
   ],
   "cons": [
@@ -250,7 +250,7 @@
    "players": "Um jogador",
    "platform": "iOS e Android, em breve",
    "offline": "—",
-   "pricing": "Gratuito, com anúncios recompensados opcionais",
+   "pricing": "Grátis · sem anúncios · sem compras no app",
    "languages": "11 idiomas",
    "status": "Em breve, data de lançamento não definida"
   }
@@ -258,7 +258,7 @@
  "mossgarden": {
   "status": "Em breve",
   "platform": "iOS e Android",
-  "pricing": "Gratuito, com anúncios recompensados opcionais.",
+  "pricing": "Compras no app · preço não definido",
   "tagline": "Um jardim idle no seu telefone. Plante oito tipos de plantas, crie e colha o orvalho que deixam.",
   "pros": [
    {
@@ -292,7 +292,7 @@
    "players": "Um jogador",
    "platform": "iOS e Android, em breve",
    "offline": "—",
-   "pricing": "Gratuito, com anúncios recompensados opcionais",
+   "pricing": "Compras no app · preço não definido",
    "languages": "11 idiomas",
    "status": "Em breve, data de lançamento não definida"
   }

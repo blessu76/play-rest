@@ -29,7 +29,7 @@ A puzzle you cannot win is just a way to feel bad. So the aim is to deal sets of
 
 ## Where it stands
 
-Dusk Blocks is planned as a free game with optional rewarded ads. It is marked "coming soon" on [play.ipe.rest](https://play.ipe.rest) and is not released. The rules here are our working design and may change, and its name could still change.
+Dusk Blocks has no price on its card yet. It is marked "coming soon" on [play.ipe.rest](https://play.ipe.rest) and is not released. The rules here are our working design and may change, and its name could still change.
 
 ```
 ipe(); // take your time

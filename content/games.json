@@ -209,8 +209,8 @@
     "ko": "iOS 먼저, Android 병행"
    },
    "pricing": {
-    "en": "Planned: every round free · no ads · optional help items",
-    "ko": "출시 전 계획: 모든 판 무료 · 광고 없음 · 선택형 도움 아이템"
+    "en": "Before release · pricing not set",
+    "ko": "출시 전 · 가격 미정"
    },
    "tagline": {
     "en": "A light island-conquest strategy game for your phone: send fleets between islands and tint the sea your color.",
@@ -323,8 +323,8 @@
      "ko": "오프라인, 계정 없음"
     },
     "pricing": {
-     "en": "Planned: every round free · no ads · optional help items",
-     "ko": "출시 전 계획: 모든 판 무료 · 광고 없음 · 선택형 도움 아이템"
+     "en": "Before release · pricing not set",
+     "ko": "출시 전 · 가격 미정"
     },
     "languages": {
      "en": "12",
@@ -828,8 +828,8 @@
     "ko": "iOS · Android"
    },
    "pricing": {
-    "en": "Free, with optional rewarded ads.",
-    "ko": "무료고, 광고는 선택형 보상 광고만 있어요."
+    "en": "Free. No ads, no in-app purchases.",
+    "ko": "무료. 광고와 인앱결제가 없습니다."
    },
    "tagline": {
     "en": "A one-tap physics game. A swaying crane drops blocks, and you stack a tower that sways a little more with every block.",
@@ -862,8 +862,8 @@
       "ko": "무료로 할 수 있어요."
      },
      "p": {
-      "en": "No purchase needed; the only ads are optional rewarded ones.",
-      "ko": "결제는 필요 없고, 광고는 선택형 보상 광고만 있어요."
+      "en": "No ads and no in-app purchases.",
+      "ko": "광고와 인앱결제가 없습니다."
      }
     }
    ],
@@ -919,8 +919,8 @@
      "ko": "—"
     },
     "pricing": {
-     "en": "Free, with optional rewarded ads",
-     "ko": "무료, 선택형 보상 광고"
+     "en": "Free · no ads · no in-app purchases",
+     "ko": "무료 · 광고 없음 · 인앱결제 없음"
     },
     "languages": {
      "en": "11 languages",
@@ -969,8 +969,8 @@
     "ko": "iOS · Android"
    },
    "pricing": {
-    "en": "Free, with optional rewarded ads.",
-    "ko": "무료고, 광고는 선택형 보상 광고만 있어요."
+    "en": "In-app purchases; price not set.",
+    "ko": "인앱결제 · 가격 미정"
    },
    "tagline": {
     "en": "An idle garden for your phone. Plant eight kinds of plants, grow them, and gather the dew they leave behind.",
@@ -1060,8 +1060,8 @@
      "ko": "—"
     },
     "pricing": {
-     "en": "Free, with optional rewarded ads",
-     "ko": "무료, 선택형 보상 광고"
+     "en": "In-app purchases; price not set.",
+     "ko": "인앱결제 · 가격 미정"
     },
     "languages": {
      "en": "11 languages",
