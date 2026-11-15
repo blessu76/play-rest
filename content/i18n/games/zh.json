@@ -300,7 +300,7 @@
  "duskblocks": {
   "status": "即将推出",
   "platform": "iOS TestFlight 已上线，Android 稍后",
-  "pricing": "—",
+  "pricing": "应用内购买一次解锁全部。主题包与赞助另售。",
   "tagline": "适合黄昏时段的短小休闲方块游戏。上手容易，结束得快。",
   "pros": [
    {
@@ -334,7 +334,7 @@
    "players": "单人",
    "platform": "iOS TestFlight 已上线，Android 制作中",
    "offline": "—",
-   "pricing": "—",
+   "pricing": "应用内购买一次解锁全部。主题包与赞助另售。",
    "languages": "—",
    "status": "即将推出。TestFlight 版本制作中"
   }
@@ -342,7 +342,7 @@
  "bottledmarbles": {
   "status": "即将推出",
   "platform": "iOS TestFlight 已上线，Android 稍后",
-  "pricing": "—",
+  "pricing": "可免费试玩 15 关。一次购买解锁全部。赞助另售。",
   "tagline": "安静、休闲的弹珠游戏。收集弹珠，在一次休息内完成一个回合。",
   "pros": [
    {
@@ -376,7 +376,7 @@
    "players": "单人",
    "platform": "iOS TestFlight 已上线，Android 制作中",
    "offline": "—",
-   "pricing": "—",
+   "pricing": "可免费试玩 15 关。一次购买解锁全部。赞助另售。",
    "languages": "—",
    "status": "即将推出。TestFlight 版本制作中"
   }

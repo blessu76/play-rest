@@ -13,8 +13,8 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 - [Sunmeld](https://sunmeld.ipe.rest): A merge duel against an AI opponent in one shared tub. Drop a stone, merge matching stones into the next stage, and score. Overflow the tub and you lose. Status: Coming soon. Platform: iOS and Android. Pricing: Free to try, one purchase unlocks everything, no ads.
 - [Tottertop](https://tottertop.ipe.rest): A one-tap physics game. A swaying crane drops blocks, and you stack a tower that sways a little more with every block. Status: Coming soon. Platform: iOS and Android. Pricing: Free. No ads, no in-app purchases.
 - [Moss Garden](https://mossgarden.ipe.rest): An idle garden for your phone. Plant eight kinds of plants, grow them, and gather the dew they leave behind. Status: Coming soon. Platform: iOS and Android. Pricing: In-app purchases; price not set.
-- [Dusk Blocks](https://duskblocks.ipe.rest): Drop 3 pieces on an 8x8 board and clear lines. A calm, one-handed block puzzle at dusk. Status: Coming soon. Platform: iOS TestFlight now, Android later. Pricing: —.
-- [Bottled Marbles](https://bottledmarbles.ipe.rest): Sort colorful marbles into glass bottles. A calm, clear sorting puzzle. Status: Coming soon. Platform: iOS TestFlight now, Android later. Pricing: —.
+- [Dusk Blocks](https://duskblocks.ipe.rest): Drop 3 pieces on an 8x8 board and clear lines. A calm, one-handed block puzzle at dusk. Status: Coming soon. Platform: iOS TestFlight now, Android later. Pricing: In-app purchase unlocks everything. Theme pack and support sold separately.
+- [Bottled Marbles](https://bottledmarbles.ipe.rest): Sort colorful marbles into glass bottles. A calm, clear sorting puzzle. Status: Coming soon. Platform: iOS TestFlight now, Android later. Pricing: Free to try with 15 levels. One purchase unlocks everything. Support sold separately.
 
 ## How ipe makes games
 
@@ -28,6 +28,7 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 
 RSS: https://play.ipe.rest/journal/feed.xml
 
+- [When a game is solved](https://play.ipe.rest/journal/2026-11-16-when-a-game-is-solved/): Tic-tac-toe is solved, and so is checkers. What that means, why a solved game can lose its spark, and what keeps a short game alive anyway.
 - [Whose turn is it?](https://play.ipe.rest/journal/2026-11-15-whose-turn-is-it/): Every game answers one quiet question: who acts now? Taking turns, acting together and playing in real time each give a break a different feel.
 - [Playing alone, on purpose](https://play.ipe.rest/journal/2026-11-14-playing-alone-on-purpose/): Our games are played alone or against an AI. What that gives a short break, what it costs, and why we would rather say so plainly.
 - [Familiar on purpose](https://play.ipe.rest/journal/2026-11-13-familiar-on-purpose/): Not every game needs a brand-new genre. Why a familiar shape lowers the cost of starting, where the new idea should go, and how Sunmeld handles it.
