@@ -1,5 +1,5 @@
 ---
-slug: 2026-12-04-reward-ads-said-plainly
+slug: 2026-12-04-how-our-games-are-paid-for
 lang: en
 title: "How our games make money, said plainly"
 alt_title: "우리 게임이 돈을 버는 방식을 솔직하게"
@@ -21,7 +21,7 @@ Tottertop is free. It has no ads and no in-app purchases, and its card says exac
 
 ## Which games charge, and how
 
-Claimball and Sunmeld are free to try, with one purchase that unlocks everything, as their cards say. Moss Garden plans in-app purchases, and the price is not set. Inkisle's pricing is not set before release. Dusk Blocks and Bottled Marbles have no price on their cards yet. Iltonggi and Patchland are described on their own cards.
+Claimball and Sunmeld are free to try, with one purchase that unlocks everything, as their cards say. Moss Garden plans in-app purchases, and the price is not set. Inkisle's pricing is not set before release. Dusk Blocks and Bottled Marbles have no price on their cards yet. Every other game opens through in-app purchases, with no rewarded ads.
 
 ## What we hold ourselves to
 

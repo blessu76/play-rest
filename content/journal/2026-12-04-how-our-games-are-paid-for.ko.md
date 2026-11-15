@@ -1,5 +1,5 @@
 ---
-slug: 2026-12-04-reward-ads-said-plainly
+slug: 2026-12-04-how-our-games-are-paid-for
 lang: ko
 title: "우리 게임이 돈을 버는 방식을 솔직하게"
 alt_title: "How our games make money, said plainly"
@@ -21,7 +21,7 @@ Tottertop 은 무료입니다. 광고도 인앱결제도 없고, 카드에도 �
 
 ## 어떤 게임이 얼마나 받는가
 
-Claimball 과 Sunmeld 는 무료로 해 보고, 한 번의 구매로 전부 여는 방식이라고 카드에 적혀 있습니다. Moss Garden 은 인앱결제를 계획하고 있고, 가격은 정하지 않았습니다. 잉크아일은 출시 전이라 가격을 정하지 않았습니다. Dusk Blocks 와 Bottled Marbles 는 카드에 아직 가격이 없습니다. 일통기와 Patchland 는 각자의 카드에 적힌 대로입니다.
+Claimball 과 Sunmeld 는 무료로 해 보고, 한 번의 구매로 전부 여는 방식이라고 카드에 적혀 있습니다. Moss Garden 은 인앱결제를 계획하고 있고, 가격은 정하지 않았습니다. 잉크아일은 출시 전이라 가격을 정하지 않았습니다. Dusk Blocks 와 Bottled Marbles 는 카드에 아직 가격이 없습니다. 나머지 게임은 인앱결제로 열고, 보상형 광고는 하지 않습니다.
 
 ## 우리가 스스로에게 거는 기준
 

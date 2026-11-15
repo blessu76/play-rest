@@ -154,15 +154,24 @@ class Built(unittest.TestCase):
         self.assertGreaterEqual(html.unescape(self.read("ko/index.html")).count("출시 전 제안값"), 3)
 
     def test_pricing_copy_follows_the_2026_11_15_decision(self):
+        # Davy 2026-11-15: only Tottertop is fully free; the rest are paid via in-app purchase; no rewarded ads; no price numbers
+        free_no_ads = {"en": "No ads", "ko": "광고", "ja": "広告", "zh-Hant": "無廣告", "es": "Sin anuncios", "pt-BR": "Sem anúncios",
+                       "fr": "Sans publicité", "de": "Keine Werbung", "id": "Tanpa iklan", "th": "ไม่มีโฆษณา", "vi": "Không quảng cáo",
+                       "tr": "Reklam"}
+        old_ad_terms = {"en": ("rewarded", "reward ad"), "ko": ("보상",), "ja": ("リワード", "報酬"), "zh-Hant": ("獎勵", "激勵"),
+                        "es": ("recompensa",), "pt-BR": ("recompensa",), "fr": ("récompens",), "de": ("belohn", "prämie"),
+                        "id": ("hadiah", "reward"), "th": ("รางวัล", "รีวอร์ด"), "vi": ("thưởng",), "tr": ("ödüllü",)}
+        self.assertEqual(set(free_no_ads), set(bs.LANGS))
+        self.assertEqual(set(old_ad_terms), set(bs.LANGS))
         games = {x["id"]: x for x in self.ctx.games}
-        tt = games["tottertop"]
-        for lang in ("en", "ko"):
-            self.assertIn("in-app" if lang == "en" else "인앱결제", tt["pricing"][lang] + tt["compare"]["pricing"][lang] + tt["pros"][2]["p"][lang])
-        for g in self.ctx.games:
-            for lang in ("en", "ko"):
-                blob = json.dumps(g["pricing"], ensure_ascii=False) + json.dumps(g["compare"]["pricing"], ensure_ascii=False)
-                self.assertNotIn("rewarded", blob.lower(), (g["id"], lang))
-                self.assertNotIn("보상", blob, (g["id"], lang))
+        for lang in bs.LANGS:
+            tt = games["tottertop"]
+            for blob in (tt["pricing"][lang], tt["compare"]["pricing"][lang], tt["pros"][2]["p"][lang]):
+                self.assertIn(free_no_ads[lang].lower(), blob.lower(), ("tottertop", lang, blob))
+            for g in self.ctx.games:
+                blob = json.dumps({k: v[lang] if isinstance(v, dict) and lang in v else v for k, v in g.items()}, ensure_ascii=False).lower()
+                for term in old_ad_terms[lang]:
+                    self.assertNotIn(term.lower(), blob, (g["id"], lang, term))
         self.assertEqual(games["mossgarden"]["pricing"]["en"], "In-app purchases; price not set.")
         self.assertEqual(games["inkisle"]["pricing"]["en"], "Before release · pricing not set")
 
