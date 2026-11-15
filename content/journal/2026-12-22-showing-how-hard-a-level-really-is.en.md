@@ -17,7 +17,7 @@ When a level is hard, you should be able to tell whether it is meant to be. Behi
 
 ## How we measure
 
-We do not have thousands of players yet, so we use simulated ones. A set of bots with different play styles, some quick and greedy, some careful, plays each level many times with different random seeds. A level's difficulty is read from how often the bots win, and a slow, error-prone bot sets a floor for what a first-time player might manage. We use the results to adjust the levels and to check that the difficulty rises smoothly rather than in jumps.
+We have not tested with real players yet, so we use simulated ones. A set of bots with different play styles, some quick and greedy, some careful, plays each level many times with different random seeds. A level's difficulty is read from how often the bots win, and a slow, error-prone bot sets a floor for what a first-time player might manage. We use the results to adjust the levels and to check that the difficulty rises smoothly rather than in jumps.
 
 ## What it tells us
 

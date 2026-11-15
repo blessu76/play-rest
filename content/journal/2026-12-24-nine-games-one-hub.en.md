@@ -21,7 +21,7 @@ Iltonggi is a quick territory-conquest game set in Korea's Three Kingdoms era, t
 
 ## Puzzles and toys
 
-Dusk Blocks is a block puzzle with no clock. Bottled Marbles sorts colored marbles into bottles. Tottertop is a one-tap tower of blocks that sways, with a round of about a minute.
+Dusk Blocks is a block puzzle we want to feel calm. Bottled Marbles sorts colored marbles into bottles. Tottertop is a one-tap tower of blocks that sways, aiming at rounds of about a minute.
 
 ## Something that waits
 
@@ -29,7 +29,7 @@ Moss Garden is a garden that keeps growing while you are away.
 
 ## What they share, and what they do not
 
-All nine are meant to be started and stopped without ceremony, and none requires you to come back every day. Beyond that, they differ, including in money. Some have no ads, some plan optional rewarded ads, some are free to try with a single purchase, and Patchland is a paid game. We wrote about that in more detail earlier this month, and the cards carry what is settled so far.
+All nine are meant to be started and stopped without ceremony. Beyond that, they differ, including in money. Some have no ads, some plan optional rewarded ads, and some are free to try with a single purchase. We wrote about that in more detail earlier this month, and the cards carry what is settled so far.
 
 ## Where they stand
 

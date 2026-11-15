@@ -17,7 +17,7 @@ Moss Garden is a garden you plant, water and then leave. While you are away, the
 
 ## What you do
 
-You plant from a set of plants and tap to water, which gathers dew. Dew grows the plants and earns more dew. The background follows the time of day and the season, there is a collection book for what you have grown, and a later system lets you start over for a lasting bonus. That is the shape of an idle game, and it is a very quiet one.
+The plan is that you plant, tap to water, and let the garden grow. That is the shape of an idle game, and we want it to be a very quiet one. Other features are still being worked out.
 
 ## What "while you are away" should mean
 
@@ -25,13 +25,13 @@ An idle game is one place where a break-sized idea can go wrong. If the game pun
 
 So we have three wishes for the garden. Leaving should never cost you anything you had. The garden should wait, not call you. And what it earns while you are gone should be settled in one calm moment when you return, with a limit, so the growth stays something you can read.
 
-## An honest place for an ad
+## An honest word about ads
 
-Moss Garden is planned as a free game with optional rewarded ads. The place we have in mind is the return screen, where you could choose to watch one to boost what the garden earned. If you skip it, you still get your normal reward.
+Moss Garden is planned as a free game with optional rewarded ads: you choose whether to watch one, and the game does not depend on it. Where an ad would appear and what it would offer is not decided.
 
 ## Where it stands
 
-Moss Garden is marked "coming soon" on [play.ipe.rest](https://play.ipe.rest) and is not released. The name is still being checked against other apps, so it may change. Everything above is a plan, not a promise of a final feature list.
+Moss Garden is marked "coming soon" on [play.ipe.rest](https://play.ipe.rest) and is not released. The name may change. Everything above is a plan, not a promise of a final feature list.
 
 ```
 ipe(); // the garden waits for you
