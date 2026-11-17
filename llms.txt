@@ -28,6 +28,7 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 
 RSS: https://play.ipe.rest/journal/feed.xml
 
+- [A board scratched in the dirt](https://play.ipe.rest/journal/2026-11-17-a-board-scratched-in-the-dirt/): Some of the oldest board games need no board at all, only holes in the ground and a few seeds. What that tells us about games for spare minutes.
 - [When a game is solved](https://play.ipe.rest/journal/2026-11-16-when-a-game-is-solved/): Tic-tac-toe is solved, and so is checkers. What that means, why a solved game can lose its spark, and what keeps a short game alive anyway.
 - [Whose turn is it?](https://play.ipe.rest/journal/2026-11-15-whose-turn-is-it/): Every game answers one quiet question: who acts now? Taking turns, acting together and playing in real time each give a break a different feel.
 - [Playing alone, on purpose](https://play.ipe.rest/journal/2026-11-14-playing-alone-on-purpose/): Our games are played alone or against an AI. What that gives a short break, what it costs, and why we would rather say so plainly.
