@@ -13,7 +13,7 @@ author: ipe()
 keywords: undo button, take back move, game design, turn-based games, touch controls, casual strategy, ipe() games
 ---
 
-Most turn-based games on a phone eventually meets the same small button. Should you be able to undo your last move?
+Most turn-based games on a phone eventually meet the same small button. Should you be able to undo your last move?
 
 Both answers are defensible, and which one is right depends on what the move is worth.
 
