@@ -2,11 +2,11 @@
 slug: 2026-11-17-a-board-scratched-in-the-dirt
 lang: en
 title: "A board scratched in the dirt"
-alt_title: "땅바닥에 긋는 게임판"
+alt_title: "땅바닥에 파는 게임판"
 description: "Some of the oldest board games need no board at all, only holes in the ground and a few seeds. What that tells us about games for spare minutes."
 excerpt: "Mancala-style games can be played with pits in the earth and pebbles. Why the lightest games last, and what a modern phone game can learn from them."
 published_at: 2026-11-17T12:38+09:00
-copy_review: iris 2026-11-14
+copy_review: iris 2026-11-19
 category: games
 original: en
 author: ipe()
@@ -33,7 +33,7 @@ It is also a game of taking turns, where each move changes what the other player
 
 We do not say that a phone game should be as bare as a hole in the dirt. We do think the old games show which parts of a game are essential and which are decoration. The essential parts here are short rules, a board that explains itself, and turns you can think about.
 
-That is the standard we try to hold our own games to. [Inkisle](https://inkisle.ipe.rest) needs no account and no network, and its rules fit on one page: islands make troops, and a larger force arriving takes the island. [Sunmeld](https://sunmeld.ipe.rest) states its rules in four lines. Neither is as light as a handful of seeds, but it is the same direction.
+That is the standard we try to hold our own games to. [Inkisle](https://inkisle.ipe.rest) needs no account and no network, and its rules fit on one page: islands make troops, and a larger force arriving takes the island. [Sunmeld](https://sunmeld.ipe.rest) states its rules in four lines. Neither is as light as a handful of seeds, but they point the same way.
 
 ## Honest limits
 

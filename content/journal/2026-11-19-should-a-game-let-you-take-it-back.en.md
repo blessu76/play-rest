@@ -6,14 +6,14 @@ alt_title: "물러 주는 게임, 안 물러 주는 게임"
 description: "An undo button is kind to a clumsy thumb and bad for a weighty decision. The case for and against taking a move back in a short turn-based game."
 excerpt: "Why undo is a real design choice, what it protects you from, and what it quietly takes away."
 published_at: 2026-11-19T12:44+09:00
-copy_review: iris 2026-11-14
+copy_review: iris 2026-11-19
 category: games
 original: en
 author: ipe()
 keywords: undo button, take back move, game design, turn-based games, touch controls, casual strategy, ipe() games
 ---
 
-Every turn-based game on a phone eventually meets the same small button. Should you be able to undo your last move?
+Most turn-based games on a phone eventually meets the same small button. Should you be able to undo your last move?
 
 Both answers are defensible, and which one is right depends on what the move is worth.
 
@@ -37,9 +37,9 @@ None of these is perfect. A confirmation tap on every move turns a quick game in
 
 ## Where we stand
 
-We should be careful here, because the game information on this portal says nothing about an undo button, and we do not want to invent one. What we can say is how we think about it. In [Sunmeld](https://sunmeld.ipe.rest), whoever overflows the tub loses, and that makes the last stone a real decision. A game with an ending that sharp gains from moves that count, and we would want any softening of it to be a considered choice, not a default.
+We have not decided how our games handle undo, so we will not claim anything here. What we can say is how we think about it. In [Sunmeld](https://sunmeld.ipe.rest), whoever overflows the tub loses, and that makes the last stone a real decision. A game with an ending that sharp gains from moves that count, and we would want any softening of it to be a considered choice, not a default.
 
-For the same reason, a slip should not decide a match. That tension is real and we have not resolved it in writing. Our games are not released, and how they treat a mistaken tap is not something we can speak to yet.
+At the same time, a slip should not decide a match. That tension is real and we have not resolved it. Our games are not released, and how they treat a mistaken tap is not something we can speak to yet.
 
 If you like a duel where a move has weight, Sunmeld is the card to look at on [play.ipe.rest](https://play.ipe.rest). It is in development and has no release date.
 

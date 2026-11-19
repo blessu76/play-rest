@@ -301,11 +301,11 @@
     "status": "Yakında",
     "platform": "iOS TestFlight mevcut, Android sonra",
     "pricing": "Uygulama içi satın alımla her şey açılır. Tema paketi ve destek ayrı satılır.",
-    "tagline": "8x8'lik bir tahtaya 3 parça bırakın ve sıraları temizleyin. Alacakaranlıkta, tek elle oynanan sakin bir blok bulmacası.",
+    "tagline": "8x8'lik bir tahtaya 3 parça bırakın ve satırları temizleyin. Alacakaranlıkta, tek elle oynanan sakin bir blok bulmacası.",
     "pros": [
       {
         "h": "Üç parça, tek tahta.",
-        "p": "8x8'lik bir tahtaya üç parça bırakır, tamamladıkları sıraları temizlersiniz. Oyunun tamamı bu, ve ilk turdan itibaren kolayca anlaşılır."
+        "p": "8x8'lik bir tahtaya üç parça bırakır, tamamladıkları satırları temizlersiniz. Oyunun tamamı bu, ve ilk turdan itibaren kolayca anlaşılır."
       },
       {
         "h": "Tek el için yapıldı.",
@@ -313,7 +313,7 @@
       },
       {
         "h": "Hesap yok.",
-        "p": "Hesap açmanız gerekmez ve kart, çıkışın tam olarak nerede olduğunu söyler: iOS sürümü TestFlight'ta, mağaza sayfaları ardından gelecek."
+        "p": "Hesap açmanız gerekmez ve kart, yayın durumunun tam olarak ne olduğunu söyler: iOS sürümü TestFlight'ta, mağaza sayfaları ardından gelecek."
       }
     ],
     "cons": [
@@ -327,7 +327,7 @@
       }
     ],
     "compare": {
-      "oneline": "8x8'lik tahtada sıra temizlemek",
+      "oneline": "8x8'lik tahtada satır temizlemek",
       "style": "Blok bulmacası, üç parça",
       "length": "—",
       "difficulty": "—",
@@ -355,7 +355,7 @@
       },
       {
         "h": "Hesap yok.",
-        "p": "Hesap açmanız gerekmez ve kart, çıkışın tam olarak nerede olduğunu söyler: iOS sürümü TestFlight'ta, oyunun sitesi yayında."
+        "p": "Hesap açmanız gerekmez ve kart, yayın durumunun tam olarak ne olduğunu söyler: iOS sürümü TestFlight'ta, oyunun sitesi yayında."
       }
     ],
     "cons": [
