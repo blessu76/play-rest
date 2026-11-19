@@ -12,7 +12,8 @@ GAMES = {"iltonggi": "https://iltonggi.ipe.rest", "inkisle": "https://inkisle.ip
          "patchland": "https://patchland.ipe.rest", "claimball": "https://claimball.ipe.rest",
          "sunmeld": "https://sunmeld.ipe.rest", "tottertop": "https://tottertop.ipe.rest",
          "mossgarden": "https://mossgarden.ipe.rest", "duskblocks": "https://duskblocks.ipe.rest",
-         "bottledmarbles": "https://bottledmarbles.ipe.rest"}
+         "bottledmarbles": "https://bottledmarbles.ipe.rest",
+         "blushlab": "https://blushlab.ipe.rest"}
 NOT_LIVE = ()
 LIVE = [gid for gid in GAMES if gid not in NOT_LIVE]
 NOT_RELEASED_PHRASES = {
@@ -97,7 +98,7 @@ class Built(unittest.TestCase):
         self.assertIn("<h1>When the round ends, that&#x27;s enough for today.</h1>", self.read("index.html"))
         self.assertIn("<h1>한 판이 끝나면, 오늘은 여기까지</h1>", self.read("ko/index.html"))
 
-    def test_nine_games_listed_and_live_ones_link_to_their_own_sites_and_no_stores(self):
+    def test_ten_games_listed_and_live_ones_link_to_their_own_sites_and_no_stores(self):
         self.assertEqual([g["id"] for g in self.ctx.games], list(GAMES))
         for lang_dir in ("", "ko/"):
             h = self.read(lang_dir + "index.html")
@@ -106,22 +107,26 @@ class Built(unittest.TestCase):
             for store in ("apps.apple.com", "play.google.com", "itunes.apple.com", "testflight.apple.com"):
                 self.assertNotIn(store, h.lower())
 
-    def test_patchland_has_no_terms_and_no_journal_yet(self):
+    def test_patchland_has_terms_but_no_journal_yet(self):
         g = {x["id"]: x for x in self.ctx.games}["patchland"]
-        self.assertIsNone(g["terms"])
+        self.assertEqual(g["terms"], {"en": "https://patchland.ipe.rest/terms/", "ko": "https://patchland.ipe.rest/ko/terms/"})
         self.assertIsNone(g["journal"])
         for l in bs.LANGS:
             h = self.read(("" if l == "en" else l + "/") + "index.html")
             card = h.split('id="patchland"')[1].split("</article>")[0]
             self.assertIn('href="https://patchland.ipe.rest"', card, l)
-            self.assertNotIn("patchland.ipe.rest/", card.replace('href="https://patchland.ipe.rest"', ""), l)  # no terms, no journal link
+            terms = "https://patchland.ipe.rest/%sterms/" % ("ko/" if l == "ko" else "")
+            self.assertIn('href="%s"' % terms, card, l)
+            rest = card.replace('href="https://patchland.ipe.rest"', "").replace('href="%s"' % terms, "")
+            self.assertNotIn("patchland.ipe.rest/", rest, l)  # the terms link only, no journal link
             self.assertNotIn("patchland.ipe.rest/", h.split('id="made"')[1].split("</section>")[0], l)  # no making-of row
             self.assertIn('<h3>Patchland</h3>', h, l)
 
     def test_terms_links_only_for_games_that_have_terms(self):
         h = self.read("index.html")
-        for gid in ("iltonggi", "sunmeld", "claimball"):
+        for gid in ("iltonggi", "sunmeld", "claimball", "patchland", "tottertop", "duskblocks", "bottledmarbles", "blushlab"):
             self.assertRegex(h, r'href="https://%s\.ipe\.rest/(en/)?terms/"' % gid)
+        self.assertNotIn("mossgarden.ipe.rest/terms", h)  # mossgarden and inkisle have no terms page yet (404 on 2026-11-19)
         self.assertNotIn("inkisle.ipe.rest/terms", h)
         self.assertNotIn("inkisle.ipe.rest/en/terms", h)
         self.assertNotIn('href="/terms/"', h)
@@ -175,7 +180,7 @@ class Built(unittest.TestCase):
         self.assertEqual(games["mossgarden"]["pricing"]["en"], "In-app purchases; price not set.")
         self.assertEqual(games["inkisle"]["pricing"]["en"], "Before release · pricing not set")
 
-    def test_nine_cards_have_full_copy_in_all_12_languages(self):
+    def test_ten_cards_have_full_copy_in_all_12_languages(self):
         for g in self.ctx.games:
             gid = g["id"]
             self.assertEqual(set(g["site"]), {"url", "live"}, gid)
@@ -221,7 +226,7 @@ class Built(unittest.TestCase):
                     self.assertNotIn("in development", text.lower(), (lang_dir, g["id"]))
                     self.assertNotIn(g["compare"]["status"][lang], text, (lang_dir, g["id"]))
 
-    def test_each_language_lists_all_nine_games_and_only_live_sites_get_a_visit_link(self):
+    def test_each_language_lists_all_ten_games_and_only_live_sites_get_a_visit_link(self):
         for lang in bs.LANGS:
             lang_dir = "" if lang == "en" else lang + "/"
             h = self.read(lang_dir + "index.html")
@@ -291,7 +296,7 @@ class Built(unittest.TestCase):
         for lang_dir in ("", "ko/"):
             graph = jsonld(self.read(lang_dir + "index.html"))[0]["@graph"]
             games = [n for n in graph if n["@type"] == "VideoGame"]
-            self.assertEqual(len(games), 9)
+            self.assertEqual(len(games), 10)
             self.assertEqual(sorted(n["url"] for n in games), sorted(GAMES.values()))
             for n in games:
                 for bad in ("offers", "aggregateRating", "datePublished", "review"):

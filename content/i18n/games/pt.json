@@ -301,19 +301,19 @@
   "status": "Em breve",
   "platform": "iOS TestFlight agora, Android depois",
   "pricing": "Uma compra no app libera tudo. Pacote de temas e apoio vendidos à parte.",
-  "tagline": "Um jogo de blocos curto e casual para as horas do entardecer. Fácil de começar, rápido de terminar.",
+  "tagline": "Coloque 3 peças em um tabuleiro 8x8 e limpe linhas. Um quebra-cabeça de blocos calmo, para uma mão, ao entardecer.",
   "pros": [
    {
-    "h": "No iOS TestFlight agora.",
-    "p": "A versão para iOS está no TestFlight, e o site e as páginas da loja seguem quando estiverem prontos."
+    "h": "Três peças, um tabuleiro.",
+    "p": "Você coloca três peças em um tabuleiro 8x8 e limpa as linhas que elas completam. Esse é o ciclo inteiro, e ele fica claro desde a primeira rodada."
    },
    {
-    "h": "Rodadas curtas, como as outras.",
-    "p": "Segue a mesma regra dos outros jogos daqui: uma rodada cabe dentro de um intervalo."
+    "h": "Feito para uma mão.",
+    "p": "O jogo se passa ao entardecer e foi feito para uma mão: ritmo calmo e uma rodada que cabe numa pausa."
    },
    {
-    "h": "Um cartão honesto.",
-    "p": "Sem conta, e o cartão diz o que é verdade sobre o estado do lançamento."
+    "h": "Sem conta.",
+    "p": "Não é preciso criar conta, e o cartão diz exatamente em que ponto está o lançamento: a versão para iOS está no TestFlight, e as páginas nas lojas vêm depois."
    }
   ],
   "cons": [
@@ -327,8 +327,8 @@
    }
   ],
   "compare": {
-   "oneline": "Um jogo de blocos casual",
-   "style": "Casual, rodadas curtas",
+   "oneline": "Limpar linhas em um tabuleiro 8x8",
+   "style": "Quebra-cabeça de blocos, três peças",
    "length": "—",
    "difficulty": "—",
    "players": "Um jogador",
@@ -343,19 +343,19 @@
   "status": "Em breve",
   "platform": "iOS TestFlight agora, Android depois",
   "pricing": "Experimente de graça com 15 níveis. Uma compra libera tudo. Apoio vendido à parte.",
-  "tagline": "Um jogo de bolas de gude calmo e casual. Reúna as bolas de gude e termine uma rodada dentro do seu intervalo.",
+  "tagline": "Separe bolinhas coloridas em garrafas de vidro. Um quebra-cabeça de ordenar, calmo e claro.",
   "pros": [
    {
-    "h": "No iOS TestFlight agora.",
-    "p": "A versão para iOS está no TestFlight, e o site do jogo já está no ar enquanto o resto é finalizado."
+    "h": "Separar é o jogo inteiro.",
+    "p": "O objetivo está à vista: separar as bolinhas coloridas nas garrafas de vidro certas. O jogo mantém tudo assim."
    },
    {
-    "h": "Rodadas curtas, como as outras.",
-    "p": "Segue a mesma regra dos outros jogos daqui: uma rodada cabe dentro de um intervalo."
+    "h": "Calmo e claro.",
+    "p": "É um quebra-cabeça de ordenar que continua calmo e claro, feito para jogar alguns minutos de cada vez."
    },
    {
-    "h": "Um cartão honesto.",
-    "p": "Sem conta, e o cartão diz o que é verdade sobre o estado do lançamento."
+    "h": "Sem conta.",
+    "p": "Não é preciso criar conta, e o cartão diz exatamente em que ponto está o lançamento: a versão para iOS está no TestFlight, e o site do jogo já está no ar."
    }
   ],
   "cons": [
@@ -369,8 +369,8 @@
    }
   ],
   "compare": {
-   "oneline": "Um jogo de bolas de gude casual",
-   "style": "Casual, rodadas curtas",
+   "oneline": "Separar bolinhas em garrafas de vidro",
+   "style": "Quebra-cabeça de ordenar",
    "length": "—",
    "difficulty": "—",
    "players": "Um jogador",
@@ -379,6 +379,48 @@
    "pricing": "Experimente de graça com 15 níveis. Uma compra libera tudo. Apoio vendido à parte.",
    "languages": "—",
    "status": "Em breve. Versão TestFlight em andamento"
+  }
+ },
+ "blushlab": {
+  "status": "Em breve",
+  "platform": "iOS e Android, em desenvolvimento",
+  "pricing": "Comece de graça. Compras no aplicativo, sem anúncios.",
+  "tagline": "Um jogo de maquiagem com dois modos: experimente um visual em um rosto no Estúdio de maquiagem, ou na sua própria foto no Meu rosto.",
+  "pros": [
+   {
+    "h": "Passo a passo, depois compare.",
+    "p": "Aplique sombra, delineador, cílios, blush, batom, sobrancelhas e lentes em um rosto, um passo de cada vez, e compare o resultado."
+   },
+   {
+    "h": "Sua foto é processada no seu aparelho.",
+    "p": "O Meu rosto usa uma foto do seu próprio rosto. A foto é processada no seu aparelho e não é enviada a nenhum servidor."
+   },
+   {
+    "h": "Dois modos, um jogo.",
+    "p": "O Estúdio de maquiagem e o Meu rosto estão em um só jogo, e você alterna entre eles quando quiser. Comece de graça, sem anúncios."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Se você quer jogar agora.",
+    "p": "Ainda está em desenvolvimento para iOS e Android, e ainda não tem página na loja nem data de lançamento."
+   },
+   {
+    "h": "Se você quer uma lista de recursos pronta.",
+    "p": "Ainda está em desenvolvimento, então os recursos podem mudar antes do lançamento."
+   }
+  ],
+  "compare": {
+   "oneline": "Testar maquiagem em um rosto ou na sua própria foto",
+   "style": "Maquiagem, dois modos",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Um jogador",
+   "platform": "iOS e Android em desenvolvimento",
+   "offline": "—",
+   "pricing": "Comece de graça. Compras no aplicativo, sem anúncios.",
+   "languages": "—",
+   "status": "Em breve. Em desenvolvimento"
   }
  }
 }

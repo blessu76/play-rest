@@ -301,19 +301,19 @@
   "status": "Próximamente",
   "platform": "iOS TestFlight ahora, Android más tarde",
   "pricing": "Compra dentro de la app desbloquea todo. Pack de temas y apoyo por separado.",
-  "tagline": "Un juego de bloques corto y casual para las horas del crepúsculo. Fácil de empezar, rápido de terminar.",
+  "tagline": "Coloca 3 piezas en un tablero de 8x8 y borra líneas. Un puzle de bloques tranquilo, para una mano, al atardecer.",
   "pros": [
    {
-    "h": "Ahora en iOS TestFlight.",
-    "p": "La versión para iOS está en TestFlight, y el sitio y las páginas de la tienda llegan cuando estén listas."
+    "h": "Tres piezas, un tablero.",
+    "p": "Colocas tres piezas en un tablero de 8x8 y borras las líneas que completan. Ese es todo el ciclo, y se entiende desde la primera ronda."
    },
    {
-    "h": "Rondas cortas, como las demás.",
-    "p": "Sigue la misma regla que los demás juegos de aquí: una ronda cabe dentro de un descanso."
+    "h": "Hecho para una mano.",
+    "p": "El juego transcurre al atardecer y está hecho para una mano: un ritmo tranquilo y una ronda que cabe en un descanso."
    },
    {
-    "h": "Una tarjeta honesta.",
-    "p": "Sin cuenta, y la tarjeta dice lo que es cierto sobre el estado del lanzamiento."
+    "h": "Sin cuenta.",
+    "p": "No hay que crear ninguna cuenta, y la tarjeta dice exactamente en qué punto está el lanzamiento: la versión de iOS está en TestFlight y las páginas de las tiendas vendrán después."
    }
   ],
   "cons": [
@@ -327,8 +327,8 @@
    }
   ],
   "compare": {
-   "oneline": "Un juego de bloques casual",
-   "style": "Casual, rondas cortas",
+   "oneline": "Borrar líneas en un tablero de 8x8",
+   "style": "Puzle de bloques, tres piezas",
    "length": "—",
    "difficulty": "—",
    "players": "Un jugador",
@@ -343,19 +343,19 @@
   "status": "Próximamente",
   "platform": "iOS TestFlight ahora, Android más tarde",
   "pricing": "Prueba gratis con 15 niveles. Una compra desbloquea todo. Apoyo por separado.",
-  "tagline": "Un juego de canicas tranquilo y casual. Recoge las canicas y termina una ronda dentro de tu descanso.",
+  "tagline": "Clasifica canicas de colores en botellas de vidrio. Un puzle de clasificar, tranquilo y claro.",
   "pros": [
    {
-    "h": "Ahora en iOS TestFlight.",
-    "p": "La versión para iOS está en TestFlight, y el sitio del juego ya está en línea mientras se terminan las demás cosas."
+    "h": "Clasificar es todo el juego.",
+    "p": "El objetivo se ve a simple vista: clasificar las canicas de colores en las botellas de vidrio correctas. El juego lo mantiene así."
    },
    {
-    "h": "Rondas cortas, como las demás.",
-    "p": "Sigue la misma regla que los demás juegos de aquí: una ronda cabe dentro de un descanso."
+    "h": "Tranquilo y claro.",
+    "p": "Es un puzle de clasificar que se mantiene tranquilo y claro, pensado para jugar unos minutos cada vez."
    },
    {
-    "h": "Una tarjeta honesta.",
-    "p": "Sin cuenta, y la tarjeta dice lo que es cierto sobre el estado del lanzamiento."
+    "h": "Sin cuenta.",
+    "p": "No hay que crear ninguna cuenta, y la tarjeta dice exactamente en qué punto está el lanzamiento: la versión de iOS está en TestFlight y el sitio del juego ya está abierto."
    }
   ],
   "cons": [
@@ -369,8 +369,8 @@
    }
   ],
   "compare": {
-   "oneline": "Un juego de canicas casual",
-   "style": "Casual, rondas cortas",
+   "oneline": "Clasificar canicas en botellas de vidrio",
+   "style": "Puzle de clasificar",
    "length": "—",
    "difficulty": "—",
    "players": "Un jugador",
@@ -379,6 +379,48 @@
    "pricing": "Prueba gratis con 15 niveles. Una compra desbloquea todo. Apoyo por separado.",
    "languages": "—",
    "status": "Próximamente. Versión TestFlight en desarrollo"
+  }
+ },
+ "blushlab": {
+  "status": "Próximamente",
+  "platform": "iOS y Android, en desarrollo",
+  "pricing": "Empieza gratis. Compras dentro de la app, sin anuncios.",
+  "tagline": "Un juego de maquillaje con dos modos: prueba un look en un rostro en el Estudio de maquillaje, o en tu propia foto en Mi cara.",
+  "pros": [
+   {
+    "h": "Paso a paso, y luego compara.",
+    "p": "Aplica sombra, delineador, pestañas, rubor, labial, cejas y lentes en un rostro, un paso a la vez, y compara el resultado."
+   },
+   {
+    "h": "Tu foto se procesa en tu dispositivo.",
+    "p": "Mi cara usa una foto de tu propio rostro. La foto se procesa en tu dispositivo y no se envía a ningún servidor."
+   },
+   {
+    "h": "Dos modos, un juego.",
+    "p": "El Estudio de maquillaje y Mi cara están en un solo juego, y cambias entre ellos cuando quieras. Empieza gratis, sin anuncios."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si quieres jugar ahora mismo.",
+    "p": "Aún está en desarrollo para iOS y Android, y todavía no tiene página en la tienda ni fecha de lanzamiento."
+   },
+   {
+    "h": "Si quieres una lista de funciones terminada.",
+    "p": "Aún está en desarrollo, así que las funciones pueden cambiar antes del lanzamiento."
+   }
+  ],
+  "compare": {
+   "oneline": "Probar maquillaje en un rostro o en tu propia foto",
+   "style": "Maquillaje, dos modos",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Un jugador",
+   "platform": "iOS y Android en desarrollo",
+   "offline": "—",
+   "pricing": "Empieza gratis. Compras dentro de la app, sin anuncios.",
+   "languages": "—",
+   "status": "Próximamente. En desarrollo"
   }
  }
 }

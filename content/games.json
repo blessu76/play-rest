@@ -433,7 +433,10 @@
      }
     }
    ],
-   "terms": null,
+   "terms": {
+    "en": "https://patchland.ipe.rest/terms/",
+    "ko": "https://patchland.ipe.rest/ko/terms/"
+   },
    "journal": null,
    "compare": {
     "oneline": {
@@ -931,7 +934,10 @@
      "ko": "출시 예정, 출시일 미정"
     }
    },
-   "terms": null,
+   "terms": {
+    "en": "https://tottertop.ipe.rest/terms/",
+    "ko": "https://tottertop.ipe.rest/ko/terms/"
+   },
    "journal": null
   },
   {
@@ -1171,7 +1177,10 @@
      }
     }
    ],
-   "terms": null,
+   "terms": {
+    "en": "https://duskblocks.ipe.rest/terms/",
+    "ko": "https://duskblocks.ipe.rest/ko/terms/"
+   },
    "journal": null,
    "compare": {
     "oneline": {
@@ -1312,7 +1321,10 @@
      }
     }
    ],
-   "terms": null,
+   "terms": {
+    "en": "https://bottledmarbles.ipe.rest/terms/",
+    "ko": "https://bottledmarbles.ipe.rest/ko/terms/"
+   },
    "journal": null,
    "compare": {
     "oneline": {
@@ -1354,6 +1366,150 @@
     "status": {
      "en": "Coming soon. TestFlight build in progress",
      "ko": "출시 예정. TestFlight 빌드 진행 중"
+    }
+   }
+  },
+  {
+   "id": "blushlab",
+   "name": {
+    "en": "Blushlab",
+    "ko": "블러쉬랩"
+   },
+   "sub": {
+    "en": "Blushlab",
+    "ko": "블러쉬랩 · Blushlab"
+   },
+   "site": {
+    "url": "https://blushlab.ipe.rest",
+    "live": true
+   },
+   "icon": "blushlab.png",
+   "accent": [
+    "#b8487a",
+    "#f2a7c3"
+   ],
+   "platforms": [
+    "iOS",
+    "Android"
+   ],
+   "genre": [
+    "Casual"
+   ],
+   "status": {
+    "en": "Coming soon",
+    "ko": "출시 예정"
+   },
+   "platform": {
+    "en": "iOS and Android, in the works",
+    "ko": "iOS·Android 준비 중"
+   },
+   "pricing": {
+    "en": "Free to start. In-app purchases, no ads.",
+    "ko": "무료로 시작. 앱 내 구매가 있고, 광고는 없어요."
+   },
+   "tagline": {
+    "en": "A makeup game with two modes: try a look on a face in Makeup Studio, or on your own photo in My Face.",
+    "ko": "두 모드의 메이크업 게임입니다. 메이크업 스튜디오에서는 얼굴에, 마이 페이스에서는 내 사진에 화장을 얹어 봅니다."
+   },
+   "pros": [
+    {
+     "h": {
+      "en": "Step by step, then compare.",
+      "ko": "단계별로 얹고, 비교합니다."
+     },
+     "p": {
+      "en": "Apply shadow, liner, lashes, blush, lip, brows and lenses to a face one step at a time, and compare the result.",
+      "ko": "섀도, 라이너, 속눈썹, 블러셔, 립, 눈썹, 렌즈를 한 단계씩 얼굴에 얹고 결과를 비교합니다."
+     }
+    },
+    {
+     "h": {
+      "en": "Your photo is processed on your device.",
+      "ko": "사진은 기기 안에서 처리합니다."
+     },
+     "p": {
+      "en": "My Face uses a photo of your own face. The photo is processed on your device and is not sent to a server.",
+      "ko": "마이 페이스는 내 얼굴 사진을 씁니다. 사진은 기기 안에서 처리되며 서버로 보내지 않습니다."
+     }
+    },
+    {
+     "h": {
+      "en": "Two modes, one game.",
+      "ko": "두 모드, 한 게임."
+     },
+     "p": {
+      "en": "Makeup Studio and My Face are in one game, and you switch between them as you like. Free to start, with no ads.",
+      "ko": "메이크업 스튜디오와 마이 페이스가 한 게임에 있어, 원하는 대로 오갈 수 있습니다. 무료로 시작하고, 광고는 없습니다."
+     }
+    }
+   ],
+   "cons": [
+    {
+     "h": {
+      "en": "If you want to play right now.",
+      "ko": "지금 바로 하고 싶은 분."
+     },
+     "p": {
+      "en": "It is still being made for iOS and Android. There is no store page or release date yet.",
+      "ko": "아직 iOS·Android용으로 개발 중이고, 스토어 페이지나 출시일은 아직 없습니다."
+     }
+    },
+    {
+     "h": {
+      "en": "If you want a finished feature list.",
+      "ko": "완성된 기능 목록을 원하시는 분."
+     },
+     "p": {
+      "en": "It is still being made, so features may change before release.",
+      "ko": "아직 개발 중이라 출시 전 기능이 바뀔 수 있습니다."
+     }
+    }
+   ],
+   "terms": {
+    "en": "https://blushlab.ipe.rest/terms/",
+    "ko": "https://blushlab.ipe.rest/ko/terms/"
+   },
+   "journal": null,
+   "compare": {
+    "oneline": {
+     "en": "Trying makeup on a face or your own photo",
+     "ko": "얼굴이나 내 사진에 메이크업 해 보기"
+    },
+    "style": {
+     "en": "Makeup, two modes",
+     "ko": "메이크업, 두 모드"
+    },
+    "length": {
+     "en": "—",
+     "ko": "—"
+    },
+    "difficulty": {
+     "en": "—",
+     "ko": "—"
+    },
+    "players": {
+     "en": "Solo",
+     "ko": "혼자"
+    },
+    "platform": {
+     "en": "iOS and Android in the works",
+     "ko": "iOS·Android 준비 중"
+    },
+    "offline": {
+     "en": "—",
+     "ko": "—"
+    },
+    "pricing": {
+     "en": "Free to start. In-app purchases, no ads.",
+     "ko": "무료로 시작. 앱 내 구매가 있고, 광고는 없어요."
+    },
+    "languages": {
+     "en": "—",
+     "ko": "—"
+    },
+    "status": {
+     "en": "Coming soon. In the works",
+     "ko": "출시 예정. 개발 중"
     }
    }
   }

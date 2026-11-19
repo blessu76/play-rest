@@ -301,19 +301,19 @@
   "status": "Segera hadir",
   "platform": "iOS TestFlight sudah ada, Android menyusul",
   "pricing": "Pembelian dalam aplikasi membuka semuanya. Paket tema dan dukungan dijual terpisah.",
-  "tagline": "Permainan balok santai yang singkat untuk jam-jam senja. Mudah dimulai, cepat selesai.",
+  "tagline": "Taruh 3 keping di papan 8x8 dan hapus baris. Puzel balok yang tenang, satu tangan, saat senja.",
   "pros": [
    {
-    "h": "Sudah ada di iOS TestFlight.",
-    "p": "Versi iOS sudah ada di TestFlight, dan situs serta halaman toko menyusul saat sudah siap."
+    "h": "Tiga keping, satu papan.",
+    "p": "Anda menaruh tiga keping di papan 8x8 dan menghapus baris yang penuh. Itulah seluruh alurnya, dan tetap mudah dibaca sejak ronde pertama."
    },
    {
-    "h": "Ronde pendek, seperti yang lainnya.",
-    "p": "Ia mengikuti aturan yang sama dengan permainan lain di sini: satu ronde muat di dalam waktu istirahat."
+    "h": "Dibuat untuk satu tangan.",
+    "p": "Game ini berlatar senja dan dibuat untuk satu tangan: temponya tenang, dan satu ronde muat dalam waktu istirahat."
    },
    {
-    "h": "Sebuah kartu yang jujur.",
-    "p": "Tanpa akun, dan kartu ini menulis apa adanya tentang kemajuan rilis."
+    "h": "Tanpa akun.",
+    "p": "Tidak perlu membuat akun, dan kartu ini menulis apa adanya posisi rilisnya: build iOS ada di TestFlight, halaman toko menyusul."
    }
   ],
   "cons": [
@@ -327,8 +327,8 @@
    }
   ],
   "compare": {
-   "oneline": "Permainan balok santai",
-   "style": "Santai, ronde pendek",
+   "oneline": "Menghapus baris di papan 8x8",
+   "style": "Puzel balok, tiga keping",
    "length": "—",
    "difficulty": "—",
    "players": "Solo",
@@ -343,19 +343,19 @@
   "status": "Segera hadir",
   "platform": "iOS TestFlight sudah ada, Android menyusul",
   "pricing": "Coba gratis dengan 15 level. Sekali beli membuka semuanya. Dukungan dijual terpisah.",
-  "tagline": "Permainan kelereng yang tenang dan santai. Kumpulkan kelereng dan selesaikan satu ronde dalam waktu istirahat.",
+  "tagline": "Pilah kelereng warna-warni ke dalam botol kaca. Puzel memilah yang tenang dan jernih.",
   "pros": [
    {
-    "h": "Sudah ada di iOS TestFlight.",
-    "p": "Versi iOS sudah ada di TestFlight, dan situs permainannya sudah tayang sementara sisanya sedang diselesaikan."
+    "h": "Memilah adalah seluruh permainannya.",
+    "p": "Tujuannya terlihat jelas: memilah kelereng warna-warni ke botol kaca yang tepat. Game ini menjaganya tetap begitu."
    },
    {
-    "h": "Ronde pendek, seperti yang lainnya.",
-    "p": "Ia mengikuti aturan yang sama dengan permainan lain di sini: satu ronde muat di dalam waktu istirahat."
+    "h": "Tenang dan jernih.",
+    "p": "Ini puzel memilah yang tetap tenang dan jernih, dibuat untuk dimainkan beberapa menit setiap kali."
    },
    {
-    "h": "Sebuah kartu yang jujur.",
-    "p": "Tanpa akun, dan kartu ini menulis apa adanya tentang kemajuan rilis."
+    "h": "Tanpa akun.",
+    "p": "Tidak perlu membuat akun, dan kartu ini menulis apa adanya posisi rilisnya: build iOS ada di TestFlight, situs game sudah dibuka."
    }
   ],
   "cons": [
@@ -369,8 +369,8 @@
    }
   ],
   "compare": {
-   "oneline": "Permainan kelereng santai",
-   "style": "Santai, ronde pendek",
+   "oneline": "Memilah kelereng ke botol kaca",
+   "style": "Puzel memilah",
    "length": "—",
    "difficulty": "—",
    "players": "Solo",
@@ -379,6 +379,48 @@
    "pricing": "Coba gratis dengan 15 level. Sekali beli membuka semuanya. Dukungan dijual terpisah.",
    "languages": "—",
    "status": "Segera hadir. Versi TestFlight dalam proses"
+  }
+ },
+ "blushlab": {
+  "status": "Segera hadir",
+  "platform": "iOS dan Android, dalam pengembangan",
+  "pricing": "Gratis untuk mulai. Ada pembelian dalam aplikasi, tanpa iklan.",
+  "tagline": "Game rias dengan dua mode: coba gaya di sebuah wajah di Studio Rias, atau di foto Anda sendiri di Wajah Saya.",
+  "pros": [
+   {
+    "h": "Langkah demi langkah, lalu bandingkan.",
+    "p": "Pasang shadow, eyeliner, bulu mata, blush, lipstik, alis, dan lensa ke wajah satu langkah demi satu langkah, lalu bandingkan hasilnya."
+   },
+   {
+    "h": "Foto Anda diproses di perangkat.",
+    "p": "Wajah Saya memakai foto wajah Anda sendiri. Foto diproses di perangkat Anda dan tidak dikirim ke server."
+   },
+   {
+    "h": "Dua mode, satu game.",
+    "p": "Studio Rias dan Wajah Saya ada dalam satu game, dan Anda bisa berpindah di antaranya sesuka hati. Gratis untuk mulai, tanpa iklan."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Jika Anda ingin bermain sekarang juga.",
+    "p": "Game ini masih dalam pengembangan untuk iOS dan Android, dan belum ada halaman toko maupun tanggal rilis."
+   },
+   {
+    "h": "Jika Anda ingin daftar fitur yang sudah jadi.",
+    "p": "Masih dalam pengembangan, jadi fitur bisa berubah sebelum rilis."
+   }
+  ],
+  "compare": {
+   "oneline": "Mencoba riasan di wajah atau di foto sendiri",
+   "style": "Rias, dua mode",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS dan Android dalam pengembangan",
+   "offline": "—",
+   "pricing": "Gratis untuk mulai. Ada pembelian dalam aplikasi, tanpa iklan.",
+   "languages": "—",
+   "status": "Segera hadir. Dalam pengembangan"
   }
  }
 }

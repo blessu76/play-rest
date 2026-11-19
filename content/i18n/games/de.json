@@ -301,19 +301,19 @@
   "status": "Demnächst",
   "platform": "iOS TestFlight jetzt, Android später",
   "pricing": "Vollversion per In-App-Kauf. Themenpaket und Unterstützung separat.",
-  "tagline": "Ein kurzes, entspanntes Blockspiel für die Abenddämmerung. Einfach loslegen, schnell zu Ende.",
+  "tagline": "Setzen Sie 3 Teile auf ein 8x8-Brett und räumen Sie Reihen ab. Ein ruhiges Blockpuzzle für eine Hand, in der Abenddämmerung.",
   "pros": [
    {
-    "h": "Jetzt auf iOS TestFlight.",
-    "p": "Der iOS-Build ist auf TestFlight, und die Seiten für Website und Store folgen, wenn sie fertig sind."
+    "h": "Drei Teile, ein Brett.",
+    "p": "Sie setzen drei Teile auf ein 8x8-Brett und räumen die Reihen ab, die sie vervollständigen. Das ist der ganze Ablauf, und er bleibt ab der ersten Runde gut lesbar."
    },
    {
-    "h": "Kurze Runden, wie bei den anderen.",
-    "p": "Es folgt der gleichen Regel wie die anderen Spiele hier: Eine Runde passt in eine Pause."
+    "h": "Für eine Hand gemacht.",
+    "p": "Das Spiel spielt in der Abenddämmerung und ist für eine Hand gemacht: ein ruhiges Tempo und eine Runde, die in eine Pause passt."
    },
    {
-    "h": "Eine ehrliche Karte.",
-    "p": "Kein Konto, und die Karte sagt, wo der Release wirklich steht."
+    "h": "Kein Konto.",
+    "p": "Sie müssen kein Konto anlegen, und die Karte sagt genau, wo der Release steht: Der iOS-Build ist auf TestFlight, die Store-Seiten folgen danach."
    }
   ],
   "cons": [
@@ -327,8 +327,8 @@
    }
   ],
   "compare": {
-   "oneline": "Ein entspanntes Blockspiel",
-   "style": "Entspannt, kurze Runden",
+   "oneline": "Reihen abräumen auf einem 8x8-Brett",
+   "style": "Blockpuzzle, drei Teile",
    "length": "—",
    "difficulty": "—",
    "players": "Einzelspieler",
@@ -343,19 +343,19 @@
   "status": "Demnächst",
   "platform": "iOS TestFlight jetzt, Android später",
   "pricing": "Kostenlos mit 15 Leveln testen. Ein Kauf schaltet alles frei. Unterstützung separat.",
-  "tagline": "Ein ruhiges, entspanntes Murmelspiel. Sammeln Sie die Murmeln und beenden Sie eine Runde in Ihrer Pause.",
+  "tagline": "Sortieren Sie bunte Murmeln in Glasflaschen. Ein ruhiges, klares Sortierrätsel.",
   "pros": [
    {
-    "h": "Jetzt auf iOS TestFlight.",
-    "p": "Der iOS-Build ist auf TestFlight, und die Website des Spiels ist online, während der Rest fertiggestellt wird."
+    "h": "Sortieren ist das ganze Spiel.",
+    "p": "Das Ziel ist sofort klar: die bunten Murmeln in die richtigen Glasflaschen sortieren. Das Spiel bleibt genau so einfach."
    },
    {
-    "h": "Kurze Runden, wie bei den anderen.",
-    "p": "Es folgt der gleichen Regel wie die anderen Spiele hier: Eine Runde passt in eine Pause."
+    "h": "Ruhig und klar.",
+    "p": "Ein Sortierrätsel, das ruhig und klar bleibt, gemacht für ein paar Minuten am Stück."
    },
    {
-    "h": "Eine ehrliche Karte.",
-    "p": "Kein Konto, und die Karte sagt, wo der Release wirklich steht."
+    "h": "Kein Konto.",
+    "p": "Sie müssen kein Konto anlegen, und die Karte sagt genau, wo der Release steht: Der iOS-Build ist auf TestFlight, die Website des Spiels ist online."
    }
   ],
   "cons": [
@@ -369,8 +369,8 @@
    }
   ],
   "compare": {
-   "oneline": "Ein entspanntes Murmelspiel",
-   "style": "Entspannt, kurze Runden",
+   "oneline": "Murmeln in Glasflaschen sortieren",
+   "style": "Sortierrätsel",
    "length": "—",
    "difficulty": "—",
    "players": "Einzelspieler",
@@ -379,6 +379,48 @@
    "pricing": "Kostenlos mit 15 Leveln testen. Ein Kauf schaltet alles frei. Unterstützung separat.",
    "languages": "—",
    "status": "Demnächst. TestFlight-Build in Arbeit"
+  }
+ },
+ "blushlab": {
+  "status": "Demnächst",
+  "platform": "iOS und Android, in Entwicklung",
+  "pricing": "Kostenloser Start. In-App-Käufe, keine Werbung.",
+  "tagline": "Ein Make-up-Spiel mit zwei Modi: Probieren Sie einen Look an einem Gesicht im Make-up-Studio aus, oder auf Ihrem eigenen Foto in Mein Gesicht.",
+  "pros": [
+   {
+    "h": "Schritt für Schritt, dann vergleichen.",
+    "p": "Tragen Sie Lidschatten, Eyeliner, Wimpern, Rouge, Lippen, Brauen und Linsen Schritt für Schritt auf ein Gesicht auf und vergleichen Sie das Ergebnis."
+   },
+   {
+    "h": "Ihr Foto wird auf Ihrem Gerät verarbeitet.",
+    "p": "Mein Gesicht nutzt ein Foto Ihres eigenen Gesichts. Das Foto wird auf Ihrem Gerät verarbeitet und nicht an einen Server gesendet."
+   },
+   {
+    "h": "Zwei Modi, ein Spiel.",
+    "p": "Make-up-Studio und Mein Gesicht sind in einem Spiel vereint, und Sie wechseln frei zwischen ihnen. Kostenloser Start, keine Werbung."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Wenn Sie sofort spielen wollen.",
+    "p": "Es ist noch für iOS und Android in Entwicklung, und es gibt noch keine Store-Seite und keinen Release-Termin."
+   },
+   {
+    "h": "Wenn Sie eine fertige Funktionsliste wollen.",
+    "p": "Es ist noch in Entwicklung, daher können sich Funktionen vor dem Release ändern."
+   }
+  ],
+  "compare": {
+   "oneline": "Make-up an einem Gesicht oder am eigenen Foto ausprobieren",
+   "style": "Make-up, zwei Modi",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Einzelspieler",
+   "platform": "iOS und Android in Entwicklung",
+   "offline": "—",
+   "pricing": "Kostenloser Start. In-App-Käufe, keine Werbung.",
+   "languages": "—",
+   "status": "Demnächst. In Entwicklung"
   }
  }
 }

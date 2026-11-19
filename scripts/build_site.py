@@ -4,7 +4,7 @@
 Sources
   content/i18n/<lang>.json          UI strings and home copy (same keys in every language, see KEYS; AI-translated languages
                                     also MT_KEYS: the AI-translation notice, the link to the English original, "Journal (in English)")
-  content/games.json                the games (nine as of 2026-11-11): facts, links and the en/ko card copy (text keyed by
+  content/games.json                the games (ten as of 2026-11-19): facts, links and the en/ko card copy (text keyed by
                                     language; a link with no entry for a language falls back to the English one). Every game has
                                     site {"url", "live"}: the game's own site (an ipe.rest subdomain, never a store) -- the card
                                     shows the link only while live is true, so a site that is not up yet keeps its url in the data
@@ -117,14 +117,16 @@ COPY_REVIEW_FROM = dt.datetime(2026, 11, 14, tzinfo=KST)  # journal posts from t
 HOME_CARDS = 3
 EXCERPT_MAX = 200
 # order = how soon you can touch the game (hub-0009, Davy 2026-11-13): TestFlight builds in progress first, then in development
-GAME_IDS = ("iltonggi", "inkisle", "patchland", "claimball", "sunmeld", "tottertop", "mossgarden", "duskblocks", "bottledmarbles")
+GAME_IDS = ("iltonggi", "inkisle", "patchland", "claimball", "sunmeld", "tottertop", "mossgarden", "duskblocks", "bottledmarbles",
+            "blushlab")
 # the "which one fits" lines (choose_N in i18n) belong to a game, not to a position in the list
 CHOOSE_KEY = {"iltonggi": "choose_1", "inkisle": "choose_2", "sunmeld": "choose_3", "claimball": "choose_4", "patchland": "choose_5",
-              "tottertop": "choose_6", "mossgarden": "choose_7", "duskblocks": "choose_8", "bottledmarbles": "choose_9"}
+              "tottertop": "choose_6", "mossgarden": "choose_7", "duskblocks": "choose_8", "bottledmarbles": "choose_9",
+              "blushlab": "choose_10"}
 # which games keep which principle (docs ch.2). Sunmeld has no public round length, so it is not listed under principle 1.
 # Tottertop (a round is about a minute) and Moss Garden (a short drop-in tending) keep principle 1; the two TestFlight games
-# (Dusk Blocks, Bottled Marbles) are not listed under 1/2/3 yet (unverified). Principle 4 (say what's true, including what
-# isn't) is kept by all nine: none is released, and every card says so.
+# (Dusk Blocks, Bottled Marbles) and Blushlab (in development) are not listed under 1/2/3 yet (unverified). Principle 4 (say
+# what's true, including what isn't) is kept by all ten: every card says where its release stands.
 PRINCIPLE_GAMES = {1: ("iltonggi", "inkisle", "claimball", "patchland", "tottertop", "mossgarden"),
                    2: ("iltonggi", "inkisle", "sunmeld", "claimball", "patchland", "tottertop", "mossgarden"),
                    3: ("iltonggi", "inkisle", "sunmeld", "claimball"),
@@ -150,7 +152,7 @@ KEYS = (
     "games_h games_lead g_likes g_nots g_visit g_terms g_blog g_status g_prerelease g_live "
     "compare_h compare_lead compare_note compare_game row_oneline row_style row_length row_difficulty row_players "
     "row_platform row_offline row_pricing row_languages row_status "
-    "choose_h choose_lead choose_1 choose_2 choose_3 choose_4 choose_5 choose_6 choose_7 choose_8 choose_9 choose_go "
+    "choose_h choose_lead choose_1 choose_2 choose_3 choose_4 choose_5 choose_6 choose_7 choose_8 choose_9 choose_10 choose_go "
     "made_h made_lead made_now made_feed made_read ipe_h ipe_p ipe_studio ipe_music ipe_contact "
     "footer_line footer_code footer_tm footer_site footer_about footer_terms nf_h nf_p "
     "journal_h journal_lead journal_all journal_empty journal_desc journal_rss journal_back journal_feed_title"

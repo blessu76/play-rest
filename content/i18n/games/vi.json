@@ -301,19 +301,19 @@
   "status": "Sắp ra mắt",
   "platform": "iOS TestFlight đã có, Android sau",
   "pricing": "Mua trong ứng dụng để mở khóa tất cả. Gói chủ đề và ủng hộ bán riêng.",
-  "tagline": "Trò chơi khối nhẹ nhàng, ngắn gọn cho những giờ hoàng hôn. Dễ bắt đầu, nhanh kết thúc.",
+  "tagline": "Đặt 3 khối lên bàn 8x8 và xóa hàng. Trò xếp khối nhẹ nhàng, chơi một tay, lúc hoàng hôn.",
   "pros": [
    {
-    "h": "Đã có trên iOS TestFlight.",
-    "p": "Bản iOS đã có trên TestFlight, còn trang web và trang cửa hàng sẽ theo sau khi sẵn sàng."
+    "h": "Ba khối, một bàn.",
+    "p": "Bạn đặt ba khối lên bàn 8x8 và xóa những hàng chúng lấp đầy. Toàn bộ trò chơi chỉ có vậy, và dễ hiểu ngay từ ván đầu tiên."
    },
    {
-    "h": "Vòng ngắn, giống như các trò khác.",
-    "p": "Nó theo cùng một luật với các trò chơi khác ở đây: một vòng vừa vặn trong giờ giải lao."
+    "h": "Làm cho một tay.",
+    "p": "Trò chơi lấy bối cảnh hoàng hôn và được làm để chơi bằng một tay: nhịp chậm rãi, một ván vừa đủ trong giờ nghỉ."
    },
    {
-    "h": "Một tấm thẻ trung thực.",
-    "p": "Không cần tài khoản, và tấm thẻ nói đúng thực trạng của đợt phát hành."
+    "h": "Không cần tài khoản.",
+    "p": "Không cần tạo tài khoản, và thẻ này ghi đúng tình trạng phát hành: bản iOS đang có trên TestFlight, trang cửa hàng sẽ có sau."
    }
   ],
   "cons": [
@@ -327,8 +327,8 @@
    }
   ],
   "compare": {
-   "oneline": "Trò chơi khối nhẹ nhàng",
-   "style": "Nhẹ nhàng, vòng ngắn",
+   "oneline": "Xóa hàng trên bàn 8x8",
+   "style": "Xếp khối, ba khối",
    "length": "—",
    "difficulty": "—",
    "players": "Một mình",
@@ -343,19 +343,19 @@
   "status": "Sắp ra mắt",
   "platform": "iOS TestFlight đã có, Android sau",
   "pricing": "Chơi thử miễn phí 15 màn. Mua một lần mở khóa tất cả. Ủng hộ bán riêng.",
-  "tagline": "Trò chơi bi nhẹ nhàng, an yên. Thu thập bi và hoàn thành một vòng trong giờ giải lao.",
+  "tagline": "Phân loại những viên bi nhiều màu vào chai thủy tinh. Trò phân loại nhẹ nhàng, rõ ràng.",
   "pros": [
    {
-    "h": "Đã có trên iOS TestFlight.",
-    "p": "Bản iOS đã có trên TestFlight, trang web của trò đã lên mạng trong khi phần còn lại đang được hoàn thiện."
+    "h": "Phân loại là cả trò chơi.",
+    "p": "Mục tiêu nhìn là thấy: xếp những viên bi nhiều màu vào đúng chai thủy tinh. Trò chơi giữ nguyên sự đơn giản đó."
    },
    {
-    "h": "Vòng ngắn, giống như các trò khác.",
-    "p": "Nó theo cùng một luật với các trò chơi khác ở đây: một vòng vừa vặn trong giờ giải lao."
+    "h": "Nhẹ nhàng và rõ ràng.",
+    "p": "Đây là trò phân loại luôn nhẹ nhàng và rõ ràng, để chơi vài phút mỗi lần."
    },
    {
-    "h": "Một tấm thẻ trung thực.",
-    "p": "Không cần tài khoản, và tấm thẻ nói đúng thực trạng của đợt phát hành."
+    "h": "Không cần tài khoản.",
+    "p": "Không cần tạo tài khoản, và thẻ này ghi đúng tình trạng phát hành: bản iOS đang có trên TestFlight, trang web của trò chơi đã mở."
    }
   ],
   "cons": [
@@ -369,8 +369,8 @@
    }
   ],
   "compare": {
-   "oneline": "Trò chơi bi nhẹ nhàng",
-   "style": "Nhẹ nhàng, vòng ngắn",
+   "oneline": "Phân loại bi vào chai thủy tinh",
+   "style": "Trò phân loại",
    "length": "—",
    "difficulty": "—",
    "players": "Một mình",
@@ -379,6 +379,48 @@
    "pricing": "Chơi thử miễn phí 15 màn. Mua một lần mở khóa tất cả. Ủng hộ bán riêng.",
    "languages": "—",
    "status": "Sắp ra mắt. Bản TestFlight đang hoàn thiện"
+  }
+ },
+ "blushlab": {
+  "status": "Sắp ra mắt",
+  "platform": "iOS và Android, đang phát triển",
+  "pricing": "Bắt đầu miễn phí. Có mua hàng trong ứng dụng, không quảng cáo.",
+  "tagline": "Trò chơi trang điểm có hai chế độ: thử một phong cách trên khuôn mặt trong Studio trang điểm, hoặc trên ảnh của chính bạn trong Khuôn mặt của tôi.",
+  "pros": [
+   {
+    "h": "Từng bước, rồi so sánh.",
+    "p": "Thêm phấn mắt, kẻ mắt, lông mi, má hồng, son, lông mày và kính áp tròng lên khuôn mặt từng bước một, rồi so sánh kết quả."
+   },
+   {
+    "h": "Ảnh của bạn được xử lý trên thiết bị.",
+    "p": "Khuôn mặt của tôi dùng ảnh khuôn mặt của chính bạn. Ảnh được xử lý trên thiết bị và không được gửi lên máy chủ."
+   },
+   {
+    "h": "Hai chế độ, một trò chơi.",
+    "p": "Studio trang điểm và Khuôn mặt của tôi nằm chung trong một trò chơi, bạn chuyển qua lại tùy ý. Bắt đầu miễn phí, không quảng cáo."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Nếu bạn muốn chơi ngay bây giờ.",
+    "p": "Trò chơi vẫn đang được phát triển cho iOS và Android, chưa có trang cửa hàng hay ngày phát hành."
+   },
+   {
+    "h": "Nếu bạn muốn một danh sách tính năng đã hoàn tất.",
+    "p": "Nó vẫn đang được phát triển, nên các tính năng có thể thay đổi trước khi phát hành."
+   }
+  ],
+  "compare": {
+   "oneline": "Thử trang điểm trên khuôn mặt hoặc ảnh của chính bạn",
+   "style": "Trang điểm, hai chế độ",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Một mình",
+   "platform": "iOS và Android đang phát triển",
+   "offline": "—",
+   "pricing": "Bắt đầu miễn phí. Có mua hàng trong ứng dụng, không quảng cáo.",
+   "languages": "—",
+   "status": "Sắp ra mắt. Đang phát triển"
   }
  }
 }

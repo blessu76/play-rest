@@ -301,19 +301,19 @@
     "status": "Yakında",
     "platform": "iOS TestFlight mevcut, Android sonra",
     "pricing": "Uygulama içi satın alımla her şey açılır. Tema paketi ve destek ayrı satılır.",
-    "tagline": "Alacakaranlık saatleri için sakin, kısa bir blok oyunu. Başlaması kolay, bitmesi hızlı.",
+    "tagline": "8x8'lik bir tahtaya 3 parça bırakın ve sıraları temizleyin. Alacakaranlıkta, tek elle oynanan sakin bir blok bulmacası.",
     "pros": [
       {
-        "h": "iOS TestFlight'ta mevcut.",
-        "p": "iOS sürümü TestFlight'ta mevcut; web sitesi ve mağaza sayfası hazır olduklarında gelecek."
+        "h": "Üç parça, tek tahta.",
+        "p": "8x8'lik bir tahtaya üç parça bırakır, tamamladıkları sıraları temizlersiniz. Oyunun tamamı bu, ve ilk turdan itibaren kolayca anlaşılır."
       },
       {
-        "h": "Diğerleri gibi kısa turlar.",
-        "p": "Buradaki diğer oyunlarla aynı kuralı izler: molaya sığan bir tur."
+        "h": "Tek el için yapıldı.",
+        "p": "Oyun alacakaranlıkta geçer ve tek elle oynanmak için yapıldı: sakin bir tempo ve bir molaya sığan bir tur."
       },
       {
-        "h": "Dürüst bir kart.",
-        "p": "Hesap gerekmez ve kart, yayının gerçek durumunu olduğu gibi söyler."
+        "h": "Hesap yok.",
+        "p": "Hesap açmanız gerekmez ve kart, çıkışın tam olarak nerede olduğunu söyler: iOS sürümü TestFlight'ta, mağaza sayfaları ardından gelecek."
       }
     ],
     "cons": [
@@ -327,8 +327,8 @@
       }
     ],
     "compare": {
-      "oneline": "Sakin bir blok oyunu",
-      "style": "Sakin, kısa turlar",
+      "oneline": "8x8'lik tahtada sıra temizlemek",
+      "style": "Blok bulmacası, üç parça",
       "length": "—",
       "difficulty": "—",
       "players": "Tek başına",
@@ -343,19 +343,19 @@
     "status": "Yakında",
     "platform": "iOS TestFlight mevcut, Android sonra",
     "pricing": "15 bölümle ücretsiz deneyin. Tek satın alımla hepsi açılır. Destek ayrı satılır.",
-    "tagline": "Sakin, dingin bir misket oyunu. Misketleri toplayın ve molanızda bir turu tamamlayın.",
+    "tagline": "Renkli misketleri cam şişelere ayırın. Sakin ve net bir ayırma bulmacası.",
     "pros": [
       {
-        "h": "iOS TestFlight'ta mevcut.",
-        "p": "iOS sürümü TestFlight'ta mevcut ve oyunun web sitesi yayında; geri kalanı hâlâ tamamlanıyor."
+        "h": "Oyunun tamamı ayırmak.",
+        "p": "Hedef açıkça görünür: renkli misketleri doğru cam şişelere ayırmak. Oyun da bunu böyle sade tutar."
       },
       {
-        "h": "Diğerleri gibi kısa turlar.",
-        "p": "Buradaki diğer oyunlarla aynı kuralı izler: molaya sığan bir tur."
+        "h": "Sakin ve net.",
+        "p": "Sakin ve net kalan bir ayırma bulmacası; her seferinde birkaç dakika oynamak için yapıldı."
       },
       {
-        "h": "Dürüst bir kart.",
-        "p": "Hesap gerekmez ve kart, yayının gerçek durumunu olduğu gibi söyler."
+        "h": "Hesap yok.",
+        "p": "Hesap açmanız gerekmez ve kart, çıkışın tam olarak nerede olduğunu söyler: iOS sürümü TestFlight'ta, oyunun sitesi yayında."
       }
     ],
     "cons": [
@@ -369,8 +369,8 @@
       }
     ],
     "compare": {
-      "oneline": "Sakin bir misket oyunu",
-      "style": "Sakin, kısa turlar",
+      "oneline": "Misketleri cam şişelere ayırmak",
+      "style": "Ayırma bulmacası",
       "length": "—",
       "difficulty": "—",
       "players": "Tek başına",
@@ -379,6 +379,48 @@
       "pricing": "15 bölümle ücretsiz deneyin. Tek satın alımla hepsi açılır. Destek ayrı satılır.",
       "languages": "—",
       "status": "Yakında. TestFlight sürümü tamamlanıyor"
+    }
+  },
+  "blushlab": {
+    "status": "Yakında",
+    "platform": "iOS ve Android, geliştirme aşamasında",
+    "pricing": "Ücretsiz başlanır. Uygulama içi satın almalar var, reklam yok.",
+    "tagline": "İki modlu bir makyaj oyunu: Makyaj stüdyosunda bir yüzde, Yüzüm modunda ise kendi fotoğrafınızda bir görünüm deneyin.",
+    "pros": [
+      {
+        "h": "Adım adım uygulayın, sonra karşılaştırın.",
+        "p": "Far, eyeliner, kirpik, allık, ruj, kaş ve lensleri bir yüze adım adım uygulayın ve sonucu karşılaştırın."
+      },
+      {
+        "h": "Fotoğrafınız cihazınızda işlenir.",
+        "p": "Yüzüm, kendi yüzünüzün bir fotoğrafını kullanır. Fotoğraf cihazınızda işlenir ve bir sunucuya gönderilmez."
+      },
+      {
+        "h": "İki mod, tek oyun.",
+        "p": "Makyaj stüdyosu ve Yüzüm tek bir oyunda; aralarında istediğiniz gibi geçiş yaparsınız. Ücretsiz başlanır, reklam yoktur."
+      }
+    ],
+    "cons": [
+      {
+        "h": "Hemen oynamak istiyorsanız.",
+        "p": "Oyun hâlâ iOS ve Android için geliştirme aşamasında; henüz mağaza sayfası ya da çıkış tarihi yok."
+      },
+      {
+        "h": "Tamamlanmış bir özellik listesi istiyorsanız.",
+        "p": "Hâlâ geliştirme aşamasında, bu yüzden özellikler yayından önce değişebilir."
+      }
+    ],
+    "compare": {
+      "oneline": "Bir yüzde ya da kendi fotoğrafınızda makyaj denemek",
+      "style": "Makyaj, iki mod",
+      "length": "—",
+      "difficulty": "—",
+      "players": "Tek başına",
+      "platform": "iOS ve Android geliştirme aşamasında",
+      "offline": "—",
+      "pricing": "Ücretsiz başlanır. Uygulama içi satın almalar var, reklam yok.",
+      "languages": "—",
+      "status": "Yakında. Geliştirme aşamasında"
     }
   }
 }

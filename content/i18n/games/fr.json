@@ -301,19 +301,19 @@
   "status": "Bientôt disponible",
   "platform": "iOS TestFlight maintenant, Android plus tard",
   "pricing": "Un achat intégré débloque tout. Pack de thèmes et soutien vendus à part.",
-  "tagline": "Un jeu de blocs court et décontracté pour les heures du crépuscule. Facile à prendre en main, rapide à finir.",
+  "tagline": "Posez 3 pièces sur un plateau de 8x8 et effacez des lignes. Un puzzle de blocs calme, à une main, au crépuscule.",
   "pros": [
    {
-    "h": "Sur iOS TestFlight maintenant.",
-    "p": "La version iOS est sur TestFlight, et le site ainsi que les pages boutique suivront quand ils seront prêts."
+    "h": "Trois pièces, un plateau.",
+    "p": "Vous posez trois pièces sur un plateau de 8x8 et effacez les lignes qu'elles complètent. C'est toute la boucle, et elle reste lisible dès la première manche."
    },
    {
-    "h": "Des rondes courtes, comme les autres.",
-    "p": "Il suit la même règle que les autres jeux d'ici : une ronde tient dans une pause."
+    "h": "Conçu pour une main.",
+    "p": "Le jeu se déroule au crépuscule et se joue d'une main : un rythme calme, et une manche qui tient dans une pause."
    },
    {
-    "h": "Une carte honnête.",
-    "p": "Pas de compte, et la carte dit ce qui est vrai sur l'état de la sortie."
+    "h": "Pas de compte.",
+    "p": "Aucun compte à créer, et la carte dit exactement où en est la sortie : la version iOS est sur TestFlight, les pages des stores viendront ensuite."
    }
   ],
   "cons": [
@@ -327,8 +327,8 @@
    }
   ],
   "compare": {
-   "oneline": "Un jeu de blocs décontracté",
-   "style": "Décontracté, rondes courtes",
+   "oneline": "Effacer des lignes sur un plateau de 8x8",
+   "style": "Puzzle de blocs, trois pièces",
    "length": "—",
    "difficulty": "—",
    "players": "Solo",
@@ -343,19 +343,19 @@
   "status": "Bientôt disponible",
   "platform": "iOS TestFlight maintenant, Android plus tard",
   "pricing": "Essai gratuit avec 15 niveaux. Un achat débloque tout. Soutien vendu à part.",
-  "tagline": "Un jeu de billes calme et décontracté. Ramassez les billes et terminez une ronde dans votre pause.",
+  "tagline": "Triez des billes colorées dans des bouteilles en verre. Un puzzle de tri, calme et clair.",
   "pros": [
    {
-    "h": "Sur iOS TestFlight maintenant.",
-    "p": "La version iOS est sur TestFlight, et le site du jeu est en ligne pendant que le reste est finalisé."
+    "h": "Trier, c'est tout le jeu.",
+    "p": "L'objectif se voit tout de suite : trier les billes colorées dans les bonnes bouteilles en verre. Le jeu reste aussi simple que ça."
    },
    {
-    "h": "Des rondes courtes, comme les autres.",
-    "p": "Il suit la même règle que les autres jeux d'ici : une ronde tient dans une pause."
+    "h": "Calme et clair.",
+    "p": "C'est un puzzle de tri qui reste calme et clair, fait pour jouer quelques minutes à la fois."
    },
    {
-    "h": "Une carte honnête.",
-    "p": "Pas de compte, et la carte dit ce qui est vrai sur l'état de la sortie."
+    "h": "Pas de compte.",
+    "p": "Aucun compte à créer, et la carte dit exactement où en est la sortie : la version iOS est sur TestFlight, le site du jeu est en ligne."
    }
   ],
   "cons": [
@@ -369,8 +369,8 @@
    }
   ],
   "compare": {
-   "oneline": "Un jeu de billes décontracté",
-   "style": "Décontracté, rondes courtes",
+   "oneline": "Trier des billes dans des bouteilles en verre",
+   "style": "Puzzle de tri",
    "length": "—",
    "difficulty": "—",
    "players": "Solo",
@@ -379,6 +379,48 @@
    "pricing": "Essai gratuit avec 15 niveaux. Un achat débloque tout. Soutien vendu à part.",
    "languages": "—",
    "status": "Bientôt disponible. Version TestFlight en cours"
+  }
+ },
+ "blushlab": {
+  "status": "Bientôt disponible",
+  "platform": "iOS et Android, en développement",
+  "pricing": "Gratuit pour commencer. Achats intégrés, sans publicité.",
+  "tagline": "Un jeu de maquillage à deux modes : essayez un look sur un visage dans le Studio de maquillage, ou sur votre propre photo dans Mon visage.",
+  "pros": [
+   {
+    "h": "Étape par étape, puis comparez.",
+    "p": "Appliquez ombre, eye-liner, cils, blush, rouge à lèvres, sourcils et lentilles sur un visage, une étape à la fois, et comparez le résultat."
+   },
+   {
+    "h": "Votre photo est traitée sur votre appareil.",
+    "p": "Mon visage utilise une photo de votre propre visage. La photo est traitée sur votre appareil et n'est pas envoyée à un serveur."
+   },
+   {
+    "h": "Deux modes, un jeu.",
+    "p": "Le Studio de maquillage et Mon visage sont dans un seul jeu, et vous passez de l'un à l'autre comme vous le souhaitez. Gratuit pour commencer, sans publicité."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si vous voulez jouer tout de suite.",
+    "p": "Il est encore en développement pour iOS et Android, sans page sur les stores ni date de sortie pour l'instant."
+   },
+   {
+    "h": "Si vous voulez une liste de fonctionnalités terminée.",
+    "p": "C'est encore en développement, donc les fonctionnalités peuvent changer avant la sortie."
+   }
+  ],
+  "compare": {
+   "oneline": "Essayer un maquillage sur un visage ou sur votre photo",
+   "style": "Maquillage, deux modes",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS et Android en développement",
+   "offline": "—",
+   "pricing": "Gratuit pour commencer. Achats intégrés, sans publicité.",
+   "languages": "—",
+   "status": "Bientôt disponible. En développement"
   }
  }
 }
