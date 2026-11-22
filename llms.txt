@@ -29,6 +29,7 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 
 RSS: https://play.ipe.rest/journal/feed.xml
 
+- [A move that takes a week](https://play.ipe.rest/journal/2026-11-22-a-move-that-takes-a-week/): Playing chess by post is far older than the phone. What a game with days between moves teaches about patience, preparation and time.
 - [Cards for one](https://play.ipe.rest/journal/2026-11-21-cards-for-one/): Patience, or solitaire, is one of the oldest ways to kill time alone. A short look at where the name comes from and why a one-player card game keeps working.
 - [What a tempo is worth](https://play.ipe.rest/journal/2026-11-20-what-a-tempo-is-worth/): In a game of alternating turns, a move is also a unit of time. What 'tempo' means, why wasting it hurts, and a simple way to notice it in a short game.
 - [Should a game let you take it back?](https://play.ipe.rest/journal/2026-11-19-should-a-game-let-you-take-it-back/): An undo button is kind to a clumsy thumb and bad for a weighty decision. The case for and against taking a move back in a short turn-based game.
