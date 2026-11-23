@@ -29,6 +29,7 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 
 RSS: https://play.ipe.rest/journal/feed.xml
 
+- [Making the first move fair](https://play.ipe.rest/journal/2026-11-23-making-the-first-move-fair/): Moving first is usually an advantage. How komi, handicap stones and the pie rule give the second player something back, and what short games can borrow.
 - [A move that takes a week](https://play.ipe.rest/journal/2026-11-22-a-move-that-takes-a-week/): Playing chess by post is far older than the phone. What a game with days between moves teaches about patience, preparation and time.
 - [Cards for one](https://play.ipe.rest/journal/2026-11-21-cards-for-one/): Patience, or solitaire, is one of the oldest ways to kill time alone. A short look at where the name comes from and why a one-player card game keeps working.
 - [What a tempo is worth](https://play.ipe.rest/journal/2026-11-20-what-a-tempo-is-worth/): In a game of alternating turns, a move is also a unit of time. What 'tempo' means, why wasting it hurts, and a simple way to notice it in a short game.
