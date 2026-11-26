@@ -13,7 +13,7 @@ GAMES = {"iltonggi": "https://iltonggi.ipe.rest", "inkisle": "https://inkisle.ip
          "sunmeld": "https://sunmeld.ipe.rest", "tottertop": "https://tottertop.ipe.rest",
          "mossgarden": "https://mossgarden.ipe.rest", "duskblocks": "https://duskblocks.ipe.rest",
          "bottledmarbles": "https://bottledmarbles.ipe.rest",
-         "blushlab": "https://blushlab.ipe.rest"}
+         "blushlab": "https://blushlab.ipe.rest", "todaydate": "https://todaydate.ipe.rest"}
 NOT_LIVE = ()
 LIVE = [gid for gid in GAMES if gid not in NOT_LIVE]
 NOT_RELEASED_PHRASES = {
@@ -98,12 +98,13 @@ class Built(unittest.TestCase):
         self.assertIn("<h1>When the round ends, that&#x27;s enough for today.</h1>", self.read("index.html"))
         self.assertIn("<h1>한 판이 끝나면, 오늘은 여기까지</h1>", self.read("ko/index.html"))
 
-    def test_ten_games_listed_and_live_ones_link_to_their_own_sites_and_no_stores(self):
+    def test_games_listed_and_live_ones_link_to_their_own_sites_and_no_stores(self):
         self.assertEqual([g["id"] for g in self.ctx.games], list(GAMES))
         for lang_dir in ("", "ko/"):
             h = self.read(lang_dir + "index.html")
             for gid in LIVE:
-                self.assertIn('href="%s"' % GAMES[gid], h, (lang_dir, gid))
+                url = GAMES[gid] + "/ko/" if gid == "todaydate" and lang_dir else GAMES[gid]
+                self.assertIn('href="%s"' % url, h, (lang_dir, gid))
             for store in ("apps.apple.com", "play.google.com", "itunes.apple.com", "testflight.apple.com"):
                 self.assertNotIn(store, h.lower())
 
@@ -122,6 +123,16 @@ class Built(unittest.TestCase):
             self.assertNotIn("patchland.ipe.rest/", h.split('id="made"')[1].split("</section>")[0], l)  # no making-of row
             self.assertIn('<h3>Patchland</h3>', h, l)
 
+    def test_todaydate_card_links_to_localized_policies(self):
+        for lang in bs.LANGS:
+            root = "" if lang == "en" else lang + "/"
+            card = self.read(root + "index.html").split('id="todaydate"')[1].split("</article>")[0]
+            for policy in ("privacy", "terms"):
+                self.assertIn(f'href="https://todaydate.ipe.rest/{lang.lower()}/{policy}/"', card)
+            self.assertIn('src="/assets/games/todaydate.png"', card)
+            self.assertIn('<span class="badge">%s</span>' % bs.esc(self.ctx.t(lang, "g_live")), card)
+            self.assertIn("TestFlight", card)
+
     def test_terms_links_only_for_games_that_have_terms(self):
         h = self.read("index.html")
         for gid in ("iltonggi", "sunmeld", "claimball", "patchland", "tottertop", "duskblocks", "bottledmarbles", "blushlab"):
@@ -132,11 +143,11 @@ class Built(unittest.TestCase):
         self.assertNotIn('href="/terms/"', h)
 
     def test_claimball_card_links_to_localized_privacy_policy(self):
-        for lang_dir in ("", "ko/"):
-            with self.subTest(page=lang_dir + "index.html"):
-                h = self.read(lang_dir + "index.html")
+        for lang in bs.LANGS:
+            with self.subTest(lang=lang):
+                h = self.read(("" if lang == "en" else lang + "/") + "index.html")
                 card = h.split('id="claimball"')[1].split("</article>")[0]
-                url = "https://claimball.ipe.rest/" + lang_dir + "privacy/"
+                url = "https://claimball.ipe.rest/" + ("ko/" if lang == "ko" else "") + "privacy/"
                 self.assertIn('href="%s"' % url, card)
 
     def test_cards_without_privacy_policy_have_no_privacy_link(self):
@@ -196,10 +207,11 @@ class Built(unittest.TestCase):
         self.assertEqual(games["mossgarden"]["pricing"]["en"], "In-app purchases; price not set.")
         self.assertEqual(games["inkisle"]["pricing"]["en"], "Before release · pricing not set")
 
-    def test_ten_cards_have_full_copy_in_all_12_languages(self):
+    def test_cards_have_full_copy_in_all_12_languages(self):
         for g in self.ctx.games:
             gid = g["id"]
-            self.assertEqual(set(g["site"]), {"url", "live"}, gid)
+            wanted = {"url", "live", "localized_paths"} if gid == "todaydate" else {"url", "live"}
+            self.assertEqual(set(g["site"]), wanted, gid)
             self.assertEqual(g["site"]["url"], GAMES[gid])
             self.assertEqual(g["site"]["live"], gid not in NOT_LIVE, gid)
             for lang in bs.LANGS:
@@ -242,7 +254,7 @@ class Built(unittest.TestCase):
                     self.assertNotIn("in development", text.lower(), (lang_dir, g["id"]))
                     self.assertNotIn(g["compare"]["status"][lang], text, (lang_dir, g["id"]))
 
-    def test_each_language_lists_all_ten_games_and_only_live_sites_get_a_visit_link(self):
+    def test_each_language_lists_all_games_and_only_live_sites_get_a_visit_link(self):
         for lang in bs.LANGS:
             lang_dir = "" if lang == "en" else lang + "/"
             h = self.read(lang_dir + "index.html")
@@ -254,7 +266,8 @@ class Built(unittest.TestCase):
                 self.assertIn("<h3>%s</h3>" % g["name"][lang], card, (lang_dir, gid))
                 self.assertIn('class="tagline"', card, (lang_dir, gid))
                 if g["site"]["live"]:
-                    self.assertIn('<a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card">' % (GAMES[gid], gid),
+                    url = GAMES[gid] + f"/{lang.lower()}/" if gid == "todaydate" and lang != "en" else GAMES[gid]
+                    self.assertIn('<a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card">' % (url, gid),
                                   card, (lang_dir, gid))
                 else:
                     self.assertNotIn('class="btn"', card, (lang_dir, gid))
@@ -312,7 +325,7 @@ class Built(unittest.TestCase):
         for lang_dir in ("", "ko/"):
             graph = jsonld(self.read(lang_dir + "index.html"))[0]["@graph"]
             games = [n for n in graph if n["@type"] == "VideoGame"]
-            self.assertEqual(len(games), 10)
+            self.assertEqual(len(games), len(GAMES))
             self.assertEqual(sorted(n["url"] for n in games), sorted(GAMES.values()))
             for n in games:
                 for bad in ("offers", "aggregateRating", "datePublished", "review"):

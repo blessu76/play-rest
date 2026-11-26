@@ -422,5 +422,47 @@
    "languages": "—",
    "status": "Demnächst. In Entwicklung"
   }
+ },
+ "todaydate": {
+  "status": "Demnächst",
+  "platform": "iOS-Build im TestFlight-Test",
+  "pricing": "Das Grundspiel ist kostenlos. Mit Punkten kannst du zusätzliche Szenenpakete und Deko freischalten.",
+  "tagline": "Wähle eine von drei Antworten und lies, wie die Szene weitergeht.",
+  "pros": [
+   {
+    "h": "Drei Antworten bei einem Date",
+    "p": "In How’s Today stellt jede Date-Szene eine Situation und drei mögliche Antworten vor. Wähle eine Antwort und lies, was als Nächstes passiert. Je nach Antwort kann sich die Szene anders entwickeln."
+   },
+   {
+    "h": "Lies zuerst die Situation",
+    "p": "Lies vor der Wahl, was gerade passiert. Wenn du die Szene in einer weiteren Runde wiedertriffst, probiere eine andere Antwort aus und schau, was sich ändert."
+   },
+   {
+    "h": "Optionale Extras",
+    "p": "Wenn du mehr Szenen oder Deko möchtest, kannst du sie mit in der App gekauften Punkten freischalten. Das Grundspiel kannst du auch ohne Kauf spielen."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Suchst du Action?",
+    "p": "Im Spiel geht es ums Lesen und Entscheiden."
+   },
+   {
+    "h": "Möchtest du es heute herunterladen?",
+    "p": "Die iOS-Version wird über TestFlight getestet."
+   }
+  ],
+  "compare": {
+   "oneline": "Drei Antworten bei einem Date",
+   "style": "Geschichte und Entscheidungen",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Einzelspieler",
+   "platform": "iOS-Build im TestFlight-Test",
+   "offline": "—",
+   "pricing": "Das Grundspiel ist kostenlos. Mit Punkten kannst du zusätzliche Szenenpakete und Deko freischalten.",
+   "languages": "12",
+   "status": "iOS-Build im TestFlight-Test"
+  }
  }
 }

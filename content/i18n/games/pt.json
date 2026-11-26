@@ -422,5 +422,47 @@
    "languages": "—",
    "status": "Em breve. Em desenvolvimento"
   }
+ },
+ "todaydate": {
+  "status": "Em breve",
+  "platform": "Em testes no TestFlight para iOS",
+  "pricing": "O jogo básico é grátis. Use pontos para desbloquear pacotes de cenas e decorações.",
+  "tagline": "Escolha uma das três respostas e veja como a cena continua.",
+  "pros": [
+   {
+    "h": "Três respostas em um encontro",
+    "p": "Em How’s Today, cada cena de encontro apresenta uma situação e três formas de responder. Escolha uma e leia o que acontece em seguida. Sua resposta pode mudar o rumo da cena."
+   },
+   {
+    "h": "Leia a situação primeiro",
+    "p": "Antes de escolher, leia o que está acontecendo. Se encontrar a mesma cena de novo, experimente outra resposta e veja o que muda."
+   },
+   {
+    "h": "Extras opcionais",
+    "p": "Se quiser mais cenas ou decorações, você pode desbloqueá-las com pontos comprados no aplicativo. Dá para jogar o jogo básico sem comprar nada."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Buscando ação?",
+    "p": "O foco do jogo é ler e fazer escolhas."
+   },
+   {
+    "h": "Quer baixar hoje?",
+    "p": "A versão para iOS está em testes no TestFlight."
+   }
+  ],
+  "compare": {
+   "oneline": "Três respostas em um encontro",
+   "style": "História e escolhas",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Um jogador",
+   "platform": "Em testes no TestFlight para iOS",
+   "offline": "—",
+   "pricing": "O jogo básico é grátis. Use pontos para desbloquear pacotes de cenas e decorações.",
+   "languages": "12",
+   "status": "Em testes no TestFlight para iOS"
+  }
  }
 }

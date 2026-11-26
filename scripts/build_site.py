@@ -118,7 +118,7 @@ HOME_CARDS = 3
 EXCERPT_MAX = 200
 # order = how soon you can touch the game (hub-0009, Davy 2026-11-13): TestFlight builds in progress first, then in development
 GAME_IDS = ("iltonggi", "inkisle", "patchland", "claimball", "sunmeld", "tottertop", "mossgarden", "duskblocks", "bottledmarbles",
-            "blushlab")
+            "blushlab", "todaydate")
 # the "which one fits" lines (choose_N in i18n) belong to a game, not to a position in the list
 CHOOSE_KEY = {"iltonggi": "choose_1", "inkisle": "choose_2", "sunmeld": "choose_3", "claimball": "choose_4", "patchland": "choose_5",
               "tottertop": "choose_6", "mossgarden": "choose_7", "duskblocks": "choose_8", "bottledmarbles": "choose_9",
@@ -126,7 +126,7 @@ CHOOSE_KEY = {"iltonggi": "choose_1", "inkisle": "choose_2", "sunmeld": "choose_
 # which games keep which principle (docs ch.2). Sunmeld has no public round length, so it is not listed under principle 1.
 # Tottertop (a round is about a minute) and Moss Garden (a short drop-in tending) keep principle 1; the two TestFlight games
 # (Dusk Blocks, Bottled Marbles) and Blushlab (in development) are not listed under 1/2/3 yet (unverified). Principle 4 (say
-# what's true, including what isn't) is kept by all ten: every card says where its release stands.
+# what's true, including what isn't) is kept by every game: every card says where its release stands.
 PRINCIPLE_GAMES = {1: ("iltonggi", "inkisle", "claimball", "patchland", "tottertop", "mossgarden"),
                    2: ("iltonggi", "inkisle", "sunmeld", "claimball", "patchland", "tottertop", "mossgarden"),
                    3: ("iltonggi", "inkisle", "sunmeld", "claimball"),
@@ -509,6 +509,8 @@ def load_games(root):
             errs.append("%s: site must be an object with url (string) and live (boolean)" % tag)
         elif not re.match(r"^https://%s\.ipe\.rest(?:/|\Z)" % re.escape(str(g.get("id", ""))), site_url):
             errs.append("%s: site url must be https://%s.ipe.rest (the game's own site, never a store)" % (tag, g.get("id")))
+        elif not isinstance(s.get("localized_paths", False), bool):
+            errs.append("%s: site.localized_paths must be a boolean" % tag)
         if not (Path(root) / "assets" / "games" / str(g.get("icon", "-"))).is_file():
             errs.append("%s: icon file missing" % tag)
         if not (isinstance(g.get("accent"), list) and len(g["accent"]) == 2 and all(re.match(r"^#[0-9a-fA-F]{6}$", c) for c in g["accent"])):
@@ -768,8 +770,11 @@ def game_card(ctx, lang, g):
     # needs no change besides flipping the flag when it goes live
     links = []
     if g["site"]["live"]:
+        url = g["site"]["url"]
+        if lang != SOURCE_LANG and g["site"].get("localized_paths"):
+            url = f"{url.rstrip('/')}/{lang.lower()}/"
         links.append('<a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card">%s: %s <span aria-hidden="true">→</span></a>' % (
-            esc(g["site"]["url"]), esc(g["id"]), esc(t("g_visit")), esc(g["name"][lang])))
+            esc(url), esc(g["id"]), esc(t("g_visit")), esc(g["name"][lang])))
     if j:
         h, a, m = loc_link(ctx, j["url"], lang)
         links.append('<a class="textlink" href="%s" rel="noopener"%s>%s</a>' % (esc(h), a, esc("%s: %s%s" % (j["label"][lang], t("g_blog"), m))))
@@ -833,7 +838,7 @@ def build_home(ctx, lang):
     cmp_ = ('<section class="sec" id="compare"><div class="wrap"><h2><span class="sn mono">03</span>%s</h2><p class="lead">%s</p>%s<p class="note">%s</p></div></section>') % (
         esc(t("compare_h")), esc(t("compare_lead")), compare_html(ctx, lang), esc(t("compare_note")))
     choose_items = "".join('<li><span>%s</span><a class="btn ghost" href="#%s">%s <span aria-hidden="true">→</span></a></li>' % (
-        esc(t(CHOOSE_KEY[g["id"]])), g["id"], esc(g["name"][lang])) for g in ctx.games)
+        esc(t(CHOOSE_KEY[g["id"]]) if g["id"] in CHOOSE_KEY else g["tagline"][lang]), g["id"], esc(g["name"][lang])) for g in ctx.games)
     choose = ('<section class="sec tint" id="choose"><div class="wrap"><h2><span class="sn mono">04</span>%s</h2><p class="lead">%s</p><ul class="choose">%s</ul></div></section>') % (
         esc(t("choose_h")), esc(t("choose_lead")), choose_items)
     made_items = ""

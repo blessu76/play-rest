@@ -1,8 +1,8 @@
 # ipe() Games
 
-> 10 small games from ipe(). Short rounds, few rules, no ads. All 10 have their own site now.
+> 11 small games from ipe(). Short rounds, few rules, no ads. All 11 have their own site now.
 
-play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects 10 games in one place and links to each game's own official site. All 10 games are coming soon: each has its own introduction site, and most are at the iOS TestFlight stage. None has had a full release yet: no store page or release date is set for any of them. This portal has no accounts or ads, collects only basic visit statistics through Google Analytics, and has no terms of its own: the footer links to the common ipe() terms, and each game's site has its own terms. It has a journal with notes on turn-based games, killing-time games and how ipe() makes games.
+play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects 11 games in one place and links to each game's own official site. All 11 games are coming soon: each has its own introduction site, and most are at the iOS TestFlight stage. None has had a full release yet: no store page or release date is set for any of them. This portal has no accounts or ads, collects only basic visit statistics through Google Analytics, and has no terms of its own: the footer links to the common ipe() terms, and each game's site has its own terms. It has a journal with notes on turn-based games, killing-time games and how ipe() makes games.
 
 ## The games
 
@@ -16,6 +16,7 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 - [Dusk Blocks](https://duskblocks.ipe.rest): Drop 3 pieces on an 8x8 board and clear lines. A calm, one-handed block puzzle at dusk. Status: Coming soon. Platform: iOS TestFlight now, Android later. Pricing: In-app purchase unlocks everything. Theme pack and support sold separately.
 - [Bottled Marbles](https://bottledmarbles.ipe.rest): Sort colorful marbles into glass bottles. A calm, clear sorting puzzle. Status: Coming soon. Platform: iOS TestFlight now, Android later. Pricing: Free to try with 15 levels. One purchase unlocks everything. Support sold separately.
 - [Blushlab](https://blushlab.ipe.rest): A makeup game with two modes: try a look on a face in Makeup Studio, or on your own photo in My Face. Status: Coming soon. Platform: iOS and Android, in the works. Pricing: Free to start. In-app purchases, no ads.
+- [How’s Today](https://todaydate.ipe.rest): Pick one of three replies and see how the scene unfolds. Status: Coming soon. Platform: iOS TestFlight in progress. Pricing: The basic game is free. Points can unlock extra scene packs and decorations.
 
 ## How ipe makes games
 

@@ -422,5 +422,47 @@
    "languages": "—",
    "status": "Bientôt disponible. En développement"
   }
+ },
+ "todaydate": {
+  "status": "Prochainement",
+  "platform": "En test sur TestFlight pour iOS",
+  "pricing": "Le jeu de base est gratuit. Les points permettent de débloquer des packs de scènes et des décorations.",
+  "tagline": "Choisissez une des trois réponses et découvrez la suite de la scène.",
+  "pros": [
+   {
+    "h": "Trois réponses lors d’un rendez-vous",
+    "p": "Dans How’s Today, chaque scène de rendez-vous présente une situation et trois façons de répondre. Choisissez-en une, puis lisez la suite. Votre réponse peut changer le cours de la scène."
+   },
+   {
+    "h": "Lire d’abord la situation",
+    "p": "Prenez le temps de lire la situation avant de choisir. Si vous retrouvez cette scène lors d’une autre partie, essayez une autre réponse pour voir ce qui change."
+   },
+   {
+    "h": "Du contenu supplémentaire facultatif",
+    "p": "Si vous souhaitez plus de scènes ou de décorations, vous pouvez les débloquer avec des points achetés dans l’application. Le jeu de base reste accessible sans achat."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Vous cherchez de l’action ?",
+    "p": "Le jeu consiste à lire un récit et faire des choix."
+   },
+   {
+    "h": "Vous souhaitez le télécharger aujourd’hui ?",
+    "p": "La version iOS est en test sur TestFlight."
+   }
+  ],
+  "compare": {
+   "oneline": "Trois réponses lors d’un rendez-vous",
+   "style": "Récit et choix",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "En test sur TestFlight pour iOS",
+   "offline": "—",
+   "pricing": "Le jeu de base est gratuit. Les points permettent de débloquer des packs de scènes et des décorations.",
+   "languages": "12",
+   "status": "En test sur TestFlight pour iOS"
+  }
  }
 }

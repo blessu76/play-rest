@@ -1524,6 +1524,176 @@
      "ko": "출시 예정. 개발 중"
     }
    }
+  },
+  {
+   "id": "todaydate",
+   "name": {
+    "en": "How’s Today",
+    "ko": "오늘 어때"
+   },
+   "sub": {
+    "en": "How’s Today",
+    "ko": "오늘 어때"
+   },
+   "site": {
+    "url": "https://todaydate.ipe.rest",
+    "live": true,
+    "localized_paths": true
+   },
+   "icon": "todaydate.png",
+   "accent": [
+    "#40584a",
+    "#a4b5a4"
+   ],
+   "platforms": [
+    "iOS",
+    "Android"
+   ],
+   "genre": [
+    "Narrative",
+    "Casual"
+   ],
+   "status": {
+    "en": "Coming soon",
+    "ko": "출시 예정"
+   },
+   "platform": {
+    "en": "iOS TestFlight in progress",
+    "ko": "iOS TestFlight 진행 중"
+   },
+   "pricing": {
+    "en": "The basic game is free. Points can unlock extra scene packs and decorations.",
+    "ko": "기본 게임은 무료입니다. 포인트로 추가 장면 팩과 꾸미기 아이템을 열 수 있습니다."
+   },
+   "tagline": {
+    "en": "Pick one of three replies and see how the scene unfolds.",
+    "ko": "세 가지 답 중 하나를 골라 장면이 어떻게 이어지는지 봅니다."
+   },
+   "pros": [
+    {
+     "h": {
+      "en": "Three choices on a date",
+      "ko": "데이트에서 고르는 세 가지 답"
+     },
+     "p": {
+      "en": "In How’s Today, a date scene presents a moment and three ways to respond. Pick one, then read what happens next. The response can change how the scene unfolds.",
+      "ko": "「오늘 어때」에서는 데이트 장면마다 상황과 세 가지 답이 나옵니다. 하나를 고르면 다음 이야기를 읽을 수 있습니다. 어떤 답을 고르느냐에 따라 장면의 흐름이 달라질 수 있습니다."
+     }
+    },
+    {
+     "h": {
+      "en": "Start with the situation",
+      "ko": "상황을 먼저 읽기"
+     },
+     "p": {
+      "en": "Read the setup before you choose. On another playthrough, try a different reply and see what changes.",
+      "ko": "답을 고르기 전에 어떤 상황인지 읽어 보세요. 다음에 같은 장면을 만나면 다른 답을 골라 무엇이 달라지는지 볼 수 있습니다."
+     }
+    },
+    {
+     "h": {
+      "en": "Optional extras",
+      "ko": "원할 때 여는 추가 콘텐츠"
+     },
+     "p": {
+      "en": "If you want more scenes or decorations, you can unlock them with points bought in the app. You can still play the basic game without making a purchase.",
+      "ko": "장면이나 꾸미기 아이템을 더 원하면 앱에서 구매한 포인트로 열 수 있습니다. 구매 없이도 기본 게임을 플레이할 수 있습니다."
+     }
+    }
+   ],
+   "cons": [
+    {
+     "h": {
+      "en": "Looking for action?",
+      "ko": "액션을 원한다면"
+     },
+     "p": {
+      "en": "The game focuses on reading and making choices.",
+      "ko": "이야기를 읽고 선택하는 게임입니다."
+     }
+    },
+    {
+     "h": {
+      "en": "Want to download it today?",
+      "ko": "오늘 다운로드하고 싶다면"
+     },
+     "p": {
+      "en": "The iOS build is in TestFlight.",
+      "ko": "iOS 빌드를 TestFlight에서 테스트 중입니다."
+     }
+    }
+   ],
+   "privacy": {
+    "en": "https://todaydate.ipe.rest/en/privacy/",
+    "ko": "https://todaydate.ipe.rest/ko/privacy/",
+    "ja": "https://todaydate.ipe.rest/ja/privacy/",
+    "zh-Hant": "https://todaydate.ipe.rest/zh-hant/privacy/",
+    "es": "https://todaydate.ipe.rest/es/privacy/",
+    "pt": "https://todaydate.ipe.rest/pt-br/privacy/",
+    "fr": "https://todaydate.ipe.rest/fr/privacy/",
+    "de": "https://todaydate.ipe.rest/de/privacy/",
+    "id": "https://todaydate.ipe.rest/id/privacy/",
+    "th": "https://todaydate.ipe.rest/th/privacy/",
+    "vi": "https://todaydate.ipe.rest/vi/privacy/",
+    "tr": "https://todaydate.ipe.rest/tr/privacy/"
+   },
+   "terms": {
+    "en": "https://todaydate.ipe.rest/en/terms/",
+    "ko": "https://todaydate.ipe.rest/ko/terms/",
+    "ja": "https://todaydate.ipe.rest/ja/terms/",
+    "zh-Hant": "https://todaydate.ipe.rest/zh-hant/terms/",
+    "es": "https://todaydate.ipe.rest/es/terms/",
+    "pt": "https://todaydate.ipe.rest/pt-br/terms/",
+    "fr": "https://todaydate.ipe.rest/fr/terms/",
+    "de": "https://todaydate.ipe.rest/de/terms/",
+    "id": "https://todaydate.ipe.rest/id/terms/",
+    "th": "https://todaydate.ipe.rest/th/terms/",
+    "vi": "https://todaydate.ipe.rest/vi/terms/",
+    "tr": "https://todaydate.ipe.rest/tr/terms/"
+   },
+   "journal": null,
+   "compare": {
+    "oneline": {
+     "en": "Three choices on a date",
+     "ko": "데이트에서 고르는 세 가지 답"
+    },
+    "style": {
+     "en": "Story and choices",
+     "ko": "이야기와 선택"
+    },
+    "length": {
+     "en": "—",
+     "ko": "—"
+    },
+    "difficulty": {
+     "en": "—",
+     "ko": "—"
+    },
+    "players": {
+     "en": "Solo",
+     "ko": "혼자"
+    },
+    "platform": {
+     "en": "iOS TestFlight in progress",
+     "ko": "iOS TestFlight 진행 중"
+    },
+    "offline": {
+     "en": "—",
+     "ko": "—"
+    },
+    "pricing": {
+     "en": "The basic game is free. Points can unlock extra scene packs and decorations.",
+     "ko": "기본 게임은 무료입니다. 포인트로 추가 장면 팩과 꾸미기 아이템을 열 수 있습니다."
+    },
+    "languages": {
+     "en": "12",
+     "ko": "12"
+    },
+    "status": {
+     "en": "iOS TestFlight in progress",
+     "ko": "iOS TestFlight 진행 중"
+    }
+   }
   }
  ]
 }

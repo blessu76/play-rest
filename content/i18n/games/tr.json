@@ -422,5 +422,47 @@
       "languages": "—",
       "status": "Yakında. Geliştirme aşamasında"
     }
+  },
+ "todaydate": {
+  "status": "Çok yakında",
+  "platform": "iOS için TestFlight testi sürüyor",
+  "pricing": "Temel oyun ücretsiz. Puanlarla ek sahne paketleri ve süslemeler açılabilir.",
+  "tagline": "Üç yanıttan birini seç ve sahnenin nasıl devam ettiğini gör.",
+  "pros": [
+   {
+    "h": "Bir buluşmada üç yanıt",
+    "p": "How’s Today’de her buluşma sahnesi bir durum ve üç yanıt seçeneği sunar. Birini seçip sonrasında ne olduğunu oku. Yanıtın sahnenin gidişini değiştirebilir."
+   },
+   {
+    "h": "Önce durumu oku",
+    "p": "Seçim yapmadan önce neler olduğunu oku. Bir sonraki oyunda aynı sahneye denk gelirsen başka bir yanıt seçip nelerin değiştiğine bak."
+   },
+   {
+    "h": "İsteğe bağlı ek içerik",
+    "p": "Daha fazla sahne ya da süsleme istersen uygulama içinden satın aldığın puanlarla bunları açabilirsin. Temel oyunu satın alma yapmadan da oynayabilirsin."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Aksiyon mu arıyorsun?",
+    "p": "Oyun, hikâye okumaya ve seçim yapmaya odaklanıyor."
+   },
+   {
+    "h": "Bugün indirmek mi istiyorsun?",
+    "p": "iOS sürümü TestFlight’ta test ediliyor."
+   }
+  ],
+  "compare": {
+   "oneline": "Bir buluşmada üç yanıt",
+   "style": "Hikâye ve seçimler",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Tek oyunculu",
+   "platform": "iOS için TestFlight testi sürüyor",
+   "offline": "—",
+   "pricing": "Temel oyun ücretsiz. Puanlarla ek sahne paketleri ve süslemeler açılabilir.",
+   "languages": "12",
+   "status": "iOS için TestFlight testi sürüyor"
   }
+ }
 }

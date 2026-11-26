@@ -422,5 +422,47 @@
    "languages": "—",
    "status": "Sắp ra mắt. Đang phát triển"
   }
+ },
+ "todaydate": {
+  "status": "Sắp ra mắt",
+  "platform": "Đang thử nghiệm qua TestFlight trên iOS",
+  "pricing": "Trò chơi cơ bản miễn phí. Bạn có thể dùng điểm để mở khóa gói cảnh và đồ trang trí bổ sung.",
+  "tagline": "Chọn một trong ba câu trả lời và xem câu chuyện tiếp diễn ra sao.",
+  "pros": [
+   {
+    "h": "Ba cách trả lời trong buổi hẹn",
+    "p": "Trong How’s Today, mỗi cảnh hẹn hò đưa ra một tình huống và ba cách trả lời. Hãy chọn một câu rồi đọc tiếp để biết chuyện gì xảy ra. Câu trả lời có thể làm thay đổi diễn biến của cảnh."
+   },
+   {
+    "h": "Đọc tình huống trước",
+    "p": "Hãy đọc xem chuyện gì đang xảy ra trước khi chọn. Nếu gặp lại cảnh đó trong lượt sau, hãy thử chọn câu trả lời khác và xem có gì thay đổi."
+   },
+   {
+    "h": "Nội dung bổ sung tùy chọn",
+    "p": "Nếu muốn có thêm cảnh hoặc đồ trang trí, bạn có thể mở khóa bằng điểm mua trong ứng dụng. Bạn vẫn chơi được trò chơi cơ bản mà không cần mua gì."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Bạn muốn chơi game hành động?",
+    "p": "Trò chơi tập trung vào việc đọc truyện và đưa ra lựa chọn."
+   },
+   {
+    "h": "Bạn muốn tải ngay hôm nay?",
+    "p": "Phiên bản iOS đang được thử nghiệm qua TestFlight."
+   }
+  ],
+  "compare": {
+   "oneline": "Ba cách trả lời trong buổi hẹn",
+   "style": "Câu chuyện và lựa chọn",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Một người chơi",
+   "platform": "Đang thử nghiệm qua TestFlight trên iOS",
+   "offline": "—",
+   "pricing": "Trò chơi cơ bản miễn phí. Bạn có thể dùng điểm để mở khóa gói cảnh và đồ trang trí bổ sung.",
+   "languages": "12",
+   "status": "Đang thử nghiệm qua TestFlight trên iOS"
+  }
  }
 }

@@ -422,5 +422,47 @@
    "languages": "—",
    "status": "Segera hadir. Dalam pengembangan"
   }
+ },
+ "todaydate": {
+  "status": "Segera hadir",
+  "platform": "Sedang diuji di TestFlight untuk iOS",
+  "pricing": "Gim dasar gratis. Poin bisa digunakan untuk membuka paket adegan dan dekorasi tambahan.",
+  "tagline": "Pilih satu dari tiga jawaban dan lihat bagaimana adegannya berlanjut.",
+  "pros": [
+   {
+    "h": "Tiga jawaban saat berkencan",
+    "p": "Dalam How’s Today, setiap adegan kencan menyajikan sebuah situasi dan tiga cara untuk merespons. Pilih satu, lalu baca apa yang terjadi berikutnya. Jawabanmu bisa mengubah alur adegan."
+   },
+   {
+    "h": "Baca situasinya dulu",
+    "p": "Baca apa yang sedang terjadi sebelum memilih. Kalau bertemu adegan yang sama di permainan berikutnya, coba jawaban lain dan lihat perbedaannya."
+   },
+   {
+    "h": "Tambahan sesuai pilihanmu",
+    "p": "Kalau ingin lebih banyak adegan atau dekorasi, kamu bisa membukanya dengan poin yang dibeli di aplikasi. Kamu tetap bisa memainkan gim dasar tanpa membeli apa pun."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Mencari gim aksi?",
+    "p": "Gim ini berfokus pada membaca cerita dan membuat pilihan."
+   },
+   {
+    "h": "Ingin mengunduhnya hari ini?",
+    "p": "Versi iOS sedang diuji di TestFlight."
+   }
+  ],
+  "compare": {
+   "oneline": "Tiga jawaban saat berkencan",
+   "style": "Cerita dan pilihan",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Pemain tunggal",
+   "platform": "Sedang diuji di TestFlight untuk iOS",
+   "offline": "—",
+   "pricing": "Gim dasar gratis. Poin bisa digunakan untuk membuka paket adegan dan dekorasi tambahan.",
+   "languages": "12",
+   "status": "Sedang diuji di TestFlight untuk iOS"
+  }
  }
 }
