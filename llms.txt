@@ -29,6 +29,7 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 
 RSS: https://play.ipe.rest/journal/feed.xml
 
+- [Looking two moves ahead](https://play.ipe.rest/journal/2026-11-26-looking-two-moves-ahead/): You do not need to calculate deeply to play well. A simple habit of checking your move, the reply and your answer catches many mistakes in a short round.
 - [A limit is a gift](https://play.ipe.rest/journal/2026-11-25-a-limit-is-a-gift/): A fixed number of turns, a small grid, a single page of rules. Why limits make decisions sharper in short games, and how to treat them as part of the puzzle.
 - [Luck and skill in a short round](https://play.ipe.rest/journal/2026-11-24-luck-and-skill-in-a-short-round/): A short game gives luck less room to even out. How to think about chance and skill when a round lasts only minutes, and how to avoid blaming either too much.
 - [Making the first move fair](https://play.ipe.rest/journal/2026-11-23-making-the-first-move-fair/): Moving first is usually an advantage. How komi, handicap stones and the pie rule give the second player something back, and what short games can borrow.
