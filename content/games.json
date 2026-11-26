@@ -1181,6 +1181,10 @@
     "en": "https://duskblocks.ipe.rest/terms/",
     "ko": "https://duskblocks.ipe.rest/ko/terms/"
    },
+   "privacy": {
+    "en": "https://duskblocks.ipe.rest/privacy/",
+    "ko": "https://duskblocks.ipe.rest/ko/privacy/"
+   },
    "journal": null,
    "compare": {
     "oneline": {
