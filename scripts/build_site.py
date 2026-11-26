@@ -520,8 +520,9 @@ def load_games(root):
             for i, it in enumerate(items):
                 _bilingual(it.get("h"), "%s %s[%d].h" % (tag, key, i), errs)
                 _bilingual(it.get("p"), "%s %s[%d].p" % (tag, key, i), errs)
-        if g.get("terms") is not None:
-            _bilingual(g["terms"], "%s terms" % tag, errs)
+        for key in ("privacy", "terms"):
+            if g.get(key) is not None:
+                _bilingual(g[key], "%s %s" % (tag, key), errs)
         j = g.get("journal") or {}  # optional: a game with no journal yet (journal null) gets no journal link and no "making of" row
         if g.get("journal") is not None:
             for k in ("label", "url", "feed"):
@@ -531,7 +532,7 @@ def load_games(root):
             _bilingual(c.get(row), "%s compare.%s" % (tag, row), errs)
         if not g.get("platforms") or not g.get("genre"):
             errs.append("%s: platforms and genre are needed for JSON-LD" % tag)
-        urls = [site_url if isinstance(site_url, str) else ""] + [x for k in ("terms",) if g.get(k) for x in g[k].values()] + \
+        urls = [site_url if isinstance(site_url, str) else ""] + [x for k in ("privacy", "terms") if g.get(k) for x in g[k].values()] + \
                [x for k in ("url", "feed") for x in (j.get(k) or {}).values()]
         for u in urls:
             if not str(u).startswith("https://%s.ipe.rest" % g.get("id")):
@@ -772,9 +773,10 @@ def game_card(ctx, lang, g):
     if j:
         h, a, m = loc_link(ctx, j["url"], lang)
         links.append('<a class="textlink" href="%s" rel="noopener"%s>%s</a>' % (esc(h), a, esc("%s: %s%s" % (j["label"][lang], t("g_blog"), m))))
-    if g.get("terms"):
-        h, a, m = loc_link(ctx, g["terms"], lang)
-        links.append('<a class="textlink" href="%s" rel="noopener"%s>%s</a>' % (esc(h), a, esc(t("g_terms") + m)))
+    for key, label in (("privacy", "nav_privacy"), ("terms", "g_terms")):
+        if g.get(key):
+            h, a, m = loc_link(ctx, g[key], lang)
+            links.append('<a class="textlink" href="%s" rel="noopener"%s>%s</a>' % (esc(h), a, esc(t(label) + m)))
     sub = g["sub"][lang] if g["sub"][lang] != g["name"][lang] else ""
     live = g["site"]["live"]
     status = t("g_live") if live else g["status"][lang]

@@ -577,6 +577,10 @@
      }
     }
    ],
+   "privacy": {
+    "en": "https://claimball.ipe.rest/privacy/",
+    "ko": "https://claimball.ipe.rest/ko/privacy/"
+   },
    "terms": {
     "en": "https://claimball.ipe.rest/terms/",
     "ko": "https://claimball.ipe.rest/ko/terms/"

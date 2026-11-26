@@ -131,6 +131,22 @@ class Built(unittest.TestCase):
         self.assertNotIn("inkisle.ipe.rest/en/terms", h)
         self.assertNotIn('href="/terms/"', h)
 
+    def test_claimball_card_links_to_localized_privacy_policy(self):
+        for lang_dir in ("", "ko/"):
+            with self.subTest(page=lang_dir + "index.html"):
+                h = self.read(lang_dir + "index.html")
+                card = h.split('id="claimball"')[1].split("</article>")[0]
+                url = "https://claimball.ipe.rest/" + lang_dir + "privacy/"
+                self.assertIn('href="%s"' % url, card)
+
+    def test_cards_without_privacy_policy_have_no_privacy_link(self):
+        for lang_dir in ("", "ko/"):
+            h = self.read(lang_dir + "index.html")
+            for gid in ("patchland", "mossgarden"):
+                with self.subTest(page=lang_dir + "index.html", game=gid):
+                    card = h.split('id="%s"' % gid)[1].split("</article>")[0]
+                    self.assertNotRegex(card, r'href="[^"]*/privacy(?:[/?#][^"]*)?"')
+
     def test_claimball_card_follows_the_brief(self):
         g = {x["id"]: x for x in self.ctx.games}["claimball"]
         blob = json.dumps(g, ensure_ascii=False)
