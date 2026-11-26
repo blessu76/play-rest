@@ -739,6 +739,10 @@
     "en": "https://sunmeld.ipe.rest/terms/",
     "ko": "https://sunmeld.ipe.rest/ko/terms/"
    },
+   "privacy": {
+    "en": "https://sunmeld.ipe.rest/privacy/",
+    "ko": "https://sunmeld.ipe.rest/ko/privacy/"
+   },
    "journal": {
     "label": {
      "en": "Journal",
