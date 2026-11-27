@@ -464,5 +464,47 @@
    "languages": "12",
    "status": "Em testes no TestFlight para iOS"
   }
+ },
+ "tentrunk": {
+  "status": "Em breve",
+  "platform": "iOS · Android",
+  "pricing": "Comece de graça. Sem anúncios. Compras opcionais no jogo.",
+  "tagline": "Gire o equipamento para encaixá-lo na grade do porta-malas e monte o acampamento com o que você levou. Passe uma noite ao ar livre e junte equipamentos para a próxima viagem.",
+  "pros": [
+   {
+    "h": "Encontre o encaixe certo",
+    "p": "Gire barracas, cadeiras e outros itens para preencher o porta-malas. Reserve espaço para os itens da lista."
+   },
+   {
+    "h": "Acampe do seu jeito",
+    "p": "Monte seu equipamento e descubra 45 atividades, da montagem da barraca à manhã seguinte. Prepare-se para chuva, vento ou neve."
+   },
+   {
+    "h": "Equipamento novo para a próxima viagem",
+    "p": "Ganhe moedas nas viagens e desbloqueie equipamentos e veículos."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Quer baixar o jogo?",
+    "p": "Os links das lojas serão publicados no lançamento."
+   },
+   {
+    "h": "Prefere começar no acampamento?",
+    "p": "Cada viagem começa ao arrumar o porta-malas."
+   }
+  ],
+  "compare": {
+   "oneline": "Encha o porta-malas. Passe a noite no acampamento.",
+   "style": "Quebra-cabeça de bagagem para acampar",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Um jogador",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "Comece de graça. Sem anúncios. Compras opcionais no jogo.",
+   "languages": "—",
+   "status": "Em breve"
+  }
  }
 }

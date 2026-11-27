@@ -1382,6 +1382,162 @@
    }
   },
   {
+   "id": "tentrunk",
+   "name": {
+    "en": "Tentrunk - Camping Pack Puzzle",
+    "ko": "트렁크 캠핑"
+   },
+   "sub": {
+    "en": "트렁크 캠핑",
+    "ko": "Tentrunk"
+   },
+   "site": {
+    "url": "https://tentrunk.ipe.rest",
+    "live": true,
+    "localized": true
+   },
+   "icon": "tentrunk.png",
+   "icon_version": "aae54051",
+   "accent": [
+    "#a54e23",
+    "#ffc069"
+   ],
+   "platforms": [
+    "iOS",
+    "Android"
+   ],
+   "genre": [
+    "Camping Pack Puzzle"
+   ],
+   "status": {
+    "en": "Coming soon",
+    "ko": "곧 출시"
+   },
+   "platform": {
+    "en": "iOS · Android",
+    "ko": "iOS · Android"
+   },
+   "pricing": {
+    "en": "Free to start. No ads. Optional in-app purchases.",
+    "ko": "무료로 시작할 수 있어요. 광고 없이 즐기고 원하는 상품만 따로 구매할 수 있어요."
+   },
+   "tagline": {
+    "en": "Turn and fit your gear into the trunk grid, then set up camp with what you packed. Spend a night outdoors and collect gear for your next trip.",
+    "ko": "캠핑 장비를 돌려 트렁크 격자에 담고, 가져간 장비로 캠핑장을 꾸며요. 야외에서 하룻밤을 보내고 다음 여행에 쓸 장비를 모아 보세요."
+   },
+   "pros": [
+    {
+     "h": {
+      "en": "Find the right fit",
+      "ko": "빈칸에 딱 맞게"
+     },
+     "p": {
+      "en": "Rotate tents, chairs and other gear to fill the trunk. Make room for the items on your checklist.",
+      "ko": "텐트와 의자 같은 장비를 돌려 트렁크에 맞춰요. 체크리스트에 있는 장비도 챙겨 보세요."
+     }
+    },
+    {
+     "h": {
+      "en": "Make camp your own",
+      "ko": "가져간 장비로 즐기는 하룻밤"
+     },
+     "p": {
+      "en": "Set up the equipment you bring and discover 45 activities from the first pitch to the next morning. Be ready for rain, wind or snow.",
+      "ko": "짐을 풀고 텐트를 세우는 순간부터 다음 날 아침까지, 45가지 할 거리를 만나세요. 비와 바람, 눈에도 대비해요."
+     }
+    },
+    {
+     "h": {
+      "en": "Pack something new next time",
+      "ko": "다음엔 새로운 장비로"
+     },
+     "p": {
+      "en": "Earn coins on your trips, then unlock new camping gear and vehicles.",
+      "ko": "캠핑에서 받은 코인으로 새 장비와 차를 열어 보세요."
+     }
+    }
+   ],
+   "cons": [
+    {
+     "h": {
+      "en": "Looking for a download?",
+      "ko": "지금 내려받고 싶은 분"
+     },
+     "p": {
+      "en": "Store links will appear at launch.",
+      "ko": "스토어 링크는 출시 때 공개됩니다."
+     }
+    },
+    {
+     "h": {
+      "en": "Prefer to start at the campsite?",
+      "ko": "캠핑장부터 둘러보고 싶은 분"
+     },
+     "p": {
+      "en": "Each trip starts with packing the trunk.",
+      "ko": "여행은 트렁크에 짐을 싸는 것부터 시작합니다."
+     }
+    }
+   ],
+   "terms": {
+    "en": "https://tentrunk.ipe.rest/terms/",
+    "ko": "https://tentrunk.ipe.rest/ko/terms/",
+    "ja": "https://tentrunk.ipe.rest/ja/terms/",
+    "zh-Hant": "https://tentrunk.ipe.rest/zh-Hant/terms/",
+    "es": "https://tentrunk.ipe.rest/es/terms/",
+    "pt": "https://tentrunk.ipe.rest/pt-BR/terms/",
+    "fr": "https://tentrunk.ipe.rest/fr/terms/",
+    "de": "https://tentrunk.ipe.rest/de/terms/",
+    "id": "https://tentrunk.ipe.rest/id/terms/",
+    "th": "https://tentrunk.ipe.rest/th/terms/",
+    "vi": "https://tentrunk.ipe.rest/vi/terms/",
+    "tr": "https://tentrunk.ipe.rest/tr/terms/"
+   },
+   "journal": null,
+   "compare": {
+    "oneline": {
+     "en": "Pack the trunk. Stay the night.",
+     "ko": "트렁크를 채우고, 캠핑장에서 하룻밤."
+    },
+    "style": {
+     "en": "Camping Pack Puzzle",
+     "ko": "캠핑 짐싸기 퍼즐"
+    },
+    "length": {
+     "en": "—",
+     "ko": "—"
+    },
+    "difficulty": {
+     "en": "—",
+     "ko": "—"
+    },
+    "players": {
+     "en": "Solo",
+     "ko": "혼자"
+    },
+    "platform": {
+     "en": "iOS · Android",
+     "ko": "iOS · Android"
+    },
+    "offline": {
+     "en": "—",
+     "ko": "—"
+    },
+    "pricing": {
+     "en": "Free to start. No ads. Optional in-app purchases.",
+     "ko": "무료로 시작할 수 있어요. 광고 없이 즐기고 원하는 상품만 따로 구매할 수 있어요."
+    },
+    "languages": {
+     "en": "—",
+     "ko": "—"
+    },
+    "status": {
+     "en": "Coming soon",
+     "ko": "곧 출시"
+    }
+   }
+  },
+  {
    "id": "blushlab",
    "name": {
     "en": "Blushlab",

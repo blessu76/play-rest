@@ -464,5 +464,47 @@
    "languages": "12",
    "status": "Đang thử nghiệm qua TestFlight trên iOS"
   }
+ },
+ "tentrunk": {
+  "status": "Sắp ra mắt",
+  "platform": "iOS · Android",
+  "pricing": "Chơi miễn phí. Không quảng cáo. Có giao dịch mua tùy chọn trong trò chơi.",
+  "tagline": "Xoay đồ cho vừa các ô trong cốp xe, rồi dựng trại bằng những gì bạn mang theo. Ngủ một đêm ngoài trời và sưu tầm dụng cụ cho chuyến đi sau.",
+  "pros": [
+   {
+    "h": "Tìm chỗ vừa khít",
+    "p": "Xoay lều, ghế và các món đồ khác để lấp đầy cốp. Nhớ chừa chỗ cho các món trong danh sách."
+   },
+   {
+    "h": "Dựng trại theo ý bạn",
+    "p": "Sắp xếp dụng cụ và khám phá 45 hoạt động, từ lúc dựng lều đến sáng hôm sau. Hãy chuẩn bị cho mưa, gió hoặc tuyết."
+   },
+   {
+    "h": "Đồ mới cho chuyến đi sau",
+    "p": "Kiếm xu từ những chuyến cắm trại để mở khóa dụng cụ và xe mới."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Bạn muốn tải trò chơi?",
+    "p": "Liên kết cửa hàng sẽ có khi trò chơi ra mắt."
+   },
+   {
+    "h": "Bạn muốn đến thẳng khu cắm trại?",
+    "p": "Mỗi chuyến đi bắt đầu bằng việc xếp đồ vào cốp xe."
+   }
+  ],
+  "compare": {
+   "oneline": "Xếp đồ vào cốp. Ở lại trại một đêm.",
+   "style": "Trò giải đố xếp đồ đi cắm trại",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Một mình",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "Chơi miễn phí. Không quảng cáo. Có giao dịch mua tùy chọn trong trò chơi.",
+   "languages": "—",
+   "status": "Sắp ra mắt"
+  }
  }
 }

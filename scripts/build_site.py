@@ -118,11 +118,11 @@ HOME_CARDS = 3
 EXCERPT_MAX = 200
 # order = how soon you can touch the game (hub-0009, Davy 2026-11-13): TestFlight builds in progress first, then in development
 GAME_IDS = ("iltonggi", "inkisle", "patchland", "claimball", "sunmeld", "tottertop", "mossgarden", "duskblocks", "bottledmarbles",
-            "blushlab", "todaydate")
+            "tentrunk", "blushlab", "todaydate")
 # the "which one fits" lines (choose_N in i18n) belong to a game, not to a position in the list
 CHOOSE_KEY = {"iltonggi": "choose_1", "inkisle": "choose_2", "sunmeld": "choose_3", "claimball": "choose_4", "patchland": "choose_5",
               "tottertop": "choose_6", "mossgarden": "choose_7", "duskblocks": "choose_8", "bottledmarbles": "choose_9",
-              "blushlab": "choose_10"}
+              "blushlab": "choose_10", "tentrunk": "choose_tentrunk"}
 # which games keep which principle (docs ch.2). Sunmeld has no public round length, so it is not listed under principle 1.
 # Tottertop (a round is about a minute) and Moss Garden (a short drop-in tending) keep principle 1; the two TestFlight games
 # (Dusk Blocks, Bottled Marbles) and Blushlab (in development) are not listed under 1/2/3 yet (unverified). Principle 4 (say
@@ -152,7 +152,7 @@ KEYS = (
     "games_h games_lead g_likes g_nots g_visit g_terms g_blog g_status g_prerelease g_live "
     "compare_h compare_lead compare_note compare_game row_oneline row_style row_length row_difficulty row_players "
     "row_platform row_offline row_pricing row_languages row_status "
-    "choose_h choose_lead choose_1 choose_2 choose_3 choose_4 choose_5 choose_6 choose_7 choose_8 choose_9 choose_10 choose_go "
+    "choose_h choose_lead choose_1 choose_2 choose_3 choose_4 choose_5 choose_6 choose_7 choose_8 choose_9 choose_10 choose_tentrunk choose_go "
     "made_h made_lead made_now made_feed made_read ipe_h ipe_p ipe_studio ipe_music ipe_contact "
     "footer_line footer_code footer_tm footer_site footer_about footer_terms nf_h nf_p "
     "journal_h journal_lead journal_all journal_empty journal_desc journal_rss journal_back journal_feed_title"
@@ -509,8 +509,10 @@ def load_games(root):
             errs.append("%s: site must be an object with url (string) and live (boolean)" % tag)
         elif not re.match(r"^https://%s\.ipe\.rest(?:/|\Z)" % re.escape(str(g.get("id", ""))), site_url):
             errs.append("%s: site url must be https://%s.ipe.rest (the game's own site, never a store)" % (tag, g.get("id")))
-        elif not isinstance(s.get("localized_paths", False), bool):
-            errs.append("%s: site.localized_paths must be a boolean" % tag)
+        else:
+            for key in ("localized", "localized_paths"):
+                if not isinstance(s.get(key, False), bool):
+                    errs.append("%s: site.%s must be a boolean" % (tag, key))
         if not (Path(root) / "assets" / "games" / str(g.get("icon", "-"))).is_file():
             errs.append("%s: icon file missing" % tag)
         if not (isinstance(g.get("accent"), list) and len(g["accent"]) == 2 and all(re.match(r"^#[0-9a-fA-F]{6}$", c) for c in g["accent"])):
@@ -753,7 +755,7 @@ def game_ld(g, lang):
     return {"@type": "VideoGame", "@id": SITE + "/#" + g["id"], "name": g["name"]["en"], "url": g["site"]["url"],
             "description": g["tagline"][lang], "inLanguage": lang, "genre": g["genre"],
             "applicationCategory": "GameApplication", "gamePlatform": g["platforms"],
-            "image": SITE + "/assets/games/" + g["icon"], "creator": {"@id": ORG_ID}, "publisher": {"@id": ORG_ID}}
+            "image": SITE + game_icon(g), "creator": {"@id": ORG_ID}, "publisher": {"@id": ORG_ID}}
 
 
 def num(n):
@@ -761,6 +763,11 @@ def num(n):
 
 
 # ---------------------------------------------------------------- page builders
+def game_icon(g):
+    path = "/assets/games/" + g["icon"]
+    return path + "?v=" + g["icon_version"] if g.get("icon_version") else path
+
+
 def game_card(ctx, lang, g):
     t = lambda k: ctx.t(lang, k)  # noqa: E731
     pros = "".join("<li><strong>%s</strong> %s</li>" % (esc(x["h"][lang]), esc(x["p"][lang])) for x in g["pros"])
@@ -771,8 +778,11 @@ def game_card(ctx, lang, g):
     links = []
     if g["site"]["live"]:
         url = g["site"]["url"]
-        if lang != SOURCE_LANG and g["site"].get("localized_paths"):
-            url = f"{url.rstrip('/')}/{lang.lower()}/"
+        if lang != SOURCE_LANG:
+            if g["site"].get("localized"):
+                url = f"{url.rstrip('/')}/{lang}/"
+            elif g["site"].get("localized_paths"):
+                url = f"{url.rstrip('/')}/{lang.lower()}/"
         links.append('<a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card">%s: %s <span aria-hidden="true">→</span></a>' % (
             esc(url), esc(g["id"]), esc(t("g_visit")), esc(g["name"][lang])))
     if j:
@@ -786,11 +796,11 @@ def game_card(ctx, lang, g):
     live = g["site"]["live"]
     status = t("g_live") if live else g["status"][lang]
     pre = "" if live or g["status"]["en"] == "Coming soon" else '<span class="badge pre">%s</span> ' % esc(t("g_prerelease"))
-    return ('<article class="game" id="%s" style="--a:%s;--a2:%s"><header class="game-head"><img class="game-icon" src="/assets/games/%s" width="64" height="64" alt="">'
+    return ('<article class="game" id="%s" style="--a:%s;--a2:%s"><header class="game-head"><img class="game-icon" src="%s" width="64" height="64" alt="">'
             '<div><h3>%s</h3>%s<p class="meta"><span class="badge">%s</span> %s<span class="plat">%s</span></p></div></header>'
             '<p class="tagline">%s</p><p class="price mono">%s</p>'
             '<div class="cols"><div><h4>%s</h4><ol>%s</ol></div><div><h4>%s</h4><ol>%s</ol></div></div>%s</article>') % (
-        g["id"], g["accent"][0], g["accent"][1], esc(g["icon"]), esc(g["name"][lang]),
+        g["id"], g["accent"][0], g["accent"][1], esc(game_icon(g)), esc(g["name"][lang]),
         ('<p class="sub">%s</p>' % esc(sub)) if sub else "", esc(status),
         pre, esc(g["platform"][lang]),
         esc(g["tagline"][lang]), esc(g["pricing"][lang]), esc(t("g_likes")), pros, esc(t("g_nots")), cons,
@@ -822,13 +832,13 @@ def build_home(ctx, lang):
     t = lambda k: ctx.t(lang, k)  # noqa: E731
     cards = list(ctx.games)
     by_id = {g["id"]: g for g in cards}
-    strip = "".join('<li><a href="#%s"><img src="/assets/games/%s" width="64" height="64" alt="%s"></a></li>' % (
-        g["id"], esc(g["icon"]), esc(g["name"].get(lang) or g["name"]["en"])) for g in cards)
+    strip = "".join('<li><a href="#%s"><img src="%s" width="64" height="64" alt="%s"></a></li>' % (
+        g["id"], esc(game_icon(g)), esc(g["name"].get(lang) or g["name"]["en"])) for g in cards)
     hero = ('<section class="hero"><div class="wrap"><p class="code mono">%s</p><h1>%s</h1><p class="hero-sub">%s</p>'
             '<ul class="strip" aria-label="%s">%s</ul></div></section>') % (esc(t("hero_code")), esc(t("hero_h1")), esc(t("hero_sub")), esc(t("hero_strip_aria")), strip)
     principles = ""
     for n in range(1, 6):
-        kept = "".join('<li><img src="/assets/games/%s" width="24" height="24" alt="">%s</li>' % (esc(by_id[i]["icon"]), esc(by_id[i]["name"][lang])) for i in PRINCIPLE_GAMES[n])
+        kept = "".join('<li><img src="%s" width="24" height="24" alt="">%s</li>' % (esc(game_icon(by_id[i])), esc(by_id[i]["name"][lang])) for i in PRINCIPLE_GAMES[n])
         principles += ('<li class="principle"><span class="pn mono">%s</span><div><h3>%s</h3><p>%s</p><p class="kept"><span class="mono">%s</span></p><ul class="chips">%s</ul></div></li>') % (
             num(n), esc(t("p%d_h" % n)), esc(t("p%d_p" % n)), esc(t("phil_kept")), kept)
     phil = ('<section class="sec" id="philosophy"><div class="wrap"><h2><span class="sn mono">01</span>%s</h2><p class="rest">%s</p>'

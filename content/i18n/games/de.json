@@ -464,5 +464,47 @@
    "languages": "12",
    "status": "iOS-Build im TestFlight-Test"
   }
+ },
+ "tentrunk": {
+  "status": "Demnächst verfügbar",
+  "platform": "iOS · Android",
+  "pricing": "Kostenlos starten. Ohne Werbung. Optionale In-App-Käufe.",
+  "tagline": "Dreh deine Ausrüstung so, dass sie ins Raster des Kofferraums passt. Bau mit dem Gepäck dein Lager auf, verbringe eine Nacht im Freien und sammle Ausrüstung für den nächsten Ausflug.",
+  "pros": [
+   {
+    "h": "Alles findet seinen Platz",
+    "p": "Dreh Zelte, Stühle und andere Ausrüstung, bis der Kofferraum voll ist. Lass Platz für alles auf der Checkliste."
+   },
+   {
+    "h": "Zelte auf deine Art",
+    "p": "Bau deine Ausrüstung auf und entdecke 45 Aktivitäten vom Zeltaufbau bis zum nächsten Morgen. Bereite dich auf Regen, Wind oder Schnee vor."
+   },
+   {
+    "h": "Neue Ausrüstung für die nächste Reise",
+    "p": "Verdiene beim Campen Münzen, um Ausrüstung und Fahrzeuge freizuschalten."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Möchten Sie das Spiel herunterladen?",
+    "p": "Die Store-Links erscheinen zur Veröffentlichung."
+   },
+   {
+    "h": "Möchten Sie direkt auf dem Campingplatz starten?",
+    "p": "Jeder Ausflug beginnt mit dem Packen des Kofferraums."
+   }
+  ],
+  "compare": {
+   "oneline": "Pack den Kofferraum. Übernachte auf dem Campingplatz.",
+   "style": "Packpuzzle fürs Camping",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Einzelspieler",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "Kostenlos starten. Ohne Werbung. Optionale In-App-Käufe.",
+   "languages": "—",
+   "status": "Demnächst verfügbar"
+  }
  }
 }

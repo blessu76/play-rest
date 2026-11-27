@@ -464,5 +464,47 @@
    "languages": "12",
    "status": "En test sur TestFlight pour iOS"
   }
+ },
+ "tentrunk": {
+  "status": "Bientôt disponible",
+  "platform": "iOS · Android",
+  "pricing": "Jouez gratuitement. Sans publicité. Achats facultatifs dans le jeu.",
+  "tagline": "Tournez votre matériel pour le faire entrer dans la grille du coffre, puis installez le camp avec ce que vous avez emporté. Passez une nuit dehors et collectionnez du matériel pour votre prochaine escapade.",
+  "pros": [
+   {
+    "h": "Trouvez la bonne place",
+    "p": "Tournez les tentes, les chaises et le reste du matériel pour remplir le coffre. Gardez de la place pour les affaires de la liste."
+   },
+   {
+    "h": "Campez à votre façon",
+    "p": "Installez votre matériel et découvrez 45 activités, du montage de la tente au petit matin. Préparez-vous à la pluie, au vent et à la neige."
+   },
+   {
+    "h": "Du matériel neuf pour la prochaine sortie",
+    "p": "Gagnez des pièces en camping pour débloquer du matériel et des véhicules."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Vous cherchez à télécharger le jeu ?",
+    "p": "Les liens vers les boutiques seront ajoutés à la sortie."
+   },
+   {
+    "h": "Vous préférez commencer au camping ?",
+    "p": "Chaque voyage commence par le rangement du coffre."
+   }
+  ],
+  "compare": {
+   "oneline": "Remplissez le coffre. Dormez au camping.",
+   "style": "Puzzle de bagages pour le camping",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "Jouez gratuitement. Sans publicité. Achats facultatifs dans le jeu.",
+   "languages": "—",
+   "status": "Bientôt disponible"
+  }
  }
 }

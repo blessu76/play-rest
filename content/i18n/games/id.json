@@ -464,5 +464,47 @@
    "languages": "12",
    "status": "Sedang diuji di TestFlight untuk iOS"
   }
+ },
+ "tentrunk": {
+  "status": "Segera hadir",
+  "platform": "iOS · Android",
+  "pricing": "Mulai gratis. Tanpa iklan. Pembelian dalam game bersifat opsional.",
+  "tagline": "Putar perlengkapan agar pas di petak-petak bagasi, lalu dirikan kemah dengan barang bawaanmu. Bermalamlah di alam terbuka dan kumpulkan perlengkapan untuk perjalanan berikutnya.",
+  "pros": [
+   {
+    "h": "Cari posisi yang pas",
+    "p": "Putar tenda, kursi, dan barang lain untuk memenuhi bagasi. Sisakan tempat untuk perlengkapan dalam daftar."
+   },
+   {
+    "h": "Berkemah dengan caramu",
+    "p": "Tata perlengkapan dan temukan 45 kegiatan, dari mendirikan tenda hingga pagi berikutnya. Bersiaplah menghadapi hujan, angin, atau salju."
+   },
+   {
+    "h": "Perlengkapan baru untuk perjalanan berikutnya",
+    "p": "Raih koin saat berkemah untuk membuka perlengkapan dan kendaraan baru."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Ingin mengunduh gimnya?",
+    "p": "Tautan toko akan ditambahkan saat gim diluncurkan."
+   },
+   {
+    "h": "Ingin langsung ke perkemahan?",
+    "p": "Setiap perjalanan dimulai dengan menata barang di bagasi."
+   }
+  ],
+  "compare": {
+   "oneline": "Isi bagasi. Bermalam di perkemahan.",
+   "style": "Teka-teki mengepak perlengkapan kemah",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "Mulai gratis. Tanpa iklan. Pembelian dalam game bersifat opsional.",
+   "languages": "—",
+   "status": "Segera hadir"
+  }
  }
 }

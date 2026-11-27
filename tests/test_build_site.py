@@ -1,4 +1,5 @@
 """build_site: structure, policy rules (no store links / prices / ratings / emoji / banned words), SEO output."""
+import hashlib
 import html
 import json
 import re
@@ -13,6 +14,7 @@ GAMES = {"iltonggi": "https://iltonggi.ipe.rest", "inkisle": "https://inkisle.ip
          "sunmeld": "https://sunmeld.ipe.rest", "tottertop": "https://tottertop.ipe.rest",
          "mossgarden": "https://mossgarden.ipe.rest", "duskblocks": "https://duskblocks.ipe.rest",
          "bottledmarbles": "https://bottledmarbles.ipe.rest",
+         "tentrunk": "https://tentrunk.ipe.rest",
          "blushlab": "https://blushlab.ipe.rest", "todaydate": "https://todaydate.ipe.rest"}
 NOT_LIVE = ()
 LIVE = [gid for gid in GAMES if gid not in NOT_LIVE]
@@ -98,13 +100,13 @@ class Built(unittest.TestCase):
         self.assertIn("<h1>When the round ends, that&#x27;s enough for today.</h1>", self.read("index.html"))
         self.assertIn("<h1>한 판이 끝나면, 오늘은 여기까지</h1>", self.read("ko/index.html"))
 
-    def test_games_listed_and_live_ones_link_to_their_own_sites_and_no_stores(self):
+    def test_games_listed_and_live_ones_link_to_their_own_sites_without_store_links(self):
         self.assertEqual([g["id"] for g in self.ctx.games], list(GAMES))
         for lang_dir in ("", "ko/"):
             h = self.read(lang_dir + "index.html")
             for gid in LIVE:
-                url = GAMES[gid] + "/ko/" if gid == "todaydate" and lang_dir else GAMES[gid]
-                self.assertIn('href="%s"' % url, h, (lang_dir, gid))
+                href = GAMES[gid] + ("/ko/" if gid in ("tentrunk", "todaydate") and lang_dir else "")
+                self.assertIn('href="%s"' % href, h, (lang_dir, gid))
             for store in ("apps.apple.com", "play.google.com", "itunes.apple.com", "testflight.apple.com"):
                 self.assertNotIn(store, h.lower())
 
@@ -210,7 +212,8 @@ class Built(unittest.TestCase):
     def test_cards_have_full_copy_in_all_12_languages(self):
         for g in self.ctx.games:
             gid = g["id"]
-            wanted = {"url", "live", "localized_paths"} if gid == "todaydate" else {"url", "live"}
+            wanted = {"url", "live"}
+            wanted.update({"tentrunk": ("localized",), "todaydate": ("localized_paths",)}.get(gid, ()))
             self.assertEqual(set(g["site"]), wanted, gid)
             self.assertEqual(g["site"]["url"], GAMES[gid])
             self.assertEqual(g["site"]["live"], gid not in NOT_LIVE, gid)
@@ -250,9 +253,7 @@ class Built(unittest.TestCase):
                 live_word = self.ctx.t(lang, "g_live")
                 card_status = cards[g["name"][lang]].partition("<dt>%s</dt><dd>" % self.ctx.t(lang, "row_status"))[2].split("</dd>")[0]
                 for text in (cells[i], card_status):
-                    self.assertIn(live_word, text, (lang_dir, g["id"]))
-                    self.assertNotIn("in development", text.lower(), (lang_dir, g["id"]))
-                    self.assertNotIn(g["compare"]["status"][lang], text, (lang_dir, g["id"]))
+                    self.assertEqual(live_word, text, (lang_dir, g["id"]))
 
     def test_each_language_lists_all_games_and_only_live_sites_get_a_visit_link(self):
         for lang in bs.LANGS:
@@ -266,13 +267,27 @@ class Built(unittest.TestCase):
                 self.assertIn("<h3>%s</h3>" % g["name"][lang], card, (lang_dir, gid))
                 self.assertIn('class="tagline"', card, (lang_dir, gid))
                 if g["site"]["live"]:
-                    url = GAMES[gid] + f"/{lang.lower()}/" if gid == "todaydate" and lang != "en" else GAMES[gid]
-                    self.assertIn('<a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card">' % (url, gid),
+                    href = GAMES[gid]
+                    if lang_dir and gid == "tentrunk":
+                        href += f"/{lang}/"
+                    if lang_dir and gid == "todaydate":
+                        href += f"/{lang.lower()}/"
+                    self.assertIn('<a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card">' % (href, gid),
                                   card, (lang_dir, gid))
                 else:
                     self.assertNotIn('class="btn"', card, (lang_dir, gid))
                     self.assertNotIn(GAMES[gid], card, (lang_dir, gid))
         self.assertEqual(h.count('data-placement="card"'), len(LIVE))
+
+    def test_tentrunk_card_uses_versioned_icon_and_localized_terms(self):
+        icon = "assets/games/tentrunk.png"
+        digest = hashlib.sha256((REPO / icon).read_bytes()).hexdigest()[:8]
+        for lang in bs.LANGS:
+            lang_path = "/" if lang == "en" else f"/{lang}/"
+            h = self.read(lang_path.lstrip("/") + "index.html")
+            card = h.partition('id="tentrunk"')[2].split("</article>")[0]
+            self.assertIn(f'src="/{icon}?v={digest}"', card, lang)
+            self.assertIn(f'href="{GAMES["tentrunk"]}{lang_path}terms/"', card, lang)
 
     def test_compare_lead_does_not_claim_only_stated_facts(self):
         for lang in ("en", "ko"):

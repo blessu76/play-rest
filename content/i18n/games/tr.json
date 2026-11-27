@@ -464,5 +464,47 @@
    "languages": "12",
    "status": "iOS için TestFlight testi sürüyor"
   }
- }
+ },
+  "tentrunk": {
+    "status": "Çok yakında",
+    "platform": "iOS · Android",
+    "pricing": "Ücretsiz başla. Reklam yok. İsteğe bağlı uygulama içi satın almalar var.",
+    "tagline": "Eşyalarını döndürüp bagajdaki karelere sığdır, sonra yanına aldıklarınla kamp kur. Açık havada bir gece geçir ve sonraki yolculuk için ekipman biriktir.",
+    "pros": [
+      {
+        "h": "Her eşyaya uygun bir yer",
+        "p": "Çadırı, sandalyeleri ve diğer eşyaları döndürerek bagajı doldur. Listedekilere de yer ayır."
+      },
+      {
+        "h": "Kendi kampını kur",
+        "p": "Ekipmanını yerleştir ve çadırı kurduğun andan ertesi sabaha kadar 45 etkinlik keşfet. Yağmura, rüzgâra ya da kara hazırlıklı ol."
+      },
+      {
+        "h": "Sonraki geziye yeni ekipman",
+        "p": "Kampta para kazan, yeni ekipmanların ve araçların kilidini aç."
+      }
+    ],
+    "cons": [
+      {
+        "h": "Oyunu indirmek mi istiyorsunuz?",
+        "p": "Mağaza bağlantıları oyun çıktığında eklenecek."
+      },
+      {
+        "h": "Doğrudan kamp alanında başlamak mı istiyorsunuz?",
+        "p": "Her gezi bagajı hazırlamakla başlar."
+      }
+    ],
+    "compare": {
+      "oneline": "Bagajı doldur. Geceyi kampta geçir.",
+      "style": "Kamp eşyası yerleştirme bulmacası",
+      "length": "—",
+      "difficulty": "—",
+      "players": "Tek başına",
+      "platform": "iOS · Android",
+      "offline": "—",
+      "pricing": "Ücretsiz başla. Reklam yok. İsteğe bağlı uygulama içi satın almalar var.",
+      "languages": "—",
+      "status": "Çok yakında"
+    }
+  }
 }

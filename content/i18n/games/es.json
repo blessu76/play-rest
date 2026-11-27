@@ -464,5 +464,47 @@
    "languages": "12",
    "status": "En pruebas con TestFlight para iOS"
   }
+ },
+ "tentrunk": {
+  "status": "Próximamente",
+  "platform": "iOS · Android",
+  "pricing": "Empieza gratis. Sin anuncios. Compras opcionales dentro del juego.",
+  "tagline": "Gira el equipo hasta encajarlo en la cuadrícula del maletero y monta el campamento con lo que lleves. Pasa una noche al aire libre y consigue equipo para tu próxima salida.",
+  "pros": [
+   {
+    "h": "Encuentra el hueco justo",
+    "p": "Gira tiendas, sillas y otros objetos para llenar el maletero. Reserva espacio para lo que aparece en la lista."
+   },
+   {
+    "h": "Acampa a tu manera",
+    "p": "Monta tu equipo y descubre 45 actividades, desde montar la tienda hasta la mañana siguiente. Prepárate para la lluvia, el viento y la nieve."
+   },
+   {
+    "h": "Algo nuevo para el próximo viaje",
+    "p": "Consigue monedas acampando y úsalas para desbloquear equipo y vehículos."
+   }
+  ],
+  "cons": [
+   {
+    "h": "¿Buscas dónde descargarlo?",
+    "p": "Los enlaces a las tiendas se publicarán cuando salga el juego."
+   },
+   {
+    "h": "¿Prefieres empezar en el campamento?",
+    "p": "Cada viaje empieza cargando el maletero."
+   }
+  ],
+  "compare": {
+   "oneline": "Llena el maletero. Pasa la noche en el campamento.",
+   "style": "Puzle de equipaje para acampar",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Un jugador",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "Empieza gratis. Sin anuncios. Compras opcionales dentro del juego.",
+   "languages": "—",
+   "status": "Próximamente"
+  }
  }
 }
