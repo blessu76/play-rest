@@ -2046,7 +2046,7 @@
     "ko": "Petal Rampart"
    },
    "site": {
-    "url": "https://petalrampart.ipe.rest",
+    "url": "https://petalrampart.ipe.rest/en/",
     "live": true,
     "pages": {
      "ko": "https://petalrampart.ipe.rest/ko/"
@@ -2194,9 +2194,21 @@
     "ko": "Stampost · Mail Sort Rush"
    },
    "site": {
-    "url": "https://stampost.ipe.rest",
+    "url": "https://stampost.ipe.rest/?lang=en",
     "live": true,
-    "localized": true
+    "pages": {
+     "ko": "https://stampost.ipe.rest/ko/",
+     "ja": "https://stampost.ipe.rest/ja/",
+     "zh-Hant": "https://stampost.ipe.rest/zh-Hant/",
+     "es": "https://stampost.ipe.rest/es/",
+     "pt": "https://stampost.ipe.rest/pt-BR/",
+     "fr": "https://stampost.ipe.rest/fr/",
+     "de": "https://stampost.ipe.rest/de/",
+     "id": "https://stampost.ipe.rest/id/",
+     "th": "https://stampost.ipe.rest/th/",
+     "vi": "https://stampost.ipe.rest/vi/",
+     "tr": "https://stampost.ipe.rest/tr/"
+    }
    },
    "appId": "rest.ipe.stampost",
    "icon": "stampost.png",
@@ -2335,13 +2347,25 @@
     "ko": "쏙쏙 빼기 · Shoopa"
    },
    "site": {
-    "url": "https://shoopa.ipe.rest",
+    "url": "https://shoopa.ipe.rest/?lang=en",
     "live": true,
-    "localized": true
+    "pages": {
+     "ko": "https://shoopa.ipe.rest/ko/",
+     "ja": "https://shoopa.ipe.rest/ja/",
+     "zh-Hant": "https://shoopa.ipe.rest/zh-Hant/",
+     "es": "https://shoopa.ipe.rest/es/",
+     "pt": "https://shoopa.ipe.rest/pt-BR/",
+     "fr": "https://shoopa.ipe.rest/fr/",
+     "de": "https://shoopa.ipe.rest/de/",
+     "id": "https://shoopa.ipe.rest/id/",
+     "th": "https://shoopa.ipe.rest/th/",
+     "vi": "https://shoopa.ipe.rest/vi/",
+     "tr": "https://shoopa.ipe.rest/tr/"
+    }
    },
    "icon": "shoopa.png",
    "accent": [
-    "#3a78ff",
+    "#245bd6",
     "#ffbf2e"
    ],
    "platforms": [

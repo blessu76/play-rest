@@ -16,13 +16,13 @@ GAMES = {"iltonggi": "https://iltonggi.ipe.rest", "inkisle": "https://inkisle.ip
          "bottledmarbles": "https://bottledmarbles.ipe.rest",
          "tentrunk": "https://tentrunk.ipe.rest",
          "blushlab": "https://blushlab.ipe.rest", "todaydate": "https://todaydate.ipe.rest",
-         "mongsil": "https://mongsil.ipe.rest/en/", "petalrampart": "https://petalrampart.ipe.rest",
-         "stampost": "https://stampost.ipe.rest", "shoopa": "https://shoopa.ipe.rest",
+         "mongsil": "https://mongsil.ipe.rest/en/", "petalrampart": "https://petalrampart.ipe.rest/en/",
+         "stampost": "https://stampost.ipe.rest/?lang=en", "shoopa": "https://shoopa.ipe.rest/?lang=en",
          "strawmaze": "https://strawmaze.ipe.rest", "acornvoy": "https://acornvoy.ipe.rest",
          "railthump": "https://railthump.ipe.rest", "pongdang": "https://pongdang.ipe.rest"}
 NOT_LIVE = ("strawmaze", "acornvoy", "railthump", "pongdang")
 LIVE = [gid for gid in GAMES if gid not in NOT_LIVE]
-LOCALIZED = ("tentrunk", "stampost", "shoopa")
+PINNED_ENGLISH = ("stampost", "shoopa")
 NOT_RELEASED_PHRASES = {
     "*": ("None is released", "None of them is released", "none is released"),
     "en": ("not released yet",),
@@ -47,7 +47,11 @@ def expected_game_home(gid, lang):
     base = GAMES[gid]
     if gid == "mongsil":
         return base if lang == "en" else "https://mongsil.ipe.rest/" + ("" if lang == "ko" else f"{lang}/")
-    if (gid in LOCALIZED and lang != "en") or (gid == "petalrampart" and lang == "ko"):
+    if gid == "petalrampart" and lang == "ko":
+        return "https://petalrampart.ipe.rest/ko/"
+    if gid in PINNED_ENGLISH and lang != "en":
+        return f"https://{gid}.ipe.rest/{lang}/"
+    if gid == "tentrunk" and lang != "en":
         return f"{base}/{lang}/"
     if gid == "todaydate" and lang != "en":
         return f"{base}/{lang.lower()}/"
@@ -229,11 +233,11 @@ class Built(unittest.TestCase):
         for g in self.ctx.games:
             gid = g["id"]
             wanted = {"url", "live"}
-            if gid in LOCALIZED:
+            if gid == "tentrunk":
                 wanted.add("localized")
             elif gid == "todaydate":
                 wanted.add("localized_paths")
-            elif gid in ("mongsil", "petalrampart"):
+            elif gid in ("mongsil", "petalrampart", *PINNED_ENGLISH):
                 wanted.add("pages")
             self.assertEqual(set(g["site"]), wanted, gid)
             self.assertEqual(g["site"]["url"], GAMES[gid])
