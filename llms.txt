@@ -31,6 +31,7 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 
 RSS: https://play.ipe.rest/journal/feed.xml
 
+- [Three ways a game ends](https://play.ipe.rest/journal/2026-11-28-three-ways-a-game-ends/): A game is shaped by how it ends. Score, elimination and a last-move loss each change how you play the middle, and each suits a different kind of break.
 - [When to take a risk](https://play.ipe.rest/journal/2026-11-27-when-to-take-a-risk/): Playing safe wins when you are ahead and loses when you are behind. A plain guide to choosing between the careful move and the bold one in a short game.
 - [Looking two moves ahead](https://play.ipe.rest/journal/2026-11-26-looking-two-moves-ahead/): You do not need to calculate deeply to play well. A simple habit of checking your move, the reply and your answer catches many mistakes in a short round.
 - [A limit is a gift](https://play.ipe.rest/journal/2026-11-25-a-limit-is-a-gift/): A fixed number of turns, a small grid, a single page of rules. Why limits make decisions sharper in short games, and how to treat them as part of the puzzle.
