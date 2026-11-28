@@ -36,7 +36,7 @@ class Sitemap(unittest.TestCase):
 
     def test_future_lastmod_detected(self):
         sm = self.root / "sitemap.xml"
-        sm.write_text(sm.read_text().replace("2026-10-31", "2099-01-01", 1))
+        sm.write_text(sm.read_text().replace(f"<lastmod>{bs.HOME_UPDATED}</lastmod>", "<lastmod>2099-01-01</lastmod>", 1))
         self.assertTrue(any("future" in e for e in cs.check(self.root, NOW)[0]))
 
 

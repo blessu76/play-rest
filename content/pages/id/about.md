@@ -1,13 +1,13 @@
 ---
 title: Tentang ipe() Games
 description: play.ipe.rest mengumpulkan game buatan ipe(). Apa portal ini, cara game dibuat, dan siapa pembuatnya.
-updated: 2026-10-31
+updated: 2026-11-28
 ---
-play.ipe.rest adalah rumah bagi game buatan **ipe()** (ipe Studio). Portal ini mengumpulkan game-game di satu tempat: Iltonggi, Inkisle, Sunmeld, Claimball, Patchland, Tottertop, Moss Garden, Dusk Blocks, dan Bottled Marbles. Setiap game punya situs resminya sendiri, yang ditautkan dari kartunya di [halaman beranda](/id/#games).
+play.ipe.rest menghimpun game buatan **ipe()** (ipe Studio). [Daftar game](/id/#games) menautkan situs resmi yang sudah dibuka.
 
 ## Untuk apa portal ini
 
-Semua game ini bisa dimainkan di situs resminya masing-masing, dan belum ada yang punya halaman toko. Situs ini sengaja mengatakannya. Situs ini menunjukkan game apa masing-masing, apa yang kemungkinan akan Anda sukai darinya, dan untuk siapa game itu tidak cocok, agar Anda bisa memutuskan apakah game itu layak mengisi waktu istirahat Anda.
+Lihat kartu game dan tabel perbandingan untuk mengenal tiap game dan memilih yang pas untuk waktu istirahat.
 
 ## Bagaimana game-game ini dibuat
 

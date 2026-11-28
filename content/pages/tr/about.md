@@ -1,13 +1,13 @@
 ---
 title: ipe() Oyunları Hakkında
-description: play.ipe.rest, ipe() oyunlarını toplar: Iltonggi, Inkisle, Sunmeld, Claimball ve Patchland. Portalın ne olduğu ve oyunların nasıl yapıldığı.
-updated: 2026-10-31
+description: play.ipe.rest, ipe() oyunlarını bir araya getirir. Portalın ne olduğu ve oyunların nasıl yapıldığı.
+updated: 2026-11-28
 ---
-play.ipe.rest, **ipe()** (ipe Studio) tarafından yapılan oyunların evidir. Beş oyunu tek bir yerde toplar: Iltonggi, Inkisle, Sunmeld, Claimball ve Patchland. Her oyunun kendi resmî sitesi vardır ve [ana sayfadaki](/#games) kartından bağlantı verilir.
+play.ipe.rest, **ipe()** (ipe Studio) tarafından yapılan oyunları bir araya getirir. [Oyun listesi](/tr/#games) açılan resmî sitelere bağlantı verir.
 
 ## Bu portal ne için var
 
-Beş oyunun hiçbiri henüz yayımlanmadı ve hiçbirinin mağaza sayfası yok. Bu site bunu bilerek söyler. Her oyunun ne olduğunu, büyük olasılıkla nelerden hoşlanacağınızı ve kimler için olmadığını gösterir; böylece molanıza değip değmeyeceğine karar verebilirsiniz.
+Oyun kartlarına ve karşılaştırma tablosuna bakarak oyunları tanıyabilir, molanıza uyan bir oyun bulabilirsiniz.
 
 ## Oyunlar nasıl yapılıyor
 

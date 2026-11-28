@@ -506,5 +506,253 @@
    "languages": "—",
    "status": "Demnächst verfügbar"
   }
+ },
+ "mongsil": {
+  "status": "iOS-Beta über TestFlight",
+  "platform": "iOS TestFlight jetzt, Android später",
+  "pricing": "In-App-Käufe. Keine Werbung.",
+  "tagline": "Füttere Mongsil, spiele mit ihm und bring es ins Bett. Das kleine Haustier schläft ein, wenn es Pflege braucht.",
+  "pros": [
+   {
+    "h": "Pflege in deinem eigenen Tempo.",
+    "p": "Wenn Mongsil in deiner Abwesenheit Pflege braucht, schläft es ein."
+   },
+   {
+    "h": "Lerne Mongsil kennen.",
+    "p": "Wie du dich um Mongsil kümmerst, prägt seinen Charakter. Die gemeinsame Zeit wird festgehalten."
+   },
+   {
+    "h": "Spiele ohne Konto.",
+    "p": "Die Grundpflege funktioniert offline. Dein Fortschritt wird auf deinem Gerät gespeichert."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Wenn du auf die Veröffentlichung im Store wartest.",
+    "p": "Die iOS-Version ist als Beta über TestFlight verfügbar. Die Veröffentlichung in den Stores wird vorbereitet."
+   },
+   {
+    "h": "Wenn du mit anderen spielen möchtest.",
+    "p": "Mongsil ist ein Spiel für eine Person, die ein Haustier pflegt."
+   }
+  ],
+  "compare": {
+   "oneline": "Ein kleines Haustier pflegen",
+   "style": "Haustierpflege-Simulation",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Eine Person",
+   "platform": "iOS TestFlight jetzt, Android später",
+   "offline": "Grundpflege offline möglich",
+   "pricing": "In-App-Käufe. Keine Werbung.",
+   "languages": "—",
+   "status": "iOS-Beta über TestFlight"
+  }
+ },
+ "petalrampart": {
+  "status": "TestFlight",
+  "platform": "iPhone und iPad",
+  "pricing": "Der App Store zeigt den Preis in deiner Landeswährung an. Das Spiel enthält keine Werbung.",
+  "tagline": "Von Feldmäusen bis Elefanten ziehen Tiere auf dem Feldweg zu deinem Garten. Stell Türme am Weg auf, verbinde gleiche Türme und beschütze jede Blume.",
+  "pros": [
+   {
+    "h": "Am Weg verteidigen",
+    "p": "Platziere Türme auf den Feldern neben dem Feldweg. Welche Türme wo stehen, bestimmt deine Strategie."
+   },
+   {
+    "h": "Durch Verbinden aufsteigen",
+    "p": "Zwei Türme desselben Typs und derselben Stufe ergeben einen um eine Stufe stärkeren Turm. Die höchste Stufe ist 7."
+   },
+   {
+    "h": "Gärten zum Verteidigen",
+    "p": "Die drei Grundgärten sind kostenlos. Verteidige einen Garten, um den nächsten zu öffnen."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Suchst du einen öffentlichen Download?",
+    "p": "Die iOS-Version wird intern über TestFlight getestet."
+   },
+   {
+    "h": "Suchst du ein Mehrspielerspiel?",
+    "p": "Du verteidigst den Garten allein."
+   }
+  ],
+  "compare": {
+   "oneline": "Tower Defense im Garten",
+   "style": "Drei Türme",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iPhone und iPad",
+   "offline": "—",
+   "pricing": "Der App Store zeigt den Preis in deiner Landeswährung an. Das Spiel enthält keine Werbung.",
+   "languages": "12",
+   "status": "TestFlight"
+  }
+ },
+ "stampost": {
+  "status": "Demnächst",
+  "platform": "iOS (interner TestFlight) · Android",
+  "pricing": "Preis wird noch bekannt gegeben",
+  "tagline": "Stempel zuordnen. Briefe verschicken.",
+  "pros": [
+   {
+    "h": "Nach Stempel sortieren",
+    "p": "Tippe auf den Stempel des vordersten Umschlags."
+   },
+   {
+    "h": "45 Sekunden pro Runde",
+    "p": "Verschicke aufeinanderfolgende Umschläge mit gleichem Zeichen zusammen für mehr Punkte."
+   },
+   {
+    "h": "Kann ich offline spielen?",
+    "p": "Das Handyspiel funktioniert offline und ist werbefrei."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Schnelle Entscheidungen",
+    "p": "Die Post schließt, sobald mehr als sechs Briefe warten."
+   },
+   {
+    "h": "Falsche Eingaben",
+    "p": "Ein falscher Tipp kostet 2 Punkte. Dein Punktestand fällt nie unter 0."
+   }
+  ],
+  "compare": {
+   "oneline": "Stempel zuordnen. Briefe verschicken.",
+   "style": "Post sortieren",
+   "length": "45 Sekunden pro Runde",
+   "difficulty": "Schnelle Entscheidungen",
+   "players": "Eine Person",
+   "platform": "iOS (interner TestFlight) · Android",
+   "offline": "Ja, in der App",
+   "pricing": "Preis wird noch bekannt gegeben",
+   "languages": "12 Sprachen",
+   "status": "Demnächst"
+  }
+ },
+ "shoopa": {
+  "status": "Demnächst",
+  "platform": "iOS TestFlight und Android-Tests",
+  "pricing": "Kostenlos spielbar, keine Werbung. Ein optionaler In-App-Kauf ändert das Aussehen der Blöcke.",
+  "tagline": "Tippe einen Pfeilblock an, sobald sein Weg frei ist. Finde die richtige Reihenfolge und räume das Brett Stück für Stück leer.",
+  "pros": [
+   {
+    "h": "Finde einen freien Weg",
+    "p": "Ein Block kann das Brett verlassen, wenn in Pfeilrichtung bis zum Rand alle Felder frei sind."
+   },
+   {
+    "h": "Kombos in 0,9 Sekunden",
+    "p": "Entferne den nächsten Block innerhalb von 0,9 Sekunden, um die Kombo fortzusetzen. Tippst du auf einen blockierten Block, endet die Kombo."
+   },
+   {
+    "h": "Drei Herzen, zwei Hinweise",
+    "p": "Tippst du einen blockierten Pfeil an, verlierst du ein Herz. Du kannst dasselbe Brett kostenlos erneut spielen."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Wenn Sie im Browser spielen möchten.",
+    "p": "Eine Web-Version ist in Arbeit. Bis dahin läuft es über die Testversionen für iOS und Android."
+   },
+   {
+    "h": "Wenn Sie eine fertige Funktionsliste wollen.",
+    "p": "Es wird noch getestet, daher können sich Funktionen vor dem Release ändern."
+   }
+  ],
+  "compare": {
+   "oneline": "Puzzle mit Pfeilblöcken",
+   "style": "Pfeil-Tipppuzzle",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Einzelspieler",
+   "platform": "iOS TestFlight und Android-Tests",
+   "offline": "—",
+   "pricing": "Kostenlos spielbar, keine Werbung. Ein optionaler In-App-Kauf ändert das Aussehen der Blöcke.",
+   "languages": "—",
+   "status": "Demnächst. TestFlight und Android-Tests"
+  }
+ },
+ "strawmaze": {
+  "status": "Offizielle Website in Vorbereitung",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Baue aus Zäunen und Vogelscheuchen ein Labyrinth, um deine Karotten zu schützen.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Baue aus Zäunen und Vogelscheuchen ein Labyrinth, um deine Karotten zu schützen.",
+   "style": "Tower-Defense mit Labyrinthbau",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Einzelspieler",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Offizielle Website in Vorbereitung"
+  }
+ },
+ "acornvoy": {
+  "status": "Offizielle Website in Vorbereitung",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Schicke Eichhörnchen an den Eulentürmen vorbei, damit die Eicheln vor Sonnenuntergang zu Hause sind.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Schicke Eichhörnchen an den Eulentürmen vorbei, damit die Eicheln vor Sonnenuntergang zu Hause sind.",
+   "style": "Umgekehrte Tower-Defense",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Einzelspieler",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Offizielle Website in Vorbereitung"
+  }
+ },
+ "railthump": {
+  "status": "Offizielle Website in Vorbereitung",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Wechsle zwischen drei Gleisen, zertrümmere Kisten in Serie und weiche Felsen aus, während der Wagen schneller wird.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Wechsle zwischen drei Gleisen, zertrümmere Kisten in Serie und weiche Felsen aus, während der Wagen schneller wird.",
+   "style": "Action im Grubenwagen",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Einzelspieler",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Offizielle Website in Vorbereitung"
+  }
+ },
+ "pongdang": {
+  "status": "Offizielle Website in Vorbereitung",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Spring über treibende Seerosenblätter, sammle Blüten und weiche Wellen aus.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Spring über treibende Seerosenblätter, sammle Blüten und weiche Wellen aus.",
+   "style": "Sprungspiel auf dem Teich",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Einzelspieler",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Offizielle Website in Vorbereitung"
+  }
  }
 }

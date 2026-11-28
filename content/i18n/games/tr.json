@@ -506,5 +506,253 @@
       "languages": "—",
       "status": "Çok yakında"
     }
+  },
+  "mongsil": {
+    "status": "TestFlight’ta iOS beta",
+    "platform": "iOS TestFlight mevcut, Android sonra",
+    "pricing": "Uygulama içi satın alımlar var. Reklam yok.",
+    "tagline": "Mongsil’i besleyin, onunla oynayın ve onu yatırın. Bu küçük evcil hayvan ilgiye ihtiyacı olduğunda uykuya dalar.",
+    "pros": [
+      {
+        "h": "Kendi hızınızda ilgilenin.",
+        "p": "Siz yokken Mongsil’in ilgiye ihtiyacı olursa uykuya dalar."
+      },
+      {
+        "h": "Mongsil’i tanıyın.",
+        "p": "Bakım biçiminiz onun kişiliğini şekillendirir ve birlikte geçirdiğiniz zaman kayda geçer."
+      },
+      {
+        "h": "Hesap açmadan oynayın.",
+        "p": "Temel bakım çevrimdışı çalışır. İlerlemeniz cihazınıza kaydedilir."
+      }
+    ],
+    "cons": [
+      {
+        "h": "Mağaza sürümünü bekliyorsanız.",
+        "p": "iOS sürümü TestFlight’ta beta aşamasında. Mağaza sürümleri hazırlanıyor."
+      },
+      {
+        "h": "Arkadaşlarınızla oynamak istiyorsanız.",
+        "p": "Mongsil tek kişilik bir evcil hayvan bakım oyunudur."
+      }
+    ],
+    "compare": {
+      "oneline": "Küçük bir evcil hayvana bakmak",
+      "style": "Evcil hayvan bakım simülasyonu",
+      "length": "—",
+      "difficulty": "—",
+      "players": "Tek kişi",
+      "platform": "iOS TestFlight mevcut, Android sonra",
+      "offline": "Temel bakım çevrimdışı çalışır",
+      "pricing": "Uygulama içi satın alımlar var. Reklam yok.",
+      "languages": "—",
+      "status": "TestFlight’ta iOS beta"
+    }
+  },
+  "petalrampart": {
+    "status": "TestFlight",
+    "platform": "iPhone ve iPad",
+    "pricing": "App Store fiyatı yerel para biriminde gösterir. Oyunda reklam yoktur.",
+    "tagline": "Tarla farelerinden fillere, hayvanlar toprak yoldan bahçene doğru ilerliyor. Yol kenarına kuleler yerleştir, eş kuleleri birleştir ve bütün çiçekleri koru.",
+    "pros": [
+      {
+        "h": "Yol kenarını savun",
+        "p": "Kuleleri hayvanların yürüdüğü yolun yanındaki karelere koy. Her kareye uygun kuleyi seçmek stratejinin parçası."
+      },
+      {
+        "h": "Birleştirerek yükselt",
+        "p": "Aynı tür ve seviyedeki iki kuleyi birleştirip bir üst seviyeye çık. En yüksek seviye 7."
+      },
+      {
+        "h": "Savunulacak bahçeler",
+        "p": "Üç temel bahçe ücretsiz. Birini savunduğunda sıradaki açılır."
+      }
+    ],
+    "cons": [
+      {
+        "h": "Herkese açık indirme mi arıyorsun?",
+        "p": "iOS sürümü TestFlight üzerinden dahili testte."
+      },
+      {
+        "h": "Çok oyunculu oyun mu arıyorsun?",
+        "p": "Bahçe savunması tek kişilik bir oyun."
+      }
+    ],
+    "compare": {
+      "oneline": "Bahçede kule savunması",
+      "style": "Üç kule",
+      "length": "—",
+      "difficulty": "—",
+      "players": "Tek oyuncu",
+      "platform": "iPhone ve iPad",
+      "offline": "—",
+      "pricing": "App Store fiyatı yerel para biriminde gösterir. Oyunda reklam yoktur.",
+      "languages": "12",
+      "status": "TestFlight"
+    }
+  },
+  "stampost": {
+    "status": "Çok yakında",
+    "platform": "iOS (dahili TestFlight) · Android",
+    "pricing": "Fiyat daha sonra açıklanacak",
+    "tagline": "Damgaları eşleştir, mektupları gönder.",
+    "pros": [
+      {
+        "h": "Damgaya göre ayır",
+        "p": "En öndeki zarfla eşleşen damgaya dokun."
+      },
+      {
+        "h": "Her tur 45 saniye",
+        "p": "Arka arkaya gelen aynı damgalı zarfları birlikte göndererek daha çok puan kazan."
+      },
+      {
+        "h": "Çevrimdışı oynayabilir miyim?",
+        "p": "Mobil oyun çevrimdışı çalışır ve reklam içermez."
+      }
+    ],
+    "cons": [
+      {
+        "h": "Hızlı kararlar",
+        "p": "Sıra altı mektubu aşarsa postane kapanır."
+      },
+      {
+        "h": "Yanlış dokunuşlar",
+        "p": "Yanlış dokunuş 2 puan kaybettirir. Puanın asla 0’ın altına düşmez."
+      }
+    ],
+    "compare": {
+      "oneline": "Damgaları eşleştir, mektupları gönder.",
+      "style": "Posta ayırma",
+      "length": "Her tur 45 saniye",
+      "difficulty": "Hızlı kararlar",
+      "players": "Tek oyuncu",
+      "platform": "iOS (dahili TestFlight) · Android",
+      "offline": "Evet, uygulamada",
+      "pricing": "Fiyat daha sonra açıklanacak",
+      "languages": "12 dil",
+      "status": "Çok yakında"
+    }
+  },
+  "shoopa": {
+    "status": "Yakında",
+    "platform": "iOS TestFlight ve Android testi",
+    "pricing": "Ücretsiz oynanır, reklam yok. Blokların görünümünü değiştiren isteğe bağlı bir uygulama içi satın alma var.",
+    "tagline": "Okun gösterdiği yol açıldığında bloğa dokun. Doğru sırayı bul ve tahtayı blok blok boşalt.",
+    "pros": [
+      {
+        "h": "Açık bir yol bul",
+        "p": "Ok yönünde tahtanın kenarına kadar hiçbir blok yoksa o blok çıkabilir."
+      },
+      {
+        "h": "Komboyu 0,9 saniyede sürdür",
+        "p": "Komboyu sürdürmek için bir sonraki bloğu 0,9 saniye içinde çıkar. Yolu kapalı bir bloğa dokunmak komboyu bozar."
+      },
+      {
+        "h": "Üç kalp, iki ipucu",
+        "p": "Yolu kapalı bir oka dokununca bir kalp kaybedersin. Aynı tahtayı ücretsiz yeniden deneyebilirsin."
+      }
+    ],
+    "cons": [
+      {
+        "h": "Tarayıcıda oynamak isteyenler için.",
+        "p": "Web sürümü hazırlanıyor. Şimdilik iOS ve Android test sürümlerinde oynanabiliyor."
+      },
+      {
+        "h": "Tamamlanmış bir özellik listesi istiyorsanız.",
+        "p": "Hâlâ test aşamasında, bu yüzden özellikler yayından önce değişebilir."
+      }
+    ],
+    "compare": {
+      "oneline": "Ok bloklarını çıkarma bulmacası",
+      "style": "Ok dokunma bulmacası",
+      "length": "—",
+      "difficulty": "—",
+      "players": "Tek oyunculu",
+      "platform": "iOS TestFlight ve Android testi",
+      "offline": "—",
+      "pricing": "Ücretsiz oynanır, reklam yok. Blokların görünümünü değiştiren isteğe bağlı bir uygulama içi satın alma var.",
+      "languages": "—",
+      "status": "Yakında. TestFlight ve Android testi"
+    }
+  },
+  "strawmaze": {
+    "status": "Resmî site hazırlanıyor",
+    "platform": "iOS · Android",
+    "pricing": "—",
+    "tagline": "Havuçlarını korumak için çitler ve korkuluklarla bir labirent kur.",
+    "pros": [],
+    "cons": [],
+    "compare": {
+      "oneline": "Havuçlarını korumak için çitler ve korkuluklarla bir labirent kur.",
+      "style": "Labirent kurmalı kule savunması",
+      "length": "—",
+      "difficulty": "—",
+      "players": "Tek oyuncu",
+      "platform": "iOS · Android",
+      "offline": "—",
+      "pricing": "—",
+      "languages": "—",
+      "status": "Resmî site hazırlanıyor"
+    }
+  },
+  "acornvoy": {
+    "status": "Resmî site hazırlanıyor",
+    "platform": "iOS · Android",
+    "pricing": "—",
+    "tagline": "Sincapları baykuş kulelerinin ötesine gönder ve meşe palamutlarını gün batmadan eve taşı.",
+    "pros": [],
+    "cons": [],
+    "compare": {
+      "oneline": "Sincapları baykuş kulelerinin ötesine gönder ve meşe palamutlarını gün batmadan eve taşı.",
+      "style": "Ters kule savunması",
+      "length": "—",
+      "difficulty": "—",
+      "players": "Tek oyuncu",
+      "platform": "iOS · Android",
+      "offline": "—",
+      "pricing": "—",
+      "languages": "—",
+      "status": "Resmî site hazırlanıyor"
+    }
+  },
+  "railthump": {
+    "status": "Resmî site hazırlanıyor",
+    "platform": "iOS · Android",
+    "pricing": "—",
+    "tagline": "Vagon hızlanırken üç ray arasında geçiş yap, kasaları art arda kır ve kayalardan kaç.",
+    "pros": [],
+    "cons": [],
+    "compare": {
+      "oneline": "Vagon hızlanırken üç ray arasında geçiş yap, kasaları art arda kır ve kayalardan kaç.",
+      "style": "Maden vagonu aksiyonu",
+      "length": "—",
+      "difficulty": "—",
+      "players": "Tek oyuncu",
+      "platform": "iOS · Android",
+      "offline": "—",
+      "pricing": "—",
+      "languages": "—",
+      "status": "Resmî site hazırlanıyor"
+    }
+  },
+  "pongdang": {
+    "status": "Resmî site hazırlanıyor",
+    "platform": "iOS · Android",
+    "pricing": "—",
+    "tagline": "Sürüklenen nilüfer yapraklarından atla, çiçekleri topla ve dalgalardan kaç.",
+    "pros": [],
+    "cons": [],
+    "compare": {
+      "oneline": "Sürüklenen nilüfer yapraklarından atla, çiçekleri topla ve dalgalardan kaç.",
+      "style": "Gölette sıçrama oyunu",
+      "length": "—",
+      "difficulty": "—",
+      "players": "Tek oyuncu",
+      "platform": "iOS · Android",
+      "offline": "—",
+      "pricing": "—",
+      "languages": "—",
+      "status": "Resmî site hazırlanıyor"
+    }
   }
 }

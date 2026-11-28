@@ -506,5 +506,253 @@
    "languages": "—",
    "status": "Segera hadir"
   }
+ },
+ "mongsil": {
+  "status": "Beta iOS di TestFlight",
+  "platform": "iOS TestFlight sudah ada, Android menyusul",
+  "pricing": "Pembelian dalam aplikasi. Tanpa iklan.",
+  "tagline": "Beri Mongsil makan, ajak bermain, dan tidurkan. Hewan kecil ini akan tertidur saat membutuhkan perhatian.",
+  "pros": [
+   {
+    "h": "Rawat sesuai ritmemu.",
+    "p": "Jika Mongsil membutuhkan perhatian saat kamu sedang pergi, ia akan tertidur."
+   },
+   {
+    "h": "Kenali Mongsil.",
+    "p": "Cara kamu merawatnya membentuk kepribadiannya. Waktu yang kalian habiskan bersama akan tercatat."
+   },
+   {
+    "h": "Main tanpa akun.",
+    "p": "Perawatan dasar bisa dilakukan secara offline dan progres disimpan di perangkatmu."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Jika menunggu rilis di toko aplikasi.",
+    "p": "Versi iOS sedang diuji dalam beta di TestFlight. Rilis di toko aplikasi masih disiapkan."
+   },
+   {
+    "h": "Jika ingin bermain bersama.",
+    "p": "Mongsil adalah gim merawat hewan peliharaan untuk satu pemain."
+   }
+  ],
+  "compare": {
+   "oneline": "Merawat hewan peliharaan kecil",
+   "style": "Simulasi merawat hewan peliharaan",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Satu pemain",
+   "platform": "iOS TestFlight sudah ada, Android menyusul",
+   "offline": "Perawatan dasar bisa dilakukan secara offline",
+   "pricing": "Pembelian dalam aplikasi. Tanpa iklan.",
+   "languages": "—",
+   "status": "Beta iOS di TestFlight"
+  }
+ },
+ "petalrampart": {
+  "status": "TestFlight",
+  "platform": "iPhone dan iPad",
+  "pricing": "App Store menampilkan harga dalam mata uang setempat. Tidak ada iklan.",
+  "tagline": "Dari tikus ladang hingga gajah, hewan-hewan menyusuri jalan tanah menuju tamanmu. Pasang menara di tepi jalan, gabungkan menara yang sama, dan lindungi semua bunga.",
+  "pros": [
+   {
+    "h": "Jaga tepi jalan",
+    "p": "Letakkan menara di petak di samping jalan tanah. Tentukan menara mana yang cocok untuk tiap petak."
+   },
+   {
+    "h": "Gabungkan agar lebih kuat",
+    "p": "Gabungkan dua menara dengan jenis dan level yang sama untuk naik satu level, hingga level 7."
+   },
+   {
+    "h": "Taman yang dijaga",
+    "p": "Tiga taman dasar gratis. Pertahankan satu taman untuk membuka taman berikutnya."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Mencari unduhan publik?",
+    "p": "Versi iOS masih dalam uji internal di TestFlight."
+   },
+   {
+    "h": "Mencari gim multipemain?",
+    "p": "Pertahanan taman ini dimainkan sendiri."
+   }
+  ],
+  "compare": {
+   "oneline": "Pertahanan menara di taman",
+   "style": "Tiga menara",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iPhone dan iPad",
+   "offline": "—",
+   "pricing": "App Store menampilkan harga dalam mata uang setempat. Tidak ada iklan.",
+   "languages": "12",
+   "status": "TestFlight"
+  }
+ },
+ "stampost": {
+  "status": "Segera hadir",
+  "platform": "iOS (TestFlight internal) · Android",
+  "pricing": "Harga akan diumumkan",
+  "tagline": "Cocokkan cap, kirim surat.",
+  "pros": [
+   {
+    "h": "Pilah berdasarkan cap",
+    "p": "Ketuk cap yang cocok dengan amplop terdepan."
+   },
+   {
+    "h": "45 detik per ronde",
+    "p": "Kirim amplop bercap sama yang berurutan untuk mendapat lebih banyak poin."
+   },
+   {
+    "h": "Bisakah saya bermain offline?",
+    "p": "Game seluler ini dapat dimainkan secara offline dan tanpa iklan."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Keputusan cepat",
+    "p": "Kantor pos tutup jika antrean melebihi enam surat."
+   },
+   {
+    "h": "Salah ketuk",
+    "p": "Salah ketuk mengurangi 2 poin. Skormu tidak pernah turun di bawah 0."
+   }
+  ],
+  "compare": {
+   "oneline": "Cocokkan cap, kirim surat.",
+   "style": "Penyortiran surat",
+   "length": "45 detik per ronde",
+   "difficulty": "Keputusan cepat",
+   "players": "Satu pemain",
+   "platform": "iOS (TestFlight internal) · Android",
+   "offline": "Ya, di aplikasi",
+   "pricing": "Harga akan diumumkan",
+   "languages": "12 bahasa",
+   "status": "Segera hadir"
+  }
+ },
+ "shoopa": {
+  "status": "Segera hadir",
+  "platform": "iOS TestFlight dan pengujian Android",
+  "pricing": "Gratis dimainkan, tanpa iklan. Ada pembelian opsional dalam aplikasi untuk mengganti tampilan balok.",
+  "tagline": "Ketuk balok saat jalur panahnya terbuka. Temukan urutan yang tepat dan kosongkan papan, satu balok demi satu.",
+  "pros": [
+   {
+    "h": "Cari jalur yang terbuka",
+    "p": "Balok bisa keluar jika semua kotak di arah panah hingga tepi papan kosong."
+   },
+   {
+    "h": "Sambung kombo dalam 0,9 detik",
+    "p": "Keluarkan balok berikutnya dalam 0,9 detik untuk melanjutkan kombo. Mengetuk balok yang terhalang akan memutus kombo."
+   },
+   {
+    "h": "Tiga hati, dua petunjuk",
+    "p": "Mengetuk balok yang terhalang mengurangi satu hati. Kamu bisa mengulang papan yang sama secara gratis."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Jika ingin bermain di peramban.",
+    "p": "Versi web sedang disiapkan. Untuk saat ini, game bisa dimainkan lewat versi uji iOS dan Android."
+   },
+   {
+    "h": "Jika Anda ingin daftar fitur yang sudah jadi.",
+    "p": "Masih dalam pengujian, jadi fitur bisa berubah sebelum rilis."
+   }
+  ],
+  "compare": {
+   "oneline": "Teka-teki blok panah",
+   "style": "Teka-teki ketuk panah",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Satu pemain",
+   "platform": "iOS TestFlight dan pengujian Android",
+   "offline": "—",
+   "pricing": "Gratis dimainkan, tanpa iklan. Ada pembelian opsional dalam aplikasi untuk mengganti tampilan balok.",
+   "languages": "—",
+   "status": "Segera hadir. TestFlight dan pengujian Android"
+  }
+ },
+ "strawmaze": {
+  "status": "Situs resmi sedang disiapkan",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Buat labirin dari pagar dan orang-orangan sawah untuk melindungi wortelmu.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Buat labirin dari pagar dan orang-orangan sawah untuk melindungi wortelmu.",
+   "style": "Pertahanan menara dengan labirin",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Satu pemain",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Situs resmi sedang disiapkan"
+  }
+ },
+ "acornvoy": {
+  "status": "Situs resmi sedang disiapkan",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Kirim tupai melewati menara burung hantu agar biji ek sampai ke rumah sebelum matahari terbenam.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Kirim tupai melewati menara burung hantu agar biji ek sampai ke rumah sebelum matahari terbenam.",
+   "style": "Pertahanan menara terbalik",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Satu pemain",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Situs resmi sedang disiapkan"
+  }
+ },
+ "railthump": {
+  "status": "Situs resmi sedang disiapkan",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Pindah di antara tiga rel, hancurkan peti berturut-turut dan hindari batu saat kereta melaju makin cepat.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Pindah di antara tiga rel, hancurkan peti berturut-turut dan hindari batu saat kereta melaju makin cepat.",
+   "style": "Aksi kereta tambang",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Satu pemain",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Situs resmi sedang disiapkan"
+  }
+ },
+ "pongdang": {
+  "status": "Situs resmi sedang disiapkan",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Lompati daun teratai yang hanyut, kumpulkan bunga dan hindari ombak.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Lompati daun teratai yang hanyut, kumpulkan bunga dan hindari ombak.",
+   "style": "Lompatan di kolam",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Satu pemain",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Situs resmi sedang disiapkan"
+  }
  }
 }

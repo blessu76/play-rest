@@ -14,7 +14,7 @@
  "updated_label": "Zuletzt aktualisiert",
  "crumb_home": "Start",
  "home_title": "ipe() Games: kurze Runden, die in eine Pause passen",
- "home_desc": "{n} kleine Spiele von ipe(). Kurze Runden, wenige Regeln, keine Werbung. Alle {n} haben jetzt eine eigene Website.",
+ "home_desc": "{n} kleine Spiele von ipe(). Entdecken Sie das Angebot und besuchen Sie die offiziellen Websites, die schon online sind.",
  "hero_code": "// play(); rest();",
  "hero_h1": "Wenn die Runde endet, ist es genug für heute.",
  "hero_sub": "Eine Runde ist kurz genug, um in Ihre Pause zu passen.",
@@ -33,7 +33,7 @@
  "p5_h": "Die KI spielt fair",
  "p5_p": "Aufholjagden entstehen durch die Regeln, nicht durch einen heimlich geschwächten Gegner.",
  "games_h": "{n} Spiele",
- "games_lead": "Jedes Spiel hat seine eigene offizielle Website, und keines hat eine Store-Seite. Jede Karte zeigt, was das Spiel ist, was Ihnen gefallen wird und für wen es nichts ist.",
+ "games_lead": "Entdecken Sie die Spiele. Die Karten verlinken auf die offiziellen Websites, sobald diese online sind.",
  "g_likes": "Was Ihnen gefallen wird",
  "g_nots": "Nichts für Sie, wenn",
  "g_visit": "Zur offiziellen Website",
@@ -44,7 +44,7 @@
  "g_live": "Demnächst",
  "compare_h": "Im Vergleich",
  "compare_lead": "Nach den offiziellen Websites der Spiele und den aktuellen Plänen. Details können sich vor dem Start ändern. Ein Strich bedeutet, dass die Website dazu nichts sagt.",
- "compare_note": "Derzeit spielt man alle ipe-Spiele allein, gegen eine KI · Spiele zum gemeinsamen Spielen gibt es noch nicht.",
+ "compare_note": "Der Eintrag zur Spielerzahl zeigt den Spielmodus des jeweiligen Spiels.",
  "compare_game": "Spiel",
  "row_oneline": "Kurz gesagt",
  "row_style": "Stil",
@@ -65,7 +65,7 @@
  "choose_5": "Ein kurzes Offline-Spiel ums Landgewinnen",
  "choose_go": "Zum Spiel",
  "made_h": "Wie sie entstehen",
- "made_lead": "Die meisten Spiele führen ein öffentliches Making-of. Dort sagen wir auch offen, was noch nicht fertig oder noch nicht geprüft ist.",
+ "made_lead": "In den Entwicklungstagebüchern sehen Sie, wie diese Spiele entstehen.",
  "made_now": "Making-of",
  "made_feed": "RSS",
  "made_read": "Zum Making-of",
@@ -99,5 +99,6 @@
  "choose_8": "Ein ruhiges Blockpuzzle für eine Hand, in der Dämmerung",
  "choose_9": "Ein ruhiges Sortierrätsel mit Murmeln",
  "choose_10": "Ein Make-up-Spiel, an einem Gesicht oder auf Ihrem eigenen Foto",
- "choose_tentrunk": "Packpuzzle fürs Camping"
+ "choose_tentrunk": "Packpuzzle fürs Camping",
+ "choose_shoopa": "Ein Pfeilrätsel: Reihenfolge finden, Feld leeren"
 }

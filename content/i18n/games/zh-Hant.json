@@ -506,5 +506,253 @@
       "languages": "—",
       "status": "即將推出"
     }
+  },
+  "mongsil": {
+    "status": "iOS TestFlight 測試版",
+    "platform": "已有 iOS TestFlight,Android 稍後推出",
+    "pricing": "有應用程式內購買，無廣告。",
+    "tagline": "餵 Mongsil 吃飯、陪牠玩，再哄牠睡覺。需要照顧時，Mongsil 就會睡著。",
+    "pros": [
+      {
+        "h": "按自己的步調照顧牠。",
+        "p": "你不在時，如果需要照顧，Mongsil 就會睡著。"
+      },
+      {
+        "h": "慢慢認識 Mongsil。",
+        "p": "你照顧牠的方式會塑造牠的個性，也會留下你們相處的紀錄。"
+      },
+      {
+        "h": "不用建立帳號。",
+        "p": "基本照顧可以離線進行，進度會儲存在裝置上。"
+      }
+    ],
+    "cons": [
+      {
+        "h": "如果你在等商店版。",
+        "p": "iOS 版正在 TestFlight 上進行測試，商店版仍在準備中。"
+      },
+      {
+        "h": "如果你想和朋友一起玩。",
+        "p": "Mongsil 是單人寵物照顧遊戲。"
+      }
+    ],
+    "compare": {
+      "oneline": "照顧一隻小寵物",
+      "style": "寵物照顧模擬遊戲",
+      "length": "—",
+      "difficulty": "—",
+      "players": "單人",
+      "platform": "已有 iOS TestFlight,Android 稍後推出",
+      "offline": "基本照顧可離線進行",
+      "pricing": "有應用程式內購買，無廣告。",
+      "languages": "—",
+      "status": "iOS TestFlight 測試版"
+    }
+  },
+  "petalrampart": {
+    "status": "TestFlight",
+    "platform": "iPhone・iPad",
+    "pricing": "App Store 以當地貨幣顯示價格。遊戲沒有廣告。",
+    "tagline": "從田鼠到大象，野生動物沿著小徑朝花圃而來。把塔放在路旁，合併相同的塔，守住每一朵花。",
+    "pros": [
+      {
+        "h": "沿路布防",
+        "p": "在動物通過的小路旁放置塔。每一格放什麼，都會改變戰局。"
+      },
+      {
+        "h": "合併升級",
+        "p": "合併兩座同種類、同等級的塔，就能升一級，最高升到 7 級。"
+      },
+      {
+        "h": "要守護的花園",
+        "p": "三座基本花園都可免費遊玩。守住一座，就會開啟下一座。"
+      }
+    ],
+    "cons": [
+      {
+        "h": "想下載正式版本？",
+        "p": "iOS 版目前在內部 TestFlight 測試。"
+      },
+      {
+        "h": "想和朋友一起玩？",
+        "p": "這是單人花園防禦遊戲。"
+      }
+    ],
+    "compare": {
+      "oneline": "守護花圃的塔防遊戲",
+      "style": "三種防禦塔",
+      "length": "—",
+      "difficulty": "—",
+      "players": "單人",
+      "platform": "iPhone・iPad",
+      "offline": "—",
+      "pricing": "App Store 以當地貨幣顯示價格。遊戲沒有廣告。",
+      "languages": "12",
+      "status": "TestFlight"
+    }
+  },
+  "stampost": {
+    "status": "即將推出",
+    "platform": "iOS (內部 TestFlight) · Android",
+    "pricing": "價格日後公布",
+    "tagline": "蓋上相同印章，一次寄出。",
+    "pros": [
+      {
+        "h": "依印章分類",
+        "p": "點選與隊首信封相同的印章。"
+      },
+      {
+        "h": "每局 45 秒",
+        "p": "一次寄出連續相同的信封，獲得更多分數。"
+      },
+      {
+        "h": "可以離線遊玩嗎？",
+        "p": "手機版支援離線遊玩，也沒有廣告。"
+      }
+    ],
+    "cons": [
+      {
+        "h": "快速判斷",
+        "p": "排隊的信件超過 6 封時，郵局就會關門。狂熱期間只會略過放不下的信件。"
+      },
+      {
+        "h": "按錯印章",
+        "p": "點錯會扣 2 分。分數不會低於 0。"
+      }
+    ],
+    "compare": {
+      "oneline": "蓋上相同印章，一次寄出。",
+      "style": "郵件分類",
+      "length": "每局 45 秒",
+      "difficulty": "快速判斷",
+      "players": "單人",
+      "platform": "iOS (內部 TestFlight) · Android",
+      "offline": "App 支援",
+      "pricing": "價格日後公布",
+      "languages": "12 種語言",
+      "status": "即將推出"
+    }
+  },
+  "shoopa": {
+    "status": "即將推出",
+    "platform": "iOS TestFlight · Android 測試中",
+    "pricing": "免費遊玩，沒有廣告。另有可改變方塊外觀的選購項目。",
+    "tagline": "箭頭前的路暢通時，點一下就能移開方塊。找出正確順序，讓棋盤一格一格空出來。",
+    "pros": [
+      {
+        "h": "找出暢通的路",
+        "p": "從箭頭前方到棋盤邊緣都沒有方塊時，就能移開它。"
+      },
+      {
+        "h": "0.9 秒延續連擊",
+        "p": "移除方塊後，在 0.9 秒內移除下一個方塊就能延續連擊。點到受阻的方塊會中斷連擊。"
+      },
+      {
+        "h": "三顆愛心、兩次提示",
+        "p": "點到受阻的方塊會失去一顆愛心。同一關可以免費重試。"
+      }
+    ],
+    "cons": [
+      {
+        "h": "想在瀏覽器上玩的玩家。",
+        "p": "網頁版正在準備中。目前可透過 iOS 和 Android 測試版遊玩。"
+      },
+      {
+        "h": "如果你想要定案的功能清單。",
+        "p": "它仍在測試階段,因此功能在推出前可能會有變動。"
+      }
+    ],
+    "compare": {
+      "oneline": "移出箭頭方塊的益智遊戲",
+      "style": "箭頭點擊益智遊戲",
+      "length": "—",
+      "difficulty": "—",
+      "players": "單人",
+      "platform": "iOS TestFlight · Android 測試中",
+      "offline": "—",
+      "pricing": "免費遊玩，沒有廣告。另有可改變方塊外觀的選購項目。",
+      "languages": "—",
+      "status": "即將推出。TestFlight · Android 測試中"
+    }
+  },
+  "strawmaze": {
+    "status": "官方網站籌備中",
+    "platform": "iOS · Android",
+    "pricing": "—",
+    "tagline": "用圍欄和稻草人搭成迷宮，保護你的胡蘿蔔。",
+    "pros": [],
+    "cons": [],
+    "compare": {
+      "oneline": "用圍欄和稻草人搭成迷宮，保護你的胡蘿蔔。",
+      "style": "迷宮建造塔防",
+      "length": "—",
+      "difficulty": "—",
+      "players": "單人",
+      "platform": "iOS · Android",
+      "offline": "—",
+      "pricing": "—",
+      "languages": "—",
+      "status": "官方網站籌備中"
+    }
+  },
+  "acornvoy": {
+    "status": "官方網站籌備中",
+    "platform": "iOS · Android",
+    "pricing": "—",
+    "tagline": "派松鼠越過貓頭鷹守塔，在日落前把橡實運回家。",
+    "pros": [],
+    "cons": [],
+    "compare": {
+      "oneline": "派松鼠越過貓頭鷹守塔，在日落前把橡實運回家。",
+      "style": "反向塔防",
+      "length": "—",
+      "difficulty": "—",
+      "players": "單人",
+      "platform": "iOS · Android",
+      "offline": "—",
+      "pricing": "—",
+      "languages": "—",
+      "status": "官方網站籌備中"
+    }
+  },
+  "railthump": {
+    "status": "官方網站籌備中",
+    "platform": "iOS · Android",
+    "pricing": "—",
+    "tagline": "礦車越跑越快，在三條軌道間切換，連續撞破木箱並避開岩石。",
+    "pros": [],
+    "cons": [],
+    "compare": {
+      "oneline": "礦車越跑越快，在三條軌道間切換，連續撞破木箱並避開岩石。",
+      "style": "礦車動作遊戲",
+      "length": "—",
+      "difficulty": "—",
+      "players": "單人",
+      "platform": "iOS · Android",
+      "offline": "—",
+      "pricing": "—",
+      "languages": "—",
+      "status": "官方網站籌備中"
+    }
+  },
+  "pongdang": {
+    "status": "官方網站籌備中",
+    "platform": "iOS · Android",
+    "pricing": "—",
+    "tagline": "跳過漂流的荷葉，沿途收集花朵並避開水浪。",
+    "pros": [],
+    "cons": [],
+    "compare": {
+      "oneline": "跳過漂流的荷葉，沿途收集花朵並避開水浪。",
+      "style": "池塘跳躍動作遊戲",
+      "length": "—",
+      "difficulty": "—",
+      "players": "單人",
+      "platform": "iOS · Android",
+      "offline": "—",
+      "pricing": "—",
+      "languages": "—",
+      "status": "官方網站籌備中"
+    }
   }
 }

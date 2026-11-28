@@ -14,7 +14,7 @@
  "updated_label": "Cập nhật lần cuối",
  "crumb_home": "Trang chủ",
  "home_title": "ipe() Games: ván ngắn vừa một lúc nghỉ",
- "home_desc": "{n} trò chơi nhỏ của ipe(). Ván ngắn, ít luật, không quảng cáo. Cả {n} trò đã có trang web riêng.",
+ "home_desc": "{n} trò chơi nhỏ do ipe() làm. Xem danh mục và ghé những trang chính thức đã mở.",
  "hero_code": "// play(); rest();",
  "hero_h1": "Khi ván chơi kết thúc, hôm nay vậy là đủ.",
  "hero_sub": "Một ván đủ ngắn để chơi xong trong giờ nghỉ của bạn.",
@@ -33,7 +33,7 @@
  "p5_h": "AI chơi công bằng",
  "p5_p": "Lội ngược dòng đến từ luật chơi, không phải từ một đối thủ bị làm yếu đi một cách lén lút.",
  "games_h": "{n} trò chơi",
- "games_lead": "Mỗi trò chơi đều có trang chính thức riêng, và chưa trò nào có trang trên cửa hàng. Mỗi thẻ cho biết trò chơi là gì, bạn sẽ thích điều gì, và nó không dành cho ai.",
+ "games_lead": "Tìm hiểu từng trò chơi qua thẻ bên dưới. Thẻ dẫn đến trang chính thức nếu trang đã mở.",
  "g_likes": "Bạn sẽ thích",
  "g_nots": "Không hợp với bạn nếu",
  "g_visit": "Xem trang chính thức",
@@ -44,7 +44,7 @@
  "g_live": "Sắp ra mắt",
  "compare_h": "So sánh",
  "compare_lead": "Dựa trên trang chính thức của từng trò chơi và kế hoạch hiện tại. Chi tiết có thể thay đổi trước khi ra mắt. Dấu gạch ngang nghĩa là trang không nêu.",
- "compare_note": "Hiện tại, mọi trò chơi của ipe đều chơi một mình, đấu với AI · chưa có trò nào chơi cùng người khác.",
+ "compare_note": "Xem dòng số người chơi để biết chế độ của từng trò.",
  "compare_game": "Trò chơi",
  "row_oneline": "Tóm tắt",
  "row_style": "Thể loại",
@@ -65,7 +65,7 @@
  "choose_5": "Trò chiếm đất nhanh, chơi được khi không có mạng",
  "choose_go": "Xem trò chơi",
  "made_h": "Cách chúng được làm",
- "made_lead": "Phần lớn các trò chơi đều có nhật ký phát triển công khai. Đó cũng là nơi chúng tôi nói thẳng những gì chưa xong hoặc chưa được kiểm tra.",
+ "made_lead": "Đọc nhật ký phát triển để biết những trò chơi này được làm ra như thế nào.",
  "made_now": "Nhật ký phát triển",
  "made_feed": "RSS",
  "made_read": "Đọc quá trình làm",
@@ -99,5 +99,6 @@
  "choose_8": "Trò xếp khối nhẹ nhàng, một tay, lúc hoàng hôn",
  "choose_9": "Trò phân loại bi thủy tinh nhẹ nhàng",
  "choose_10": "Trò chơi trang điểm, trên khuôn mặt hoặc trên ảnh của chính bạn",
- "choose_tentrunk": "Trò giải đố xếp đồ đi cắm trại"
+ "choose_tentrunk": "Trò giải đố xếp đồ đi cắm trại",
+ "choose_shoopa": "Câu đố mũi tên: tìm thứ tự, dọn sạch bàn"
 }

@@ -14,7 +14,7 @@
  "updated_label": "Última atualização",
  "crumb_home": "Início",
  "home_title": "ipe() Games: partidas curtas para uma pausa",
- "home_desc": "{n} jogos pequenos da ipe(). Partidas curtas, poucas regras, sem anúncios. Os {n} já têm site próprio.",
+ "home_desc": "{n} jogos da ipe(). Conheça o catálogo e visite os sites oficiais já publicados.",
  "hero_code": "// play(); rest();",
  "hero_h1": "Quando a partida termina, já basta por hoje.",
  "hero_sub": "Uma partida é curta o bastante para terminar dentro da sua pausa.",
@@ -33,7 +33,7 @@
  "p5_h": "A IA joga limpo",
  "p5_p": "As viradas vêm das regras, não de um oponente enfraquecido em segredo.",
  "games_h": "{n} jogos",
- "games_lead": "Cada jogo tem seu site oficial próprio, e nenhum tem página em loja. Cada cartão mostra o que o jogo é, o que você vai gostar e para quem ele não serve.",
+ "games_lead": "Explore os jogos. Os cartões levam aos sites oficiais que já estão no ar.",
  "g_likes": "O que você vai gostar",
  "g_nots": "Não é para você se",
  "g_visit": "Ver o site oficial",
@@ -44,7 +44,7 @@
  "g_live": "Em breve",
  "compare_h": "Lado a lado",
  "compare_lead": "Segundo o site oficial de cada jogo e os planos atuais. Os detalhes podem mudar antes do lançamento. Um traço significa que o site não informa.",
- "compare_note": "No momento, todos os jogos da ipe são solo, contra uma IA · ainda não há jogos para jogar juntos.",
+ "compare_note": "Veja a linha de jogadores para conhecer o modo de cada jogo.",
  "compare_game": "Jogo",
  "row_oneline": "Em poucas palavras",
  "row_style": "Estilo",
@@ -65,7 +65,7 @@
  "choose_5": "Um jogo rápido de conquistar terra, offline",
  "choose_go": "Ver o jogo",
  "made_h": "Como é feito",
- "made_lead": "A maioria dos jogos mantém um diário público de bastidores. É também onde dizemos, sem rodeios, o que ainda não está pronto ou não foi verificado.",
+ "made_lead": "Veja nos diários de desenvolvimento como esses jogos são feitos.",
  "made_now": "Diário de criação",
  "made_feed": "RSS",
  "made_read": "Ler os bastidores",
@@ -99,5 +99,6 @@
  "choose_8": "Um quebra-cabeça de blocos calmo, com uma mão, ao entardecer",
  "choose_9": "Um quebra-cabeça de ordenar bolinhas, calmo e claro",
  "choose_10": "Um jogo de maquiagem, em um rosto ou na sua própria foto",
- "choose_tentrunk": "Quebra-cabeça de bagagem para acampar"
+ "choose_tentrunk": "Quebra-cabeça de bagagem para acampar",
+ "choose_shoopa": "Um quebra-cabeça de setas: ache a ordem e esvazie o tabuleiro"
 }

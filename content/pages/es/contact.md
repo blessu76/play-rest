@@ -1,7 +1,7 @@
 ---
 title: Contacto
 description: Cómo contactar con ipe() sobre los juegos de play.ipe.rest. Correo de contacto y algunas respuestas.
-updated: 2026-10-31
+updated: 2026-11-28
 ---
 Si tienes una pregunta o una sugerencia, o encontraste algo incorrecto en este sitio, escríbenos por correo electrónico.
 
@@ -11,7 +11,7 @@ Procuramos responder en unos pocos días hábiles.
 
 ## Para un problema de un juego concreto
 
-Cada juego tiene su propio sitio oficial y su propio soporte. Empieza por ahí, desde la tarjeta del juego en la [página de inicio](/es/#games).
+Si el juego tiene sitio oficial, accede desde su [ficha](/es/#games). También puedes escribirnos al correo de arriba.
 
 ## Detalles útiles que puedes incluir
 
@@ -23,7 +23,7 @@ Cada juego tiene su propio sitio oficial y su propio soporte. Empieza por ahí, 
 
 ### ¿Puedo jugar a los juegos?
 
-Sí. Cada juego se juega en su propio sitio oficial, y ninguno tiene página en una tienda. Empieza desde la tarjeta del juego en la [página de inicio](/es/#games).
+Consulta la [ficha del juego](/es/#games) para ver su estado actual y acceder a su sitio oficial cuando esté disponible.
 
 ### ¿Recogen información personal?
 

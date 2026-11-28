@@ -14,7 +14,7 @@
  "updated_label": "Última actualización",
  "crumb_home": "Inicio",
  "home_title": "ipe() Games: partidas cortas para un descanso",
- "home_desc": "{n} juegos pequeños de ipe(). Partidas cortas, pocas reglas, sin anuncios. Los {n} ya tienen su propio sitio.",
+ "home_desc": "{n} pequeños juegos de ipe(). Descubre el catálogo y visita los sitios oficiales que ya están abiertos.",
  "hero_code": "// play(); rest();",
  "hero_h1": "Cuando termina la partida, ya es suficiente por hoy.",
  "hero_sub": "Una partida es tan corta que cabe en tu descanso.",
@@ -33,7 +33,7 @@
  "p5_h": "La IA juega limpio",
  "p5_p": "Las remontadas vienen de las reglas, no de un rival debilitado en secreto.",
  "games_h": "{n} juegos",
- "games_lead": "Cada juego tiene su propio sitio oficial, y ninguno tiene página en una tienda. Cada tarjeta muestra qué es el juego, qué te gustará y para quién no es.",
+ "games_lead": "Explora los juegos. Las fichas enlazan a los sitios oficiales que ya están abiertos.",
  "g_likes": "Lo que te gustará",
  "g_nots": "No es para ti si",
  "g_visit": "Ver el sitio oficial",
@@ -44,7 +44,7 @@
  "g_live": "Próximamente",
  "compare_h": "Lado a lado",
  "compare_lead": "Según el sitio oficial de cada juego y los planes actuales. Los detalles pueden cambiar antes del lanzamiento. Un guion significa que el sitio no lo dice.",
- "compare_note": "Ahora mismo, todos los juegos de ipe son en solitario, contra una IA · todavía no hay juegos para jugar juntos.",
+ "compare_note": "Consulta la fila de jugadores para conocer el modo de cada juego.",
  "compare_game": "Juego",
  "row_oneline": "En pocas palabras",
  "row_style": "Estilo",
@@ -65,7 +65,7 @@
  "choose_5": "Un juego rápido de ganar tierra, sin conexión",
  "choose_go": "Ver el juego",
  "made_h": "Cómo se hace",
- "made_lead": "La mayoría de los juegos mantiene un diario público de su creación. Es también el lugar donde decimos, sin rodeos, qué no está terminado o aún no se ha comprobado.",
+ "made_lead": "Lee los diarios de desarrollo para descubrir cómo se hacen estos juegos.",
  "made_now": "Diario de creación",
  "made_feed": "RSS",
  "made_read": "Leer cómo se hace",
@@ -99,5 +99,6 @@
  "choose_8": "Un puzle de bloques tranquilo, de una mano, al atardecer",
  "choose_9": "Un puzle de clasificar canicas, tranquilo",
  "choose_10": "Un juego de maquillaje, en un rostro o en tu propia foto",
- "choose_tentrunk": "Puzle de equipaje para acampar"
+ "choose_tentrunk": "Puzle de equipaje para acampar",
+ "choose_shoopa": "Un puzle de flechas: encuentra el orden y vacía el tablero"
 }

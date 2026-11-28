@@ -1,13 +1,13 @@
 ---
 title: ipe() Gamesについて
 description: play.ipe.restは、ipe()が作るゲームを集めています。このポータルの役割、ゲームの作り方、作っている人について。
-updated: 2026-10-31
+updated: 2026-11-28
 ---
-play.ipe.restは、**ipe()**（ipe Studio）が作るゲームのホームです。Iltonggi、Inkisle、Sunmeld、Claimball、Patchland、Tottertop、Moss Garden、Dusk Blocks、Bottled Marblesのゲームを1か所に集めています。それぞれに公式サイトがあり、[ホーム](/ja/#games)のカードからリンクしています。
+play.ipe.restは、**ipe()**（ipe Studio）が作るゲームを集めたサイトです。[ゲーム一覧](/ja/#games)から公開済みの公式サイトに移動できます。
 
 ## このポータルの役割
 
-ゲームは、どれも公式サイトで遊べ、ストアページはありません。このサイトは、あえてそう伝えています。各ゲームがどんなものか、どこを気に入りそうか、どんな方には向かないかを示すので、休憩の時間を使う価値があるかどうか、ご自身で判断できます。
+ゲームカードと比較表を見て、休憩時間に合いそうなゲームを探せます。
 
 ## ゲームの作り方
 

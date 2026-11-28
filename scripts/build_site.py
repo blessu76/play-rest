@@ -58,7 +58,8 @@ except ImportError:
 SITE = "https://play.ipe.rest"
 KST = dt.timezone(dt.timedelta(hours=9))
 ASSET_V = "20261114e"  # keep in sync: bump when assets/play.css or play.js change
-SITE_UPDATED = "2026-11-11"  # "Last updated" of home / 404 and sitemap lastmod: bump by hand when their text changes
+SITE_UPDATED = "2026-11-11"  # Last edited date for shared pages without their own source date.
+HOME_UPDATED = "2026-11-28"  # Last edited date for the home catalog, independent of the journal.
 OPERATOR = "Davy Kim (ipe Studio)"
 TERMS_URL = "https://ipe.rest/legal/terms/"  # the common ipe() terms; the portal has no terms page of its own
 EMAIL = "ipe.haven@gmail.com"
@@ -118,11 +119,12 @@ HOME_CARDS = 3
 EXCERPT_MAX = 200
 # order = how soon you can touch the game (hub-0009, Davy 2026-11-13): TestFlight builds in progress first, then in development
 GAME_IDS = ("iltonggi", "inkisle", "patchland", "claimball", "sunmeld", "tottertop", "mossgarden", "duskblocks", "bottledmarbles",
-            "tentrunk", "blushlab", "todaydate")
+            "tentrunk", "blushlab", "todaydate", "mongsil", "petalrampart", "stampost", "shoopa",
+            "strawmaze", "acornvoy", "railthump", "pongdang")
 # the "which one fits" lines (choose_N in i18n) belong to a game, not to a position in the list
 CHOOSE_KEY = {"iltonggi": "choose_1", "inkisle": "choose_2", "sunmeld": "choose_3", "claimball": "choose_4", "patchland": "choose_5",
               "tottertop": "choose_6", "mossgarden": "choose_7", "duskblocks": "choose_8", "bottledmarbles": "choose_9",
-              "blushlab": "choose_10", "tentrunk": "choose_tentrunk"}
+              "blushlab": "choose_10", "tentrunk": "choose_tentrunk", "shoopa": "choose_shoopa"}
 # which games keep which principle (docs ch.2). Sunmeld has no public round length, so it is not listed under principle 1.
 # Tottertop (a round is about a minute) and Moss Garden (a short drop-in tending) keep principle 1; the two TestFlight games
 # (Dusk Blocks, Bottled Marbles) and Blushlab (in development) are not listed under 1/2/3 yet (unverified). Principle 4 (say
@@ -152,7 +154,7 @@ KEYS = (
     "games_h games_lead g_likes g_nots g_visit g_terms g_blog g_status g_prerelease g_live "
     "compare_h compare_lead compare_note compare_game row_oneline row_style row_length row_difficulty row_players "
     "row_platform row_offline row_pricing row_languages row_status "
-    "choose_h choose_lead choose_1 choose_2 choose_3 choose_4 choose_5 choose_6 choose_7 choose_8 choose_9 choose_10 choose_tentrunk choose_go "
+    "choose_h choose_lead choose_1 choose_2 choose_3 choose_4 choose_5 choose_6 choose_7 choose_8 choose_9 choose_10 choose_tentrunk choose_shoopa choose_go "
     "made_h made_lead made_now made_feed made_read ipe_h ipe_p ipe_studio ipe_music ipe_contact "
     "footer_line footer_code footer_tm footer_site footer_about footer_terms nf_h nf_p "
     "journal_h journal_lead journal_all journal_empty journal_desc journal_rss journal_back journal_feed_title"
@@ -505,19 +507,28 @@ def load_games(root):
             _bilingual(g.get(k), "%s %s" % (tag, k), errs)
         s = g.get("site")
         site_url = s.get("url") if isinstance(s, dict) else None
+        site_host = r"https://%s\.ipe\.rest(?:/[^\s]*)?" % re.escape(str(g.get("id", "")))
         if not isinstance(s, dict) or not isinstance(site_url, str) or not isinstance(s.get("live"), bool):
             errs.append("%s: site must be an object with url (string) and live (boolean)" % tag)
-        elif not re.match(r"^https://%s\.ipe\.rest(?:/|\Z)" % re.escape(str(g.get("id", ""))), site_url):
+        elif not re.fullmatch(site_host, site_url):
             errs.append("%s: site url must be https://%s.ipe.rest (the game's own site, never a store)" % (tag, g.get("id")))
         else:
             for key in ("localized", "localized_paths"):
                 if not isinstance(s.get(key, False), bool):
                     errs.append("%s: site.%s must be a boolean" % (tag, key))
+            pages = s.get("pages", {})
+            if not isinstance(pages, dict) or any(
+                l not in {SRC_OF.get(lang, lang) for lang in LANGS if lang != SOURCE_LANG}
+                or not isinstance(href, str) or not re.fullmatch(site_host, href)
+                for l, href in pages.items()
+            ):
+                errs.append("%s: site.pages must map supported non-English source languages to the game's own site" % tag)
         if not (Path(root) / "assets" / "games" / str(g.get("icon", "-"))).is_file():
             errs.append("%s: icon file missing" % tag)
         if not (isinstance(g.get("accent"), list) and len(g["accent"]) == 2 and all(re.match(r"^#[0-9a-fA-F]{6}$", c) for c in g["accent"])):
             errs.append("%s: accent must be two #rrggbb colors" % tag)
-        for key, want in (("pros", 3), ("cons", 2)):
+        brief = g.get("pros") == [] and g.get("cons") == []
+        for key, want in (("pros", 0 if brief else 3), ("cons", 0 if brief else 2)):
             items = g.get(key)
             if not isinstance(items, list) or len(items) != want:
                 errs.append("%s: %s needs %d items" % (tag, key, want)); continue
@@ -751,8 +762,10 @@ def website_ld(lang):
 
 
 def game_ld(g, lang):
-    # confirmed facts only: no offers, no ratings, no release date (none of the games is out)
-    return {"@type": "VideoGame", "@id": SITE + "/#" + g["id"], "name": g["name"]["en"], "url": g["site"]["url"],
+    # Confirmed facts only. A game without a public site is still listed on the hub.
+    site = g["site"]
+    return {"@type": "VideoGame", "@id": SITE + "/#" + g["id"], "name": g["name"]["en"],
+            **({"url": site["url"]} if site["live"] else {}),
             "description": g["tagline"][lang], "inLanguage": lang, "genre": g["genre"],
             "applicationCategory": "GameApplication", "gamePlatform": g["platforms"],
             "image": SITE + game_icon(g), "creator": {"@id": ORG_ID}, "publisher": {"@id": ORG_ID}}
@@ -772,19 +785,26 @@ def game_card(ctx, lang, g):
     t = lambda k: ctx.t(lang, k)  # noqa: E731
     pros = "".join("<li><strong>%s</strong> %s</li>" % (esc(x["h"][lang]), esc(x["p"][lang])) for x in g["pros"])
     cons = "".join("<li><strong>%s</strong> %s</li>" % (esc(x["h"][lang]), esc(x["p"][lang])) for x in g["cons"])
+    details = ('<div class="cols"><div><h4>%s</h4><ol>%s</ol></div><div><h4>%s</h4><ol>%s</ol></div></div>' %
+               (esc(t("g_likes")), pros, esc(t("g_nots")), cons)) if pros else ""
+    pricing = g["pricing"][lang]
+    price = '<p class="price mono">%s</p>' % esc(pricing) if pricing != "—" else ""
     j = g.get("journal")
     # the visit button renders only while site.live is true: the url is always in the data, so a site that is not up yet
     # needs no change besides flipping the flag when it goes live
     links = []
-    if g["site"]["live"]:
-        url = g["site"]["url"]
-        if lang != SOURCE_LANG:
-            if g["site"].get("localized"):
+    site = g["site"]
+    if site["live"]:
+        url, attrs, mark = site["url"], "", ""
+        if "pages" in site:
+            url, attrs, mark = loc_link(ctx, {SOURCE_LANG: url, **site["pages"]}, lang)
+        elif lang != SOURCE_LANG:
+            if site.get("localized"):
                 url = f"{url.rstrip('/')}/{lang}/"
-            elif g["site"].get("localized_paths"):
+            elif site.get("localized_paths"):
                 url = f"{url.rstrip('/')}/{lang.lower()}/"
-        links.append('<a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card">%s: %s <span aria-hidden="true">→</span></a>' % (
-            esc(url), esc(g["id"]), esc(t("g_visit")), esc(g["name"][lang])))
+        links.append('<a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card"%s>%s: %s <span aria-hidden="true">→</span></a>' % (
+            esc(url), esc(g["id"]), attrs, esc(t("g_visit")), esc(g["name"][lang] + mark)))
     if j:
         h, a, m = loc_link(ctx, j["url"], lang)
         links.append('<a class="textlink" href="%s" rel="noopener"%s>%s</a>' % (esc(h), a, esc("%s: %s%s" % (j["label"][lang], t("g_blog"), m))))
@@ -793,17 +813,16 @@ def game_card(ctx, lang, g):
             h, a, m = loc_link(ctx, g[key], lang)
             links.append('<a class="textlink" href="%s" rel="noopener"%s>%s</a>' % (esc(h), a, esc(t(label) + m)))
     sub = g["sub"][lang] if g["sub"][lang] != g["name"][lang] else ""
-    live = g["site"]["live"]
+    live = site["live"]
     status = t("g_live") if live else g["status"][lang]
-    pre = "" if live or g["status"]["en"] == "Coming soon" else '<span class="badge pre">%s</span> ' % esc(t("g_prerelease"))
+    pre = "" if live or not details or g["status"]["en"] == "Coming soon" else '<span class="badge pre">%s</span> ' % esc(t("g_prerelease"))
     return ('<article class="game" id="%s" style="--a:%s;--a2:%s"><header class="game-head"><img class="game-icon" src="%s" width="64" height="64" alt="">'
             '<div><h3>%s</h3>%s<p class="meta"><span class="badge">%s</span> %s<span class="plat">%s</span></p></div></header>'
-            '<p class="tagline">%s</p><p class="price mono">%s</p>'
-            '<div class="cols"><div><h4>%s</h4><ol>%s</ol></div><div><h4>%s</h4><ol>%s</ol></div></div>%s</article>') % (
+            '<p class="tagline">%s</p>%s%s%s</article>') % (
         g["id"], g["accent"][0], g["accent"][1], esc(game_icon(g)), esc(g["name"][lang]),
         ('<p class="sub">%s</p>' % esc(sub)) if sub else "", esc(status),
         pre, esc(g["platform"][lang]),
-        esc(g["tagline"][lang]), esc(g["pricing"][lang]), esc(t("g_likes")), pros, esc(t("g_nots")), cons,
+        esc(g["tagline"][lang]), price, details,
         ('<p class="links">%s</p>' % " ".join(links)) if links else "")
 
 
@@ -815,12 +834,16 @@ def compare_cell(ctx, g, row, lang):
 
 def compare_html(ctx, lang):
     t = lambda k: ctx.t(lang, k)  # noqa: E731
-    head = "".join('<th scope="col" style="--a:%s;--a2:%s">%s</th>' % (g["accent"][0], g["accent"][1], esc(g["name"][lang])) for g in ctx.games)
+    row_heading = ' style="position:sticky;left:0;background:var(--bg)"'
+    head = "".join('<th scope="col" style="--a:%s;--a2:%s;min-width:9rem">%s</th>' % (
+        g["accent"][0], g["accent"][1], esc(g["name"][lang])) for g in ctx.games)
     rows = ""
     for r in COMPARE_ROWS:
-        rows += '<tr><th scope="row">%s</th>%s</tr>' % (esc(t("row_" + r)), "".join("<td>%s</td>" % esc(compare_cell(ctx, g, r, lang)) for g in ctx.games))
-    table = ('<div class="cmp-wide"><table class="cmp"><caption class="sr-only">%s</caption><thead><tr><th scope="col"><span class="sr-only">%s</span></th>%s</tr></thead>'
-             '<tbody>%s</tbody></table></div>') % (esc(t("compare_h")), esc(t("compare_game")), head, rows)
+        rows += '<tr><th scope="row"%s>%s</th>%s</tr>' % (
+            row_heading, esc(t("row_" + r)), "".join("<td>%s</td>" % esc(compare_cell(ctx, g, r, lang)) for g in ctx.games))
+    table = ('<div class="cmp-wide" role="region" aria-label="%s" tabindex="0"><table class="cmp"><caption class="sr-only">%s</caption>'
+             '<thead><tr><th scope="col"%s><span class="sr-only">%s</span></th>%s</tr></thead>'
+             '<tbody>%s</tbody></table></div>') % (esc(t("compare_h")), esc(t("compare_h")), row_heading, esc(t("compare_game")), head, rows)
     cards = ""
     for g in ctx.games:
         dl = "".join("<div><dt>%s</dt><dd>%s</dd></div>" % (esc(t("row_" + r)), esc(compare_cell(ctx, g, r, lang))) for r in COMPARE_ROWS)
@@ -877,7 +900,7 @@ def build_home(ctx, lang):
 
 
 def home_updated(ctx, lang):
-    return max([SITE_UPDATED] + [p["langs"][lang]["updated"] for p in ctx.posts_in(lang)])
+    return max([HOME_UPDATED] + [p["langs"][lang]["updated"] for p in ctx.posts_in(lang)])
 
 
 def post_card(lang, p):
@@ -1039,20 +1062,20 @@ def build_robots():
 def build_llms(ctx):
     en = ctx.i18n["en"]
     ngames = len(ctx.games)
+    public_sites = sum(g["site"]["live"] for g in ctx.games)
     rows = ["# ipe() Games", "", "> %s" % ctx.t("en", "home_desc"), "",
-            "play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects %d games in one place and links to each game's own "
-            "official site. All %d games are coming soon: each has its own introduction site, and most are at the iOS TestFlight stage. None has had a full release yet: no store page or release date is set for any of them. This portal has no accounts "
-            "or ads, collects only basic visit statistics through Google Analytics, and has no terms of its own: the footer links to the common ipe() terms, and each game's site has its own terms. It has a journal with notes on turn-based games, "
-            "killing-time games and how ipe() makes games." % (ngames, ngames), "",
+            "play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It lists %d games and links to %d official game sites. "
+            "The portal has no accounts or ads and collects only basic visit statistics through Google Analytics. The footer links to the common ipe() terms. "
+            "The journal covers turn-based games, games for short breaks and how ipe() makes games." % (ngames, public_sites), "",
             "## The games", ""]
     for g in ctx.games:
-        # a site that is not up yet (site.live false) is listed without a link until the flag flips
-        if g["site"]["live"]:
-            rows.append("- [%s](%s): %s Status: %s. Platform: %s. Pricing: %s." % (
-                g["name"]["en"], g["site"]["url"], g["tagline"]["en"], ctx.t("en", "g_live"), g["platform"]["en"], g["pricing"]["en"].rstrip(".")))
-        else:
-            rows.append("- %s: %s Status: %s. Platform: %s. Pricing: %s. (Site not up yet.)" % (
-                g["name"]["en"], g["tagline"]["en"], g["status"]["en"], g["platform"]["en"], g["pricing"]["en"].rstrip(".")))
+        name, site = g["name"]["en"], g["site"]
+        title = "[%s](%s)" % (name, site["url"]) if site["live"] else name
+        status = ctx.t("en", "g_live") if site["live"] else g["status"]["en"]
+        pricing = g["pricing"]["en"]
+        price = " Pricing: %s." % pricing.rstrip(".") if pricing != "—" else ""
+        rows.append("- %s: %s Status: %s. Platform: %s.%s" % (
+            title, g["tagline"]["en"], status, g["platform"]["en"].rstrip("."), price))
     rows += ["", "## How ipe makes games", ""]
     for n in range(1, 6):
         rows.append("- %s: %s" % (en["p%d_h" % n], en["p%d_p" % n]))

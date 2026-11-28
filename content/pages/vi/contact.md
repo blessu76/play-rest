@@ -1,7 +1,7 @@
 ---
 title: Liên hệ
 description: Cách liên hệ với ipe() về các trò chơi trên play.ipe.rest. Email liên hệ và một vài câu trả lời.
-updated: 2026-10-31
+updated: 2026-11-28
 ---
 Nếu bạn có câu hỏi hay góp ý, hoặc phát hiện điều gì sai trên trang này, hãy viết email cho chúng tôi.
 
@@ -11,7 +11,7 @@ Chúng tôi cố gắng trả lời trong vòng vài ngày làm việc.
 
 ## Với vấn đề của một trò chơi cụ thể
 
-Mỗi trò chơi có trang chính thức và bộ phận hỗ trợ riêng. Hãy bắt đầu từ đó, qua thẻ của trò chơi trên [trang chủ](/vi/#games).
+Nếu trò chơi có trang chính thức, bạn có thể mở trang từ [thẻ trò chơi](/vi/#games). Bạn cũng có thể gửi email theo địa chỉ bên trên.
 
 ## Những thông tin hữu ích nên kèm theo
 
@@ -23,7 +23,7 @@ Mỗi trò chơi có trang chính thức và bộ phận hỗ trợ riêng. Hãy
 
 ### Có thể chơi các trò chơi không?
 
-Có. Mỗi trò chơi chơi trên trang chính thức của nó, và chưa trò nào có trang trên cửa hàng. Bắt đầu từ thẻ của trò chơi trên [trang chủ](/vi/#games).
+Xem trạng thái hiện tại trên [thẻ trò chơi](/vi/#games). Khi trang chính thức mở, thẻ sẽ có liên kết.
 
 ### Các bạn có thu thập thông tin cá nhân không?
 

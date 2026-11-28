@@ -506,5 +506,253 @@
    "languages": "—",
    "status": "近日公開"
   }
+ },
+ "mongsil": {
+  "status": "iOS TestFlight ベータ版",
+  "platform": "iOS TestFlight配信中、Androidは後日",
+  "pricing": "アプリ内課金あり、広告なし。",
+  "tagline": "Mongsilにごはんをあげ、一緒に遊び、寝かしつけましょう。お世話が必要になると、Mongsilは眠ります。",
+  "pros": [
+   {
+    "h": "自分のペースでお世話。",
+    "p": "離れている間にお世話が必要になると、Mongsilは眠ります。"
+   },
+   {
+    "h": "Mongsilを知っていく。",
+    "p": "お世話の仕方でMongsilの性格が変わり、一緒に過ごした時間が記録に残ります。"
+   },
+   {
+    "h": "アカウント不要。",
+    "p": "基本のお世話はオフラインででき、進み具合は端末に保存されます。"
+   }
+  ],
+  "cons": [
+   {
+    "h": "ストア版を待っている方へ。",
+    "p": "iOS版はTestFlightでベータテスト中です。ストアでの配信は準備中です。"
+   },
+   {
+    "h": "みんなで遊びたい方へ。",
+    "p": "Mongsilは一人でペットをお世話するゲームです。"
+   }
+  ],
+  "compare": {
+   "oneline": "小さなペットのお世話",
+   "style": "ペット育成シミュレーション",
+   "length": "—",
+   "difficulty": "—",
+   "players": "1人",
+   "platform": "iOS TestFlight配信中、Androidは後日",
+   "offline": "基本のお世話はオフラインで可能",
+   "pricing": "アプリ内課金あり、広告なし。",
+   "languages": "—",
+   "status": "iOS TestFlight ベータ版"
+  }
+ },
+ "petalrampart": {
+  "status": "TestFlight",
+  "platform": "iPhone・iPad",
+  "pricing": "価格はApp Storeで現地通貨で表示されます。広告はありません。",
+  "tagline": "野ネズミからゾウまで、動物たちが土の道を通って庭に向かいます。道のそばにタワーを置き、同じタワーを合体させて花を守りましょう。",
+  "pros": [
+   {
+    "h": "土の道を見よう",
+    "p": "動物が通る土の道に沿ってタワーを置きます。どのマスに何を置くかが作戦の要です。"
+   },
+   {
+    "h": "合体で強化",
+    "p": "種類もレベルも同じタワーを二つ合わせると、レベルが一つ上がります。上限はレベル7です。"
+   },
+   {
+    "h": "守る庭",
+    "p": "基本の庭は3つとも無料。1つ守り切ると次の庭が開きます。"
+   }
+  ],
+  "cons": [
+   {
+    "h": "一般公開をお待ちの方へ",
+    "p": "iOSの社内TestFlightでテスト中です。"
+   },
+   {
+    "h": "対戦や協力プレイをお探しの方へ",
+    "p": "庭を守るゲームは一人用です。"
+   }
+  ],
+  "compare": {
+   "oneline": "庭を守るタワーディフェンス",
+   "style": "3種類のタワー",
+   "length": "—",
+   "difficulty": "—",
+   "players": "1人",
+   "platform": "iPhone・iPad",
+   "offline": "—",
+   "pricing": "価格はApp Storeで現地通貨で表示されます。広告はありません。",
+   "languages": "12",
+   "status": "TestFlight"
+  }
+ },
+ "stampost": {
+  "status": "近日公開",
+  "platform": "iOS (社内 TestFlight) · Android",
+  "pricing": "価格は後日発表",
+  "tagline": "同じスタンプを押して、まとめて配達。",
+  "pros": [
+   {
+    "h": "スタンプで仕分け",
+    "p": "先頭の封筒と同じスタンプをタップします。"
+   },
+   {
+    "h": "1ラウンド45秒",
+    "p": "同じ柄が続く封筒をまとめて送ると、得点がアップします。"
+   },
+   {
+    "h": "オフラインでも遊べますか？",
+    "p": "モバイル版はオフラインで遊べ、広告はありません。"
+   }
+  ],
+  "cons": [
+   {
+    "h": "すばやい判断",
+    "p": "待ち列が6通を超えると郵便局が閉まります。 フィーバー中は入りきらない手紙だけがスキップされます。"
+   },
+   {
+    "h": "押し間違い",
+    "p": "間違えると2点減ります。スコアは0点より下がりません。"
+   }
+  ],
+  "compare": {
+   "oneline": "同じスタンプを押して、まとめて配達。",
+   "style": "郵便の仕分け",
+   "length": "1ラウンド45秒",
+   "difficulty": "すばやい判断",
+   "players": "1人",
+   "platform": "iOS (社内 TestFlight) · Android",
+   "offline": "アプリ版で対応",
+   "pricing": "価格は後日発表",
+   "languages": "12言語",
+   "status": "近日公開"
+  }
+ },
+ "shoopa": {
+  "status": "近日公開",
+  "platform": "iOS TestFlight・Androidでテスト中",
+  "pricing": "無料で遊べて、広告はありません。ブロックの見た目を変えるアプリ内購入（任意）があります。",
+  "tagline": "矢印の先が空いたブロックをタップして取り出しましょう。順番を考えながら盤面を空にするパズルです。",
+  "pros": [
+   {
+    "h": "出口までの道を探す",
+    "p": "矢印の先から盤面の端まで空いていれば、ブロックを取り出せます。"
+   },
+   {
+    "h": "0.9秒でコンボ",
+    "p": "ブロックを外してから0.9秒以内に次のブロックを外すと、コンボが続きます。道がふさがれているブロックをタップすると、コンボが途切れます。"
+   },
+   {
+    "h": "ハート3つ、ヒント2つ",
+    "p": "道がふさがれたブロックを押すとハートが1つ減ります。同じ盤面には無料で再挑戦できます。"
+   }
+  ],
+  "cons": [
+   {
+    "h": "ブラウザーで遊びたい方。",
+    "p": "ブラウザ版は準備中です。今はiOSとAndroidのテスト版で遊べます。"
+   },
+   {
+    "h": "完成した機能一覧が見たい方。",
+    "p": "まだテスト中なので、公開までに機能がかわることがあります。"
+   }
+  ],
+  "compare": {
+   "oneline": "矢印ブロックを外すパズル",
+   "style": "矢印タップパズル",
+   "length": "—",
+   "difficulty": "—",
+   "players": "一人用",
+   "platform": "iOS TestFlight・Androidでテスト中",
+   "offline": "—",
+   "pricing": "無料で遊べて、広告はありません。ブロックの見た目を変えるアプリ内購入（任意）があります。",
+   "languages": "—",
+   "status": "近日公開。TestFlight・Androidでテスト中"
+  }
+ },
+ "strawmaze": {
+  "status": "公式サイト準備中",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "柵とかかしで迷路を作り、ニンジンを守りましょう。",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "柵とかかしで迷路を作り、ニンジンを守りましょう。",
+   "style": "迷路づくりタワーディフェンス",
+   "length": "—",
+   "difficulty": "—",
+   "players": "1人",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "公式サイト準備中"
+  }
+ },
+ "acornvoy": {
+  "status": "公式サイト準備中",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "リスをフクロウの塔の先へ送り、日が暮れる前にドングリを持ち帰りましょう。",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "リスをフクロウの塔の先へ送り、日が暮れる前にドングリを持ち帰りましょう。",
+   "style": "逆タワーディフェンス",
+   "length": "—",
+   "difficulty": "—",
+   "players": "1人",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "公式サイト準備中"
+  }
+ },
+ "railthump": {
+  "status": "公式サイト準備中",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "加速するトロッコで3本のレールを切り替え、木箱を連続で壊しながら岩をよけましょう。",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "加速するトロッコで3本のレールを切り替え、木箱を連続で壊しながら岩をよけましょう。",
+   "style": "トロッコアクション",
+   "length": "—",
+   "difficulty": "—",
+   "players": "1人",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "公式サイト準備中"
+  }
+ },
+ "pongdang": {
+  "status": "公式サイト準備中",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "流れるハスの葉を跳び渡り、花を集めて波をよけましょう。",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "流れるハスの葉を跳び渡り、花を集めて波をよけましょう。",
+   "style": "池のジャンプアクション",
+   "length": "—",
+   "difficulty": "—",
+   "players": "1人",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "公式サイト準備中"
+  }
  }
 }

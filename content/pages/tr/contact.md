@@ -1,7 +1,7 @@
 ---
 title: İletişim
 description: play.ipe.rest üzerindeki oyunlar hakkında ipe()'ye nasıl ulaşılır. İletişim e-postası ve birkaç yanıt.
-updated: 2026-10-31
+updated: 2026-11-28
 ---
 Bir sorunuz ya da öneriniz varsa veya bu sitede yanlış bir şey bulduysanız, lütfen bize e-postayla yazın.
 
@@ -11,7 +11,7 @@ Birkaç iş günü içinde yanıt vermeyi hedefliyoruz.
 
 ## Oyuna özgü bir sorun için
 
-Her oyunun kendi resmî sitesi ve kendi desteği vardır. Lütfen oradan başlayın; [ana sayfadaki](/#games) oyunun kartından ulaşabilirsiniz.
+Oyunun resmî sitesi açıksa [oyun kartından](/tr/#games) ulaşabilirsiniz. Yukarıdaki e-posta adresinden de bize yazabilirsiniz.
 
 ## Eklemeniz yararlı olacak ayrıntılar
 
@@ -23,7 +23,7 @@ Her oyunun kendi resmî sitesi ve kendi desteği vardır. Lütfen oradan başlay
 
 ### Oyunlardan herhangi birini şimdiden oynayabilir miyim?
 
-Henüz değil. Beş oyunun hiçbiri yayımlanmadı ve hiçbirinin mağaza sayfası yok. Her oyunun durumu [ana sayfadaki](/#games) kartında yer alır.
+Güncel durumu [oyun kartında](/tr/#games) bulabilirsiniz. Resmî site açıldığında bağlantı kartta görünür.
 
 ### Kişisel bilgi topluyor musunuz?
 

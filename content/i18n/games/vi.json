@@ -506,5 +506,253 @@
    "languages": "—",
    "status": "Sắp ra mắt"
   }
+ },
+ "mongsil": {
+  "status": "Bản beta iOS trên TestFlight",
+  "platform": "iOS TestFlight đã có, Android sau",
+  "pricing": "Có giao dịch mua trong ứng dụng. Không quảng cáo.",
+  "tagline": "Cho Mongsil ăn, chơi cùng và dỗ bé ngủ. Bé sẽ ngủ thiếp đi khi cần được chăm sóc.",
+  "pros": [
+   {
+    "h": "Chăm sóc theo nhịp của bạn.",
+    "p": "Nếu cần được chăm sóc khi bạn vắng mặt, Mongsil sẽ ngủ thiếp đi."
+   },
+   {
+    "h": "Làm quen với Mongsil.",
+    "p": "Cách bạn chăm sóc định hình tính cách của Mongsil. Trò chơi lưu lại thời gian hai bạn ở bên nhau."
+   },
+   {
+    "h": "Chơi mà không cần tài khoản.",
+    "p": "Bạn có thể chăm sóc cơ bản khi không có mạng. Tiến độ được lưu trên thiết bị."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Nếu bạn đang đợi bản trên cửa hàng.",
+    "p": "Bản iOS đang thử nghiệm beta trên TestFlight. Bản phát hành trên cửa hàng đang được chuẩn bị."
+   },
+   {
+    "h": "Nếu bạn muốn chơi cùng người khác.",
+    "p": "Mongsil là trò chơi chăm sóc thú cưng dành cho một người."
+   }
+  ],
+  "compare": {
+   "oneline": "Chăm sóc một bé thú cưng",
+   "style": "Mô phỏng chăm sóc thú cưng",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Một người",
+   "platform": "iOS TestFlight đã có, Android sau",
+   "offline": "Chăm sóc cơ bản khi không có mạng",
+   "pricing": "Có giao dịch mua trong ứng dụng. Không quảng cáo.",
+   "languages": "—",
+   "status": "Bản beta iOS trên TestFlight"
+  }
+ },
+ "petalrampart": {
+  "status": "TestFlight",
+  "platform": "iPhone và iPad",
+  "pricing": "App Store hiển thị giá bằng tiền địa phương. Trò chơi không có quảng cáo.",
+  "tagline": "Từ chuột đồng đến voi, các loài thú men theo đường đất về phía khu vườn. Hãy đặt tháp ven đường, gộp các tháp giống nhau và bảo vệ từng bông hoa.",
+  "pros": [
+   {
+    "h": "Phòng thủ ven đường",
+    "p": "Đặt tháp ở các ô cạnh đường đất. Chọn tháp phù hợp cho từng ô là phần quan trọng của chiến thuật."
+   },
+   {
+    "h": "Gộp để nâng cấp",
+    "p": "Gộp hai tháp cùng loại và cùng cấp để tăng một cấp, tối đa cấp 7."
+   },
+   {
+    "h": "Những khu vườn cần bảo vệ",
+    "p": "Ba vườn cơ bản đều miễn phí. Bảo vệ một vườn để mở vườn kế tiếp."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Bạn tìm bản tải xuống công khai?",
+    "p": "Bản iOS đang được thử nghiệm nội bộ qua TestFlight."
+   },
+   {
+    "h": "Bạn muốn chơi cùng người khác?",
+    "p": "Đây là trò phòng thủ vườn dành cho một người."
+   }
+  ],
+  "compare": {
+   "oneline": "Trò chơi thủ tháp trong vườn",
+   "style": "Ba loại tháp",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Một người",
+   "platform": "iPhone và iPad",
+   "offline": "—",
+   "pricing": "App Store hiển thị giá bằng tiền địa phương. Trò chơi không có quảng cáo.",
+   "languages": "12",
+   "status": "TestFlight"
+  }
+ },
+ "stampost": {
+  "status": "Sắp ra mắt",
+  "platform": "iOS (TestFlight nội bộ) · Android",
+  "pricing": "Giá sẽ được công bố sau",
+  "tagline": "Ghép đúng dấu, gửi thư ngay.",
+  "pros": [
+   {
+    "h": "Phân loại theo dấu",
+    "p": "Chạm con dấu trùng với phong bì đầu hàng."
+   },
+   {
+    "h": "45 giây mỗi lượt",
+    "p": "Gửi cùng lúc các phong bì liền nhau có cùng dấu để nhận thêm điểm."
+   },
+   {
+    "h": "Tôi có thể chơi ngoại tuyến không?",
+    "p": "Trò chơi trên điện thoại chơi được ngoại tuyến và không có quảng cáo."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Quyết định nhanh",
+    "p": "Bưu điện đóng cửa nếu hàng chờ vượt quá sáu lá thư."
+   },
+   {
+    "h": "Chạm nhầm",
+    "p": "Chạm sai bị trừ 2 điểm. Điểm của bạn không bao giờ xuống dưới 0."
+   }
+  ],
+  "compare": {
+   "oneline": "Ghép đúng dấu, gửi thư ngay.",
+   "style": "Phân loại thư",
+   "length": "45 giây mỗi lượt",
+   "difficulty": "Quyết định nhanh",
+   "players": "Một người chơi",
+   "platform": "iOS (TestFlight nội bộ) · Android",
+   "offline": "Có, trên ứng dụng",
+   "pricing": "Giá sẽ được công bố sau",
+   "languages": "12 ngôn ngữ",
+   "status": "Sắp ra mắt"
+  }
+ },
+ "shoopa": {
+  "status": "Sắp ra mắt",
+  "platform": "iOS TestFlight và đang thử nghiệm trên Android",
+  "pricing": "Chơi miễn phí, không quảng cáo. Có một gói mua tùy chọn trong ứng dụng để đổi giao diện khối.",
+  "tagline": "Chạm vào khối khi đường theo hướng mũi tên đã thông. Tìm đúng thứ tự để dọn sạch bàn, từng khối một.",
+  "pros": [
+   {
+    "h": "Tìm đường thông",
+    "p": "Khối có thể rời bàn khi tất cả ô theo hướng mũi tên đến mép bàn đều trống."
+   },
+   {
+    "h": "Nối chuỗi trong 0,9 giây",
+    "p": "Gỡ khối tiếp theo trong vòng 0,9 giây để nối chuỗi. Chạm vào khối bị chắn sẽ làm đứt chuỗi."
+   },
+   {
+    "h": "Ba trái tim, hai gợi ý",
+    "p": "Chạm vào khối bị chắn sẽ mất một trái tim. Bạn có thể chơi lại bàn đó miễn phí."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Nếu bạn muốn chơi trên trình duyệt.",
+    "p": "Bản web đang được chuẩn bị. Hiện bạn có thể chơi qua bản thử nghiệm trên iOS và Android."
+   },
+   {
+    "h": "Nếu bạn muốn một danh sách tính năng đã hoàn tất.",
+    "p": "Nó vẫn đang trong giai đoạn thử nghiệm, nên các tính năng có thể thay đổi trước khi phát hành."
+   }
+  ],
+  "compare": {
+   "oneline": "Giải đố gỡ khối mũi tên",
+   "style": "Giải đố chạm mũi tên",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Một người chơi",
+   "platform": "iOS TestFlight và đang thử nghiệm trên Android",
+   "offline": "—",
+   "pricing": "Chơi miễn phí, không quảng cáo. Có một gói mua tùy chọn trong ứng dụng để đổi giao diện khối.",
+   "languages": "—",
+   "status": "Sắp ra mắt. TestFlight và đang thử nghiệm trên Android"
+  }
+ },
+ "strawmaze": {
+  "status": "Đang chuẩn bị trang chính thức",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Dùng hàng rào và bù nhìn để tạo mê cung bảo vệ cà rốt.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Dùng hàng rào và bù nhìn để tạo mê cung bảo vệ cà rốt.",
+   "style": "Thủ thành xây mê cung",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Một người chơi",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Đang chuẩn bị trang chính thức"
+  }
+ },
+ "acornvoy": {
+  "status": "Đang chuẩn bị trang chính thức",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Đưa sóc vượt qua tháp cú để mang quả sồi về kho trước khi mặt trời lặn.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Đưa sóc vượt qua tháp cú để mang quả sồi về kho trước khi mặt trời lặn.",
+   "style": "Thủ thành đảo ngược",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Một người chơi",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Đang chuẩn bị trang chính thức"
+  }
+ },
+ "railthump": {
+  "status": "Đang chuẩn bị trang chính thức",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Đổi giữa ba đường ray, phá liên tiếp các thùng gỗ và né đá khi xe mỏ tăng tốc.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Đổi giữa ba đường ray, phá liên tiếp các thùng gỗ và né đá khi xe mỏ tăng tốc.",
+   "style": "Hành động xe mỏ",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Một người chơi",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Đang chuẩn bị trang chính thức"
+  }
+ },
+ "pongdang": {
+  "status": "Đang chuẩn bị trang chính thức",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Nhảy qua những lá sen đang trôi, nhặt hoa và tránh sóng.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Nhảy qua những lá sen đang trôi, nhặt hoa và tránh sóng.",
+   "style": "Nhảy qua ao sen",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Một người chơi",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Đang chuẩn bị trang chính thức"
+  }
  }
 }

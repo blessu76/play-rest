@@ -15,9 +15,14 @@ GAMES = {"iltonggi": "https://iltonggi.ipe.rest", "inkisle": "https://inkisle.ip
          "mossgarden": "https://mossgarden.ipe.rest", "duskblocks": "https://duskblocks.ipe.rest",
          "bottledmarbles": "https://bottledmarbles.ipe.rest",
          "tentrunk": "https://tentrunk.ipe.rest",
-         "blushlab": "https://blushlab.ipe.rest", "todaydate": "https://todaydate.ipe.rest"}
-NOT_LIVE = ()
+         "blushlab": "https://blushlab.ipe.rest", "todaydate": "https://todaydate.ipe.rest",
+         "mongsil": "https://mongsil.ipe.rest/en/", "petalrampart": "https://petalrampart.ipe.rest",
+         "stampost": "https://stampost.ipe.rest", "shoopa": "https://shoopa.ipe.rest",
+         "strawmaze": "https://strawmaze.ipe.rest", "acornvoy": "https://acornvoy.ipe.rest",
+         "railthump": "https://railthump.ipe.rest", "pongdang": "https://pongdang.ipe.rest"}
+NOT_LIVE = ("strawmaze", "acornvoy", "railthump", "pongdang")
 LIVE = [gid for gid in GAMES if gid not in NOT_LIVE]
+LOCALIZED = ("tentrunk", "stampost", "shoopa")
 NOT_RELEASED_PHRASES = {
     "*": ("None is released", "None of them is released", "none is released"),
     "en": ("not released yet",),
@@ -36,6 +41,17 @@ NOT_RELEASED_PHRASES = {
 
 CLAIMBALL_PRICE_EN = "Free to try. One purchase unlocks everything. No ads, no subscription."
 CLAIMBALL_PRICE_KO = "무료로 해 보고, 한 번 결제하면 전부 열려요. 광고도 구독도 없어요."
+
+
+def expected_game_home(gid, lang):
+    base = GAMES[gid]
+    if gid == "mongsil":
+        return base if lang == "en" else "https://mongsil.ipe.rest/" + ("" if lang == "ko" else f"{lang}/")
+    if (gid in LOCALIZED and lang != "en") or (gid == "petalrampart" and lang == "ko"):
+        return f"{base}/{lang}/"
+    if gid == "todaydate" and lang != "en":
+        return f"{base}/{lang.lower()}/"
+    return base
 
 
 class Built(unittest.TestCase):
@@ -105,7 +121,7 @@ class Built(unittest.TestCase):
         for lang_dir in ("", "ko/"):
             h = self.read(lang_dir + "index.html")
             for gid in LIVE:
-                href = GAMES[gid] + ("/ko/" if gid in ("tentrunk", "todaydate") and lang_dir else "")
+                href = expected_game_home(gid, lang_dir.rstrip("/") or "en")
                 self.assertIn('href="%s"' % href, h, (lang_dir, gid))
             for store in ("apps.apple.com", "play.google.com", "itunes.apple.com", "testflight.apple.com"):
                 self.assertNotIn(store, h.lower())
@@ -213,7 +229,12 @@ class Built(unittest.TestCase):
         for g in self.ctx.games:
             gid = g["id"]
             wanted = {"url", "live"}
-            wanted.update({"tentrunk": ("localized",), "todaydate": ("localized_paths",)}.get(gid, ()))
+            if gid in LOCALIZED:
+                wanted.add("localized")
+            elif gid == "todaydate":
+                wanted.add("localized_paths")
+            elif gid in ("mongsil", "petalrampart"):
+                wanted.add("pages")
             self.assertEqual(set(g["site"]), wanted, gid)
             self.assertEqual(g["site"]["url"], GAMES[gid])
             self.assertEqual(g["site"]["live"], gid not in NOT_LIVE, gid)
@@ -221,7 +242,7 @@ class Built(unittest.TestCase):
                 for field in ("status", "platform", "pricing", "tagline"):
                     self.assertTrue(g[field][lang].strip(), (gid, lang, field))
                 for key, want in (("pros", 3), ("cons", 2)):
-                    self.assertEqual(len(g[key]), want, (gid, key))
+                    self.assertEqual(len(g[key]), 0 if gid in NOT_LIVE else want, (gid, key))
                     for i, it in enumerate(g[key]):
                         for k in ("h", "p"):
                             self.assertTrue(it[k][lang].strip(), (gid, lang, key, i, k))
@@ -244,7 +265,7 @@ class Built(unittest.TestCase):
             lang_dir = "" if lang == "en" else lang + "/"
             page = html.unescape(self.read(lang_dir + "index.html"))
             compare = page.partition('id="compare"')[2].split("</section>")[0]
-            row = compare.partition('<th scope="row">%s</th>' % self.ctx.t(lang, "row_status"))[2].split("</tr>")[0]
+            row = compare.partition('>%s</th>' % self.ctx.t(lang, "row_status"))[2].split("</tr>")[0]
             cells = [c.split("</td>")[0] for c in row.split("<td>")[1:]]
             cards = {c.partition("<h3>")[2].split("</h3>")[0]: c for c in compare.split('<article class="cmp-card"')[1:]}
             for i, g in enumerate(self.ctx.games):
@@ -259,6 +280,13 @@ class Built(unittest.TestCase):
         for lang in bs.LANGS:
             lang_dir = "" if lang == "en" else lang + "/"
             h = self.read(lang_dir + "index.html")
+            self.assertEqual(re.findall(r'<article class="game" id="([^"]+)"', h), list(GAMES), lang)
+            self.assertEqual(h.count('data-placement="card"'), len(LIVE), lang)
+            self.assertEqual(h.count('<article class="cmp-card"'), len(GAMES), lang)
+            strip = h.partition('<ul class="strip"')[2].partition("</ul>")[0]
+            choose = h.partition('<ul class="choose"')[2].partition("</ul>")[0]
+            for listing in strip, choose:
+                self.assertEqual(re.findall(r'href="#([^"]+)"', listing), list(GAMES), lang)
             for g in self.ctx.games:
                 gid = g["id"]
                 before, _, card = h.partition('id="%s"' % gid)
@@ -267,17 +295,16 @@ class Built(unittest.TestCase):
                 self.assertIn("<h3>%s</h3>" % g["name"][lang], card, (lang_dir, gid))
                 self.assertIn('class="tagline"', card, (lang_dir, gid))
                 if g["site"]["live"]:
-                    href = GAMES[gid]
-                    if lang_dir and gid == "tentrunk":
-                        href += f"/{lang}/"
-                    if lang_dir and gid == "todaydate":
-                        href += f"/{lang.lower()}/"
-                    self.assertIn('<a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card">' % (href, gid),
+                    href = expected_game_home(gid, lang)
+                    fallback = gid == "petalrampart" and lang not in ("en", "ko")
+                    attrs = ' hreflang="en"' if fallback else ""
+                    self.assertIn('<a class="btn" href="%s" rel="noopener" data-game="%s" data-placement="card"%s>' % (href, gid, attrs),
                                   card, (lang_dir, gid))
+                    if fallback:
+                        self.assertIn(bs.esc(self.ctx.t(lang, "en_mark")), card, lang)
                 else:
-                    self.assertNotIn('class="btn"', card, (lang_dir, gid))
-                    self.assertNotIn(GAMES[gid], card, (lang_dir, gid))
-        self.assertEqual(h.count('data-placement="card"'), len(LIVE))
+                    self.assertNotIn('href=', card, (lang_dir, gid))
+                    self.assertIn(bs.esc(g["status"][lang]), card, (lang_dir, gid))
 
     def test_tentrunk_card_uses_versioned_icon_and_localized_terms(self):
         icon = "assets/games/tentrunk.png"
@@ -337,11 +364,13 @@ class Built(unittest.TestCase):
         self.assertTrue(bs.text_problems("x", "only $4.99"))
 
     def test_json_ld_has_one_video_game_per_game_and_no_offers(self):
-        for lang_dir in ("", "ko/"):
+        for lang in bs.LANGS:
+            lang_dir = "" if lang == "en" else lang + "/"
             graph = jsonld(self.read(lang_dir + "index.html"))[0]["@graph"]
             games = [n for n in graph if n["@type"] == "VideoGame"]
-            self.assertEqual(len(games), len(GAMES))
-            self.assertEqual(sorted(n["url"] for n in games), sorted(GAMES.values()))
+            self.assertEqual([n["@id"].split("#")[1] for n in games], list(GAMES), lang)
+            self.assertEqual([n.get("url") for n in games],
+                             [GAMES[gid] if gid in LIVE else None for gid in GAMES], lang)
             for n in games:
                 for bad in ("offers", "aggregateRating", "datePublished", "review"):
                     self.assertNotIn(bad, n)
@@ -406,12 +435,11 @@ class Built(unittest.TestCase):
         for word in ("launched", "released", "out now", "play now", "playable", "can be played", "in the browser", "browser", "..",
                      "none of the"):
             self.assertNotIn(word, head, word)
-        self.assertIn("testflight", head)
-        self.assertIn("all %d games are coming soon" % len(LIVE), head)
+        self.assertIn("lists %d games and links to %d official game sites" % (len(GAMES), len(LIVE)), head)
         status_lines = [line for line in llms.split("\n") if "Status:" in line]
-        self.assertEqual(len(status_lines), len(LIVE))
-        for line in status_lines:
-            self.assertIn("Status: Coming soon.", line)
+        self.assertEqual(len(status_lines), len(GAMES))
+        for gid, line in zip(GAMES, status_lines):
+            self.assertIn("Status: Coming soon." if gid in LIVE else "Status: Website in preparation.", line)
 
     def test_home_and_lead_copy_makes_no_play_claim(self):
         for lang in bs.LANGS:

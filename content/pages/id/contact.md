@@ -1,7 +1,7 @@
 ---
 title: Kontak
 description: Cara menghubungi ipe() tentang game di play.ipe.rest. Email kontak dan beberapa jawaban.
-updated: 2026-10-31
+updated: 2026-11-28
 ---
 Jika Anda punya pertanyaan atau saran, atau menemukan sesuatu yang keliru di situs ini, silakan kirimi kami email.
 
@@ -11,7 +11,7 @@ Kami berusaha membalas dalam beberapa hari kerja.
 
 ## Untuk masalah pada game tertentu
 
-Setiap game punya situs resmi dan dukungannya sendiri. Silakan mulai dari sana, lewat kartu game tersebut di [halaman beranda](/id/#games).
+Jika situs resmi game sudah dibuka, buka dari [kartu game](/id/#games). Anda juga dapat menghubungi kami lewat email di atas.
 
 ## Detail yang membantu untuk disertakan
 
@@ -23,7 +23,7 @@ Setiap game punya situs resmi dan dukungannya sendiri. Silakan mulai dari sana, 
 
 ### Bisakah saya memainkan game-game ini?
 
-Bisa. Setiap game dimainkan di situs resminya sendiri, dan belum ada yang punya halaman toko. Mulai dari kartu game di [halaman beranda](/id/#games).
+Cek [kartu game](/id/#games) untuk mengetahui statusnya. Tautan ke situs resmi akan tampil ketika situs dibuka.
 
 ### Apakah Anda mengumpulkan informasi pribadi?
 

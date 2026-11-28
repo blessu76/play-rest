@@ -1,7 +1,7 @@
 ---
 title: Contact
 description: How to reach ipe() about the games on play.ipe.rest. Contact email and a few answers.
-updated: 2026-10-31
+updated: 2026-11-28
 ---
 If you have a question or a suggestion, or you found something wrong on this site, please write to us by email.
 
@@ -11,7 +11,7 @@ We aim to reply within a few business days.
 
 ## For a game-specific problem
 
-Each game has its own official site and its own support. Please start there, from the game's card on the [home page](/#games).
+If the game has an official site, find it from its [card](/#games). You can also email us at the address above.
 
 ## Helpful details to include
 
@@ -23,7 +23,7 @@ Each game has its own official site and its own support. Please start there, fro
 
 ### Can I play the games?
 
-Yes. Each game is played on its own official site, and none has a store page. Start from the game's card on the [home page](/#games).
+Check the [game card](/#games) for its current status and official site, when available.
 
 ### Do you collect personal information?
 

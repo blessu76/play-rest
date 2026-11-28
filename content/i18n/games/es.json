@@ -506,5 +506,253 @@
    "languages": "—",
    "status": "Próximamente"
   }
+ },
+ "mongsil": {
+  "status": "Beta de iOS en TestFlight",
+  "platform": "iOS TestFlight ahora, Android más tarde",
+  "pricing": "Compras dentro de la aplicación. Sin anuncios.",
+  "tagline": "Dale de comer a Mongsil, juega con él y acuéstalo. Se duerme cuando necesita atención.",
+  "pros": [
+   {
+    "h": "Cuídalo a tu ritmo.",
+    "p": "Si Mongsil necesita atención mientras no estás, se queda dormido."
+   },
+   {
+    "h": "Conoce a Mongsil.",
+    "p": "Tus cuidados moldean su personalidad y el juego guarda un registro del tiempo que pasáis juntos."
+   },
+   {
+    "h": "Juega sin cuenta.",
+    "p": "Los cuidados básicos funcionan sin conexión y el progreso se guarda en tu dispositivo."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si esperas el lanzamiento en tiendas.",
+    "p": "La versión de iOS está en beta en TestFlight. El lanzamiento en tiendas sigue en preparación."
+   },
+   {
+    "h": "Si buscas multijugador.",
+    "p": "Mongsil es un juego de cuidado de mascotas para una sola persona."
+   }
+  ],
+  "compare": {
+   "oneline": "Cuidar a una pequeña mascota",
+   "style": "Simulación de cuidado de mascotas",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Una persona",
+   "platform": "iOS TestFlight ahora, Android más tarde",
+   "offline": "Cuidados básicos sin conexión",
+   "pricing": "Compras dentro de la aplicación. Sin anuncios.",
+   "languages": "—",
+   "status": "Beta de iOS en TestFlight"
+  }
+ },
+ "petalrampart": {
+  "status": "TestFlight",
+  "platform": "iPhone y iPad",
+  "pricing": "App Store muestra el precio en tu moneda local. No hay anuncios.",
+  "tagline": "Desde ratones de campo hasta elefantes, los animales recorren el camino de tierra hacia tu jardín. Coloca torres junto al camino, fusiona las iguales y protege hasta la última flor.",
+  "pros": [
+   {
+    "h": "Defiende el camino",
+    "p": "Coloca torres en las casillas junto al camino de tierra. Elegir qué torre va en cada sitio es parte del plan."
+   },
+   {
+    "h": "Fusiona y mejora",
+    "p": "Combina dos torres del mismo tipo y nivel para subir un nivel, hasta el nivel 7."
+   },
+   {
+    "h": "Jardines que defender",
+    "p": "Los tres jardines base son gratuitos. Defiende uno para abrir el siguiente."
+   }
+  ],
+  "cons": [
+   {
+    "h": "¿Buscas una descarga pública?",
+    "p": "La versión para iOS está en pruebas internas de TestFlight."
+   },
+   {
+    "h": "¿Buscas multijugador?",
+    "p": "La defensa del jardín es para un solo jugador."
+   }
+  ],
+  "compare": {
+   "oneline": "Defensa de torres en un jardín",
+   "style": "Tres torres",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Un jugador",
+   "platform": "iPhone y iPad",
+   "offline": "—",
+   "pricing": "App Store muestra el precio en tu moneda local. No hay anuncios.",
+   "languages": "12",
+   "status": "TestFlight"
+  }
+ },
+ "stampost": {
+  "status": "Próximamente",
+  "platform": "iOS (TestFlight interno) · Android",
+  "pricing": "Precio por anunciar",
+  "tagline": "Combina sellos y envía cartas.",
+  "pros": [
+   {
+    "h": "Clasifica por sello",
+    "p": "Toca el sello del primer sobre."
+   },
+   {
+    "h": "Partidas de 45 segundos",
+    "p": "Envía juntos los sobres seguidos con el mismo sello para ganar más puntos."
+   },
+   {
+    "h": "¿Puedo jugar sin conexión?",
+    "p": "El juego para móviles funciona sin conexión y no tiene anuncios."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Decisiones rápidas",
+    "p": "La oficina de correos cierra si la fila supera las seis cartas."
+   },
+   {
+    "h": "Toques incorrectos",
+    "p": "Un toque equivocado resta 2 puntos. Tu puntuación nunca baja de 0."
+   }
+  ],
+  "compare": {
+   "oneline": "Combina sellos y envía cartas.",
+   "style": "Clasificación de correo",
+   "length": "Partidas de 45 segundos",
+   "difficulty": "Decisiones rápidas",
+   "players": "Un jugador",
+   "platform": "iOS (TestFlight interno) · Android",
+   "offline": "Sí, en la app",
+   "pricing": "Precio por anunciar",
+   "languages": "12 idiomas",
+   "status": "Próximamente"
+  }
+ },
+ "shoopa": {
+  "status": "Próximamente",
+  "platform": "iOS TestFlight y pruebas en Android",
+  "pricing": "Gratis, sin anuncios. Una compra opcional dentro de la app cambia el aspecto de los bloques.",
+  "tagline": "Toca un bloque cuando su flecha tenga el camino libre. Busca el orden adecuado y despeja el tablero pieza a pieza.",
+  "pros": [
+   {
+    "h": "Encuentra un camino libre",
+    "p": "El bloque puede salir si todas las casillas hacia las que apunta la flecha están libres hasta el borde."
+   },
+   {
+    "h": "Encadena jugadas en 0,9 s",
+    "p": "Retira otro bloque en los 0,9 segundos siguientes para mantener el combo. Si tocas un bloque atascado, el combo se corta."
+   },
+   {
+    "h": "Tres corazones y dos pistas",
+    "p": "Pierdes un corazón si tocas una flecha bloqueada. Puedes volver a intentar el mismo tablero gratis."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si quieres jugar en el navegador.",
+    "p": "La versión web está en preparación. Por ahora se juega en versiones de prueba para iOS y Android."
+   },
+   {
+    "h": "Si quieres una lista de funciones terminada.",
+    "p": "Aún está en pruebas, así que las funciones pueden cambiar antes del lanzamiento."
+   }
+  ],
+  "compare": {
+   "oneline": "Puzle de bloques con flechas",
+   "style": "Puzle de flechas",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Un jugador",
+   "platform": "iOS TestFlight y pruebas en Android",
+   "offline": "—",
+   "pricing": "Gratis, sin anuncios. Una compra opcional dentro de la app cambia el aspecto de los bloques.",
+   "languages": "—",
+   "status": "Próximamente. TestFlight y pruebas en Android"
+  }
+ },
+ "strawmaze": {
+  "status": "Sitio web en preparación",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Construye un laberinto de vallas y espantapájaros para proteger tus zanahorias.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Construye un laberinto de vallas y espantapájaros para proteger tus zanahorias.",
+   "style": "Defensa de torres con laberintos",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Un jugador",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Sitio web en preparación"
+  }
+ },
+ "acornvoy": {
+  "status": "Sitio web en preparación",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Envía ardillas más allá de las torres de búhos para traer bellotas antes del anochecer.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Envía ardillas más allá de las torres de búhos para traer bellotas antes del anochecer.",
+   "style": "Defensa de torres inversa",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Un jugador",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Sitio web en preparación"
+  }
+ },
+ "railthump": {
+  "status": "Sitio web en preparación",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Cambia entre tres vías, rompe cajas en cadena y esquiva rocas mientras la vagoneta acelera.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Cambia entre tres vías, rompe cajas en cadena y esquiva rocas mientras la vagoneta acelera.",
+   "style": "Acción en vagoneta",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Un jugador",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Sitio web en preparación"
+  }
+ },
+ "pongdang": {
+  "status": "Sitio web en preparación",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Salta sobre hojas flotantes, recoge flores y esquiva las olas.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Salta sobre hojas flotantes, recoge flores y esquiva las olas.",
+   "style": "Saltos en el estanque",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Un jugador",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Sitio web en preparación"
+  }
  }
 }

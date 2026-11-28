@@ -506,5 +506,253 @@
    "languages": "—",
    "status": "Em breve"
   }
+ },
+ "mongsil": {
+  "status": "Beta para iOS no TestFlight",
+  "platform": "iOS TestFlight agora, Android depois",
+  "pricing": "Compras no app. Sem anúncios.",
+  "tagline": "Alimente Mongsil, brinque com ele e coloque-o para dormir. O bichinho adormece quando precisa de cuidados.",
+  "pros": [
+   {
+    "h": "Cuide dele no seu ritmo.",
+    "p": "Se Mongsil precisar de cuidados enquanto você estiver fora, ele adormece."
+   },
+   {
+    "h": "Conheça Mongsil.",
+    "p": "Seus cuidados moldam a personalidade dele e deixam um registro do tempo que passaram juntos."
+   },
+   {
+    "h": "Jogue sem conta.",
+    "p": "Os cuidados básicos funcionam offline e o progresso é salvo no seu dispositivo."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Se estiver esperando o lançamento nas lojas.",
+    "p": "A versão para iOS está em beta no TestFlight. O lançamento nas lojas está em preparação."
+   },
+   {
+    "h": "Se procura um jogo multijogador.",
+    "p": "Mongsil é um jogo de cuidar de um bichinho para uma só pessoa."
+   }
+  ],
+  "compare": {
+   "oneline": "Cuidar de um bichinho",
+   "style": "Simulação de cuidados com um bichinho",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Uma pessoa",
+   "platform": "iOS TestFlight agora, Android depois",
+   "offline": "Cuidados básicos offline",
+   "pricing": "Compras no app. Sem anúncios.",
+   "languages": "—",
+   "status": "Beta para iOS no TestFlight"
+  }
+ },
+ "petalrampart": {
+  "status": "TestFlight",
+  "platform": "iPhone e iPad",
+  "pricing": "A App Store mostra o preço na sua moeda local. O jogo não tem anúncios.",
+  "tagline": "De ratos do campo a elefantes, os animais avançam pela trilha de terra até o jardim. Coloque torres ao lado do caminho, junte as iguais e proteja cada flor.",
+  "pros": [
+   {
+    "h": "Defenda o caminho",
+    "p": "Coloque as torres nas casas ao lado da trilha. Escolher o que vai em cada ponto faz parte da estratégia."
+   },
+   {
+    "h": "Combine para evoluir",
+    "p": "Junte duas torres do mesmo tipo e nível para subir um nível, até o nível 7."
+   },
+   {
+    "h": "Jardins para defender",
+    "p": "Os três jardins base são gratuitos. Defenda um para abrir o seguinte."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Quer baixar a versão pública?",
+    "p": "A versão para iOS está em teste interno no TestFlight."
+   },
+   {
+    "h": "Quer jogar com outras pessoas?",
+    "p": "A defesa do jardim é para um jogador."
+   }
+  ],
+  "compare": {
+   "oneline": "Defesa de torres no jardim",
+   "style": "Três torres",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iPhone e iPad",
+   "offline": "—",
+   "pricing": "A App Store mostra o preço na sua moeda local. O jogo não tem anúncios.",
+   "languages": "12",
+   "status": "TestFlight"
+  }
+ },
+ "stampost": {
+  "status": "Em breve",
+  "platform": "iOS (TestFlight interno) · Android",
+  "pricing": "Preço a anunciar",
+  "tagline": "Combine carimbos e envie cartas.",
+  "pros": [
+   {
+    "h": "Separe por carimbo",
+    "p": "Toque no carimbo do primeiro envelope."
+   },
+   {
+    "h": "Rodadas de 45 segundos",
+    "p": "Envie juntos os envelopes seguidos com a mesma marca para ganhar mais pontos."
+   },
+   {
+    "h": "Posso jogar offline?",
+    "p": "O jogo para celular funciona offline e não tem anúncios."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Decisões rápidas",
+    "p": "O correio fecha se a fila passar de seis cartas."
+   },
+   {
+    "h": "Toques errados",
+    "p": "Um toque errado tira 2 pontos. Sua pontuação nunca fica abaixo de 0."
+   }
+  ],
+  "compare": {
+   "oneline": "Combine carimbos e envie cartas.",
+   "style": "Triagem de cartas",
+   "length": "Rodadas de 45 segundos",
+   "difficulty": "Decisões rápidas",
+   "players": "Um jogador",
+   "platform": "iOS (TestFlight interno) · Android",
+   "offline": "Sim, no app",
+   "pricing": "Preço a anunciar",
+   "languages": "12 idiomas",
+   "status": "Em breve"
+  }
+ },
+ "shoopa": {
+  "status": "Em breve",
+  "platform": "iOS TestFlight e testes no Android",
+  "pricing": "Grátis, sem anúncios. Uma compra opcional no aplicativo muda o visual dos blocos.",
+  "tagline": "Toque no bloco quando o caminho da seta estiver livre. Descubra a ordem certa e esvazie o tabuleiro, um bloco de cada vez.",
+  "pros": [
+   {
+    "h": "Encontre um caminho livre",
+    "p": "O bloco pode sair quando todas as casas na direção da seta estiverem livres até a borda."
+   },
+   {
+    "h": "Emende jogadas em 0,9 s",
+    "p": "Remova outro bloco em até 0,9 segundo para manter o combo. Tocar em um bloco preso interrompe o combo."
+   },
+   {
+    "h": "Três corações e duas dicas",
+    "p": "Ao tocar em um bloco preso, você perde um coração. Tente o mesmo tabuleiro de novo de graça."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Para quem quer jogar no navegador.",
+    "p": "A versão web está em preparação. Por enquanto, dá para jogar nas versões de teste para iOS e Android."
+   },
+   {
+    "h": "Se você quer uma lista de recursos pronta.",
+    "p": "Ainda está em testes, então os recursos podem mudar antes do lançamento."
+   }
+  ],
+  "compare": {
+   "oneline": "Quebra-cabeça de blocos com setas",
+   "style": "Quebra-cabeça de setas",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Um jogador",
+   "platform": "iOS TestFlight e testes no Android",
+   "offline": "—",
+   "pricing": "Grátis, sem anúncios. Uma compra opcional no aplicativo muda o visual dos blocos.",
+   "languages": "—",
+   "status": "Em breve. TestFlight e testes no Android"
+  }
+ },
+ "strawmaze": {
+  "status": "Site em preparação",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Monte um labirinto de cercas e espantalhos para proteger suas cenouras.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Monte um labirinto de cercas e espantalhos para proteger suas cenouras.",
+   "style": "Defesa de torres com labirintos",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Um jogador",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Site em preparação"
+  }
+ },
+ "acornvoy": {
+  "status": "Site em preparação",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Envie esquilos pelas torres das corujas e leve as bolotas para casa antes do pôr do sol.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Envie esquilos pelas torres das corujas e leve as bolotas para casa antes do pôr do sol.",
+   "style": "Defesa de torres invertida",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Um jogador",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Site em preparação"
+  }
+ },
+ "railthump": {
+  "status": "Site em preparação",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Troque entre três trilhos, quebre caixas em sequência e desvie de pedras enquanto o carrinho acelera.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Troque entre três trilhos, quebre caixas em sequência e desvie de pedras enquanto o carrinho acelera.",
+   "style": "Ação no carrinho de mina",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Um jogador",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Site em preparação"
+  }
+ },
+ "pongdang": {
+  "status": "Site em preparação",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Salte pelas folhas flutuantes, recolha flores e desvie das ondas.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Salte pelas folhas flutuantes, recolha flores e desvie das ondas.",
+   "style": "Saltos na lagoa",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Um jogador",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Site em preparação"
+  }
  }
 }

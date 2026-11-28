@@ -506,5 +506,253 @@
    "languages": "—",
    "status": "Bientôt disponible"
   }
+ },
+ "mongsil": {
+  "status": "Bêta iOS sur TestFlight",
+  "platform": "iOS TestFlight maintenant, Android plus tard",
+  "pricing": "Achats intégrés. Sans publicité.",
+  "tagline": "Nourrissez Mongsil, jouez avec lui et bordez-le. Ce petit compagnon s’endort quand il a besoin de soins.",
+  "pros": [
+   {
+    "h": "Prenez-en soin à votre rythme.",
+    "p": "Si Mongsil a besoin de soins pendant votre absence, il s’endort."
+   },
+   {
+    "h": "Apprenez à connaître Mongsil.",
+    "p": "Vos soins façonnent son caractère. Le jeu garde une trace du temps passé ensemble."
+   },
+   {
+    "h": "Jouez sans compte.",
+    "p": "Les soins de base sont possibles hors ligne. La progression est enregistrée sur votre appareil."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si vous attendez la sortie sur les boutiques.",
+    "p": "La version iOS est en bêta sur TestFlight. La sortie sur les boutiques est en préparation."
+   },
+   {
+    "h": "Si vous cherchez un jeu multijoueur.",
+    "p": "Mongsil est un jeu de soin d’un animal de compagnie pour une seule personne."
+   }
+  ],
+  "compare": {
+   "oneline": "Prendre soin d’un petit compagnon",
+   "style": "Simulation de soin d’un animal de compagnie",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS TestFlight maintenant, Android plus tard",
+   "offline": "Soins de base hors ligne",
+   "pricing": "Achats intégrés. Sans publicité.",
+   "languages": "—",
+   "status": "Bêta iOS sur TestFlight"
+  }
+ },
+ "petalrampart": {
+  "status": "TestFlight",
+  "platform": "iPhone et iPad",
+  "pricing": "L’App Store affiche le prix dans votre monnaie locale. Il n’y a pas de publicité.",
+  "tagline": "Du mulot à l’éléphant, les animaux suivent le chemin de terre vers votre jardin. Placez des tours au bord du chemin, fusionnez celles qui se ressemblent et protégez chaque fleur.",
+  "pros": [
+   {
+    "h": "Défendez le chemin",
+    "p": "Placez les tours sur les cases au bord du chemin de terre. À vous de choisir quelle tour va où."
+   },
+   {
+    "h": "Fusionnez pour progresser",
+    "p": "Combinez deux tours du même type et de même niveau pour gagner un niveau, jusqu’au niveau 7."
+   },
+   {
+    "h": "Des jardins à défendre",
+    "p": "Les trois jardins de base sont gratuits. Défendez-en un pour ouvrir le suivant."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Vous cherchez un téléchargement public ?",
+    "p": "La version iOS est en test interne sur TestFlight."
+   },
+   {
+    "h": "Vous cherchez un mode multijoueur ?",
+    "p": "La défense du jardin se joue en solo."
+   }
+  ],
+  "compare": {
+   "oneline": "Un jeu de défense de tours au jardin",
+   "style": "Trois tours",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iPhone et iPad",
+   "offline": "—",
+   "pricing": "L’App Store affiche le prix dans votre monnaie locale. Il n’y a pas de publicité.",
+   "languages": "12",
+   "status": "TestFlight"
+  }
+ },
+ "stampost": {
+  "status": "Bientôt disponible",
+  "platform": "iOS (TestFlight interne) · Android",
+  "pricing": "Prix à annoncer",
+  "tagline": "Le bon tampon, et le courrier part.",
+  "pros": [
+   {
+    "h": "Tri par tampon",
+    "p": "Touchez le tampon de la première enveloppe."
+   },
+   {
+    "h": "Parties de 45 secondes",
+    "p": "Envoyez en lot les enveloppes identiques qui se suivent pour gagner plus de points."
+   },
+   {
+    "h": "Puis-je jouer hors connexion ?",
+    "p": "Le jeu mobile fonctionne hors connexion et sans publicité."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Décisions rapides",
+    "p": "Le bureau de poste ferme si la file dépasse six lettres."
+   },
+   {
+    "h": "Erreurs de tampon",
+    "p": "Une erreur coûte 2 points. Votre score ne descend jamais sous 0."
+   }
+  ],
+  "compare": {
+   "oneline": "Le bon tampon, et le courrier part.",
+   "style": "Tri du courrier",
+   "length": "Parties de 45 secondes",
+   "difficulty": "Décisions rapides",
+   "players": "Un joueur",
+   "platform": "iOS (TestFlight interne) · Android",
+   "offline": "Oui, dans l’application",
+   "pricing": "Prix à annoncer",
+   "languages": "12 langues",
+   "status": "Bientôt disponible"
+  }
+ },
+ "shoopa": {
+  "status": "Bientôt disponible",
+  "platform": "iOS TestFlight et tests sur Android",
+  "pricing": "Gratuit, sans publicité. Un achat intégré facultatif change l'apparence des blocs.",
+  "tagline": "Touchez un bloc quand sa flèche indique un passage libre. Trouvez le bon ordre et videz le plateau, un bloc à la fois.",
+  "pros": [
+   {
+    "h": "Trouvez un passage libre",
+    "p": "Un bloc peut sortir si le chemin indiqué par sa flèche est dégagé jusqu’au bord."
+   },
+   {
+    "h": "Enchaînez en 0,9 seconde",
+    "p": "Retirez un autre bloc dans les 0,9 seconde qui suivent pour poursuivre le combo. Toucher un bloc coincé interrompt le combo."
+   },
+   {
+    "h": "Trois cœurs et deux indices",
+    "p": "Toucher un bloc coincé coûte un cœur. Vous pouvez rejouer le même plateau gratuitement."
+   }
+  ],
+  "cons": [
+   {
+    "h": "Si vous voulez jouer dans un navigateur.",
+    "p": "La version web est en préparation. Pour l'instant, on y joue sur les versions de test iOS et Android."
+   },
+   {
+    "h": "Si vous voulez une liste de fonctionnalités terminée.",
+    "p": "C'est encore en test, donc les fonctionnalités peuvent changer avant la sortie."
+   }
+  ],
+  "compare": {
+   "oneline": "Puzzle de blocs fléchés",
+   "style": "Puzzle de flèches",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS TestFlight et tests sur Android",
+   "offline": "—",
+   "pricing": "Gratuit, sans publicité. Un achat intégré facultatif change l'apparence des blocs.",
+   "languages": "—",
+   "status": "Bientôt disponible. TestFlight et tests sur Android"
+  }
+ },
+ "strawmaze": {
+  "status": "Site officiel en préparation",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Construisez un labyrinthe avec des clôtures et des épouvantails pour protéger vos carottes.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Construisez un labyrinthe avec des clôtures et des épouvantails pour protéger vos carottes.",
+   "style": "Défense de tours et création de labyrinthes",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Site officiel en préparation"
+  }
+ },
+ "acornvoy": {
+  "status": "Site officiel en préparation",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Envoyez les écureuils au-delà des tours des hiboux pour rapporter des glands avant le coucher du soleil.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Envoyez les écureuils au-delà des tours des hiboux pour rapporter des glands avant le coucher du soleil.",
+   "style": "Défense de tours inversée",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Site officiel en préparation"
+  }
+ },
+ "railthump": {
+  "status": "Site officiel en préparation",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Changez de voie, brisez les caisses à la chaîne et évitez les rochers à bord d’un wagonnet qui accélère.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Changez de voie, brisez les caisses à la chaîne et évitez les rochers à bord d’un wagonnet qui accélère.",
+   "style": "Action en wagonnet",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Site officiel en préparation"
+  }
+ },
+ "pongdang": {
+  "status": "Site officiel en préparation",
+  "platform": "iOS · Android",
+  "pricing": "—",
+  "tagline": "Sautez de feuille en feuille, récoltez des fleurs et évitez les vagues.",
+  "pros": [],
+  "cons": [],
+  "compare": {
+   "oneline": "Sautez de feuille en feuille, récoltez des fleurs et évitez les vagues.",
+   "style": "Sauts sur l’étang",
+   "length": "—",
+   "difficulty": "—",
+   "players": "Solo",
+   "platform": "iOS · Android",
+   "offline": "—",
+   "pricing": "—",
+   "languages": "—",
+   "status": "Site officiel en préparation"
+  }
  }
 }

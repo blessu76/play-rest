@@ -1,7 +1,7 @@
 ---
 title: Kontakt
 description: So erreichen Sie ipe() zu den Spielen auf play.ipe.rest. Kontakt-E-Mail und einige Antworten.
-updated: 2026-10-31
+updated: 2026-11-28
 ---
 Wenn Sie eine Frage oder einen Vorschlag haben oder auf dieser Website einen Fehler gefunden haben, schreiben Sie uns bitte eine E-Mail.
 
@@ -11,7 +11,7 @@ Wir versuchen, innerhalb weniger Werktage zu antworten.
 
 ## Bei einem Problem mit einem bestimmten Spiel
 
-Jedes Spiel hat seine eigene offizielle Website und seinen eigenen Support. Bitte beginnen Sie dort, über die Karte des Spiels auf der [Startseite](/de/#games).
+Wenn das Spiel eine offizielle Website hat, finden Sie diese über die [Spielkarte](/de/#games). Sie können uns auch an die E-Mail-Adresse oben schreiben.
 
 ## Hilfreiche Angaben
 
@@ -23,7 +23,7 @@ Jedes Spiel hat seine eigene offizielle Website und seinen eigenen Support. Bitt
 
 ### Kann ich die Spiele spielen?
 
-Ja. Jedes Spiel wird auf seiner eigenen offiziellen Website gespielt, und keines hat eine Store-Seite. Den Weg dorthin finden Sie auf der Karte des Spiels auf der [Startseite](/de/#games).
+Den aktuellen Stand finden Sie auf der [Spielkarte](/de/#games). Dort ist die offizielle Website verlinkt, sobald sie online ist.
 
 ### Erheben Sie personenbezogene Daten?
 

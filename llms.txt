@@ -1,8 +1,8 @@
 # ipe() Games
 
-> 12 small games from ipe(). Short rounds, few rules, no ads. All 12 have their own site now.
+> 20 small games from ipe(). Explore the lineup and visit official game sites as they open.
 
-play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It collects 12 games in one place and links to each game's own official site. All 12 games are coming soon: each has its own introduction site, and most are at the iOS TestFlight stage. None has had a full release yet: no store page or release date is set for any of them. This portal has no accounts or ads, collects only basic visit statistics through Google Analytics, and has no terms of its own: the footer links to the common ipe() terms, and each game's site has its own terms. It has a journal with notes on turn-based games, killing-time games and how ipe() makes games.
+play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It lists 20 games and links to 16 official game sites. The portal has no accounts or ads and collects only basic visit statistics through Google Analytics. The footer links to the common ipe() terms. The journal covers turn-based games, games for short breaks and how ipe() makes games.
 
 ## The games
 
@@ -18,6 +18,14 @@ play.ipe.rest is the portal for the games made by ipe() (https://ipe.rest/). It 
 - [Tentrunk - Camping Pack Puzzle](https://tentrunk.ipe.rest): Turn and fit your gear into the trunk grid, then set up camp with what you packed. Spend a night outdoors and collect gear for your next trip. Status: Coming soon. Platform: iOS · Android. Pricing: Free to start. No ads. Optional in-app purchases.
 - [Blushlab](https://blushlab.ipe.rest): A makeup game with two modes: try a look on a face in Makeup Studio, or on your own photo in My Face. Status: Coming soon. Platform: iOS and Android, in the works. Pricing: Free to start. In-app purchases, no ads.
 - [How’s Today](https://todaydate.ipe.rest): Pick one of three replies and see how the scene unfolds. Status: Coming soon. Platform: iOS TestFlight in progress. Pricing: The basic game is free. Points can unlock extra scene packs and decorations.
+- [Mongsil](https://mongsil.ipe.rest/en/): Feed, play with, and tuck in Mongsil, a little pet that falls asleep when it needs care. Status: Coming soon. Platform: iOS TestFlight now, Android later. Pricing: In-app purchases. No ads.
+- [Petal Rampart](https://petalrampart.ipe.rest): From field mice to elephants, herds of animals march down the dirt path toward your garden. Place towers by the path, merge matching ones to grow them, and keep every flower standing. Status: Coming soon. Platform: iPhone and iPad. Pricing: The App Store shows the price in your local currency. There are no ads.
+- [Stampost](https://stampost.ipe.rest): Match stamps. Send mail. Status: Coming soon. Platform: iOS (internal TestFlight) · Android. Pricing: Pricing to be announced.
+- [Shoopa](https://shoopa.ipe.rest): Tap an arrow block when its path is open. Work out the right order and clear the board, one block at a time. Status: Coming soon. Platform: iOS TestFlight and Android testing. Pricing: Free to play, no ads. An optional in-app purchase changes block skins.
+- Strawmaze: Build a maze of fences and scarecrows to protect your carrots. Status: Website in preparation. Platform: iOS · Android.
+- Acornvoy: Send squirrels past owl towers to bring acorns home before sunset. Status: Website in preparation. Platform: iOS · Android.
+- Railthump: Switch between three rails, chain crate breaks and dodge rocks as the mine cart speeds up. Status: Website in preparation. Platform: iOS · Android.
+- Pongdang Lotus Hop: Leap across drifting lily pads, collect flowers and dodge waves. Status: Website in preparation. Platform: iOS · Android.
 
 ## How ipe makes games
 
